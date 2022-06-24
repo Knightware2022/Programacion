@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace ApiA
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -21,9 +21,9 @@ namespace ApiA
             recibirDatosdeLogicaRegistro();
             Console.ReadKey();  //para que la terminal no se cierre
         }
-        public static String _path = @"C:\Users\User\Desktop\Apia\Autentificacion\DatosUsuario";
-        public static String _pathEnviarLogica = @"C:\Users\User\Desktop\Apia\Respuestas de la logica\respuestaCapaLogicaAutenticacion";
-        public static String _pathRecibirLogica = @"C:\Users\User\Desktop\Apia\Respuestas de la logica\respuestaCapaLogica";
+        public static String _path = @"C:\Users\User\Desktop\Apia\APIautentificacion\Autentificacion\DatosUsuario";
+        public static String _pathEnviarLogica = @"C:\Users\User\Desktop\Apia\APIautentificacion\Respuestas de la logica\respuestaCapaLogicaAutenticacion";
+        public static String _pathRecibirLogica = @"C:\Users\User\Desktop\Apia\APIautentificacion\Respuestas de la logica\respuestaCapaLogica";
 
         #region "Serializacion (se le pasa una lista de tipo String con los datos para crear el json)"
         public static void SerializeJsonFile(List<Usuario> datosASerializar, string _path)
