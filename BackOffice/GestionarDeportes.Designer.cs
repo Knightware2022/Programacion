@@ -30,6 +30,8 @@
         {
             this.tbpgGestionDeporte = new System.Windows.Forms.TabControl();
             this.tbpgAniadir = new System.Windows.Forms.TabPage();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.paneEquipo = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblCantidadJugadores = new System.Windows.Forms.Label();
@@ -45,67 +47,65 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.tbpgModificar = new System.Windows.Forms.TabPage();
-            this.tbpgEliminar = new System.Windows.Forms.TabPage();
-            this.tbpgVer = new System.Windows.Forms.TabPage();
-            this.tbmodificar = new System.Windows.Forms.TabPage();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.paneBuscarDeporte = new System.Windows.Forms.Panel();
-            this.lblIDeporte = new System.Windows.Forms.Label();
-            this.txtIDeporte = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMNombre = new System.Windows.Forms.Label();
-            this.lblMCategoria = new System.Windows.Forms.Label();
-            this.lblMDuracion = new System.Windows.Forms.Label();
-            this.lblMPuntuacion = new System.Windows.Forms.Label();
-            this.lblMModJuego = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblMCantidadJ = new System.Windows.Forms.Label();
-            this.cmboxMcantJugadores = new System.Windows.Forms.ComboBox();
-            this.txtMnombre = new System.Windows.Forms.TextBox();
-            this.txtMCategoria = new System.Windows.Forms.TextBox();
-            this.txtMDuracion = new System.Windows.Forms.TextBox();
-            this.txtMpuntuacion = new System.Windows.Forms.TextBox();
-            this.lblModJuego = new System.Windows.Forms.Label();
-            this.btnAceptarMod = new System.Windows.Forms.Button();
+            this.paneResultadoModificar = new System.Windows.Forms.Panel();
             this.btnCancelarMod = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAceptarMod = new System.Windows.Forms.Button();
+            this.lblModJuego = new System.Windows.Forms.Label();
+            this.txtMpuntuacion = new System.Windows.Forms.TextBox();
+            this.txtMDuracion = new System.Windows.Forms.TextBox();
+            this.txtMCategoria = new System.Windows.Forms.TextBox();
+            this.txtMnombre = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cmboxMcantJugadores = new System.Windows.Forms.ComboBox();
+            this.lblMCantidadJ = new System.Windows.Forms.Label();
+            this.lblMModJuego = new System.Windows.Forms.Label();
+            this.lblMPuntuacion = new System.Windows.Forms.Label();
+            this.lblMDuracion = new System.Windows.Forms.Label();
+            this.lblMCategoria = new System.Windows.Forms.Label();
+            this.lblMNombre = new System.Windows.Forms.Label();
+            this.paneBuscarDeporte = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtIDeporte = new System.Windows.Forms.TextBox();
+            this.lblIDeporte = new System.Windows.Forms.Label();
+            this.tbpgEliminar = new System.Windows.Forms.TabPage();
+            this.paneEliminar = new System.Windows.Forms.Panel();
+            this.cmboxDeportes = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblEdeporte = new System.Windows.Forms.Label();
-            this.cmboxDeportes = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.tbpgVer = new System.Windows.Forms.TabPage();
+            this.paneVerResultado = new System.Windows.Forms.Panel();
             this.lblVerModoDeJuego = new System.Windows.Forms.Label();
             this.txtVerPuntuacion = new System.Windows.Forms.TextBox();
             this.txtVerDuracion = new System.Windows.Forms.TextBox();
             this.txtVerCategoria = new System.Windows.Forms.TextBox();
             this.txtVerNombre = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtVerCantidadJugadores = new System.Windows.Forms.TextBox();
             this.lblVerCantidadJugadores = new System.Windows.Forms.Label();
             this.lblVerModoJuego = new System.Windows.Forms.Label();
             this.lblVerPuntuacion = new System.Windows.Forms.Label();
             this.lblVerDuracion = new System.Windows.Forms.Label();
             this.lblVerCategoria = new System.Windows.Forms.Label();
             this.lblVerNombre = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.paneVer = new System.Windows.Forms.Panel();
+            this.cmboxIDdeporte = new System.Windows.Forms.ComboBox();
             this.btnVER = new System.Windows.Forms.Button();
             this.lblIDVerdeporte = new System.Windows.Forms.Label();
-            this.cmboxIDdeporte = new System.Windows.Forms.ComboBox();
-            this.txtVerCantidadJugadores = new System.Windows.Forms.TextBox();
+            this.tbmodificar = new System.Windows.Forms.TabPage();
             this.tbpgGestionDeporte.SuspendLayout();
             this.tbpgAniadir.SuspendLayout();
             this.paneEquipo.SuspendLayout();
             this.gboxModo.SuspendLayout();
             this.tbpgModificar.SuspendLayout();
-            this.tbpgEliminar.SuspendLayout();
-            this.tbpgVer.SuspendLayout();
-            this.paneBuscarDeporte.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.paneResultadoModificar.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.paneBuscarDeporte.SuspendLayout();
+            this.tbpgEliminar.SuspendLayout();
+            this.paneEliminar.SuspendLayout();
+            this.tbpgVer.SuspendLayout();
+            this.paneVerResultado.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.paneVer.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbpgGestionDeporte
@@ -142,6 +142,24 @@
             this.tbpgAniadir.TabIndex = 0;
             this.tbpgAniadir.Text = "Añadir Deporte";
             this.tbpgAniadir.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(44, 449);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 29);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(44, 393);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(94, 29);
+            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // paneEquipo
             // 
@@ -319,7 +337,7 @@
             // 
             // tbpgModificar
             // 
-            this.tbpgModificar.Controls.Add(this.panel1);
+            this.tbpgModificar.Controls.Add(this.paneResultadoModificar);
             this.tbpgModificar.Controls.Add(this.paneBuscarDeporte);
             this.tbpgModificar.Location = new System.Drawing.Point(4, 29);
             this.tbpgModificar.Name = "tbpgModificar";
@@ -329,156 +347,80 @@
             this.tbpgModificar.Text = "Modificar Deporte";
             this.tbpgModificar.UseVisualStyleBackColor = true;
             // 
-            // tbpgEliminar
+            // paneResultadoModificar
             // 
-            this.tbpgEliminar.Controls.Add(this.panel3);
-            this.tbpgEliminar.Location = new System.Drawing.Point(4, 29);
-            this.tbpgEliminar.Name = "tbpgEliminar";
-            this.tbpgEliminar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgEliminar.Size = new System.Drawing.Size(740, 519);
-            this.tbpgEliminar.TabIndex = 2;
-            this.tbpgEliminar.Text = "Eliminar Deporte";
-            this.tbpgEliminar.UseVisualStyleBackColor = true;
+            this.paneResultadoModificar.Controls.Add(this.btnCancelarMod);
+            this.paneResultadoModificar.Controls.Add(this.btnAceptarMod);
+            this.paneResultadoModificar.Controls.Add(this.lblModJuego);
+            this.paneResultadoModificar.Controls.Add(this.txtMpuntuacion);
+            this.paneResultadoModificar.Controls.Add(this.txtMDuracion);
+            this.paneResultadoModificar.Controls.Add(this.txtMCategoria);
+            this.paneResultadoModificar.Controls.Add(this.txtMnombre);
+            this.paneResultadoModificar.Controls.Add(this.panel2);
+            this.paneResultadoModificar.Controls.Add(this.lblMModJuego);
+            this.paneResultadoModificar.Controls.Add(this.lblMPuntuacion);
+            this.paneResultadoModificar.Controls.Add(this.lblMDuracion);
+            this.paneResultadoModificar.Controls.Add(this.lblMCategoria);
+            this.paneResultadoModificar.Controls.Add(this.lblMNombre);
+            this.paneResultadoModificar.Location = new System.Drawing.Point(24, 170);
+            this.paneResultadoModificar.Name = "paneResultadoModificar";
+            this.paneResultadoModificar.Size = new System.Drawing.Size(679, 343);
+            this.paneResultadoModificar.TabIndex = 1;
             // 
-            // tbpgVer
+            // btnCancelarMod
             // 
-            this.tbpgVer.Controls.Add(this.panel4);
-            this.tbpgVer.Controls.Add(this.panel6);
-            this.tbpgVer.Location = new System.Drawing.Point(4, 29);
-            this.tbpgVer.Name = "tbpgVer";
-            this.tbpgVer.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgVer.Size = new System.Drawing.Size(740, 519);
-            this.tbpgVer.TabIndex = 3;
-            this.tbpgVer.Text = "Ver deportes cargados";
-            this.tbpgVer.UseVisualStyleBackColor = true;
+            this.btnCancelarMod.Location = new System.Drawing.Point(558, 143);
+            this.btnCancelarMod.Name = "btnCancelarMod";
+            this.btnCancelarMod.Size = new System.Drawing.Size(94, 29);
+            this.btnCancelarMod.TabIndex = 12;
+            this.btnCancelarMod.Text = "Cancelar";
+            this.btnCancelarMod.UseVisualStyleBackColor = true;
             // 
-            // tbmodificar
+            // btnAceptarMod
             // 
-            this.tbmodificar.Location = new System.Drawing.Point(4, 29);
-            this.tbmodificar.Name = "tbmodificar";
-            this.tbmodificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbmodificar.Size = new System.Drawing.Size(740, 519);
-            this.tbmodificar.TabIndex = 4;
-            this.tbmodificar.Text = "Modificar Equipo";
-            this.tbmodificar.UseVisualStyleBackColor = true;
+            this.btnAceptarMod.Location = new System.Drawing.Point(558, 78);
+            this.btnAceptarMod.Name = "btnAceptarMod";
+            this.btnAceptarMod.Size = new System.Drawing.Size(94, 29);
+            this.btnAceptarMod.TabIndex = 11;
+            this.btnAceptarMod.Text = "Aceptar";
+            this.btnAceptarMod.UseVisualStyleBackColor = true;
             // 
-            // btnAceptar
+            // lblModJuego
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(44, 393);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(94, 29);
-            this.btnAceptar.TabIndex = 10;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.lblModJuego.AutoSize = true;
+            this.lblModJuego.Location = new System.Drawing.Point(195, 259);
+            this.lblModJuego.Name = "lblModJuego";
+            this.lblModJuego.Size = new System.Drawing.Size(65, 20);
+            this.lblModJuego.TabIndex = 10;
+            this.lblModJuego.Text = "Solitario";
             // 
-            // btnCancelar
+            // txtMpuntuacion
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(44, 449);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 29);
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.txtMpuntuacion.Location = new System.Drawing.Point(230, 201);
+            this.txtMpuntuacion.Name = "txtMpuntuacion";
+            this.txtMpuntuacion.Size = new System.Drawing.Size(267, 27);
+            this.txtMpuntuacion.TabIndex = 9;
             // 
-            // paneBuscarDeporte
+            // txtMDuracion
             // 
-            this.paneBuscarDeporte.Controls.Add(this.btnBuscar);
-            this.paneBuscarDeporte.Controls.Add(this.txtIDeporte);
-            this.paneBuscarDeporte.Controls.Add(this.lblIDeporte);
-            this.paneBuscarDeporte.Location = new System.Drawing.Point(24, 22);
-            this.paneBuscarDeporte.Name = "paneBuscarDeporte";
-            this.paneBuscarDeporte.Size = new System.Drawing.Size(679, 142);
-            this.paneBuscarDeporte.TabIndex = 0;
+            this.txtMDuracion.Location = new System.Drawing.Point(230, 147);
+            this.txtMDuracion.Name = "txtMDuracion";
+            this.txtMDuracion.Size = new System.Drawing.Size(267, 27);
+            this.txtMDuracion.TabIndex = 8;
             // 
-            // lblIDeporte
+            // txtMCategoria
             // 
-            this.lblIDeporte.AutoSize = true;
-            this.lblIDeporte.Location = new System.Drawing.Point(41, 34);
-            this.lblIDeporte.Name = "lblIDeporte";
-            this.lblIDeporte.Size = new System.Drawing.Size(88, 20);
-            this.lblIDeporte.TabIndex = 0;
-            this.lblIDeporte.Text = "ID deporte: ";
+            this.txtMCategoria.Location = new System.Drawing.Point(230, 97);
+            this.txtMCategoria.Name = "txtMCategoria";
+            this.txtMCategoria.Size = new System.Drawing.Size(267, 27);
+            this.txtMCategoria.TabIndex = 7;
             // 
-            // txtIDeporte
+            // txtMnombre
             // 
-            this.txtIDeporte.Location = new System.Drawing.Point(262, 34);
-            this.txtIDeporte.Name = "txtIDeporte";
-            this.txtIDeporte.Size = new System.Drawing.Size(213, 27);
-            this.txtIDeporte.TabIndex = 1;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(149, 96);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(94, 29);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnCancelarMod);
-            this.panel1.Controls.Add(this.btnAceptarMod);
-            this.panel1.Controls.Add(this.lblModJuego);
-            this.panel1.Controls.Add(this.txtMpuntuacion);
-            this.panel1.Controls.Add(this.txtMDuracion);
-            this.panel1.Controls.Add(this.txtMCategoria);
-            this.panel1.Controls.Add(this.txtMnombre);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lblMModJuego);
-            this.panel1.Controls.Add(this.lblMPuntuacion);
-            this.panel1.Controls.Add(this.lblMDuracion);
-            this.panel1.Controls.Add(this.lblMCategoria);
-            this.panel1.Controls.Add(this.lblMNombre);
-            this.panel1.Location = new System.Drawing.Point(24, 170);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 343);
-            this.panel1.TabIndex = 1;
-            // 
-            // lblMNombre
-            // 
-            this.lblMNombre.AutoSize = true;
-            this.lblMNombre.Location = new System.Drawing.Point(30, 40);
-            this.lblMNombre.Name = "lblMNombre";
-            this.lblMNombre.Size = new System.Drawing.Size(71, 20);
-            this.lblMNombre.TabIndex = 0;
-            this.lblMNombre.Text = "Nombre: ";
-            // 
-            // lblMCategoria
-            // 
-            this.lblMCategoria.AutoSize = true;
-            this.lblMCategoria.Location = new System.Drawing.Point(30, 97);
-            this.lblMCategoria.Name = "lblMCategoria";
-            this.lblMCategoria.Size = new System.Drawing.Size(81, 20);
-            this.lblMCategoria.TabIndex = 1;
-            this.lblMCategoria.Text = "Categoria: ";
-            // 
-            // lblMDuracion
-            // 
-            this.lblMDuracion.AutoSize = true;
-            this.lblMDuracion.Location = new System.Drawing.Point(32, 147);
-            this.lblMDuracion.Name = "lblMDuracion";
-            this.lblMDuracion.Size = new System.Drawing.Size(76, 20);
-            this.lblMDuracion.TabIndex = 2;
-            this.lblMDuracion.Text = "Duracion: ";
-            // 
-            // lblMPuntuacion
-            // 
-            this.lblMPuntuacion.AutoSize = true;
-            this.lblMPuntuacion.Location = new System.Drawing.Point(32, 201);
-            this.lblMPuntuacion.Name = "lblMPuntuacion";
-            this.lblMPuntuacion.Size = new System.Drawing.Size(89, 20);
-            this.lblMPuntuacion.TabIndex = 3;
-            this.lblMPuntuacion.Text = "Puntuacion: ";
-            // 
-            // lblMModJuego
-            // 
-            this.lblMModJuego.AutoSize = true;
-            this.lblMModJuego.Location = new System.Drawing.Point(32, 259);
-            this.lblMModJuego.Name = "lblMModJuego";
-            this.lblMModJuego.Size = new System.Drawing.Size(116, 20);
-            this.lblMModJuego.TabIndex = 4;
-            this.lblMModJuego.Text = "Modo de Juego:";
+            this.txtMnombre.Location = new System.Drawing.Point(230, 40);
+            this.txtMnombre.Name = "txtMnombre";
+            this.txtMnombre.Size = new System.Drawing.Size(267, 27);
+            this.txtMnombre.TabIndex = 6;
             // 
             // panel2
             // 
@@ -488,15 +430,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(316, 91);
             this.panel2.TabIndex = 5;
-            // 
-            // lblMCantidadJ
-            // 
-            this.lblMCantidadJ.AutoSize = true;
-            this.lblMCantidadJ.Location = new System.Drawing.Point(3, 34);
-            this.lblMCantidadJ.Name = "lblMCantidadJ";
-            this.lblMCantidadJ.Size = new System.Drawing.Size(168, 20);
-            this.lblMCantidadJ.TabIndex = 0;
-            this.lblMCantidadJ.Text = "Cantidad de Jugadores: ";
             // 
             // cmboxMcantJugadores
             // 
@@ -557,70 +490,123 @@
             this.cmboxMcantJugadores.Size = new System.Drawing.Size(124, 28);
             this.cmboxMcantJugadores.TabIndex = 4;
             // 
-            // txtMnombre
+            // lblMCantidadJ
             // 
-            this.txtMnombre.Location = new System.Drawing.Point(230, 40);
-            this.txtMnombre.Name = "txtMnombre";
-            this.txtMnombre.Size = new System.Drawing.Size(267, 27);
-            this.txtMnombre.TabIndex = 6;
+            this.lblMCantidadJ.AutoSize = true;
+            this.lblMCantidadJ.Location = new System.Drawing.Point(3, 34);
+            this.lblMCantidadJ.Name = "lblMCantidadJ";
+            this.lblMCantidadJ.Size = new System.Drawing.Size(168, 20);
+            this.lblMCantidadJ.TabIndex = 0;
+            this.lblMCantidadJ.Text = "Cantidad de Jugadores: ";
             // 
-            // txtMCategoria
+            // lblMModJuego
             // 
-            this.txtMCategoria.Location = new System.Drawing.Point(230, 97);
-            this.txtMCategoria.Name = "txtMCategoria";
-            this.txtMCategoria.Size = new System.Drawing.Size(267, 27);
-            this.txtMCategoria.TabIndex = 7;
+            this.lblMModJuego.AutoSize = true;
+            this.lblMModJuego.Location = new System.Drawing.Point(32, 259);
+            this.lblMModJuego.Name = "lblMModJuego";
+            this.lblMModJuego.Size = new System.Drawing.Size(116, 20);
+            this.lblMModJuego.TabIndex = 4;
+            this.lblMModJuego.Text = "Modo de Juego:";
             // 
-            // txtMDuracion
+            // lblMPuntuacion
             // 
-            this.txtMDuracion.Location = new System.Drawing.Point(230, 147);
-            this.txtMDuracion.Name = "txtMDuracion";
-            this.txtMDuracion.Size = new System.Drawing.Size(267, 27);
-            this.txtMDuracion.TabIndex = 8;
+            this.lblMPuntuacion.AutoSize = true;
+            this.lblMPuntuacion.Location = new System.Drawing.Point(32, 201);
+            this.lblMPuntuacion.Name = "lblMPuntuacion";
+            this.lblMPuntuacion.Size = new System.Drawing.Size(89, 20);
+            this.lblMPuntuacion.TabIndex = 3;
+            this.lblMPuntuacion.Text = "Puntuacion: ";
             // 
-            // txtMpuntuacion
+            // lblMDuracion
             // 
-            this.txtMpuntuacion.Location = new System.Drawing.Point(230, 201);
-            this.txtMpuntuacion.Name = "txtMpuntuacion";
-            this.txtMpuntuacion.Size = new System.Drawing.Size(267, 27);
-            this.txtMpuntuacion.TabIndex = 9;
+            this.lblMDuracion.AutoSize = true;
+            this.lblMDuracion.Location = new System.Drawing.Point(32, 147);
+            this.lblMDuracion.Name = "lblMDuracion";
+            this.lblMDuracion.Size = new System.Drawing.Size(76, 20);
+            this.lblMDuracion.TabIndex = 2;
+            this.lblMDuracion.Text = "Duracion: ";
             // 
-            // lblModJuego
+            // lblMCategoria
             // 
-            this.lblModJuego.AutoSize = true;
-            this.lblModJuego.Location = new System.Drawing.Point(195, 259);
-            this.lblModJuego.Name = "lblModJuego";
-            this.lblModJuego.Size = new System.Drawing.Size(65, 20);
-            this.lblModJuego.TabIndex = 10;
-            this.lblModJuego.Text = "Solitario";
+            this.lblMCategoria.AutoSize = true;
+            this.lblMCategoria.Location = new System.Drawing.Point(30, 97);
+            this.lblMCategoria.Name = "lblMCategoria";
+            this.lblMCategoria.Size = new System.Drawing.Size(81, 20);
+            this.lblMCategoria.TabIndex = 1;
+            this.lblMCategoria.Text = "Categoria: ";
             // 
-            // btnAceptarMod
+            // lblMNombre
             // 
-            this.btnAceptarMod.Location = new System.Drawing.Point(558, 78);
-            this.btnAceptarMod.Name = "btnAceptarMod";
-            this.btnAceptarMod.Size = new System.Drawing.Size(94, 29);
-            this.btnAceptarMod.TabIndex = 11;
-            this.btnAceptarMod.Text = "Aceptar";
-            this.btnAceptarMod.UseVisualStyleBackColor = true;
+            this.lblMNombre.AutoSize = true;
+            this.lblMNombre.Location = new System.Drawing.Point(30, 40);
+            this.lblMNombre.Name = "lblMNombre";
+            this.lblMNombre.Size = new System.Drawing.Size(71, 20);
+            this.lblMNombre.TabIndex = 0;
+            this.lblMNombre.Text = "Nombre: ";
             // 
-            // btnCancelarMod
+            // paneBuscarDeporte
             // 
-            this.btnCancelarMod.Location = new System.Drawing.Point(558, 143);
-            this.btnCancelarMod.Name = "btnCancelarMod";
-            this.btnCancelarMod.Size = new System.Drawing.Size(94, 29);
-            this.btnCancelarMod.TabIndex = 12;
-            this.btnCancelarMod.Text = "Cancelar";
-            this.btnCancelarMod.UseVisualStyleBackColor = true;
+            this.paneBuscarDeporte.Controls.Add(this.btnBuscar);
+            this.paneBuscarDeporte.Controls.Add(this.txtIDeporte);
+            this.paneBuscarDeporte.Controls.Add(this.lblIDeporte);
+            this.paneBuscarDeporte.Location = new System.Drawing.Point(24, 22);
+            this.paneBuscarDeporte.Name = "paneBuscarDeporte";
+            this.paneBuscarDeporte.Size = new System.Drawing.Size(679, 142);
+            this.paneBuscarDeporte.TabIndex = 0;
             // 
-            // panel3
+            // btnBuscar
             // 
-            this.panel3.Controls.Add(this.cmboxDeportes);
-            this.panel3.Controls.Add(this.btnEliminar);
-            this.panel3.Controls.Add(this.lblEdeporte);
-            this.panel3.Location = new System.Drawing.Point(34, 176);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(679, 142);
-            this.panel3.TabIndex = 1;
+            this.btnBuscar.Location = new System.Drawing.Point(149, 96);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(94, 29);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtIDeporte
+            // 
+            this.txtIDeporte.Location = new System.Drawing.Point(262, 34);
+            this.txtIDeporte.Name = "txtIDeporte";
+            this.txtIDeporte.Size = new System.Drawing.Size(213, 27);
+            this.txtIDeporte.TabIndex = 1;
+            // 
+            // lblIDeporte
+            // 
+            this.lblIDeporte.AutoSize = true;
+            this.lblIDeporte.Location = new System.Drawing.Point(41, 34);
+            this.lblIDeporte.Name = "lblIDeporte";
+            this.lblIDeporte.Size = new System.Drawing.Size(88, 20);
+            this.lblIDeporte.TabIndex = 0;
+            this.lblIDeporte.Text = "ID deporte: ";
+            // 
+            // tbpgEliminar
+            // 
+            this.tbpgEliminar.Controls.Add(this.paneEliminar);
+            this.tbpgEliminar.Location = new System.Drawing.Point(4, 29);
+            this.tbpgEliminar.Name = "tbpgEliminar";
+            this.tbpgEliminar.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpgEliminar.Size = new System.Drawing.Size(740, 519);
+            this.tbpgEliminar.TabIndex = 2;
+            this.tbpgEliminar.Text = "Eliminar Deporte";
+            this.tbpgEliminar.UseVisualStyleBackColor = true;
+            // 
+            // paneEliminar
+            // 
+            this.paneEliminar.Controls.Add(this.cmboxDeportes);
+            this.paneEliminar.Controls.Add(this.btnEliminar);
+            this.paneEliminar.Controls.Add(this.lblEdeporte);
+            this.paneEliminar.Location = new System.Drawing.Point(34, 176);
+            this.paneEliminar.Name = "paneEliminar";
+            this.paneEliminar.Size = new System.Drawing.Size(679, 142);
+            this.paneEliminar.TabIndex = 1;
+            // 
+            // cmboxDeportes
+            // 
+            this.cmboxDeportes.FormattingEnabled = true;
+            this.cmboxDeportes.Location = new System.Drawing.Point(260, 44);
+            this.cmboxDeportes.Name = "cmboxDeportes";
+            this.cmboxDeportes.Size = new System.Drawing.Size(313, 28);
+            this.cmboxDeportes.TabIndex = 3;
             // 
             // btnEliminar
             // 
@@ -640,31 +626,35 @@
             this.lblEdeporte.TabIndex = 0;
             this.lblEdeporte.Text = "ID deporte: ";
             // 
-            // cmboxDeportes
+            // tbpgVer
             // 
-            this.cmboxDeportes.FormattingEnabled = true;
-            this.cmboxDeportes.Location = new System.Drawing.Point(260, 44);
-            this.cmboxDeportes.Name = "cmboxDeportes";
-            this.cmboxDeportes.Size = new System.Drawing.Size(313, 28);
-            this.cmboxDeportes.TabIndex = 3;
+            this.tbpgVer.Controls.Add(this.paneVerResultado);
+            this.tbpgVer.Controls.Add(this.paneVer);
+            this.tbpgVer.Location = new System.Drawing.Point(4, 29);
+            this.tbpgVer.Name = "tbpgVer";
+            this.tbpgVer.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpgVer.Size = new System.Drawing.Size(740, 519);
+            this.tbpgVer.TabIndex = 3;
+            this.tbpgVer.Text = "Ver deportes cargados";
+            this.tbpgVer.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // paneVerResultado
             // 
-            this.panel4.Controls.Add(this.lblVerModoDeJuego);
-            this.panel4.Controls.Add(this.txtVerPuntuacion);
-            this.panel4.Controls.Add(this.txtVerDuracion);
-            this.panel4.Controls.Add(this.txtVerCategoria);
-            this.panel4.Controls.Add(this.txtVerNombre);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.lblVerModoJuego);
-            this.panel4.Controls.Add(this.lblVerPuntuacion);
-            this.panel4.Controls.Add(this.lblVerDuracion);
-            this.panel4.Controls.Add(this.lblVerCategoria);
-            this.panel4.Controls.Add(this.lblVerNombre);
-            this.panel4.Location = new System.Drawing.Point(31, 162);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(679, 343);
-            this.panel4.TabIndex = 3;
+            this.paneVerResultado.Controls.Add(this.lblVerModoDeJuego);
+            this.paneVerResultado.Controls.Add(this.txtVerPuntuacion);
+            this.paneVerResultado.Controls.Add(this.txtVerDuracion);
+            this.paneVerResultado.Controls.Add(this.txtVerCategoria);
+            this.paneVerResultado.Controls.Add(this.txtVerNombre);
+            this.paneVerResultado.Controls.Add(this.panel5);
+            this.paneVerResultado.Controls.Add(this.lblVerModoJuego);
+            this.paneVerResultado.Controls.Add(this.lblVerPuntuacion);
+            this.paneVerResultado.Controls.Add(this.lblVerDuracion);
+            this.paneVerResultado.Controls.Add(this.lblVerCategoria);
+            this.paneVerResultado.Controls.Add(this.lblVerNombre);
+            this.paneVerResultado.Location = new System.Drawing.Point(31, 162);
+            this.paneVerResultado.Name = "paneVerResultado";
+            this.paneVerResultado.Size = new System.Drawing.Size(679, 343);
+            this.paneVerResultado.TabIndex = 3;
             // 
             // lblVerModoDeJuego
             // 
@@ -711,6 +701,13 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(316, 91);
             this.panel5.TabIndex = 5;
+            // 
+            // txtVerCantidadJugadores
+            // 
+            this.txtVerCantidadJugadores.Location = new System.Drawing.Point(209, 31);
+            this.txtVerCantidadJugadores.Name = "txtVerCantidadJugadores";
+            this.txtVerCantidadJugadores.Size = new System.Drawing.Size(93, 27);
+            this.txtVerCantidadJugadores.TabIndex = 1;
             // 
             // lblVerCantidadJugadores
             // 
@@ -766,15 +763,23 @@
             this.lblVerNombre.TabIndex = 0;
             this.lblVerNombre.Text = "Nombre: ";
             // 
-            // panel6
+            // paneVer
             // 
-            this.panel6.Controls.Add(this.cmboxIDdeporte);
-            this.panel6.Controls.Add(this.btnVER);
-            this.panel6.Controls.Add(this.lblIDVerdeporte);
-            this.panel6.Location = new System.Drawing.Point(31, 14);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(679, 142);
-            this.panel6.TabIndex = 2;
+            this.paneVer.Controls.Add(this.cmboxIDdeporte);
+            this.paneVer.Controls.Add(this.btnVER);
+            this.paneVer.Controls.Add(this.lblIDVerdeporte);
+            this.paneVer.Location = new System.Drawing.Point(31, 14);
+            this.paneVer.Name = "paneVer";
+            this.paneVer.Size = new System.Drawing.Size(679, 142);
+            this.paneVer.TabIndex = 2;
+            // 
+            // cmboxIDdeporte
+            // 
+            this.cmboxIDdeporte.FormattingEnabled = true;
+            this.cmboxIDdeporte.Location = new System.Drawing.Point(230, 34);
+            this.cmboxIDdeporte.Name = "cmboxIDdeporte";
+            this.cmboxIDdeporte.Size = new System.Drawing.Size(391, 28);
+            this.cmboxIDdeporte.TabIndex = 3;
             // 
             // btnVER
             // 
@@ -794,20 +799,15 @@
             this.lblIDVerdeporte.TabIndex = 0;
             this.lblIDVerdeporte.Text = "ID deporte: ";
             // 
-            // cmboxIDdeporte
+            // tbmodificar
             // 
-            this.cmboxIDdeporte.FormattingEnabled = true;
-            this.cmboxIDdeporte.Location = new System.Drawing.Point(230, 34);
-            this.cmboxIDdeporte.Name = "cmboxIDdeporte";
-            this.cmboxIDdeporte.Size = new System.Drawing.Size(391, 28);
-            this.cmboxIDdeporte.TabIndex = 3;
-            // 
-            // txtVerCantidadJugadores
-            // 
-            this.txtVerCantidadJugadores.Location = new System.Drawing.Point(209, 31);
-            this.txtVerCantidadJugadores.Name = "txtVerCantidadJugadores";
-            this.txtVerCantidadJugadores.Size = new System.Drawing.Size(93, 27);
-            this.txtVerCantidadJugadores.TabIndex = 1;
+            this.tbmodificar.Location = new System.Drawing.Point(4, 29);
+            this.tbmodificar.Name = "tbmodificar";
+            this.tbmodificar.Padding = new System.Windows.Forms.Padding(3);
+            this.tbmodificar.Size = new System.Drawing.Size(740, 519);
+            this.tbmodificar.TabIndex = 4;
+            this.tbmodificar.Text = "Modificar Equipo";
+            this.tbmodificar.UseVisualStyleBackColor = true;
             // 
             // GestionarDeportes
             // 
@@ -815,7 +815,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 554);
             this.Controls.Add(this.tbpgGestionDeporte);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionarDeportes";
+            this.ShowInTaskbar = false;
             this.Text = "GestionarDeportes";
             this.Load += new System.EventHandler(this.GestionarDeportes_Load);
             this.tbpgGestionDeporte.ResumeLayout(false);
@@ -826,22 +829,22 @@
             this.gboxModo.ResumeLayout(false);
             this.gboxModo.PerformLayout();
             this.tbpgModificar.ResumeLayout(false);
-            this.tbpgEliminar.ResumeLayout(false);
-            this.tbpgVer.ResumeLayout(false);
-            this.paneBuscarDeporte.ResumeLayout(false);
-            this.paneBuscarDeporte.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.paneResultadoModificar.ResumeLayout(false);
+            this.paneResultadoModificar.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.paneBuscarDeporte.ResumeLayout(false);
+            this.paneBuscarDeporte.PerformLayout();
+            this.tbpgEliminar.ResumeLayout(false);
+            this.paneEliminar.ResumeLayout(false);
+            this.paneEliminar.PerformLayout();
+            this.tbpgVer.ResumeLayout(false);
+            this.paneVerResultado.ResumeLayout(false);
+            this.paneVerResultado.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.paneVer.ResumeLayout(false);
+            this.paneVer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -874,7 +877,7 @@
         private TextBox txtIDeporte;
         private Label lblIDeporte;
         private Button btnBuscar;
-        private Panel panel1;
+        private Panel paneResultadoModificar;
         private Label lblModJuego;
         private TextBox txtMpuntuacion;
         private TextBox txtMDuracion;
@@ -890,11 +893,11 @@
         private Label lblMNombre;
         private Button btnCancelarMod;
         private Button btnAceptarMod;
-        private Panel panel3;
+        private Panel paneEliminar;
         private ComboBox cmboxDeportes;
         private Button btnEliminar;
         private Label lblEdeporte;
-        private Panel panel4;
+        private Panel paneVerResultado;
         private Label lblVerModoDeJuego;
         private TextBox txtVerPuntuacion;
         private TextBox txtVerDuracion;
@@ -908,7 +911,7 @@
         private Label lblVerDuracion;
         private Label lblVerCategoria;
         private Label lblVerNombre;
-        private Panel panel6;
+        private Panel paneVer;
         private ComboBox cmboxIDdeporte;
         private Button btnVER;
         private Label lblIDVerdeporte;

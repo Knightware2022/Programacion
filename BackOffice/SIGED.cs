@@ -19,8 +19,9 @@ namespace BackOffice
 
         private void SIGED_Load(object sender, EventArgs e)
         {
-            picbxImagenHome.Image =  System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\ProyectoProg\HOME.png");
+            picbxImagenHome.Image =  System.Drawing.Image.FromFile(@"C:\Users\User\Desktop\ApiA\HOME.png");
             this.IsMdiContainer = true;
+            
             
         }
 
