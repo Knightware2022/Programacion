@@ -30,22 +30,24 @@
         {
             this.tbcGestionUsuarios = new System.Windows.Forms.TabControl();
             this.tbpgMostrarUsuarios = new System.Windows.Forms.TabPage();
-            this.rbpgEliminar = new System.Windows.Forms.TabPage();
-            this.lblIDusuario = new System.Windows.Forms.Label();
-            this.cmboxIDusuarios = new System.Windows.Forms.ComboBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.lblAntiguedad = new System.Windows.Forms.Label();
-            this.lblDeportesFavoritos = new System.Windows.Forms.Label();
-            this.btnMostrar = new System.Windows.Forms.Button();
-            this.cmboxDeportesFavoritos = new System.Windows.Forms.ComboBox();
-            this.txtTiempoSuscripto = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtTiempoSuscripto = new System.Windows.Forms.TextBox();
+            this.cmboxDeportesFavoritos = new System.Windows.Forms.ComboBox();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            this.lblDeportesFavoritos = new System.Windows.Forms.Label();
+            this.lblAntiguedad = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.cmboxIDusuarios = new System.Windows.Forms.ComboBox();
+            this.lblIDusuario = new System.Windows.Forms.Label();
+            this.rbpgEliminar = new System.Windows.Forms.TabPage();
             this.paneEliminarU = new System.Windows.Forms.Panel();
-            this.lblID = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.txtIDaEliminar = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblID = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnCerrarII = new System.Windows.Forms.Button();
             this.tbcGestionUsuarios.SuspendLayout();
             this.tbpgMostrarUsuarios.SuspendLayout();
             this.rbpgEliminar.SuspendLayout();
@@ -64,6 +66,7 @@
             // 
             // tbpgMostrarUsuarios
             // 
+            this.tbpgMostrarUsuarios.Controls.Add(this.btnCerrar);
             this.tbpgMostrarUsuarios.Controls.Add(this.textBox1);
             this.tbpgMostrarUsuarios.Controls.Add(this.txtCorreo);
             this.tbpgMostrarUsuarios.Controls.Add(this.txtTiempoSuscripto);
@@ -83,69 +86,34 @@
             this.tbpgMostrarUsuarios.Text = "Mostrar usuarios";
             this.tbpgMostrarUsuarios.UseVisualStyleBackColor = true;
             // 
-            // rbpgEliminar
+            // textBox1
             // 
-            this.rbpgEliminar.Controls.Add(this.paneEliminarU);
-            this.rbpgEliminar.Location = new System.Drawing.Point(4, 25);
-            this.rbpgEliminar.Name = "rbpgEliminar";
-            this.rbpgEliminar.Padding = new System.Windows.Forms.Padding(3);
-            this.rbpgEliminar.Size = new System.Drawing.Size(731, 549);
-            this.rbpgEliminar.TabIndex = 1;
-            this.rbpgEliminar.Text = "Eliminar Usuario";
-            this.rbpgEliminar.UseVisualStyleBackColor = true;
+            this.textBox1.Location = new System.Drawing.Point(375, 230);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(212, 22);
+            this.textBox1.TabIndex = 10;
             // 
-            // lblIDusuario
+            // txtCorreo
             // 
-            this.lblIDusuario.AutoSize = true;
-            this.lblIDusuario.Location = new System.Drawing.Point(108, 55);
-            this.lblIDusuario.Name = "lblIDusuario";
-            this.lblIDusuario.Size = new System.Drawing.Size(80, 17);
-            this.lblIDusuario.TabIndex = 0;
-            this.lblIDusuario.Text = "ID usuario: ";
+            this.txtCorreo.Location = new System.Drawing.Point(375, 300);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(212, 22);
+            this.txtCorreo.TabIndex = 9;
             // 
-            // cmboxIDusuarios
+            // txtTiempoSuscripto
             // 
-            this.cmboxIDusuarios.FormattingEnabled = true;
-            this.cmboxIDusuarios.Location = new System.Drawing.Point(299, 52);
-            this.cmboxIDusuarios.Name = "cmboxIDusuarios";
-            this.cmboxIDusuarios.Size = new System.Drawing.Size(212, 24);
-            this.cmboxIDusuarios.TabIndex = 1;
+            this.txtTiempoSuscripto.Location = new System.Drawing.Point(375, 369);
+            this.txtTiempoSuscripto.Name = "txtTiempoSuscripto";
+            this.txtTiempoSuscripto.Size = new System.Drawing.Size(212, 22);
+            this.txtTiempoSuscripto.TabIndex = 8;
             // 
-            // lblNombre
+            // cmboxDeportesFavoritos
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(112, 230);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(137, 17);
-            this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Nombre de usuario: ";
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(111, 305);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(128, 17);
-            this.lblCorreo.TabIndex = 3;
-            this.lblCorreo.Text = "Correo electrónico:";
-            // 
-            // lblAntiguedad
-            // 
-            this.lblAntiguedad.AutoSize = true;
-            this.lblAntiguedad.Location = new System.Drawing.Point(112, 374);
-            this.lblAntiguedad.Name = "lblAntiguedad";
-            this.lblAntiguedad.Size = new System.Drawing.Size(116, 17);
-            this.lblAntiguedad.TabIndex = 4;
-            this.lblAntiguedad.Text = "Tiempo suscripto";
-            // 
-            // lblDeportesFavoritos
-            // 
-            this.lblDeportesFavoritos.AutoSize = true;
-            this.lblDeportesFavoritos.Location = new System.Drawing.Point(112, 449);
-            this.lblDeportesFavoritos.Name = "lblDeportesFavoritos";
-            this.lblDeportesFavoritos.Size = new System.Drawing.Size(124, 17);
-            this.lblDeportesFavoritos.TabIndex = 5;
-            this.lblDeportesFavoritos.Text = "Deportes favoritos";
+            this.cmboxDeportesFavoritos.FormattingEnabled = true;
+            this.cmboxDeportesFavoritos.Location = new System.Drawing.Point(375, 449);
+            this.cmboxDeportesFavoritos.Name = "cmboxDeportesFavoritos";
+            this.cmboxDeportesFavoritos.Size = new System.Drawing.Size(212, 24);
+            this.cmboxDeportesFavoritos.TabIndex = 7;
             // 
             // btnMostrar
             // 
@@ -156,34 +124,70 @@
             this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseVisualStyleBackColor = true;
             // 
-            // cmboxDeportesFavoritos
+            // lblDeportesFavoritos
             // 
-            this.cmboxDeportesFavoritos.FormattingEnabled = true;
-            this.cmboxDeportesFavoritos.Location = new System.Drawing.Point(375, 449);
-            this.cmboxDeportesFavoritos.Name = "cmboxDeportesFavoritos";
-            this.cmboxDeportesFavoritos.Size = new System.Drawing.Size(212, 24);
-            this.cmboxDeportesFavoritos.TabIndex = 7;
+            this.lblDeportesFavoritos.AutoSize = true;
+            this.lblDeportesFavoritos.Location = new System.Drawing.Point(112, 449);
+            this.lblDeportesFavoritos.Name = "lblDeportesFavoritos";
+            this.lblDeportesFavoritos.Size = new System.Drawing.Size(124, 17);
+            this.lblDeportesFavoritos.TabIndex = 5;
+            this.lblDeportesFavoritos.Text = "Deportes favoritos";
             // 
-            // txtTiempoSuscripto
+            // lblAntiguedad
             // 
-            this.txtTiempoSuscripto.Location = new System.Drawing.Point(375, 369);
-            this.txtTiempoSuscripto.Name = "txtTiempoSuscripto";
-            this.txtTiempoSuscripto.Size = new System.Drawing.Size(212, 22);
-            this.txtTiempoSuscripto.TabIndex = 8;
+            this.lblAntiguedad.AutoSize = true;
+            this.lblAntiguedad.Location = new System.Drawing.Point(112, 374);
+            this.lblAntiguedad.Name = "lblAntiguedad";
+            this.lblAntiguedad.Size = new System.Drawing.Size(116, 17);
+            this.lblAntiguedad.TabIndex = 4;
+            this.lblAntiguedad.Text = "Tiempo suscripto";
             // 
-            // txtCorreo
+            // lblCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(375, 300);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(212, 22);
-            this.txtCorreo.TabIndex = 9;
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Location = new System.Drawing.Point(111, 305);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(128, 17);
+            this.lblCorreo.TabIndex = 3;
+            this.lblCorreo.Text = "Correo electrónico:";
             // 
-            // textBox1
+            // lblNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(375, 230);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 22);
-            this.textBox1.TabIndex = 10;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(112, 230);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(137, 17);
+            this.lblNombre.TabIndex = 2;
+            this.lblNombre.Text = "Nombre de usuario: ";
+            // 
+            // cmboxIDusuarios
+            // 
+            this.cmboxIDusuarios.FormattingEnabled = true;
+            this.cmboxIDusuarios.Location = new System.Drawing.Point(299, 52);
+            this.cmboxIDusuarios.Name = "cmboxIDusuarios";
+            this.cmboxIDusuarios.Size = new System.Drawing.Size(212, 24);
+            this.cmboxIDusuarios.TabIndex = 1;
+            // 
+            // lblIDusuario
+            // 
+            this.lblIDusuario.AutoSize = true;
+            this.lblIDusuario.Location = new System.Drawing.Point(108, 55);
+            this.lblIDusuario.Name = "lblIDusuario";
+            this.lblIDusuario.Size = new System.Drawing.Size(80, 17);
+            this.lblIDusuario.TabIndex = 0;
+            this.lblIDusuario.Text = "ID usuario: ";
+            // 
+            // rbpgEliminar
+            // 
+            this.rbpgEliminar.Controls.Add(this.btnCerrarII);
+            this.rbpgEliminar.Controls.Add(this.paneEliminarU);
+            this.rbpgEliminar.Location = new System.Drawing.Point(4, 25);
+            this.rbpgEliminar.Name = "rbpgEliminar";
+            this.rbpgEliminar.Padding = new System.Windows.Forms.Padding(3);
+            this.rbpgEliminar.Size = new System.Drawing.Size(731, 549);
+            this.rbpgEliminar.TabIndex = 1;
+            this.rbpgEliminar.Text = "Eliminar Usuario";
+            this.rbpgEliminar.UseVisualStyleBackColor = true;
             // 
             // paneEliminarU
             // 
@@ -195,14 +199,12 @@
             this.paneEliminarU.Size = new System.Drawing.Size(620, 203);
             this.paneEliminarU.TabIndex = 0;
             // 
-            // lblID
+            // txtIDaEliminar
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(57, 69);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(165, 17);
-            this.lblID.TabIndex = 0;
-            this.lblID.Text = "ID de usuario a eliminar: ";
+            this.txtIDaEliminar.Location = new System.Drawing.Point(291, 66);
+            this.txtIDaEliminar.Name = "txtIDaEliminar";
+            this.txtIDaEliminar.Size = new System.Drawing.Size(260, 22);
+            this.txtIDaEliminar.TabIndex = 2;
             // 
             // btnEliminar
             // 
@@ -213,12 +215,34 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // txtIDaEliminar
+            // lblID
             // 
-            this.txtIDaEliminar.Location = new System.Drawing.Point(291, 66);
-            this.txtIDaEliminar.Name = "txtIDaEliminar";
-            this.txtIDaEliminar.Size = new System.Drawing.Size(260, 22);
-            this.txtIDaEliminar.TabIndex = 2;
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(57, 69);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(165, 17);
+            this.lblID.TabIndex = 0;
+            this.lblID.Text = "ID de usuario a eliminar: ";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(674, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(57, 26);
+            this.btnCerrar.TabIndex = 11;
+            this.btnCerrar.Text = "cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnCerrarII
+            // 
+            this.btnCerrarII.Location = new System.Drawing.Point(679, 0);
+            this.btnCerrarII.Name = "btnCerrarII";
+            this.btnCerrarII.Size = new System.Drawing.Size(52, 25);
+            this.btnCerrarII.TabIndex = 1;
+            this.btnCerrarII.Text = "cerrar";
+            this.btnCerrarII.UseVisualStyleBackColor = true;
+            this.btnCerrarII.Click += new System.EventHandler(this.btnCerrarII_Click);
             // 
             // GestionarUsuarios
             // 
@@ -226,6 +250,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 580);
             this.Controls.Add(this.tbcGestionUsuarios);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionarUsuarios";
             this.Text = "GestionarUsuarios";
             this.tbcGestionUsuarios.ResumeLayout(false);
@@ -258,5 +283,7 @@
         private System.Windows.Forms.TextBox txtIDaEliminar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnCerrarII;
     }
 }

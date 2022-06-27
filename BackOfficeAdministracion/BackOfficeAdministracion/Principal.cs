@@ -24,26 +24,41 @@ namespace BackOfficeAdministracion
 
         private void btnGestionarDeportes_Click(object sender, EventArgs e)
         {
+            this.paneVista.Hide();
+            Program.frmGestionarDeportes.Show();
             Program.frmGestionarDeportes.MdiParent = this;
             Program.frmGestionarDeportes.Location = this.paneVista.Location;
-            Program.frmGestionarDeportes.Show();
-            this.paneVista.Hide();
         }
 
         private void btnGestionarUsuarios_Click(object sender, EventArgs e)
         {
+            this.paneVista.Hide();
+            Program.frmGestionarUsuarios.Show();
             Program.frmGestionarUsuarios.MdiParent = this;
             Program.frmGestionarUsuarios.Location = this.paneVista.Location;
-            Program.frmGestionarUsuarios.Show();
-            this.paneVista.Hide();
         }
 
         private void btnGestionarEventos_Click(object sender, EventArgs e)
         {
+            this.paneVista.Hide();
+            Program.frmGestionarEventos.Show();
             Program.frmGestionarEventos.MdiParent = this;
             Program.frmGestionarEventos.Location = this.paneVista.Location;
-            Program.frmGestionarEventos.Show();
+            
+        }
+        
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
             this.paneVista.Hide();
+            Program.frmConfiguracion.Show();
+            Program.frmConfiguracion.MdiParent = this;
+            Program.frmConfiguracion.Location = this.paneVista.Location;
+           
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();//cierra todo
         }
     }
 }

@@ -11,6 +11,7 @@ namespace BackOfficeAdministracion
         public static GestionarEventos frmGestionarEventos;
         public static GestionarDeportes frmGestionarDeportes;
         public static GestionarUsuarios frmGestionarUsuarios;
+        public static Configuracion frmConfiguracion;
         public static Principal frmPrincipal;
 
         public static Login frmLogin;
@@ -22,6 +23,7 @@ namespace BackOfficeAdministracion
             frmGestionarEventos = new GestionarEventos();
             frmGestionarDeportes = new GestionarDeportes();
             frmGestionarUsuarios = new GestionarUsuarios();
+            frmConfiguracion = new Configuracion();
             frmPrincipal = new Principal();
             Application.Run(frmLogin = new Login());
         }

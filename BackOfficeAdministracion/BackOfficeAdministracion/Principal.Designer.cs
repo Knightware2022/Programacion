@@ -42,6 +42,7 @@
             this.btnVerResultados = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.paneVista = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.paneHerramientas.SuspendLayout();
             this.paneGestionarDeportes.SuspendLayout();
             this.paneGestionarUsuarios.SuspendLayout();
@@ -54,6 +55,7 @@
             // paneHerramientas
             // 
             this.paneHerramientas.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.paneHerramientas.Controls.Add(this.btnSalir);
             this.paneHerramientas.Controls.Add(this.paneConfiguracion);
             this.paneHerramientas.Controls.Add(this.paneVerResultados);
             this.paneHerramientas.Controls.Add(this.paneVerEventos);
@@ -175,6 +177,7 @@
             this.btnConfiguracion.TabIndex = 5;
             this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // paneVista
             // 
@@ -183,6 +186,16 @@
             this.paneVista.Name = "paneVista";
             this.paneVista.Size = new System.Drawing.Size(756, 627);
             this.paneVista.TabIndex = 1;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(100, 584);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(90, 23);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Principal
             // 
@@ -220,6 +233,7 @@
         private System.Windows.Forms.Button btnVerResultados;
         private System.Windows.Forms.Button btnVerEventos;
         private System.Windows.Forms.Button btnGestionarEventos;
-        private System.Windows.Forms.Panel paneVista;
+        public System.Windows.Forms.Panel paneVista;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

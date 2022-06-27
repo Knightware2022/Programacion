@@ -16,29 +16,35 @@ namespace BackOfficeAdministracion
         {
             InitializeComponent();
         }
+        private void cerrar() {
+            this.Hide();
+            Program.frmPrincipal.paneVista.Show();
+        }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void btnCerrarIIII_Click(object sender, EventArgs e)
         {
+            cerrar();
+        }
+
+        private void btnCerrarIII_Click(object sender, EventArgs e)
+        {
+            cerrar();
+        }
+
+        private void btnCerrarII_Click(object sender, EventArgs e)
+        {
+            cerrar();
+        }
+
+        private void btnCerrarI_Click(object sender, EventArgs e)
+        {
+            cerrar();
 
         }
 
-        private void tbpgAniadir_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
+            cerrar();
 
         }
     }
