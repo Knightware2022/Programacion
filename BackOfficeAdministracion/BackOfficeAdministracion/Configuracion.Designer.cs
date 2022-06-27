@@ -39,6 +39,7 @@
             this.cmboxTema = new System.Windows.Forms.ComboBox();
             this.btnAplicar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.paneConfiguracion.SuspendLayout();
             this.paneIdioma.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -46,6 +47,7 @@
             // 
             // paneConfiguracion
             // 
+            this.paneConfiguracion.Controls.Add(this.btnCerrar);
             this.paneConfiguracion.Controls.Add(this.btnCancelar);
             this.paneConfiguracion.Controls.Add(this.btnAplicar);
             this.paneConfiguracion.Controls.Add(this.panel1);
@@ -152,6 +154,16 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(383, 486);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(132, 33);
+            this.btnCerrar.TabIndex = 4;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // Configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -183,5 +195,6 @@
         private System.Windows.Forms.Label lblTema;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAplicar;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

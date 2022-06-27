@@ -43,6 +43,7 @@
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.paneVista = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.pboxHome = new System.Windows.Forms.PictureBox();
             this.paneHerramientas.SuspendLayout();
             this.paneGestionarDeportes.SuspendLayout();
             this.paneGestionarUsuarios.SuspendLayout();
@@ -50,6 +51,8 @@
             this.paneVerEventos.SuspendLayout();
             this.paneVerResultados.SuspendLayout();
             this.paneConfiguracion.SuspendLayout();
+            this.paneVista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxHome)).BeginInit();
             this.SuspendLayout();
             // 
             // paneHerramientas
@@ -182,6 +185,7 @@
             // paneVista
             // 
             this.paneVista.BackColor = System.Drawing.Color.DarkBlue;
+            this.paneVista.Controls.Add(this.pboxHome);
             this.paneVista.Location = new System.Drawing.Point(325, 1);
             this.paneVista.Name = "paneVista";
             this.paneVista.Size = new System.Drawing.Size(756, 627);
@@ -197,6 +201,14 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // pboxHome
+            // 
+            this.pboxHome.Location = new System.Drawing.Point(6, 11);
+            this.pboxHome.Name = "pboxHome";
+            this.pboxHome.Size = new System.Drawing.Size(747, 613);
+            this.pboxHome.TabIndex = 0;
+            this.pboxHome.TabStop = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,6 +216,7 @@
             this.ClientSize = new System.Drawing.Size(1079, 620);
             this.Controls.Add(this.paneVista);
             this.Controls.Add(this.paneHerramientas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Principal";
             this.Text = "SIGDE";
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -214,6 +227,8 @@
             this.paneVerEventos.ResumeLayout(false);
             this.paneVerResultados.ResumeLayout(false);
             this.paneConfiguracion.ResumeLayout(false);
+            this.paneVista.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pboxHome)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,5 +250,6 @@
         private System.Windows.Forms.Button btnGestionarEventos;
         public System.Windows.Forms.Panel paneVista;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox pboxHome;
     }
 }
