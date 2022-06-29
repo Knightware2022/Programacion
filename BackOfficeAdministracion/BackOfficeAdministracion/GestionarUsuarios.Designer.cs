@@ -30,6 +30,7 @@
         {
             this.tbcGestionUsuarios = new System.Windows.Forms.TabControl();
             this.tbpgMostrarUsuarios = new System.Windows.Forms.TabPage();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtTiempoSuscripto = new System.Windows.Forms.TextBox();
@@ -42,12 +43,11 @@
             this.cmboxIDusuarios = new System.Windows.Forms.ComboBox();
             this.lblIDusuario = new System.Windows.Forms.Label();
             this.rbpgEliminar = new System.Windows.Forms.TabPage();
+            this.btnCerrarII = new System.Windows.Forms.Button();
             this.paneEliminarU = new System.Windows.Forms.Panel();
             this.txtIDaEliminar = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnCerrarII = new System.Windows.Forms.Button();
             this.tbcGestionUsuarios.SuspendLayout();
             this.tbpgMostrarUsuarios.SuspendLayout();
             this.rbpgEliminar.SuspendLayout();
@@ -58,10 +58,10 @@
             // 
             this.tbcGestionUsuarios.Controls.Add(this.tbpgMostrarUsuarios);
             this.tbcGestionUsuarios.Controls.Add(this.rbpgEliminar);
-            this.tbcGestionUsuarios.Location = new System.Drawing.Point(0, 2);
+            this.tbcGestionUsuarios.Location = new System.Drawing.Point(0, 1);
             this.tbcGestionUsuarios.Name = "tbcGestionUsuarios";
             this.tbcGestionUsuarios.SelectedIndex = 0;
-            this.tbcGestionUsuarios.Size = new System.Drawing.Size(739, 578);
+            this.tbcGestionUsuarios.Size = new System.Drawing.Size(739, 579);
             this.tbcGestionUsuarios.TabIndex = 0;
             // 
             // tbpgMostrarUsuarios
@@ -81,10 +81,20 @@
             this.tbpgMostrarUsuarios.Location = new System.Drawing.Point(4, 25);
             this.tbpgMostrarUsuarios.Name = "tbpgMostrarUsuarios";
             this.tbpgMostrarUsuarios.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgMostrarUsuarios.Size = new System.Drawing.Size(731, 549);
+            this.tbpgMostrarUsuarios.Size = new System.Drawing.Size(731, 550);
             this.tbpgMostrarUsuarios.TabIndex = 0;
             this.tbpgMostrarUsuarios.Text = "Mostrar usuarios";
             this.tbpgMostrarUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(674, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(57, 26);
+            this.btnCerrar.TabIndex = 11;
+            this.btnCerrar.Text = "cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // textBox1
             // 
@@ -189,6 +199,16 @@
             this.rbpgEliminar.Text = "Eliminar Usuario";
             this.rbpgEliminar.UseVisualStyleBackColor = true;
             // 
+            // btnCerrarII
+            // 
+            this.btnCerrarII.Location = new System.Drawing.Point(679, 0);
+            this.btnCerrarII.Name = "btnCerrarII";
+            this.btnCerrarII.Size = new System.Drawing.Size(52, 25);
+            this.btnCerrarII.TabIndex = 1;
+            this.btnCerrarII.Text = "cerrar";
+            this.btnCerrarII.UseVisualStyleBackColor = true;
+            this.btnCerrarII.Click += new System.EventHandler(this.btnCerrarII_Click);
+            // 
             // paneEliminarU
             // 
             this.paneEliminarU.Controls.Add(this.txtIDaEliminar);
@@ -224,33 +244,12 @@
             this.lblID.TabIndex = 0;
             this.lblID.Text = "ID de usuario a eliminar: ";
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Location = new System.Drawing.Point(674, 3);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(57, 26);
-            this.btnCerrar.TabIndex = 11;
-            this.btnCerrar.Text = "cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnCerrarII
-            // 
-            this.btnCerrarII.Location = new System.Drawing.Point(679, 0);
-            this.btnCerrarII.Name = "btnCerrarII";
-            this.btnCerrarII.Size = new System.Drawing.Size(52, 25);
-            this.btnCerrarII.TabIndex = 1;
-            this.btnCerrarII.Text = "cerrar";
-            this.btnCerrarII.UseVisualStyleBackColor = true;
-            this.btnCerrarII.Click += new System.EventHandler(this.btnCerrarII_Click);
-            // 
             // GestionarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 580);
             this.Controls.Add(this.tbcGestionUsuarios);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionarUsuarios";
             this.Text = "GestionarUsuarios";
             this.tbcGestionUsuarios.ResumeLayout(false);
