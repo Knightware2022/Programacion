@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BackOffice
+namespace App_de_Usuario
 {
-    public partial class GestionarDeportes : Form
+    public partial class Principal : Form
     {
-        public GestionarDeportes()
+        public Principal()
         {
             InitializeComponent();
         }
 
-        private void GestionarDeportes_Load(object sender, EventArgs e)
+        private void veToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void eventosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

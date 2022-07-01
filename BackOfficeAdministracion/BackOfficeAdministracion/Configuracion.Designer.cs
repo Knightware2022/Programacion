@@ -32,7 +32,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAplicar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.paneApariencia = new System.Windows.Forms.Panel();
             this.cmboxTema = new System.Windows.Forms.ComboBox();
             this.lblTema = new System.Windows.Forms.Label();
             this.lblApariencia = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.lblIdiomaE = new System.Windows.Forms.Label();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.paneConfiguracion.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.paneApariencia.SuspendLayout();
             this.paneIdioma.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.paneConfiguracion.Controls.Add(this.btnCerrar);
             this.paneConfiguracion.Controls.Add(this.btnCancelar);
             this.paneConfiguracion.Controls.Add(this.btnAplicar);
-            this.paneConfiguracion.Controls.Add(this.panel1);
+            this.paneConfiguracion.Controls.Add(this.paneApariencia);
             this.paneConfiguracion.Controls.Add(this.paneIdioma);
             this.paneConfiguracion.Location = new System.Drawing.Point(0, 3);
             this.paneConfiguracion.Name = "paneConfiguracion";
@@ -85,16 +85,16 @@
             this.btnAplicar.Text = "Aplicar cambios";
             this.btnAplicar.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // paneApariencia
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cmboxTema);
-            this.panel1.Controls.Add(this.lblTema);
-            this.panel1.Controls.Add(this.lblApariencia);
-            this.panel1.Location = new System.Drawing.Point(16, 133);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(710, 124);
-            this.panel1.TabIndex = 1;
+            this.paneApariencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneApariencia.Controls.Add(this.cmboxTema);
+            this.paneApariencia.Controls.Add(this.lblTema);
+            this.paneApariencia.Controls.Add(this.lblApariencia);
+            this.paneApariencia.Location = new System.Drawing.Point(16, 133);
+            this.paneApariencia.Name = "paneApariencia";
+            this.paneApariencia.Size = new System.Drawing.Size(710, 124);
+            this.paneApariencia.TabIndex = 1;
             // 
             // cmboxTema
             // 
@@ -172,12 +172,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 580);
             this.Controls.Add(this.paneConfiguracion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Configuracion";
             this.Text = "Configuración";
             this.Load += new System.EventHandler(this.Configuracion_Load);
             this.paneConfiguracion.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.paneApariencia.ResumeLayout(false);
+            this.paneApariencia.PerformLayout();
             this.paneIdioma.ResumeLayout(false);
             this.paneIdioma.PerformLayout();
             this.ResumeLayout(false);
@@ -191,7 +192,7 @@
         private System.Windows.Forms.Label lblIdiomaE;
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.ComboBox cmboxIdioma;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel paneApariencia;
         private System.Windows.Forms.Label lblApariencia;
         private System.Windows.Forms.ComboBox cmboxTema;
         private System.Windows.Forms.Label lblTema;

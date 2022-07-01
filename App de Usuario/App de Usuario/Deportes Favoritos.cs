@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BackOffice
+namespace App_de_Usuario
 {
-    public partial class GestionarUsuarios : Form
+    public partial class Deportes_Favoritos : Form
     {
-        public GestionarUsuarios()
+        public Deportes_Favoritos()
         {
             InitializeComponent();
         }

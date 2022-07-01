@@ -43,7 +43,7 @@
             this.paneGestionarDeportes = new System.Windows.Forms.Panel();
             this.btnGestionarDeportes = new System.Windows.Forms.Button();
             this.paneVista = new System.Windows.Forms.Panel();
-            this.pboxHome = new System.Windows.Forms.PictureBox();
+            this.picboxHome = new System.Windows.Forms.PictureBox();
             this.paneHerramientas.SuspendLayout();
             this.paneConfiguracion.SuspendLayout();
             this.paneVerResultados.SuspendLayout();
@@ -52,7 +52,7 @@
             this.paneGestionarUsuarios.SuspendLayout();
             this.paneGestionarDeportes.SuspendLayout();
             this.paneVista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxHome)).BeginInit();
             this.SuspendLayout();
             // 
             // paneHerramientas
@@ -196,19 +196,19 @@
             // paneVista
             // 
             this.paneVista.BackColor = System.Drawing.Color.DarkBlue;
-            this.paneVista.Controls.Add(this.pboxHome);
+            this.paneVista.Controls.Add(this.picboxHome);
             this.paneVista.Location = new System.Drawing.Point(325, 1);
             this.paneVista.Name = "paneVista";
             this.paneVista.Size = new System.Drawing.Size(756, 627);
             this.paneVista.TabIndex = 1;
             // 
-            // pboxHome
+            // picboxHome
             // 
-            this.pboxHome.Location = new System.Drawing.Point(6, 11);
-            this.pboxHome.Name = "pboxHome";
-            this.pboxHome.Size = new System.Drawing.Size(747, 613);
-            this.pboxHome.TabIndex = 0;
-            this.pboxHome.TabStop = false;
+            this.picboxHome.Location = new System.Drawing.Point(6, 11);
+            this.picboxHome.Name = "picboxHome";
+            this.picboxHome.Size = new System.Drawing.Size(747, 613);
+            this.picboxHome.TabIndex = 0;
+            this.picboxHome.TabStop = false;
             // 
             // Principal
             // 
@@ -229,7 +229,7 @@
             this.paneGestionarUsuarios.ResumeLayout(false);
             this.paneGestionarDeportes.ResumeLayout(false);
             this.paneVista.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pboxHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxHome)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,6 +251,6 @@
         private System.Windows.Forms.Button btnGestionarEventos;
         public System.Windows.Forms.Panel paneVista;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.PictureBox pboxHome;
+        private System.Windows.Forms.PictureBox picboxHome;
     }
 }

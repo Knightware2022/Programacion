@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BackOffice
+namespace App_de_Usuario
 {
-    public partial class GestionarEventos : Form
+    public partial class Login : Form
     {
-        public GestionarEventos()
+        public Login()
         {
             InitializeComponent();
         }
