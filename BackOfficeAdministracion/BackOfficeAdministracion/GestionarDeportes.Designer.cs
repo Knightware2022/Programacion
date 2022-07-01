@@ -115,6 +115,7 @@
             this.lblVerID = new System.Windows.Forms.Label();
             this.tbpgModificarEquipo = new System.Windows.Forms.TabPage();
             this.btnCerrarIIII = new System.Windows.Forms.Button();
+            this.tbpgCrearEquipo = new System.Windows.Forms.TabPage();
             this.tbcGestionDeportes.SuspendLayout();
             this.tbpgAniadir.SuspendLayout();
             this.paneCantJugadores.SuspendLayout();
@@ -139,6 +140,7 @@
             this.tbcGestionDeportes.Controls.Add(this.tbpgEliminar);
             this.tbcGestionDeportes.Controls.Add(this.tbpgMostrar);
             this.tbcGestionDeportes.Controls.Add(this.tbpgModificarEquipo);
+            this.tbcGestionDeportes.Controls.Add(this.tbpgCrearEquipo);
             this.tbcGestionDeportes.Location = new System.Drawing.Point(0, 0);
             this.tbcGestionDeportes.Name = "tbcGestionDeportes";
             this.tbcGestionDeportes.SelectedIndex = 0;
@@ -1135,6 +1137,16 @@
             this.btnCerrarIIII.UseVisualStyleBackColor = true;
             this.btnCerrarIIII.Click += new System.EventHandler(this.btnCerrarIIII_Click);
             // 
+            // tbpgCrearEquipo
+            // 
+            this.tbpgCrearEquipo.Location = new System.Drawing.Point(4, 25);
+            this.tbpgCrearEquipo.Name = "tbpgCrearEquipo";
+            this.tbpgCrearEquipo.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpgCrearEquipo.Size = new System.Drawing.Size(731, 553);
+            this.tbpgCrearEquipo.TabIndex = 5;
+            this.tbpgCrearEquipo.Text = "Crear Equipo";
+            this.tbpgCrearEquipo.UseVisualStyleBackColor = true;
+            // 
             // GestionarDeportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1262,5 +1274,6 @@
         private System.Windows.Forms.Button btnCerrarII;
         private System.Windows.Forms.Button btnCerrarIII;
         private System.Windows.Forms.Button btnCerrarIIII;
+        private System.Windows.Forms.TabPage tbpgCrearEquipo;
     }
 }
