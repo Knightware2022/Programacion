@@ -49,5 +49,10 @@ namespace App_de_Usuario
             Program.frmConfiguracion.Show();
             Program.frmConfiguracion.MdiParent = this;
         }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
