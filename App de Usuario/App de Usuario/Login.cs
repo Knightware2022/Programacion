@@ -16,5 +16,11 @@ namespace App_de_Usuario
         {
             InitializeComponent();
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.frmPrincipal.Show();
+        }
     }
 }

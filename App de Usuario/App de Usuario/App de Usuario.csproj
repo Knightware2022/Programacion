@@ -92,6 +92,9 @@
       <DependentUpon>Resultados.cs</DependentUpon>
     </Compile>
     <Compile Include="Recursos\Usuario.cs" />
+    <EmbeddedResource Include="EventosProgramados.resx">
+      <DependentUpon>EventosProgramados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +110,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resultados.resx">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

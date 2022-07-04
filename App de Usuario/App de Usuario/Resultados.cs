@@ -16,5 +16,10 @@ namespace App_de_Usuario
         {
             InitializeComponent();
         }
+
+        private void Resultados_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
