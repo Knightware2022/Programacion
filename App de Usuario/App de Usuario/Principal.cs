@@ -26,5 +26,10 @@ namespace App_de_Usuario
         {
 
         }
+
+        private void resultadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -59,7 +59,7 @@
             this.eventosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlsrptcmboxEventos});
             this.eventosToolStripMenuItem.Name = "eventosToolStripMenuItem";
-            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.eventosToolStripMenuItem.Text = "Deportes";
             this.eventosToolStripMenuItem.Click += new System.EventHandler(this.eventosToolStripMenuItem_Click);
             // 
@@ -71,8 +71,9 @@
             // resultadosToolStripMenuItem
             // 
             this.resultadosToolStripMenuItem.Name = "resultadosToolStripMenuItem";
-            this.resultadosToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.resultadosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.resultadosToolStripMenuItem.Text = "Resultados";
+            this.resultadosToolStripMenuItem.Click += new System.EventHandler(this.resultadosToolStripMenuItem_Click);
             // 
             // eventosProgramadosToolStripMenuItem
             // 
