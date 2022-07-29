@@ -29,18 +29,13 @@
         private void InitializeComponent()
         {
             this.paneBuscar = new System.Windows.Forms.Panel();
-            this.lblDeporte = new System.Windows.Forms.Label();
-            this.lblEquipo = new System.Windows.Forms.Label();
-            this.cmboxDeporte = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.cmboxEquipo = new System.Windows.Forms.ComboBox();
+            this.cmboxDeporte = new System.Windows.Forms.ComboBox();
+            this.lblEquipo = new System.Windows.Forms.Label();
+            this.lblDeporte = new System.Windows.Forms.Label();
             this.paneResultados = new System.Windows.Forms.Panel();
-            this.lblEquipoLocal1 = new System.Windows.Forms.Label();
-            this.lblEquipoVisitante1 = new System.Windows.Forms.Label();
-            this.pboxLogoLocal = new System.Windows.Forms.PictureBox();
-            this.pboxLogoVisitante = new System.Windows.Forms.PictureBox();
-            this.lblPuntosLocal = new System.Windows.Forms.Label();
-            this.lblPuntosVisitante = new System.Windows.Forms.Label();
-            this.lblGuion = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.lblGuion2 = new System.Windows.Forms.Label();
             this.lblPuntajeVisitante2 = new System.Windows.Forms.Label();
             this.lblPuntajeLocal2 = new System.Windows.Forms.Label();
@@ -48,13 +43,19 @@
             this.pboxEquipoLocal2 = new System.Windows.Forms.PictureBox();
             this.lblEquipoVisitante2 = new System.Windows.Forms.Label();
             this.lblEquipoLocal2 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblGuion = new System.Windows.Forms.Label();
+            this.lblPuntosVisitante = new System.Windows.Forms.Label();
+            this.lblPuntosLocal = new System.Windows.Forms.Label();
+            this.pboxLogoVisitante = new System.Windows.Forms.PictureBox();
+            this.pboxLogoLocal = new System.Windows.Forms.PictureBox();
+            this.lblEquipoVisitante1 = new System.Windows.Forms.Label();
+            this.lblEquipoLocal1 = new System.Windows.Forms.Label();
             this.paneBuscar.SuspendLayout();
             this.paneResultados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLogoLocal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLogoVisitante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxEquipoVisitante2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxEquipoLocal2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLogoVisitante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLogoLocal)).BeginInit();
             this.SuspendLayout();
             // 
             // paneBuscar
@@ -70,14 +71,30 @@
             this.paneBuscar.Size = new System.Drawing.Size(946, 137);
             this.paneBuscar.TabIndex = 0;
             // 
-            // lblDeporte
+            // btnBuscar
             // 
-            this.lblDeporte.AutoSize = true;
-            this.lblDeporte.Location = new System.Drawing.Point(24, 38);
-            this.lblDeporte.Name = "lblDeporte";
-            this.lblDeporte.Size = new System.Drawing.Size(67, 17);
-            this.lblDeporte.TabIndex = 0;
-            this.lblDeporte.Text = "Deporte: ";
+            this.btnBuscar.Location = new System.Drawing.Point(219, 98);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // cmboxEquipo
+            // 
+            this.cmboxEquipo.FormattingEnabled = true;
+            this.cmboxEquipo.Location = new System.Drawing.Point(375, 69);
+            this.cmboxEquipo.Name = "cmboxEquipo";
+            this.cmboxEquipo.Size = new System.Drawing.Size(507, 24);
+            this.cmboxEquipo.TabIndex = 3;
+            // 
+            // cmboxDeporte
+            // 
+            this.cmboxDeporte.FormattingEnabled = true;
+            this.cmboxDeporte.Location = new System.Drawing.Point(375, 35);
+            this.cmboxDeporte.Name = "cmboxDeporte";
+            this.cmboxDeporte.Size = new System.Drawing.Size(507, 24);
+            this.cmboxDeporte.TabIndex = 2;
             // 
             // lblEquipo
             // 
@@ -88,24 +105,19 @@
             this.lblEquipo.TabIndex = 1;
             this.lblEquipo.Text = "Equipo: ";
             // 
-            // cmboxDeporte
+            // lblDeporte
             // 
-            this.cmboxDeporte.FormattingEnabled = true;
-            this.cmboxDeporte.Location = new System.Drawing.Point(375, 35);
-            this.cmboxDeporte.Name = "cmboxDeporte";
-            this.cmboxDeporte.Size = new System.Drawing.Size(507, 24);
-            this.cmboxDeporte.TabIndex = 2;
-            // 
-            // cmboxEquipo
-            // 
-            this.cmboxEquipo.FormattingEnabled = true;
-            this.cmboxEquipo.Location = new System.Drawing.Point(375, 69);
-            this.cmboxEquipo.Name = "cmboxEquipo";
-            this.cmboxEquipo.Size = new System.Drawing.Size(507, 24);
-            this.cmboxEquipo.TabIndex = 3;
+            this.lblDeporte.AutoSize = true;
+            this.lblDeporte.Location = new System.Drawing.Point(24, 38);
+            this.lblDeporte.Name = "lblDeporte";
+            this.lblDeporte.Size = new System.Drawing.Size(67, 17);
+            this.lblDeporte.TabIndex = 0;
+            this.lblDeporte.Text = "Deporte: ";
             // 
             // paneResultados
             // 
+            this.paneResultados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneResultados.Controls.Add(this.btnVolver);
             this.paneResultados.Controls.Add(this.lblGuion2);
             this.paneResultados.Controls.Add(this.lblPuntajeVisitante2);
             this.paneResultados.Controls.Add(this.lblPuntajeLocal2);
@@ -125,68 +137,15 @@
             this.paneResultados.Size = new System.Drawing.Size(946, 385);
             this.paneResultados.TabIndex = 1;
             // 
-            // lblEquipoLocal1
+            // btnVolver
             // 
-            this.lblEquipoLocal1.AutoSize = true;
-            this.lblEquipoLocal1.Location = new System.Drawing.Point(56, 50);
-            this.lblEquipoLocal1.Name = "lblEquipoLocal1";
-            this.lblEquipoLocal1.Size = new System.Drawing.Size(85, 17);
-            this.lblEquipoLocal1.TabIndex = 0;
-            this.lblEquipoLocal1.Text = "Equipo local";
-            // 
-            // lblEquipoVisitante1
-            // 
-            this.lblEquipoVisitante1.AutoSize = true;
-            this.lblEquipoVisitante1.Location = new System.Drawing.Point(626, 50);
-            this.lblEquipoVisitante1.Name = "lblEquipoVisitante1";
-            this.lblEquipoVisitante1.Size = new System.Drawing.Size(110, 17);
-            this.lblEquipoVisitante1.TabIndex = 1;
-            this.lblEquipoVisitante1.Text = "Equipo Visitante";
-            // 
-            // pboxLogoLocal
-            // 
-            this.pboxLogoLocal.Location = new System.Drawing.Point(59, 85);
-            this.pboxLogoLocal.Name = "pboxLogoLocal";
-            this.pboxLogoLocal.Size = new System.Drawing.Size(104, 79);
-            this.pboxLogoLocal.TabIndex = 2;
-            this.pboxLogoLocal.TabStop = false;
-            // 
-            // pboxLogoVisitante
-            // 
-            this.pboxLogoVisitante.Location = new System.Drawing.Point(613, 85);
-            this.pboxLogoVisitante.Name = "pboxLogoVisitante";
-            this.pboxLogoVisitante.Size = new System.Drawing.Size(104, 79);
-            this.pboxLogoVisitante.TabIndex = 3;
-            this.pboxLogoVisitante.TabStop = false;
-            // 
-            // lblPuntosLocal
-            // 
-            this.lblPuntosLocal.AutoSize = true;
-            this.lblPuntosLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuntosLocal.Location = new System.Drawing.Point(249, 108);
-            this.lblPuntosLocal.Name = "lblPuntosLocal";
-            this.lblPuntosLocal.Size = new System.Drawing.Size(31, 32);
-            this.lblPuntosLocal.TabIndex = 4;
-            this.lblPuntosLocal.Text = "0";
-            // 
-            // lblPuntosVisitante
-            // 
-            this.lblPuntosVisitante.AutoSize = true;
-            this.lblPuntosVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuntosVisitante.Location = new System.Drawing.Point(465, 108);
-            this.lblPuntosVisitante.Name = "lblPuntosVisitante";
-            this.lblPuntosVisitante.Size = new System.Drawing.Size(31, 32);
-            this.lblPuntosVisitante.TabIndex = 5;
-            this.lblPuntosVisitante.Text = "1";
-            // 
-            // lblGuion
-            // 
-            this.lblGuion.AutoSize = true;
-            this.lblGuion.Location = new System.Drawing.Point(359, 121);
-            this.lblGuion.Name = "lblGuion";
-            this.lblGuion.Size = new System.Drawing.Size(13, 17);
-            this.lblGuion.TabIndex = 6;
-            this.lblGuion.Text = "-";
+            this.btnVolver.Location = new System.Drawing.Point(808, 331);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 5;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // lblGuion2
             // 
@@ -251,22 +210,78 @@
             this.lblEquipoLocal2.TabIndex = 7;
             this.lblEquipoLocal2.Text = "Equipo local";
             // 
-            // btnBuscar
+            // lblGuion
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(219, 98);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 4;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.lblGuion.AutoSize = true;
+            this.lblGuion.Location = new System.Drawing.Point(359, 121);
+            this.lblGuion.Name = "lblGuion";
+            this.lblGuion.Size = new System.Drawing.Size(13, 17);
+            this.lblGuion.TabIndex = 6;
+            this.lblGuion.Text = "-";
+            // 
+            // lblPuntosVisitante
+            // 
+            this.lblPuntosVisitante.AutoSize = true;
+            this.lblPuntosVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntosVisitante.Location = new System.Drawing.Point(465, 108);
+            this.lblPuntosVisitante.Name = "lblPuntosVisitante";
+            this.lblPuntosVisitante.Size = new System.Drawing.Size(31, 32);
+            this.lblPuntosVisitante.TabIndex = 5;
+            this.lblPuntosVisitante.Text = "1";
+            // 
+            // lblPuntosLocal
+            // 
+            this.lblPuntosLocal.AutoSize = true;
+            this.lblPuntosLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntosLocal.Location = new System.Drawing.Point(249, 108);
+            this.lblPuntosLocal.Name = "lblPuntosLocal";
+            this.lblPuntosLocal.Size = new System.Drawing.Size(31, 32);
+            this.lblPuntosLocal.TabIndex = 4;
+            this.lblPuntosLocal.Text = "0";
+            // 
+            // pboxLogoVisitante
+            // 
+            this.pboxLogoVisitante.Location = new System.Drawing.Point(613, 85);
+            this.pboxLogoVisitante.Name = "pboxLogoVisitante";
+            this.pboxLogoVisitante.Size = new System.Drawing.Size(104, 79);
+            this.pboxLogoVisitante.TabIndex = 3;
+            this.pboxLogoVisitante.TabStop = false;
+            // 
+            // pboxLogoLocal
+            // 
+            this.pboxLogoLocal.Location = new System.Drawing.Point(59, 85);
+            this.pboxLogoLocal.Name = "pboxLogoLocal";
+            this.pboxLogoLocal.Size = new System.Drawing.Size(104, 79);
+            this.pboxLogoLocal.TabIndex = 2;
+            this.pboxLogoLocal.TabStop = false;
+            // 
+            // lblEquipoVisitante1
+            // 
+            this.lblEquipoVisitante1.AutoSize = true;
+            this.lblEquipoVisitante1.Location = new System.Drawing.Point(626, 50);
+            this.lblEquipoVisitante1.Name = "lblEquipoVisitante1";
+            this.lblEquipoVisitante1.Size = new System.Drawing.Size(110, 17);
+            this.lblEquipoVisitante1.TabIndex = 1;
+            this.lblEquipoVisitante1.Text = "Equipo Visitante";
+            // 
+            // lblEquipoLocal1
+            // 
+            this.lblEquipoLocal1.AutoSize = true;
+            this.lblEquipoLocal1.Location = new System.Drawing.Point(56, 50);
+            this.lblEquipoLocal1.Name = "lblEquipoLocal1";
+            this.lblEquipoLocal1.Size = new System.Drawing.Size(85, 17);
+            this.lblEquipoLocal1.TabIndex = 0;
+            this.lblEquipoLocal1.Text = "Equipo local";
             // 
             // Resultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(949, 543);
             this.Controls.Add(this.paneResultados);
             this.Controls.Add(this.paneBuscar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Resultados";
             this.Text = "Resultados";
             this.Load += new System.EventHandler(this.Resultados_Load);
@@ -274,10 +289,10 @@
             this.paneBuscar.PerformLayout();
             this.paneResultados.ResumeLayout(false);
             this.paneResultados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLogoLocal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLogoVisitante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxEquipoVisitante2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxEquipoLocal2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLogoVisitante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLogoLocal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,5 +320,6 @@
         private System.Windows.Forms.Label lblPuntosVisitante;
         private System.Windows.Forms.Label lblPuntosLocal;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

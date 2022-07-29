@@ -143,5 +143,8 @@
   <ItemGroup>
     <None Include="Resources\banner-publicidad-01.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

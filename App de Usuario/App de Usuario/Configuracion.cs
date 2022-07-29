@@ -16,5 +16,15 @@ namespace App_de_Usuario
         {
             InitializeComponent();
         }
+
+        private void Configuracion_Load(object sender, EventArgs e)
+        {
+            this.Size = Program.frmPrincipal.paneVentanas.Size;
+
+        }
+         private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

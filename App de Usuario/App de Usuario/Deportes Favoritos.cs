@@ -16,5 +16,22 @@ namespace App_de_Usuario
         {
             InitializeComponent();
         }
+
+        private void Deportes_Favoritos_Load(object sender, EventArgs e)
+        {
+            this.Size = Program.frmPrincipal.paneVentanas.Size;
+
+        }
+
+        private void paneDeportesFavoritos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.frmPrincipal.paneVentanas.Visible = true;
+        }
     }
 }

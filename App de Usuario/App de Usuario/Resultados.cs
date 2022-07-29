@@ -19,7 +19,13 @@ namespace App_de_Usuario
 
         private void Resultados_Load(object sender, EventArgs e)
         {
-            
+            this.Size = Program.frmPrincipal.paneVentanas.Size;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.frmPrincipal.paneVentanas.Visible = true;
         }
     }
 }

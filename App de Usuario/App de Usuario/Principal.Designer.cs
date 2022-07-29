@@ -40,14 +40,13 @@
             this.paneVentanas = new System.Windows.Forms.Panel();
             this.pboxPublicidad = new System.Windows.Forms.PictureBox();
             this.pboxLogo = new System.Windows.Forms.PictureBox();
-            this.pboxAvatar = new System.Windows.Forms.PictureBox();
+            this.btnAvatar = new System.Windows.Forms.Button();
             this.paneBotones.SuspendLayout();
             this.paneLogo.SuspendLayout();
             this.paneAvatar.SuspendLayout();
             this.paneBanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPublicidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // paneBotones
@@ -80,7 +79,7 @@
             // paneAvatar
             // 
             this.paneAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneAvatar.Controls.Add(this.pboxAvatar);
+            this.paneAvatar.Controls.Add(this.btnAvatar);
             this.paneAvatar.Location = new System.Drawing.Point(795, 4);
             this.paneAvatar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.paneAvatar.Name = "paneAvatar";
@@ -90,21 +89,22 @@
             // btnFavoritos
             // 
             this.btnFavoritos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFavoritos.Location = new System.Drawing.Point(584, 33);
+            this.btnFavoritos.Location = new System.Drawing.Point(571, 33);
             this.btnFavoritos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFavoritos.Name = "btnFavoritos";
-            this.btnFavoritos.Size = new System.Drawing.Size(147, 44);
+            this.btnFavoritos.Size = new System.Drawing.Size(160, 44);
             this.btnFavoritos.TabIndex = 4;
             this.btnFavoritos.Text = "Equipos Favoritos";
             this.btnFavoritos.UseVisualStyleBackColor = true;
+            this.btnFavoritos.Click += new System.EventHandler(this.btnFavoritos_Click);
             // 
             // btnDeportes
             // 
             this.btnDeportes.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDeportes.Location = new System.Drawing.Point(495, 85);
+            this.btnDeportes.Location = new System.Drawing.Point(486, 85);
             this.btnDeportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeportes.Name = "btnDeportes";
-            this.btnDeportes.Size = new System.Drawing.Size(121, 44);
+            this.btnDeportes.Size = new System.Drawing.Size(130, 44);
             this.btnDeportes.TabIndex = 3;
             this.btnDeportes.Text = "Deportes";
             this.btnDeportes.UseVisualStyleBackColor = true;
@@ -112,21 +112,22 @@
             // btnEncuentros
             // 
             this.btnEncuentros.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEncuentros.Location = new System.Drawing.Point(400, 31);
+            this.btnEncuentros.Location = new System.Drawing.Point(393, 31);
             this.btnEncuentros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEncuentros.Name = "btnEncuentros";
-            this.btnEncuentros.Size = new System.Drawing.Size(121, 44);
+            this.btnEncuentros.Size = new System.Drawing.Size(128, 44);
             this.btnEncuentros.TabIndex = 2;
             this.btnEncuentros.Text = "Encuentros";
             this.btnEncuentros.UseVisualStyleBackColor = true;
+            this.btnEncuentros.Click += new System.EventHandler(this.btnEncuentros_Click);
             // 
             // btnTorneos
             // 
             this.btnTorneos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnTorneos.Location = new System.Drawing.Point(297, 85);
+            this.btnTorneos.Location = new System.Drawing.Point(290, 85);
             this.btnTorneos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTorneos.Name = "btnTorneos";
-            this.btnTorneos.Size = new System.Drawing.Size(121, 44);
+            this.btnTorneos.Size = new System.Drawing.Size(128, 44);
             this.btnTorneos.TabIndex = 1;
             this.btnTorneos.Text = "Torneos";
             this.btnTorneos.UseVisualStyleBackColor = true;
@@ -137,10 +138,11 @@
             this.btnResultados.Location = new System.Drawing.Point(177, 31);
             this.btnResultados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnResultados.Name = "btnResultados";
-            this.btnResultados.Size = new System.Drawing.Size(130, 44);
+            this.btnResultados.Size = new System.Drawing.Size(138, 44);
             this.btnResultados.TabIndex = 0;
             this.btnResultados.Text = "Ver Resultados";
             this.btnResultados.UseVisualStyleBackColor = true;
+            this.btnResultados.Click += new System.EventHandler(this.btnResultados_Click);
             // 
             // paneBanner
             // 
@@ -183,16 +185,16 @@
             this.pboxLogo.TabIndex = 1;
             this.pboxLogo.TabStop = false;
             // 
-            // pboxAvatar
+            // btnAvatar
             // 
-            this.pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;
-            this.pboxAvatar.Location = new System.Drawing.Point(-1, -1);
-            this.pboxAvatar.Margin = new System.Windows.Forms.Padding(4);
-            this.pboxAvatar.Name = "pboxAvatar";
-            this.pboxAvatar.Size = new System.Drawing.Size(165, 154);
-            this.pboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxAvatar.TabIndex = 0;
-            this.pboxAvatar.TabStop = false;
+            this.btnAvatar.BackgroundImage = global::App_de_Usuario.Properties.Resources.avatar;
+            this.btnAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAvatar.Location = new System.Drawing.Point(-1, 3);
+            this.btnAvatar.Name = "btnAvatar";
+            this.btnAvatar.Size = new System.Drawing.Size(161, 147);
+            this.btnAvatar.TabIndex = 0;
+            this.btnAvatar.UseVisualStyleBackColor = true;
+            this.btnAvatar.Click += new System.EventHandler(this.btnAvatar_Click);
             // 
             // Principal
             // 
@@ -215,7 +217,6 @@
             this.paneBanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pboxPublicidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,11 +230,11 @@
         private System.Windows.Forms.Button btnDeportes;
         private System.Windows.Forms.Button btnFavoritos;
         private System.Windows.Forms.Panel paneAvatar;
-        private System.Windows.Forms.PictureBox pboxAvatar;
         private System.Windows.Forms.Panel paneBanner;
         private System.Windows.Forms.Panel paneLogo;
-        private System.Windows.Forms.Panel paneVentanas;
         private System.Windows.Forms.PictureBox pboxLogo;
         private System.Windows.Forms.PictureBox pboxPublicidad;
+        private System.Windows.Forms.Button btnAvatar;
+        public System.Windows.Forms.Panel paneVentanas;
     }
 }
