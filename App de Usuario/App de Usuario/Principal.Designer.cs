@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.paneBotones = new System.Windows.Forms.Panel();
             this.paneLogo = new System.Windows.Forms.Panel();
             this.paneAvatar = new System.Windows.Forms.Panel();
@@ -61,7 +62,7 @@
             this.paneBotones.Controls.Add(this.btnTorneos);
             this.paneBotones.Controls.Add(this.btnResultados);
             this.paneBotones.Location = new System.Drawing.Point(1, 0);
-            this.paneBotones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paneBotones.Margin = new System.Windows.Forms.Padding(4);
             this.paneBotones.Name = "paneBotones";
             this.paneBotones.Size = new System.Drawing.Size(966, 164);
             this.paneBotones.TabIndex = 0;
@@ -71,7 +72,7 @@
             this.paneLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneLogo.Controls.Add(this.pboxLogo);
             this.paneLogo.Location = new System.Drawing.Point(4, 4);
-            this.paneLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paneLogo.Margin = new System.Windows.Forms.Padding(4);
             this.paneLogo.Name = "paneLogo";
             this.paneLogo.Size = new System.Drawing.Size(165, 155);
             this.paneLogo.TabIndex = 6;
@@ -81,7 +82,7 @@
             this.paneAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneAvatar.Controls.Add(this.btnAvatar);
             this.paneAvatar.Location = new System.Drawing.Point(795, 4);
-            this.paneAvatar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paneAvatar.Margin = new System.Windows.Forms.Padding(4);
             this.paneAvatar.Name = "paneAvatar";
             this.paneAvatar.Size = new System.Drawing.Size(165, 155);
             this.paneAvatar.TabIndex = 5;
@@ -90,7 +91,7 @@
             // 
             this.btnFavoritos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnFavoritos.Location = new System.Drawing.Point(571, 33);
-            this.btnFavoritos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFavoritos.Margin = new System.Windows.Forms.Padding(4);
             this.btnFavoritos.Name = "btnFavoritos";
             this.btnFavoritos.Size = new System.Drawing.Size(160, 44);
             this.btnFavoritos.TabIndex = 4;
@@ -102,7 +103,7 @@
             // 
             this.btnDeportes.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnDeportes.Location = new System.Drawing.Point(486, 85);
-            this.btnDeportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeportes.Name = "btnDeportes";
             this.btnDeportes.Size = new System.Drawing.Size(130, 44);
             this.btnDeportes.TabIndex = 3;
@@ -113,7 +114,7 @@
             // 
             this.btnEncuentros.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnEncuentros.Location = new System.Drawing.Point(393, 31);
-            this.btnEncuentros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEncuentros.Margin = new System.Windows.Forms.Padding(4);
             this.btnEncuentros.Name = "btnEncuentros";
             this.btnEncuentros.Size = new System.Drawing.Size(128, 44);
             this.btnEncuentros.TabIndex = 2;
@@ -125,7 +126,7 @@
             // 
             this.btnTorneos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnTorneos.Location = new System.Drawing.Point(290, 85);
-            this.btnTorneos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTorneos.Margin = new System.Windows.Forms.Padding(4);
             this.btnTorneos.Name = "btnTorneos";
             this.btnTorneos.Size = new System.Drawing.Size(128, 44);
             this.btnTorneos.TabIndex = 1;
@@ -136,7 +137,7 @@
             // 
             this.btnResultados.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResultados.Location = new System.Drawing.Point(177, 31);
-            this.btnResultados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResultados.Margin = new System.Windows.Forms.Padding(4);
             this.btnResultados.Name = "btnResultados";
             this.btnResultados.Size = new System.Drawing.Size(138, 44);
             this.btnResultados.TabIndex = 0;
@@ -149,7 +150,7 @@
             this.paneBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneBanner.Controls.Add(this.pboxPublicidad);
             this.paneBanner.Location = new System.Drawing.Point(1, 672);
-            this.paneBanner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paneBanner.Margin = new System.Windows.Forms.Padding(4);
             this.paneBanner.Name = "paneBanner";
             this.paneBanner.Size = new System.Drawing.Size(966, 140);
             this.paneBanner.TabIndex = 1;
@@ -159,7 +160,7 @@
             this.paneVentanas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.paneVentanas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneVentanas.Location = new System.Drawing.Point(1, 172);
-            this.paneVentanas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paneVentanas.Margin = new System.Windows.Forms.Padding(4);
             this.paneVentanas.Name = "paneVentanas";
             this.paneVentanas.Size = new System.Drawing.Size(966, 492);
             this.paneVentanas.TabIndex = 2;
@@ -205,6 +206,7 @@
             this.Controls.Add(this.paneBanner);
             this.Controls.Add(this.paneBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Principal";

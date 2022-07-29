@@ -39,6 +39,7 @@
             // 
             // paneDeportesFavoritos
             // 
+            this.paneDeportesFavoritos.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.paneDeportesFavoritos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneDeportesFavoritos.Controls.Add(this.btnVolver);
             this.paneDeportesFavoritos.Controls.Add(this.btnEliminarFavoritos);
@@ -53,16 +54,18 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnVolver.Location = new System.Drawing.Point(689, 144);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(193, 51);
             this.btnVolver.TabIndex = 4;
-            this.btnVolver.Text = "Volver";
+            this.btnVolver.Text = "Cerrar";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnEliminarFavoritos
             // 
+            this.btnEliminarFavoritos.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminarFavoritos.Location = new System.Drawing.Point(399, 144);
             this.btnEliminarFavoritos.Name = "btnEliminarFavoritos";
             this.btnEliminarFavoritos.Size = new System.Drawing.Size(193, 51);
@@ -72,6 +75,7 @@
             // 
             // btnRefrescar
             // 
+            this.btnRefrescar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnRefrescar.Location = new System.Drawing.Point(112, 144);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(193, 51);
@@ -81,18 +85,21 @@
             // 
             // cmboxDeportesFavoritos
             // 
+            this.cmboxDeportesFavoritos.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxDeportesFavoritos.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxDeportesFavoritos.FormattingEnabled = true;
             this.cmboxDeportesFavoritos.Location = new System.Drawing.Point(276, 72);
             this.cmboxDeportesFavoritos.Name = "cmboxDeportesFavoritos";
-            this.cmboxDeportesFavoritos.Size = new System.Drawing.Size(645, 24);
+            this.cmboxDeportesFavoritos.Size = new System.Drawing.Size(645, 29);
             this.cmboxDeportesFavoritos.TabIndex = 1;
             // 
             // lblDeportesFavoritos
             // 
             this.lblDeportesFavoritos.AutoSize = true;
+            this.lblDeportesFavoritos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblDeportesFavoritos.Location = new System.Drawing.Point(38, 72);
             this.lblDeportesFavoritos.Name = "lblDeportesFavoritos";
-            this.lblDeportesFavoritos.Size = new System.Drawing.Size(136, 17);
+            this.lblDeportesFavoritos.Size = new System.Drawing.Size(153, 18);
             this.lblDeportesFavoritos.TabIndex = 0;
             this.lblDeportesFavoritos.Text = "Deportes Favoritos: ";
             // 
@@ -101,6 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1005, 608);
             this.Controls.Add(this.paneDeportesFavoritos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

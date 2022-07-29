@@ -146,5 +146,8 @@
   <ItemGroup>
     <None Include="Resources\ojo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knightware_Letra.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

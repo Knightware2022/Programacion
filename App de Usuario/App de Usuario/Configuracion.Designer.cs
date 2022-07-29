@@ -59,6 +59,7 @@
             // 
             // panePerfil
             // 
+            this.panePerfil.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panePerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panePerfil.Controls.Add(this.pboxAvatar);
             this.panePerfil.Controls.Add(this.lblAvatar);
@@ -79,107 +80,124 @@
             // 
             // pboxAvatar
             // 
+            this.pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;
             this.pboxAvatar.Location = new System.Drawing.Point(197, 165);
             this.pboxAvatar.Name = "pboxAvatar";
             this.pboxAvatar.Size = new System.Drawing.Size(121, 100);
+            this.pboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxAvatar.TabIndex = 11;
             this.pboxAvatar.TabStop = false;
             // 
             // lblAvatar
             // 
             this.lblAvatar.AutoSize = true;
+            this.lblAvatar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblAvatar.Location = new System.Drawing.Point(94, 207);
             this.lblAvatar.Name = "lblAvatar";
-            this.lblAvatar.Size = new System.Drawing.Size(57, 17);
+            this.lblAvatar.Size = new System.Drawing.Size(60, 18);
             this.lblAvatar.TabIndex = 10;
             this.lblAvatar.Text = "Avatar: ";
             // 
             // btnCambiarCorreo
             // 
-            this.btnCambiarCorreo.Location = new System.Drawing.Point(784, 119);
+            this.btnCambiarCorreo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarCorreo.Location = new System.Drawing.Point(735, 116);
             this.btnCambiarCorreo.Name = "btnCambiarCorreo";
-            this.btnCambiarCorreo.Size = new System.Drawing.Size(75, 23);
+            this.btnCambiarCorreo.Size = new System.Drawing.Size(96, 29);
             this.btnCambiarCorreo.TabIndex = 9;
             this.btnCambiarCorreo.Text = "cambiar";
             this.btnCambiarCorreo.UseVisualStyleBackColor = true;
             // 
             // btnCambiarContrasenia
             // 
-            this.btnCambiarContrasenia.Location = new System.Drawing.Point(784, 77);
+            this.btnCambiarContrasenia.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarContrasenia.Location = new System.Drawing.Point(735, 77);
             this.btnCambiarContrasenia.Name = "btnCambiarContrasenia";
-            this.btnCambiarContrasenia.Size = new System.Drawing.Size(75, 23);
+            this.btnCambiarContrasenia.Size = new System.Drawing.Size(96, 28);
             this.btnCambiarContrasenia.TabIndex = 8;
             this.btnCambiarContrasenia.Text = "cambiar";
             this.btnCambiarContrasenia.UseVisualStyleBackColor = true;
             // 
             // btnCambiarUsuario
             // 
-            this.btnCambiarUsuario.Location = new System.Drawing.Point(784, 36);
+            this.btnCambiarUsuario.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarUsuario.Location = new System.Drawing.Point(735, 31);
             this.btnCambiarUsuario.Name = "btnCambiarUsuario";
-            this.btnCambiarUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnCambiarUsuario.Size = new System.Drawing.Size(96, 28);
             this.btnCambiarUsuario.TabIndex = 7;
             this.btnCambiarUsuario.Text = "cambiar";
             this.btnCambiarUsuario.UseVisualStyleBackColor = true;
             // 
             // txtContrasenia
             // 
+            this.txtContrasenia.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtContrasenia.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.txtContrasenia.Location = new System.Drawing.Point(222, 77);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(472, 22);
+            this.txtContrasenia.Size = new System.Drawing.Size(472, 28);
             this.txtContrasenia.TabIndex = 6;
             // 
             // txtCorreo
             // 
+            this.txtCorreo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtCorreo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.txtCorreo.Location = new System.Drawing.Point(222, 119);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(472, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(472, 28);
             this.txtCorreo.TabIndex = 5;
             // 
             // txtNombreUsuario
             // 
+            this.txtNombreUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtNombreUsuario.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.txtNombreUsuario.Location = new System.Drawing.Point(222, 31);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(472, 22);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(472, 28);
             this.txtNombreUsuario.TabIndex = 4;
             // 
             // lblCorreoElectronico
             // 
             this.lblCorreoElectronico.AutoSize = true;
+            this.lblCorreoElectronico.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblCorreoElectronico.Location = new System.Drawing.Point(19, 122);
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
-            this.lblCorreoElectronico.Size = new System.Drawing.Size(132, 17);
+            this.lblCorreoElectronico.Size = new System.Drawing.Size(150, 18);
             this.lblCorreoElectronico.TabIndex = 3;
             this.lblCorreoElectronico.Text = "Correo electronico: ";
             // 
             // lblContrasenia
             // 
             this.lblContrasenia.AutoSize = true;
+            this.lblContrasenia.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblContrasenia.Location = new System.Drawing.Point(19, 77);
             this.lblContrasenia.Name = "lblContrasenia";
-            this.lblContrasenia.Size = new System.Drawing.Size(89, 17);
+            this.lblContrasenia.Size = new System.Drawing.Size(98, 18);
             this.lblContrasenia.TabIndex = 2;
             this.lblContrasenia.Text = "Contraseña: ";
             // 
             // lblNombreUsuario
             // 
             this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblNombreUsuario.Location = new System.Drawing.Point(19, 34);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(139, 17);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(153, 18);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "Nombre de Usuario: ";
             // 
             // lblPerfil
             // 
             this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPerfil.Location = new System.Drawing.Point(3, 0);
             this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(40, 17);
+            this.lblPerfil.Size = new System.Drawing.Size(46, 18);
             this.lblPerfil.TabIndex = 0;
             this.lblPerfil.Text = "Perfil";
             // 
             // paneApariencia
             // 
+            this.paneApariencia.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.paneApariencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneApariencia.Controls.Add(this.cmboxTema);
             this.paneApariencia.Controls.Add(this.lblTema);
@@ -191,6 +209,8 @@
             // 
             // cmboxTema
             // 
+            this.cmboxTema.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxTema.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxTema.FormattingEnabled = true;
             this.cmboxTema.Items.AddRange(new object[] {
             "Claro",
@@ -198,33 +218,37 @@
             "Predeterminado"});
             this.cmboxTema.Location = new System.Drawing.Point(331, 40);
             this.cmboxTema.Name = "cmboxTema";
-            this.cmboxTema.Size = new System.Drawing.Size(474, 24);
+            this.cmboxTema.Size = new System.Drawing.Size(474, 29);
             this.cmboxTema.TabIndex = 2;
             // 
             // lblTema
             // 
             this.lblTema.AutoSize = true;
+            this.lblTema.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblTema.Location = new System.Drawing.Point(55, 47);
             this.lblTema.Name = "lblTema";
-            this.lblTema.Size = new System.Drawing.Size(52, 17);
+            this.lblTema.Size = new System.Drawing.Size(54, 18);
             this.lblTema.TabIndex = 1;
             this.lblTema.Text = "Tema: ";
             // 
             // lblApariencia
             // 
             this.lblApariencia.AutoSize = true;
+            this.lblApariencia.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApariencia.Location = new System.Drawing.Point(-1, 0);
             this.lblApariencia.Name = "lblApariencia";
-            this.lblApariencia.Size = new System.Drawing.Size(75, 17);
+            this.lblApariencia.Size = new System.Drawing.Size(82, 18);
             this.lblApariencia.TabIndex = 0;
             this.lblApariencia.Text = "Apariencia";
             // 
             // paneIdioma
             // 
+            this.paneIdioma.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.paneIdioma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneIdioma.Controls.Add(this.cmboxIdiomas);
             this.paneIdioma.Controls.Add(this.label1);
             this.paneIdioma.Controls.Add(this.lblIdioma);
+            this.paneIdioma.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.paneIdioma.Location = new System.Drawing.Point(12, 430);
             this.paneIdioma.Name = "paneIdioma";
             this.paneIdioma.Size = new System.Drawing.Size(918, 100);
@@ -232,47 +256,53 @@
             // 
             // cmboxIdiomas
             // 
+            this.cmboxIdiomas.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxIdiomas.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxIdiomas.FormattingEnabled = true;
             this.cmboxIdiomas.Items.AddRange(new object[] {
             "Español",
             "Ingles"});
             this.cmboxIdiomas.Location = new System.Drawing.Point(332, 40);
             this.cmboxIdiomas.Name = "cmboxIdiomas";
-            this.cmboxIdiomas.Size = new System.Drawing.Size(474, 24);
+            this.cmboxIdiomas.Size = new System.Drawing.Size(474, 29);
             this.cmboxIdiomas.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(59, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.Size = new System.Drawing.Size(142, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Seleccionar Idioma";
             // 
             // lblIdioma
             // 
             this.lblIdioma.AutoSize = true;
+            this.lblIdioma.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdioma.Location = new System.Drawing.Point(4, 0);
             this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(49, 17);
+            this.lblIdioma.Size = new System.Drawing.Size(54, 18);
             this.lblIdioma.TabIndex = 0;
             this.lblIdioma.Text = "Idioma";
             // 
             // btnAplicarCambios
             // 
+            this.btnAplicarCambios.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAplicarCambios.Location = new System.Drawing.Point(197, 536);
             this.btnAplicarCambios.Name = "btnAplicarCambios";
-            this.btnAplicarCambios.Size = new System.Drawing.Size(134, 39);
+            this.btnAplicarCambios.Size = new System.Drawing.Size(183, 39);
             this.btnAplicarCambios.TabIndex = 3;
             this.btnAplicarCambios.Text = "Aplicar cambios";
             this.btnAplicarCambios.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(386, 536);
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(408, 536);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(134, 39);
+            this.btnCancelar.Size = new System.Drawing.Size(181, 39);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -283,6 +313,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(937, 600);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAplicarCambios);

@@ -27,5 +27,52 @@ namespace App_de_Usuario
             this.Hide();
             Program.frmPrincipal.paneVentanas.Visible = true;
         }
+
+        private void btnAvisarme1_Click(object sender, EventArgs e)
+        {
+            if (btnAvisarme1.Text.Equals("Avísame")) {
+                btnAvisarme1.Text = "No me avises";
+            }
+            else
+            {
+                btnAvisarme1.Text = "Avísame";
+            }
+        }
+
+        private void btnAvisarme2_Click(object sender, EventArgs e)
+        {
+            if (btnAvisarme2.Text.Equals("Avísame"))
+            {
+                btnAvisarme2.Text = "No me avises";
+            }
+            else
+            {
+                btnAvisarme2.Text = "Avísame";
+            }
+        }
+
+        private void btnAvisarme3_Click(object sender, EventArgs e)
+        {
+            if (btnAvisarme3.Text.Equals("Avísame"))
+            {
+                btnAvisarme3.Text = "No me avises";
+            }
+            else
+            {
+                btnAvisarme3.Text = "Avísame";
+            }
+        }
+
+        private void btnAvisarme4_Click(object sender, EventArgs e)
+        {
+            if (btnAvisarme4.Text.Equals("Avísame"))
+            {
+                btnAvisarme4.Text = "No me avises";
+            }
+            else
+            {
+                btnAvisarme4.Text = "Avísame";
+            }
+        }
     }
 }
