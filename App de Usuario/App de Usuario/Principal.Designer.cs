@@ -28,157 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resultadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventosProgramadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verEventosProgramadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deportesFavoritosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnVerDeportesFavoritos = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuracionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnstrip = new System.Windows.Forms.MenuStrip();
-            this.mnstrip.SuspendLayout();
+            this.paneBotones = new System.Windows.Forms.Panel();
+            this.btnResultados = new System.Windows.Forms.Button();
+            this.btnTorneos = new System.Windows.Forms.Button();
+            this.btnEncuentros = new System.Windows.Forms.Button();
+            this.btnDeportes = new System.Windows.Forms.Button();
+            this.btnFavoritos = new System.Windows.Forms.Button();
+            this.paneAvatar = new System.Windows.Forms.Panel();
+            this.pboxAvatar = new System.Windows.Forms.PictureBox();
+            this.paneBanner = new System.Windows.Forms.Panel();
+            this.paneLogo = new System.Windows.Forms.Panel();
+            this.paneVentanas = new System.Windows.Forms.Panel();
+            this.paneBotones.SuspendLayout();
+            this.paneAvatar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // verToolStripMenuItem
+            // paneBotones
             // 
-            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eventosToolStripMenuItem,
-            this.resultadosToolStripMenuItem});
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(42, 24);
-            this.verToolStripMenuItem.Text = "Ver";
+            this.paneBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneBotones.Controls.Add(this.paneLogo);
+            this.paneBotones.Controls.Add(this.paneAvatar);
+            this.paneBotones.Controls.Add(this.btnFavoritos);
+            this.paneBotones.Controls.Add(this.btnDeportes);
+            this.paneBotones.Controls.Add(this.btnEncuentros);
+            this.paneBotones.Controls.Add(this.btnTorneos);
+            this.paneBotones.Controls.Add(this.btnResultados);
+            this.paneBotones.Location = new System.Drawing.Point(1, 0);
+            this.paneBotones.Name = "paneBotones";
+            this.paneBotones.Size = new System.Drawing.Size(725, 134);
+            this.paneBotones.TabIndex = 0;
             // 
-            // eventosToolStripMenuItem
+            // btnResultados
             // 
-            this.eventosToolStripMenuItem.Name = "eventosToolStripMenuItem";
-            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.eventosToolStripMenuItem.Text = "Deportes";
-            this.eventosToolStripMenuItem.Click += new System.EventHandler(this.eventosToolStripMenuItem_Click);
+            this.btnResultados.Location = new System.Drawing.Point(133, 25);
+            this.btnResultados.Name = "btnResultados";
+            this.btnResultados.Size = new System.Drawing.Size(91, 36);
+            this.btnResultados.TabIndex = 0;
+            this.btnResultados.Text = "Ver Resultados";
+            this.btnResultados.UseVisualStyleBackColor = true;
             // 
-            // resultadosToolStripMenuItem
+            // btnTorneos
             // 
-            this.resultadosToolStripMenuItem.Name = "resultadosToolStripMenuItem";
-            this.resultadosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.resultadosToolStripMenuItem.Text = "Resultados";
-            this.resultadosToolStripMenuItem.Click += new System.EventHandler(this.resultadosToolStripMenuItem_Click);
+            this.btnTorneos.Location = new System.Drawing.Point(223, 69);
+            this.btnTorneos.Name = "btnTorneos";
+            this.btnTorneos.Size = new System.Drawing.Size(91, 36);
+            this.btnTorneos.TabIndex = 1;
+            this.btnTorneos.Text = "Torneos";
+            this.btnTorneos.UseVisualStyleBackColor = true;
             // 
-            // eventosProgramadosToolStripMenuItem
+            // btnEncuentros
             // 
-            this.eventosProgramadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verEventosProgramadosToolStripMenuItem});
-            this.eventosProgramadosToolStripMenuItem.Name = "eventosProgramadosToolStripMenuItem";
-            this.eventosProgramadosToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
-            this.eventosProgramadosToolStripMenuItem.Text = "Eventos Programados";
+            this.btnEncuentros.Location = new System.Drawing.Point(300, 25);
+            this.btnEncuentros.Name = "btnEncuentros";
+            this.btnEncuentros.Size = new System.Drawing.Size(91, 36);
+            this.btnEncuentros.TabIndex = 2;
+            this.btnEncuentros.Text = "Encuentros";
+            this.btnEncuentros.UseVisualStyleBackColor = true;
             // 
-            // verEventosProgramadosToolStripMenuItem
+            // btnDeportes
             // 
-            this.verEventosProgramadosToolStripMenuItem.Name = "verEventosProgramadosToolStripMenuItem";
-            this.verEventosProgramadosToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
-            this.verEventosProgramadosToolStripMenuItem.Text = "Ver eventos programados";
-            this.verEventosProgramadosToolStripMenuItem.Click += new System.EventHandler(this.verEventosProgramadosToolStripMenuItem_Click);
+            this.btnDeportes.Location = new System.Drawing.Point(371, 69);
+            this.btnDeportes.Name = "btnDeportes";
+            this.btnDeportes.Size = new System.Drawing.Size(91, 36);
+            this.btnDeportes.TabIndex = 3;
+            this.btnDeportes.Text = "Deportes";
+            this.btnDeportes.UseVisualStyleBackColor = true;
+            this.btnDeportes.Click += new System.EventHandler(this.button3_Click);
             // 
-            // deportesFavoritosToolStripMenuItem
+            // btnFavoritos
             // 
-            this.deportesFavoritosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnVerDeportesFavoritos,
-            this.toolStripSeparator1});
-            this.deportesFavoritosToolStripMenuItem.Name = "deportesFavoritosToolStripMenuItem";
-            this.deportesFavoritosToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
-            this.deportesFavoritosToolStripMenuItem.Text = "Deportes Favoritos";
+            this.btnFavoritos.Location = new System.Drawing.Point(438, 27);
+            this.btnFavoritos.Name = "btnFavoritos";
+            this.btnFavoritos.Size = new System.Drawing.Size(105, 36);
+            this.btnFavoritos.TabIndex = 4;
+            this.btnFavoritos.Text = "Equipos Favoritos";
+            this.btnFavoritos.UseVisualStyleBackColor = true;
             // 
-            // mnVerDeportesFavoritos
+            // paneAvatar
             // 
-            this.mnVerDeportesFavoritos.Name = "mnVerDeportesFavoritos";
-            this.mnVerDeportesFavoritos.Size = new System.Drawing.Size(230, 26);
-            this.mnVerDeportesFavoritos.Text = "Ver deportes favoritos";
-            this.mnVerDeportesFavoritos.Click += new System.EventHandler(this.veToolStripMenuItem_Click);
+            this.paneAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneAvatar.Controls.Add(this.pboxAvatar);
+            this.paneAvatar.Location = new System.Drawing.Point(596, 3);
+            this.paneAvatar.Name = "paneAvatar";
+            this.paneAvatar.Size = new System.Drawing.Size(124, 126);
+            this.paneAvatar.TabIndex = 5;
             // 
-            // toolStripSeparator1
+            // pboxAvatar
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(227, 6);
+            this.pboxAvatar.Location = new System.Drawing.Point(3, 7);
+            this.pboxAvatar.Name = "pboxAvatar";
+            this.pboxAvatar.Size = new System.Drawing.Size(116, 111);
+            this.pboxAvatar.TabIndex = 0;
+            this.pboxAvatar.TabStop = false;
             // 
-            // configuracionToolStripMenuItem
+            // paneBanner
             // 
-            this.configuracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuracionToolStripMenuItem1});
-            this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
-            this.configuracionToolStripMenuItem.Text = "Configuracion";
-            this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
+            this.paneBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneBanner.Location = new System.Drawing.Point(1, 546);
+            this.paneBanner.Name = "paneBanner";
+            this.paneBanner.Size = new System.Drawing.Size(725, 114);
+            this.paneBanner.TabIndex = 1;
             // 
-            // configuracionToolStripMenuItem1
+            // paneLogo
             // 
-            this.configuracionToolStripMenuItem1.Name = "configuracionToolStripMenuItem1";
-            this.configuracionToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
-            this.configuracionToolStripMenuItem1.Text = "Configuracion";
+            this.paneLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneLogo.Location = new System.Drawing.Point(3, 3);
+            this.paneLogo.Name = "paneLogo";
+            this.paneLogo.Size = new System.Drawing.Size(124, 126);
+            this.paneLogo.TabIndex = 6;
             // 
-            // salirToolStripMenuItem
+            // paneVentanas
             // 
-            this.salirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem1});
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
-            this.salirToolStripMenuItem.Text = "Salir";
-            // 
-            // salirToolStripMenuItem1
-            // 
-            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
-            this.salirToolStripMenuItem1.Text = "Salir";
-            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
-            // 
-            // mnstrip
-            // 
-            this.mnstrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mnstrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verToolStripMenuItem,
-            this.eventosProgramadosToolStripMenuItem,
-            this.deportesFavoritosToolStripMenuItem,
-            this.configuracionToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.mnstrip.Location = new System.Drawing.Point(0, 0);
-            this.mnstrip.Name = "mnstrip";
-            this.mnstrip.Size = new System.Drawing.Size(1115, 28);
-            this.mnstrip.TabIndex = 0;
-            this.mnstrip.Text = "menuStrip1";
+            this.paneVentanas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneVentanas.Location = new System.Drawing.Point(1, 140);
+            this.paneVentanas.Name = "paneVentanas";
+            this.paneVentanas.Size = new System.Drawing.Size(725, 400);
+            this.paneVentanas.TabIndex = 2;
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 604);
-            this.Controls.Add(this.mnstrip);
-            this.MainMenuStrip = this.mnstrip;
+            this.ClientSize = new System.Drawing.Size(726, 661);
+            this.Controls.Add(this.paneVentanas);
+            this.Controls.Add(this.paneBanner);
+            this.Controls.Add(this.paneBotones);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Principal";
             this.Text = "SIGDE";
             this.Load += new System.EventHandler(this.Principal_Load);
-            this.mnstrip.ResumeLayout(false);
-            this.mnstrip.PerformLayout();
+            this.paneBotones.ResumeLayout(false);
+            this.paneAvatar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAvatar)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eventosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resultadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eventosProgramadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verEventosProgramadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deportesFavoritosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnVerDeportesFavoritos;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
-        private System.Windows.Forms.MenuStrip mnstrip;
+        private System.Windows.Forms.Panel paneBotones;
+        private System.Windows.Forms.Button btnEncuentros;
+        private System.Windows.Forms.Button btnTorneos;
+        private System.Windows.Forms.Button btnResultados;
+        private System.Windows.Forms.Button btnDeportes;
+        private System.Windows.Forms.Button btnFavoritos;
+        private System.Windows.Forms.Panel paneAvatar;
+        private System.Windows.Forms.PictureBox pboxAvatar;
+        private System.Windows.Forms.Panel paneBanner;
+        private System.Windows.Forms.Panel paneLogo;
+        private System.Windows.Forms.Panel paneVentanas;
     }
 }

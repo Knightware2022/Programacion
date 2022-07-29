@@ -54,5 +54,10 @@ namespace App_de_Usuario
         {
             Application.Exit();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
