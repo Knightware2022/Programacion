@@ -22,8 +22,8 @@ namespace App_de_Usuario
             this.Hide();
             Program.frmPrincipal.Show();
         }
-        private void caracteresContrasenia() { //1 
-            if (txtContrasenia.UseSystemPasswordChar == true)
+        private void caracteresContrasenia(byte opcion) {//1, es mostrar
+            if (opcion == 1)
             {
                 this.txtContrasenia.UseSystemPasswordChar = false;
                 this.txtConfirmarContrasenia.UseSystemPasswordChar = false;
@@ -45,6 +45,7 @@ namespace App_de_Usuario
             this.txtContrasenia.UseSystemPasswordChar = true;
             this.txtConfirmarContrasenia.UseSystemPasswordChar = true;
             this.txtRegistrarContrasenia.UseSystemPasswordChar = true;
+     
 
         }
 
@@ -60,9 +61,20 @@ namespace App_de_Usuario
             this.paneRegistrarse.Visible = false;
         }
 
-        private void btnVerContrasenia_Click(object sender, EventArgs e)
+        private void btnVerContrasenia_Leave(object sender, EventArgs e)
         {
-            this.caracteresContrasenia();
+            this.caracteresContrasenia(0);
+        }
+
+        private void btnVerContrasenia_Enter(object sender, EventArgs e)
+        {
+            this.caracteresContrasenia(1);
+        }
+
+        private void btnGuest_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.frmPrincipal.Show();
         }
     }
 }

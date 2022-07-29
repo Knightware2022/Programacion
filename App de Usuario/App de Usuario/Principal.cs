@@ -21,43 +21,10 @@ namespace App_de_Usuario
             this.IsMdiContainer = true;
         }
 
-        private void veToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.frmDeportesFavoritos.Show();
-            Program.frmDeportesFavoritos.MdiParent = this;
-        }
 
-        private void eventosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void resultadosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.frmResultados.Show();
-            Program.frmResultados.MdiParent = this;
-        }
-
-        private void verEventosProgramadosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.frmEventosProgramados.Show();
-            Program.frmEventosProgramados.MdiParent = this;
-        }
-
-        private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.frmConfiguracion.Show();
-            Program.frmConfiguracion.MdiParent = this;
-        }
-
-        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void cerrarForm(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
