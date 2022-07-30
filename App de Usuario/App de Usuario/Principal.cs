@@ -62,5 +62,14 @@ namespace App_de_Usuario
             Program.frmConfiguracion.Bounds = paneVentanas.Bounds;
            
         }
+
+        private void pboxPublicidad_Click(object sender, EventArgs e)
+        {
+            Program.frmRegistrarse.MdiParent = this;
+            Program.frmRegistrarse.Show();
+            paneVentanas.Visible = false;
+            Program.frmRegistrarse.Bounds = paneVentanas.Bounds;
+
+        }
     }
 }

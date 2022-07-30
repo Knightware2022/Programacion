@@ -20,11 +20,30 @@ namespace App_de_Usuario
         private void Configuracion_Load(object sender, EventArgs e)
         {
             this.Size = Program.frmPrincipal.paneVentanas.Size;
-
+           
         }
          private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btnCambiarAvatar_Click(object sender, EventArgs e)
+        {
+            string avatar = cmboxAvatares.SelectedItem.ToString();
+            if (avatar.Equals("Femenino")) {
+                pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarFemenino;
+            }
+            else
+            {
+                if (avatar.Equals("Masculino"))
+                {
+                    pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarMasculino;
+                }
+                else
+                {
+                    pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;
+                }
+            }
         }
     }
 }

@@ -62,11 +62,10 @@
             // 
             this.paneBuscarEvento.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.paneBuscarEvento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneBuscarEvento.Controls.Add(this.btnCancelar);
             this.paneBuscarEvento.Controls.Add(this.btnFiltrar);
             this.paneBuscarEvento.Controls.Add(this.cmboxDeporte);
             this.paneBuscarEvento.Controls.Add(this.lblDeporte);
-            this.paneBuscarEvento.Location = new System.Drawing.Point(1, 1);
+            this.paneBuscarEvento.Location = new System.Drawing.Point(22, 3);
             this.paneBuscarEvento.Name = "paneBuscarEvento";
             this.paneBuscarEvento.Size = new System.Drawing.Size(907, 165);
             this.paneBuscarEvento.TabIndex = 0;
@@ -74,11 +73,11 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.Location = new System.Drawing.Point(465, 94);
+            this.btnCancelar.Location = new System.Drawing.Point(369, 375);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(118, 36);
             this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Volver";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -116,6 +115,7 @@
             // 
             this.paneEvento.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.paneEvento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneEvento.Controls.Add(this.btnCancelar);
             this.paneEvento.Controls.Add(this.lblVS4);
             this.paneEvento.Controls.Add(this.lblEquipoVisitante4);
             this.paneEvento.Controls.Add(this.lblEquipoLocal4);
@@ -136,7 +136,7 @@
             this.paneEvento.Controls.Add(this.lblEquipoLocal1);
             this.paneEvento.Controls.Add(this.btnAvisarme1);
             this.paneEvento.Controls.Add(this.lblEvento1);
-            this.paneEvento.Location = new System.Drawing.Point(1, 172);
+            this.paneEvento.Location = new System.Drawing.Point(22, 174);
             this.paneEvento.Name = "paneEvento";
             this.paneEvento.Size = new System.Drawing.Size(907, 431);
             this.paneEvento.TabIndex = 1;
@@ -351,7 +351,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(910, 606);
+            this.ClientSize = new System.Drawing.Size(966, 609);
             this.Controls.Add(this.paneEvento);
             this.Controls.Add(this.paneBuscarEvento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -67,7 +67,7 @@
             this.paneBuscar.Controls.Add(this.cmboxDeporte);
             this.paneBuscar.Controls.Add(this.lblEquipo);
             this.paneBuscar.Controls.Add(this.lblDeporte);
-            this.paneBuscar.Location = new System.Drawing.Point(1, 12);
+            this.paneBuscar.Location = new System.Drawing.Point(12, 12);
             this.paneBuscar.Name = "paneBuscar";
             this.paneBuscar.Size = new System.Drawing.Size(914, 137);
             this.paneBuscar.TabIndex = 0;
@@ -141,7 +141,7 @@
             this.paneResultados.Controls.Add(this.pboxLogoLocal);
             this.paneResultados.Controls.Add(this.lblEquipoVisitante1);
             this.paneResultados.Controls.Add(this.lblEquipoLocal1);
-            this.paneResultados.Location = new System.Drawing.Point(1, 155);
+            this.paneResultados.Location = new System.Drawing.Point(12, 155);
             this.paneResultados.Name = "paneResultados";
             this.paneResultados.Size = new System.Drawing.Size(914, 385);
             this.paneResultados.TabIndex = 1;
@@ -163,7 +163,7 @@
             this.lblGuion2.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold);
             this.lblGuion2.Location = new System.Drawing.Point(359, 238);
             this.lblGuion2.Name = "lblGuion2";
-            this.lblGuion2.Size = new System.Drawing.Size(31, 48);
+            this.lblGuion2.Size = new System.Drawing.Size(31, 46);
             this.lblGuion2.TabIndex = 13;
             this.lblGuion2.Text = "-";
             // 
@@ -173,7 +173,7 @@
             this.lblPuntajeVisitante2.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuntajeVisitante2.Location = new System.Drawing.Point(465, 238);
             this.lblPuntajeVisitante2.Name = "lblPuntajeVisitante2";
-            this.lblPuntajeVisitante2.Size = new System.Drawing.Size(43, 48);
+            this.lblPuntajeVisitante2.Size = new System.Drawing.Size(42, 46);
             this.lblPuntajeVisitante2.TabIndex = 12;
             this.lblPuntajeVisitante2.Text = "1";
             // 
@@ -183,7 +183,7 @@
             this.lblPuntajeLocal2.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold);
             this.lblPuntajeLocal2.Location = new System.Drawing.Point(249, 238);
             this.lblPuntajeLocal2.Name = "lblPuntajeLocal2";
-            this.lblPuntajeLocal2.Size = new System.Drawing.Size(43, 48);
+            this.lblPuntajeLocal2.Size = new System.Drawing.Size(42, 46);
             this.lblPuntajeLocal2.TabIndex = 11;
             this.lblPuntajeLocal2.Text = "0";
             // 
@@ -231,7 +231,7 @@
             this.lblGuion.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold);
             this.lblGuion.Location = new System.Drawing.Point(359, 108);
             this.lblGuion.Name = "lblGuion";
-            this.lblGuion.Size = new System.Drawing.Size(31, 48);
+            this.lblGuion.Size = new System.Drawing.Size(31, 46);
             this.lblGuion.TabIndex = 6;
             this.lblGuion.Text = "-";
             // 
@@ -241,7 +241,7 @@
             this.lblPuntosVisitante.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuntosVisitante.Location = new System.Drawing.Point(465, 108);
             this.lblPuntosVisitante.Name = "lblPuntosVisitante";
-            this.lblPuntosVisitante.Size = new System.Drawing.Size(43, 48);
+            this.lblPuntosVisitante.Size = new System.Drawing.Size(42, 46);
             this.lblPuntosVisitante.TabIndex = 5;
             this.lblPuntosVisitante.Text = "1";
             // 
@@ -251,7 +251,7 @@
             this.lblPuntosLocal.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold);
             this.lblPuntosLocal.Location = new System.Drawing.Point(249, 108);
             this.lblPuntosLocal.Name = "lblPuntosLocal";
-            this.lblPuntosLocal.Size = new System.Drawing.Size(43, 48);
+            this.lblPuntosLocal.Size = new System.Drawing.Size(42, 46);
             this.lblPuntosLocal.TabIndex = 4;
             this.lblPuntosLocal.Text = "0";
             // 
@@ -299,7 +299,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(921, 543);
+            this.ClientSize = new System.Drawing.Size(966, 543);
             this.Controls.Add(this.paneResultados);
             this.Controls.Add(this.paneBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

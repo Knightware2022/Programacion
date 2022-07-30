@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panePerfil = new System.Windows.Forms.Panel();
+            this.btnCambiarAvatar = new System.Windows.Forms.Button();
+            this.cmboxAvatares = new System.Windows.Forms.ComboBox();
             this.pboxAvatar = new System.Windows.Forms.PictureBox();
             this.lblAvatar = new System.Windows.Forms.Label();
             this.btnCambiarCorreo = new System.Windows.Forms.Button();
@@ -61,6 +63,8 @@
             // 
             this.panePerfil.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panePerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panePerfil.Controls.Add(this.btnCambiarAvatar);
+            this.panePerfil.Controls.Add(this.cmboxAvatares);
             this.panePerfil.Controls.Add(this.pboxAvatar);
             this.panePerfil.Controls.Add(this.lblAvatar);
             this.panePerfil.Controls.Add(this.btnCambiarCorreo);
@@ -77,6 +81,31 @@
             this.panePerfil.Name = "panePerfil";
             this.panePerfil.Size = new System.Drawing.Size(918, 289);
             this.panePerfil.TabIndex = 0;
+            // 
+            // btnCambiarAvatar
+            // 
+            this.btnCambiarAvatar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCambiarAvatar.Location = new System.Drawing.Point(654, 229);
+            this.btnCambiarAvatar.Name = "btnCambiarAvatar";
+            this.btnCambiarAvatar.Size = new System.Drawing.Size(177, 36);
+            this.btnCambiarAvatar.TabIndex = 13;
+            this.btnCambiarAvatar.Text = "Cambiar ávatar";
+            this.btnCambiarAvatar.UseVisualStyleBackColor = true;
+            this.btnCambiarAvatar.Click += new System.EventHandler(this.btnCambiarAvatar_Click);
+            // 
+            // cmboxAvatares
+            // 
+            this.cmboxAvatares.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxAvatares.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmboxAvatares.FormattingEnabled = true;
+            this.cmboxAvatares.Items.AddRange(new object[] {
+            "Estándar",
+            "Femenino",
+            "Masculino"});
+            this.cmboxAvatares.Location = new System.Drawing.Point(366, 205);
+            this.cmboxAvatares.Name = "cmboxAvatares";
+            this.cmboxAvatares.Size = new System.Drawing.Size(272, 27);
+            this.cmboxAvatares.TabIndex = 12;
             // 
             // pboxAvatar
             // 
@@ -362,5 +391,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cmboxIdiomas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmboxAvatares;
+        private System.Windows.Forms.Button btnCambiarAvatar;
     }
 }

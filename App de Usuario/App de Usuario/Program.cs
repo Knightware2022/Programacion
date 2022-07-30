@@ -15,6 +15,7 @@ namespace App_de_Usuario
         public static Login frmLogin;
         public static Principal frmPrincipal;
         public static Resultados frmResultados;
+        public static Registrarse frmRegistrarse;
         [STAThread]
         static void Main()
         {
@@ -25,6 +26,7 @@ namespace App_de_Usuario
             frmEventosProgramados = new EventosProgramados();
             frmPrincipal = new Principal();
             frmResultados = new Resultados();
+            frmRegistrarse = new Registrarse();
             
             Application.Run(frmLogin = new Login());
         }

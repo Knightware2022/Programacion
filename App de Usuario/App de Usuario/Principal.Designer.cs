@@ -31,23 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.paneBotones = new System.Windows.Forms.Panel();
             this.paneLogo = new System.Windows.Forms.Panel();
+            this.pboxLogo = new System.Windows.Forms.PictureBox();
             this.paneAvatar = new System.Windows.Forms.Panel();
+            this.btnAvatar = new System.Windows.Forms.Button();
             this.btnFavoritos = new System.Windows.Forms.Button();
             this.btnDeportes = new System.Windows.Forms.Button();
             this.btnEncuentros = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
             this.btnResultados = new System.Windows.Forms.Button();
             this.paneBanner = new System.Windows.Forms.Panel();
-            this.paneVentanas = new System.Windows.Forms.Panel();
             this.pboxPublicidad = new System.Windows.Forms.PictureBox();
-            this.pboxLogo = new System.Windows.Forms.PictureBox();
-            this.btnAvatar = new System.Windows.Forms.Button();
+            this.paneVentanas = new System.Windows.Forms.Panel();
             this.paneBotones.SuspendLayout();
             this.paneLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).BeginInit();
             this.paneAvatar.SuspendLayout();
             this.paneBanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPublicidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // paneBotones
@@ -77,6 +77,17 @@
             this.paneLogo.Size = new System.Drawing.Size(165, 155);
             this.paneLogo.TabIndex = 6;
             // 
+            // pboxLogo
+            // 
+            this.pboxLogo.Image = global::App_de_Usuario.Properties.Resources.Knightware_Letra;
+            this.pboxLogo.Location = new System.Drawing.Point(-1, -1);
+            this.pboxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pboxLogo.Name = "pboxLogo";
+            this.pboxLogo.Size = new System.Drawing.Size(165, 155);
+            this.pboxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxLogo.TabIndex = 1;
+            this.pboxLogo.TabStop = false;
+            // 
             // paneAvatar
             // 
             this.paneAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -86,6 +97,17 @@
             this.paneAvatar.Name = "paneAvatar";
             this.paneAvatar.Size = new System.Drawing.Size(165, 155);
             this.paneAvatar.TabIndex = 5;
+            // 
+            // btnAvatar
+            // 
+            this.btnAvatar.BackgroundImage = global::App_de_Usuario.Properties.Resources.avatar;
+            this.btnAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAvatar.Location = new System.Drawing.Point(-1, 3);
+            this.btnAvatar.Name = "btnAvatar";
+            this.btnAvatar.Size = new System.Drawing.Size(161, 147);
+            this.btnAvatar.TabIndex = 0;
+            this.btnAvatar.UseVisualStyleBackColor = true;
+            this.btnAvatar.Click += new System.EventHandler(this.btnAvatar_Click);
             // 
             // btnFavoritos
             // 
@@ -155,16 +177,6 @@
             this.paneBanner.Size = new System.Drawing.Size(966, 140);
             this.paneBanner.TabIndex = 1;
             // 
-            // paneVentanas
-            // 
-            this.paneVentanas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.paneVentanas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneVentanas.Location = new System.Drawing.Point(1, 172);
-            this.paneVentanas.Margin = new System.Windows.Forms.Padding(4);
-            this.paneVentanas.Name = "paneVentanas";
-            this.paneVentanas.Size = new System.Drawing.Size(966, 492);
-            this.paneVentanas.TabIndex = 2;
-            // 
             // pboxPublicidad
             // 
             this.pboxPublicidad.Image = global::App_de_Usuario.Properties.Resources.banner_publicidad_01;
@@ -174,28 +186,17 @@
             this.pboxPublicidad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxPublicidad.TabIndex = 0;
             this.pboxPublicidad.TabStop = false;
+            this.pboxPublicidad.Click += new System.EventHandler(this.pboxPublicidad_Click);
             // 
-            // pboxLogo
+            // paneVentanas
             // 
-            this.pboxLogo.Image = global::App_de_Usuario.Properties.Resources.Knightware_Letra;
-            this.pboxLogo.Location = new System.Drawing.Point(-1, -1);
-            this.pboxLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.pboxLogo.Name = "pboxLogo";
-            this.pboxLogo.Size = new System.Drawing.Size(165, 155);
-            this.pboxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxLogo.TabIndex = 1;
-            this.pboxLogo.TabStop = false;
-            // 
-            // btnAvatar
-            // 
-            this.btnAvatar.BackgroundImage = global::App_de_Usuario.Properties.Resources.avatar;
-            this.btnAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAvatar.Location = new System.Drawing.Point(-1, 3);
-            this.btnAvatar.Name = "btnAvatar";
-            this.btnAvatar.Size = new System.Drawing.Size(161, 147);
-            this.btnAvatar.TabIndex = 0;
-            this.btnAvatar.UseVisualStyleBackColor = true;
-            this.btnAvatar.Click += new System.EventHandler(this.btnAvatar_Click);
+            this.paneVentanas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.paneVentanas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneVentanas.Location = new System.Drawing.Point(1, 172);
+            this.paneVentanas.Margin = new System.Windows.Forms.Padding(4);
+            this.paneVentanas.Name = "paneVentanas";
+            this.paneVentanas.Size = new System.Drawing.Size(966, 492);
+            this.paneVentanas.TabIndex = 2;
             // 
             // Principal
             // 
@@ -215,10 +216,10 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.paneBotones.ResumeLayout(false);
             this.paneLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).EndInit();
             this.paneAvatar.ResumeLayout(false);
             this.paneBanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pboxPublicidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

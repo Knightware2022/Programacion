@@ -46,9 +46,9 @@
             this.paneDeportesFavoritos.Controls.Add(this.btnRefrescar);
             this.paneDeportesFavoritos.Controls.Add(this.cmboxDeportesFavoritos);
             this.paneDeportesFavoritos.Controls.Add(this.lblDeportesFavoritos);
-            this.paneDeportesFavoritos.Location = new System.Drawing.Point(20, 139);
+            this.paneDeportesFavoritos.Location = new System.Drawing.Point(8, 144);
             this.paneDeportesFavoritos.Name = "paneDeportesFavoritos";
-            this.paneDeportesFavoritos.Size = new System.Drawing.Size(961, 230);
+            this.paneDeportesFavoritos.Size = new System.Drawing.Size(949, 230);
             this.paneDeportesFavoritos.TabIndex = 0;
             this.paneDeportesFavoritos.Paint += new System.Windows.Forms.PaintEventHandler(this.paneDeportesFavoritos_Paint);
             // 
@@ -109,7 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1005, 608);
+            this.ClientSize = new System.Drawing.Size(966, 542);
             this.Controls.Add(this.paneDeportesFavoritos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
