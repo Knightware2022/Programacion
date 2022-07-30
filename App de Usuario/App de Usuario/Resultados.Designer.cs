@@ -85,6 +85,7 @@
             // cmboxEquipo
             // 
             this.cmboxEquipo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxEquipo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxEquipo.FormattingEnabled = true;
             this.cmboxEquipo.Location = new System.Drawing.Point(375, 69);
@@ -95,6 +96,7 @@
             // cmboxDeporte
             // 
             this.cmboxDeporte.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxDeporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxDeporte.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxDeporte.FormattingEnabled = true;
             this.cmboxDeporte.Location = new System.Drawing.Point(375, 35);

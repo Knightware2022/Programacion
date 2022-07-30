@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.paneBuscarEvento = new System.Windows.Forms.Panel();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.cmboxDeporte = new System.Windows.Forms.ComboBox();
             this.lblDeporte = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.paneEvento = new System.Windows.Forms.Panel();
             this.lblVS4 = new System.Windows.Forms.Label();
             this.lblEquipoVisitante4 = new System.Windows.Forms.Label();
@@ -70,17 +70,6 @@
             this.paneBuscarEvento.Size = new System.Drawing.Size(907, 165);
             this.paneBuscarEvento.TabIndex = 0;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.Location = new System.Drawing.Point(369, 375);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(118, 36);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Volver";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // btnFiltrar
             // 
             this.btnFiltrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
@@ -94,6 +83,7 @@
             // cmboxDeporte
             // 
             this.cmboxDeporte.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxDeporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxDeporte.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxDeporte.FormattingEnabled = true;
             this.cmboxDeporte.Location = new System.Drawing.Point(254, 41);
@@ -110,6 +100,17 @@
             this.lblDeporte.Size = new System.Drawing.Size(74, 18);
             this.lblDeporte.TabIndex = 0;
             this.lblDeporte.Text = "Deporte: ";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.Location = new System.Drawing.Point(369, 375);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(118, 36);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Volver";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // paneEvento
             // 

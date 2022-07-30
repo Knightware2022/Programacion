@@ -45,6 +45,8 @@ namespace App_de_Usuario
             this.txtContrasenia.UseSystemPasswordChar = true;
             this.txtConfirmarContrasenia.UseSystemPasswordChar = true;
             this.txtRegistrarContrasenia.UseSystemPasswordChar = true;
+            this.cmboxIdioma.Text = "Español";
+            this.cmboxCambiarIdiomaII.Text = "Español";
      
 
         }
@@ -75,6 +77,18 @@ namespace App_de_Usuario
         {
             this.Hide();
             Program.frmPrincipal.Show();
+        }
+
+        private void cmboxIdioma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string idioma = cmboxIdioma.SelectedItem.ToString();
+            Idiomas.cambiarIdioma(idioma);
+        }
+
+        private void cmboxCambiarIdiomaII_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string idioma = cmboxCambiarIdiomaII.SelectedItem.ToString();
+            Idiomas.cambiarIdioma(idioma);
         }
     }
 }

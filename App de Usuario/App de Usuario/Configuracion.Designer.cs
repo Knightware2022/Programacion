@@ -96,6 +96,7 @@
             // cmboxAvatares
             // 
             this.cmboxAvatares.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxAvatares.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxAvatares.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxAvatares.FormattingEnabled = true;
             this.cmboxAvatares.Items.AddRange(new object[] {
@@ -239,6 +240,7 @@
             // cmboxTema
             // 
             this.cmboxTema.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxTema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxTema.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxTema.FormattingEnabled = true;
             this.cmboxTema.Items.AddRange(new object[] {
@@ -286,6 +288,7 @@
             // cmboxIdiomas
             // 
             this.cmboxIdiomas.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxIdiomas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxIdiomas.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxIdiomas.FormattingEnabled = true;
             this.cmboxIdiomas.Items.AddRange(new object[] {
@@ -325,6 +328,7 @@
             this.btnAplicarCambios.TabIndex = 3;
             this.btnAplicarCambios.Text = "Aplicar cambios";
             this.btnAplicarCambios.UseVisualStyleBackColor = true;
+            this.btnAplicarCambios.Click += new System.EventHandler(this.btnAplicarCambios_Click);
             // 
             // btnCancelar
             // 
@@ -333,7 +337,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(181, 39);
             this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Cerrar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -389,9 +393,9 @@
         private System.Windows.Forms.Button btnAplicarCambios;
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox cmboxIdiomas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmboxAvatares;
         private System.Windows.Forms.Button btnCambiarAvatar;
+        public System.Windows.Forms.ComboBox cmboxIdiomas;
     }
 }

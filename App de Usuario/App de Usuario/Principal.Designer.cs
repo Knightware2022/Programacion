@@ -227,17 +227,17 @@
         #endregion
 
         private System.Windows.Forms.Panel paneBotones;
-        private System.Windows.Forms.Button btnEncuentros;
-        private System.Windows.Forms.Button btnTorneos;
-        private System.Windows.Forms.Button btnResultados;
-        private System.Windows.Forms.Button btnDeportes;
-        private System.Windows.Forms.Button btnFavoritos;
         private System.Windows.Forms.Panel paneAvatar;
         private System.Windows.Forms.Panel paneBanner;
         private System.Windows.Forms.Panel paneLogo;
         private System.Windows.Forms.PictureBox pboxLogo;
         private System.Windows.Forms.PictureBox pboxPublicidad;
-        private System.Windows.Forms.Button btnAvatar;
         public System.Windows.Forms.Panel paneVentanas;
+        public System.Windows.Forms.Button btnAvatar;
+        public System.Windows.Forms.Button btnResultados;
+        public System.Windows.Forms.Button btnEncuentros;
+        public System.Windows.Forms.Button btnTorneos;
+        public System.Windows.Forms.Button btnDeportes;
+        public System.Windows.Forms.Button btnFavoritos;
     }
 }

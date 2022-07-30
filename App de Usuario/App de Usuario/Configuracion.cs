@@ -20,7 +20,10 @@ namespace App_de_Usuario
         private void Configuracion_Load(object sender, EventArgs e)
         {
             this.Size = Program.frmPrincipal.paneVentanas.Size;
-           
+            this.cmboxAvatares.Text ="Estándar";
+            this.cmboxIdiomas.Text = Program.frmLogin.cmboxIdioma.Text;
+            this.cmboxTema.Text = "Predeterminado";
+
         }
          private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -44,6 +47,13 @@ namespace App_de_Usuario
                     pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;
                 }
             }
+        }
+
+        private void btnAplicarCambios_Click(object sender, EventArgs e)
+        {
+            Program.frmPrincipal.btnAvatar.BackgroundImage = pboxAvatar.Image;
+            string idioma = cmboxIdiomas.SelectedItem.ToString();
+            Idiomas.cambiarIdioma(idioma);
         }
     }
 }

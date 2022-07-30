@@ -86,6 +86,7 @@
             // cmboxDeportesFavoritos
             // 
             this.cmboxDeportesFavoritos.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxDeportesFavoritos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxDeportesFavoritos.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxDeportesFavoritos.FormattingEnabled = true;
             this.cmboxDeportesFavoritos.Location = new System.Drawing.Point(276, 72);
