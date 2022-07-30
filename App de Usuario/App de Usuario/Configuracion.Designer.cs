@@ -49,7 +49,7 @@
             this.lblApariencia = new System.Windows.Forms.Label();
             this.paneIdioma = new System.Windows.Forms.Panel();
             this.cmboxIdiomas = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSeleccioneIdioma = new System.Windows.Forms.Label();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.btnAplicarCambios = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -133,7 +133,7 @@
             this.btnCambiarCorreo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarCorreo.Location = new System.Drawing.Point(735, 116);
             this.btnCambiarCorreo.Name = "btnCambiarCorreo";
-            this.btnCambiarCorreo.Size = new System.Drawing.Size(96, 29);
+            this.btnCambiarCorreo.Size = new System.Drawing.Size(118, 29);
             this.btnCambiarCorreo.TabIndex = 9;
             this.btnCambiarCorreo.Text = "cambiar";
             this.btnCambiarCorreo.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@
             this.btnCambiarContrasenia.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarContrasenia.Location = new System.Drawing.Point(735, 77);
             this.btnCambiarContrasenia.Name = "btnCambiarContrasenia";
-            this.btnCambiarContrasenia.Size = new System.Drawing.Size(96, 28);
+            this.btnCambiarContrasenia.Size = new System.Drawing.Size(118, 28);
             this.btnCambiarContrasenia.TabIndex = 8;
             this.btnCambiarContrasenia.Text = "cambiar";
             this.btnCambiarContrasenia.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.btnCambiarUsuario.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarUsuario.Location = new System.Drawing.Point(735, 31);
             this.btnCambiarUsuario.Name = "btnCambiarUsuario";
-            this.btnCambiarUsuario.Size = new System.Drawing.Size(96, 28);
+            this.btnCambiarUsuario.Size = new System.Drawing.Size(118, 28);
             this.btnCambiarUsuario.TabIndex = 7;
             this.btnCambiarUsuario.Text = "cambiar";
             this.btnCambiarUsuario.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@
             this.paneIdioma.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.paneIdioma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneIdioma.Controls.Add(this.cmboxIdiomas);
-            this.paneIdioma.Controls.Add(this.label1);
+            this.paneIdioma.Controls.Add(this.lblSeleccioneIdioma);
             this.paneIdioma.Controls.Add(this.lblIdioma);
             this.paneIdioma.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.paneIdioma.Location = new System.Drawing.Point(12, 430);
@@ -299,15 +299,15 @@
             this.cmboxIdiomas.Size = new System.Drawing.Size(474, 29);
             this.cmboxIdiomas.TabIndex = 3;
             // 
-            // label1
+            // lblSeleccioneIdioma
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(59, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Seleccionar Idioma";
+            this.lblSeleccioneIdioma.AutoSize = true;
+            this.lblSeleccioneIdioma.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lblSeleccioneIdioma.Location = new System.Drawing.Point(59, 43);
+            this.lblSeleccioneIdioma.Name = "lblSeleccioneIdioma";
+            this.lblSeleccioneIdioma.Size = new System.Drawing.Size(142, 18);
+            this.lblSeleccioneIdioma.TabIndex = 1;
+            this.lblSeleccioneIdioma.Text = "Seleccionar Idioma";
             // 
             // lblIdioma
             // 
@@ -373,29 +373,29 @@
         #endregion
 
         private System.Windows.Forms.Panel panePerfil;
-        private System.Windows.Forms.Label lblPerfil;
-        private System.Windows.Forms.Label lblContrasenia;
-        private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Label lblCorreoElectronico;
-        private System.Windows.Forms.Button btnCambiarCorreo;
-        private System.Windows.Forms.Button btnCambiarContrasenia;
-        private System.Windows.Forms.Button btnCambiarUsuario;
         private System.Windows.Forms.TextBox txtContrasenia;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtNombreUsuario;
-        private System.Windows.Forms.Label lblAvatar;
         private System.Windows.Forms.PictureBox pboxAvatar;
         private System.Windows.Forms.Panel paneApariencia;
-        private System.Windows.Forms.Label lblTema;
-        private System.Windows.Forms.Label lblApariencia;
         private System.Windows.Forms.ComboBox cmboxTema;
         private System.Windows.Forms.Panel paneIdioma;
-        private System.Windows.Forms.Button btnAplicarCambios;
-        private System.Windows.Forms.Label lblIdioma;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmboxAvatares;
-        private System.Windows.Forms.Button btnCambiarAvatar;
         public System.Windows.Forms.ComboBox cmboxIdiomas;
+        public System.Windows.Forms.Label lblPerfil;
+        public System.Windows.Forms.Label lblContrasenia;
+        public System.Windows.Forms.Label lblNombreUsuario;
+        public System.Windows.Forms.Label lblCorreoElectronico;
+        public System.Windows.Forms.Button btnCambiarCorreo;
+        public System.Windows.Forms.Button btnCambiarContrasenia;
+        public System.Windows.Forms.Button btnCambiarUsuario;
+        public System.Windows.Forms.Label lblAvatar;
+        public System.Windows.Forms.Label lblTema;
+        public System.Windows.Forms.Label lblApariencia;
+        public System.Windows.Forms.Button btnAplicarCambios;
+        public System.Windows.Forms.Label lblIdioma;
+        public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Label lblSeleccioneIdioma;
+        public System.Windows.Forms.Button btnCambiarAvatar;
     }
 }

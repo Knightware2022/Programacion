@@ -54,6 +54,8 @@ namespace App_de_Usuario
             Program.frmPrincipal.btnAvatar.BackgroundImage = pboxAvatar.Image;
             string idioma = cmboxIdiomas.SelectedItem.ToString();
             Idiomas.cambiarIdioma(idioma);
+
         }
+
     }
 }

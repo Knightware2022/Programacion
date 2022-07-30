@@ -36,6 +36,23 @@ namespace App_de_Usuario
                     Program.frmLogin.cmboxIdioma.Text = "Ingles";   
                     Program.frmConfiguracion.cmboxIdiomas.Text = "Ingles";
                     #endregion
+                    #region "de frmConfiguracion"
+                    Program.frmConfiguracion.lblPerfil.Text = "Profile";
+                    Program.frmConfiguracion.lblNombreUsuario.Text = "Username: ";
+                    Program.frmConfiguracion.lblApariencia.Text = "Appearance: ";
+                    Program.frmConfiguracion.lblAvatar.Text = "Avatar: ";
+                    Program.frmConfiguracion.lblContrasenia.Text = "Password: ";
+                    Program.frmConfiguracion.lblCorreoElectronico.Text = "Email: ";
+                    Program.frmConfiguracion.lblIdioma.Text = "Language";
+                    Program.frmConfiguracion.lblTema.Text = "Theme";
+                    Program.frmConfiguracion.lblSeleccioneIdioma.Text = "Choose language";
+                    Program.frmConfiguracion.btnCancelar.Text = "Return";
+                    Program.frmConfiguracion.btnCambiarUsuario.Text = "Change";
+                    Program.frmConfiguracion.btnCambiarCorreo.Text = "Change";
+                    Program.frmConfiguracion.btnCambiarContrasenia.Text = "Change";
+                    Program.frmConfiguracion.btnCambiarAvatar.Text = "Change avatar";
+                    Program.frmConfiguracion.btnAplicarCambios.Text = "Apply changes";
+                    #endregion
                     break;
                 case "Español" :
                     #region "de frmPrincipal"
@@ -62,6 +79,23 @@ namespace App_de_Usuario
                     Program.frmLogin.cmboxCambiarIdiomaII.Text = "Español";//"actualizo" todos los cmbox de idiomas con el mismo
                     Program.frmLogin.cmboxIdioma.Text = "Español";
                     Program.frmConfiguracion.cmboxIdiomas.Text = "Español";
+                    #endregion
+                    #region "de frmConfiguracion"
+                    Program.frmConfiguracion.lblPerfil.Text = "Perfil";
+                    Program.frmConfiguracion.lblNombreUsuario.Text = "Nombre de usuario: ";
+                    Program.frmConfiguracion.lblApariencia.Text = "Apariencia: ";
+                    Program.frmConfiguracion.lblAvatar.Text = "Avatar: ";
+                    Program.frmConfiguracion.lblContrasenia.Text = "Contraseña: ";
+                    Program.frmConfiguracion.lblCorreoElectronico.Text = "Correo electrónico: ";
+                    Program.frmConfiguracion.lblIdioma.Text = "Idioma";
+                    Program.frmConfiguracion.lblTema.Text = "Tema";
+                    Program.frmConfiguracion.lblSeleccioneIdioma.Text = "Seleccionar idioma";
+                    Program.frmConfiguracion.btnCancelar.Text = "Cerrar";
+                    Program.frmConfiguracion.btnCambiarUsuario.Text = "Cambiar";
+                    Program.frmConfiguracion.btnCambiarCorreo.Text = "Cambiar";
+                    Program.frmConfiguracion.btnCambiarContrasenia.Text = "Cambiar";
+                    Program.frmConfiguracion.btnCambiarAvatar.Text = "Cambiar avatar";
+                    Program.frmConfiguracion.btnAplicarCambios.Text = "Aplicar cambios";
                     #endregion
                     break;
             }
