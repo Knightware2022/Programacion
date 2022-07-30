@@ -20,7 +20,6 @@ namespace BackOfficeAdministracion
         private void Principal_Load(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
-            picboxHome.Image = Image.FromFile(@"C:\Users\User\Desktop\ApiA\HOME.png");
         }
 
         private void btnGestionarDeportes_Click(object sender, EventArgs e)

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.paneHerramientas = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.paneConfiguracion = new System.Windows.Forms.Panel();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.paneVerResultados = new System.Windows.Forms.Panel();
@@ -59,7 +58,6 @@
             // 
             this.paneHerramientas.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.paneHerramientas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneHerramientas.Controls.Add(this.btnSalir);
             this.paneHerramientas.Controls.Add(this.paneConfiguracion);
             this.paneHerramientas.Controls.Add(this.paneVerResultados);
             this.paneHerramientas.Controls.Add(this.paneVerEventos);
@@ -68,18 +66,8 @@
             this.paneHerramientas.Controls.Add(this.paneGestionarDeportes);
             this.paneHerramientas.Location = new System.Drawing.Point(1, 1);
             this.paneHerramientas.Name = "paneHerramientas";
-            this.paneHerramientas.Size = new System.Drawing.Size(324, 627);
+            this.paneHerramientas.Size = new System.Drawing.Size(324, 624);
             this.paneHerramientas.TabIndex = 0;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(100, 584);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(90, 23);
-            this.btnSalir.TabIndex = 6;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // paneConfiguracion
             // 
@@ -92,9 +80,10 @@
             // 
             // btnConfiguracion
             // 
+            this.btnConfiguracion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnConfiguracion.Location = new System.Drawing.Point(67, 15);
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(157, 46);
+            this.btnConfiguracion.Size = new System.Drawing.Size(177, 46);
             this.btnConfiguracion.TabIndex = 5;
             this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.UseVisualStyleBackColor = true;
@@ -111,9 +100,10 @@
             // 
             // btnVerResultados
             // 
+            this.btnVerResultados.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnVerResultados.Location = new System.Drawing.Point(67, 20);
             this.btnVerResultados.Name = "btnVerResultados";
-            this.btnVerResultados.Size = new System.Drawing.Size(157, 46);
+            this.btnVerResultados.Size = new System.Drawing.Size(172, 46);
             this.btnVerResultados.TabIndex = 4;
             this.btnVerResultados.Text = "Ver resultados";
             this.btnVerResultados.UseVisualStyleBackColor = true;
@@ -129,9 +119,10 @@
             // 
             // btnVerEventos
             // 
+            this.btnVerEventos.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnVerEventos.Location = new System.Drawing.Point(67, 21);
             this.btnVerEventos.Name = "btnVerEventos";
-            this.btnVerEventos.Size = new System.Drawing.Size(157, 46);
+            this.btnVerEventos.Size = new System.Drawing.Size(172, 46);
             this.btnVerEventos.TabIndex = 3;
             this.btnVerEventos.Text = "Ver eventos";
             this.btnVerEventos.UseVisualStyleBackColor = true;
@@ -147,9 +138,10 @@
             // 
             // btnGestionarEventos
             // 
+            this.btnGestionarEventos.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnGestionarEventos.Location = new System.Drawing.Point(67, 17);
             this.btnGestionarEventos.Name = "btnGestionarEventos";
-            this.btnGestionarEventos.Size = new System.Drawing.Size(157, 46);
+            this.btnGestionarEventos.Size = new System.Drawing.Size(172, 46);
             this.btnGestionarEventos.TabIndex = 2;
             this.btnGestionarEventos.Text = "Gestionar Eventos";
             this.btnGestionarEventos.UseVisualStyleBackColor = true;
@@ -166,9 +158,10 @@
             // 
             // btnGestionarUsuarios
             // 
-            this.btnGestionarUsuarios.Location = new System.Drawing.Point(67, 19);
+            this.btnGestionarUsuarios.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnGestionarUsuarios.Location = new System.Drawing.Point(67, 3);
             this.btnGestionarUsuarios.Name = "btnGestionarUsuarios";
-            this.btnGestionarUsuarios.Size = new System.Drawing.Size(157, 46);
+            this.btnGestionarUsuarios.Size = new System.Drawing.Size(172, 80);
             this.btnGestionarUsuarios.TabIndex = 1;
             this.btnGestionarUsuarios.Text = "Gestionar Usuarios y Publicidad";
             this.btnGestionarUsuarios.UseVisualStyleBackColor = true;
@@ -185,9 +178,10 @@
             // 
             // btnGestionarDeportes
             // 
+            this.btnGestionarDeportes.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionarDeportes.Location = new System.Drawing.Point(67, 21);
             this.btnGestionarDeportes.Name = "btnGestionarDeportes";
-            this.btnGestionarDeportes.Size = new System.Drawing.Size(157, 46);
+            this.btnGestionarDeportes.Size = new System.Drawing.Size(172, 46);
             this.btnGestionarDeportes.TabIndex = 0;
             this.btnGestionarDeportes.Text = "Gestionar Deportes";
             this.btnGestionarDeportes.UseVisualStyleBackColor = true;
@@ -204,9 +198,11 @@
             // 
             // picboxHome
             // 
+            this.picboxHome.Image = global::BackOfficeAdministracion.Properties.Resources.HOME;
             this.picboxHome.Location = new System.Drawing.Point(6, 11);
             this.picboxHome.Name = "picboxHome";
             this.picboxHome.Size = new System.Drawing.Size(747, 613);
+            this.picboxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxHome.TabIndex = 0;
             this.picboxHome.TabStop = false;
             // 
@@ -217,7 +213,8 @@
             this.ClientSize = new System.Drawing.Size(1079, 620);
             this.Controls.Add(this.paneVista);
             this.Controls.Add(this.paneHerramientas);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Principal";
             this.Text = "SIGDE";
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -250,7 +247,6 @@
         private System.Windows.Forms.Button btnVerEventos;
         private System.Windows.Forms.Button btnGestionarEventos;
         public System.Windows.Forms.Panel paneVista;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox picboxHome;
     }
 }
