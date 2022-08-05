@@ -95,7 +95,7 @@
             // 
             this.lblDeporte.AutoSize = true;
             this.lblDeporte.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDeporte.Location = new System.Drawing.Point(102, 46);
+            this.lblDeporte.Location = new System.Drawing.Point(98, 47);
             this.lblDeporte.Name = "lblDeporte";
             this.lblDeporte.Size = new System.Drawing.Size(74, 18);
             this.lblDeporte.TabIndex = 0;
@@ -370,30 +370,30 @@
         #endregion
 
         private System.Windows.Forms.Panel paneBuscarEvento;
-        private System.Windows.Forms.Label lblDeporte;
-        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.ComboBox cmboxDeporte;
         private System.Windows.Forms.Panel paneEvento;
         private System.Windows.Forms.Label lblEquipoVisitante1;
         private System.Windows.Forms.Label lblEquipoLocal1;
-        private System.Windows.Forms.Button btnAvisarme1;
         private System.Windows.Forms.Label lblEvento1;
         private System.Windows.Forms.Label lblVS4;
         private System.Windows.Forms.Label lblEquipoVisitante4;
         private System.Windows.Forms.Label lblEquipoLocal4;
-        private System.Windows.Forms.Button btnAvisarme4;
         private System.Windows.Forms.Label lblEvento4;
         private System.Windows.Forms.Label lblVS3;
         private System.Windows.Forms.Label lblEquipoVisitante3;
         private System.Windows.Forms.Label lblEquipoLocal3;
-        private System.Windows.Forms.Button btnAvisarme3;
         private System.Windows.Forms.Label lblEvento3;
         private System.Windows.Forms.Label lblVS2;
         private System.Windows.Forms.Label lblEquipoVisitante2;
         private System.Windows.Forms.Label lblEquipoLocal2;
-        private System.Windows.Forms.Button btnAvisarme2;
         private System.Windows.Forms.Label lblEvento2;
         private System.Windows.Forms.Label lblVS1;
-        private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Label lblDeporte;
+        public System.Windows.Forms.Button btnFiltrar;
+        public System.Windows.Forms.Button btnAvisarme1;
+        public System.Windows.Forms.Button btnAvisarme4;
+        public System.Windows.Forms.Button btnAvisarme3;
+        public System.Windows.Forms.Button btnAvisarme2;
+        public System.Windows.Forms.Button btnCancelar;
     }
 }

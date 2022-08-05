@@ -30,49 +30,25 @@ namespace App_de_Usuario
 
         private void btnAvisarme1_Click(object sender, EventArgs e)
         {
-            if (btnAvisarme1.Text.Equals("Avísame")) {
-                btnAvisarme1.Text = "No me avises";
-            }
-            else
-            {
-                btnAvisarme1.Text = "Avísame";
-            }
+            btnAvisarme1.Text = Idiomas.cambiarBotonAvisame(btnAvisarme1.Text);
         }
 
         private void btnAvisarme2_Click(object sender, EventArgs e)
         {
-            if (btnAvisarme2.Text.Equals("Avísame"))
-            {
-                btnAvisarme2.Text = "No me avises";
-            }
-            else
-            {
-                btnAvisarme2.Text = "Avísame";
-            }
+            btnAvisarme2.Text = Idiomas.cambiarBotonAvisame(btnAvisarme2.Text);
+
         }
 
         private void btnAvisarme3_Click(object sender, EventArgs e)
         {
-            if (btnAvisarme3.Text.Equals("Avísame"))
-            {
-                btnAvisarme3.Text = "No me avises";
-            }
-            else
-            {
-                btnAvisarme3.Text = "Avísame";
-            }
+            btnAvisarme3.Text = Idiomas.cambiarBotonAvisame(btnAvisarme3.Text);
+
         }
 
         private void btnAvisarme4_Click(object sender, EventArgs e)
         {
-            if (btnAvisarme4.Text.Equals("Avísame"))
-            {
-                btnAvisarme4.Text = "No me avises";
-            }
-            else
-            {
-                btnAvisarme4.Text = "Avísame";
-            }
+            btnAvisarme4.Text = Idiomas.cambiarBotonAvisame(btnAvisarme4.Text);
+
         }
     }
 }

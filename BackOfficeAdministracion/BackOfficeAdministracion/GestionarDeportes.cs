@@ -21,25 +21,9 @@ namespace BackOfficeAdministracion
             Program.frmPrincipal.paneVista.Show();
         }
 
-        private void btnCerrarIIII_Click(object sender, EventArgs e)
-        {
-            cerrar();
-        }
-
-        private void btnCerrarIII_Click(object sender, EventArgs e)
-        {
-            cerrar();
-        }
-
-        private void btnCerrarII_Click(object sender, EventArgs e)
-        {
-            cerrar();
-        }
-
         private void btnCerrarI_Click(object sender, EventArgs e)
         {
             cerrar();
-
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

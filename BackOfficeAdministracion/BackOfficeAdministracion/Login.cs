@@ -25,7 +25,31 @@ namespace BackOfficeAdministracion
 
         private void Login_Load(object sender, EventArgs e)
         {
+            this.paneOlvide.Visible = false;
 
+        }
+
+        private void chkboxOlvide_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkboxOlvide_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (this.chkboxOlvide.Checked == true)
+            {
+                this.paneOlvide.Visible = true;
+
+            }
+            else
+            {
+                this.paneOlvide.Visible = false;
+            }
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

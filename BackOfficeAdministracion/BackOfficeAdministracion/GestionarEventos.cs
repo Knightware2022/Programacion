@@ -17,29 +17,16 @@ namespace BackOfficeAdministracion
             InitializeComponent();
         }
 
-        private void esconder() {
+        private void cerrar() {
             this.Hide();
             Program.frmPrincipal.paneVista.Show();
         }
 
-        private void btnCerrarII_Click(object sender, EventArgs e)
-        {
-            esconder();
-        }
+       
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
-            esconder();
-        }
-
-        private void btnCerrarI_Click(object sender, EventArgs e)
-        {
-            esconder();
-        }
-
-        private void GestionarEventos_Load(object sender, EventArgs e)
-        {
-
+            cerrar();
         }
     }
 }

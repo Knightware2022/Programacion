@@ -69,5 +69,15 @@ namespace BackOfficeAdministracion.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Knightware_Letra {
+            get {
+                object obj = ResourceManager.GetObject("Knightware_Letra", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

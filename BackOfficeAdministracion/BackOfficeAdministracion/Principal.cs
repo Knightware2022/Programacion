@@ -53,12 +53,18 @@ namespace BackOfficeAdministracion
             Program.frmConfiguracion.Show();
             Program.frmConfiguracion.MdiParent = this;
             Program.frmConfiguracion.Location = this.paneVista.Location;
-           
+          
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();//cierra todo
+        }
+
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

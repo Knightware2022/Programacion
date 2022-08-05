@@ -128,9 +128,9 @@
 
         private System.Windows.Forms.Panel paneDeportesFavoritos;
         private System.Windows.Forms.ComboBox cmboxDeportesFavoritos;
-        private System.Windows.Forms.Label lblDeportesFavoritos;
-        private System.Windows.Forms.Button btnEliminarFavoritos;
-        private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.Button btnVolver;
+        public System.Windows.Forms.Label lblDeportesFavoritos;
+        public System.Windows.Forms.Button btnEliminarFavoritos;
+        public System.Windows.Forms.Button btnRefrescar;
+        public System.Windows.Forms.Button btnVolver;
     }
 }

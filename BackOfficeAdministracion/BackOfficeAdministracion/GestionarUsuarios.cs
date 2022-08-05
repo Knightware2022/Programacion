@@ -20,12 +20,13 @@ namespace BackOfficeAdministracion
             this.Hide();
             Program.frmPrincipal.paneVista.Show();
         }
-        private void btnCerrarII_Click(object sender, EventArgs e)
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             cerrar();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnCerrar2_Click(object sender, EventArgs e)
         {
             cerrar();
         }

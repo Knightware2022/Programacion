@@ -27,5 +27,11 @@ namespace BackOfficeAdministracion
             this.Hide();
             Program.frmPrincipal.paneVista.Show();
         }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.frmPrincipal.paneVista.Visible = true;
+        }
     }
 }

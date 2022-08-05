@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.paneConfiguracion = new System.Windows.Forms.Panel();
+            this.paneBotones = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAplicar = new System.Windows.Forms.Button();
@@ -41,47 +42,57 @@
             this.lblIdiomaE = new System.Windows.Forms.Label();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.paneConfiguracion.SuspendLayout();
+            this.paneBotones.SuspendLayout();
             this.paneApariencia.SuspendLayout();
             this.paneIdioma.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneConfiguracion
             // 
-            this.paneConfiguracion.Controls.Add(this.btnCerrar);
-            this.paneConfiguracion.Controls.Add(this.btnCancelar);
-            this.paneConfiguracion.Controls.Add(this.btnAplicar);
+            this.paneConfiguracion.Controls.Add(this.paneBotones);
             this.paneConfiguracion.Controls.Add(this.paneApariencia);
             this.paneConfiguracion.Controls.Add(this.paneIdioma);
             this.paneConfiguracion.Location = new System.Drawing.Point(0, 3);
             this.paneConfiguracion.Name = "paneConfiguracion";
-            this.paneConfiguracion.Size = new System.Drawing.Size(740, 577);
+            this.paneConfiguracion.Size = new System.Drawing.Size(774, 762);
             this.paneConfiguracion.TabIndex = 0;
+            // 
+            // paneBotones
+            // 
+            this.paneBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneBotones.Controls.Add(this.btnCerrar);
+            this.paneBotones.Controls.Add(this.btnCancelar);
+            this.paneBotones.Controls.Add(this.btnAplicar);
+            this.paneBotones.Location = new System.Drawing.Point(9, 619);
+            this.paneBotones.Name = "paneBotones";
+            this.paneBotones.Size = new System.Drawing.Size(755, 103);
+            this.paneBotones.TabIndex = 5;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(383, 486);
+            this.btnCerrar.Location = new System.Drawing.Point(479, 34);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(132, 33);
-            this.btnCerrar.TabIndex = 4;
+            this.btnCerrar.TabIndex = 7;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(219, 486);
+            this.btnCancelar.Location = new System.Drawing.Point(315, 34);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(132, 33);
-            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAplicar
             // 
-            this.btnAplicar.Location = new System.Drawing.Point(40, 486);
+            this.btnAplicar.Location = new System.Drawing.Point(136, 34);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(132, 33);
-            this.btnAplicar.TabIndex = 2;
+            this.btnAplicar.TabIndex = 5;
             this.btnAplicar.Text = "Aplicar cambios";
             this.btnAplicar.UseVisualStyleBackColor = true;
             // 
@@ -93,7 +104,7 @@
             this.paneApariencia.Controls.Add(this.lblApariencia);
             this.paneApariencia.Location = new System.Drawing.Point(16, 133);
             this.paneApariencia.Name = "paneApariencia";
-            this.paneApariencia.Size = new System.Drawing.Size(710, 124);
+            this.paneApariencia.Size = new System.Drawing.Size(748, 99);
             this.paneApariencia.TabIndex = 1;
             // 
             // cmboxTema
@@ -134,7 +145,7 @@
             this.paneIdioma.Controls.Add(this.lblIdioma);
             this.paneIdioma.Location = new System.Drawing.Point(16, 21);
             this.paneIdioma.Name = "paneIdioma";
-            this.paneIdioma.Size = new System.Drawing.Size(710, 92);
+            this.paneIdioma.Size = new System.Drawing.Size(748, 91);
             this.paneIdioma.TabIndex = 0;
             // 
             // cmboxIdioma
@@ -170,13 +181,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 580);
+            this.ClientSize = new System.Drawing.Size(776, 769);
             this.Controls.Add(this.paneConfiguracion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Configuracion";
             this.Text = "Configuración";
             this.Load += new System.EventHandler(this.Configuracion_Load);
             this.paneConfiguracion.ResumeLayout(false);
+            this.paneBotones.ResumeLayout(false);
             this.paneApariencia.ResumeLayout(false);
             this.paneApariencia.PerformLayout();
             this.paneIdioma.ResumeLayout(false);
@@ -196,8 +208,9 @@
         private System.Windows.Forms.Label lblApariencia;
         private System.Windows.Forms.ComboBox cmboxTema;
         private System.Windows.Forms.Label lblTema;
+        private System.Windows.Forms.Panel paneBotones;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAplicar;
-        private System.Windows.Forms.Button btnCerrar;
     }
 }

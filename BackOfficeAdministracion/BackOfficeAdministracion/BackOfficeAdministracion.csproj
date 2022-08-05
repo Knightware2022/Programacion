@@ -70,6 +70,7 @@
     <Compile Include="GestionarUsuarios.Designer.cs">
       <DependentUpon>GestionarUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Idiomas.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +128,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HOME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knightware_Letra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knightware_Letra.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
