@@ -30,24 +30,57 @@ namespace App_de_Usuario
 
         private void btnAvisarme1_Click(object sender, EventArgs e)
         {
-            btnAvisarme1.Text = Idiomas.cambiarBotonAvisame(btnAvisarme1.Text);
+            if (btnAvisarme1.Text.Equals("Notify") || btnAvisarme1.Text.Equals("Avísame"))
+            {
+                btnAvisarme1.Text = "No me avises";
+            }
+            else {
+                btnAvisarme1.Text = "Avísame";
+            }
+            btnAvisarme1.Text = Idiomas.cambiarIdiomaBotonAvisame(btnAvisarme1.Text);
+
         }
 
         private void btnAvisarme2_Click(object sender, EventArgs e)
         {
-            btnAvisarme2.Text = Idiomas.cambiarBotonAvisame(btnAvisarme2.Text);
+            if (btnAvisarme2.Text.Equals("Notify") || btnAvisarme2.Text.Equals("Avísame"))
+            {
+                btnAvisarme2.Text = "No me avises";
+            }
+            else
+            {
+                btnAvisarme2.Text = "Avísame";
+            }
+            btnAvisarme2.Text = Idiomas.cambiarIdiomaBotonAvisame(btnAvisarme2.Text);
 
         }
 
         private void btnAvisarme3_Click(object sender, EventArgs e)
         {
-            btnAvisarme3.Text = Idiomas.cambiarBotonAvisame(btnAvisarme3.Text);
+            if (btnAvisarme3.Text.Equals("Notify") || btnAvisarme3.Text.Equals("Avísame"))
+            {
+                btnAvisarme3.Text = "No me avises";
+            }
+            else
+            {
+                btnAvisarme3.Text = "Avísame";
+            }
+            btnAvisarme3.Text = Idiomas.cambiarIdiomaBotonAvisame(btnAvisarme3.Text);
 
         }
 
         private void btnAvisarme4_Click(object sender, EventArgs e)
         {
-            btnAvisarme4.Text = Idiomas.cambiarBotonAvisame(btnAvisarme4.Text);
+            if (btnAvisarme4.Text.Equals("Notify") || btnAvisarme4.Text.Equals("Avísame"))
+            {
+                btnAvisarme4.Text = "No me avises";
+            }
+            else
+            {
+                btnAvisarme4.Text = "Avísame";
+            }
+            btnAvisarme4.Text = Idiomas.cambiarIdiomaBotonAvisame(btnAvisarme4.Text);
+
 
         }
     }

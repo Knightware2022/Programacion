@@ -83,10 +83,10 @@
             this.tbpgModificar.Controls.Add(this.paneBotones);
             this.tbpgModificar.Controls.Add(this.paneModificar);
             this.tbpgModificar.Controls.Add(this.paneModificarEvento);
-            this.tbpgModificar.Location = new System.Drawing.Point(4, 25);
+            this.tbpgModificar.Location = new System.Drawing.Point(4, 31);
             this.tbpgModificar.Name = "tbpgModificar";
             this.tbpgModificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgModificar.Size = new System.Drawing.Size(766, 733);
+            this.tbpgModificar.Size = new System.Drawing.Size(766, 727);
             this.tbpgModificar.TabIndex = 1;
             this.tbpgModificar.Text = "Alta, baja y modificación de eventos";
             this.tbpgModificar.UseVisualStyleBackColor = true;
@@ -105,6 +105,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Location = new System.Drawing.Point(377, 19);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(119, 43);
@@ -114,6 +115,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCerrar.Location = new System.Drawing.Point(551, 19);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(119, 43);
@@ -124,6 +126,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.Location = new System.Drawing.Point(37, 19);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(119, 43);
@@ -133,6 +136,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.Location = new System.Drawing.Point(195, 19);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(119, 43);
@@ -189,43 +193,46 @@
             // cmboxJugadorVisitanteAnoto
             // 
             this.cmboxJugadorVisitanteAnoto.FormattingEnabled = true;
-            this.cmboxJugadorVisitanteAnoto.Location = new System.Drawing.Point(306, 168);
+            this.cmboxJugadorVisitanteAnoto.Location = new System.Drawing.Point(340, 162);
             this.cmboxJugadorVisitanteAnoto.Name = "cmboxJugadorVisitanteAnoto";
-            this.cmboxJugadorVisitanteAnoto.Size = new System.Drawing.Size(238, 24);
+            this.cmboxJugadorVisitanteAnoto.Size = new System.Drawing.Size(238, 30);
             this.cmboxJugadorVisitanteAnoto.TabIndex = 36;
             // 
             // cmboxJugadorLocalAnoto
             // 
             this.cmboxJugadorLocalAnoto.FormattingEnabled = true;
-            this.cmboxJugadorLocalAnoto.Location = new System.Drawing.Point(306, 132);
+            this.cmboxJugadorLocalAnoto.Location = new System.Drawing.Point(340, 133);
             this.cmboxJugadorLocalAnoto.Name = "cmboxJugadorLocalAnoto";
-            this.cmboxJugadorLocalAnoto.Size = new System.Drawing.Size(238, 24);
+            this.cmboxJugadorLocalAnoto.Size = new System.Drawing.Size(238, 30);
             this.cmboxJugadorLocalAnoto.TabIndex = 35;
             // 
             // JugadorVisitante
             // 
             this.JugadorVisitante.AutoSize = true;
+            this.JugadorVisitante.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.JugadorVisitante.Location = new System.Drawing.Point(116, 168);
             this.JugadorVisitante.Name = "JugadorVisitante";
-            this.JugadorVisitante.Size = new System.Drawing.Size(184, 17);
+            this.JugadorVisitante.Size = new System.Drawing.Size(207, 22);
             this.JugadorVisitante.TabIndex = 34;
             this.JugadorVisitante.Text = "Equipo/Competidor visitante";
             // 
             // lblJugadorLocal
             // 
             this.lblJugadorLocal.AutoSize = true;
+            this.lblJugadorLocal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblJugadorLocal.Location = new System.Drawing.Point(116, 132);
             this.lblJugadorLocal.Name = "lblJugadorLocal";
-            this.lblJugadorLocal.Size = new System.Drawing.Size(159, 17);
+            this.lblJugadorLocal.Size = new System.Drawing.Size(179, 22);
             this.lblJugadorLocal.TabIndex = 33;
             this.lblJugadorLocal.Text = "Equipo/competidor local";
             // 
             // lblJugadorAnoto
             // 
             this.lblJugadorAnoto.AutoSize = true;
+            this.lblJugadorAnoto.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblJugadorAnoto.Location = new System.Drawing.Point(16, 104);
             this.lblJugadorAnoto.Name = "lblJugadorAnoto";
-            this.lblJugadorAnoto.Size = new System.Drawing.Size(136, 17);
+            this.lblJugadorAnoto.Size = new System.Drawing.Size(151, 22);
             this.lblJugadorAnoto.TabIndex = 32;
             this.lblJugadorAnoto.Text = "Jugador que anotó: ";
             // 
@@ -246,7 +253,7 @@
             "10"});
             this.cmboxSets.Location = new System.Drawing.Point(503, 61);
             this.cmboxSets.Name = "cmboxSets";
-            this.cmboxSets.Size = new System.Drawing.Size(122, 24);
+            this.cmboxSets.Size = new System.Drawing.Size(122, 30);
             this.cmboxSets.TabIndex = 31;
             // 
             // cmboxMinuto
@@ -345,24 +352,26 @@
             "90"});
             this.cmboxMinuto.Location = new System.Drawing.Point(503, 29);
             this.cmboxMinuto.Name = "cmboxMinuto";
-            this.cmboxMinuto.Size = new System.Drawing.Size(122, 24);
+            this.cmboxMinuto.Size = new System.Drawing.Size(122, 30);
             this.cmboxMinuto.TabIndex = 30;
             // 
             // lblMset
             // 
             this.lblMset.AutoSize = true;
+            this.lblMset.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblMset.Location = new System.Drawing.Point(439, 68);
             this.lblMset.Name = "lblMset";
-            this.lblMset.Size = new System.Drawing.Size(35, 17);
+            this.lblMset.Size = new System.Drawing.Size(37, 22);
             this.lblMset.TabIndex = 29;
             this.lblMset.Text = "SET";
             // 
             // lblMminuto
             // 
             this.lblMminuto.AutoSize = true;
+            this.lblMminuto.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblMminuto.Location = new System.Drawing.Point(439, 32);
             this.lblMminuto.Name = "lblMminuto";
-            this.lblMminuto.Size = new System.Drawing.Size(58, 17);
+            this.lblMminuto.Size = new System.Drawing.Size(68, 22);
             this.lblMminuto.TabIndex = 28;
             this.lblMminuto.Text = "Minuto: ";
             // 
@@ -370,58 +379,63 @@
             // 
             this.txtMarcadorVisitante.Location = new System.Drawing.Point(244, 65);
             this.txtMarcadorVisitante.Name = "txtMarcadorVisitante";
-            this.txtMarcadorVisitante.Size = new System.Drawing.Size(100, 22);
+            this.txtMarcadorVisitante.Size = new System.Drawing.Size(100, 27);
             this.txtMarcadorVisitante.TabIndex = 27;
             // 
             // txtMarcadorLocal
             // 
             this.txtMarcadorLocal.Location = new System.Drawing.Point(244, 29);
             this.txtMarcadorLocal.Name = "txtMarcadorLocal";
-            this.txtMarcadorLocal.Size = new System.Drawing.Size(100, 22);
+            this.txtMarcadorLocal.Size = new System.Drawing.Size(100, 27);
             this.txtMarcadorLocal.TabIndex = 26;
             // 
             // lblModificarMarcadorVisitante
             // 
             this.lblModificarMarcadorVisitante.AutoSize = true;
+            this.lblModificarMarcadorVisitante.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblModificarMarcadorVisitante.Location = new System.Drawing.Point(114, 56);
             this.lblModificarMarcadorVisitante.Name = "lblModificarMarcadorVisitante";
-            this.lblModificarMarcadorVisitante.Size = new System.Drawing.Size(108, 17);
+            this.lblModificarMarcadorVisitante.Size = new System.Drawing.Size(122, 22);
             this.lblModificarMarcadorVisitante.TabIndex = 25;
             this.lblModificarMarcadorVisitante.Text = "Equipo visitante";
             // 
             // lblModificarMarcadorLocal
             // 
             this.lblModificarMarcadorLocal.AutoSize = true;
+            this.lblModificarMarcadorLocal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblModificarMarcadorLocal.Location = new System.Drawing.Point(114, 24);
             this.lblModificarMarcadorLocal.Name = "lblModificarMarcadorLocal";
-            this.lblModificarMarcadorLocal.Size = new System.Drawing.Size(93, 17);
+            this.lblModificarMarcadorLocal.Size = new System.Drawing.Size(105, 22);
             this.lblModificarMarcadorLocal.TabIndex = 24;
             this.lblModificarMarcadorLocal.Text = "Equipo local: ";
             // 
             // lblModificarMarcador
             // 
             this.lblModificarMarcador.AutoSize = true;
+            this.lblModificarMarcador.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblModificarMarcador.Location = new System.Drawing.Point(12, 29);
             this.lblModificarMarcador.Name = "lblModificarMarcador";
-            this.lblModificarMarcador.Size = new System.Drawing.Size(76, 17);
+            this.lblModificarMarcador.Size = new System.Drawing.Size(86, 22);
             this.lblModificarMarcador.TabIndex = 23;
             this.lblModificarMarcador.Text = "Marcador: ";
             // 
             // lblMinutos
             // 
             this.lblMinutos.AutoSize = true;
+            this.lblMinutos.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblMinutos.Location = new System.Drawing.Point(590, 193);
             this.lblMinutos.Name = "lblMinutos";
-            this.lblMinutos.Size = new System.Drawing.Size(57, 17);
+            this.lblMinutos.Size = new System.Drawing.Size(66, 22);
             this.lblMinutos.TabIndex = 39;
             this.lblMinutos.Text = "minutos";
             // 
             // lblHora
             // 
             this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblHora.Location = new System.Drawing.Point(435, 193);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(25, 17);
+            this.lblHora.Size = new System.Drawing.Size(28, 22);
             this.lblHora.TabIndex = 38;
             this.lblHora.Text = "Hs";
             // 
@@ -491,7 +505,7 @@
             "00"});
             this.cmboxMinutos.Location = new System.Drawing.Point(497, 186);
             this.cmboxMinutos.Name = "cmboxMinutos";
-            this.cmboxMinutos.Size = new System.Drawing.Size(87, 24);
+            this.cmboxMinutos.Size = new System.Drawing.Size(87, 30);
             this.cmboxMinutos.TabIndex = 37;
             // 
             // cmboxHoraComienzo
@@ -524,7 +538,7 @@
             "00"});
             this.cmboxHoraComienzo.Location = new System.Drawing.Point(326, 186);
             this.cmboxHoraComienzo.Name = "cmboxHoraComienzo";
-            this.cmboxHoraComienzo.Size = new System.Drawing.Size(87, 24);
+            this.cmboxHoraComienzo.Size = new System.Drawing.Size(87, 30);
             this.cmboxHoraComienzo.TabIndex = 36;
             // 
             // cmboxEquipoVisitante
@@ -532,7 +546,7 @@
             this.cmboxEquipoVisitante.FormattingEnabled = true;
             this.cmboxEquipoVisitante.Location = new System.Drawing.Point(326, 103);
             this.cmboxEquipoVisitante.Name = "cmboxEquipoVisitante";
-            this.cmboxEquipoVisitante.Size = new System.Drawing.Size(321, 24);
+            this.cmboxEquipoVisitante.Size = new System.Drawing.Size(321, 30);
             this.cmboxEquipoVisitante.TabIndex = 35;
             // 
             // cmboxCompetidorLocal
@@ -540,7 +554,7 @@
             this.cmboxCompetidorLocal.FormattingEnabled = true;
             this.cmboxCompetidorLocal.Location = new System.Drawing.Point(326, 57);
             this.cmboxCompetidorLocal.Name = "cmboxCompetidorLocal";
-            this.cmboxCompetidorLocal.Size = new System.Drawing.Size(321, 24);
+            this.cmboxCompetidorLocal.Size = new System.Drawing.Size(321, 30);
             this.cmboxCompetidorLocal.TabIndex = 34;
             // 
             // cmboxDeportes
@@ -548,15 +562,16 @@
             this.cmboxDeportes.FormattingEnabled = true;
             this.cmboxDeportes.Location = new System.Drawing.Point(326, 12);
             this.cmboxDeportes.Name = "cmboxDeportes";
-            this.cmboxDeportes.Size = new System.Drawing.Size(321, 24);
+            this.cmboxDeportes.Size = new System.Drawing.Size(321, 30);
             this.cmboxDeportes.TabIndex = 33;
             // 
             // lblHoraComienzo
             // 
             this.lblHoraComienzo.AutoSize = true;
+            this.lblHoraComienzo.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblHoraComienzo.Location = new System.Drawing.Point(36, 189);
             this.lblHoraComienzo.Name = "lblHoraComienzo";
-            this.lblHoraComienzo.Size = new System.Drawing.Size(125, 17);
+            this.lblHoraComienzo.Size = new System.Drawing.Size(136, 22);
             this.lblHoraComienzo.TabIndex = 32;
             this.lblHoraComienzo.Text = "Hora de Comienzo";
             // 
@@ -566,44 +581,48 @@
             this.cmboxModalidad.Items.AddRange(new object[] {
             "Amistoso",
             "Por puntos"});
-            this.cmboxModalidad.Location = new System.Drawing.Point(324, 232);
+            this.cmboxModalidad.Location = new System.Drawing.Point(324, 226);
             this.cmboxModalidad.Name = "cmboxModalidad";
-            this.cmboxModalidad.Size = new System.Drawing.Size(319, 24);
+            this.cmboxModalidad.Size = new System.Drawing.Size(319, 30);
             this.cmboxModalidad.TabIndex = 31;
             // 
             // lblModalidad
             // 
             this.lblModalidad.AutoSize = true;
+            this.lblModalidad.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblModalidad.Location = new System.Drawing.Point(36, 232);
             this.lblModalidad.Name = "lblModalidad";
-            this.lblModalidad.Size = new System.Drawing.Size(73, 17);
+            this.lblModalidad.Size = new System.Drawing.Size(83, 22);
             this.lblModalidad.TabIndex = 30;
             this.lblModalidad.Text = "Modalidad";
             // 
             // lblCompetidorVisitante
             // 
             this.lblCompetidorVisitante.AutoSize = true;
+            this.lblCompetidorVisitante.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblCompetidorVisitante.Location = new System.Drawing.Point(36, 106);
             this.lblCompetidorVisitante.Name = "lblCompetidorVisitante";
-            this.lblCompetidorVisitante.Size = new System.Drawing.Size(184, 17);
+            this.lblCompetidorVisitante.Size = new System.Drawing.Size(207, 22);
             this.lblCompetidorVisitante.TabIndex = 29;
             this.lblCompetidorVisitante.Text = "Equipo/Competidor visitante";
             // 
             // lblCompetidorLocal
             // 
             this.lblCompetidorLocal.AutoSize = true;
+            this.lblCompetidorLocal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblCompetidorLocal.Location = new System.Drawing.Point(36, 60);
             this.lblCompetidorLocal.Name = "lblCompetidorLocal";
-            this.lblCompetidorLocal.Size = new System.Drawing.Size(159, 17);
+            this.lblCompetidorLocal.Size = new System.Drawing.Size(179, 22);
             this.lblCompetidorLocal.TabIndex = 28;
             this.lblCompetidorLocal.Text = "Equipo/competidor local";
             // 
             // lblDeporte
             // 
             this.lblDeporte.AutoSize = true;
+            this.lblDeporte.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblDeporte.Location = new System.Drawing.Point(36, 15);
             this.lblDeporte.Name = "lblDeporte";
-            this.lblDeporte.Size = new System.Drawing.Size(67, 17);
+            this.lblDeporte.Size = new System.Drawing.Size(74, 22);
             this.lblDeporte.TabIndex = 27;
             this.lblDeporte.Text = "Deporte: ";
             // 
@@ -611,15 +630,16 @@
             // 
             this.dtimeFecha.Location = new System.Drawing.Point(326, 144);
             this.dtimeFecha.Name = "dtimeFecha";
-            this.dtimeFecha.Size = new System.Drawing.Size(321, 22);
+            this.dtimeFecha.Size = new System.Drawing.Size(321, 27);
             this.dtimeFecha.TabIndex = 26;
             // 
             // lblFechaComienzo
             // 
             this.lblFechaComienzo.AutoSize = true;
+            this.lblFechaComienzo.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblFechaComienzo.Location = new System.Drawing.Point(36, 149);
             this.lblFechaComienzo.Name = "lblFechaComienzo";
-            this.lblFechaComienzo.Size = new System.Drawing.Size(133, 17);
+            this.lblFechaComienzo.Size = new System.Drawing.Size(145, 22);
             this.lblFechaComienzo.TabIndex = 25;
             this.lblFechaComienzo.Text = "Fecha de Comienzo";
             // 
@@ -636,6 +656,7 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.Location = new System.Drawing.Point(195, 41);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(89, 31);
@@ -648,21 +669,23 @@
             this.cmboxIDEvento.FormattingEnabled = true;
             this.cmboxIDEvento.Location = new System.Drawing.Point(288, 12);
             this.cmboxIDEvento.Name = "cmboxIDEvento";
-            this.cmboxIDEvento.Size = new System.Drawing.Size(335, 24);
+            this.cmboxIDEvento.Size = new System.Drawing.Size(335, 30);
             this.cmboxIDEvento.TabIndex = 1;
             // 
             // lblIDmodificar
             // 
             this.lblIDmodificar.AutoSize = true;
+            this.lblIDmodificar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblIDmodificar.Location = new System.Drawing.Point(36, 15);
             this.lblIDmodificar.Name = "lblIDmodificar";
-            this.lblIDmodificar.Size = new System.Drawing.Size(149, 17);
+            this.lblIDmodificar.Size = new System.Drawing.Size(165, 22);
             this.lblIDmodificar.TabIndex = 0;
             this.lblIDmodificar.Text = "ID evento a modificar: ";
             // 
             // tbcGestionarEventos
             // 
             this.tbcGestionarEventos.Controls.Add(this.tbpgModificar);
+            this.tbcGestionarEventos.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.tbcGestionarEventos.Location = new System.Drawing.Point(0, 4);
             this.tbcGestionarEventos.Name = "tbcGestionarEventos";
             this.tbcGestionarEventos.SelectedIndex = 0;

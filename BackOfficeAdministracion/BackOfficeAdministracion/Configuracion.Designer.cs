@@ -70,9 +70,10 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(479, 34);
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCerrar.Location = new System.Drawing.Point(486, 34);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(132, 33);
+            this.btnCerrar.Size = new System.Drawing.Size(188, 33);
             this.btnCerrar.TabIndex = 7;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -80,18 +81,20 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(315, 34);
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.Location = new System.Drawing.Point(292, 34);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(132, 33);
+            this.btnCancelar.Size = new System.Drawing.Size(188, 33);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAplicar
             // 
-            this.btnAplicar.Location = new System.Drawing.Point(136, 34);
+            this.btnAplicar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnAplicar.Location = new System.Drawing.Point(98, 34);
             this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(132, 33);
+            this.btnAplicar.Size = new System.Drawing.Size(188, 33);
             this.btnAplicar.TabIndex = 5;
             this.btnAplicar.Text = "Aplicar cambios";
             this.btnAplicar.UseVisualStyleBackColor = true;
@@ -122,18 +125,20 @@
             // lblTema
             // 
             this.lblTema.AutoSize = true;
+            this.lblTema.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblTema.Location = new System.Drawing.Point(46, 52);
             this.lblTema.Name = "lblTema";
-            this.lblTema.Size = new System.Drawing.Size(110, 17);
+            this.lblTema.Size = new System.Drawing.Size(119, 22);
             this.lblTema.TabIndex = 1;
             this.lblTema.Text = "Tema a aplicar: ";
             // 
             // lblApariencia
             // 
             this.lblApariencia.AutoSize = true;
+            this.lblApariencia.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblApariencia.Location = new System.Drawing.Point(6, 0);
             this.lblApariencia.Name = "lblApariencia";
-            this.lblApariencia.Size = new System.Drawing.Size(75, 17);
+            this.lblApariencia.Size = new System.Drawing.Size(84, 22);
             this.lblApariencia.TabIndex = 0;
             this.lblApariencia.Text = "Apariencia";
             // 
@@ -162,18 +167,20 @@
             // lblIdiomaE
             // 
             this.lblIdiomaE.AutoSize = true;
+            this.lblIdiomaE.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblIdiomaE.Location = new System.Drawing.Point(46, 43);
             this.lblIdiomaE.Name = "lblIdiomaE";
-            this.lblIdiomaE.Size = new System.Drawing.Size(142, 17);
+            this.lblIdiomaE.Size = new System.Drawing.Size(157, 22);
             this.lblIdiomaE.TabIndex = 1;
             this.lblIdiomaE.Text = "Seleccione un idioma";
             // 
             // lblIdioma
             // 
             this.lblIdioma.AutoSize = true;
+            this.lblIdioma.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblIdioma.Location = new System.Drawing.Point(3, 0);
             this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(49, 17);
+            this.lblIdioma.Size = new System.Drawing.Size(56, 22);
             this.lblIdioma.TabIndex = 0;
             this.lblIdioma.Text = "Idioma";
             // 

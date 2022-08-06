@@ -17,17 +17,32 @@ namespace BackOfficeAdministracion
             InitializeComponent();
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.paneOlvide.Visible = false;
+            caracteresContrasenia(0);
+            this.cmboxIdioma.Text = "Español";
+        }
+
+        private void caracteresContrasenia(byte opcion) {//1, es mostrar
+            if (opcion == 1)
+            {
+                this.txtContrasenia.UseSystemPasswordChar = false;
+               
+            }
+            else
+            {
+                this.txtContrasenia.UseSystemPasswordChar = true;
+               
+            }
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Program.frmPrincipal.Show();
             this.Hide();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-            this.paneOlvide.Visible = false;
-
-        }
+      
 
         private void chkboxOlvide_CheckedChanged(object sender, EventArgs e)
         {
@@ -36,20 +51,46 @@ namespace BackOfficeAdministracion
 
         private void chkboxOlvide_MouseClick(object sender, MouseEventArgs e)
         {
-            if (this.chkboxOlvide.Checked == true)
-            {
+                this.paneIngresar.Visible = false;
+                this.chkboxOlvide.Visible = false;
+                this.chkboxOlvide.Checked = false;
                 this.paneOlvide.Visible = true;
 
-            }
-            else
-            {
-                this.paneOlvide.Visible = false;
-            }
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.frmPrincipal.Show();
+        }
+
+        private void btnVerContrasenia_MouseEnter(object sender, EventArgs e)
+        {
+            caracteresContrasenia(1);
+
+        }
+
+        private void btnVerContrasenia_MouseLeave(object sender, EventArgs e)
+        {
+            caracteresContrasenia(0);
+
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelarII_Click(object sender, EventArgs e)
+        {
+            this.paneIngresar.Visible = true;
+            this.chkboxOlvide.Visible = true;
+            this.paneOlvide.Visible = false;
         }
     }
 }

@@ -47,6 +47,7 @@ namespace App_de_Usuario
             this.txtRegistrarContrasenia.UseSystemPasswordChar = true;
             this.cmboxIdioma.Text = "Español";
             this.cmboxCambiarIdiomaII.Text = "Español";
+            Idiomas.cambiarIdioma(cmboxCambiarIdiomaII.Text);
      
 
         }

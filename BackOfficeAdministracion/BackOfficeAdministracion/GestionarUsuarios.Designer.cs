@@ -49,6 +49,7 @@
             this.cmboxIDusuarios = new System.Windows.Forms.ComboBox();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.tbpgGestionarPublicidad = new System.Windows.Forms.TabPage();
+            this.btnCerrar2 = new System.Windows.Forms.Button();
             this.paneEliminarPublicidad = new System.Windows.Forms.Panel();
             this.btnEliminarPublicidad = new System.Windows.Forms.Button();
             this.cmboxUrl = new System.Windows.Forms.ComboBox();
@@ -57,7 +58,6 @@
             this.txtURLpublicidad = new System.Windows.Forms.TextBox();
             this.btnAgregarPublicidad = new System.Windows.Forms.Button();
             this.lblUrl = new System.Windows.Forms.Label();
-            this.btnCerrar2 = new System.Windows.Forms.Button();
             this.tbcGestionUsuarios.SuspendLayout();
             this.tbpgMostrarUsuarios.SuspendLayout();
             this.paneBotones.SuspendLayout();
@@ -72,6 +72,7 @@
             // 
             this.tbcGestionUsuarios.Controls.Add(this.tbpgMostrarUsuarios);
             this.tbcGestionUsuarios.Controls.Add(this.tbpgGestionarPublicidad);
+            this.tbcGestionUsuarios.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.tbcGestionUsuarios.Location = new System.Drawing.Point(0, 1);
             this.tbcGestionUsuarios.Name = "tbcGestionUsuarios";
             this.tbcGestionUsuarios.SelectedIndex = 0;
@@ -84,10 +85,10 @@
             this.tbpgMostrarUsuarios.Controls.Add(this.paneBotones);
             this.tbpgMostrarUsuarios.Controls.Add(this.paneDatos);
             this.tbpgMostrarUsuarios.Controls.Add(this.paneBuscar);
-            this.tbpgMostrarUsuarios.Location = new System.Drawing.Point(4, 25);
+            this.tbpgMostrarUsuarios.Location = new System.Drawing.Point(4, 31);
             this.tbpgMostrarUsuarios.Name = "tbpgMostrarUsuarios";
             this.tbpgMostrarUsuarios.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgMostrarUsuarios.Size = new System.Drawing.Size(766, 733);
+            this.tbpgMostrarUsuarios.Size = new System.Drawing.Size(766, 727);
             this.tbpgMostrarUsuarios.TabIndex = 0;
             this.tbpgMostrarUsuarios.Text = "Mostrar usuarios";
             this.tbpgMostrarUsuarios.UseVisualStyleBackColor = true;
@@ -106,6 +107,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Location = new System.Drawing.Point(377, 19);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(119, 43);
@@ -115,6 +117,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCerrar.Location = new System.Drawing.Point(551, 19);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(119, 43);
@@ -125,6 +128,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.Location = new System.Drawing.Point(37, 19);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(119, 43);
@@ -134,6 +138,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.Location = new System.Drawing.Point(195, 19);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(119, 43);
@@ -152,6 +157,7 @@
             this.paneDatos.Controls.Add(this.txtTiempoSuscripto);
             this.paneDatos.Controls.Add(this.lblDeportesFavoritos);
             this.paneDatos.Controls.Add(this.cmboxDeportesFavoritos);
+            this.paneDatos.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.paneDatos.Location = new System.Drawing.Point(19, 129);
             this.paneDatos.Name = "paneDatos";
             this.paneDatos.Size = new System.Drawing.Size(705, 442);
@@ -161,7 +167,7 @@
             // 
             this.txtUsuario.Location = new System.Drawing.Point(338, 63);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(268, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(268, 27);
             this.txtUsuario.TabIndex = 10;
             // 
             // lblNombre
@@ -169,7 +175,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(54, 66);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(137, 17);
+            this.lblNombre.Size = new System.Drawing.Size(151, 22);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre de usuario: ";
             // 
@@ -178,7 +184,7 @@
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Location = new System.Drawing.Point(54, 136);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(128, 17);
+            this.lblCorreo.Size = new System.Drawing.Size(145, 22);
             this.lblCorreo.TabIndex = 3;
             this.lblCorreo.Text = "Correo electrónico:";
             // 
@@ -186,7 +192,7 @@
             // 
             this.txtCorreo.Location = new System.Drawing.Point(338, 133);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(268, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(268, 27);
             this.txtCorreo.TabIndex = 9;
             // 
             // lblAntiguedad
@@ -194,7 +200,7 @@
             this.lblAntiguedad.AutoSize = true;
             this.lblAntiguedad.Location = new System.Drawing.Point(54, 205);
             this.lblAntiguedad.Name = "lblAntiguedad";
-            this.lblAntiguedad.Size = new System.Drawing.Size(116, 17);
+            this.lblAntiguedad.Size = new System.Drawing.Size(131, 22);
             this.lblAntiguedad.TabIndex = 4;
             this.lblAntiguedad.Text = "Tiempo suscripto";
             // 
@@ -202,7 +208,7 @@
             // 
             this.txtTiempoSuscripto.Location = new System.Drawing.Point(338, 202);
             this.txtTiempoSuscripto.Name = "txtTiempoSuscripto";
-            this.txtTiempoSuscripto.Size = new System.Drawing.Size(268, 22);
+            this.txtTiempoSuscripto.Size = new System.Drawing.Size(268, 27);
             this.txtTiempoSuscripto.TabIndex = 8;
             // 
             // lblDeportesFavoritos
@@ -210,7 +216,7 @@
             this.lblDeportesFavoritos.AutoSize = true;
             this.lblDeportesFavoritos.Location = new System.Drawing.Point(54, 285);
             this.lblDeportesFavoritos.Name = "lblDeportesFavoritos";
-            this.lblDeportesFavoritos.Size = new System.Drawing.Size(124, 17);
+            this.lblDeportesFavoritos.Size = new System.Drawing.Size(139, 22);
             this.lblDeportesFavoritos.TabIndex = 5;
             this.lblDeportesFavoritos.Text = "Deportes favoritos";
             // 
@@ -219,7 +225,7 @@
             this.cmboxDeportesFavoritos.FormattingEnabled = true;
             this.cmboxDeportesFavoritos.Location = new System.Drawing.Point(338, 282);
             this.cmboxDeportesFavoritos.Name = "cmboxDeportesFavoritos";
-            this.cmboxDeportesFavoritos.Size = new System.Drawing.Size(268, 24);
+            this.cmboxDeportesFavoritos.Size = new System.Drawing.Size(268, 30);
             this.cmboxDeportesFavoritos.TabIndex = 7;
             // 
             // paneBuscar
@@ -236,9 +242,10 @@
             // lblIDusuario
             // 
             this.lblIDusuario.AutoSize = true;
+            this.lblIDusuario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblIDusuario.Location = new System.Drawing.Point(14, 26);
             this.lblIDusuario.Name = "lblIDusuario";
-            this.lblIDusuario.Size = new System.Drawing.Size(80, 17);
+            this.lblIDusuario.Size = new System.Drawing.Size(90, 22);
             this.lblIDusuario.TabIndex = 0;
             this.lblIDusuario.Text = "ID usuario: ";
             // 
@@ -247,11 +254,12 @@
             this.cmboxIDusuarios.FormattingEnabled = true;
             this.cmboxIDusuarios.Location = new System.Drawing.Point(272, 23);
             this.cmboxIDusuarios.Name = "cmboxIDusuarios";
-            this.cmboxIDusuarios.Size = new System.Drawing.Size(331, 24);
+            this.cmboxIDusuarios.Size = new System.Drawing.Size(331, 30);
             this.cmboxIDusuarios.TabIndex = 1;
             // 
             // btnMostrar
             // 
+            this.btnMostrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnMostrar.Location = new System.Drawing.Point(124, 53);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(107, 32);
@@ -264,13 +272,24 @@
             this.tbpgGestionarPublicidad.Controls.Add(this.btnCerrar2);
             this.tbpgGestionarPublicidad.Controls.Add(this.paneEliminarPublicidad);
             this.tbpgGestionarPublicidad.Controls.Add(this.paneAniadirPublicidad);
-            this.tbpgGestionarPublicidad.Location = new System.Drawing.Point(4, 25);
+            this.tbpgGestionarPublicidad.Location = new System.Drawing.Point(4, 31);
             this.tbpgGestionarPublicidad.Name = "tbpgGestionarPublicidad";
             this.tbpgGestionarPublicidad.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgGestionarPublicidad.Size = new System.Drawing.Size(766, 733);
+            this.tbpgGestionarPublicidad.Size = new System.Drawing.Size(766, 727);
             this.tbpgGestionarPublicidad.TabIndex = 2;
             this.tbpgGestionarPublicidad.Text = "Administrar publicidad";
             this.tbpgGestionarPublicidad.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrar2
+            // 
+            this.btnCerrar2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCerrar2.Location = new System.Drawing.Point(300, 622);
+            this.btnCerrar2.Name = "btnCerrar2";
+            this.btnCerrar2.Size = new System.Drawing.Size(119, 43);
+            this.btnCerrar2.TabIndex = 3;
+            this.btnCerrar2.Text = "cerrar";
+            this.btnCerrar2.UseVisualStyleBackColor = true;
+            this.btnCerrar2.Click += new System.EventHandler(this.btnCerrar2_Click);
             // 
             // paneEliminarPublicidad
             // 
@@ -285,27 +304,30 @@
             // 
             // btnEliminarPublicidad
             // 
+            this.btnEliminarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminarPublicidad.Location = new System.Drawing.Point(202, 144);
             this.btnEliminarPublicidad.Name = "btnEliminarPublicidad";
-            this.btnEliminarPublicidad.Size = new System.Drawing.Size(182, 40);
+            this.btnEliminarPublicidad.Size = new System.Drawing.Size(194, 40);
             this.btnEliminarPublicidad.TabIndex = 2;
             this.btnEliminarPublicidad.Text = "Eliminar Publicidad";
             this.btnEliminarPublicidad.UseVisualStyleBackColor = true;
             // 
             // cmboxUrl
             // 
+            this.cmboxUrl.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxUrl.FormattingEnabled = true;
             this.cmboxUrl.Location = new System.Drawing.Point(263, 58);
             this.cmboxUrl.Name = "cmboxUrl";
-            this.cmboxUrl.Size = new System.Drawing.Size(323, 24);
+            this.cmboxUrl.Size = new System.Drawing.Size(323, 30);
             this.cmboxUrl.TabIndex = 1;
             // 
             // lblUrlEliminar
             // 
             this.lblUrlEliminar.AutoSize = true;
+            this.lblUrlEliminar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblUrlEliminar.Location = new System.Drawing.Point(38, 61);
             this.lblUrlEliminar.Name = "lblUrlEliminar";
-            this.lblUrlEliminar.Size = new System.Drawing.Size(124, 17);
+            this.lblUrlEliminar.Size = new System.Drawing.Size(137, 22);
             this.lblUrlEliminar.TabIndex = 0;
             this.lblUrlEliminar.Text = "URL de publicidad";
             // 
@@ -322,16 +344,18 @@
             // 
             // txtURLpublicidad
             // 
+            this.txtURLpublicidad.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtURLpublicidad.Location = new System.Drawing.Point(227, 40);
             this.txtURLpublicidad.Name = "txtURLpublicidad";
-            this.txtURLpublicidad.Size = new System.Drawing.Size(456, 22);
+            this.txtURLpublicidad.Size = new System.Drawing.Size(456, 27);
             this.txtURLpublicidad.TabIndex = 2;
             // 
             // btnAgregarPublicidad
             // 
+            this.btnAgregarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAgregarPublicidad.Location = new System.Drawing.Point(226, 94);
             this.btnAgregarPublicidad.Name = "btnAgregarPublicidad";
-            this.btnAgregarPublicidad.Size = new System.Drawing.Size(122, 47);
+            this.btnAgregarPublicidad.Size = new System.Drawing.Size(134, 47);
             this.btnAgregarPublicidad.TabIndex = 1;
             this.btnAgregarPublicidad.Text = "Agregar Publicidad";
             this.btnAgregarPublicidad.UseVisualStyleBackColor = true;
@@ -339,21 +363,12 @@
             // lblUrl
             // 
             this.lblUrl.AutoSize = true;
+            this.lblUrl.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblUrl.Location = new System.Drawing.Point(23, 43);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(112, 17);
+            this.lblUrl.Size = new System.Drawing.Size(125, 22);
             this.lblUrl.TabIndex = 0;
             this.lblUrl.Text = "URL publicidad: ";
-            // 
-            // btnCerrar2
-            // 
-            this.btnCerrar2.Location = new System.Drawing.Point(300, 622);
-            this.btnCerrar2.Name = "btnCerrar2";
-            this.btnCerrar2.Size = new System.Drawing.Size(119, 43);
-            this.btnCerrar2.TabIndex = 3;
-            this.btnCerrar2.Text = "cerrar";
-            this.btnCerrar2.UseVisualStyleBackColor = true;
-            this.btnCerrar2.Click += new System.EventHandler(this.btnCerrar2_Click);
             // 
             // GestionarUsuarios
             // 

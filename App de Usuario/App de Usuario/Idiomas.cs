@@ -61,14 +61,10 @@ namespace App_de_Usuario
                     #endregion
                     #region de frmEventosProgramados
                     Program.frmEventosProgramados.lblDeporte.Text = "Sport: ";
-                    //   Program.frmEventosProgramados.btnAvisarme1.Text = "Notify ";
-                    //  Program.frmEventosProgramados.btnAvisarme2.Text = "Notify";
-                    //  Program.frmEventosProgramados.btnAvisarme3.Text = "Notify";
-                    //    Program.frmEventosProgramados.btnAvisarme4.Text = "Notify";
                     Program.frmEventosProgramados.btnAvisarme1.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
-                    Program.frmEventosProgramados.btnAvisarme2.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
-                    Program.frmEventosProgramados.btnAvisarme3.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
-                    Program.frmEventosProgramados.btnAvisarme4.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
+                    Program.frmEventosProgramados.btnAvisarme2.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme2.Text);
+                    Program.frmEventosProgramados.btnAvisarme3.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme3.Text);
+                    Program.frmEventosProgramados.btnAvisarme4.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme4.Text);
                     Program.frmEventosProgramados.btnCancelar.Text = "Return";
                     Program.frmEventosProgramados.btnFiltrar.Text = "Filter";
                     #endregion
@@ -125,45 +121,19 @@ namespace App_de_Usuario
                     #region de frmEventosProgramados
                     Program.frmEventosProgramados.lblDeporte.Text = "Deportes: ";
                     Program.frmEventosProgramados.btnAvisarme1.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
-                    Program.frmEventosProgramados.btnAvisarme2.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
-                    Program.frmEventosProgramados.btnAvisarme3.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
-                    Program.frmEventosProgramados.btnAvisarme4.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
+                    Program.frmEventosProgramados.btnAvisarme2.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme2.Text);
+                    Program.frmEventosProgramados.btnAvisarme3.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme3.Text);
+                    Program.frmEventosProgramados.btnAvisarme4.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme4.Text);
                     Program.frmEventosProgramados.btnCancelar.Text = "Volver";
                     Program.frmEventosProgramados.btnFiltrar.Text = "Filtrar";
                     #endregion
                     break;
             }
         }
-        public static string cambiarBotonAvisame(string textoActual)//servirá para cambiar el idioma del texto cambiante, al accionar boton , respetando el idioma que esté
-        {
-            string texto;
-            if (Program.frmConfiguracion.cmboxIdiomas.SelectedItem.ToString().Equals("Español"))
-            {
-                if (textoActual.Equals("Avísame"))
-                {
-                    texto = "No me avises";
-                }
-                else
-                {
-                    texto = "Avísame";
-                }
-            }
-            else
-            {
-                if (textoActual.Equals("Notify"))
-                {
-                    texto = "Not notify";
-                }
-                else
-                {
-                    texto = "Notify";
-                }
-            }
-            return texto;
-        }
+        
             public static string cambiarIdiomaBotonAvisame(string textoActual)
             {
-                string texto;
+                string texto = null;
                 if (Program.frmConfiguracion.cmboxIdiomas.SelectedItem.ToString().Equals("Español"))
                 {
                     if (textoActual.Equals("Notify"))
@@ -171,9 +141,11 @@ namespace App_de_Usuario
                         texto = "Avísame";
                     }
                     else
-                    {
+                    { if (textoActual.Equals("Not notify")) {
                         texto = "No me avises";
+
                     }
+                }
                 }
                 else
                 {
@@ -183,8 +155,11 @@ namespace App_de_Usuario
                     }
                     else
                     {
+                    if(textoActual.Equals("No me avises"))
+                    {
                         texto = "Not notify";
                     }
+                }
                 }
                 return texto;
             }
