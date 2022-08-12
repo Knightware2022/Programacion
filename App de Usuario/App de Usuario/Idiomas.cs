@@ -130,7 +130,7 @@ namespace App_de_Usuario
                     break;
             }
         }
-        
+        //comentario prueba
             public static string cambiarIdiomaBotonAvisame(string textoActual)
             {
                 string texto = null;
