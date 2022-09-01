@@ -16,11 +16,34 @@ namespace App_de_Usuario
         {
             InitializeComponent();
         }
-
+        
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Program.frmPrincipal.Show();
+            ApiAutentificacion apiA = new ApiAutentificacion();
+            String nombre = txtUsuario.Text;
+            byte respuesta = apiA.iniciarSesion(nombre, txtContrasenia.Text);
+            switch (respuesta){
+                case 0://encontro      
+                    this.Hide();
+                    Program.frmPrincipal.pboxPublicidad.Hide();
+                    Program.frmPrincipal.paneBanner.Hide();
+                    int yBase = Program.frmPrincipal.paneVentanas.Size.Height;
+                    yBase += Program.frmPrincipal.pboxPublicidad.Size.Height;
+                    int xBase = Program.frmPrincipal.pboxPublicidad.Size.Width;
+                    Program.frmPrincipal.paneVentanas.Size = new System.Drawing.Size(xBase, yBase);
+                    Program.frmPrincipal.Show();
+                    break;
+                case 1://conexion cerrada
+                    MessageBox.Show("Ocurrió un problema de conexión");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrio un error inesperado");
+                    break;
+                case 3: case 4:
+                    MessageBox.Show("Usuario o contraseña incorrectos"); 
+                    break;
+            }
+
         }
         private void caracteresContrasenia(byte opcion) {//1, es mostrar
             if (opcion == 1)
@@ -48,6 +71,7 @@ namespace App_de_Usuario
             this.cmboxIdioma.Text = "Español";
             this.cmboxCambiarIdiomaII.Text = "Español";
             Idiomas.cambiarIdioma(cmboxCambiarIdiomaII.Text);
+            Logica.abrirConexion();
      
 
         }
@@ -90,6 +114,11 @@ namespace App_de_Usuario
         {
             string idioma = cmboxCambiarIdiomaII.SelectedItem.ToString();
             Idiomas.cambiarIdioma(idioma);
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

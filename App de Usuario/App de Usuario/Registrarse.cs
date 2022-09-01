@@ -16,7 +16,7 @@ namespace App_de_Usuario
         {
             InitializeComponent();
         }
-    
+
         private void Registrarse_Load(object sender, EventArgs e)
         {
             this.Size = Program.frmPrincipal.paneVentanas.Size;
@@ -40,6 +40,40 @@ namespace App_de_Usuario
         {
             this.txtConfirmarContrasenia.UseSystemPasswordChar = true;
             this.txtRegistrarContrasenia.UseSystemPasswordChar = true;
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            Encriptacion encriptacion = new Encriptacion();
+            string contrasenia = txtRegistrarContrasenia.Text;
+            string confirmarContrasenia = txtConfirmarContrasenia.Text;
+            if (contrasenia.Equals(confirmarContrasenia))
+            {
+                contrasenia = encriptacion.encriptar(contrasenia);
+                switch (Program.apiA.Registrarse(txtRegistrarUsuario.Text, contrasenia, txtCorreo.Text)) {
+                    case 0://logró registrarse
+                        MessageBox.Show("Se ha registrado exitosamente. Inicie Sesión");
+                        this.Hide();
+                        Program.frmPrincipal.paneVentanas.Show();
+                        Program.frmLogin = new Login();
+                        Program.frmLogin.Show();
+                        Program.frmPrincipal.Hide();
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexión");
+                        break;
+                    case 2: case 3:
+                        MessageBox.Show("Ocurrió un error inesperado");
+                        break;
+                    case 4:
+                        MessageBox.Show("Este usuario ya existe");
+                        break;
+                }
+            }
+            else {
+                MessageBox.Show("Las contraseñas no coinciden");
+            }
+
         }
     }
 }

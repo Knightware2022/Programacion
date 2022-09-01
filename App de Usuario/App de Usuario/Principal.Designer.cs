@@ -228,10 +228,8 @@
 
         private System.Windows.Forms.Panel paneBotones;
         private System.Windows.Forms.Panel paneAvatar;
-        private System.Windows.Forms.Panel paneBanner;
         private System.Windows.Forms.Panel paneLogo;
         private System.Windows.Forms.PictureBox pboxLogo;
-        private System.Windows.Forms.PictureBox pboxPublicidad;
         public System.Windows.Forms.Panel paneVentanas;
         public System.Windows.Forms.Button btnAvatar;
         public System.Windows.Forms.Button btnResultados;
@@ -239,5 +237,7 @@
         public System.Windows.Forms.Button btnTorneos;
         public System.Windows.Forms.Button btnDeportes;
         public System.Windows.Forms.Button btnFavoritos;
+        public System.Windows.Forms.PictureBox pboxPublicidad;
+        public System.Windows.Forms.Panel paneBanner;
     }
 }

@@ -1,5 +1,4 @@
-﻿using App_de_Usuario.Recursos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +14,7 @@ namespace App_de_Usuario
         public static Login frmLogin;
         public static Principal frmPrincipal;
         public static Resultados frmResultados;
+        public static ApiAutentificacion apiA;
         public static Registrarse frmRegistrarse;
         [STAThread]
         static void Main()
@@ -27,7 +27,7 @@ namespace App_de_Usuario
             frmPrincipal = new Principal();
             frmResultados = new Resultados();
             frmRegistrarse = new Registrarse();
-            
+            apiA = new ApiAutentificacion();
             Application.Run(frmLogin = new Login());
         }
     }

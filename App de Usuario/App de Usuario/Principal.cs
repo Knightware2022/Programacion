@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,10 +18,29 @@ namespace App_de_Usuario
         {
             InitializeComponent();
         }
-        private void Principal_Load(object sender, EventArgs e)
-        {
+        private void Principal_Load(object sender, EventArgs e){
             this.IsMdiContainer = true;
+            ApiPublicidad publicidad = new ApiPublicidad();
+            publicidad.obtenerPublicidad(123);
+            if (publicidad.publicidad.url == "Error34X_Publicidad") {
+            }
+            else {
+                try
+                {
+                    var request = WebRequest.Create(publicidad.publicidad.url);
+                    using (var response = request.GetResponse())
+                    using (var stream = response.GetResponseStream())
+                    {
+                        pboxPublicidad.Image = Bitmap.FromStream(stream);
+                    }
+                }
+                catch {
+                    this.pboxPublicidad.Image = global::App_de_Usuario.Properties.Resources.banner_publicidad_01;
+                }
+            }
         }
+
+        
 
 
         private void cerrarForm(object sender, FormClosedEventArgs e)

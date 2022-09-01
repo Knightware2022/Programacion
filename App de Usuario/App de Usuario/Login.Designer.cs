@@ -62,7 +62,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblUsuario.Location = new System.Drawing.Point(15, 51);
+            this.lblUsuario.Location = new System.Drawing.Point(15, 50);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(71, 18);
             this.lblUsuario.TabIndex = 0;
@@ -102,7 +102,7 @@
             this.paneIngreso.Controls.Add(this.lblContrasenia);
             this.paneIngreso.Controls.Add(this.txtUsuario);
             this.paneIngreso.Controls.Add(this.lblUsuario);
-            this.paneIngreso.Location = new System.Drawing.Point(19, 335);
+            this.paneIngreso.Location = new System.Drawing.Point(12, 206);
             this.paneIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paneIngreso.Name = "paneIngreso";
             this.paneIngreso.Size = new System.Drawing.Size(725, 200);
@@ -112,7 +112,7 @@
             // 
             this.lblCambiarIdiomaII.AutoSize = true;
             this.lblCambiarIdiomaII.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblCambiarIdiomaII.Location = new System.Drawing.Point(13, 9);
+            this.lblCambiarIdiomaII.Location = new System.Drawing.Point(15, 15);
             this.lblCambiarIdiomaII.Name = "lblCambiarIdiomaII";
             this.lblCambiarIdiomaII.Size = new System.Drawing.Size(74, 18);
             this.lblCambiarIdiomaII.TabIndex = 17;
@@ -127,7 +127,8 @@
             this.cmboxCambiarIdiomaII.Items.AddRange(new object[] {
             "Español",
             "Ingles"});
-            this.cmboxCambiarIdiomaII.Location = new System.Drawing.Point(339, 3);
+            this.cmboxCambiarIdiomaII.Location = new System.Drawing.Point(339, 2);
+            this.cmboxCambiarIdiomaII.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmboxCambiarIdiomaII.Name = "cmboxCambiarIdiomaII";
             this.cmboxCambiarIdiomaII.Size = new System.Drawing.Size(321, 30);
             this.cmboxCambiarIdiomaII.TabIndex = 16;
@@ -153,7 +154,7 @@
             this.btnGuest.Location = new System.Drawing.Point(424, 142);
             this.btnGuest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuest.Name = "btnGuest";
-            this.btnGuest.Size = new System.Drawing.Size(138, 36);
+            this.btnGuest.Size = new System.Drawing.Size(139, 36);
             this.btnGuest.TabIndex = 6;
             this.btnGuest.Text = "Guest";
             this.btnGuest.UseVisualStyleBackColor = true;
@@ -165,7 +166,7 @@
             this.btnRegistrarse.Location = new System.Drawing.Point(271, 142);
             this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(138, 36);
+            this.btnRegistrarse.Size = new System.Drawing.Size(139, 36);
             this.btnRegistrarse.TabIndex = 5;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = true;
@@ -177,7 +178,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(116, 142);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(138, 36);
+            this.btnIngresar.Size = new System.Drawing.Size(139, 36);
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -236,6 +237,7 @@
             "Español",
             "Ingles"});
             this.cmboxIdioma.Location = new System.Drawing.Point(363, 9);
+            this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmboxIdioma.Name = "cmboxIdioma";
             this.cmboxIdioma.Size = new System.Drawing.Size(321, 30);
             this.cmboxIdioma.TabIndex = 14;
@@ -246,7 +248,7 @@
             this.btnVerContrasenia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVerContrasenia.BackgroundImage")));
             this.btnVerContrasenia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVerContrasenia.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnVerContrasenia.Location = new System.Drawing.Point(690, 128);
+            this.btnVerContrasenia.Location = new System.Drawing.Point(691, 128);
             this.btnVerContrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerContrasenia.Name = "btnVerContrasenia";
             this.btnVerContrasenia.Size = new System.Drawing.Size(29, 28);
@@ -277,6 +279,7 @@
             this.btnRegistro.TabIndex = 7;
             this.btnRegistro.Text = "Registrarse";
             this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // txtCorreo
             // 
@@ -342,7 +345,7 @@
             // 
             this.txtRegistrarUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRegistrarUsuario.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegistrarUsuario.Location = new System.Drawing.Point(363, 61);
+            this.txtRegistrarUsuario.Location = new System.Drawing.Point(363, 62);
             this.txtRegistrarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRegistrarUsuario.Name = "txtRegistrarUsuario";
             this.txtRegistrarUsuario.Size = new System.Drawing.Size(321, 28);

@@ -13,7 +13,6 @@ namespace BackOfficeAdministracion
         public static GestionarUsuarios frmGestionarUsuarios;
         public static Configuracion frmConfiguracion;
         public static Principal frmPrincipal;
-
         public static Login frmLogin;
         [STAThread]
         static void Main()
