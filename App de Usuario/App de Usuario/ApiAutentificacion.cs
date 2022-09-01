@@ -19,11 +19,30 @@ namespace App_de_Usuario
         }
 
         public byte Registrarse(string n, string contra, string correo) {
-            byte respuesta;    
+            byte respuesta;
+            bool bandera = true;
+            Random r = new Random();
+            int random;
             _usuario.nombre = n;
             _usuario.rol = 2;
             _usuario.correo = correo;
             _usuario.contrasenia = contra;
+            random = r.Next();
+            while (bandera == true) {
+                switch (Logica.BuscarID(random)) {
+                    case 0:
+                        break;
+                    case 1:
+                    case 2:
+                        return 2;
+                        break;             
+                    case 3:
+                        bandera = false;
+                        break;
+                }
+            }
+            _usuario.id = random;
+            _usuario.mesesSuscritos = 0;
             respuesta = Logica.AltaUsuarioVIP(_usuario);
             _usuario = null;
             return respuesta;

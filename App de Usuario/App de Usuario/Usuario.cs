@@ -13,7 +13,8 @@ namespace App_de_Usuario
         protected Int32 _rol;
         protected ADODB.Connection _connection;
         protected string _contrasenia;
-        
+        protected int _mesesSuscriptos;
+        protected int _idUsuario;
 
         #region constructores
         public Usuario()
@@ -23,15 +24,19 @@ namespace App_de_Usuario
             _correo = "";
             _contrasenia = "";
             _connection = new ADODB.Connection();
+            _mesesSuscriptos = 0;
+            _idUsuario = 0;
         }
 
-        public Usuario(Int32 r, string n, string c, ADODB.Connection con, string pswd)
+        public Usuario(Int32 r, string n, string c, ADODB.Connection con, string pswd, int m, int id)
         {
             _rol = r;
             _nombre = n;
             _correo = c;
             _contrasenia = pswd;
             _connection = con;
+            _mesesSuscriptos = m;
+            _idUsuario = id;
         }
         public Int32 rol
         {
@@ -46,6 +51,17 @@ namespace App_de_Usuario
         {
             get { return _correo; }
             set { _correo = value; }
+        }
+
+        public int id
+        {
+            get { return _idUsuario; }
+            set { _idUsuario = value; }
+        }
+        public int mesesSuscritos
+        {
+            get { return _mesesSuscriptos; }
+            set { _mesesSuscriptos = value; }
         }
         public ADODB.Connection connection
         {

@@ -40,7 +40,7 @@ namespace App_de_Usuario
             }
             else
             {
-                sql = "select usuario from usuarios where usuario='" + u.nombre + "'";
+                sql = "select nombre from Vip where nombre='" + u.nombre + "'";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -56,7 +56,7 @@ namespace App_de_Usuario
                 }
                 else
                 {
-                    sql = "select contrasenia from usuarios where usuario='" + u.nombre + "'";
+                    sql = "select contrasenia from Vip where nombre='" + u.nombre + "'";
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -97,7 +97,7 @@ namespace App_de_Usuario
                 }
                 catch
                 {
-                    url = null;
+                    return url = null;
                 }
 
                 if (rs.RecordCount == 0)
@@ -123,7 +123,16 @@ namespace App_de_Usuario
             }
             else
             {
-                sql = "select usuario from usuarios where usuario='" + u.nombre + "'";
+                sql = "insert into Usuarios(idUsuario) values(" + u.id + ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;//error inesperado
+                }
+                sql = "select nombre from Vip where nombre='" + u.nombre + "'";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -135,7 +144,7 @@ namespace App_de_Usuario
 
                 if (rs.RecordCount == 0)//si no existen registros, entonces lo ingresamos
                 {
-                    sql = "insert into usuarios(usuario, contrasenia, correo, rol) values('"+ u.nombre+"', '" + u.contrasenia +"', '" + u.correo + "', " + u.rol + ")";
+                    sql = "insert into Vip(idUsuario, correo, contrasenia, nombre, mesesSuscritos, rol) values(" + u.id + ", '"+ u.correo+"', '" + u.contrasenia +"', '" + u.nombre + "', " + u.mesesSuscritos + ", " + u.rol + ")";
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); 
@@ -149,6 +158,35 @@ namespace App_de_Usuario
                 else
                 {
                     devolver = 4;// ya está registrado
+                }
+            }
+            return devolver;
+        }
+
+        public static byte BuscarID(int id)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select idUsuario from Usuarios where idUsuario=" + id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;//error inesperado
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3; //id no en uso
                 }
             }
             return devolver;

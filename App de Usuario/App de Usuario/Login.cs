@@ -72,8 +72,6 @@ namespace App_de_Usuario
             this.cmboxCambiarIdiomaII.Text = "Español";
             Idiomas.cambiarIdioma(cmboxCambiarIdiomaII.Text);
             Logica.abrirConexion();
-     
-
         }
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
@@ -118,7 +116,56 @@ namespace App_de_Usuario
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
+            Encriptacion encriptacion = new Encriptacion();
+            string contrasenia = txtRegistrarContrasenia.Text;
+            string confirmarContrasenia = txtConfirmarContrasenia.Text;
+            string correo = txtCorreo.Text;
+            string nombre = txtRegistrarUsuario.Text;
+            if (contrasenia.Equals(confirmarContrasenia))
+            {
+                if (correo.Contains("@") && correo.Contains(".com"))
+                {
+                    contrasenia = encriptacion.encriptar(contrasenia);
+                    switch (Program.apiA.Registrarse(nombre, contrasenia, correo))
+                    {
+                        case 0://logró registrarse
+                            MessageBox.Show("Se ha registrado exitosamente. Inicie Sesión");
+                            this.paneIngreso.Visible = true;
+                            this.paneRegistrarse.Visible = false;
+                            break;
+                        case 1:
+                            MessageBox.Show("Error de conexión");
+                            break;
+                        case 2:
+                        case 3:
+                            MessageBox.Show("Ocurrió un error inesperado");
+                            break;
+                        case 4:
+                            MessageBox.Show("Este usuario ya existe");
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Dirección de correo no válida");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+            }
 
+        
+    }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Logica._cn.Close();
+            }
+            catch {
+            }
         }
     }
 }

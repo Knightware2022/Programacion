@@ -374,6 +374,7 @@
             this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Autentificacion";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.Load += new System.EventHandler(this.Login_Load);
             this.paneIngreso.ResumeLayout(false);
             this.paneIngreso.PerformLayout();

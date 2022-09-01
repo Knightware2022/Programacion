@@ -45,7 +45,16 @@ namespace App_de_Usuario
 
         private void cerrarForm(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+                Logica._cn.Close();
+            }
+            catch {
+
+            }
+
+          
         }
 
         private void btnResultados_Click(object sender, EventArgs e)
