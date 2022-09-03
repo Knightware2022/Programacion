@@ -199,14 +199,15 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "select url from publicidad where id=" + id;
+                sql = "select url from publicidad where idPublicidad=" + id;
                 try
                 {
+
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
                 }
                 catch
                 {
-                    url = null;
+                    return url = null;
                 }
 
                 if (rs.RecordCount == 0)
