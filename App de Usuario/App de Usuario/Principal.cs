@@ -21,7 +21,7 @@ namespace App_de_Usuario
         private void Principal_Load(object sender, EventArgs e){
             this.IsMdiContainer = true;
             ApiPublicidad publicidad = new ApiPublicidad();
-            publicidad.obtenerPublicidad(123);
+            publicidad.obtenerPublicidad(1234);
             if (publicidad.publicidad.url == "Error34X_Publicidad") {
             }
             else {
@@ -35,6 +35,7 @@ namespace App_de_Usuario
                     }
                 }
                 catch {
+                 
                     this.pboxPublicidad.Image = global::App_de_Usuario.Properties.Resources.banner_publicidad_01;
                 }
             }

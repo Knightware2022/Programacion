@@ -19,12 +19,12 @@ namespace App_de_Usuario
             try
             {
                 _cn = new ADODB.Connection();
-                _cn.Open("miodbc", "root", "", -1);
+                _cn.Open("miodbc", "administrator", "administrador1234", -1);
                 _cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
             }
             catch
             {
-                throw;
+                MessageBox.Show("Ocurrió un error");
             }
         }
         public static byte BuscandoUsuario(Usuario u)
@@ -90,9 +90,10 @@ namespace App_de_Usuario
             }
             else
             {
-                sql = "select url from publicidad where id=" + id;
+                sql = "select url from publicidad where idPublicidad=" + id;
                 try
                 {
+
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
                 }
                 catch
@@ -162,7 +163,6 @@ namespace App_de_Usuario
             }
             return devolver;
         }
-
         public static byte BuscarID(int id)
         {
             byte devolver = 0;

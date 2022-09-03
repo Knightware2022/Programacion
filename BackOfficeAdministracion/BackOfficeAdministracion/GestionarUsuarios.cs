@@ -35,6 +35,8 @@ namespace BackOfficeAdministracion
         {
             paneBuscar.Enabled = false;
             txtUsuario.Enabled = false;
+            txtID.Enabled = false;
+
             Usuario u = new Usuario();
             u.nombre = cmboxIDusuarios.Text;
             switch (Logica.BuscandoDatosUsuario(u)) {
@@ -43,6 +45,8 @@ namespace BackOfficeAdministracion
                     txtCorreo.Text = u.correo;
                     txtRol.Text = u.rol.ToString();
                     txtUsuario.Text = u.nombre;
+                    txtTiempoSuscripto.Text = u.mesesSuscritos.ToString();
+                    txtID.Text = u.id.ToString();
                     break;
                 case 1:
                     MessageBox.Show("Ocurrió un error de conexión");
@@ -79,6 +83,28 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
+
+        private void refrescarPublicidad()
+        {
+            List<string> lista = new List<string>();
+            switch (Logica.listarTodaPublicidad(lista))
+            {
+                case 0:
+                    cmboxUrl.Items.Clear();
+                    cmboxUrl.Text = lista[0];
+                    foreach (string url in lista)
+                    {
+                        cmboxUrl.Items.Add(url);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de conexión");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+            }
+        }
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             refrescarUsuarios();
@@ -87,12 +113,13 @@ namespace BackOfficeAdministracion
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Usuario u = new Usuario();
-            try
-            {
+           try {
+               
                 u.nombre = txtUsuario.Text;
                 u.correo = txtCorreo.Text;
                 u.rol = Convert.ToInt32(txtRol.Text);
-            
+                u.id = Convert.ToInt32(txtID.Text);
+                u.mesesSuscritos = Convert.ToInt32(txtTiempoSuscripto.Text);
             
             switch (Logica.actualizarUsuario(u))
             {
@@ -102,6 +129,7 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Usuario actualizado exitosamente");
                     txtCorreo.Text = null;
                     txtRol.Text = null;
+                        txtID.Text = null;
                     txtTiempoSuscripto.Text = null;
                     txtUsuario.Text = null;
                     paneBuscar.Enabled = true;
@@ -110,7 +138,6 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Ocurrió un error de conexión");
                     break;
                 case 2:
-                case 3:
                     MessageBox.Show("Ocurrió un error inesperado");
                     break;
             }
@@ -118,7 +145,7 @@ namespace BackOfficeAdministracion
             catch
             {
                 MessageBox.Show("Datos no válidos");
-            }
+           }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -127,6 +154,7 @@ namespace BackOfficeAdministracion
             txtCorreo.Text = null;
             txtRol.Text = null;
             txtTiempoSuscripto.Text = null;
+            txtID.Text = null;
             txtUsuario.Text = null;
             paneBuscar.Enabled = true;
             btnAceptar.Enabled = true;
@@ -140,26 +168,36 @@ namespace BackOfficeAdministracion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            switch (Logica.eliminarUsuario(txtUsuario.Text)) {
-                case 0:
-                    refrescarUsuarios();
-                    paneDatos.Enabled = false;
-                    paneBuscar.Enabled = true;
-                    txtCorreo.Text = null;
-                    txtRol.Text = null;
-                    txtTiempoSuscripto.Text = null;
-                    txtUsuario.Text = null;
-                    cmboxDeportesFavoritos.Items.Clear();
-                    paneBuscar.Enabled = true;
-                    MessageBox.Show("usuario eliminado con éxito");
-                    break;
-                case 1:
-                    MessageBox.Show("Ocurrió un problema de conexión");
-                    break;
-                case 2:
-                    MessageBox.Show("Error eliminando usuario");
-                    break;
+            try
+            {
+                int id = Convert.ToInt32(txtID.Text);
+                switch (Logica.eliminarUsuario(txtUsuario.Text, id))
+                {
+                    case 0:
+                        refrescarUsuarios();
+                        paneDatos.Enabled = false;
+                        paneBuscar.Enabled = true;
+                        txtCorreo.Text = null;
+                        txtID.Text = null;
+                        txtRol.Text = null;
+                        txtTiempoSuscripto.Text = null;
+                        txtUsuario.Text = null;
+                        cmboxDeportesFavoritos.Items.Clear();
+                        paneBuscar.Enabled = true;
+                        MessageBox.Show("usuario eliminado con éxito");
+                        break;
+                    case 1:
+                        MessageBox.Show("Ocurrió un problema de conexión");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error eliminando usuario");
+                        break;
+                }
             }
+            catch {
+                MessageBox.Show("ocurrió un error, intente nuevamente");
+            }
+           
         }
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
@@ -167,8 +205,11 @@ namespace BackOfficeAdministracion
             Usuario u = new Usuario();
             u.nombre = txtUsuario.Text;
             u.correo = txtCorreo.Text;
+            
             try
             {
+                u.id = Convert.ToInt32(txtID.Text);
+                u.mesesSuscritos = Convert.ToInt32(txtTiempoSuscripto.Text);
                 u.rol = Convert.ToInt32(txtRol.Text);
                 switch (Logica.crearUsuario(u)) {
                     case 0:
@@ -180,6 +221,7 @@ namespace BackOfficeAdministracion
                         btnAceptar.Enabled = true;
                         btnEliminar.Enabled = true;
                         txtCorreo.Text = null;
+                        txtID.Text = null;
                         txtRol.Text = null;
                         txtTiempoSuscripto.Text = null;
                         txtUsuario.Text = null;
@@ -203,9 +245,50 @@ namespace BackOfficeAdministracion
         {
             paneDatos.Enabled = true;
             txtUsuario.Enabled = true;
+            txtID.Enabled = true;
             paneBuscar.Enabled = false;
             btnAceptar.Enabled = false;
             btnEliminar.Enabled = false;
+        }
+
+        private void btnAgregarPublicidad_Click(object sender, EventArgs e)
+        {
+            string publicidad = txtURLpublicidad.Text;
+            switch (Logica.AñadirPublicidad(publicidad)) {
+                case 0:
+                    MessageBox.Show("Publicidad añadida con éxito");
+                    txtURLpublicidad.Text = null;
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexión");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado");
+                    break;
+            }
+        }
+
+        private void btnRefrescarPublicidad_Click(object sender, EventArgs e)
+        {
+            refrescarPublicidad();
+        }
+
+        private void btnEliminarPublicidad_Click(object sender, EventArgs e)
+        {
+            switch (Logica.eliminarPublicidad(cmboxUrl.Text))
+            {
+                case 0:
+                    refrescarPublicidad();
+                    paneBuscar.Enabled = true;
+                    MessageBox.Show("publicidad eliminada con éxito");
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un problema de conexión");
+                    break;
+                case 2:
+                    MessageBox.Show("Error eliminando usuario");
+                    break;
+            }
         }
     }
 }

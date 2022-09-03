@@ -74,22 +74,24 @@ namespace BackOfficeAdministracion
             }
 
         }
+        public static Usuario user = new Usuario();
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            //Logica.abrirConexion();
-            Usuario u = new Usuario();
             Encriptacion encriptacion = new Encriptacion();
-            u.nombre = txtUsuario.Text;
-            u.contrasenia = encriptacion.encriptar(txtContrasenia.Text);
-            switch(Logica.averiguandoRol(u)){
+            user.nombre = txtUsuario.Text;
+            user.contrasenia = encriptacion.encriptar(txtContrasenia.Text);
+            switch(Logica.averiguandoRol(user)){
                 case 0:
-                    if (u.rol == 1)
+                    if (user.rol == 1)
                     {
-                        switch (Logica.BuscandoUsuario(u))
+                        switch (Logica.BuscandoUsuario(user))
                         {
                             case 0:
                                 this.Hide();
+                                txtContrasenia.Text = null;
+                                txtCorreo.Text = null;
+                                txtUsuario.Text = null;
                                 Program.frmPrincipal.Show();
                                 break;
                             case 1:
@@ -119,7 +121,7 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Ocurrió un error inesperado");
                     break;
                 case 3:
-                    MessageBox.Show("Usuario o contraseña invalidos");//en realidad es que el usuariono existe
+                    MessageBox.Show("Usuario o contraseña invalidos");//en realidad es que el usuario no existe
                     txtContrasenia.Text = null;
                     break;
             }

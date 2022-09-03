@@ -22,13 +22,13 @@ namespace App_de_Usuario
             byte respuesta;
             bool bandera = true;
             Random r = new Random();
-            int random;
+            int random = 1;
             _usuario.nombre = n;
             _usuario.rol = 2;
             _usuario.correo = correo;
             _usuario.contrasenia = contra;
-            random = r.Next();
             while (bandera == true) {
+                random = r.Next();
                 switch (Logica.BuscarID(random)) {
                     case 0:
                         break;
@@ -44,7 +44,6 @@ namespace App_de_Usuario
             _usuario.id = random;
             _usuario.mesesSuscritos = 0;
             respuesta = Logica.AltaUsuarioVIP(_usuario);
-            _usuario = null;
             return respuesta;
         }
         public byte iniciarSesion(string nombre, string contraseña) {

@@ -48,6 +48,7 @@
             this.lblDeportesFavoritos = new System.Windows.Forms.Label();
             this.cmboxDeportesFavoritos = new System.Windows.Forms.ComboBox();
             this.paneBuscar = new System.Windows.Forms.Panel();
+            this.crearU = new System.Windows.Forms.Button();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.lblIDusuario = new System.Windows.Forms.Label();
             this.cmboxIDusuarios = new System.Windows.Forms.ComboBox();
@@ -62,7 +63,9 @@
             this.txtURLpublicidad = new System.Windows.Forms.TextBox();
             this.btnAgregarPublicidad = new System.Windows.Forms.Button();
             this.lblUrl = new System.Windows.Forms.Label();
-            this.crearU = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.btnRefrescarPublicidad = new System.Windows.Forms.Button();
             this.tbcGestionUsuarios.SuspendLayout();
             this.tbpgMostrarUsuarios.SuspendLayout();
             this.paneBotones.SuspendLayout();
@@ -169,6 +172,8 @@
             // paneDatos
             // 
             this.paneDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneDatos.Controls.Add(this.txtID);
+            this.paneDatos.Controls.Add(this.label1);
             this.paneDatos.Controls.Add(this.txtRol);
             this.paneDatos.Controls.Add(this.lblRol);
             this.paneDatos.Controls.Add(this.txtUsuario);
@@ -204,7 +209,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Enabled = false;
-            this.txtUsuario.Location = new System.Drawing.Point(338, 63);
+            this.txtUsuario.Location = new System.Drawing.Point(338, 84);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(268, 27);
             this.txtUsuario.TabIndex = 10;
@@ -212,7 +217,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(54, 66);
+            this.lblNombre.Location = new System.Drawing.Point(48, 84);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(151, 22);
             this.lblNombre.TabIndex = 2;
@@ -279,6 +284,17 @@
             this.paneBuscar.Name = "paneBuscar";
             this.paneBuscar.Size = new System.Drawing.Size(705, 100);
             this.paneBuscar.TabIndex = 12;
+            // 
+            // crearU
+            // 
+            this.crearU.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.crearU.Location = new System.Drawing.Point(471, 59);
+            this.crearU.Name = "crearU";
+            this.crearU.Size = new System.Drawing.Size(198, 31);
+            this.crearU.TabIndex = 20;
+            this.crearU.Text = "creación Usuario";
+            this.crearU.UseVisualStyleBackColor = true;
+            this.crearU.Click += new System.EventHandler(this.crearU_Click);
             // 
             // btnRefrescar
             // 
@@ -347,6 +363,7 @@
             // paneEliminarPublicidad
             // 
             this.paneEliminarPublicidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneEliminarPublicidad.Controls.Add(this.btnRefrescarPublicidad);
             this.paneEliminarPublicidad.Controls.Add(this.btnEliminarPublicidad);
             this.paneEliminarPublicidad.Controls.Add(this.cmboxUrl);
             this.paneEliminarPublicidad.Controls.Add(this.lblUrlEliminar);
@@ -358,12 +375,13 @@
             // btnEliminarPublicidad
             // 
             this.btnEliminarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarPublicidad.Location = new System.Drawing.Point(202, 144);
+            this.btnEliminarPublicidad.Location = new System.Drawing.Point(120, 142);
             this.btnEliminarPublicidad.Name = "btnEliminarPublicidad";
             this.btnEliminarPublicidad.Size = new System.Drawing.Size(194, 40);
             this.btnEliminarPublicidad.TabIndex = 2;
             this.btnEliminarPublicidad.Text = "Eliminar Publicidad";
             this.btnEliminarPublicidad.UseVisualStyleBackColor = true;
+            this.btnEliminarPublicidad.Click += new System.EventHandler(this.btnEliminarPublicidad_Click);
             // 
             // cmboxUrl
             // 
@@ -408,10 +426,11 @@
             this.btnAgregarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAgregarPublicidad.Location = new System.Drawing.Point(226, 94);
             this.btnAgregarPublicidad.Name = "btnAgregarPublicidad";
-            this.btnAgregarPublicidad.Size = new System.Drawing.Size(134, 47);
+            this.btnAgregarPublicidad.Size = new System.Drawing.Size(226, 47);
             this.btnAgregarPublicidad.TabIndex = 1;
             this.btnAgregarPublicidad.Text = "Agregar Publicidad";
             this.btnAgregarPublicidad.UseVisualStyleBackColor = true;
+            this.btnAgregarPublicidad.Click += new System.EventHandler(this.btnAgregarPublicidad_Click);
             // 
             // lblUrl
             // 
@@ -423,16 +442,33 @@
             this.lblUrl.TabIndex = 0;
             this.lblUrl.Text = "URL publicidad: ";
             // 
-            // crearU
+            // label1
             // 
-            this.crearU.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.crearU.Location = new System.Drawing.Point(471, 59);
-            this.crearU.Name = "crearU";
-            this.crearU.Size = new System.Drawing.Size(198, 31);
-            this.crearU.TabIndex = 20;
-            this.crearU.Text = "creación Usuario";
-            this.crearU.UseVisualStyleBackColor = true;
-            this.crearU.Click += new System.EventHandler(this.crearU_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 22);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "ID: ";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(338, 34);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(268, 27);
+            this.txtID.TabIndex = 14;
+            // 
+            // btnRefrescarPublicidad
+            // 
+            this.btnRefrescarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefrescarPublicidad.Location = new System.Drawing.Point(415, 142);
+            this.btnRefrescarPublicidad.Name = "btnRefrescarPublicidad";
+            this.btnRefrescarPublicidad.Size = new System.Drawing.Size(194, 40);
+            this.btnRefrescarPublicidad.TabIndex = 3;
+            this.btnRefrescarPublicidad.Text = "Refrescar lista";
+            this.btnRefrescarPublicidad.UseVisualStyleBackColor = true;
+            this.btnRefrescarPublicidad.Click += new System.EventHandler(this.btnRefrescarPublicidad_Click);
             // 
             // GestionarUsuarios
             // 
@@ -497,5 +533,8 @@
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Button btnCrearUsuario;
         private System.Windows.Forms.Button crearU;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRefrescarPublicidad;
     }
 }

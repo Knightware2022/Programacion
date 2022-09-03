@@ -41,14 +41,25 @@
             this.cmboxIdioma = new System.Windows.Forms.ComboBox();
             this.lblIdiomaE = new System.Windows.Forms.Label();
             this.lblIdioma = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNuevaContra = new System.Windows.Forms.Label();
+            this.lblContra = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtContraActual = new System.Windows.Forms.TextBox();
+            this.txtNuevaContraseña = new System.Windows.Forms.TextBox();
+            this.txtNuevaContraConfirma = new System.Windows.Forms.TextBox();
+            this.btnVer = new System.Windows.Forms.Button();
             this.paneConfiguracion.SuspendLayout();
             this.paneBotones.SuspendLayout();
             this.paneApariencia.SuspendLayout();
             this.paneIdioma.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneConfiguracion
             // 
+            this.paneConfiguracion.Controls.Add(this.panel1);
             this.paneConfiguracion.Controls.Add(this.paneBotones);
             this.paneConfiguracion.Controls.Add(this.paneApariencia);
             this.paneConfiguracion.Controls.Add(this.paneIdioma);
@@ -98,6 +109,7 @@
             this.btnAplicar.TabIndex = 5;
             this.btnAplicar.Text = "Aplicar cambios";
             this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
             // paneApariencia
             // 
@@ -184,11 +196,100 @@
             this.lblIdioma.TabIndex = 0;
             this.lblIdioma.Text = "Idioma";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnVer);
+            this.panel1.Controls.Add(this.txtNuevaContraConfirma);
+            this.panel1.Controls.Add(this.txtNuevaContraseña);
+            this.panel1.Controls.Add(this.txtContraActual);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblNuevaContra);
+            this.panel1.Controls.Add(this.lblContra);
+            this.panel1.Location = new System.Drawing.Point(16, 255);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(748, 208);
+            this.panel1.TabIndex = 6;
+            // 
+            // lblNuevaContra
+            // 
+            this.lblNuevaContra.AutoSize = true;
+            this.lblNuevaContra.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblNuevaContra.Location = new System.Drawing.Point(46, 96);
+            this.lblNuevaContra.Name = "lblNuevaContra";
+            this.lblNuevaContra.Size = new System.Drawing.Size(146, 22);
+            this.lblNuevaContra.TabIndex = 1;
+            this.lblNuevaContra.Text = "Nueva Contraseña: ";
+            // 
+            // lblContra
+            // 
+            this.lblContra.AutoSize = true;
+            this.lblContra.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblContra.Location = new System.Drawing.Point(6, 0);
+            this.lblContra.Name = "lblContra";
+            this.lblContra.Size = new System.Drawing.Size(90, 22);
+            this.lblContra.TabIndex = 0;
+            this.lblContra.Text = "Contraseña";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(46, 144);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Repita contraseña: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(46, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Contraseña Actual: ";
+            // 
+            // txtContraActual
+            // 
+            this.txtContraActual.Location = new System.Drawing.Point(285, 51);
+            this.txtContraActual.Name = "txtContraActual";
+            this.txtContraActual.Size = new System.Drawing.Size(333, 22);
+            this.txtContraActual.TabIndex = 4;
+            // 
+            // txtNuevaContraseña
+            // 
+            this.txtNuevaContraseña.Location = new System.Drawing.Point(285, 97);
+            this.txtNuevaContraseña.Name = "txtNuevaContraseña";
+            this.txtNuevaContraseña.Size = new System.Drawing.Size(333, 22);
+            this.txtNuevaContraseña.TabIndex = 5;
+            // 
+            // txtNuevaContraConfirma
+            // 
+            this.txtNuevaContraConfirma.Location = new System.Drawing.Point(285, 144);
+            this.txtNuevaContraConfirma.Name = "txtNuevaContraConfirma";
+            this.txtNuevaContraConfirma.Size = new System.Drawing.Size(333, 22);
+            this.txtNuevaContraConfirma.TabIndex = 6;
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackgroundImage = global::BackOfficeAdministracion.Properties.Resources.ojo;
+            this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVer.Location = new System.Drawing.Point(651, 115);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(34, 34);
+            this.btnVer.TabIndex = 7;
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.MouseEnter += new System.EventHandler(this.btnVer_MouseEnter);
+            this.btnVer.MouseLeave += new System.EventHandler(this.btnVer_MouseLeave);
+            // 
             // Configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 769);
+            this.ClientSize = new System.Drawing.Size(778, 769);
             this.Controls.Add(this.paneConfiguracion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Configuracion";
@@ -200,6 +301,8 @@
             this.paneApariencia.PerformLayout();
             this.paneIdioma.ResumeLayout(false);
             this.paneIdioma.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -219,5 +322,14 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAplicar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtNuevaContraConfirma;
+        private System.Windows.Forms.TextBox txtNuevaContraseña;
+        private System.Windows.Forms.TextBox txtContraActual;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNuevaContra;
+        private System.Windows.Forms.Label lblContra;
+        private System.Windows.Forms.Button btnVer;
     }
 }
