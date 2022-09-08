@@ -202,5 +202,10 @@ namespace BackOfficeAdministracion
             }
 
         }
+
+        private void chkboxOlvide_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

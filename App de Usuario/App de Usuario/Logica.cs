@@ -593,6 +593,56 @@ namespace App_de_Usuario
             }
             return devolver;
         }
+        public static byte averiguarCorreo(Usuario u)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql, ayuda;
+
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select correo from Vip where correo='" + u.correo + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    ayuda = Convert.ToString(rs.Fields[0].Value);
+                }
+                sql = "select nombre from Vip where correo='" + u.correo + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    u.nombre = Convert.ToString(rs.Fields[0].Value);
+                }
+            }
+            return devolver;
+        }
 
     }
 }

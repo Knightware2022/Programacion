@@ -82,6 +82,8 @@ namespace App_de_Usuario
             this.paneRegistrarse.Location = new Point(14, 55);
             this.paneIngreso.Visible = true;
             this.paneIngreso.Location = new Point(14, 79) ;
+            this.paneOlvide.Location = new Point(14, 79);
+            paneOlvide.Visible = false;
             this.txtContrasenia.UseSystemPasswordChar = true;
             this.txtConfirmarContrasenia.UseSystemPasswordChar = true;
             this.txtRegistrarContrasenia.UseSystemPasswordChar = true;
@@ -183,6 +185,50 @@ namespace App_de_Usuario
             }
             catch {
             }
+        }
+
+        private void chkboxOlvide_MouseClick(object sender, MouseEventArgs e)
+        {
+            paneIngreso.Visible = false;
+            chkboxOlvide.Checked = false;
+            paneOlvide.Visible = true;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCancelarContraseña_Click(object sender, EventArgs e)
+        {
+            paneOlvide.Visible = false;
+            paneIngreso.Visible = true;
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            string correo = txtOlvide.Text;
+            switch (Program.apiA.olvideContrasenia(correo)){
+                case 0:
+                    MessageBox.Show("Una nueva contraseña fue enviada a su correo.");
+                    paneOlvide.Visible = false;
+                    paneIngreso.Visible = true;
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexión");
+
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+
+                    break;
+                case 3:
+                    MessageBox.Show("Error, correo no encontrado");
+
+                    break;
+
+            }
+
         }
     }
 }

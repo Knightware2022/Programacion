@@ -611,7 +611,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 if (rs.RecordCount == 0)

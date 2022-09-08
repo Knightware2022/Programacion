@@ -58,6 +58,7 @@
             this.chkboxOlvide.TabIndex = 6;
             this.chkboxOlvide.Text = "Olvidó su contraseña?";
             this.chkboxOlvide.UseVisualStyleBackColor = true;
+            this.chkboxOlvide.CheckedChanged += new System.EventHandler(this.chkboxOlvide_CheckedChanged_1);
             this.chkboxOlvide.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkboxOlvide_MouseClick);
             // 
             // lblCorreo

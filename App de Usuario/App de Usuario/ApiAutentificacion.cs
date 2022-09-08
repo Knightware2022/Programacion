@@ -55,5 +55,53 @@ namespace App_de_Usuario
             _usuario = null;
             return devolver;
         }
+        public byte olvideContrasenia(string correo) {
+            byte devolver = 0;
+            Random r = new Random();
+            string contra = null;
+            Encriptacion en = new Encriptacion();
+            int x, y;
+            usuario.correo = correo;
+            switch (Logica.averiguarCorreo(usuario))
+            {
+                case 0:
+                    string abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz@5#$%&##$/&)( ";
+                    for (int i = 0; i < 8; i++)
+                    {
+                        x = r.Next((abecedario.Length - 1));
+                        //       y = x+ 1;
+                        contra += abecedario.Substring(x, 1);
+                    }
+                    contra += r.Next(9999);
+                    usuario.contrasenia = en.encriptar(contra);
+                    switch (Logica.modificarContraseña(usuario.nombre, usuario.contrasenia))
+                    {
+                        case 0:
+                            Mensajeria.sendCorreo(usuario.correo, contra);
+                            devolver = 0;
+                            break;
+                        case 1:
+                            devolver = 1;
+                            break;
+                        case 2:
+                            devolver = 2;
+
+                            break;
+                    }
+                    break;
+                case 1:
+                    devolver = 0;
+                    break;
+                case 2:
+                    devolver = 2;
+                   
+                    break;
+                case 3:
+                    devolver = 3;
+                    break;
+
+            }
+            return devolver;
+        }
     }
 }

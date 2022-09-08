@@ -33,6 +33,7 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblContrasenia = new System.Windows.Forms.Label();
             this.paneIngreso = new System.Windows.Forms.Panel();
+            this.chkboxOlvide = new System.Windows.Forms.CheckBox();
             this.lblCambiarIdiomaII = new System.Windows.Forms.Label();
             this.cmboxCambiarIdiomaII = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,8 +55,14 @@
             this.lblRegistroUsuario = new System.Windows.Forms.Label();
             this.txtRegistrarUsuario = new System.Windows.Forms.TextBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.paneOlvide = new System.Windows.Forms.Panel();
+            this.btnCancelarContraseña = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.txtOlvide = new System.Windows.Forms.TextBox();
+            this.lblOlvide = new System.Windows.Forms.Label();
             this.paneIngreso.SuspendLayout();
             this.paneRegistrarse.SuspendLayout();
+            this.paneOlvide.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -92,6 +99,7 @@
             // 
             this.paneIngreso.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.paneIngreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneIngreso.Controls.Add(this.chkboxOlvide);
             this.paneIngreso.Controls.Add(this.lblCambiarIdiomaII);
             this.paneIngreso.Controls.Add(this.cmboxCambiarIdiomaII);
             this.paneIngreso.Controls.Add(this.button1);
@@ -102,11 +110,23 @@
             this.paneIngreso.Controls.Add(this.lblContrasenia);
             this.paneIngreso.Controls.Add(this.txtUsuario);
             this.paneIngreso.Controls.Add(this.lblUsuario);
-            this.paneIngreso.Location = new System.Drawing.Point(12, 206);
+            this.paneIngreso.Location = new System.Drawing.Point(18, 25);
             this.paneIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paneIngreso.Name = "paneIngreso";
-            this.paneIngreso.Size = new System.Drawing.Size(725, 200);
+            this.paneIngreso.Size = new System.Drawing.Size(725, 229);
             this.paneIngreso.TabIndex = 3;
+            // 
+            // chkboxOlvide
+            // 
+            this.chkboxOlvide.AutoSize = true;
+            this.chkboxOlvide.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkboxOlvide.Location = new System.Drawing.Point(18, 198);
+            this.chkboxOlvide.Name = "chkboxOlvide";
+            this.chkboxOlvide.Size = new System.Drawing.Size(189, 26);
+            this.chkboxOlvide.TabIndex = 18;
+            this.chkboxOlvide.Text = "Olvidó su contraseña?";
+            this.chkboxOlvide.UseVisualStyleBackColor = true;
+            this.chkboxOlvide.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkboxOlvide_MouseClick);
             // 
             // lblCambiarIdiomaII
             // 
@@ -211,7 +231,7 @@
             this.paneRegistrarse.Controls.Add(this.lblRegistroUsuario);
             this.paneRegistrarse.Controls.Add(this.txtRegistrarUsuario);
             this.paneRegistrarse.Controls.Add(this.lblNombreUsuario);
-            this.paneRegistrarse.Location = new System.Drawing.Point(19, 14);
+            this.paneRegistrarse.Location = new System.Drawing.Point(18, 304);
             this.paneRegistrarse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paneRegistrarse.Name = "paneRegistrarse";
             this.paneRegistrarse.Size = new System.Drawing.Size(725, 317);
@@ -361,12 +381,72 @@
             this.lblNombreUsuario.TabIndex = 4;
             this.lblNombreUsuario.Text = "Usuario: ";
             // 
+            // paneOlvide
+            // 
+            this.paneOlvide.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.paneOlvide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneOlvide.Controls.Add(this.btnCancelarContraseña);
+            this.paneOlvide.Controls.Add(this.btnEnviar);
+            this.paneOlvide.Controls.Add(this.txtOlvide);
+            this.paneOlvide.Controls.Add(this.lblOlvide);
+            this.paneOlvide.Location = new System.Drawing.Point(18, 262);
+            this.paneOlvide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.paneOlvide.Name = "paneOlvide";
+            this.paneOlvide.Size = new System.Drawing.Size(725, 154);
+            this.paneOlvide.TabIndex = 5;
+            this.paneOlvide.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnCancelarContraseña
+            // 
+            this.btnCancelarContraseña.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarContraseña.Location = new System.Drawing.Point(433, 91);
+            this.btnCancelarContraseña.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarContraseña.Name = "btnCancelarContraseña";
+            this.btnCancelarContraseña.Size = new System.Drawing.Size(101, 48);
+            this.btnCancelarContraseña.TabIndex = 12;
+            this.btnCancelarContraseña.Text = "Cancelar";
+            this.btnCancelarContraseña.UseVisualStyleBackColor = true;
+            this.btnCancelarContraseña.Click += new System.EventHandler(this.btnCancelarContraseña_Click);
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.Location = new System.Drawing.Point(116, 95);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(108, 41);
+            this.btnEnviar.TabIndex = 7;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
+            // txtOlvide
+            // 
+            this.txtOlvide.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtOlvide.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOlvide.Location = new System.Drawing.Point(359, 34);
+            this.txtOlvide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtOlvide.Name = "txtOlvide";
+            this.txtOlvide.Size = new System.Drawing.Size(321, 28);
+            this.txtOlvide.TabIndex = 11;
+            // 
+            // lblOlvide
+            // 
+            this.lblOlvide.AutoSize = true;
+            this.lblOlvide.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOlvide.Location = new System.Drawing.Point(33, 34);
+            this.lblOlvide.Name = "lblOlvide";
+            this.lblOlvide.Size = new System.Drawing.Size(226, 18);
+            this.lblOlvide.TabIndex = 10;
+            this.lblOlvide.Text = "Ingrese su correo electronico: ";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(755, 405);
+            this.Controls.Add(this.paneOlvide);
             this.Controls.Add(this.paneRegistrarse);
             this.Controls.Add(this.paneIngreso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -380,6 +460,8 @@
             this.paneIngreso.PerformLayout();
             this.paneRegistrarse.ResumeLayout(false);
             this.paneRegistrarse.PerformLayout();
+            this.paneOlvide.ResumeLayout(false);
+            this.paneOlvide.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -410,6 +492,12 @@
         public System.Windows.Forms.Label lblCambiarIdiomaII;
         public System.Windows.Forms.ComboBox cmboxIdioma;
         public System.Windows.Forms.ComboBox cmboxCambiarIdiomaII;
+        private System.Windows.Forms.CheckBox chkboxOlvide;
+        private System.Windows.Forms.Panel paneOlvide;
+        public System.Windows.Forms.Button btnCancelarContraseña;
+        public System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.TextBox txtOlvide;
+        public System.Windows.Forms.Label lblOlvide;
     }
 }
 
