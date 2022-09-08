@@ -21,6 +21,7 @@ namespace App_de_Usuario
         {
             ApiAutentificacion apiA = new ApiAutentificacion();
             String nombre = txtUsuario.Text;
+            int avatar;
             byte respuesta = apiA.iniciarSesion(nombre, txtContrasenia.Text);
             switch (respuesta){
                 case 0://encontro      
@@ -32,6 +33,22 @@ namespace App_de_Usuario
                     int xBase = Program.frmPrincipal.pboxPublicidad.Size.Width;
                     Program.frmPrincipal.paneVentanas.Size = new System.Drawing.Size(xBase, yBase);
                     Program.frmPrincipal.Show();
+                   /* avatar = Convert.ToInt32(global::App_de_Usuario.Properties.Resources.GuardarAvatar);
+                    if (avatar == 0) {//avatar por defecto
+                        Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;
+                    }
+                    else
+                    {
+                        if (avatar == 1)//avatar masculino
+                        {
+                            Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarMasculino;
+
+                        }
+                        else {
+                            Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarFemenino;
+
+                        }
+                    }*/
                     break;
                 case 1://conexion cerrada
                     MessageBox.Show("Ocurrió un problema de conexión");

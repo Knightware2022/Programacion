@@ -79,6 +79,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensajeria.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>

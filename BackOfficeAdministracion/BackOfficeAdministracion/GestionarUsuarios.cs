@@ -47,6 +47,7 @@ namespace BackOfficeAdministracion
                     txtUsuario.Text = u.nombre;
                     txtTiempoSuscripto.Text = u.mesesSuscritos.ToString();
                     txtID.Text = u.id.ToString();
+                    deportesFavoritos(u.id);
                     break;
                 case 1:
                     MessageBox.Show("Ocurrió un error de conexión");
@@ -83,7 +84,26 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
-
+        private void deportesFavoritos(int id) {
+            List<string> lista = new List<string>();
+            switch (Logica.averiguarDeportesFavoritos(id, lista))
+            {
+                case 0:
+                    cmboxDeportesFavoritos.Items.Clear();
+                    cmboxDeportesFavoritos.Text = lista[0];
+                    foreach (string deporte in lista)
+                    {
+                        cmboxDeportesFavoritos.Items.Add(deporte);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de conexión");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado cargando deportes");
+                    break;
+            }
+        }
         private void refrescarPublicidad()
         {
             List<string> lista = new List<string>();
@@ -288,6 +308,39 @@ namespace BackOfficeAdministracion
                 case 2:
                     MessageBox.Show("Error eliminando usuario");
                     break;
+            }
+        }
+
+        private void btnEnviarCorreo_Click(object sender, EventArgs e)
+        {
+
+            string correo = txtCorreo.Text;
+            if (correo != null)
+            {
+                if (correo.Contains(".com") && correo.Contains("@"))
+                {
+                    string titulo = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el titulo del correo: ", "Titulo del correo");
+                    string cuerpo = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el cuerpo del correo: ", "Cuerpo del correo", "Gracias por usar nuestros servicios, le daremos el próximo mes 100% gratis");
+                    DialogResult respuesta;
+                    respuesta = MessageBox.Show("Titulo: " + titulo + "\n" + "Contenido: " + cuerpo, "Previsualizacion del cooreo", MessageBoxButtons.OKCancel);
+                    if (respuesta == DialogResult.OK)
+                    {
+                        Mensajeria.sendCorreo2(correo, titulo, cuerpo);
+                    }
+                    else
+                    {
+                    }
+
+
+                }//del primer if
+                else
+                {
+                    MessageBox.Show("Correo no válido");
+                }
+            }
+            else {
+                MessageBox.Show("No seleccionó ningún correo o el usuario no lo tiene");
+
             }
         }
     }

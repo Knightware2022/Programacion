@@ -31,12 +31,15 @@
             this.tbcGestionUsuarios = new System.Windows.Forms.TabControl();
             this.tbpgMostrarUsuarios = new System.Windows.Forms.TabPage();
             this.paneBotones = new System.Windows.Forms.Panel();
+            this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.paneDatos = new System.Windows.Forms.Panel();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtRol = new System.Windows.Forms.TextBox();
             this.lblRol = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -56,6 +59,7 @@
             this.tbpgGestionarPublicidad = new System.Windows.Forms.TabPage();
             this.btnCerrar2 = new System.Windows.Forms.Button();
             this.paneEliminarPublicidad = new System.Windows.Forms.Panel();
+            this.btnRefrescarPublicidad = new System.Windows.Forms.Button();
             this.btnEliminarPublicidad = new System.Windows.Forms.Button();
             this.cmboxUrl = new System.Windows.Forms.ComboBox();
             this.lblUrlEliminar = new System.Windows.Forms.Label();
@@ -63,9 +67,6 @@
             this.txtURLpublicidad = new System.Windows.Forms.TextBox();
             this.btnAgregarPublicidad = new System.Windows.Forms.Button();
             this.lblUrl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.btnRefrescarPublicidad = new System.Windows.Forms.Button();
             this.tbcGestionUsuarios.SuspendLayout();
             this.tbpgMostrarUsuarios.SuspendLayout();
             this.paneBotones.SuspendLayout();
@@ -104,6 +105,7 @@
             // paneBotones
             // 
             this.paneBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneBotones.Controls.Add(this.btnEnviarCorreo);
             this.paneBotones.Controls.Add(this.btnCrearUsuario);
             this.paneBotones.Controls.Add(this.btnEliminar);
             this.paneBotones.Controls.Add(this.btnCerrar);
@@ -114,10 +116,21 @@
             this.paneBotones.Size = new System.Drawing.Size(723, 130);
             this.paneBotones.TabIndex = 14;
             // 
+            // btnEnviarCorreo
+            // 
+            this.btnEnviarCorreo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(339, 81);
+            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(173, 44);
+            this.btnEnviarCorreo.TabIndex = 20;
+            this.btnEnviarCorreo.Text = "Enviar Correo";
+            this.btnEnviarCorreo.UseVisualStyleBackColor = true;
+            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
+            // 
             // btnCrearUsuario
             // 
             this.btnCrearUsuario.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCrearUsuario.Location = new System.Drawing.Point(290, 81);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(164, 81);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
             this.btnCrearUsuario.Size = new System.Drawing.Size(122, 44);
             this.btnCrearUsuario.TabIndex = 19;
@@ -189,6 +202,23 @@
             this.paneDatos.Name = "paneDatos";
             this.paneDatos.Size = new System.Drawing.Size(705, 442);
             this.paneDatos.TabIndex = 13;
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(338, 34);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(268, 27);
+            this.txtID.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 22);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "ID: ";
             // 
             // txtRol
             // 
@@ -372,6 +402,17 @@
             this.paneEliminarPublicidad.Size = new System.Drawing.Size(727, 201);
             this.paneEliminarPublicidad.TabIndex = 1;
             // 
+            // btnRefrescarPublicidad
+            // 
+            this.btnRefrescarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefrescarPublicidad.Location = new System.Drawing.Point(415, 142);
+            this.btnRefrescarPublicidad.Name = "btnRefrescarPublicidad";
+            this.btnRefrescarPublicidad.Size = new System.Drawing.Size(194, 40);
+            this.btnRefrescarPublicidad.TabIndex = 3;
+            this.btnRefrescarPublicidad.Text = "Refrescar lista";
+            this.btnRefrescarPublicidad.UseVisualStyleBackColor = true;
+            this.btnRefrescarPublicidad.Click += new System.EventHandler(this.btnRefrescarPublicidad_Click);
+            // 
             // btnEliminarPublicidad
             // 
             this.btnEliminarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
@@ -442,34 +483,6 @@
             this.lblUrl.TabIndex = 0;
             this.lblUrl.Text = "URL publicidad: ";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 22);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "ID: ";
-            // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(338, 34);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(268, 27);
-            this.txtID.TabIndex = 14;
-            // 
-            // btnRefrescarPublicidad
-            // 
-            this.btnRefrescarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnRefrescarPublicidad.Location = new System.Drawing.Point(415, 142);
-            this.btnRefrescarPublicidad.Name = "btnRefrescarPublicidad";
-            this.btnRefrescarPublicidad.Size = new System.Drawing.Size(194, 40);
-            this.btnRefrescarPublicidad.TabIndex = 3;
-            this.btnRefrescarPublicidad.Text = "Refrescar lista";
-            this.btnRefrescarPublicidad.UseVisualStyleBackColor = true;
-            this.btnRefrescarPublicidad.Click += new System.EventHandler(this.btnRefrescarPublicidad_Click);
-            // 
             // GestionarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -536,5 +549,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRefrescarPublicidad;
+        private System.Windows.Forms.Button btnEnviarCorreo;
     }
 }

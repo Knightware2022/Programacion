@@ -124,7 +124,7 @@
             this.paneIngresar.Controls.Add(this.txtUsuario);
             this.paneIngresar.Controls.Add(this.lblContrasenia);
             this.paneIngresar.Controls.Add(this.lblUsuario);
-            this.paneIngresar.Location = new System.Drawing.Point(29, 53);
+            this.paneIngresar.Location = new System.Drawing.Point(29, 52);
             this.paneIngresar.Name = "paneIngresar";
             this.paneIngresar.Size = new System.Drawing.Size(605, 241);
             this.paneIngresar.TabIndex = 10;

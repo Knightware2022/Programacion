@@ -141,7 +141,47 @@ namespace BackOfficeAdministracion
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            Random r = new Random();
+            string contra = null;
+            Encriptacion en = new Encriptacion();
+            int x, y;
+            Usuario u = new Usuario();
+            u.correo = txtCorreo.Text;
+            switch (Logica.averiguarCorreo(u)) {
+                case 0:
+                    string abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz@5#$%&##$/&)( ";
+                    for (int i = 0; i < 8; i++)
+                    {
+                        x = r.Next((abecedario.Length -1 ));
+                 //       y = x+ 1;
+                        contra += abecedario.Substring(x, 1);
+                    }
+                    contra += r.Next(9999);
+                    u.contrasenia = en.encriptar(contra);
+                    switch (Logica.modificarContraseña(u.nombre, u.contrasenia)) {
+                        case 0:
+                            Mensajeria.sendCorreo(u.correo, contra);
+                            MessageBox.Show("Una nueva contraseña fue enviada a su correo.");
+                            break;
+                        case 1:
+                            MessageBox.Show("Error de conexión");
+                            break;
+                        case 2:
+                            MessageBox.Show("Ocurrió un error inesperado");
+                            break;
+                     }
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexión");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("Error, correo no encontrado");
+                    break;
 
+            }
         }
 
         private void btnCancelarII_Click(object sender, EventArgs e)

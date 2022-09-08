@@ -64,8 +64,14 @@ namespace BackOfficeAdministracion
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Logica._cn.Close();
-            Application.Exit();
+            try
+            {
+                Logica._cn.Close();
+                Application.Exit();
+            }
+            catch {
+
+            }
            
         }
     }

@@ -101,6 +101,15 @@ namespace App_de_Usuario.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        public static string GuardarAvatar {
+            get {
+                return ResourceManager.GetString("GuardarAvatar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Knightware_Letra {

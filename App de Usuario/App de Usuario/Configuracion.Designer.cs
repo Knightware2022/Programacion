@@ -89,7 +89,7 @@
             this.btnCambiarAvatar.Name = "btnCambiarAvatar";
             this.btnCambiarAvatar.Size = new System.Drawing.Size(177, 36);
             this.btnCambiarAvatar.TabIndex = 13;
-            this.btnCambiarAvatar.Text = "Cambiar ávatar";
+            this.btnCambiarAvatar.Text = "Vista previa";
             this.btnCambiarAvatar.UseVisualStyleBackColor = true;
             this.btnCambiarAvatar.Click += new System.EventHandler(this.btnCambiarAvatar_Click);
             // 
