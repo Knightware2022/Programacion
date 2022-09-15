@@ -1,5 +1,4 @@
 create database pruebas2;
-use pruebas2;
 
 create table Usuarios(
 	idUsuario int primary key not null
@@ -42,14 +41,6 @@ create table DeportesFavoritos
 drop table deportesFavoritos;
 alter table deportesfavoritos add constraint fk_depoFavUSU foreign key (idUsuario) references usuarios(idUsuario);
 alter table deportesfavoritos add constraint fk_depoFavDEPO foreign key (deporteFavorito) references Deportes(idDeporte);
-/* VERIFICAR SU FUNCIONAMIENTO, ACTUALMENTE NO ANDA
-select nombre, idDeporte
-from deportes 
-inner join deportesFavoritos
-on deportes.idDeporte=(select deporteFavorito
-from deportesFavoritos
-where idUsuario = 2074885754) ;
-*/
 SELECT nombre 
 FROM deportes
 WHERE deportes.idDeporte IN 
