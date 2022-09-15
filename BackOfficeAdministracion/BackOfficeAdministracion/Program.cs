@@ -24,8 +24,6 @@ namespace BackOfficeAdministracion
             frmGestionarUsuarios = new GestionarUsuarios();
             frmConfiguracion = new Configuracion();
             frmPrincipal = new Principal();
-        //    Encriptacion en = new Encriptacion();
-        //    MessageBox.Show(en.encriptar("1"));
             Application.Run(frmLogin = new Login());
         }
     }

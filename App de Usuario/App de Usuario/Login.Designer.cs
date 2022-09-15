@@ -231,7 +231,7 @@
             this.paneRegistrarse.Controls.Add(this.lblRegistroUsuario);
             this.paneRegistrarse.Controls.Add(this.txtRegistrarUsuario);
             this.paneRegistrarse.Controls.Add(this.lblNombreUsuario);
-            this.paneRegistrarse.Location = new System.Drawing.Point(18, 304);
+            this.paneRegistrarse.Location = new System.Drawing.Point(4, 11);
             this.paneRegistrarse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paneRegistrarse.Name = "paneRegistrarse";
             this.paneRegistrarse.Size = new System.Drawing.Size(725, 317);
@@ -389,7 +389,7 @@
             this.paneOlvide.Controls.Add(this.btnEnviar);
             this.paneOlvide.Controls.Add(this.txtOlvide);
             this.paneOlvide.Controls.Add(this.lblOlvide);
-            this.paneOlvide.Location = new System.Drawing.Point(18, 262);
+            this.paneOlvide.Location = new System.Drawing.Point(0, 50);
             this.paneOlvide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paneOlvide.Name = "paneOlvide";
             this.paneOlvide.Size = new System.Drawing.Size(725, 154);

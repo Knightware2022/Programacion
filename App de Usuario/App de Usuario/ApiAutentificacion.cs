@@ -52,7 +52,6 @@ namespace App_de_Usuario
             _usuario.nombre = nombre;
             _usuario.contrasenia = encriptacion.encriptar(contraseña);
             devolver = Logica.BuscandoUsuario(_usuario);
-            _usuario = null;
             return devolver;
         }
         public byte olvideContrasenia(string correo) {
@@ -102,6 +101,43 @@ namespace App_de_Usuario
 
             }
             return devolver;
+        }
+        public byte cambiarContrasenia(string nombreUsuario, string contraNueva, string confirmar) {
+            byte devolver = 0;
+            Encriptacion en = new Encriptacion();
+            if (contraNueva == confirmar)
+            {
+                contraNueva = en.encriptar(contraNueva);
+                switch (Logica.modificarContraseña(nombreUsuario, contraNueva)) {
+                    case 0:
+                        devolver = 0;
+                        break;
+                    case 1:
+                        devolver = 1;
+                        break;
+                    case 2:
+                        devolver = 2;
+                        break;
+                }
+            }
+            else {
+                devolver = 3;  //contraseñas no coinciden
+            }
+
+            return devolver;
+        }
+        public string correo(string nombre) {
+            string correo = null;
+            _usuario.nombre = nombre;
+            switch (Logica.BuscandoDatosUsuario(_usuario)) {
+                case 0:
+                    correo = _usuario.correo;
+                    break;
+                default:
+                    correo = "Error";
+                    break;
+            }
+            return correo;
         }
     }
 }

@@ -11,18 +11,22 @@ namespace BackOfficeAdministracion
     {
         public static ADODB.Connection _cn = new ADODB.Connection();
 
-        public static void abrirConexion()
+        public static byte abrirConexion()
         {
+            byte devolver;
             try
             {
                 _cn = new ADODB.Connection();
                 _cn.Open("miodbc", "root", "", -1);
                 _cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
+                devolver = 1;
+
             }
             catch
             {
-                MessageBox.Show("No se puedo establecer conexion a la base de datos. Reinicie el programa") ;
+                devolver = 2;
             }
+            return devolver;
         }
         public static byte BuscarID(int id)
         {

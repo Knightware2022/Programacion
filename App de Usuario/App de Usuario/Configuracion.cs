@@ -19,11 +19,14 @@ namespace App_de_Usuario
 
         private void Configuracion_Load(object sender, EventArgs e)
         {
+            ApiAutentificacion api = new ApiAutentificacion();
             this.Size = Program.frmPrincipal.paneVentanas.Size;
             this.cmboxAvatares.Text ="Estándar";
             this.cmboxIdiomas.Text = Program.frmLogin.cmboxIdioma.Text;
             this.cmboxTema.Text = "Predeterminado";
-
+            txtContrasenia.Text = "XXXXXXXXXXXXXX";
+            txtNombreUsuario.Text = Login.nombreUsuario;
+            txtCorreo.Text = api.correo(Login.nombreUsuario);
         }
          private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -107,5 +110,38 @@ namespace App_de_Usuario
 
         }
 
+        private void btnCambiarContrasenia_Click(object sender, EventArgs e)
+        {
+            ApiAutentificacion api = new ApiAutentificacion();
+            DialogResult cambioPasword;
+            string nombreUsuario = txtNombreUsuario.Text;
+            string contraNueva = Microsoft.VisualBasic.Interaction.InputBox("Ingrese su nueva contraseña", "Cambio de contraseña") ;
+            string confirmar = Microsoft.VisualBasic.Interaction.InputBox("Ingrese nuevamente la nueva contraseña", "Cambio de contraseña");
+            cambioPasword = MessageBox.Show("Está seguro que desea cambiar su contraseña?", "Cambio de contraseña", MessageBoxButtons.YesNo);
+            if (cambioPasword == DialogResult.Yes) {
+                switch (api.cambiarContrasenia(nombreUsuario, contraNueva, confirmar)) {
+                    case 0:
+                        MessageBox.Show("Contraseña cambiada");
+                        break;
+                    case 1:
+                        MessageBox.Show("Ocurrió un error de conexión");
+                        break;
+                    case 2:
+                        MessageBox.Show("Ocurrió un error inesperado");
+                        break;
+                    case 3:
+                        MessageBox.Show("Las contraseñas no coinciden");
+                        break;
+                }
+            }
+            else {
+                MessageBox.Show("Cambio de contraseña cancelado");
+            }
+        }
+
+        private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

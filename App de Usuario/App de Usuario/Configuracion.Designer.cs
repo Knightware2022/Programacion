@@ -147,6 +147,7 @@
             this.btnCambiarContrasenia.TabIndex = 8;
             this.btnCambiarContrasenia.Text = "cambiar";
             this.btnCambiarContrasenia.UseVisualStyleBackColor = true;
+            this.btnCambiarContrasenia.Click += new System.EventHandler(this.btnCambiarContrasenia_Click);
             // 
             // btnCambiarUsuario
             // 
@@ -161,6 +162,7 @@
             // txtContrasenia
             // 
             this.txtContrasenia.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtContrasenia.Enabled = false;
             this.txtContrasenia.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.txtContrasenia.Location = new System.Drawing.Point(222, 77);
             this.txtContrasenia.Name = "txtContrasenia";
@@ -170,6 +172,7 @@
             // txtCorreo
             // 
             this.txtCorreo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtCorreo.Enabled = false;
             this.txtCorreo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.txtCorreo.Location = new System.Drawing.Point(222, 119);
             this.txtCorreo.Name = "txtCorreo";
@@ -179,11 +182,13 @@
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtNombreUsuario.Enabled = false;
             this.txtNombreUsuario.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.txtNombreUsuario.Location = new System.Drawing.Point(222, 31);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(472, 28);
             this.txtNombreUsuario.TabIndex = 4;
+            this.txtNombreUsuario.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             // 
             // lblCorreoElectronico
             // 

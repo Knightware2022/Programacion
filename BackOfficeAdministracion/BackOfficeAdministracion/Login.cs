@@ -20,7 +20,13 @@ namespace BackOfficeAdministracion
         
         private void Login_Load(object sender, EventArgs e)
         {
-            Logica.abrirConexion();
+            switch (Logica.abrirConexion()) {
+                case 1:
+                    break;
+                case 2:
+                    MessageBox.Show("No se pudo conectar a la base de datos");
+                    break;
+            }
             this.paneOlvide.Visible = false;
             caracteresContrasenia(0);
             this.cmboxIdioma.Text = "Español";

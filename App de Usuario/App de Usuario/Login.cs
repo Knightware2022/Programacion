@@ -16,7 +16,7 @@ namespace App_de_Usuario
         {
             InitializeComponent();
         }
-        
+        public static string nombreUsuario;
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             ApiAutentificacion apiA = new ApiAutentificacion();
@@ -33,22 +33,30 @@ namespace App_de_Usuario
                     int xBase = Program.frmPrincipal.pboxPublicidad.Size.Width;
                     Program.frmPrincipal.paneVentanas.Size = new System.Drawing.Size(xBase, yBase);
                     Program.frmPrincipal.Show();
-                   /* avatar = Convert.ToInt32(global::App_de_Usuario.Properties.Resources.GuardarAvatar);
-                    if (avatar == 0) {//avatar por defecto
-                        Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;
-                    }
-                    else
-                    {
-                        if (avatar == 1)//avatar masculino
-                        {
-                            Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarMasculino;
+                    txtUsuario.Text = null;
+                    txtRegistrarUsuario.Text = null;
+                    txtRegistrarContrasenia.Text = null;
+                    txtOlvide.Text = null;
+                    txtCorreo.Text = null;
+                    txtContrasenia.Text = null;
+                    txtConfirmarContrasenia.Text = null;
+                    /* avatar = Convert.ToInt32(global::App_de_Usuario.Properties.Resources.GuardarAvatar);
+                     if (avatar == 0) {//avatar por defecto
+                         Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;
+                     }
+                     else
+                     {
+                         if (avatar == 1)//avatar masculino
+                         {
+                             Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarMasculino;
 
-                        }
-                        else {
-                            Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarFemenino;
+                         }
+                         else {
+                             Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarFemenino;
 
-                        }
-                    }*/
+                         }
+                     }*/
+                    nombreUsuario = nombre;
                     break;
                 case 1://conexion cerrada
                     MessageBox.Show("Ocurrió un problema de conexión");
@@ -90,19 +98,33 @@ namespace App_de_Usuario
             this.cmboxIdioma.Text = "Español";
             this.cmboxCambiarIdiomaII.Text = "Español";
             Idiomas.cambiarIdioma(cmboxCambiarIdiomaII.Text);
-            Logica.abrirConexion();
+            switch (Logica.abrirConexion()) {
+                case 1:
+                    break;
+                case 2:
+                    MessageBox.Show("No se pudo conectar a la base de datos");
+                    break;
+            }
         }
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             this.paneIngreso.Visible = false;
             this.paneRegistrarse.Visible = true;
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.paneIngreso.Visible = true;
             this.paneRegistrarse.Visible = false;
+            txtUsuario.Text = null;
+            txtRegistrarUsuario.Text = null;
+            txtRegistrarContrasenia.Text = null;
+            txtOlvide.Text = null;
+            txtCorreo.Text = null;
+            txtContrasenia.Text = null;
+            txtConfirmarContrasenia.Text = null;
         }
 
         private void btnVerContrasenia_Leave(object sender, EventArgs e)
@@ -151,6 +173,13 @@ namespace App_de_Usuario
                             MessageBox.Show("Se ha registrado exitosamente. Inicie Sesión");
                             this.paneIngreso.Visible = true;
                             this.paneRegistrarse.Visible = false;
+                            txtUsuario.Text = null;
+                            txtRegistrarUsuario.Text = null;
+                            txtRegistrarContrasenia.Text = null;
+                            txtOlvide.Text = null;
+                            txtCorreo.Text = null;
+                            txtContrasenia.Text = null;
+                            txtConfirmarContrasenia.Text = null;
                             break;
                         case 1:
                             MessageBox.Show("Error de conexión");
@@ -203,6 +232,13 @@ namespace App_de_Usuario
         {
             paneOlvide.Visible = false;
             paneIngreso.Visible = true;
+            txtUsuario.Text = null;
+            txtRegistrarUsuario.Text = null;
+            txtRegistrarContrasenia.Text = null;
+            txtOlvide.Text = null;
+            txtCorreo.Text = null;
+            txtContrasenia.Text = null;
+            txtConfirmarContrasenia.Text = null;
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -212,6 +248,13 @@ namespace App_de_Usuario
                 case 0:
                     MessageBox.Show("Una nueva contraseña fue enviada a su correo.");
                     paneOlvide.Visible = false;
+                    txtUsuario.Text = null;
+                    txtRegistrarUsuario.Text = null;
+                    txtRegistrarContrasenia.Text = null;
+                    txtOlvide.Text = null;
+                    txtCorreo.Text = null;
+                    txtContrasenia.Text = null;
+                    txtConfirmarContrasenia.Text = null;
                     paneIngreso.Visible = true;
                     break;
                 case 1:

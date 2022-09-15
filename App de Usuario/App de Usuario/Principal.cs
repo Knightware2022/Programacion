@@ -21,7 +21,7 @@ namespace App_de_Usuario
         private void Principal_Load(object sender, EventArgs e){
             this.IsMdiContainer = true;
             ApiPublicidad publicidad = new ApiPublicidad();
-            publicidad.obtenerPublicidad(1234);
+            publicidad.obtenerPublicidad(123);
             if (publicidad.publicidad.url == "Error34X_Publicidad") {
             }
             else {

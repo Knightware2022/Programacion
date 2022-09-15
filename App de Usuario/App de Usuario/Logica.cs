@@ -14,18 +14,21 @@ namespace App_de_Usuario
         #region constructores
        
         #endregion
-        public static void abrirConexion()
+        public static byte abrirConexion()
         {
+            byte devolver;
             try
             {
                 _cn = new ADODB.Connection();
                 _cn.Open("miodbc", "administrator", "administrador1234", -1);
                 _cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
+                devolver = 1;
             }
             catch
             {
-                MessageBox.Show("Ocurrió un error");
+                devolver = 2;
             }
+            return devolver;
         }
         public static byte BuscandoUsuario(Usuario u)
         {
@@ -586,7 +589,6 @@ namespace App_de_Usuario
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
 
@@ -641,6 +643,36 @@ namespace App_de_Usuario
                     u.nombre = Convert.ToString(rs.Fields[0].Value);
                 }
             }
+            return devolver;
+        }
+        public static byte averiguarDeportesFavoritos(int idUsuario, List<string> lista)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select nombre from deportes where deportes.idDeporte IN (select deporteFavorito from deportesFavoritos where idUsuario=" + idUsuario + ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                while (!rs.EOF)
+                {
+                    lista.Add(Convert.ToString(rs.Fields[0].Value));
+                    rs.MoveNext();
+                }
+            }
+            rs = null;
             return devolver;
         }
 
