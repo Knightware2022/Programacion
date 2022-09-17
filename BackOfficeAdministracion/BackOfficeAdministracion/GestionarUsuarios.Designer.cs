@@ -51,7 +51,6 @@
             this.lblDeportesFavoritos = new System.Windows.Forms.Label();
             this.cmboxDeportesFavoritos = new System.Windows.Forms.ComboBox();
             this.paneBuscar = new System.Windows.Forms.Panel();
-            this.crearU = new System.Windows.Forms.Button();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.lblIDusuario = new System.Windows.Forms.Label();
             this.cmboxIDusuarios = new System.Windows.Forms.ComboBox();
@@ -247,7 +246,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(48, 84);
+            this.lblNombre.Location = new System.Drawing.Point(54, 84);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(151, 22);
             this.lblNombre.TabIndex = 2;
@@ -296,6 +295,7 @@
             // 
             // cmboxDeportesFavoritos
             // 
+            this.cmboxDeportesFavoritos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxDeportesFavoritos.FormattingEnabled = true;
             this.cmboxDeportesFavoritos.Location = new System.Drawing.Point(338, 282);
             this.cmboxDeportesFavoritos.Name = "cmboxDeportesFavoritos";
@@ -305,7 +305,6 @@
             // paneBuscar
             // 
             this.paneBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneBuscar.Controls.Add(this.crearU);
             this.paneBuscar.Controls.Add(this.btnRefrescar);
             this.paneBuscar.Controls.Add(this.lblIDusuario);
             this.paneBuscar.Controls.Add(this.cmboxIDusuarios);
@@ -315,21 +314,10 @@
             this.paneBuscar.Size = new System.Drawing.Size(705, 100);
             this.paneBuscar.TabIndex = 12;
             // 
-            // crearU
-            // 
-            this.crearU.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.crearU.Location = new System.Drawing.Point(471, 59);
-            this.crearU.Name = "crearU";
-            this.crearU.Size = new System.Drawing.Size(198, 31);
-            this.crearU.TabIndex = 20;
-            this.crearU.Text = "creación Usuario";
-            this.crearU.UseVisualStyleBackColor = true;
-            this.crearU.Click += new System.EventHandler(this.crearU_Click);
-            // 
             // btnRefrescar
             // 
             this.btnRefrescar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnRefrescar.Location = new System.Drawing.Point(262, 63);
+            this.btnRefrescar.Location = new System.Drawing.Point(417, 63);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(137, 32);
             this.btnRefrescar.TabIndex = 7;
@@ -343,9 +331,9 @@
             this.lblIDusuario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblIDusuario.Location = new System.Drawing.Point(14, 26);
             this.lblIDusuario.Name = "lblIDusuario";
-            this.lblIDusuario.Size = new System.Drawing.Size(90, 22);
+            this.lblIDusuario.Size = new System.Drawing.Size(151, 22);
             this.lblIDusuario.TabIndex = 0;
-            this.lblIDusuario.Text = "ID usuario: ";
+            this.lblIDusuario.Text = "Nombre de usuario: ";
             // 
             // cmboxIDusuarios
             // 
@@ -358,7 +346,7 @@
             // btnMostrar
             // 
             this.btnMostrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnMostrar.Location = new System.Drawing.Point(78, 63);
+            this.btnMostrar.Location = new System.Drawing.Point(163, 63);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(107, 32);
             this.btnMostrar.TabIndex = 6;
@@ -545,7 +533,6 @@
         private System.Windows.Forms.TextBox txtRol;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Button btnCrearUsuario;
-        private System.Windows.Forms.Button crearU;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRefrescarPublicidad;

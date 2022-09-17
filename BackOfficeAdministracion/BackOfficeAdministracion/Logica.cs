@@ -436,7 +436,7 @@ namespace BackOfficeAdministracion
             byte devolver = 0;
             object cantFilas;
             string sql;
-            string contraseña = "";
+            string contraseña = "0123456789";
             Encriptacion e = new Encriptacion();
             contraseña = e.encriptar(contraseña);
             ADODB.Recordset rs = new ADODB.Recordset();
@@ -458,11 +458,25 @@ namespace BackOfficeAdministracion
                 sql = "insert into Vip(idusuario, correo, contrasenia, nombre, mesesSuscritos, rol) values( " + u.id + ", '" + u.correo + "', '" + contraseña + "', '" + u.nombre + "', " + u.mesesSuscritos + ", " + u.rol + " )";
                 try
                 {
+                   
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
                 }
                 catch
                 {
-                    return devolver = 2;
+                    sql = "select correo from Vip where correo='" + u.correo + "'";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    if (rs.RecordCount != 0)
+                    {
+                        devolver = 3; //correo ya existente
+                    }
+
                 }
             }
             return devolver;
@@ -632,7 +646,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 if (rs.RecordCount == 0)
@@ -665,11 +678,17 @@ namespace BackOfficeAdministracion
                 {
                     return devolver = 2;
                 }
-                while (!rs.EOF)
+                if (rs.RecordCount == 0)
                 {
-                    lista.Add(Convert.ToString(rs.Fields[0].Value));
-                    rs.MoveNext();
+                    devolver = 3;//no tiene deportes favoritos
                 }
+                else {
+                    while (!rs.EOF)
+                    {
+                        lista.Add(Convert.ToString(rs.Fields[0].Value));
+                        rs.MoveNext();
+                    }
+                }              
             }
             rs = null;
             return devolver;

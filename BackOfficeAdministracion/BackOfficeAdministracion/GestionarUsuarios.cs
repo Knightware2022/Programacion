@@ -36,7 +36,9 @@ namespace BackOfficeAdministracion
             paneBuscar.Enabled = false;
             txtUsuario.Enabled = false;
             txtID.Enabled = false;
-
+            bool bandera = true;
+            int random = 0;
+            Random r = new Random();
             Usuario u = new Usuario();
             u.nombre = cmboxIDusuarios.Text;
             switch (Logica.BuscandoDatosUsuario(u)) {
@@ -55,10 +57,41 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 2:
-                case 3:
                     MessageBox.Show("Ocurrió un error inesperado");
                     paneBuscar.Enabled = true;
+                    break;
+                case 3:
+                    DialogResult crearUsuario = MessageBox.Show("El usuario no existe, desea crearlo? ","Creación usuario", MessageBoxButtons.YesNo);
+                    if (crearUsuario == DialogResult.Yes)
+                    {
+                        paneDatos.Enabled = true;
+                        txtUsuario.Enabled = false;
+                        while (bandera == true)
+                        {
+                            random = r.Next();
+                            switch (Logica.BuscarID(random))
+                            {
+                                case 0:
+                                    break;
+                                case 1:
+                                case 2:
+                                    MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                    break;
+                                case 3:
+                                    bandera = false;
+                                    break;
+                            }
+                        }
+                        txtUsuario.Text = cmboxIDusuarios.Text;
+                        txtID.Text = random.ToString();
+                        txtID.Enabled = false;
+                        paneBuscar.Enabled = false;
+                        btnAceptar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                    }
+                    else {
 
+                    }
                     break;
             }
             
@@ -90,11 +123,11 @@ namespace BackOfficeAdministracion
             {
                 case 0:
                     cmboxDeportesFavoritos.Items.Clear();
-                    cmboxDeportesFavoritos.Text = lista[0];
                     foreach (string deporte in lista)
                     {
                         cmboxDeportesFavoritos.Items.Add(deporte);
                     }
+                    cmboxDeportesFavoritos.Text = lista[0];
                     break;
                 case 1:
                     MessageBox.Show("Ocurrió un error de conexión");
@@ -176,6 +209,7 @@ namespace BackOfficeAdministracion
             txtTiempoSuscripto.Text = null;
             txtID.Text = null;
             txtUsuario.Text = null;
+            cmboxDeportesFavoritos.Items.Clear();
             paneBuscar.Enabled = true;
             btnAceptar.Enabled = true;
             btnEliminar.Enabled = true;
@@ -253,10 +287,13 @@ namespace BackOfficeAdministracion
                     case 2:
                         MessageBox.Show("Ocurrió un error");
                         break;
+                    case 3:
+                        MessageBox.Show("Correo ya registrado");
+                        break;
                 }
             }
             catch {
-                MessageBox.Show("Datos no validos");
+                MessageBox.Show("Meses suscriptos y rol deben ser numéricos");
             }
             
         }
@@ -270,6 +307,24 @@ namespace BackOfficeAdministracion
             btnAceptar.Enabled = false;
             btnEliminar.Enabled = false;
         }
+
+        /**
+         * 
+         *  paneDatos.Enabled = true;
+            txtUsuario.Enabled = true;
+            txtID.Enabled = true;
+            paneBuscar.Enabled = false;
+            btnAceptar.Enabled = false;
+            btnEliminar.Enabled = false;
+         * 
+         * 
+         * 
+         * 
+         * 
+         * */
+
+
+
 
         private void btnAgregarPublicidad_Click(object sender, EventArgs e)
         {
