@@ -53,7 +53,9 @@ namespace BackOfficeAdministracion
                 {
                     devolver = 3; //id no en uso
                 }
+
             }
+            rs = null;
             return devolver;
         }
         public static byte BuscandoUsuario(Usuario u)
@@ -106,6 +108,7 @@ namespace BackOfficeAdministracion
                     }
                 }
             }
+            rs = null;
             return devolver;
         }
         public static byte BuscandoDatosUsuario(Usuario u)
@@ -189,6 +192,7 @@ namespace BackOfficeAdministracion
                     u.id = Convert.ToInt32(rs.Fields[0].Value);
                 }
             }
+            rs = null;
             return devolver;
         }
         public static string obtenerPublicidad(int id)
@@ -223,6 +227,7 @@ namespace BackOfficeAdministracion
                     url = Convert.ToString(rs.Fields[0].Value);
                 }
             }
+            rs = null;
             return url;
         }
         public static byte AltaUsuarioVIP(Usuario u)
@@ -275,6 +280,7 @@ namespace BackOfficeAdministracion
                     devolver = 4;// ya está registrado
                 }
             }
+            rs = null;
             return devolver;
         }
         public static byte averiguandoRol(Usuario u)
@@ -307,6 +313,7 @@ namespace BackOfficeAdministracion
                     u.rol = Convert.ToInt32(rs.Fields[0].Value);
                 }
             }
+            rs = null;
             return devolver;
         }
         public static byte listarTodosUsuarios(List<string> lista)
@@ -396,6 +403,8 @@ namespace BackOfficeAdministracion
                     return devolver = 2;
                 }
             }
+            rs = null;
+
             return devolver;
         }
         public static byte eliminarUsuario(string nombre, int id)
@@ -429,6 +438,7 @@ namespace BackOfficeAdministracion
                     return devolver = 2;
                 }
             }
+            rs = null;
             return devolver;
         }
         public static byte crearUsuario(Usuario u)
@@ -479,6 +489,7 @@ namespace BackOfficeAdministracion
 
                 }
             }
+            rs = null;
             return devolver;
         }
         public static byte AñadirPublicidad(string url)
@@ -526,6 +537,7 @@ namespace BackOfficeAdministracion
                     return devolver = 2;
                 }
             }
+            rs = null;
             return devolver;
         }
         public static byte listarTodaPublicidad(List<string> lista)
@@ -582,6 +594,7 @@ namespace BackOfficeAdministracion
                 }
 
             }
+            rs = null;
             return devolver;
         }
         public static byte modificarContraseña(string nombre, string nueva)
@@ -603,11 +616,11 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
 
             }
+            rs = null;
             return devolver;
         }
         public static byte averiguarCorreo(Usuario u) {
@@ -656,6 +669,7 @@ namespace BackOfficeAdministracion
                     u.nombre = Convert.ToString(rs.Fields[0].Value);
                 }
             }
+            rs = null;
             return devolver;
         }
         public static byte averiguarDeportesFavoritos(int idUsuario, List<string> lista) {

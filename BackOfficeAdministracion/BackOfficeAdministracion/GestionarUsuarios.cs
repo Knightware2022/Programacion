@@ -81,7 +81,7 @@ namespace BackOfficeAdministracion
                                     bandera = false;
                                     break;
                             }
-                        }
+                        }//comentario
                         txtUsuario.Text = cmboxIDusuarios.Text;
                         txtID.Text = random.ToString();
                         txtID.Enabled = false;
