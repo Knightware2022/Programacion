@@ -54,6 +54,7 @@
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Encriptacion.cs" />
+    <Compile Include="Equipos.cs" />
     <Compile Include="GestionarDeportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +74,7 @@
       <DependentUpon>GestionarUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Idiomas.cs" />
+    <Compile Include="Jugador.cs" />
     <Compile Include="Logica.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>

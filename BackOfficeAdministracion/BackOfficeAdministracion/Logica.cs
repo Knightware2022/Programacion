@@ -707,7 +707,289 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
             }
+        public static byte cargarNombreEquipos(List<string> listaEquipos) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select nombre from Equipos";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;//no hay equipos cargados
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        listaEquipos.Add(Convert.ToString(rs.Fields[0].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte cargarDatosEquipo(Equipos equipo) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select nombre from Equipos where nombre='" + equipo.nombre + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;//no hay equipo con ese nombre
+                }
+                else
+                {
+                    equipo.categoria = Convert.ToString(rs.Fields[0].Value);
 
+                    sql = "select categoria from Equipos where nombre='" + equipo.nombre + "'";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    equipo.categoria = Convert.ToString(rs.Fields[0].Value);
+
+                    sql = "select pais from Equipos where nombre='" + equipo.nombre + "'";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    equipo.pais = Convert.ToString(rs.Fields[0].Value);
+
+                    sql = "select logo from Equipos where nombre='" + equipo.nombre + "'";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    equipo.logo = Convert.ToString(rs.Fields[0].Value);
+
+                    sql = "select idEquipo from Equipos where nombre='" + equipo.nombre + "'";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    equipo.id = Convert.ToInt32(rs.Fields[0].Value);
+                }
+            }
+            rs = null;
+            return devolver;
+
+        }
+        public static byte cargarNombreJugadores(List<string> listaJugadores)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select nombre, apellido from Jugador" +
+                    " group by nombre asc";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;//no hay jugadores cargados
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        listaJugadores.Add(Convert.ToString(rs.Fields[0].Value) + " " + Convert.ToString(rs.Fields[1].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte cargarJugadoresParticipaEquipo(List<string> listaJugadores, int idEquipo)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select nombre, apellido from jugador where jugador.idJugador IN (select idJugador from Forman where idEquipo=" + idEquipo + ") order by nombre asc";
+
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;//no hay jugadores cargados
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        listaJugadores.Add(Convert.ToString(rs.Fields[0].Value) + " " + Convert.ToString(rs.Fields[1].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte contarJugadoresdeEquipo(int idEquipo, List<int> cantidad)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select count(nombre) from jugador where jugador.idJugador IN (select idJugador from Forman where idEquipo=" + idEquipo + ")";
+
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;//no hay jugadores cargados
+                }
+                else
+                {
+                    cantidad.Add(Convert.ToInt32(rs.Fields[0].Value));
+                }
+            }
+            rs = null;
+            return devolver;
+
+        }
+        public static byte añadirJugadoraEquipo(int idEquipo, int idJugador) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Forman(idJugador, idEquipo) values ( " + idJugador + ", "+ idEquipo+ ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte averiguarIDjugador(string nombre, string apellido, Jugador j) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select idJugador from Jugador where nombre='" + nombre + "' AND apellido='" + apellido + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3; //no encontre
+                }
+                else {
+                    j.id = Convert.ToInt32(rs.Fields[0].Value);
+                }
+            }
+            rs = null;
+            return devolver;
+        }
     }
-    }
+         
+
+}
+    
 
