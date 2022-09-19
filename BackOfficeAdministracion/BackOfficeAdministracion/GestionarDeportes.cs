@@ -59,15 +59,20 @@ namespace BackOfficeAdministracion
 
         private void btnBuscarEquipo_Click(object sender, EventArgs e)
         {
+            bool bandera = true;
+            int random = 0;
+            Random r = new Random();
             List<int> cantidad = new List<int>();
             equipos.nombre = cmboxEquipos.Text;
             switch (Logica.cargarDatosEquipo(equipos)) {
                 case 0:
+                    paneIDEquipos.Enabled = false;
                     cmboxDeporteEquipo.Text = "Deporte al que se dedica";
                     txtNombreEquipo.Text = equipos.nombre;
                     txtCategoria.Text = equipos.categoria;
                     txtLogo.Text = equipos.logo;
                     txtIDequipo.Text = Convert.ToString(equipos.id);
+                    txtPais.Text = equipos.pais;
                     List<string> lista = new List<string>();
                     switch (Logica.cargarNombreJugadores(lista))
                     {
@@ -134,7 +139,50 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Ocurrió un error inesperado");
                     break;
                 case 3:
-                    MessageBox.Show("Equipo no existe, desea crearlo?");
+                    DialogResult crearEquipo;
+                    crearEquipo = MessageBox.Show("El equipo que busca no existe, desea crearlo? ", "Crear Equipo", MessageBoxButtons.YesNo);
+                    if (crearEquipo == DialogResult.Yes)
+                    {
+                        paneIDEquipos.Enabled = false;
+                        while (bandera == true)
+                        {
+                            random = r.Next();
+                            switch (Logica.BuscarIDequipo(random))
+                            {
+                                case 0:
+                                    break;
+                                case 1:
+                                case 2:
+                                    MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                    break;
+                                case 3:
+                                    bandera = false;
+                                    break;
+                            }
+                        }
+                        txtIDequipo.Text = random.ToString();
+                        txtNombreEquipo.Text = cmboxEquipos.Text;
+                        txtIDequipo.Enabled = false;
+                        txtNombreEquipo.Enabled = false;
+                        paneAnadirJugadores.Enabled = false;
+                    }
+                    else
+                    {
+                        paneIDEquipos.Enabled = true;
+                        paneAnadirJugadores.Enabled = true;
+                        txtNombreEquipo.Enabled = true;
+                        txtIDequipo.Enabled = true;
+                        txtIDequipo.Text = null;
+                        txtCantidadJugadores.Text = null;
+                        txtLogo.Text = null;
+                        txtCategoria.Text = null;
+                        txtPais.Text = null;
+                        txtNombreEquipo.Text = null;
+                        cmboxDeporteEquipo.Items.Clear();
+                        cmboxNombreJugador.Items.Clear();
+                        cmboxListaJugadores.Items.Clear();
+                    }
+
                     break;
             }
         }
@@ -362,6 +410,59 @@ namespace BackOfficeAdministracion
             catch {
                 MessageBox.Show("Jugador no existe");
             }
+        }
+
+        private void btnCrearEquipos_Click(object sender, EventArgs e)
+        {
+            equipos.id = Convert.ToInt32(txtIDequipo.Text);
+            equipos.nombre = txtNombreEquipo.Text;
+            equipos.logo = txtLogo.Text;
+            equipos.pais = txtPais.Text;
+            equipos.categoria = txtCategoria.Text;
+            switch (Logica.crearEquipo(equipos)) {
+                case 0:
+                    MessageBox.Show("Equipo creado exitosamente");
+                    txtIDequipo.Enabled = true;
+                    txtNombreEquipo.Enabled = true;
+                    paneAnadirJugadores.Enabled = true;
+                    paneIDEquipos.Enabled = true;
+                    paneAnadirJugadores.Enabled = true;
+                    txtNombreEquipo.Enabled = true;
+                    txtIDequipo.Enabled = true;
+                    txtIDequipo.Text = null;
+                    txtCantidadJugadores.Text = null;
+                    txtLogo.Text = null;
+                    txtCategoria.Text = null;
+                    txtPais.Text = null;
+                    txtNombreEquipo.Text = null;
+                    cmboxDeporteEquipo.Items.Clear();
+                    cmboxNombreJugador.Items.Clear();
+                    cmboxListaJugadores.Items.Clear();
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de conexión");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado, verifique los datos");
+                    break;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            paneIDEquipos.Enabled = true;
+            paneAnadirJugadores.Enabled = true;
+            txtNombreEquipo.Enabled = true;
+            txtIDequipo.Enabled = true;
+            txtIDequipo.Text = null;
+            txtCantidadJugadores.Text = null;
+            txtLogo.Text = null;
+            txtCategoria.Text = null;
+            txtPais.Text = null;
+            txtNombreEquipo.Text = null;
+            cmboxDeporteEquipo.Items.Clear();
+            cmboxNombreJugador.Items.Clear();
+            cmboxListaJugadores.Items.Clear();
         }
     }
 }

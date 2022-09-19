@@ -91,6 +91,9 @@
             this.tbcGestionDeportes = new System.Windows.Forms.TabControl();
             this.btnRefrescarJugadores = new System.Windows.Forms.Button();
             this.txtCantidadJugadores = new System.Windows.Forms.TextBox();
+            this.btnCrearEquipos = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPais = new System.Windows.Forms.TextBox();
             this.tbpgModificarEquipo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.paneDatos.SuspendLayout();
@@ -122,6 +125,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnCrearEquipos);
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnAplicar);
@@ -134,7 +138,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCerrar.Location = new System.Drawing.Point(359, 28);
+            this.btnCerrar.Location = new System.Drawing.Point(422, 28);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(99, 27);
@@ -146,18 +150,19 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.Location = new System.Drawing.Point(236, 28);
+            this.btnCancelar.Location = new System.Drawing.Point(193, 28);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(99, 27);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAplicar
             // 
             this.btnAplicar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAplicar.Location = new System.Drawing.Point(81, 28);
+            this.btnAplicar.Location = new System.Drawing.Point(33, 28);
             this.btnAplicar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(143, 27);
@@ -168,6 +173,8 @@
             // paneDatos
             // 
             this.paneDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneDatos.Controls.Add(this.txtPais);
+            this.paneDatos.Controls.Add(this.label1);
             this.paneDatos.Controls.Add(this.txtCantidadJugadores);
             this.paneDatos.Controls.Add(this.txtIDequipo);
             this.paneDatos.Controls.Add(this.lblID);
@@ -229,7 +236,7 @@
             // 
             // txtLogo
             // 
-            this.txtLogo.Location = new System.Drawing.Point(243, 337);
+            this.txtLogo.Location = new System.Drawing.Point(243, 322);
             this.txtLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLogo.Name = "txtLogo";
             this.txtLogo.Size = new System.Drawing.Size(201, 23);
@@ -239,7 +246,7 @@
             // 
             this.lblLogo.AutoSize = true;
             this.lblLogo.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblLogo.Location = new System.Drawing.Point(46, 337);
+            this.lblLogo.Location = new System.Drawing.Point(47, 325);
             this.lblLogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogo.Name = "lblLogo";
             this.lblLogo.Size = new System.Drawing.Size(43, 17);
@@ -923,6 +930,37 @@
             this.txtCantidadJugadores.Size = new System.Drawing.Size(201, 23);
             this.txtCantidadJugadores.TabIndex = 22;
             // 
+            // btnCrearEquipos
+            // 
+            this.btnCrearEquipos.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCrearEquipos.Location = new System.Drawing.Point(305, 28);
+            this.btnCrearEquipos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrearEquipos.Name = "btnCrearEquipos";
+            this.btnCrearEquipos.Size = new System.Drawing.Size(99, 27);
+            this.btnCrearEquipos.TabIndex = 8;
+            this.btnCrearEquipos.Text = "Crear";
+            this.btnCrearEquipos.UseVisualStyleBackColor = false;
+            this.btnCrearEquipos.Click += new System.EventHandler(this.btnCrearEquipos_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(48, 359);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 17);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "País: ";
+            // 
+            // txtPais
+            // 
+            this.txtPais.Location = new System.Drawing.Point(244, 356);
+            this.txtPais.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(201, 23);
+            this.txtPais.TabIndex = 24;
+            // 
             // GestionarDeportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1021,5 +1059,8 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnRefrescarJugadores;
         private System.Windows.Forms.TextBox txtCantidadJugadores;
+        private System.Windows.Forms.Button btnCrearEquipos;
+        private System.Windows.Forms.TextBox txtPais;
+        private System.Windows.Forms.Label label1;
     }
 }

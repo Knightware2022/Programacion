@@ -1013,7 +1013,62 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte crearEquipo(Equipos equipo)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Equipos(idEquipo, categoria, logo, nombre, pais) values( " + equipo.id + ", '" + equipo.categoria + "' ,'" + equipo.logo + "' ,'" + equipo.nombre + "' ,'" + equipo.pais + "')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+            return devolver;
 
+        }
+        public static byte BuscarIDequipo(int id)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select idEquipo from Equipos where idEquipo =" + id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;//error inesperado
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3; //id no en uso
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
     }
          
 
