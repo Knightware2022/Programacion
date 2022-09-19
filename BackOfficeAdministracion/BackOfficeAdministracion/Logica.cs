@@ -987,6 +987,33 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte quitarJugadorEquipo(int idEquipo, int idJugador)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "delete from Forman where idJugador=" + idJugador + " AND idEquipo=" + idEquipo;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
+
     }
          
 

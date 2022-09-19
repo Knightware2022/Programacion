@@ -47,7 +47,6 @@
             this.cmboxNombreJugador = new System.Windows.Forms.ComboBox();
             this.btnAgregarJugador = new System.Windows.Forms.Button();
             this.lblNombreJugador = new System.Windows.Forms.Label();
-            this.cmboxCantidadJugadores = new System.Windows.Forms.ComboBox();
             this.lblCantidadJugadoresEquipo = new System.Windows.Forms.Label();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtNombreEquipo = new System.Windows.Forms.TextBox();
@@ -91,6 +90,7 @@
             this.lblIdeporte = new System.Windows.Forms.Label();
             this.tbcGestionDeportes = new System.Windows.Forms.TabControl();
             this.btnRefrescarJugadores = new System.Windows.Forms.Button();
+            this.txtCantidadJugadores = new System.Windows.Forms.TextBox();
             this.tbpgModificarEquipo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.paneDatos.SuspendLayout();
@@ -157,10 +157,10 @@
             // btnAplicar
             // 
             this.btnAplicar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAplicar.Location = new System.Drawing.Point(102, 28);
+            this.btnAplicar.Location = new System.Drawing.Point(81, 28);
             this.btnAplicar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(99, 27);
+            this.btnAplicar.Size = new System.Drawing.Size(143, 27);
             this.btnAplicar.TabIndex = 5;
             this.btnAplicar.Text = "Aplicar cambios";
             this.btnAplicar.UseVisualStyleBackColor = true;
@@ -168,6 +168,7 @@
             // paneDatos
             // 
             this.paneDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneDatos.Controls.Add(this.txtCantidadJugadores);
             this.paneDatos.Controls.Add(this.txtIDequipo);
             this.paneDatos.Controls.Add(this.lblID);
             this.paneDatos.Controls.Add(this.cmboxDeporteEquipo);
@@ -175,7 +176,6 @@
             this.paneDatos.Controls.Add(this.txtLogo);
             this.paneDatos.Controls.Add(this.lblLogo);
             this.paneDatos.Controls.Add(this.paneAnadirJugadores);
-            this.paneDatos.Controls.Add(this.cmboxCantidadJugadores);
             this.paneDatos.Controls.Add(this.lblCantidadJugadoresEquipo);
             this.paneDatos.Controls.Add(this.txtCategoria);
             this.paneDatos.Controls.Add(this.txtNombreEquipo);
@@ -292,6 +292,7 @@
             this.btnEliminarJugador.TabIndex = 16;
             this.btnEliminarJugador.Text = "Quitar de equipo";
             this.btnEliminarJugador.UseVisualStyleBackColor = true;
+            this.btnEliminarJugador.Click += new System.EventHandler(this.btnEliminarJugador_Click);
             // 
             // cmboxNombreJugador
             // 
@@ -385,16 +386,6 @@
             this.lblNombreJugador.Size = new System.Drawing.Size(194, 17);
             this.lblNombreJugador.TabIndex = 13;
             this.lblNombreJugador.Text = "Jugadores cargados en el sistema: ";
-            // 
-            // cmboxCantidadJugadores
-            // 
-            this.cmboxCantidadJugadores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmboxCantidadJugadores.FormattingEnabled = true;
-            this.cmboxCantidadJugadores.Location = new System.Drawing.Point(243, 155);
-            this.cmboxCantidadJugadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cmboxCantidadJugadores.Name = "cmboxCantidadJugadores";
-            this.cmboxCantidadJugadores.Size = new System.Drawing.Size(201, 25);
-            this.cmboxCantidadJugadores.TabIndex = 3;
             // 
             // lblCantidadJugadoresEquipo
             // 
@@ -924,6 +915,14 @@
             this.btnRefrescarJugadores.UseVisualStyleBackColor = true;
             this.btnRefrescarJugadores.Click += new System.EventHandler(this.btnRefrescarJugadores_Click);
             // 
+            // txtCantidadJugadores
+            // 
+            this.txtCantidadJugadores.Location = new System.Drawing.Point(244, 155);
+            this.txtCantidadJugadores.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCantidadJugadores.Name = "txtCantidadJugadores";
+            this.txtCantidadJugadores.Size = new System.Drawing.Size(201, 23);
+            this.txtCantidadJugadores.TabIndex = 22;
+            // 
             // GestionarDeportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1001,7 +1000,6 @@
         private System.Windows.Forms.TextBox txtNombreEquipo;
         private System.Windows.Forms.Label lblCategoriaEquipo;
         private System.Windows.Forms.Label lblNombreEquipo;
-        private System.Windows.Forms.ComboBox cmboxCantidadJugadores;
         private System.Windows.Forms.Label lblCantidadJugadoresEquipo;
         private System.Windows.Forms.Panel paneAnadirJugadores;
         private System.Windows.Forms.Label lblNombreJugador;
@@ -1022,5 +1020,6 @@
         private System.Windows.Forms.TextBox txtIDequipo;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnRefrescarJugadores;
+        private System.Windows.Forms.TextBox txtCantidadJugadores;
     }
 }
