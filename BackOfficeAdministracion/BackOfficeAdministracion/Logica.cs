@@ -468,7 +468,7 @@ namespace BackOfficeAdministracion
                 sql = "insert into Vip(idusuario, correo, contrasenia, nombre, mesesSuscritos, rol) values( " + u.id + ", '" + u.correo + "', '" + contraseña + "', '" + u.nombre + "', " + u.mesesSuscritos + ", " + u.rol + " )";
                 try
                 {
-                   
+
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
                 }
                 catch
@@ -635,7 +635,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "select correo from Vip where correo='"+ u.correo + "'";
+                sql = "select correo from Vip where correo='" + u.correo + "'";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -683,7 +683,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "select nombre from deportes where deportes.idDeporte IN (select deporteFavorito from deportesFavoritos where idUsuario=" + idUsuario + ")" ;
+                sql = "select nombre from deportes where deportes.idDeporte IN (select deporteFavorito from deportesFavoritos where idUsuario=" + idUsuario + ")";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -702,11 +702,11 @@ namespace BackOfficeAdministracion
                         lista.Add(Convert.ToString(rs.Fields[0].Value));
                         rs.MoveNext();
                     }
-                }              
+                }
             }
             rs = null;
             return devolver;
-            }
+        }
         public static byte cargarNombreEquipos(List<string> listaEquipos) {
             byte devolver = 0;
             object cantFilas;
@@ -942,7 +942,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Forman(idJugador, idEquipo) values ( " + idJugador + ", "+ idEquipo+ ")";
+                sql = "insert into Forman(idJugador, idEquipo) values ( " + idJugador + ", " + idEquipo + ")";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1069,8 +1069,277 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte buscarDatosJugador(Jugador jugador) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select * from Jugador where nombre='" + jugador.nombre + "' AND apellido= '" + jugador.apelido + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    jugador.id = Convert.ToInt32(rs.Fields[0].Value);
+                    jugador.nombre = Convert.ToString(rs.Fields[1].Value);
+                    jugador.apelido = Convert.ToString(rs.Fields[2].Value);
+                    jugador.edad = Convert.ToInt32(rs.Fields[3].Value);
+                    jugador.sexo = Convert.ToChar(rs.Fields[4].Value);
+                    jugador.paisNacimiento = Convert.ToString(rs.Fields[5].Value);
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte actualizarJugador(Jugador jugador)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "update Jugador set nombre='" + jugador.nombre + "' where idJugador=" + jugador.id ;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                sql = "update Jugador set apellido='" + jugador.apelido + "' where idJugador=" + jugador.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                sql = "update Jugador set sexo='" + jugador.sexo + "' where idJugador=" + jugador.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                sql = "update Jugador set paisNacimiento='" + jugador.paisNacimiento + "' where idJugador=" + jugador.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                sql = "update Jugador set edad=" + jugador.edad + " where idJugador=" + jugador.id ;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+
+            return devolver;
+        }
+        public static byte crearJugador(Jugador jugador) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Jugador(idJugador, nombre, apellido, edad, sexo, paisNacimiento) values( " + jugador.id + ", '" + jugador.nombre + "', '" + jugador.apelido + "', " + jugador.edad + ", '" + jugador.sexo + "', '" + jugador.paisNacimiento + "' )";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte buscarIdJugador(int id)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select idJugador from Jugador where idJugador =" + id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;//error inesperado
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3; //id no en uso
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte BorrarJugador(int idjugador)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "delete from Jugador where idJugador=" + idjugador ;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+               
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte actualizarEquipo(Equipos equipo)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "update Equipos set nombre='" + equipo.nombre + "' where idEquipo=" + equipo.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                sql = "update Equipos set categoria='" + equipo.categoria + "' where idEquipo=" + equipo.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                sql = "update Equipos set logo='" + equipo.logo + "' where idEquipo=" + equipo.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                sql = "update Equipos set pais='" + equipo.pais + "' where idEquipo=" + equipo.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+
+            return devolver;
+        }
+        public static byte BorrarEquipo(int idEquipo)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "delete from Equipos where idEquipo=" + idEquipo;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
+
+
     }
-         
+
 
 }
     

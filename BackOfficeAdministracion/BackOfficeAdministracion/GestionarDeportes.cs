@@ -66,6 +66,9 @@ namespace BackOfficeAdministracion
             equipos.nombre = cmboxEquipos.Text;
             switch (Logica.cargarDatosEquipo(equipos)) {
                 case 0:
+                    btnAplicar.Enabled = true;
+                    paneDatos.Enabled = true;
+                    btnEliminarEquipo.Enabled = true;
                     paneIDEquipos.Enabled = false;
                     cmboxDeporteEquipo.Text = "Deporte al que se dedica";
                     txtNombreEquipo.Text = equipos.nombre;
@@ -144,6 +147,8 @@ namespace BackOfficeAdministracion
                     if (crearEquipo == DialogResult.Yes)
                     {
                         paneIDEquipos.Enabled = false;
+                        btnCrearEquipos.Enabled = true;
+                        paneDatos.Enabled=  true;
                         while (bandera == true)
                         {
                             random = r.Next();
@@ -216,15 +221,16 @@ namespace BackOfficeAdministracion
                     break;
             }
             lista.Clear();
+            
             switch (Logica.cargarJugadoresParticipaEquipo(lista, equipos.id))
             {
                 case 0:
                     cmboxListaJugadores.Items.Clear();
-                    cmboxListaJugadores.Text = lista[0];
                     foreach (string nombre in lista)
                     {
                         cmboxListaJugadores.Items.Add(nombre);
                     }
+                    cmboxListaJugadores.Text = lista[0];
                     break;
                 case 1:
                     MessageBox.Show("Ocurrió un error de red");
@@ -252,7 +258,8 @@ namespace BackOfficeAdministracion
                     case 0:
                         switch (Logica.añadirJugadoraEquipo(equipos.id, jugador.id))
                         {
-                            case 0:
+                            
+                           case 0:
                                 MessageBox.Show("Jugador agregado a equipo correctamente");
                                 List<string> lista = new List<string>();
                                 switch (Logica.cargarNombreJugadores(lista))
@@ -423,6 +430,9 @@ namespace BackOfficeAdministracion
                 case 0:
                     MessageBox.Show("Equipo creado exitosamente");
                     txtIDequipo.Enabled = true;
+                    btnCrearEquipos.Enabled = false;
+                    paneDatos.Enabled = false;
+                    paneAnadirJugadores.Enabled = true;
                     txtNombreEquipo.Enabled = true;
                     paneAnadirJugadores.Enabled = true;
                     paneIDEquipos.Enabled = true;
@@ -463,6 +473,347 @@ namespace BackOfficeAdministracion
             cmboxDeporteEquipo.Items.Clear();
             cmboxNombreJugador.Items.Clear();
             cmboxListaJugadores.Items.Clear();
+            paneAnadirJugadores.Enabled = true;
+            paneDatos.Enabled = false;
+            btnAplicar.Enabled = false;
+            btnEliminarEquipo.Enabled = false;
+        }
+
+        private void btnBuscarID_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                jugador.nombre = cmboxIDjugador.Text.Substring(0, cmboxIDjugador.Text.IndexOf(" "));
+                jugador.apelido = cmboxIDjugador.Text.Substring((cmboxIDjugador.Text.IndexOf(" ") + 1), (cmboxIDjugador.Text.Length - (cmboxIDjugador.Text.IndexOf(" ") + 1)));
+                switch (Logica.buscarDatosJugador(jugador))
+                {
+                    case 0:
+                        txtIDjugadores.Text = jugador.id.ToString();
+                        txtNombreJugadores.Text = jugador.nombre;
+                        txtApellidoJugadores.Text = jugador.apelido;
+                        txtSexoJugadores.Text = jugador.sexo.ToString();
+                        txtEdadJugadores.Text = jugador.edad.ToString();
+                        txtPaisJugadores.Text = jugador.paisNacimiento;
+                        paneIDjugadores.Enabled = false;
+                        btnBorrarJugador.Enabled = true;
+
+                        break;
+                    case 1:
+                        MessageBox.Show("Ocurrió un error de conexión");
+                        break;
+                    case 2:
+                        MessageBox.Show("Ocurrió un error inesperado");
+                        break;
+                    case 3:
+                        DialogResult crearJugador = MessageBox.Show("El jugador no existe, desea crearlo? ", "Creación de jugador", MessageBoxButtons.YesNo);
+                        if (crearJugador == DialogResult.Yes)
+                        {
+                            paneIDjugadores.Enabled = false;
+                            btnAplicarCambios.Enabled = false;
+                            bool bandera = true;
+                            int random = 0;
+                            Random r = new Random();
+                            while (bandera == true)
+                            {
+                                random = r.Next();
+                                switch (Logica.buscarIdJugador(random))
+                                {
+                                    case 0:
+                                        break;
+                                    case 1:
+                                    case 2:
+                                        MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                        break;
+                                    case 3:
+                                        bandera = false;
+                                        break;
+                                }
+                            }
+                            txtIDjugadores.Text = random.ToString();
+                            txtIDjugadores.Enabled = false;
+                            txtNombreJugadores.Text = cmboxIDjugador.Text.Substring(0, cmboxIDjugador.Text.IndexOf(" "));
+                            txtApellidoJugadores.Text = cmboxIDjugador.Text.Substring((cmboxIDjugador.Text.IndexOf(" ") + 1), (cmboxIDjugador.Text.Length - (cmboxIDjugador.Text.IndexOf(" ") + 1)));
+                            btnCrearJugador.Enabled = true;
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                }
+            }
+            catch {
+                MessageBox.Show("Debe escribir el nombre y apellido del jugador (separados por un espacio)");
+            }
+
+        }
+        private void cargarTODOSJugadores() {
+            List<string> lista = new List<string>();
+            switch (Logica.cargarNombreJugadores(lista))
+            {
+                case 0:
+                    cmboxIDjugador.Items.Clear();
+                    cmboxIDjugador.Text = lista[0];
+                    foreach (string nombre in lista)
+                    {
+                        cmboxIDjugador.Items.Add(nombre);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("No existen jugadores cargados");
+                    break;
+            }
+        }
+        private void btnRefrescarLista_Click(object sender, EventArgs e)
+        {
+            this.cargarTODOSJugadores();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                jugador.apelido = txtApellidoJugadores.Text;
+                jugador.nombre = txtNombreJugadores.Text;
+                jugador.edad = Convert.ToInt32(txtEdadJugadores.Text);
+                jugador.id = Convert.ToInt32(txtIDjugadores.Text);
+                jugador.paisNacimiento = txtPaisJugadores.Text;
+                try
+                {
+                    jugador.sexo = Convert.ToChar(txtSexoJugadores.Text);
+                    switch (Logica.actualizarJugador(jugador))
+                    {
+                        case 0:
+                            MessageBox.Show("Jugador actualizado correctamente");
+                            txtIDjugadores.Text = null;
+                            txtNombreJugadores.Text = null;
+                            txtApellidoJugadores.Text = null;
+                            txtSexoJugadores.Text = null;
+                            txtEdadJugadores.Text = null;
+                            txtPaisJugadores.Text = null;
+                            this.cargarTODOSJugadores();
+                            paneIDjugadores.Enabled = true;
+                            btnBorrarJugador.Enabled = false;
+
+                            break;
+                        case 1:
+                            MessageBox.Show("Error de conexión");
+                            break;
+                        case 2:
+                            MessageBox.Show("Error inesperado");
+                            break;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Sexo debe ser M o F ");
+                    txtSexoJugadores.Text = null;
+                }
+            }
+            catch {
+                MessageBox.Show("Id no es correcto");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                jugador.apelido = txtApellidoJugadores.Text;
+                jugador.nombre = txtNombreJugadores.Text;
+                jugador.edad = Convert.ToInt32(txtEdadJugadores.Text);
+                jugador.id = Convert.ToInt32(txtIDjugadores.Text);
+                jugador.paisNacimiento = txtPaisJugadores.Text;
+                try
+                {
+                    jugador.sexo = Convert.ToChar(txtSexoJugadores.Text);
+                    switch (Logica.crearJugador(jugador))
+                    {
+                        case 0:
+                            MessageBox.Show("Jugador creado correctamente");
+                            txtIDjugadores.Text = null;
+                            txtNombreJugadores.Text = null;
+                            txtApellidoJugadores.Text = null;
+                            txtSexoJugadores.Text = null;
+                            txtEdadJugadores.Text = null;
+                            txtPaisJugadores.Text = null;
+                            this.cargarTODOSJugadores();
+                            btnAplicarCambios.Enabled = true;
+                            paneIDjugadores.Enabled = true;
+                            btnCrearJugador.Enabled = false;
+
+
+                            break;
+                        case 1:
+                            MessageBox.Show("Error de conexión");
+                            break;
+                        case 2:
+                            MessageBox.Show("Error inesperado");
+                            break;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Sexo debe ser M o F ");
+                    txtSexoJugadores.Text = null;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("La edad debe ser numérica");
+            }
+
+        }
+
+        private void btnCancelarJugador_Click(object sender, EventArgs e)
+        {
+            txtIDjugadores.Text = null;
+            txtNombreJugadores.Text = null;
+            txtApellidoJugadores.Text = null;
+            txtSexoJugadores.Text = null;
+            txtEdadJugadores.Text = null;
+            txtPaisJugadores.Text = null;
+            this.cargarTODOSJugadores();
+            btnAplicarCambios.Enabled = true;
+            btnBorrarJugador.Enabled = false;
+            btnCrearJugador.Enabled = false;
+            paneIDjugadores.Enabled = true;
+        }
+
+        private void btnBorrarJugador_Click(object sender, EventArgs e)
+        {
+            DialogResult seguro = MessageBox.Show("Se eliminará todo registro de él, incluso si está vinculado a algun equipo." + Environment.NewLine + "Está seguro?", "Eliminar Jugador", MessageBoxButtons.YesNo);
+            if (seguro == DialogResult.Yes)
+            {
+                jugador.id = Convert.ToInt32(txtIDjugadores.Text);
+                switch (Logica.BorrarJugador(jugador.id))
+                {
+                    case 0:
+                        btnBorrarJugador.Enabled = false;
+                        txtIDjugadores.Text = null;
+                        txtNombreJugadores.Text = null;
+                        txtApellidoJugadores.Text = null;
+                        txtSexoJugadores.Text = null;
+                        txtEdadJugadores.Text = null;
+                        txtPaisJugadores.Text = null;
+                        this.cargarTODOSJugadores();
+                        btnAplicarCambios.Enabled = true;
+                        paneIDjugadores.Enabled = true;
+                        MessageBox.Show("Jugador borrado exitosamente");
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexión");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error inesperado");
+                        break;
+                }
+            }
+            else {
+                MessageBox.Show("Se canceló la eliminación");
+                btnBorrarJugador.Enabled = false;
+                txtIDjugadores.Text = null;
+                txtNombreJugadores.Text = null;
+                txtApellidoJugadores.Text = null;
+                txtSexoJugadores.Text = null;
+                txtEdadJugadores.Text = null;
+                txtPaisJugadores.Text = null;
+                this.cargarTODOSJugadores();
+                btnAplicarCambios.Enabled = true;
+                paneIDjugadores.Enabled = true;
+            }
+            
+        }
+
+        private void btnAplicar_Click(object sender, EventArgs e)
+        {
+            int id;
+            if (int.TryParse(txtIDequipo.Text, out id))
+            {
+                equipos.id = id;
+                equipos.nombre = txtNombreEquipo.Text;
+                equipos.logo = txtLogo.Text;
+                equipos.pais = txtPais.Text;
+                equipos.categoria = txtCategoria.Text;
+                switch (Logica.actualizarEquipo(equipos)) {
+                    case 0:
+                        MessageBox.Show("Equipo actualizado correctamente");
+                        paneIDEquipos.Enabled = true;
+                        paneAnadirJugadores.Enabled = true;
+                        txtNombreEquipo.Enabled = true;
+                        txtIDequipo.Text = null;
+                        txtCantidadJugadores.Text = null;
+                        txtLogo.Text = null;
+                        txtCategoria.Text = null;
+                        txtPais.Text = null;
+                        txtNombreEquipo.Text = null;
+                        btnEliminarEquipo.Enabled = false;
+                        cmboxDeporteEquipo.Items.Clear();
+                        cmboxNombreJugador.Items.Clear();
+                        cmboxListaJugadores.Items.Clear();
+                        paneAnadirJugadores.Enabled = true;
+                        paneDatos.Enabled = false;
+                        btnAplicar.Enabled = false;
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexión");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error inesperado");
+                        break;
+                }
+            }
+            else {
+                MessageBox.Show("Ocurrió un error obteniendo el ID");
+            }
+            
+
+        }
+
+        private void btnEliminarEquipo_Click(object sender, EventArgs e)
+        {
+            DialogResult seguro = MessageBox.Show("Se eliminará permanentemente el equipo, incluso si tiene jugadores en él." + Environment.NewLine + "Está seguro?", "Eliminar Jugador", MessageBoxButtons.YesNo);
+            if (seguro == DialogResult.Yes)
+            {
+                equipos.id = Convert.ToInt32(txtIDequipo.Text);
+                switch (Logica.BorrarEquipo(equipos.id))
+                {
+                    case 0:
+                        paneIDEquipos.Enabled = true;
+                        paneAnadirJugadores.Enabled = true;
+                        txtNombreEquipo.Enabled = true;
+                        txtIDequipo.Enabled = true;
+                        txtIDequipo.Text = null;
+                        txtCantidadJugadores.Text = null;
+                        txtLogo.Text = null;
+                        txtCategoria.Text = null;
+                        txtPais.Text = null;
+                        txtNombreEquipo.Text = null;
+                        cmboxDeporteEquipo.Items.Clear();
+                        cmboxNombreJugador.Items.Clear();
+                        cmboxListaJugadores.Items.Clear();
+                        paneAnadirJugadores.Enabled = true;
+                        paneDatos.Enabled = false;
+                        btnAplicar.Enabled = false;
+                        btnEliminarEquipo.Enabled = false;
+
+                        MessageBox.Show("Equipo borrado exitosamente");
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexión");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error inesperado");
+                        break;
+                }
+            }
         }
     }
 }
