@@ -120,6 +120,7 @@
             this.lblIDJugador = new System.Windows.Forms.Label();
             this.btnBorrarJugador = new System.Windows.Forms.Button();
             this.btnEliminarEquipo = new System.Windows.Forms.Button();
+            this.btnRefrescarDeportes = new System.Windows.Forms.Button();
             this.tbpgModificarEquipo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.paneDatos.SuspendLayout();
@@ -944,6 +945,7 @@
             // paneBuscar
             // 
             this.paneBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneBuscar.Controls.Add(this.btnRefrescarDeportes);
             this.paneBuscar.Controls.Add(this.cmboxIDdeporte);
             this.paneBuscar.Controls.Add(this.btnBuscar);
             this.paneBuscar.Controls.Add(this.lblIdeporte);
@@ -1265,6 +1267,18 @@
             this.btnEliminarEquipo.UseVisualStyleBackColor = false;
             this.btnEliminarEquipo.Click += new System.EventHandler(this.btnEliminarEquipo_Click);
             // 
+            // btnRefrescarDeportes
+            // 
+            this.btnRefrescarDeportes.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefrescarDeportes.Location = new System.Drawing.Point(283, 49);
+            this.btnRefrescarDeportes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefrescarDeportes.Name = "btnRefrescarDeportes";
+            this.btnRefrescarDeportes.Size = new System.Drawing.Size(115, 25);
+            this.btnRefrescarDeportes.TabIndex = 3;
+            this.btnRefrescarDeportes.Text = "Refrescar";
+            this.btnRefrescarDeportes.UseVisualStyleBackColor = true;
+            this.btnRefrescarDeportes.Click += new System.EventHandler(this.btnRefrescarDeportes_Click);
+            // 
             // GestionarDeportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1398,5 +1412,6 @@
         private System.Windows.Forms.TextBox txtNombreJugadores;
         private System.Windows.Forms.Button btnBorrarJugador;
         private System.Windows.Forms.Button btnEliminarEquipo;
+        private System.Windows.Forms.Button btnRefrescarDeportes;
     }
 }

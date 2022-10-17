@@ -20,7 +20,7 @@ namespace App_de_Usuario
             try
             {
                 _cn = new ADODB.Connection();
-                _cn.Open("miodbc", "administrator", "administrador1234", -1);
+                _cn.Open("miodbc", "root", "", -1);
                 _cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
                 devolver = 1;
             }
@@ -127,30 +127,32 @@ namespace App_de_Usuario
             }
             else
             {
-                sql = "insert into Usuarios(idUsuario) values(" + u.id + ")";
-                try
-                {
-                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
-                }
-                catch
-                {
-                    return devolver = 2;//error inesperado
-                }
+                
                 sql = "select nombre from Vip where nombre='" + u.nombre + "'";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
                 }
                 catch
-                {
+                { 
                     return devolver = 2;//error inesperado
                 }
 
                 if (rs.RecordCount == 0)//si no existen registros, entonces lo ingresamos
                 {
+                    sql = "insert into Usuarios(idUsuario) values(" + u.id + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;//error inesperado
+                    }
                     sql = "insert into Vip(idUsuario, correo, contrasenia, nombre, mesesSuscritos, rol) values(" + u.id + ", '"+ u.correo+"', '" + u.contrasenia +"', '" + u.nombre + "', " + u.mesesSuscritos + ", " + u.rol + ")";
                     try
                     {
+                        
                         rs = _cn.Execute(sql, out cantFilas); 
                     }
                     catch
@@ -675,6 +677,71 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
+        public static byte crearUsuarioGuest(int idUsuario, string nombreAutogen, string mac)
+        {
+            byte devolver = 3;
+            object cantFilas;
+            string sql;
+            string contraseña = "";
+            Encriptacion e = new Encriptacion();
+            contraseña = e.encriptar(contraseña);
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Usuarios(idUsuario) values( " + idUsuario + " )";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
 
+                    return devolver = 2;
+                }
+                sql = "insert into Guest(idUsuario, nombreAutogen, mac) values( " + idUsuario+ ", '" + nombreAutogen + "', '" + mac + "')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+            }
+            return devolver;
+        }
+        public static byte buscandoMAC(string mac) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select mac from Guest where mac='"+ mac + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;//error inesperado
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3; //mac no encontrada
+                }
+            }
+            return devolver;
+        }
     }
+    
 }

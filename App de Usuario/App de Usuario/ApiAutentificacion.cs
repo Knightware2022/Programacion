@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.NetworkInformation;
+using System.Collections;
 
 namespace App_de_Usuario
 {
@@ -42,7 +44,7 @@ namespace App_de_Usuario
                 }
             }
             _usuario.id = random;
-            _usuario.mesesSuscritos = 0;
+            _usuario.mesesSuscritos = 1;
             respuesta = Logica.AltaUsuarioVIP(_usuario);
             return respuesta;
         }
@@ -138,6 +140,71 @@ namespace App_de_Usuario
                     break;
             }
             return correo;
+        }
+        public byte entrarComoGuest() {    
+            byte devolver = 0;
+            int idUsuario;
+            ArrayList dirmac = obtenerDirMAC();      
+            string mac;
+            string nombreAutogen;
+            bool bandera = true;
+            Random r = new Random();
+            mac = dirmac[0].ToString();
+            switch (Logica.buscandoMAC(mac)) {
+                case 0: //ya se ingreso alguna vez con esta mac
+                    return 0;
+                    break;
+                case 1:
+                case 2:
+                    return 2;
+                    break;
+                case 3: //si no se tiene registro de esta mac...
+                    int random = 1;
+                    while (bandera == true)
+                    {
+                        random = r.Next();
+                        switch (Logica.BuscarID(random))
+                        {
+                            case 0:
+                                break;
+                            case 1:
+                            case 2:
+                                return 2;
+                                break;
+                            case 3:
+                                bandera = false;
+                                break;
+                        }
+                    }
+                    idUsuario = random;
+                    nombreAutogen = "Guest-" + idUsuario;
+                    mac = dirmac[0].ToString();
+                    devolver = Logica.crearUsuarioGuest(idUsuario, nombreAutogen, mac);
+                    break;
+
+            }
+            return devolver;
+        }
+        public ArrayList obtenerDirMAC() {
+            ArrayList direccionesMAC = new ArrayList();
+            NetworkInterface[] adaptadorRed = null;
+            adaptadorRed = NetworkInterface.GetAllNetworkInterfaces();
+            if (adaptadorRed != null && adaptadorRed.Length > 0) {//si tiene interfaces de red
+                foreach (NetworkInterface interfaces in adaptadorRed) {
+                    var direccion = interfaces.GetPhysicalAddress();
+                    byte[] bytes = direccion.GetAddressBytes();
+                    string mac = string.Empty;
+                    for (int i = 0; i < bytes.Length; i++) {
+                        mac = mac + bytes[i].ToString("x2");
+                        if (i != bytes.Length - 1 ) {
+                            mac = mac + "-";
+                        }
+                       
+                    }
+                    direccionesMAC.Add(mac);
+                }
+            }
+            return direccionesMAC;
         }
     }
 }

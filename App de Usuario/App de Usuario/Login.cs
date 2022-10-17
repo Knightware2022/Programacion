@@ -140,6 +140,14 @@ namespace App_de_Usuario
         private void btnGuest_Click(object sender, EventArgs e)
         {
             this.Hide();
+            switch (Program.apiA.entrarComoGuest()) {
+                case 0:
+                    MessageBox.Show("Bienvenido nuevamente");
+                    break;
+                case 3:
+                    MessageBox.Show("Gracias por usar nuestra App");
+                    break;
+            }
             Program.frmPrincipal.Show();
         }
 

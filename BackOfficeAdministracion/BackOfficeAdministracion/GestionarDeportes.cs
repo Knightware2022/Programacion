@@ -815,5 +815,34 @@ namespace BackOfficeAdministracion
                 }
             }
         }
+
+        private void refrescarDeportes() {
+
+        }
+
+        private void btnRefrescarDeportes_Click(object sender, EventArgs e)
+        {
+            List<string> lista = new List<string>();
+            switch (Logica.nombresDeportes(lista))
+            {
+                case 0:
+                    cmboxIDdeporte.Items.Clear();
+                    cmboxIDdeporte.Text = lista[0];
+                    foreach (string nombre in lista)
+                    {
+                        cmboxIDdeporte.Items.Add(nombre);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("No existen deportes    -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          cargados");
+                    break;
+            }
+        }
     }
 }
