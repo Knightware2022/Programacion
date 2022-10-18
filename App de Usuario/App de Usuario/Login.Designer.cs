@@ -81,7 +81,7 @@
             this.txtUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(254, 39);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(152, 24);
             this.txtUsuario.TabIndex = 1;
@@ -113,7 +113,7 @@
             this.paneIngreso.Controls.Add(this.txtUsuario);
             this.paneIngreso.Controls.Add(this.lblUsuario);
             this.paneIngreso.Location = new System.Drawing.Point(14, 20);
-            this.paneIngreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneIngreso.Margin = new System.Windows.Forms.Padding(2);
             this.paneIngreso.Name = "paneIngreso";
             this.paneIngreso.Size = new System.Drawing.Size(544, 186);
             this.paneIngreso.TabIndex = 3;
@@ -123,7 +123,7 @@
             this.chkboxOlvide.AutoSize = true;
             this.chkboxOlvide.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkboxOlvide.Location = new System.Drawing.Point(14, 161);
-            this.chkboxOlvide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkboxOlvide.Margin = new System.Windows.Forms.Padding(2);
             this.chkboxOlvide.Name = "chkboxOlvide";
             this.chkboxOlvide.Size = new System.Drawing.Size(147, 21);
             this.chkboxOlvide.TabIndex = 18;
@@ -152,7 +152,7 @@
             "Español",
             "Ingles"});
             this.cmboxCambiarIdiomaII.Location = new System.Drawing.Point(254, 2);
-            this.cmboxCambiarIdiomaII.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxCambiarIdiomaII.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxCambiarIdiomaII.Name = "cmboxCambiarIdiomaII";
             this.cmboxCambiarIdiomaII.Size = new System.Drawing.Size(242, 25);
             this.cmboxCambiarIdiomaII.TabIndex = 16;
@@ -175,7 +175,7 @@
             // 
             this.btnGuest.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuest.Location = new System.Drawing.Point(318, 115);
-            this.btnGuest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuest.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuest.Name = "btnGuest";
             this.btnGuest.Size = new System.Drawing.Size(104, 29);
             this.btnGuest.TabIndex = 6;
@@ -187,7 +187,7 @@
             // 
             this.btnRegistrarse.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarse.Location = new System.Drawing.Point(203, 115);
-            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(104, 29);
             this.btnRegistrarse.TabIndex = 5;
@@ -199,7 +199,7 @@
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Location = new System.Drawing.Point(87, 115);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(104, 29);
             this.btnIngresar.TabIndex = 4;
@@ -212,7 +212,7 @@
             this.txtContrasenia.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtContrasenia.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenia.Location = new System.Drawing.Point(254, 83);
-            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(152, 24);
             this.txtContrasenia.TabIndex = 3;
@@ -234,8 +234,8 @@
             this.paneRegistrarse.Controls.Add(this.lblRegistroUsuario);
             this.paneRegistrarse.Controls.Add(this.txtRegistrarUsuario);
             this.paneRegistrarse.Controls.Add(this.lblNombreUsuario);
-            this.paneRegistrarse.Location = new System.Drawing.Point(6, 228);
-            this.paneRegistrarse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneRegistrarse.Location = new System.Drawing.Point(3, 20);
+            this.paneRegistrarse.Margin = new System.Windows.Forms.Padding(2);
             this.paneRegistrarse.Name = "paneRegistrarse";
             this.paneRegistrarse.Size = new System.Drawing.Size(544, 258);
             this.paneRegistrarse.TabIndex = 4;
@@ -261,7 +261,7 @@
             "Español",
             "Ingles"});
             this.cmboxIdioma.Location = new System.Drawing.Point(272, 7);
-            this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxIdioma.Name = "cmboxIdioma";
             this.cmboxIdioma.Size = new System.Drawing.Size(242, 25);
             this.cmboxIdioma.TabIndex = 14;
@@ -284,7 +284,7 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(314, 203);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(76, 39);
             this.btnCancelar.TabIndex = 12;
@@ -296,7 +296,7 @@
             // 
             this.btnRegistro.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.Location = new System.Drawing.Point(72, 203);
-            this.btnRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistro.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(99, 39);
             this.btnRegistro.TabIndex = 7;
@@ -309,7 +309,7 @@
             this.txtCorreo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtCorreo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo.Location = new System.Drawing.Point(272, 174);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(242, 24);
             this.txtCorreo.TabIndex = 11;
@@ -330,7 +330,7 @@
             this.txtConfirmarContrasenia.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtConfirmarContrasenia.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarContrasenia.Location = new System.Drawing.Point(272, 129);
-            this.txtConfirmarContrasenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmarContrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmarContrasenia.Name = "txtConfirmarContrasenia";
             this.txtConfirmarContrasenia.Size = new System.Drawing.Size(242, 24);
             this.txtConfirmarContrasenia.TabIndex = 9;
@@ -351,7 +351,7 @@
             this.txtRegistrarContrasenia.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRegistrarContrasenia.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrarContrasenia.Location = new System.Drawing.Point(272, 88);
-            this.txtRegistrarContrasenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegistrarContrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegistrarContrasenia.Name = "txtRegistrarContrasenia";
             this.txtRegistrarContrasenia.Size = new System.Drawing.Size(242, 24);
             this.txtRegistrarContrasenia.TabIndex = 7;
@@ -372,7 +372,7 @@
             this.txtRegistrarUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRegistrarUsuario.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrarUsuario.Location = new System.Drawing.Point(272, 50);
-            this.txtRegistrarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegistrarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegistrarUsuario.Name = "txtRegistrarUsuario";
             this.txtRegistrarUsuario.Size = new System.Drawing.Size(242, 24);
             this.txtRegistrarUsuario.TabIndex = 5;
@@ -397,7 +397,7 @@
             this.paneOlvide.Controls.Add(this.txtOlvide);
             this.paneOlvide.Controls.Add(this.lblOlvide);
             this.paneOlvide.Location = new System.Drawing.Point(3, 285);
-            this.paneOlvide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneOlvide.Margin = new System.Windows.Forms.Padding(2);
             this.paneOlvide.Name = "paneOlvide";
             this.paneOlvide.Size = new System.Drawing.Size(544, 126);
             this.paneOlvide.TabIndex = 5;
@@ -407,7 +407,7 @@
             // 
             this.btnCancelarContraseña.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarContraseña.Location = new System.Drawing.Point(325, 74);
-            this.btnCancelarContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarContraseña.Name = "btnCancelarContraseña";
             this.btnCancelarContraseña.Size = new System.Drawing.Size(76, 39);
             this.btnCancelarContraseña.TabIndex = 12;
@@ -419,7 +419,7 @@
             // 
             this.btnEnviar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.Location = new System.Drawing.Point(87, 77);
-            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(81, 33);
             this.btnEnviar.TabIndex = 7;
@@ -432,7 +432,7 @@
             this.txtOlvide.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtOlvide.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOlvide.Location = new System.Drawing.Point(269, 28);
-            this.txtOlvide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOlvide.Margin = new System.Windows.Forms.Padding(2);
             this.txtOlvide.Name = "txtOlvide";
             this.txtOlvide.Size = new System.Drawing.Size(242, 24);
             this.txtOlvide.TabIndex = 11;
@@ -458,7 +458,7 @@
             this.Controls.Add(this.paneRegistrarse);
             this.Controls.Add(this.paneIngreso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Autentificacion";

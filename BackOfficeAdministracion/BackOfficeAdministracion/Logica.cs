@@ -195,6 +195,89 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte BuscandoUsuarioGuest(string nombreGuest) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select nombreAutogen from Guest where nombreAutogen='" + nombreGuest + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)//no hay usuario guest con ese nombre
+                {
+                    devolver = 3;
+                }              
+            }
+            return devolver;
+        }
+        public static byte eliminarUsuarioGuest(string nombre)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            int id;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select idUsuario from Guest where nombreAutogen='" + nombre + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0) {//no hay un usuario guest con ese nombre
+                    devolver = 3;
+                }
+                else {
+                    id = Convert.ToInt32(rs.Fields[0].Value);
+                    /*sql = "delete from Guest where idUsuario=" + id;
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 2;
+                    }*/
+                    sql = "delete from Usuarios where idUsuario=" + id ;
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 2;
+                    }
+                }
+           
+            }
+            rs = null;
+            return devolver;
+        }//faltaParaEliminarGuest
         public static string obtenerPublicidad(int id)
         {
             string url = "";
@@ -342,6 +425,20 @@ namespace BackOfficeAdministracion
                     lista.Add(Convert.ToString(rs.Fields[0].Value));
                     rs.MoveNext();
                 }
+                sql = "Select nombreAutogen from Guest";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return 2;
+                }
+                while (!rs.EOF)
+                {
+                    lista.Add(Convert.ToString(rs.Fields[0].Value));
+                    rs.MoveNext();
+                }
             }
             rs = null;
 
@@ -419,15 +516,16 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Vip where nombre='" + nombre + "'";
+              /*  sql = "delete from Vip where nombre='" + nombre + "'";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
                 }
                 catch
                 {
+                    throw;
                     return devolver = 2;
-                }
+                }*/
                 sql = "delete from Usuarios where idUsuario=" + id + "";
                 try
                 {
@@ -435,12 +533,13 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
+                    throw;
                     return devolver = 2;
                 }
             }
             rs = null;
             return devolver;
-        }
+        }//faltaParaEliminarGuest
         public static byte crearUsuario(Usuario u)
         {
             byte devolver = 0;
@@ -1378,6 +1477,6 @@ namespace BackOfficeAdministracion
     }
 
 
-}
+
     
 

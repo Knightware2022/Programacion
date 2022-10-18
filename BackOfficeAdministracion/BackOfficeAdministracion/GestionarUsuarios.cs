@@ -61,37 +61,75 @@ namespace BackOfficeAdministracion
                     paneBuscar.Enabled = true;
                     break;
                 case 3:
-                    DialogResult crearUsuario = MessageBox.Show("El usuario no existe, desea crearlo? ","Creación usuario", MessageBoxButtons.YesNo);
-                    if (crearUsuario == DialogResult.Yes)
-                    {
-                        paneDatos.Enabled = true;
-                        txtUsuario.Enabled = false;
-                        while (bandera == true)
-                        {
-                            random = r.Next();
-                            switch (Logica.BuscarID(random))
+                    switch (Logica.BuscandoUsuarioGuest(u.nombre)) {
+                        case 0:// el usuario es guest 
+                            DialogResult eliminarGuest = MessageBox.Show("El usuario es GUEST, desea eliminarlo? ", "Eliminacion usuario GUEST", MessageBoxButtons.YesNo);
+                            if (eliminarGuest == DialogResult.Yes)
                             {
-                                case 0:
-                                    break;
-                                case 1:
-                                case 2:
-                                    MessageBox.Show("Ocurrió un error, intente mas tarde");
-                                    break;
-                                case 3:
-                                    bandera = false;
-                                    break;
+                                switch (Logica.eliminarUsuarioGuest(u.nombre)) {
+                                    case 0:
+                                        MessageBox.Show("Usuario GUEST eliminado con éxito");
+                                        break;
+                                    case 1:
+                                        MessageBox.Show("Ocurrió un error de conexión");
+                                        break;
+                                    case 2:
+                                        MessageBox.Show("Ocurrió un error inesperado");
+                                        break;
+                                    case 3:
+                                        MessageBox.Show("El usuario ya no existe");
+                                        break;
+                                }                  
                             }
-                        }//comentario
-                        txtUsuario.Text = cmboxIDusuarios.Text;
-                        txtID.Text = random.ToString();
-                        txtID.Enabled = false;
-                        paneBuscar.Enabled = false;
-                        btnAceptar.Enabled = false;
-                        btnEliminar.Enabled = false;
-                    }
-                    else {
+                            else
+                            {
+                                
+                            }
 
+
+                            break;
+                        case 1:
+                            MessageBox.Show("Ocurrió un error de conexión");
+                            break;
+                        case 2:
+                            MessageBox.Show("Ocurrió un error inesperado");
+                            break;
+                        case 3:
+                            DialogResult crearUsuario = MessageBox.Show("El usuario no existe, desea crearlo? ", "Creación usuario", MessageBoxButtons.YesNo);
+                            if (crearUsuario == DialogResult.Yes)
+                            {
+                                paneDatos.Enabled = true;
+                                txtUsuario.Enabled = false;
+                                while (bandera == true)
+                                {
+                                    random = r.Next();
+                                    switch (Logica.BuscarID(random))
+                                    {
+                                        case 0:
+                                            break;
+                                        case 1:
+                                        case 2:
+                                            MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                            break;
+                                        case 3:
+                                            bandera = false;
+                                            break;
+                                    }
+                                }//comentario
+                                txtUsuario.Text = cmboxIDusuarios.Text;
+                                txtID.Text = random.ToString();
+                                txtID.Enabled = false;
+                                paneBuscar.Enabled = false;
+                                btnAceptar.Enabled = false;
+                                btnEliminar.Enabled = false;
+                            }
+                            else
+                            {
+
+                            }
+                            break;
                     }
+                    
                     break;
             }
             
