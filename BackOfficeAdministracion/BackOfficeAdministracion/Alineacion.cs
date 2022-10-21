@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace BackOfficeAdministracion
 {
-    public partial class IncidenciasIndividuales : Form
+    public partial class Alineacion : Form
     {
-        public IncidenciasIndividuales()
+        public Alineacion()
         {
             InitializeComponent();
         }
 
-        private void IncidenciasIndividuales_Load(object sender, EventArgs e)
+        private void Alineacion_Load(object sender, EventArgs e)
         {
 
         }
@@ -26,11 +26,6 @@ namespace BackOfficeAdministracion
         {
             this.Visible = false;
             Program.frmPrincipal.Enabled = true;
-
-        }
-
-        private void paneIncidencias_Paint(object sender, PaintEventArgs e)
-        {
 
         }
     }

@@ -14,6 +14,7 @@ namespace BackOfficeAdministracion
         public static Configuracion frmConfiguracion;
         public static Principal frmPrincipal;
         public static Login frmLogin;
+        public static Alineacion frmAlineacion;
         public static Incidencias frmIncidencias;
         public static IncidenciasIndividuales frmIncidenciasIndividuales;
         [STAThread]
@@ -28,6 +29,7 @@ namespace BackOfficeAdministracion
             frmIncidencias = new Incidencias();
             frmIncidenciasIndividuales = new IncidenciasIndividuales();
             frmPrincipal = new Principal();
+            frmAlineacion = new Alineacion();
             Application.Run(frmLogin = new Login());
         }
     }

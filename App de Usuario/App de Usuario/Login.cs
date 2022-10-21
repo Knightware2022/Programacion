@@ -218,6 +218,7 @@ namespace App_de_Usuario
         {
             try
             {
+                Application.Exit();
                 Logica._cn.Close();
             }
             catch {

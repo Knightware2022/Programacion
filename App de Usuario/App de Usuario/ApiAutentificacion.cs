@@ -26,7 +26,7 @@ namespace App_de_Usuario
             Random r = new Random();
             int random = 1;
             _usuario.nombre = n;
-            _usuario.rol = 2;
+            _usuario.rol = 1;
             _usuario.correo = correo;
             _usuario.contrasenia = contra;
             while (bandera == true) {
