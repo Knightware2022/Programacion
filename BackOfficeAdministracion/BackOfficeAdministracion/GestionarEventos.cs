@@ -28,5 +28,16 @@ namespace BackOfficeAdministracion
         {
             cerrar();
         }
+
+        private void btnIncidencias_Click(object sender, EventArgs e)
+        {
+            Program.frmIncidencias.Visible = true;
+        }
+
+        private void btnIncidenciasIndividuales_Click(object sender, EventArgs e)
+        {
+            Program.frmIncidenciasIndividuales.Visible = true;
+            
+        }
     }
 }

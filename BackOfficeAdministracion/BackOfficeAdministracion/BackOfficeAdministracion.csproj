@@ -74,6 +74,18 @@
       <DependentUpon>GestionarUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Idiomas.cs" />
+    <Compile Include="Incidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incidencias.Designer.cs">
+      <DependentUpon>Incidencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncidenciasIndividuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncidenciasIndividuales.Designer.cs">
+      <DependentUpon>IncidenciasIndividuales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Jugador.cs" />
     <Compile Include="Logica.cs" />
     <Compile Include="Login.cs">
@@ -103,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarUsuarios.resx">
       <DependentUpon>GestionarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incidencias.resx">
+      <DependentUpon>Incidencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncidenciasIndividuales.resx">
+      <DependentUpon>IncidenciasIndividuales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
