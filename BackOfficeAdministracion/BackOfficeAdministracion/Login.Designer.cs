@@ -220,9 +220,9 @@
             this.lblUsuario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(21, 73);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(125, 22);
+            this.lblUsuario.Size = new System.Drawing.Size(73, 22);
             this.lblUsuario.TabIndex = 6;
-            this.lblUsuario.Text = "Usuario/Correo: ";
+            this.lblUsuario.Text = "Usuario: ";
             // 
             // Login
             // 
