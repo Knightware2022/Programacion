@@ -21,6 +21,7 @@ namespace BackOfficeAdministracion
             Program.frmPrincipal.paneVista.Show();
         }
         Equipos equipos = new Equipos();
+        Deportes deportes = new Deportes();
         Jugador jugador = new Jugador();
         private void btnCerrarI_Click(object sender, EventArgs e)
         {
@@ -194,6 +195,83 @@ namespace BackOfficeAdministracion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            int random = 0; bool bandera = true;
+            Random r = new Random();
+            List<string> lista = new List<string>();
+            deportes.nombre = cmboxIDdeporte.Text;
+            switch (Logica.DatosDeporte(lista, deportes)) {
+                case 0:
+                    btnEliminar.Enabled = true;
+                    btnModificar.Enabled = true;
+                    txtIDDeporte.Text = deportes.id.ToString();
+                    txtMCategoria.Text = deportes.categoria;
+                    txtMNombre.Text = deportes.nombre;
+                    cmboxEquiposDeporte.Items.Clear();
+                    cmboxEquiposDeporte.Text = null;
+                    foreach (string nombre in lista)
+                    {
+                        cmboxEquiposDeporte.Items.Add(nombre);
+                    }
+                    cmboxEquiposDeporte.Text = lista[0];
+                    paneBuscar.Enabled = false;
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexión");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado");
+                    break;
+                case 3:
+                    DialogResult crearDeporte;
+                    crearDeporte = MessageBox.Show("El deporte que busca no existe, desea crearlo? ", "Crear deporte", MessageBoxButtons.YesNo);
+                    if (crearDeporte == DialogResult.Yes)
+                    {
+                        btnEliminar.Enabled = false;
+                        btnModificar.Enabled = false;
+                        while (bandera == true)
+                        {
+                            random = r.Next();
+                            switch (Logica.BuscarIDdeporte(random))
+                            {
+                                case 0:
+                                    break;
+                                case 1:
+                                case 2:
+                                    MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                    break;
+                                case 3:
+                                    bandera = false;
+                                    break;
+                            }
+                        }
+                        paneBuscar.Enabled = false;
+                        btnCrearDeporte.Enabled = true;
+                        txtIDDeporte.Text = random.ToString();
+                        txtMNombre.Enabled = false;
+                        txtMNombre.Text = cmboxIDdeporte.Text;
+                    }
+                    else {
+
+                        txtIDDeporte.Text = null;
+                        txtMCategoria.Text = null;
+                        txtMNombre.Text = null;
+                        cmboxEquiposDeporte.Items.Clear();
+                        cmboxEquiposDeporte.Text = null;
+
+                    }
+                    break;
+                case 4:
+                    MessageBox.Show("A este deporte actualmente no se dedica ningún equipo");
+                    txtIDDeporte.Text = deportes.id.ToString();
+                    txtMCategoria.Text = deportes.categoria;
+                    txtMNombre.Text = deportes.nombre;
+                    cmboxEquiposDeporte.Items.Clear();
+                    cmboxEquiposDeporte.Text = null;
+                    btnEliminar.Enabled = true;
+                    btnModificar.Enabled = true;
+                    paneBuscar.Enabled = false;
+                    break;
+            }
 
         }
 
@@ -817,16 +895,12 @@ namespace BackOfficeAdministracion
         }
 
         private void refrescarDeportes() {
-
-        }
-
-        private void btnRefrescarDeportes_Click(object sender, EventArgs e)
-        {
             List<string> lista = new List<string>();
             switch (Logica.nombresDeportes(lista))
             {
                 case 0:
                     cmboxIDdeporte.Items.Clear();
+                    cmboxEquiposDeporte.Text = null;
                     cmboxIDdeporte.Text = lista[0];
                     foreach (string nombre in lista)
                     {
@@ -844,5 +918,97 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
+
+        private void btnRefrescarDeportes_Click(object sender, EventArgs e)
+        {
+            refrescarDeportes();
+        }
+
+        private void paneModificar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCrearDeporte_Click(object sender, EventArgs e)
+        {
+            deportes.id = Convert.ToInt32(txtIDDeporte.Text);
+            deportes.nombre = txtMNombre.Text;
+            deportes.categoria = txtMCategoria.Text;
+            switch (Logica.crearDeporte(deportes)) {
+                case 0:
+                    MessageBox.Show("Deporte creado exitosamente");
+                    txtIDDeporte.Text = null;
+                    txtMCategoria.Text = null;
+                    txtMNombre.Text = null;
+                    btnEliminar.Enabled = false;
+                    cmboxEquiposDeporte.Items.Clear();
+                    txtMNombre.Enabled = false;
+                    paneBuscar.Enabled = true;
+                    cmboxEquiposDeporte.Text = null;
+                    refrescarDeportes();
+                    btnModificar.Enabled = false;
+                    btnCrearDeporte.Enabled = false;
+                    txtMNombre.Enabled = true;
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexion");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado, verifique que el nombre del deporte sea correcto");
+                    break;
+
+            }
+            }
+
+        private void btnMcancelar_Click(object sender, EventArgs e)
+        {
+            txtMNombre.Enabled = true;
+            paneBuscar.Enabled = true;
+            txtIDDeporte.Text = null;
+            txtMCategoria.Text = null;
+            txtMNombre.Text = null;
+            cmboxEquiposDeporte.Items.Clear();
+            cmboxEquiposDeporte.Text = null;
+            btnCrearDeporte.Enabled = false;
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int idDeporte = Convert.ToInt32(txtIDDeporte.Text);
+            switch (Logica.BorrarDeporte(idDeporte)) {
+                case 0:
+                    txtMNombre.Enabled = true;
+                    paneBuscar.Enabled = true;
+                    txtIDDeporte.Text = null;
+                    txtMCategoria.Text = null;
+                    txtMNombre.Text = null;
+                    cmboxEquiposDeporte.Items.Clear();
+                    cmboxEquiposDeporte.Text = null;
+                    refrescarDeportes();
+                    btnEliminar.Enabled = false;
+                    btnModificar.Enabled = false;
+                    MessageBox.Show("Equipo borrado exitosamente");
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexion");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado");
+                    break;
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuitarEquipoDeporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

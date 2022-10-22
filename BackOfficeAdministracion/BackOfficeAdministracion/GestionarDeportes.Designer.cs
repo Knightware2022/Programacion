@@ -30,6 +30,7 @@
         {
             this.tbpgModificarEquipo = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarEquipo = new System.Windows.Forms.Button();
             this.btnCrearEquipos = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -69,33 +70,24 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnMcancelar = new System.Windows.Forms.Button();
             this.paneModificar = new System.Windows.Forms.Panel();
-            this.gboxModoJuego = new System.Windows.Forms.GroupBox();
-            this.rbSolitario = new System.Windows.Forms.RadioButton();
-            this.rbEquipo = new System.Windows.Forms.RadioButton();
-            this.txtMsistemaPuntua = new System.Windows.Forms.TextBox();
-            this.txtMDuracionSets = new System.Windows.Forms.TextBox();
-            this.txtMcantSets = new System.Windows.Forms.TextBox();
-            this.txtMminutos = new System.Windows.Forms.TextBox();
-            this.txtMDuracion = new System.Windows.Forms.TextBox();
+            this.btnQuitarEquipoDeporte = new System.Windows.Forms.Button();
+            this.cmboxEquiposDeporte = new System.Windows.Forms.ComboBox();
+            this.lblEquiposDeporte = new System.Windows.Forms.Label();
+            this.txtIDDeporte = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtMCategoria = new System.Windows.Forms.TextBox();
             this.txtMNombre = new System.Windows.Forms.TextBox();
-            this.paneMCantidadJugadores = new System.Windows.Forms.Panel();
-            this.cmboxMcantidadJugadores = new System.Windows.Forms.ComboBox();
-            this.lblMcantidadJugador = new System.Windows.Forms.Label();
-            this.lblMSistemaPuntuacion = new System.Windows.Forms.Label();
-            this.lblMDuracionSets = new System.Windows.Forms.Label();
-            this.lblMsets = new System.Windows.Forms.Label();
-            this.lblMminutos = new System.Windows.Forms.Label();
-            this.lblMduracion = new System.Windows.Forms.Label();
             this.lblMcategoria = new System.Windows.Forms.Label();
             this.lblMnombre = new System.Windows.Forms.Label();
             this.paneBuscar = new System.Windows.Forms.Panel();
+            this.btnRefrescarDeportes = new System.Windows.Forms.Button();
             this.cmboxIDdeporte = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblIdeporte = new System.Windows.Forms.Label();
             this.tbcGestionDeportes = new System.Windows.Forms.TabControl();
             this.tbpgABMjugadores = new System.Windows.Forms.TabPage();
             this.paneBotoneJugador = new System.Windows.Forms.Panel();
+            this.btnBorrarJugador = new System.Windows.Forms.Button();
             this.btnCrearJugador = new System.Windows.Forms.Button();
             this.btnCerrarIII = new System.Windows.Forms.Button();
             this.btnCancelarJugador = new System.Windows.Forms.Button();
@@ -118,9 +110,7 @@
             this.btnBuscarID = new System.Windows.Forms.Button();
             this.cmboxIDjugador = new System.Windows.Forms.ComboBox();
             this.lblIDJugador = new System.Windows.Forms.Label();
-            this.btnBorrarJugador = new System.Windows.Forms.Button();
-            this.btnEliminarEquipo = new System.Windows.Forms.Button();
-            this.btnRefrescarDeportes = new System.Windows.Forms.Button();
+            this.btnCrearDeporte = new System.Windows.Forms.Button();
             this.tbpgModificarEquipo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.paneDatos.SuspendLayout();
@@ -129,8 +119,6 @@
             this.tbpgModificar.SuspendLayout();
             this.paneBotones.SuspendLayout();
             this.paneModificar.SuspendLayout();
-            this.gboxModoJuego.SuspendLayout();
-            this.paneMCantidadJugadores.SuspendLayout();
             this.paneBuscar.SuspendLayout();
             this.tbcGestionDeportes.SuspendLayout();
             this.tbpgABMjugadores.SuspendLayout();
@@ -166,6 +154,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 84);
             this.panel1.TabIndex = 6;
+            // 
+            // btnEliminarEquipo
+            // 
+            this.btnEliminarEquipo.Enabled = false;
+            this.btnEliminarEquipo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnEliminarEquipo.Location = new System.Drawing.Point(210, 53);
+            this.btnEliminarEquipo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarEquipo.Name = "btnEliminarEquipo";
+            this.btnEliminarEquipo.Size = new System.Drawing.Size(146, 27);
+            this.btnEliminarEquipo.TabIndex = 9;
+            this.btnEliminarEquipo.Text = "Eliminar equipo";
+            this.btnEliminarEquipo.UseVisualStyleBackColor = false;
+            this.btnEliminarEquipo.Click += new System.EventHandler(this.btnEliminarEquipo_Click);
             // 
             // btnCrearEquipos
             // 
@@ -607,6 +608,7 @@
             // paneBotones
             // 
             this.paneBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneBotones.Controls.Add(this.btnCrearDeporte);
             this.paneBotones.Controls.Add(this.btnEliminar);
             this.paneBotones.Controls.Add(this.btnCerrarI);
             this.paneBotones.Controls.Add(this.btnModificar);
@@ -614,11 +616,12 @@
             this.paneBotones.Location = new System.Drawing.Point(14, 470);
             this.paneBotones.Margin = new System.Windows.Forms.Padding(2);
             this.paneBotones.Name = "paneBotones";
-            this.paneBotones.Size = new System.Drawing.Size(543, 69);
+            this.paneBotones.Size = new System.Drawing.Size(543, 108);
             this.paneBotones.TabIndex = 2;
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Location = new System.Drawing.Point(283, 15);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
@@ -627,6 +630,7 @@
             this.btnEliminar.TabIndex = 19;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCerrarI
             // 
@@ -642,6 +646,7 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.Enabled = false;
             this.btnModificar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnModificar.Location = new System.Drawing.Point(28, 15);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
@@ -650,6 +655,7 @@
             this.btnModificar.TabIndex = 17;
             this.btnModificar.Text = "Aceptar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnMcancelar
             // 
@@ -661,24 +667,18 @@
             this.btnMcancelar.TabIndex = 18;
             this.btnMcancelar.Text = "Cancelar";
             this.btnMcancelar.UseVisualStyleBackColor = true;
+            this.btnMcancelar.Click += new System.EventHandler(this.btnMcancelar_Click);
             // 
             // paneModificar
             // 
             this.paneModificar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneModificar.Controls.Add(this.gboxModoJuego);
-            this.paneModificar.Controls.Add(this.txtMsistemaPuntua);
-            this.paneModificar.Controls.Add(this.txtMDuracionSets);
-            this.paneModificar.Controls.Add(this.txtMcantSets);
-            this.paneModificar.Controls.Add(this.txtMminutos);
-            this.paneModificar.Controls.Add(this.txtMDuracion);
+            this.paneModificar.Controls.Add(this.btnQuitarEquipoDeporte);
+            this.paneModificar.Controls.Add(this.cmboxEquiposDeporte);
+            this.paneModificar.Controls.Add(this.lblEquiposDeporte);
+            this.paneModificar.Controls.Add(this.txtIDDeporte);
+            this.paneModificar.Controls.Add(this.label2);
             this.paneModificar.Controls.Add(this.txtMCategoria);
             this.paneModificar.Controls.Add(this.txtMNombre);
-            this.paneModificar.Controls.Add(this.paneMCantidadJugadores);
-            this.paneModificar.Controls.Add(this.lblMSistemaPuntuacion);
-            this.paneModificar.Controls.Add(this.lblMDuracionSets);
-            this.paneModificar.Controls.Add(this.lblMsets);
-            this.paneModificar.Controls.Add(this.lblMminutos);
-            this.paneModificar.Controls.Add(this.lblMduracion);
             this.paneModificar.Controls.Add(this.lblMcategoria);
             this.paneModificar.Controls.Add(this.lblMnombre);
             this.paneModificar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
@@ -687,87 +687,58 @@
             this.paneModificar.Name = "paneModificar";
             this.paneModificar.Size = new System.Drawing.Size(543, 348);
             this.paneModificar.TabIndex = 1;
+            this.paneModificar.Paint += new System.Windows.Forms.PaintEventHandler(this.paneModificar_Paint);
             // 
-            // gboxModoJuego
+            // btnQuitarEquipoDeporte
             // 
-            this.gboxModoJuego.Controls.Add(this.rbSolitario);
-            this.gboxModoJuego.Controls.Add(this.rbEquipo);
-            this.gboxModoJuego.Location = new System.Drawing.Point(42, 209);
-            this.gboxModoJuego.Margin = new System.Windows.Forms.Padding(2);
-            this.gboxModoJuego.Name = "gboxModoJuego";
-            this.gboxModoJuego.Padding = new System.Windows.Forms.Padding(2);
-            this.gboxModoJuego.Size = new System.Drawing.Size(150, 81);
-            this.gboxModoJuego.TabIndex = 17;
-            this.gboxModoJuego.TabStop = false;
-            this.gboxModoJuego.Text = "Modo de juego";
+            this.btnQuitarEquipoDeporte.Location = new System.Drawing.Point(456, 163);
+            this.btnQuitarEquipoDeporte.Name = "btnQuitarEquipoDeporte";
+            this.btnQuitarEquipoDeporte.Size = new System.Drawing.Size(31, 28);
+            this.btnQuitarEquipoDeporte.TabIndex = 22;
+            this.btnQuitarEquipoDeporte.Text = "-";
+            this.btnQuitarEquipoDeporte.UseVisualStyleBackColor = true;
+            this.btnQuitarEquipoDeporte.Click += new System.EventHandler(this.btnQuitarEquipoDeporte_Click);
             // 
-            // rbSolitario
+            // cmboxEquiposDeporte
             // 
-            this.rbSolitario.AutoSize = true;
-            this.rbSolitario.Location = new System.Drawing.Point(16, 59);
-            this.rbSolitario.Margin = new System.Windows.Forms.Padding(2);
-            this.rbSolitario.Name = "rbSolitario";
-            this.rbSolitario.Size = new System.Drawing.Size(71, 21);
-            this.rbSolitario.TabIndex = 1;
-            this.rbSolitario.TabStop = true;
-            this.rbSolitario.Text = "Solitario";
-            this.rbSolitario.UseVisualStyleBackColor = true;
+            this.cmboxEquiposDeporte.FormattingEnabled = true;
+            this.cmboxEquiposDeporte.Location = new System.Drawing.Point(237, 163);
+            this.cmboxEquiposDeporte.Name = "cmboxEquiposDeporte";
+            this.cmboxEquiposDeporte.Size = new System.Drawing.Size(201, 25);
+            this.cmboxEquiposDeporte.TabIndex = 21;
             // 
-            // rbEquipo
+            // lblEquiposDeporte
             // 
-            this.rbEquipo.AutoSize = true;
-            this.rbEquipo.Location = new System.Drawing.Point(16, 32);
-            this.rbEquipo.Margin = new System.Windows.Forms.Padding(2);
-            this.rbEquipo.Name = "rbEquipo";
-            this.rbEquipo.Size = new System.Drawing.Size(64, 21);
-            this.rbEquipo.TabIndex = 0;
-            this.rbEquipo.TabStop = true;
-            this.rbEquipo.Text = "Equipo";
-            this.rbEquipo.UseVisualStyleBackColor = true;
+            this.lblEquiposDeporte.AutoSize = true;
+            this.lblEquiposDeporte.Location = new System.Drawing.Point(41, 134);
+            this.lblEquiposDeporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEquiposDeporte.Name = "lblEquiposDeporte";
+            this.lblEquiposDeporte.Size = new System.Drawing.Size(219, 17);
+            this.lblEquiposDeporte.TabIndex = 20;
+            this.lblEquiposDeporte.Text = "Equipos/Participantes que lo practican: ";
             // 
-            // txtMsistemaPuntua
+            // txtIDDeporte
             // 
-            this.txtMsistemaPuntua.Location = new System.Drawing.Point(230, 171);
-            this.txtMsistemaPuntua.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMsistemaPuntua.Name = "txtMsistemaPuntua";
-            this.txtMsistemaPuntua.Size = new System.Drawing.Size(201, 23);
-            this.txtMsistemaPuntua.TabIndex = 16;
+            this.txtIDDeporte.Enabled = false;
+            this.txtIDDeporte.Location = new System.Drawing.Point(237, 29);
+            this.txtIDDeporte.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIDDeporte.Name = "txtIDDeporte";
+            this.txtIDDeporte.Size = new System.Drawing.Size(201, 23);
+            this.txtIDDeporte.TabIndex = 19;
             // 
-            // txtMDuracionSets
+            // label2
             // 
-            this.txtMDuracionSets.Location = new System.Drawing.Point(392, 141);
-            this.txtMDuracionSets.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMDuracionSets.Name = "txtMDuracionSets";
-            this.txtMDuracionSets.Size = new System.Drawing.Size(76, 23);
-            this.txtMDuracionSets.TabIndex = 15;
-            // 
-            // txtMcantSets
-            // 
-            this.txtMcantSets.Location = new System.Drawing.Point(160, 136);
-            this.txtMcantSets.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMcantSets.Name = "txtMcantSets";
-            this.txtMcantSets.Size = new System.Drawing.Size(76, 23);
-            this.txtMcantSets.TabIndex = 14;
-            // 
-            // txtMminutos
-            // 
-            this.txtMminutos.Location = new System.Drawing.Point(160, 109);
-            this.txtMminutos.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMminutos.Name = "txtMminutos";
-            this.txtMminutos.Size = new System.Drawing.Size(76, 23);
-            this.txtMminutos.TabIndex = 13;
-            // 
-            // txtMDuracion
-            // 
-            this.txtMDuracion.Location = new System.Drawing.Point(230, 82);
-            this.txtMDuracion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMDuracion.Name = "txtMDuracion";
-            this.txtMDuracion.Size = new System.Drawing.Size(201, 23);
-            this.txtMDuracion.TabIndex = 12;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(41, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "ID: ";
             // 
             // txtMCategoria
             // 
-            this.txtMCategoria.Location = new System.Drawing.Point(230, 52);
+            this.txtMCategoria.Location = new System.Drawing.Point(237, 96);
             this.txtMCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtMCategoria.Name = "txtMCategoria";
             this.txtMCategoria.Size = new System.Drawing.Size(201, 23);
@@ -775,157 +746,16 @@
             // 
             // txtMNombre
             // 
-            this.txtMNombre.Location = new System.Drawing.Point(230, 20);
+            this.txtMNombre.Location = new System.Drawing.Point(237, 64);
             this.txtMNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtMNombre.Name = "txtMNombre";
             this.txtMNombre.Size = new System.Drawing.Size(201, 23);
             this.txtMNombre.TabIndex = 10;
             // 
-            // paneMCantidadJugadores
-            // 
-            this.paneMCantidadJugadores.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.paneMCantidadJugadores.Controls.Add(this.cmboxMcantidadJugadores);
-            this.paneMCantidadJugadores.Controls.Add(this.lblMcantidadJugador);
-            this.paneMCantidadJugadores.Location = new System.Drawing.Point(247, 235);
-            this.paneMCantidadJugadores.Margin = new System.Windows.Forms.Padding(2);
-            this.paneMCantidadJugadores.Name = "paneMCantidadJugadores";
-            this.paneMCantidadJugadores.Size = new System.Drawing.Size(275, 75);
-            this.paneMCantidadJugadores.TabIndex = 8;
-            // 
-            // cmboxMcantidadJugadores
-            // 
-            this.cmboxMcantidadJugadores.FormattingEnabled = true;
-            this.cmboxMcantidadJugadores.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59",
-            "00"});
-            this.cmboxMcantidadJugadores.Location = new System.Drawing.Point(134, 27);
-            this.cmboxMcantidadJugadores.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboxMcantidadJugadores.Name = "cmboxMcantidadJugadores";
-            this.cmboxMcantidadJugadores.Size = new System.Drawing.Size(120, 25);
-            this.cmboxMcantidadJugadores.TabIndex = 3;
-            // 
-            // lblMcantidadJugador
-            // 
-            this.lblMcantidadJugador.AutoSize = true;
-            this.lblMcantidadJugador.Location = new System.Drawing.Point(6, 32);
-            this.lblMcantidadJugador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMcantidadJugador.Name = "lblMcantidadJugador";
-            this.lblMcantidadJugador.Size = new System.Drawing.Size(136, 17);
-            this.lblMcantidadJugador.TabIndex = 2;
-            this.lblMcantidadJugador.Text = "Cantidad de jugadores: ";
-            // 
-            // lblMSistemaPuntuacion
-            // 
-            this.lblMSistemaPuntuacion.AutoSize = true;
-            this.lblMSistemaPuntuacion.Location = new System.Drawing.Point(40, 175);
-            this.lblMSistemaPuntuacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMSistemaPuntuacion.Name = "lblMSistemaPuntuacion";
-            this.lblMSistemaPuntuacion.Size = new System.Drawing.Size(137, 17);
-            this.lblMSistemaPuntuacion.TabIndex = 6;
-            this.lblMSistemaPuntuacion.Text = "Sistema de puntuacion: ";
-            // 
-            // lblMDuracionSets
-            // 
-            this.lblMDuracionSets.AutoSize = true;
-            this.lblMDuracionSets.Location = new System.Drawing.Point(280, 141);
-            this.lblMDuracionSets.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMDuracionSets.Name = "lblMDuracionSets";
-            this.lblMDuracionSets.Size = new System.Drawing.Size(104, 17);
-            this.lblMDuracionSets.TabIndex = 5;
-            this.lblMDuracionSets.Text = "Duración de sets: ";
-            // 
-            // lblMsets
-            // 
-            this.lblMsets.AutoSize = true;
-            this.lblMsets.Location = new System.Drawing.Point(83, 136);
-            this.lblMsets.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMsets.Name = "lblMsets";
-            this.lblMsets.Size = new System.Drawing.Size(32, 17);
-            this.lblMsets.TabIndex = 4;
-            this.lblMsets.Text = "Sets";
-            // 
-            // lblMminutos
-            // 
-            this.lblMminutos.AutoSize = true;
-            this.lblMminutos.Location = new System.Drawing.Point(83, 111);
-            this.lblMminutos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMminutos.Name = "lblMminutos";
-            this.lblMminutos.Size = new System.Drawing.Size(59, 17);
-            this.lblMminutos.TabIndex = 3;
-            this.lblMminutos.Text = "Minutos: ";
-            // 
-            // lblMduracion
-            // 
-            this.lblMduracion.AutoSize = true;
-            this.lblMduracion.Location = new System.Drawing.Point(34, 82);
-            this.lblMduracion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMduracion.Name = "lblMduracion";
-            this.lblMduracion.Size = new System.Drawing.Size(63, 17);
-            this.lblMduracion.TabIndex = 2;
-            this.lblMduracion.Text = "Duración: ";
-            // 
             // lblMcategoria
             // 
             this.lblMcategoria.AutoSize = true;
-            this.lblMcategoria.Location = new System.Drawing.Point(34, 52);
+            this.lblMcategoria.Location = new System.Drawing.Point(41, 96);
             this.lblMcategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMcategoria.Name = "lblMcategoria";
             this.lblMcategoria.Size = new System.Drawing.Size(67, 17);
@@ -935,7 +765,7 @@
             // lblMnombre
             // 
             this.lblMnombre.AutoSize = true;
-            this.lblMnombre.Location = new System.Drawing.Point(34, 20);
+            this.lblMnombre.Location = new System.Drawing.Point(41, 64);
             this.lblMnombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMnombre.Name = "lblMnombre";
             this.lblMnombre.Size = new System.Drawing.Size(56, 17);
@@ -955,6 +785,18 @@
             this.paneBuscar.Size = new System.Drawing.Size(543, 88);
             this.paneBuscar.TabIndex = 0;
             // 
+            // btnRefrescarDeportes
+            // 
+            this.btnRefrescarDeportes.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefrescarDeportes.Location = new System.Drawing.Point(283, 49);
+            this.btnRefrescarDeportes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefrescarDeportes.Name = "btnRefrescarDeportes";
+            this.btnRefrescarDeportes.Size = new System.Drawing.Size(115, 25);
+            this.btnRefrescarDeportes.TabIndex = 3;
+            this.btnRefrescarDeportes.Text = "Refrescar";
+            this.btnRefrescarDeportes.UseVisualStyleBackColor = true;
+            this.btnRefrescarDeportes.Click += new System.EventHandler(this.btnRefrescarDeportes_Click);
+            // 
             // cmboxIDdeporte
             // 
             this.cmboxIDdeporte.FormattingEnabled = true;
@@ -970,7 +812,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(122, 49);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(68, 25);
+            this.btnBuscar.Size = new System.Drawing.Size(90, 25);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -983,9 +825,9 @@
             this.lblIdeporte.Location = new System.Drawing.Point(56, 19);
             this.lblIdeporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIdeporte.Name = "lblIdeporte";
-            this.lblIdeporte.Size = new System.Drawing.Size(70, 17);
+            this.lblIdeporte.Size = new System.Drawing.Size(119, 17);
             this.lblIdeporte.TabIndex = 0;
-            this.lblIdeporte.Text = "ID deporte: ";
+            this.lblIdeporte.Text = "Nombre del deporte: ";
             // 
             // tbcGestionDeportes
             // 
@@ -1026,6 +868,19 @@
             this.paneBotoneJugador.Name = "paneBotoneJugador";
             this.paneBotoneJugador.Size = new System.Drawing.Size(558, 110);
             this.paneBotoneJugador.TabIndex = 7;
+            // 
+            // btnBorrarJugador
+            // 
+            this.btnBorrarJugador.Enabled = false;
+            this.btnBorrarJugador.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnBorrarJugador.Location = new System.Drawing.Point(248, 70);
+            this.btnBorrarJugador.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBorrarJugador.Name = "btnBorrarJugador";
+            this.btnBorrarJugador.Size = new System.Drawing.Size(110, 28);
+            this.btnBorrarJugador.TabIndex = 9;
+            this.btnBorrarJugador.Text = "Eliminar";
+            this.btnBorrarJugador.UseVisualStyleBackColor = true;
+            this.btnBorrarJugador.Click += new System.EventHandler(this.btnBorrarJugador_Click);
             // 
             // btnCrearJugador
             // 
@@ -1241,43 +1096,18 @@
             this.lblIDJugador.TabIndex = 0;
             this.lblIDJugador.Text = "Nombre del jugador: ";
             // 
-            // btnBorrarJugador
+            // btnCrearDeporte
             // 
-            this.btnBorrarJugador.Enabled = false;
-            this.btnBorrarJugador.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnBorrarJugador.Location = new System.Drawing.Point(248, 70);
-            this.btnBorrarJugador.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBorrarJugador.Name = "btnBorrarJugador";
-            this.btnBorrarJugador.Size = new System.Drawing.Size(110, 28);
-            this.btnBorrarJugador.TabIndex = 9;
-            this.btnBorrarJugador.Text = "Eliminar";
-            this.btnBorrarJugador.UseVisualStyleBackColor = true;
-            this.btnBorrarJugador.Click += new System.EventHandler(this.btnBorrarJugador_Click);
-            // 
-            // btnEliminarEquipo
-            // 
-            this.btnEliminarEquipo.Enabled = false;
-            this.btnEliminarEquipo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarEquipo.Location = new System.Drawing.Point(210, 53);
-            this.btnEliminarEquipo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminarEquipo.Name = "btnEliminarEquipo";
-            this.btnEliminarEquipo.Size = new System.Drawing.Size(146, 27);
-            this.btnEliminarEquipo.TabIndex = 9;
-            this.btnEliminarEquipo.Text = "Eliminar equipo";
-            this.btnEliminarEquipo.UseVisualStyleBackColor = false;
-            this.btnEliminarEquipo.Click += new System.EventHandler(this.btnEliminarEquipo_Click);
-            // 
-            // btnRefrescarDeportes
-            // 
-            this.btnRefrescarDeportes.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnRefrescarDeportes.Location = new System.Drawing.Point(283, 49);
-            this.btnRefrescarDeportes.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRefrescarDeportes.Name = "btnRefrescarDeportes";
-            this.btnRefrescarDeportes.Size = new System.Drawing.Size(115, 25);
-            this.btnRefrescarDeportes.TabIndex = 3;
-            this.btnRefrescarDeportes.Text = "Refrescar";
-            this.btnRefrescarDeportes.UseVisualStyleBackColor = true;
-            this.btnRefrescarDeportes.Click += new System.EventHandler(this.btnRefrescarDeportes_Click);
+            this.btnCrearDeporte.Enabled = false;
+            this.btnCrearDeporte.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCrearDeporte.Location = new System.Drawing.Point(188, 54);
+            this.btnCrearDeporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrearDeporte.Name = "btnCrearDeporte";
+            this.btnCrearDeporte.Size = new System.Drawing.Size(156, 35);
+            this.btnCrearDeporte.TabIndex = 20;
+            this.btnCrearDeporte.Text = "Crear deporte";
+            this.btnCrearDeporte.UseVisualStyleBackColor = true;
+            this.btnCrearDeporte.Click += new System.EventHandler(this.btnCrearDeporte_Click);
             // 
             // GestionarDeportes
             // 
@@ -1301,10 +1131,6 @@
             this.paneBotones.ResumeLayout(false);
             this.paneModificar.ResumeLayout(false);
             this.paneModificar.PerformLayout();
-            this.gboxModoJuego.ResumeLayout(false);
-            this.gboxModoJuego.PerformLayout();
-            this.paneMCantidadJugadores.ResumeLayout(false);
-            this.paneMCantidadJugadores.PerformLayout();
             this.paneBuscar.ResumeLayout(false);
             this.paneBuscar.PerformLayout();
             this.tbcGestionDeportes.ResumeLayout(false);
@@ -1332,24 +1158,8 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnMcancelar;
         private System.Windows.Forms.Panel paneModificar;
-        private System.Windows.Forms.GroupBox gboxModoJuego;
-        private System.Windows.Forms.RadioButton rbSolitario;
-        private System.Windows.Forms.RadioButton rbEquipo;
-        private System.Windows.Forms.TextBox txtMsistemaPuntua;
-        private System.Windows.Forms.TextBox txtMDuracionSets;
-        private System.Windows.Forms.TextBox txtMcantSets;
-        private System.Windows.Forms.TextBox txtMminutos;
-        private System.Windows.Forms.TextBox txtMDuracion;
         private System.Windows.Forms.TextBox txtMCategoria;
         private System.Windows.Forms.TextBox txtMNombre;
-        private System.Windows.Forms.Panel paneMCantidadJugadores;
-        private System.Windows.Forms.ComboBox cmboxMcantidadJugadores;
-        private System.Windows.Forms.Label lblMcantidadJugador;
-        private System.Windows.Forms.Label lblMSistemaPuntuacion;
-        private System.Windows.Forms.Label lblMDuracionSets;
-        private System.Windows.Forms.Label lblMsets;
-        private System.Windows.Forms.Label lblMminutos;
-        private System.Windows.Forms.Label lblMduracion;
         private System.Windows.Forms.Label lblMcategoria;
         private System.Windows.Forms.Label lblMnombre;
         private System.Windows.Forms.Panel paneBuscar;
@@ -1413,5 +1223,11 @@
         private System.Windows.Forms.Button btnBorrarJugador;
         private System.Windows.Forms.Button btnEliminarEquipo;
         private System.Windows.Forms.Button btnRefrescarDeportes;
+        private System.Windows.Forms.TextBox txtIDDeporte;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnQuitarEquipoDeporte;
+        private System.Windows.Forms.ComboBox cmboxEquiposDeporte;
+        private System.Windows.Forms.Label lblEquiposDeporte;
+        private System.Windows.Forms.Button btnCrearDeporte;
     }
 }

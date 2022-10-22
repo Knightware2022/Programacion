@@ -59,6 +59,7 @@
     <Compile Include="Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Deportes.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Equipos.cs" />
     <Compile Include="GestionarDeportes.cs">

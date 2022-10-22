@@ -87,50 +87,52 @@ namespace BackOfficeAdministracion
             Encriptacion encriptacion = new Encriptacion();
             user.nombre = txtUsuario.Text;
             user.contrasenia = encriptacion.encriptar(txtContrasenia.Text);
-            switch(Logica.averiguandoRol(user)){
-                case 0:
-                    if (user.rol == 1)
-                    {
-                        switch (Logica.BuscandoUsuario(user))
-                        {
-                            case 0:
-                                this.Hide();
-                                txtContrasenia.Text = null;
-                                txtCorreo.Text = null;
-                                txtUsuario.Text = null;
-                                Program.frmPrincipal.Show();
-                                break;
-                            case 1:
-                                MessageBox.Show("Conexión no establecida");
-                                break;
-                            case 2:
-                                MessageBox.Show("Ocurrió un error inesperado");
-                                break;
-                            case 3:
-                            case 4:
-                                MessageBox.Show("Usuario o contraseña invalidos");
-                                txtContrasenia.Text = null;
+             switch(Logica.averiguandoRol(user)){
+                 case 0:
+                     if (user.rol == 1)
+                     {
+                         switch (Logica.BuscandoUsuario(user))
+                         {
+                             case 0:
+                                 this.Hide();
+                                 txtContrasenia.Text = null;
+                                 txtCorreo.Text = null;
+                                 txtUsuario.Text = null;
+                                 Program.frmPrincipal.Show();
+                                 break;
+                             case 1:
+                                 MessageBox.Show("Conexión no establecida");
+                                 break;
+                             case 2:
+                                 MessageBox.Show("Ocurrió un error inesperado");
+                                 break;
+                             case 3:
+                             case 4:
+                                 MessageBox.Show("Usuario o contraseña invalidos");
+                                 txtContrasenia.Text = null;
 
-                                break;
-                        }
-                    }
-                    else {
-                        MessageBox.Show("Usuario o contraseña inválidos");//en realidad existe, pero por un tema de "seguridad" no se muestra que es usuario y contra del cliente 
-                        txtContrasenia.Text = null;
+                                 break;
+                         }
+                     }
+                     else {
+                         MessageBox.Show("Usuario o contraseña inválidos");//en realidad existe, pero por un tema de "seguridad" no se muestra que es usuario y contra del cliente 
+                         txtContrasenia.Text = null;
 
-                    }
-                    break;
-                case 1:
-                    MessageBox.Show("Conexión no establecida");
-                    break;
-                case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
-                    break;
-                case 3:
-                    MessageBox.Show("Usuario o contraseña invalidos");//en realidad es que el usuario no existe
-                    txtContrasenia.Text = null;
-                    break;
-            }
+                     }
+                     break;
+                 case 1:
+                     MessageBox.Show("Conexión no establecida");
+                     break;
+                 case 2:
+                     MessageBox.Show("Ocurrió un error inesperado");
+                     break;
+                 case 3:
+                     MessageBox.Show("Usuario o contraseña invalidos");//en realidad es que el usuario no existe
+                     txtContrasenia.Text = null;
+                     break;
+             }
+            //Program.frmPrincipal.Show();
+           // Program.frmLogin.Hide();
         }
 
         private void btnVerContrasenia_MouseEnter(object sender, EventArgs e)

@@ -1472,6 +1472,172 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte DatosDeporte(List<string> lista, Deportes deporte)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select * from Deportes where nombre='" + deporte.nombre+ "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;//no hay equipos cargados con ese nombre y categoria
+                }
+                else
+                {
+                    deporte.id = Convert.ToInt32(rs.Fields[0].Value);
+                    deporte.categoria = Convert.ToString(rs.Fields[1].Value);
+                    deporte.nombre = Convert.ToString(rs.Fields[2].Value);
+                    sql = "select e.nombre from Practican as p, Equipos as e, Deportes as d where p.idEquipo=e.idEquipo AND d.idDeporte=p.idDeporte AND d.idDeporte =" + deporte.id;
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    if (rs.RecordCount == 0)
+                    {
+                        devolver = 4;//no hay equipos cargados con ese nombre y categoria
+                    }
+                    else
+                    {
+                        while (!rs.EOF)
+                        {
+                            lista.Add(Convert.ToString(rs.Fields[0].Value));
+                            rs.MoveNext();
+                        }
+                    }
+                }
+                
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte crearDeporte(Deportes deporte)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Deportes(idDeporte, categoria, nombre) values( " + deporte.id + ", '" + deporte.categoria + "', '" + deporte.nombre + "')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); 
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte BuscarIDdeporte(int id)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select idDeporte from Deportes where idDeporte=" + id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;//error inesperado
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3; //id no en uso
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte BorrarDeporte(int idDeporte)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "delete from Deportes where idDeporte=" + idDeporte;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte BorrarEquipoParticipaDeporte(int nombre)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "delete from Deportes where idDeporte=" + idDeporte;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
     }
 
     }
