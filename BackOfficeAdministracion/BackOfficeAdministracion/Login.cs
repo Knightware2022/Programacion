@@ -84,7 +84,7 @@ namespace BackOfficeAdministracion
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            Encriptacion encriptacion = new Encriptacion();
+        /*    Encriptacion encriptacion = new Encriptacion();
             user.nombre = txtUsuario.Text;
             user.contrasenia = encriptacion.encriptar(txtContrasenia.Text);
              switch(Logica.averiguandoRol(user)){
@@ -130,9 +130,9 @@ namespace BackOfficeAdministracion
                      MessageBox.Show("Usuario o contraseña invalidos");//en realidad es que el usuario no existe
                      txtContrasenia.Text = null;
                      break;
-             }
-            //Program.frmPrincipal.Show();
-           // Program.frmLogin.Hide();
+             }*/
+            Program.frmPrincipal.Show();
+            Program.frmLogin.Hide();
         }
 
         private void btnVerContrasenia_MouseEnter(object sender, EventArgs e)

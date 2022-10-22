@@ -817,7 +817,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "select nombre from Equipos";
+                sql = "select nombre, categoria from Equipos";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -834,7 +834,7 @@ namespace BackOfficeAdministracion
                 {
                     while (!rs.EOF)
                     {
-                        listaEquipos.Add(Convert.ToString(rs.Fields[0].Value));
+                        listaEquipos.Add(Convert.ToString(rs.Fields[0].Value) + "/" + Convert.ToString(rs.Fields[1].Value));
                         rs.MoveNext();
                     }
                 }
@@ -842,7 +842,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte cargarDatosEquipo(Equipos equipo) {
+        public static byte cargarDatosEquipo(Equipos equipo, Deportes d) {
             byte devolver = 0;
             object cantFilas;
             string sql;
@@ -853,7 +853,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "select nombre from Equipos where nombre='" + equipo.nombre + "'";
+                sql = "select idEquipo from Equipos where nombre='" + equipo.nombre + "' AND categoria ='" + equipo.categoria + "'";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -868,9 +868,10 @@ namespace BackOfficeAdministracion
                 }
                 else
                 {
-                    equipo.categoria = Convert.ToString(rs.Fields[0].Value);
 
-                    sql = "select categoria from Equipos where nombre='" + equipo.nombre + "'";
+                    equipo.id = Convert.ToInt32(rs.Fields[0].Value);
+
+                    sql = "select nombre from Equipos where idEquipo=" + equipo.id ;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -881,7 +882,7 @@ namespace BackOfficeAdministracion
                     }
                     equipo.categoria = Convert.ToString(rs.Fields[0].Value);
 
-                    sql = "select pais from Equipos where nombre='" + equipo.nombre + "'";
+                    sql = "select pais from Equipos where idEquipo=" + equipo.id;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -892,7 +893,7 @@ namespace BackOfficeAdministracion
                     }
                     equipo.pais = Convert.ToString(rs.Fields[0].Value);
 
-                    sql = "select logo from Equipos where nombre='" + equipo.nombre + "'";
+                    sql = "select logo from Equipos where idEquipo=" + equipo.id;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -903,7 +904,7 @@ namespace BackOfficeAdministracion
                     }
                     equipo.logo = Convert.ToString(rs.Fields[0].Value);
 
-                    sql = "select idEquipo from Equipos where nombre='" + equipo.nombre + "'";
+                    sql = "select categoria from Equipos where idEquipo=" + equipo.id;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -912,7 +913,35 @@ namespace BackOfficeAdministracion
                     {
                         return devolver = 2;
                     }
-                    equipo.id = Convert.ToInt32(rs.Fields[0].Value);
+                    equipo.categoria= Convert.ToString(rs.Fields[0].Value);
+                    sql = "select d.nombre from Deportes as d, Equipos as e, Practican as p where d.idDeporte = p.idDeporte AND p.idEquipo = e.idEquipo AND e.idEquipo =" + equipo.id;
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    if (rs.RecordCount != 0)
+                    {
+                        d.nombre = Convert.ToString(rs.Fields[0].Value);
+                    }
+                    else {
+                        
+                        d.nombre = "NO";
+                        sql = "insert into Practican(idEquipo, idDeporte) values (" + equipo.id + ", (select idDeporte from Deportes where nombre ='Futbol'))";
+                        try
+                        {
+                            rs = _cn.Execute(sql, out cantFilas);
+                        }
+                        catch
+                        {
+                            return devolver = 6;
+                        }
+                    }
+
+
                 }
             }
             rs = null;
@@ -1112,7 +1141,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte crearEquipo(Equipos equipo)
+        public static byte crearEquipo(Equipos equipo, Deportes d)
         {
             byte devolver = 0;
             object cantFilas;
@@ -1125,6 +1154,15 @@ namespace BackOfficeAdministracion
             else
             {
                 sql = "insert into Equipos(idEquipo, categoria, logo, nombre, pais) values( " + equipo.id + ", '" + equipo.categoria + "' ,'" + equipo.logo + "' ,'" + equipo.nombre + "' ,'" + equipo.pais + "')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                sql = "insert into Practican(idEquipo, idDeporte) values ("+ equipo.id+", (select idDeporte from Deportes where nombre ='" +d.nombre +"))";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -1352,7 +1390,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte actualizarEquipo(Equipos equipo)
+        public static byte actualizarEquipo(Equipos equipo, string deporte)
         {
             byte devolver = 0;
             object cantFilas;
@@ -1404,6 +1442,61 @@ namespace BackOfficeAdministracion
 
                     return devolver = 2;
                 }
+
+                sql = "select d.nombre from Deportes as d, Equipos as e, Practican as p where d.idDeporte = p.idDeporte AND p.idEquipo = e.idEquipo AND e.idEquipo =" + equipo.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    int idDeporte;
+                    sql = "select d.idDeporte from Deportes as d where d.nombre ='" + deporte + "'";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    if (rs.RecordCount == 0)
+                    {
+                        return 5; //no existe ese deporte
+                    }
+                    else {
+                        idDeporte = Convert.ToInt32(rs.Fields[0].Value);
+                        sql = "insert into Practican(idEquipo, idDeporte) values ("+equipo.id + ", " + idDeporte + ")";
+                        try
+                        {
+                            rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                        }
+                        catch
+                        {
+
+                            return devolver = 2;
+                        }
+                    }
+                }
+                else
+                {
+                    sql = "update Practican set idDeporte=(select idDeporte from Deportes where nombre='" + deporte + "') where idEquipo=" + equipo.id;
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+
+                        return devolver = 2;
+                    }
+                }
+
+                
             }
             rs = null;
 
@@ -1502,7 +1595,7 @@ namespace BackOfficeAdministracion
                     deporte.id = Convert.ToInt32(rs.Fields[0].Value);
                     deporte.categoria = Convert.ToString(rs.Fields[1].Value);
                     deporte.nombre = Convert.ToString(rs.Fields[2].Value);
-                    sql = "select e.nombre from Practican as p, Equipos as e, Deportes as d where p.idEquipo=e.idEquipo AND d.idDeporte=p.idDeporte AND d.idDeporte =" + deporte.id;
+                    sql = "select e.nombre, e.categoria from Practican as p, Equipos as e, Deportes as d where p.idEquipo=e.idEquipo AND d.idDeporte=p.idDeporte AND d.idDeporte =" + deporte.id;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1519,7 +1612,7 @@ namespace BackOfficeAdministracion
                     {
                         while (!rs.EOF)
                         {
-                            lista.Add(Convert.ToString(rs.Fields[0].Value));
+                            lista.Add(Convert.ToString(rs.Fields[0].Value) + "/" + Convert.ToString(rs.Fields[1].Value) );
                             rs.MoveNext();
                         }
                     }
@@ -1611,7 +1704,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte BorrarEquipoParticipaDeporte(int nombre)
+        public static byte BorrarEquipoParticipaDeporte(string nombre, string categoria, int idDeporte)
         {
             byte devolver = 0;
             object cantFilas;
@@ -1623,7 +1716,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Deportes where idDeporte=" + idDeporte;
+                sql = "delete from Practican where idDeporte =" + idDeporte + " AND idEquipo= (select e.idEquipo from Practican as p, Equipos as e where p.idEquipo=e.idEquipo AND p.idDeporte= "+idDeporte +" AND e.nombre='"+ nombre+"' AND e.categoria='"+categoria+"')";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1636,6 +1729,43 @@ namespace BackOfficeAdministracion
 
             }
             rs = null;
+            return devolver;
+        }
+        public static byte actualizarDeporte(Deportes deporte)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "update Deportes set categoria='" + deporte.categoria + "' where idDeporte=" + deporte.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                sql = "update Deportes set nombre='" + deporte.nombre + "' where idDeporte=" + deporte.id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+
+                    return devolver = 3;
+                }
+            }
+            rs = null;
+
             return devolver;
         }
     }

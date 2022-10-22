@@ -23,6 +23,33 @@ namespace BackOfficeAdministracion
         Equipos equipos = new Equipos();
         Deportes deportes = new Deportes();
         Jugador jugador = new Jugador();
+
+        private void GestionarDeportes_Load(object sender, EventArgs e)
+        {
+            List<string> lista = new List<string>();
+            switch (Logica.nombresDeportes(lista))
+            {
+                case 0:
+                    cmboxDeporteEquipo.Items.Clear();
+                    cmboxDeporteEquipo.Text = null;
+                    cmboxDeporteEquipo.Text = lista[0];
+                    foreach (string nombre in lista)
+                    {
+                        cmboxDeporteEquipo.Items.Add(nombre);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("No existen deportes cargados");
+                    break;
+            }
+        }
+
         private void btnCerrarI_Click(object sender, EventArgs e)
         {
             cerrar();
@@ -33,9 +60,56 @@ namespace BackOfficeAdministracion
             cerrar();
 
         }
+        private void refrescarDeportesEquipo() {
+            List<string> lista2 = new List<string>();
+            switch (Logica.nombresDeportes(lista2))
+            {
+                case 0:
+                    cmboxDeporteEquipo.Items.Clear();
+                    cmboxDeporteEquipo.Text = null;
+                    cmboxDeporteEquipo.Text = lista2[0];
+                    foreach (string nombre in lista2)
+                    {
+                        cmboxDeporteEquipo.Items.Add(nombre);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("No existen deportes cargados");
+                    break;
+            }
+        }
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
+            List<string> lista2 = new List<string>();
+            switch (Logica.nombresDeportes(lista2))
+            {
+                case 0:
+                    cmboxDeporteEquipo.Items.Clear();
+                    cmboxDeporteEquipo.Text = null;
+                    cmboxDeporteEquipo.Text = lista2[0];
+                    foreach (string nombre in lista2)
+                    {
+                        cmboxDeporteEquipo.Items.Add(nombre);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("No existen deportes cargados");
+                    break;
+            }
+
             List<string> lista = new List<string>();
             switch (Logica.cargarNombreEquipos(lista)) {
                 case 0:
@@ -60,18 +134,20 @@ namespace BackOfficeAdministracion
 
         private void btnBuscarEquipo_Click(object sender, EventArgs e)
         {
+            refrescarDeportesEquipo();
+            deportes.nombre = null;
+            equipos.nombre = cmboxEquipos.Text.Substring(0, cmboxEquipos.Text.IndexOf("/"));
+            equipos.categoria = cmboxEquipos.Text.Substring((cmboxEquipos.Text.IndexOf("/") + 1), (cmboxEquipos.Text.Length - (cmboxEquipos.Text.IndexOf("/") + 1)));
             bool bandera = true;
             int random = 0;
             Random r = new Random();
             List<int> cantidad = new List<int>();
-            equipos.nombre = cmboxEquipos.Text;
-            switch (Logica.cargarDatosEquipo(equipos)) {
+            switch (Logica.cargarDatosEquipo(equipos, deportes)) {
                 case 0:
                     btnAplicar.Enabled = true;
                     paneDatos.Enabled = true;
                     btnEliminarEquipo.Enabled = true;
                     paneIDEquipos.Enabled = false;
-                    cmboxDeporteEquipo.Text = "Deporte al que se dedica";
                     txtNombreEquipo.Text = equipos.nombre;
                     txtCategoria.Text = equipos.categoria;
                     txtLogo.Text = equipos.logo;
@@ -135,6 +211,15 @@ namespace BackOfficeAdministracion
                             break;
 
                     }
+                    if (deportes.nombre.Equals("NO"))
+                    {
+                        MessageBox.Show("Este equipo no practica deporte, por defecto se le asignó futbol. \nEscoja el que corresponda y presione Aceptar");
+                        cmboxDeporteEquipo.Text = "Futbol";
+                    }
+                    else
+                    {
+                        cmboxDeporteEquipo.Text = deportes.nombre;
+                    }
                     break;
                 case 1:
                     MessageBox.Show("Ocurrió un error de conexión");
@@ -184,11 +269,13 @@ namespace BackOfficeAdministracion
                         txtCategoria.Text = null;
                         txtPais.Text = null;
                         txtNombreEquipo.Text = null;
-                        cmboxDeporteEquipo.Items.Clear();
                         cmboxNombreJugador.Items.Clear();
                         cmboxListaJugadores.Items.Clear();
                     }
 
+                    break;
+                case 6:
+                    MessageBox.Show("El equipo no tiene deporte asignado y no se le puede asignar al por defecto. \nVerifique que el deporte 'Futbol' existe");
                     break;
             }
         }
@@ -201,6 +288,7 @@ namespace BackOfficeAdministracion
             deportes.nombre = cmboxIDdeporte.Text;
             switch (Logica.DatosDeporte(lista, deportes)) {
                 case 0:
+                    txtMNombre.Enabled = true;
                     btnEliminar.Enabled = true;
                     btnModificar.Enabled = true;
                     txtIDDeporte.Text = deportes.id.ToString();
@@ -214,6 +302,7 @@ namespace BackOfficeAdministracion
                     }
                     cmboxEquiposDeporte.Text = lista[0];
                     paneBuscar.Enabled = false;
+                    
                     break;
                 case 1:
                     MessageBox.Show("Error de conexión");
@@ -247,7 +336,7 @@ namespace BackOfficeAdministracion
                         paneBuscar.Enabled = false;
                         btnCrearDeporte.Enabled = true;
                         txtIDDeporte.Text = random.ToString();
-                        txtMNombre.Enabled = false;
+                        txtMNombre.Enabled = true;
                         txtMNombre.Text = cmboxIDdeporte.Text;
                     }
                     else {
@@ -267,6 +356,7 @@ namespace BackOfficeAdministracion
                     txtMNombre.Text = deportes.nombre;
                     cmboxEquiposDeporte.Items.Clear();
                     cmboxEquiposDeporte.Text = null;
+                    txtMNombre.Enabled = true;
                     btnEliminar.Enabled = true;
                     btnModificar.Enabled = true;
                     paneBuscar.Enabled = false;
@@ -504,7 +594,8 @@ namespace BackOfficeAdministracion
             equipos.logo = txtLogo.Text;
             equipos.pais = txtPais.Text;
             equipos.categoria = txtCategoria.Text;
-            switch (Logica.crearEquipo(equipos)) {
+            string deporteDedica = cmboxDeporteEquipo.Text;
+            switch (Logica.crearEquipo(equipos, deportes)) {
                 case 0:
                     MessageBox.Show("Equipo creado exitosamente");
                     txtIDequipo.Enabled = true;
@@ -523,7 +614,6 @@ namespace BackOfficeAdministracion
                     txtCategoria.Text = null;
                     txtPais.Text = null;
                     txtNombreEquipo.Text = null;
-                    cmboxDeporteEquipo.Items.Clear();
                     cmboxNombreJugador.Items.Clear();
                     cmboxListaJugadores.Items.Clear();
                     break;
@@ -548,7 +638,6 @@ namespace BackOfficeAdministracion
             txtCategoria.Text = null;
             txtPais.Text = null;
             txtNombreEquipo.Text = null;
-            cmboxDeporteEquipo.Items.Clear();
             cmboxNombreJugador.Items.Clear();
             cmboxListaJugadores.Items.Clear();
             paneAnadirJugadores.Enabled = true;
@@ -812,6 +901,7 @@ namespace BackOfficeAdministracion
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
+            deportes.nombre = cmboxDeporteEquipo.Text;
             int id;
             if (int.TryParse(txtIDequipo.Text, out id))
             {
@@ -820,8 +910,9 @@ namespace BackOfficeAdministracion
                 equipos.logo = txtLogo.Text;
                 equipos.pais = txtPais.Text;
                 equipos.categoria = txtCategoria.Text;
-                switch (Logica.actualizarEquipo(equipos)) {
+                switch (Logica.actualizarEquipo(equipos, deportes.nombre)) {
                     case 0:
+                        cmboxDeporteEquipo.Text = deportes.nombre;
                         MessageBox.Show("Equipo actualizado correctamente");
                         paneIDEquipos.Enabled = true;
                         paneAnadirJugadores.Enabled = true;
@@ -833,7 +924,6 @@ namespace BackOfficeAdministracion
                         txtPais.Text = null;
                         txtNombreEquipo.Text = null;
                         btnEliminarEquipo.Enabled = false;
-                        cmboxDeporteEquipo.Items.Clear();
                         cmboxNombreJugador.Items.Clear();
                         cmboxListaJugadores.Items.Clear();
                         paneAnadirJugadores.Enabled = true;
@@ -845,6 +935,9 @@ namespace BackOfficeAdministracion
                         break;
                     case 2:
                         MessageBox.Show("Error inesperado");
+                        break;
+                    case 5:
+                        MessageBox.Show("Error, no se pudo asignar al deporte");
                         break;
                 }
             }
@@ -940,6 +1033,7 @@ namespace BackOfficeAdministracion
                     txtIDDeporte.Text = null;
                     txtMCategoria.Text = null;
                     txtMNombre.Text = null;
+                    txtMNombre.Enabled = false;
                     btnEliminar.Enabled = false;
                     cmboxEquiposDeporte.Items.Clear();
                     txtMNombre.Enabled = false;
@@ -948,7 +1042,6 @@ namespace BackOfficeAdministracion
                     refrescarDeportes();
                     btnModificar.Enabled = false;
                     btnCrearDeporte.Enabled = false;
-                    txtMNombre.Enabled = true;
                     break;
                 case 1:
                     MessageBox.Show("Error de conexion");
@@ -962,7 +1055,7 @@ namespace BackOfficeAdministracion
 
         private void btnMcancelar_Click(object sender, EventArgs e)
         {
-            txtMNombre.Enabled = true;
+            txtMNombre.Enabled = false;
             paneBuscar.Enabled = true;
             txtIDDeporte.Text = null;
             txtMCategoria.Text = null;
@@ -979,10 +1072,10 @@ namespace BackOfficeAdministracion
             int idDeporte = Convert.ToInt32(txtIDDeporte.Text);
             switch (Logica.BorrarDeporte(idDeporte)) {
                 case 0:
-                    txtMNombre.Enabled = true;
                     paneBuscar.Enabled = true;
                     txtIDDeporte.Text = null;
                     txtMCategoria.Text = null;
+                    txtMNombre.Enabled = false;
                     txtMNombre.Text = null;
                     cmboxEquiposDeporte.Items.Clear();
                     cmboxEquiposDeporte.Text = null;
@@ -1002,12 +1095,87 @@ namespace BackOfficeAdministracion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            deportes.id = Convert.ToInt32(txtIDDeporte.Text);
+            deportes.categoria = txtMCategoria.Text;
+            deportes.nombre = txtMNombre.Text;
 
+            switch (Logica.actualizarDeporte(deportes)) {
+                case 0:
+                    MessageBox.Show("Deporte actualizado correctamente");
+                    txtMNombre.Enabled = false;
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexion");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado, revise la categoria");
+                    break;
+                case 3:
+                    MessageBox.Show("Error inesperado.\nEl nombre ya esta en uso o posee mas de 50 caracteres");
+                    txtMNombre.Text = cmboxIDdeporte.Text;
+                    break;
+            }
         }
 
         private void btnQuitarEquipoDeporte_Click(object sender, EventArgs e)
         {
+            try{
+                string nombre = cmboxEquiposDeporte.Text.Substring(0, cmboxEquiposDeporte.Text.IndexOf("/"));
+                string categoria = cmboxEquiposDeporte.Text.Substring((cmboxEquiposDeporte.Text.IndexOf("/")+1), (cmboxEquiposDeporte.Text.Length - (cmboxEquiposDeporte.Text.IndexOf("/")+1)));
+                int idDeporte = Convert.ToInt32(txtIDDeporte.Text);
+                switch (Logica.BorrarEquipoParticipaDeporte(nombre, categoria, idDeporte))
+                {
+                    case 0:
+                        MessageBox.Show("Equipo desvinculado exitosamente");
+                        List<string> lista = new List<string>();
+                        deportes.nombre = cmboxIDdeporte.Text;
+                        switch (Logica.DatosDeporte(lista, deportes))
+                        {
+                            case 0:
+                                txtIDDeporte.Text = deportes.id.ToString();
+                                txtMCategoria.Text = deportes.categoria;
+                                txtMNombre.Text = deportes.nombre;
+                                cmboxEquiposDeporte.Items.Clear();
+                                cmboxEquiposDeporte.Text = null;
+                                foreach (string nEquipo in lista)
+                                {
+                                    cmboxEquiposDeporte.Items.Add(nEquipo);
+                                }
+                                cmboxEquiposDeporte.Text = lista[0];
 
+                                break;
+                            case 1:
+                                MessageBox.Show("Error de conexion");
+                                break;
+                            case 2:
+                                MessageBox.Show("Error inesperado, revise el nombre del equipo");
+                                break;
+                            case 4:
+                                MessageBox.Show("A este deporte actualmente no se dedica ningún equipo");
+                                txtIDDeporte.Text = deportes.id.ToString();
+                                txtMCategoria.Text = deportes.categoria;
+                                txtMNombre.Text = deportes.nombre;
+                                cmboxEquiposDeporte.Items.Clear();
+                                cmboxEquiposDeporte.Text = null;
+                                break;
+                        }
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexion");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error inesperado, revise el nombre del equipo");
+                        break;
+                }
+            }
+            catch {
+                MessageBox.Show("Ocurrio un error obteniendo el nombre del equipo");
+            }
+        }
+
+        private void btnCerrarIII_Click(object sender, EventArgs e)
+        {
+            this.cerrar();
         }
     }
 }

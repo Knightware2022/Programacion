@@ -65,6 +65,7 @@
             this.lblIDequipo = new System.Windows.Forms.Label();
             this.tbpgModificar = new System.Windows.Forms.TabPage();
             this.paneBotones = new System.Windows.Forms.Panel();
+            this.btnCrearDeporte = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCerrarI = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -110,7 +111,6 @@
             this.btnBuscarID = new System.Windows.Forms.Button();
             this.cmboxIDjugador = new System.Windows.Forms.ComboBox();
             this.lblIDJugador = new System.Windows.Forms.Label();
-            this.btnCrearDeporte = new System.Windows.Forms.Button();
             this.tbpgModificarEquipo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.paneDatos.SuspendLayout();
@@ -136,7 +136,7 @@
             this.tbpgModificarEquipo.Margin = new System.Windows.Forms.Padding(2);
             this.tbpgModificarEquipo.Name = "tbpgModificarEquipo";
             this.tbpgModificarEquipo.Padding = new System.Windows.Forms.Padding(2);
-            this.tbpgModificarEquipo.Size = new System.Drawing.Size(572, 589);
+            this.tbpgModificarEquipo.Size = new System.Drawing.Size(573, 601);
             this.tbpgModificarEquipo.TabIndex = 4;
             this.tbpgModificarEquipo.Text = "Alta, baja y modificación de equipos";
             this.tbpgModificarEquipo.UseVisualStyleBackColor = true;
@@ -600,7 +600,7 @@
             this.tbpgModificar.Margin = new System.Windows.Forms.Padding(2);
             this.tbpgModificar.Name = "tbpgModificar";
             this.tbpgModificar.Padding = new System.Windows.Forms.Padding(2);
-            this.tbpgModificar.Size = new System.Drawing.Size(572, 589);
+            this.tbpgModificar.Size = new System.Drawing.Size(573, 601);
             this.tbpgModificar.TabIndex = 1;
             this.tbpgModificar.Text = "Alta, baja y modificación Deportes";
             this.tbpgModificar.UseVisualStyleBackColor = true;
@@ -618,6 +618,19 @@
             this.paneBotones.Name = "paneBotones";
             this.paneBotones.Size = new System.Drawing.Size(543, 108);
             this.paneBotones.TabIndex = 2;
+            // 
+            // btnCrearDeporte
+            // 
+            this.btnCrearDeporte.Enabled = false;
+            this.btnCrearDeporte.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCrearDeporte.Location = new System.Drawing.Point(188, 54);
+            this.btnCrearDeporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrearDeporte.Name = "btnCrearDeporte";
+            this.btnCrearDeporte.Size = new System.Drawing.Size(156, 35);
+            this.btnCrearDeporte.TabIndex = 20;
+            this.btnCrearDeporte.Text = "Crear deporte";
+            this.btnCrearDeporte.UseVisualStyleBackColor = true;
+            this.btnCrearDeporte.Click += new System.EventHandler(this.btnCrearDeporte_Click);
             // 
             // btnEliminar
             // 
@@ -746,6 +759,7 @@
             // 
             // txtMNombre
             // 
+            this.txtMNombre.Enabled = false;
             this.txtMNombre.Location = new System.Drawing.Point(237, 64);
             this.txtMNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtMNombre.Name = "txtMNombre";
@@ -835,11 +849,11 @@
             this.tbcGestionDeportes.Controls.Add(this.tbpgModificarEquipo);
             this.tbcGestionDeportes.Controls.Add(this.tbpgABMjugadores);
             this.tbcGestionDeportes.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.tbcGestionDeportes.Location = new System.Drawing.Point(0, 10);
+            this.tbcGestionDeportes.Location = new System.Drawing.Point(0, -2);
             this.tbcGestionDeportes.Margin = new System.Windows.Forms.Padding(2);
             this.tbcGestionDeportes.Name = "tbcGestionDeportes";
             this.tbcGestionDeportes.SelectedIndex = 0;
-            this.tbcGestionDeportes.Size = new System.Drawing.Size(580, 619);
+            this.tbcGestionDeportes.Size = new System.Drawing.Size(581, 631);
             this.tbcGestionDeportes.TabIndex = 0;
             // 
             // tbpgABMjugadores
@@ -850,7 +864,7 @@
             this.tbpgABMjugadores.Location = new System.Drawing.Point(4, 26);
             this.tbpgABMjugadores.Name = "tbpgABMjugadores";
             this.tbpgABMjugadores.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgABMjugadores.Size = new System.Drawing.Size(572, 589);
+            this.tbpgABMjugadores.Size = new System.Drawing.Size(573, 601);
             this.tbpgABMjugadores.TabIndex = 5;
             this.tbpgABMjugadores.Text = "Alta, baja, modificación jugadores";
             this.tbpgABMjugadores.UseVisualStyleBackColor = true;
@@ -905,6 +919,7 @@
             this.btnCerrarIII.TabIndex = 7;
             this.btnCerrarIII.Text = "Cerrar";
             this.btnCerrarIII.UseVisualStyleBackColor = true;
+            this.btnCerrarIII.Click += new System.EventHandler(this.btnCerrarIII_Click);
             // 
             // btnCancelarJugador
             // 
@@ -1096,19 +1111,6 @@
             this.lblIDJugador.TabIndex = 0;
             this.lblIDJugador.Text = "Nombre del jugador: ";
             // 
-            // btnCrearDeporte
-            // 
-            this.btnCrearDeporte.Enabled = false;
-            this.btnCrearDeporte.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCrearDeporte.Location = new System.Drawing.Point(188, 54);
-            this.btnCrearDeporte.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCrearDeporte.Name = "btnCrearDeporte";
-            this.btnCrearDeporte.Size = new System.Drawing.Size(156, 35);
-            this.btnCrearDeporte.TabIndex = 20;
-            this.btnCrearDeporte.Text = "Crear deporte";
-            this.btnCrearDeporte.UseVisualStyleBackColor = true;
-            this.btnCrearDeporte.Click += new System.EventHandler(this.btnCrearDeporte_Click);
-            // 
             // GestionarDeportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1119,6 +1121,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionarDeportes";
             this.Text = "GestionarDeportes";
+            this.Load += new System.EventHandler(this.GestionarDeportes_Load);
             this.tbpgModificarEquipo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.paneDatos.ResumeLayout(false);
