@@ -1918,7 +1918,6 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-
         public static byte quitarEquipoEncuentroColectivo(string nombreEquipo, string categoriaEquipo, int idEncuentro)
         {
             byte devolver = 0;
@@ -1994,6 +1993,157 @@ namespace BackOfficeAdministracion
                 }
                 
 
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte mostrarJugadoresDeEquipo(string nombreEquipo, string categoriaEquipo, int idEncuentro, List<string> jugadoresEquipo)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select j.nombre, j.apellido from Jugador as j, Forman as f  where j.idJugador = f.idJugador AND f.idEquipo=(select idEquipo from Equipos as e2 where e2.nombre='" + nombreEquipo + "' AND e2.categoria='" + categoriaEquipo + "')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)//equipo sin jugadores
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        jugadoresEquipo.Add(Convert.ToString(rs.Fields[0].Value + " " + Convert.ToString(rs.Fields[1].Value)));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte mostrarNombresIncidencias(List<string> incidencias)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select nombre from Ocurrencias";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)//equipo sin jugadores
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        incidencias.Add(Convert.ToString(rs.Fields[0].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte mostrarNombrePosicion(List<string> alineacion)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select distinct Poscion from Alineacion";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)//equipo sin jugadores
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        alineacion.Add(Convert.ToString(rs.Fields[0].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte mostrarAlineaciondeEquipo(List<string> jNombre, List<string> jApellido, List<string> jPosicion, List<string> jEquipo, int idEncuentro, string nombreEquipo, string categoriaEquipo)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select j.nombre, j.apellido, a.Poscion, equi.Nombre from Jugador as j, Alineacion as a, Encuentros as e, Utiliza as u, Equipos as equi, Forman as f where a.idAlineacion = u.idAlineacion AND u.idEncuentro = e.idEncuentro AND e.idEncuentro ="+idEncuentro+ " AND j.idJugador = a.idJugador AND equi.idEquipo = f.idEquipo AND f.idJugador = j.idJugador AND equi.idEquipo =(select idEquipo from Equipos as e2 where e2.nombre='" + nombreEquipo + "' AND e2.categoria='" + categoriaEquipo + "')";                
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)//equipo sin Alineacion
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        jNombre.Add(Convert.ToString(rs.Fields[0].Value) );
+                        jApellido.Add(Convert.ToString(rs.Fields[1].Value));
+                        jPosicion.Add(Convert.ToString(rs.Fields[2].Value));
+                        jEquipo.Add(Convert.ToString(rs.Fields[3].Value));
+                        rs.MoveNext();
+                    }
+                }
             }
             rs = null;
             return devolver;

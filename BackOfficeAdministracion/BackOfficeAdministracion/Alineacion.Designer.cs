@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             this.paneAlineacion = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmboxAlineacion = new System.Windows.Forms.ComboBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.cmboxJugador = new System.Windows.Forms.ComboBox();
             this.cmboxEquipo = new System.Windows.Forms.ComboBox();
             this.lblIncidencia = new System.Windows.Forms.Label();
             this.lblJugador = new System.Windows.Forms.Label();
             this.lblEquipo = new System.Windows.Forms.Label();
-            this.cmboxJugador = new System.Windows.Forms.ComboBox();
-            this.cmboxAlineacion = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lstboxAlineacion = new System.Windows.Forms.ListBox();
+            this.btnRefrescar = new System.Windows.Forms.Button();
+            this.lstviewAlineacion = new System.Windows.Forms.ListView();
+            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Apellido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Posicion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Equipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.paneAlineacion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +51,8 @@
             // 
             this.paneAlineacion.BackColor = System.Drawing.Color.LightGray;
             this.paneAlineacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneAlineacion.Controls.Add(this.lstboxAlineacion);
+            this.paneAlineacion.Controls.Add(this.lstviewAlineacion);
+            this.paneAlineacion.Controls.Add(this.btnRefrescar);
             this.paneAlineacion.Controls.Add(this.button1);
             this.paneAlineacion.Controls.Add(this.cmboxAlineacion);
             this.paneAlineacion.Controls.Add(this.btnVolver);
@@ -61,10 +67,32 @@
             this.paneAlineacion.Size = new System.Drawing.Size(528, 371);
             this.paneAlineacion.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(19, 262);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 28);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Ver alineación";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmboxAlineacion
+            // 
+            this.cmboxAlineacion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmboxAlineacion.FormattingEnabled = true;
+            this.cmboxAlineacion.Location = new System.Drawing.Point(169, 87);
+            this.cmboxAlineacion.Margin = new System.Windows.Forms.Padding(2);
+            this.cmboxAlineacion.Name = "cmboxAlineacion";
+            this.cmboxAlineacion.Size = new System.Drawing.Size(195, 25);
+            this.cmboxAlineacion.TabIndex = 22;
+            // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnVolver.Location = new System.Drawing.Point(19, 257);
+            this.btnVolver.Location = new System.Drawing.Point(19, 306);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(129, 28);
@@ -81,8 +109,18 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(129, 28);
             this.btnAceptar.TabIndex = 20;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "Asignar posición";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
+            // cmboxJugador
+            // 
+            this.cmboxJugador.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmboxJugador.FormattingEnabled = true;
+            this.cmboxJugador.Location = new System.Drawing.Point(170, 48);
+            this.cmboxJugador.Margin = new System.Windows.Forms.Padding(2);
+            this.cmboxJugador.Name = "cmboxJugador";
+            this.cmboxJugador.Size = new System.Drawing.Size(195, 25);
+            this.cmboxJugador.TabIndex = 17;
             // 
             // cmboxEquipo
             // 
@@ -127,44 +165,52 @@
             this.lblEquipo.TabIndex = 12;
             this.lblEquipo.Text = "Equipo: ";
             // 
-            // cmboxJugador
+            // btnRefrescar
             // 
-            this.cmboxJugador.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmboxJugador.FormattingEnabled = true;
-            this.cmboxJugador.Location = new System.Drawing.Point(170, 48);
-            this.cmboxJugador.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboxJugador.Name = "cmboxJugador";
-            this.cmboxJugador.Size = new System.Drawing.Size(195, 25);
-            this.cmboxJugador.TabIndex = 17;
+            this.btnRefrescar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefrescar.Location = new System.Drawing.Point(19, 214);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(129, 28);
+            this.btnRefrescar.TabIndex = 25;
+            this.btnRefrescar.Text = "Refrescar";
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
-            // cmboxAlineacion
+            // lstviewAlineacion
             // 
-            this.cmboxAlineacion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmboxAlineacion.FormattingEnabled = true;
-            this.cmboxAlineacion.Location = new System.Drawing.Point(169, 87);
-            this.cmboxAlineacion.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboxAlineacion.Name = "cmboxAlineacion";
-            this.cmboxAlineacion.Size = new System.Drawing.Size(195, 25);
-            this.cmboxAlineacion.TabIndex = 22;
+            this.lstviewAlineacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstviewAlineacion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Nombre,
+            this.Apellido,
+            this.Posicion,
+            this.Equipo});
+            this.lstviewAlineacion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lstviewAlineacion.GridLines = true;
+            this.lstviewAlineacion.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lstviewAlineacion.HideSelection = false;
+            this.lstviewAlineacion.Location = new System.Drawing.Point(169, 117);
+            this.lstviewAlineacion.Name = "lstviewAlineacion";
+            this.lstviewAlineacion.Size = new System.Drawing.Size(349, 243);
+            this.lstviewAlineacion.TabIndex = 26;
+            this.lstviewAlineacion.UseCompatibleStateImageBehavior = false;
+            this.lstviewAlineacion.View = System.Windows.Forms.View.Details;
             // 
-            // button1
+            // Nombre
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(19, 211);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 28);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Ver alineación";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Nombre.Text = "Nombre";
             // 
-            // lstboxAlineacion
+            // Apellido
             // 
-            this.lstboxAlineacion.FormattingEnabled = true;
-            this.lstboxAlineacion.Location = new System.Drawing.Point(170, 125);
-            this.lstboxAlineacion.Name = "lstboxAlineacion";
-            this.lstboxAlineacion.Size = new System.Drawing.Size(353, 238);
-            this.lstboxAlineacion.TabIndex = 24;
+            this.Apellido.Text = "Apellido";
+            // 
+            // Posicion
+            // 
+            this.Posicion.Text = "Posicion";
+            // 
+            // Equipo
+            // 
+            this.Equipo.Text = "Equipo";
             // 
             // Alineacion
             // 
@@ -193,7 +239,12 @@
         private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.ComboBox cmboxAlineacion;
         private System.Windows.Forms.ComboBox cmboxJugador;
-        private System.Windows.Forms.ListBox lstboxAlineacion;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.ListView lstviewAlineacion;
+        private System.Windows.Forms.ColumnHeader Nombre;
+        private System.Windows.Forms.ColumnHeader Apellido;
+        private System.Windows.Forms.ColumnHeader Posicion;
+        private System.Windows.Forms.ColumnHeader Equipo;
     }
 }

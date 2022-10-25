@@ -41,6 +41,7 @@ namespace BackOfficeAdministracion
             Program.frmIncidencias.TopMost = true;
             Program.frmIncidencias.Visible = true;
             Program.frmPrincipal.Enabled = false;
+            Program.frmIncidencias.refrescarEquiposCargados();
         }
 
         private void btnIncidenciasIndividuales_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace BackOfficeAdministracion
             Program.frmAlineacion.StartPosition = FormStartPosition.CenterScreen;
             Program.frmAlineacion.Visible = true;
             Program.frmAlineacion.TopMost = true;
+            Program.frmAlineacion.refrescarEquiposCargados();
             Program.frmPrincipal.Enabled = false;
         }
 
@@ -133,12 +135,10 @@ namespace BackOfficeAdministracion
                     cmboxEquiposenEncuentro.Items.Clear();
                     cmboxEquiposenEncuentro.Text = "";
                         cmboxEquiposenEncuentro.Text = lista[0];
-                        foreach (string nombre in lista)
-                        {
-                            cmboxEquiposenEncuentro.Items.Add(nombre);
-                        }
-                    
-                    
+                    foreach (string nombre in lista)
+                    {
+                        cmboxEquiposenEncuentro.Items.Add(nombre);
+                    }
                     break;
                 case 1:
                     MessageBox.Show("Ocurrió un error de red");

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.paneIncidencias = new System.Windows.Forms.Panel();
+            this.btnRefrescar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtMinuto = new System.Windows.Forms.TextBox();
@@ -46,6 +47,7 @@
             // 
             this.paneIncidencias.BackColor = System.Drawing.Color.LightGray;
             this.paneIncidencias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneIncidencias.Controls.Add(this.btnRefrescar);
             this.paneIncidencias.Controls.Add(this.btnVolver);
             this.paneIncidencias.Controls.Add(this.btnAceptar);
             this.paneIncidencias.Controls.Add(this.txtMinuto);
@@ -62,10 +64,22 @@
             this.paneIncidencias.Size = new System.Drawing.Size(374, 245);
             this.paneIncidencias.TabIndex = 0;
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefrescar.Location = new System.Drawing.Point(237, 183);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(97, 28);
+            this.btnRefrescar.TabIndex = 12;
+            this.btnRefrescar.Text = "Refrescar";
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnVolver.Location = new System.Drawing.Point(212, 183);
+            this.btnVolver.Location = new System.Drawing.Point(139, 183);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(83, 28);
@@ -77,13 +91,14 @@
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAceptar.Location = new System.Drawing.Point(56, 182);
+            this.btnAceptar.Location = new System.Drawing.Point(40, 182);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(83, 29);
             this.btnAceptar.TabIndex = 9;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "Ingresar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtMinuto
             // 
@@ -199,5 +214,6 @@
         private System.Windows.Forms.ComboBox cmboxEquipo;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnRefrescar;
     }
 }
