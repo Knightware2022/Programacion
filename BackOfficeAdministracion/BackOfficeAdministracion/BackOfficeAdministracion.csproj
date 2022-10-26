@@ -62,6 +62,7 @@
     <Compile Include="Deportes.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="EncuentrosColectivos.cs" />
+    <Compile Include="EncuentrosIndividuales.cs" />
     <Compile Include="Equipos.cs" />
     <Compile Include="GestionarDeportes.cs">
       <SubType>Form</SubType>

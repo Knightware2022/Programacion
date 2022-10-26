@@ -91,8 +91,8 @@
             this.btnIncidenciasIndividuales = new System.Windows.Forms.Button();
             this.lblMinutosComienzaIndi = new System.Windows.Forms.Label();
             this.lblhorasComienzaIndi = new System.Windows.Forms.Label();
-            this.txtMinutoComienzaIndi = new System.Windows.Forms.ComboBox();
-            this.txtHoraFinalizaIndi = new System.Windows.Forms.ComboBox();
+            this.cmboxMinutoComienzaIndi = new System.Windows.Forms.ComboBox();
+            this.cmboxHoraComienzoIndi = new System.Windows.Forms.ComboBox();
             this.cmboxParticipantesIndiEncuentro = new System.Windows.Forms.ComboBox();
             this.cmboxParticipantesIndi = new System.Windows.Forms.ComboBox();
             this.cmboxDeporteIndi = new System.Windows.Forms.ComboBox();
@@ -108,6 +108,8 @@
             this.btnBuscarIndividual = new System.Windows.Forms.Button();
             this.cmboxEncuentroIndividua = new System.Windows.Forms.ComboBox();
             this.lblEventoIndiID = new System.Windows.Forms.Label();
+            this.btnQuitarParticipanteEncuentro = new System.Windows.Forms.Button();
+            this.btnAgregarParticipante = new System.Windows.Forms.Button();
             this.tbpgModificar.SuspendLayout();
             this.paneBotones.SuspendLayout();
             this.paneModificar.SuspendLayout();
@@ -846,6 +848,8 @@
             // paneDatosIndi
             // 
             this.paneDatosIndi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneDatosIndi.Controls.Add(this.btnQuitarParticipanteEncuentro);
+            this.paneDatosIndi.Controls.Add(this.btnAgregarParticipante);
             this.paneDatosIndi.Controls.Add(this.lblMinFinIndi);
             this.paneDatosIndi.Controls.Add(this.lblHsFinIndi);
             this.paneDatosIndi.Controls.Add(this.cmboxMinutoFinIndi);
@@ -859,8 +863,8 @@
             this.paneDatosIndi.Controls.Add(this.btnIncidenciasIndividuales);
             this.paneDatosIndi.Controls.Add(this.lblMinutosComienzaIndi);
             this.paneDatosIndi.Controls.Add(this.lblhorasComienzaIndi);
-            this.paneDatosIndi.Controls.Add(this.txtMinutoComienzaIndi);
-            this.paneDatosIndi.Controls.Add(this.txtHoraFinalizaIndi);
+            this.paneDatosIndi.Controls.Add(this.cmboxMinutoComienzaIndi);
+            this.paneDatosIndi.Controls.Add(this.cmboxHoraComienzoIndi);
             this.paneDatosIndi.Controls.Add(this.cmboxParticipantesIndiEncuentro);
             this.paneDatosIndi.Controls.Add(this.cmboxParticipantesIndi);
             this.paneDatosIndi.Controls.Add(this.cmboxDeporteIndi);
@@ -1058,7 +1062,7 @@
             // btnIncidenciasIndividuales
             // 
             this.btnIncidenciasIndividuales.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnIncidenciasIndividuales.Location = new System.Drawing.Point(249, 400);
+            this.btnIncidenciasIndividuales.Location = new System.Drawing.Point(248, 423);
             this.btnIncidenciasIndividuales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIncidenciasIndividuales.Name = "btnIncidenciasIndividuales";
             this.btnIncidenciasIndividuales.Size = new System.Drawing.Size(167, 33);
@@ -1087,10 +1091,10 @@
             this.lblhorasComienzaIndi.TabIndex = 38;
             this.lblhorasComienzaIndi.Text = "Hs";
             // 
-            // txtMinutoComienzaIndi
+            // cmboxMinutoComienzaIndi
             // 
-            this.txtMinutoComienzaIndi.FormattingEnabled = true;
-            this.txtMinutoComienzaIndi.Items.AddRange(new object[] {
+            this.cmboxMinutoComienzaIndi.FormattingEnabled = true;
+            this.cmboxMinutoComienzaIndi.Items.AddRange(new object[] {
             "01",
             "02",
             "03",
@@ -1151,16 +1155,16 @@
             "58",
             "59",
             "00"});
-            this.txtMinutoComienzaIndi.Location = new System.Drawing.Point(496, 242);
-            this.txtMinutoComienzaIndi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMinutoComienzaIndi.Name = "txtMinutoComienzaIndi";
-            this.txtMinutoComienzaIndi.Size = new System.Drawing.Size(87, 30);
-            this.txtMinutoComienzaIndi.TabIndex = 37;
+            this.cmboxMinutoComienzaIndi.Location = new System.Drawing.Point(496, 242);
+            this.cmboxMinutoComienzaIndi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmboxMinutoComienzaIndi.Name = "cmboxMinutoComienzaIndi";
+            this.cmboxMinutoComienzaIndi.Size = new System.Drawing.Size(87, 30);
+            this.cmboxMinutoComienzaIndi.TabIndex = 37;
             // 
-            // txtHoraFinalizaIndi
+            // cmboxHoraComienzoIndi
             // 
-            this.txtHoraFinalizaIndi.FormattingEnabled = true;
-            this.txtHoraFinalizaIndi.Items.AddRange(new object[] {
+            this.cmboxHoraComienzoIndi.FormattingEnabled = true;
+            this.cmboxHoraComienzoIndi.Items.AddRange(new object[] {
             "01",
             "02",
             "03",
@@ -1185,11 +1189,11 @@
             "22",
             "23",
             "00"});
-            this.txtHoraFinalizaIndi.Location = new System.Drawing.Point(328, 242);
-            this.txtHoraFinalizaIndi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtHoraFinalizaIndi.Name = "txtHoraFinalizaIndi";
-            this.txtHoraFinalizaIndi.Size = new System.Drawing.Size(87, 30);
-            this.txtHoraFinalizaIndi.TabIndex = 36;
+            this.cmboxHoraComienzoIndi.Location = new System.Drawing.Point(328, 242);
+            this.cmboxHoraComienzoIndi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmboxHoraComienzoIndi.Name = "cmboxHoraComienzoIndi";
+            this.cmboxHoraComienzoIndi.Size = new System.Drawing.Size(87, 30);
+            this.cmboxHoraComienzoIndi.TabIndex = 36;
             // 
             // cmboxParticipantesIndiEncuentro
             // 
@@ -1321,6 +1325,7 @@
             this.btnBuscarIndividual.TabIndex = 2;
             this.btnBuscarIndividual.Text = "Buscar";
             this.btnBuscarIndividual.UseVisualStyleBackColor = true;
+            this.btnBuscarIndividual.Click += new System.EventHandler(this.btnBuscarIndividual_Click);
             // 
             // cmboxEncuentroIndividua
             // 
@@ -1340,6 +1345,28 @@
             this.lblEventoIndiID.Size = new System.Drawing.Size(148, 22);
             this.lblEventoIndiID.TabIndex = 0;
             this.lblEventoIndiID.Text = "Evento a modificar: ";
+            // 
+            // btnQuitarParticipanteEncuentro
+            // 
+            this.btnQuitarParticipanteEncuentro.Location = new System.Drawing.Point(661, 138);
+            this.btnQuitarParticipanteEncuentro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuitarParticipanteEncuentro.Name = "btnQuitarParticipanteEncuentro";
+            this.btnQuitarParticipanteEncuentro.Size = new System.Drawing.Size(51, 28);
+            this.btnQuitarParticipanteEncuentro.TabIndex = 57;
+            this.btnQuitarParticipanteEncuentro.Text = "-";
+            this.btnQuitarParticipanteEncuentro.UseVisualStyleBackColor = true;
+            this.btnQuitarParticipanteEncuentro.Click += new System.EventHandler(this.btnQuitarParticipanteEncuentro_Click);
+            // 
+            // btnAgregarParticipante
+            // 
+            this.btnAgregarParticipante.Location = new System.Drawing.Point(661, 88);
+            this.btnAgregarParticipante.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarParticipante.Name = "btnAgregarParticipante";
+            this.btnAgregarParticipante.Size = new System.Drawing.Size(51, 28);
+            this.btnAgregarParticipante.TabIndex = 56;
+            this.btnAgregarParticipante.Text = "+";
+            this.btnAgregarParticipante.UseVisualStyleBackColor = true;
+            this.btnAgregarParticipante.Click += new System.EventHandler(this.btnAgregarParticipante_Click);
             // 
             // GestionarEventos
             // 
@@ -1404,8 +1431,8 @@
         private System.Windows.Forms.Button btnIncidenciasIndividuales;
         private System.Windows.Forms.Label lblMinutosComienzaIndi;
         private System.Windows.Forms.Label lblhorasComienzaIndi;
-        private System.Windows.Forms.ComboBox txtMinutoComienzaIndi;
-        private System.Windows.Forms.ComboBox txtHoraFinalizaIndi;
+        private System.Windows.Forms.ComboBox cmboxMinutoComienzaIndi;
+        private System.Windows.Forms.ComboBox cmboxHoraComienzoIndi;
         private System.Windows.Forms.ComboBox cmboxParticipantesIndiEncuentro;
         private System.Windows.Forms.ComboBox cmboxParticipantesIndi;
         private System.Windows.Forms.ComboBox cmboxDeporteIndi;
@@ -1452,5 +1479,7 @@
         private System.Windows.Forms.Label lblHoraFinalizacionINDI;
         private System.Windows.Forms.Button btnQuitarEncuentroCole;
         private System.Windows.Forms.Button btnAgregarAlEncuentroCole;
+        private System.Windows.Forms.Button btnQuitarParticipanteEncuentro;
+        private System.Windows.Forms.Button btnAgregarParticipante;
     }
 }

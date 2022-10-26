@@ -17,7 +17,8 @@ namespace BackOfficeAdministracion
             InitializeComponent();
         }
         public static EncuentrosColectivos encuentrosColectivos = new EncuentrosColectivos();
-        
+        public static EncuentrosIndividuales encuentrosIndividuales = new EncuentrosIndividuales();
+
 
         private void GestionarEventos_Load(object sender, EventArgs e)
         {
@@ -74,7 +75,8 @@ namespace BackOfficeAdministracion
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day;
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day;
 
-            switch (Logica.ActualizarEventoColectivo(encuentrosColectivos, fechaC, fechaF)) {
+            switch (Logica.ActualizarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
+            {
                 case 0:
                     MessageBox.Show("Evento actualizado exitosamente");
 
@@ -90,9 +92,12 @@ namespace BackOfficeAdministracion
 
         private void btnRefrescarEncuentrosIndividuales_Click(object sender, EventArgs e)
         {
+            this.refrescarEventosIndividuales();
+            this.refrescarParticipantesEnSistema();
 
         }
-        private void refrescarEventosColectivos() {
+        private void refrescarEventosColectivos()
+        {
             List<string> lista = new List<string>();
             switch (Logica.cargarNombreEncuentros(lista))
             {
@@ -112,7 +117,33 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Ocurrió un error inesperado");
                     break;
                 case 3:
+
                     MessageBox.Show("No existen deportes    -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          cargados");
+                    break;
+            }
+        }
+        private void refrescarEventosIndividuales()
+        {
+            List<string> lista = new List<string>();
+            switch (Logica.cargarNombreEncuentrosIndividuales(lista))
+            {
+                case 0:
+                    cmboxEncuentroIndividua.Items.Clear();
+                    cmboxEncuentroIndividua.Text = null;
+                    cmboxEncuentroIndividua.Text = lista[0];
+                    foreach (string nombre in lista)
+                    {
+                        cmboxEncuentroIndividua.Items.Add(nombre);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("No existen eventos individuales cargados");
                     break;
             }
         }
@@ -120,7 +151,58 @@ namespace BackOfficeAdministracion
         {
             this.refrescarEventosColectivos();
             this.refrescarEquiposEnSistema();
-        }       
+        }
+        private void refrescarParticipantesEnSistema()
+        {
+            List<string> lista = new List<string>();
+            switch (Logica.ParticipantesEnSistema(lista))
+            {
+                case 0:
+                    cmboxParticipantesIndi.Items.Clear();
+                    cmboxParticipantesIndi.Text = null;
+                    cmboxParticipantesIndi.Text = lista[0];
+                    foreach (string nombre in lista)
+                    {
+                        cmboxParticipantesIndi.Items.Add(nombre);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("No existen participantes en el sistema");
+                    break;
+            }
+        }
+
+        private void refrescarParticipantesEncuentro()
+        {
+            List<string> lista = new List<string>();
+            switch (Logica.participantesEncuentrosIndividuales(encuentrosIndividuales.idEncuentro, lista))
+            {
+                case 0:
+                    cmboxParticipantesIndiEncuentro.Items.Clear();
+                    cmboxParticipantesIndiEncuentro.Text = null;
+                    cmboxParticipantesIndiEncuentro.Text = lista[0];
+                    foreach (string nombre in lista)
+                    {
+                        cmboxParticipantesIndiEncuentro.Items.Add(nombre);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+                case 3:
+                    MessageBox.Show("No existen participantes en el encuentro");
+                    break;
+            }
+        }
 
         private void refrescarEquiposEnSistema()
         {
@@ -156,7 +238,7 @@ namespace BackOfficeAdministracion
                 case 0:
                     cmboxEquiposenEncuentro.Items.Clear();
                     cmboxEquiposenEncuentro.Text = "";
-                        cmboxEquiposenEncuentro.Text = lista[0];
+                    cmboxEquiposenEncuentro.Text = lista[0];
                     foreach (string nombre in lista)
                     {
                         cmboxEquiposenEncuentro.Items.Add(nombre);
@@ -176,10 +258,12 @@ namespace BackOfficeAdministracion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 encuentrosColectivos.idEncuentro = Convert.ToInt32(cmboxIDEvento.Text.Substring(3, (cmboxIDEvento.Text.IndexOf(" ") - 3)));
                 List<string> equiposEncuentro = new List<string>();
-                switch (Logica.DatosEncuentrosColectivos(encuentrosColectivos, equiposEncuentro)) {
+                switch (Logica.DatosEncuentrosColectivos(encuentrosColectivos, equiposEncuentro))
+                {
                     case 0:
                         txtDescripcionCole.Text = encuentrosColectivos.descripcion;
                         txtIDencuentroCole.Text = encuentrosColectivos.idEncuentro.ToString();
@@ -195,7 +279,7 @@ namespace BackOfficeAdministracion
                         foreach (string nombre in equiposEncuentro)
                         {
                             cmboxEquiposenEncuentro.Items.Add(nombre);
-                        }                 
+                        }
                         break;
                     case 1:
                         MessageBox.Show("Error de conexion");
@@ -228,7 +312,8 @@ namespace BackOfficeAdministracion
                             cmboxEquiposenEncuentro.Items.Clear();
 
                         }
-                        else {
+                        else
+                        {
 
                         }
                         break;
@@ -272,7 +357,8 @@ namespace BackOfficeAdministracion
             int idEncuentro = Convert.ToInt32(txtIDencuentroCole.Text);
             string nombre = cmboxEquiposenEncuentro.Text.Substring(0, cmboxEquiposenEncuentro.Text.IndexOf("/"));
             string categoria = cmboxEquiposenEncuentro.Text.Substring((cmboxEquiposenEncuentro.Text.IndexOf("/") + 1), (cmboxEquiposenEncuentro.Text.Length - (cmboxEquiposenEncuentro.Text.IndexOf("/") + 1)));
-            switch (Logica.quitarEquipoEncuentroColectivo(nombre, categoria, idEncuentro)) {
+            switch (Logica.quitarEquipoEncuentroColectivo(nombre, categoria, idEncuentro))
+            {
                 case 0:
                     MessageBox.Show("Equipo desvinculado exitosamente");
                     this.refrescarEquiposEnEncuentro();
@@ -336,32 +422,135 @@ namespace BackOfficeAdministracion
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day;
 
             switch (Logica.insertarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
-                {
-                    case 0:
-                        MessageBox.Show("Evento creado exitosamente");
-                        cmboxMinutoFinCole.Text = "0";
-                        cmboxHoraFinCole.Text = "0";
-                        cmboxMinutos.Text = "0";
-                        cmboxHoraComienzo.Text = "0";
-                        txtDescripcionCole.Text = null;
-                        break;
-                    case 1:
-                        MessageBox.Show("Error de conexion");
-                        break;
-                    case 2:
-                        MessageBox.Show("Error inesperado");
-                        break;
-                }
-          
+            {
+                case 0:
+                    MessageBox.Show("Evento creado exitosamente");
+                    cmboxMinutoFinCole.Text = "0";
+                    cmboxHoraFinCole.Text = "0";
+                    cmboxMinutos.Text = "0";
+                    cmboxHoraComienzo.Text = "0";
+                    txtDescripcionCole.Text = null;
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexion");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado");
+                    break;
+            }
+
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            switch (Logica.EliminarEncuentro(encuentrosColectivos.idEncuentro)){
+            switch (Logica.EliminarEncuentro(encuentrosColectivos.idEncuentro))
+            {
                 case 0:
                     MessageBox.Show("Encuentro eliminado");
                     this.refrescarEventosColectivos();
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexion");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado");
+                    break;
+            }
+        }
+
+        private void btnBuscarIndividual_Click(object sender, EventArgs e)
+        {
+            List<string> nombresParticipante = new List<string>();
+            encuentrosIndividuales.idEncuentro = Convert.ToInt32(cmboxEncuentroIndividua.Text.Substring(3, (cmboxEncuentroIndividua.Text.IndexOf(" ") - 3)));
+            switch (Logica.DatosEncuentroIndividual(encuentrosIndividuales, nombresParticipante))
+            {
+                case 0:
+                    txtIDindi.Text = encuentrosIndividuales.idEncuentro.ToString();
+                    txtDescripcionIndi.Text = encuentrosIndividuales.descripcion;
+
+                    dtimeComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.ToString();
+                    dtimeFechaFinalizaIndi.Text = encuentrosIndividuales.fechaFinaliza.ToString();
+                    cmboxHoraComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.Hour.ToString();
+                    cmboxMinutoComienzaIndi.Text = encuentrosIndividuales.fechaComienzo.Minute.ToString();
+                    cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
+                    cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
+                    cmboxParticipantesIndiEncuentro.Items.Clear();
+                    cmboxParticipantesIndiEncuentro.Text = nombresParticipante[0];
+                    foreach (string nombre in nombresParticipante)
+                    {
+                        cmboxParticipantesIndiEncuentro.Items.Add(nombre);
+                    }
+
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexion");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado");
+                    break;
+                case 4:
+                    MessageBox.Show("El encuentro no está asociado a un deporte");
+                    txtIDindi.Text = encuentrosIndividuales.idEncuentro.ToString();
+                    txtDescripcionIndi.Text = encuentrosIndividuales.descripcion;
+
+                    dtimeComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.ToString();
+                    dtimeFechaFinalizaIndi.Text = encuentrosIndividuales.fechaFinaliza.ToString();
+                    cmboxHoraComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.Hour.ToString();
+                    cmboxMinutoComienzaIndi.Text = encuentrosIndividuales.fechaComienzo.Minute.ToString();
+                    cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
+                    cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
+                    cmboxParticipantesIndiEncuentro.Items.Clear();
+                    cmboxParticipantesIndiEncuentro.Text = nombresParticipante[0];
+                    foreach (string nombre in nombresParticipante)
+                    {
+                        cmboxParticipantesIndiEncuentro.Items.Add(nombre);
+                    }
+                    break;
+                case 5:
+                    MessageBox.Show("El encuentro no tiene participantes");
+                    txtIDindi.Text = encuentrosIndividuales.idEncuentro.ToString();
+                    txtDescripcionIndi.Text = encuentrosIndividuales.descripcion;
+                    cmboxParticipantesIndiEncuentro.Items.Clear();
+
+                    dtimeComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.ToString();
+                    dtimeFechaFinalizaIndi.Text = encuentrosIndividuales.fechaFinaliza.ToString();
+                    cmboxHoraComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.Hour.ToString();
+                    cmboxMinutoComienzaIndi.Text = encuentrosIndividuales.fechaComienzo.Minute.ToString();
+                    cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
+                    cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
+                    break;
+            }
+        }
+
+        private void btnAgregarParticipante_Click(object sender, EventArgs e)
+        {
+            string nombre = cmboxParticipantesIndi.Text.Substring(0, cmboxParticipantesIndi.Text.IndexOf(" "));
+            string apellido = cmboxParticipantesIndi.Text.Substring((cmboxParticipantesIndi.Text.IndexOf(" ") + 1), (cmboxParticipantesIndi.Text.Length - (cmboxParticipantesIndi.Text.IndexOf(" ") + 1)));
+            switch (Logica.AgregarParticipanteEncuentro(encuentrosIndividuales.idEncuentro, nombre, apellido))
+            {
+                case 0:
+                    MessageBox.Show("Participante ingresado");
+                    this.refrescarParticipantesEncuentro();
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexion");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado. Las posibles causas son:\n      El participante ya participa del encuentro ");
+                    break;
+            }
+        }
+
+        private void btnQuitarParticipanteEncuentro_Click(object sender, EventArgs e)
+        {
+            string nombre = cmboxParticipantesIndiEncuentro.Text.Substring(0, cmboxParticipantesIndiEncuentro.Text.IndexOf(" "));
+            string apellido = cmboxParticipantesIndiEncuentro.Text.Substring((cmboxParticipantesIndiEncuentro.Text.IndexOf(" ") + 1), (cmboxParticipantesIndiEncuentro.Text.Length - (cmboxParticipantesIndiEncuentro.Text.IndexOf(" ") + 1)));
+            switch (Logica.EliminarParticipanteEncuentro(encuentrosIndividuales.idEncuentro, nombre, apellido))
+            {
+                case 0:
+                    MessageBox.Show("Participante eliminado");
+                    this.refrescarParticipantesEncuentro();
                     break;
                 case 1:
                     MessageBox.Show("Error de conexion");
