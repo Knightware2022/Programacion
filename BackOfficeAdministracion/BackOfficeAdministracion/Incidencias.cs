@@ -26,6 +26,7 @@ namespace BackOfficeAdministracion
         {
             this.Visible = false;
             Program.frmPrincipal.Enabled = true;
+            
         }
         public void refrescarEquiposCargados()
         {

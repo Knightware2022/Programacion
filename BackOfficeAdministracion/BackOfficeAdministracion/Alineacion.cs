@@ -145,5 +145,51 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
+
+        private void cmboxEquipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.refrescarJugadorEquipo();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            string nombre = cmboxJugador.Text.Substring(0, cmboxJugador.Text.IndexOf(" "));
+            string apelido = cmboxJugador.Text.Substring((cmboxJugador.Text.IndexOf(" ") + 1), (cmboxJugador.Text.Length - (cmboxJugador.Text.IndexOf(" ") + 1)));
+            string posicion = cmboxAlineacion.Text;
+            bool bandera = true;
+            Random r = new Random();
+            int idRandom = 0;
+            while (bandera == true) {
+                idRandom = r.Next();
+                switch (Logica.BuscarIDalineacion(idRandom))
+                {
+                    case 1:
+                        MessageBox.Show("Error de red");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error inesperado");
+                        break;
+                    case 3:
+                        bandera = false;
+                        break;
+                }
+
+            }
+            switch (Logica.insertarAlineacion(GestionarEventos.encuentrosColectivos.idEncuentro, nombre, apelido, posicion, idRandom)) {
+                case 0:
+                    MessageBox.Show("Jugador asignado exitosamente");
+                  
+                    break;
+                case 1:
+                    MessageBox.Show("Error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Error insertando en Alineacion");
+                    break;
+                case 3:
+                    MessageBox.Show("Error insertando en Utiiza");
+                    break;
+            }
+        }
     }
 }
