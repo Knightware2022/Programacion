@@ -182,7 +182,33 @@ namespace BackOfficeAdministracion
                         MessageBox.Show("Error inesperado");
                         break;
                     case 3:
-                        MessageBox.Show("Evento no econtrado, desea crearlo?");
+                        DialogResult crearUsuario = MessageBox.Show("El Evento no existe, desea crearlo? ", "Creación evento", MessageBoxButtons.YesNo);
+                        if (crearUsuario == DialogResult.Yes)
+                        {
+                            bool bandera = true; int idRandom = 0; Random r = new Random();
+                            while (bandera == true)
+                            {
+                                idRandom = r.Next();
+                                switch (Logica.BuscarIDEvento(idRandom))
+                                {
+                                    case 0:
+                                        break;
+                                    case 1:
+                                    case 2:
+                                        MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                        break;
+                                    case 3:
+                                        bandera = false;
+                                        break;
+                                }
+                            }
+                            txtIDencuentroCole.Text = idRandom.ToString();
+                            cmboxEquiposenEncuentro.Items.Clear();
+
+                        }
+                        else {
+
+                        }
                         break;
                     case 4:
                         MessageBox.Show("El encuentro no está asociado a un deporte");
@@ -260,6 +286,18 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("El equipo no tiene jugadores, no será agregado al evento");
                     break;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtDescripcionCole.Text = null;
+            txtIDencuentroCole.Text = null;
+            cmboxEquiposenEncuentro.Text = null;
+            cmboxHoraComienzo.Text = null;
+            cmboxHoraFinCole.Text = null;
+            cmboxMinutoFinCole.Text = null;
+            cmboxMinutos.Text = null;
+            cmboxDeportes.Text = null;
         }
     }
 }

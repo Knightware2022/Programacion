@@ -2395,6 +2395,37 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte BuscarIDEvento(int id)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select idEncuentro from Encuentros where idEncuentro=" + id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3; //id no en uso
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
+
     }
 
 }

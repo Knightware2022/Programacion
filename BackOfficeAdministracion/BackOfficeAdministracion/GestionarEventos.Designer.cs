@@ -37,6 +37,8 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.paneModificar = new System.Windows.Forms.Panel();
+            this.btnQuitarEncuentroCole = new System.Windows.Forms.Button();
+            this.btnAgregarAlEncuentroCole = new System.Windows.Forms.Button();
             this.lblMinutoFinCole = new System.Windows.Forms.Label();
             this.lblHoraFinalizaColec = new System.Windows.Forms.Label();
             this.cmboxMinutoFinCole = new System.Windows.Forms.ComboBox();
@@ -108,8 +110,6 @@
             this.btnBuscarIndividual = new System.Windows.Forms.Button();
             this.cmboxEncuentroIndividua = new System.Windows.Forms.ComboBox();
             this.lblEventoIndiID = new System.Windows.Forms.Label();
-            this.btnAgregarAlEncuentroCole = new System.Windows.Forms.Button();
-            this.btnQuitarEncuentroCole = new System.Windows.Forms.Button();
             this.tbpgModificar.SuspendLayout();
             this.paneBotones.SuspendLayout();
             this.paneModificar.SuspendLayout();
@@ -217,6 +217,7 @@
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // paneModificar
             // 
@@ -254,6 +255,26 @@
             this.paneModificar.Name = "paneModificar";
             this.paneModificar.Size = new System.Drawing.Size(539, 370);
             this.paneModificar.TabIndex = 4;
+            // 
+            // btnQuitarEncuentroCole
+            // 
+            this.btnQuitarEncuentroCole.Location = new System.Drawing.Point(496, 126);
+            this.btnQuitarEncuentroCole.Name = "btnQuitarEncuentroCole";
+            this.btnQuitarEncuentroCole.Size = new System.Drawing.Size(38, 23);
+            this.btnQuitarEncuentroCole.TabIndex = 55;
+            this.btnQuitarEncuentroCole.Text = "-";
+            this.btnQuitarEncuentroCole.UseVisualStyleBackColor = true;
+            this.btnQuitarEncuentroCole.Click += new System.EventHandler(this.btnQuitarEncuentroCole_Click);
+            // 
+            // btnAgregarAlEncuentroCole
+            // 
+            this.btnAgregarAlEncuentroCole.Location = new System.Drawing.Point(496, 85);
+            this.btnAgregarAlEncuentroCole.Name = "btnAgregarAlEncuentroCole";
+            this.btnAgregarAlEncuentroCole.Size = new System.Drawing.Size(38, 23);
+            this.btnAgregarAlEncuentroCole.TabIndex = 54;
+            this.btnAgregarAlEncuentroCole.Text = "+";
+            this.btnAgregarAlEncuentroCole.UseVisualStyleBackColor = true;
+            this.btnAgregarAlEncuentroCole.Click += new System.EventHandler(this.btnAgregarAlEncuentroCole_Click);
             // 
             // lblMinutoFinCole
             // 
@@ -780,16 +801,16 @@
             this.paneBotonesIndi.Controls.Add(this.btnCerrarIndi);
             this.paneBotonesIndi.Controls.Add(this.btnAceptarIndi);
             this.paneBotonesIndi.Controls.Add(this.btnCancelarIndi);
-            this.paneBotonesIndi.Location = new System.Drawing.Point(18, 457);
+            this.paneBotonesIndi.Location = new System.Drawing.Point(18, 470);
             this.paneBotonesIndi.Margin = new System.Windows.Forms.Padding(2);
             this.paneBotonesIndi.Name = "paneBotonesIndi";
-            this.paneBotonesIndi.Size = new System.Drawing.Size(539, 130);
+            this.paneBotonesIndi.Size = new System.Drawing.Size(539, 117);
             this.paneBotonesIndi.TabIndex = 6;
             // 
             // btnCrearEventoIndividual
             // 
             this.btnCrearEventoIndividual.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCrearEventoIndividual.Location = new System.Drawing.Point(265, 74);
+            this.btnCrearEventoIndividual.Location = new System.Drawing.Point(264, 69);
             this.btnCrearEventoIndividual.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearEventoIndividual.Name = "btnCrearEventoIndividual";
             this.btnCrearEventoIndividual.Size = new System.Drawing.Size(158, 35);
@@ -800,7 +821,7 @@
             // btnSuspenderEncuentroIndi
             // 
             this.btnSuspenderEncuentroIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnSuspenderEncuentroIndi.Location = new System.Drawing.Point(69, 74);
+            this.btnSuspenderEncuentroIndi.Location = new System.Drawing.Point(68, 69);
             this.btnSuspenderEncuentroIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuspenderEncuentroIndi.Name = "btnSuspenderEncuentroIndi";
             this.btnSuspenderEncuentroIndi.Size = new System.Drawing.Size(158, 35);
@@ -811,7 +832,7 @@
             // btnEliminarIndi
             // 
             this.btnEliminarIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarIndi.Location = new System.Drawing.Point(286, 22);
+            this.btnEliminarIndi.Location = new System.Drawing.Point(285, 17);
             this.btnEliminarIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarIndi.Name = "btnEliminarIndi";
             this.btnEliminarIndi.Size = new System.Drawing.Size(89, 35);
@@ -822,7 +843,7 @@
             // btnCerrarIndi
             // 
             this.btnCerrarIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCerrarIndi.Location = new System.Drawing.Point(417, 22);
+            this.btnCerrarIndi.Location = new System.Drawing.Point(416, 17);
             this.btnCerrarIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarIndi.Name = "btnCerrarIndi";
             this.btnCerrarIndi.Size = new System.Drawing.Size(89, 35);
@@ -833,7 +854,7 @@
             // btnAceptarIndi
             // 
             this.btnAceptarIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAceptarIndi.Location = new System.Drawing.Point(32, 22);
+            this.btnAceptarIndi.Location = new System.Drawing.Point(31, 17);
             this.btnAceptarIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptarIndi.Name = "btnAceptarIndi";
             this.btnAceptarIndi.Size = new System.Drawing.Size(89, 35);
@@ -844,7 +865,7 @@
             // btnCancelarIndi
             // 
             this.btnCancelarIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCancelarIndi.Location = new System.Drawing.Point(150, 22);
+            this.btnCancelarIndi.Location = new System.Drawing.Point(149, 17);
             this.btnCancelarIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarIndi.Name = "btnCancelarIndi";
             this.btnCancelarIndi.Size = new System.Drawing.Size(89, 35);
@@ -883,7 +904,7 @@
             this.paneDatosIndi.Location = new System.Drawing.Point(18, 96);
             this.paneDatosIndi.Margin = new System.Windows.Forms.Padding(2);
             this.paneDatosIndi.Name = "paneDatosIndi";
-            this.paneDatosIndi.Size = new System.Drawing.Size(539, 356);
+            this.paneDatosIndi.Size = new System.Drawing.Size(539, 370);
             this.paneDatosIndi.TabIndex = 5;
             // 
             // lblMinFinIndi
@@ -1361,26 +1382,6 @@
             this.lblEventoIndiID.Size = new System.Drawing.Size(113, 17);
             this.lblEventoIndiID.TabIndex = 0;
             this.lblEventoIndiID.Text = "Evento a modificar: ";
-            // 
-            // btnAgregarAlEncuentroCole
-            // 
-            this.btnAgregarAlEncuentroCole.Location = new System.Drawing.Point(496, 85);
-            this.btnAgregarAlEncuentroCole.Name = "btnAgregarAlEncuentroCole";
-            this.btnAgregarAlEncuentroCole.Size = new System.Drawing.Size(38, 23);
-            this.btnAgregarAlEncuentroCole.TabIndex = 54;
-            this.btnAgregarAlEncuentroCole.Text = "+";
-            this.btnAgregarAlEncuentroCole.UseVisualStyleBackColor = true;
-            this.btnAgregarAlEncuentroCole.Click += new System.EventHandler(this.btnAgregarAlEncuentroCole_Click);
-            // 
-            // btnQuitarEncuentroCole
-            // 
-            this.btnQuitarEncuentroCole.Location = new System.Drawing.Point(496, 126);
-            this.btnQuitarEncuentroCole.Name = "btnQuitarEncuentroCole";
-            this.btnQuitarEncuentroCole.Size = new System.Drawing.Size(38, 23);
-            this.btnQuitarEncuentroCole.TabIndex = 55;
-            this.btnQuitarEncuentroCole.Text = "-";
-            this.btnQuitarEncuentroCole.UseVisualStyleBackColor = true;
-            this.btnQuitarEncuentroCole.Click += new System.EventHandler(this.btnQuitarEncuentroCole_Click);
             // 
             // GestionarEventos
             // 
