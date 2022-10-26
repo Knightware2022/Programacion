@@ -2335,14 +2335,13 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Alineacion(idAlineacion,Poscion,idJugador) values(" + idAlineacion + ", '" + posicion + "', " + "(select j.idJugador from Jugador as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
+                sql = $"insert into Alineacion(idAlineacion,Poscion,idJugador) values( {idAlineacion} , '" + posicion + "', " + "(select j.idJugador from Jugador as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
 
@@ -2353,7 +2352,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 if (rs.RecordCount == 0)
@@ -2425,7 +2423,116 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte insertarEventoColectivo(EncuentrosColectivos encuentros, string fechaComienzo, string fechaFin)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Encuentros(idEncuentro, fechaComienzo, fechaFinaliza, descripcionEncuentro) values("+ encuentros.idEncuentro+", '" + fechaComienzo + "', '"+ fechaFin + "', '"+ encuentros.descripcion+"')"; 
+                try
+                {
 
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+
+                    return devolver = 2;
+                }
+                sql = "insert into Competencia_Colectiva(idEncuentro) values(" + encuentros.idEncuentro + ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+
+        public static byte EliminarEncuentro(int id)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "delete from Encuentros where idEncuentro=" + id;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+               
+            }
+            rs = null;
+            return devolver;
+        }
+
+        public static byte ActualizarEventoColectivo(EncuentrosColectivos en, string fechaC, string fechaF)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "update Encuentros set fechaComienzo='"+fechaC +"' where idEncuentro=" + en.idEncuentro;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                sql = "update Encuentros set fechaFinaliza='" + fechaF + "' where idEncuentro=" + en.idEncuentro;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                sql = "update Encuentros set descripcionEncuentro='" + en.descripcion + "' where idEncuentro=" + en.idEncuentro;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+            return devolver;
+        }
     }
 
 }

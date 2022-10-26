@@ -63,7 +63,29 @@ namespace BackOfficeAdministracion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            encuentrosColectivos.idEncuentro = Convert.ToInt32(cmboxIDEvento.Text.Substring(3, (cmboxIDEvento.Text.IndexOf(" ") - 3)));
+            encuentrosColectivos.descripcion = txtDescripcionCole.Text;
+            string fechaComienzo, fechaFin, fechaC, fechaF;
 
+            fechaComienzo = dtimeFechaComienza.Text + " " + cmboxHoraComienzo.Text + ":" + cmboxMinutos.Text + ":00";
+            encuentrosColectivos.fechaComienzo = Convert.ToDateTime(fechaComienzo);
+            fechaFin = dtimeFechaFinaliza.Text + " " + cmboxHoraFinCole.Text + ":" + cmboxMinutoFinCole.Text + ":00";
+            encuentrosColectivos.fechaFinaliza = Convert.ToDateTime(fechaFin);
+            fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day;
+            fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day;
+
+            switch (Logica.ActualizarEventoColectivo(encuentrosColectivos, fechaC, fechaF)) {
+                case 0:
+                    MessageBox.Show("Evento actualizado exitosamente");
+
+                    break;
+                case 1:
+                    MessageBox.Show("Ocurrió un error de red");
+                    break;
+                case 2:
+                    MessageBox.Show("Ocurrió un error inesperado");
+                    break;
+            }
         }
 
         private void btnRefrescarEncuentrosIndividuales_Click(object sender, EventArgs e)
@@ -298,6 +320,56 @@ namespace BackOfficeAdministracion
             cmboxMinutoFinCole.Text = null;
             cmboxMinutos.Text = null;
             cmboxDeportes.Text = null;
+        }
+
+        private void btnCrearEventoColectivo_Click(object sender, EventArgs e)
+        {
+            encuentrosColectivos.idEncuentro = Convert.ToInt32(txtIDencuentroCole.Text);
+            encuentrosColectivos.descripcion = txtDescripcionCole.Text;
+            string fechaComienzo, fechaFin, fechaC, fechaF;
+
+            fechaComienzo = dtimeFechaComienza.Text + " " + cmboxHoraComienzo.Text + ":" + cmboxMinutos.Text + ":00";
+            encuentrosColectivos.fechaComienzo = Convert.ToDateTime(fechaComienzo);
+            fechaFin = dtimeFechaFinaliza.Text + " " + cmboxHoraFinCole.Text + ":" + cmboxMinutoFinCole.Text + ":00";
+            encuentrosColectivos.fechaFinaliza = Convert.ToDateTime(fechaFin);
+            fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day;
+            fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day;
+
+            switch (Logica.insertarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
+                {
+                    case 0:
+                        MessageBox.Show("Evento creado exitosamente");
+                        cmboxMinutoFinCole.Text = "0";
+                        cmboxHoraFinCole.Text = "0";
+                        cmboxMinutos.Text = "0";
+                        cmboxHoraComienzo.Text = "0";
+                        txtDescripcionCole.Text = null;
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexion");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error inesperado");
+                        break;
+                }
+          
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            switch (Logica.EliminarEncuentro(encuentrosColectivos.idEncuentro)){
+                case 0:
+                    MessageBox.Show("Encuentro eliminado");
+                    this.refrescarEventosColectivos();
+                    break;
+                case 1:
+                    MessageBox.Show("Error de conexion");
+                    break;
+                case 2:
+                    MessageBox.Show("Error inesperado");
+                    break;
+            }
         }
     }
 }
