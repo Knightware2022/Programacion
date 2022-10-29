@@ -74,10 +74,13 @@ namespace BackOfficeAdministracion
             encuentrosColectivos.fechaComienzo = Convert.ToDateTime(fechaComienzo);
             fechaFin = dtimeFechaFinaliza.Text + " " + cmboxHoraFinCole.Text + ":" + cmboxMinutoFinCole.Text + ":00";
             encuentrosColectivos.fechaFinaliza = Convert.ToDateTime(fechaFin);
+<<<<<<< HEAD
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day + " " + encuentrosColectivos.fechaComienzo.TimeOfDay; 
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day +" " + encuentrosColectivos.fechaFinaliza.TimeOfDay;
+=======
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day;
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day;
+>>>>>>> 7bc27c729488f6a05aecd64c6140263cdbc5c831
 
             switch (Logica.ActualizarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
             {
@@ -422,10 +425,13 @@ namespace BackOfficeAdministracion
             encuentrosColectivos.fechaComienzo = Convert.ToDateTime(fechaComienzo);
             fechaFin = dtimeFechaFinaliza.Text + " " + cmboxHoraFinCole.Text + ":" + cmboxMinutoFinCole.Text + ":00";
             encuentrosColectivos.fechaFinaliza = Convert.ToDateTime(fechaFin);
+<<<<<<< HEAD
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day + " " + encuentrosColectivos.fechaComienzo.TimeOfDay;
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day + " " + encuentrosColectivos.fechaFinaliza.TimeOfDay;
+=======
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day;
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day;
+>>>>>>> 7bc27c729488f6a05aecd64c6140263cdbc5c831
 
             switch (Logica.insertarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
             {
@@ -468,7 +474,8 @@ namespace BackOfficeAdministracion
         private void btnBuscarIndividual_Click(object sender, EventArgs e)
         {
             List<string> nombresParticipante = new List<string>();
-           int id;
+<<<<<<< HEAD
+            int id;
             if (int.TryParse(cmboxEncuentroIndividua.Text.Substring(3, (cmboxEncuentroIndividua.Text.IndexOf(" ") - 3)), out id))
             {
                 encuentrosIndividuales.idEncuentro = id;
@@ -564,6 +571,7 @@ namespace BackOfficeAdministracion
             }
             else {
                 MessageBox.Show("ID no es valido. El formato debe ser:\nID:<IDencuentro> <NombreEncuentro>");
+=======
             encuentrosIndividuales.idEncuentro = Convert.ToInt32(cmboxEncuentroIndividua.Text.Substring(3, (cmboxEncuentroIndividua.Text.IndexOf(" ") - 3)));
             switch (Logica.DatosEncuentroIndividual(encuentrosIndividuales, nombresParticipante))
             {
@@ -622,6 +630,7 @@ namespace BackOfficeAdministracion
                     cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
                     cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
                     break;
+>>>>>>> 7bc27c729488f6a05aecd64c6140263cdbc5c831
             }
         }
 
@@ -662,6 +671,7 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
+<<<<<<< HEAD
 
         private void btnAceptarIndi_Click(object sender, EventArgs e)
         {
@@ -753,5 +763,7 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
+=======
+>>>>>>> 7bc27c729488f6a05aecd64c6140263cdbc5c831
     }
 }
