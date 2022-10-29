@@ -74,13 +74,8 @@ namespace BackOfficeAdministracion
             encuentrosColectivos.fechaComienzo = Convert.ToDateTime(fechaComienzo);
             fechaFin = dtimeFechaFinaliza.Text + " " + cmboxHoraFinCole.Text + ":" + cmboxMinutoFinCole.Text + ":00";
             encuentrosColectivos.fechaFinaliza = Convert.ToDateTime(fechaFin);
-<<<<<<< HEAD
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day + " " + encuentrosColectivos.fechaComienzo.TimeOfDay; 
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day +" " + encuentrosColectivos.fechaFinaliza.TimeOfDay;
-=======
-            fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day;
-            fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day;
->>>>>>> 7bc27c729488f6a05aecd64c6140263cdbc5c831
 
             switch (Logica.ActualizarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
             {
@@ -425,13 +420,8 @@ namespace BackOfficeAdministracion
             encuentrosColectivos.fechaComienzo = Convert.ToDateTime(fechaComienzo);
             fechaFin = dtimeFechaFinaliza.Text + " " + cmboxHoraFinCole.Text + ":" + cmboxMinutoFinCole.Text + ":00";
             encuentrosColectivos.fechaFinaliza = Convert.ToDateTime(fechaFin);
-<<<<<<< HEAD
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day + " " + encuentrosColectivos.fechaComienzo.TimeOfDay;
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day + " " + encuentrosColectivos.fechaFinaliza.TimeOfDay;
-=======
-            fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day;
-            fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day;
->>>>>>> 7bc27c729488f6a05aecd64c6140263cdbc5c831
 
             switch (Logica.insertarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
             {
@@ -474,7 +464,6 @@ namespace BackOfficeAdministracion
         private void btnBuscarIndividual_Click(object sender, EventArgs e)
         {
             List<string> nombresParticipante = new List<string>();
-<<<<<<< HEAD
             int id;
             if (int.TryParse(cmboxEncuentroIndividua.Text.Substring(3, (cmboxEncuentroIndividua.Text.IndexOf(" ") - 3)), out id))
             {
@@ -571,66 +560,6 @@ namespace BackOfficeAdministracion
             }
             else {
                 MessageBox.Show("ID no es valido. El formato debe ser:\nID:<IDencuentro> <NombreEncuentro>");
-=======
-            encuentrosIndividuales.idEncuentro = Convert.ToInt32(cmboxEncuentroIndividua.Text.Substring(3, (cmboxEncuentroIndividua.Text.IndexOf(" ") - 3)));
-            switch (Logica.DatosEncuentroIndividual(encuentrosIndividuales, nombresParticipante))
-            {
-                case 0:
-                    txtIDindi.Text = encuentrosIndividuales.idEncuentro.ToString();
-                    txtDescripcionIndi.Text = encuentrosIndividuales.descripcion;
-
-                    dtimeComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.ToString();
-                    dtimeFechaFinalizaIndi.Text = encuentrosIndividuales.fechaFinaliza.ToString();
-                    cmboxHoraComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.Hour.ToString();
-                    cmboxMinutoComienzaIndi.Text = encuentrosIndividuales.fechaComienzo.Minute.ToString();
-                    cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
-                    cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
-                    cmboxParticipantesIndiEncuentro.Items.Clear();
-                    cmboxParticipantesIndiEncuentro.Text = nombresParticipante[0];
-                    foreach (string nombre in nombresParticipante)
-                    {
-                        cmboxParticipantesIndiEncuentro.Items.Add(nombre);
-                    }
-
-                    break;
-                case 1:
-                    MessageBox.Show("Error de conexion");
-                    break;
-                case 2:
-                    MessageBox.Show("Error inesperado");
-                    break;
-                case 4:
-                    MessageBox.Show("El encuentro no está asociado a un deporte");
-                    txtIDindi.Text = encuentrosIndividuales.idEncuentro.ToString();
-                    txtDescripcionIndi.Text = encuentrosIndividuales.descripcion;
-
-                    dtimeComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.ToString();
-                    dtimeFechaFinalizaIndi.Text = encuentrosIndividuales.fechaFinaliza.ToString();
-                    cmboxHoraComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.Hour.ToString();
-                    cmboxMinutoComienzaIndi.Text = encuentrosIndividuales.fechaComienzo.Minute.ToString();
-                    cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
-                    cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
-                    cmboxParticipantesIndiEncuentro.Items.Clear();
-                    cmboxParticipantesIndiEncuentro.Text = nombresParticipante[0];
-                    foreach (string nombre in nombresParticipante)
-                    {
-                        cmboxParticipantesIndiEncuentro.Items.Add(nombre);
-                    }
-                    break;
-                case 5:
-                    MessageBox.Show("El encuentro no tiene participantes");
-                    txtIDindi.Text = encuentrosIndividuales.idEncuentro.ToString();
-                    txtDescripcionIndi.Text = encuentrosIndividuales.descripcion;
-                    cmboxParticipantesIndiEncuentro.Items.Clear();
-
-                    dtimeComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.ToString();
-                    dtimeFechaFinalizaIndi.Text = encuentrosIndividuales.fechaFinaliza.ToString();
-                    cmboxHoraComienzoIndi.Text = encuentrosIndividuales.fechaComienzo.Hour.ToString();
-                    cmboxMinutoComienzaIndi.Text = encuentrosIndividuales.fechaComienzo.Minute.ToString();
-                    cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
-                    cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
-                    break;
->>>>>>> 7bc27c729488f6a05aecd64c6140263cdbc5c831
             }
         }
 
@@ -671,7 +600,6 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
-<<<<<<< HEAD
 
         private void btnAceptarIndi_Click(object sender, EventArgs e)
         {
@@ -763,7 +691,5 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
-=======
->>>>>>> 7bc27c729488f6a05aecd64c6140263cdbc5c831
     }
 }
