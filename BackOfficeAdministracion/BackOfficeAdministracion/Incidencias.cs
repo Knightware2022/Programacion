@@ -52,7 +52,7 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
-        private void refrescarJugadorEquipo()
+        public void refrescarJugadorEquipo()
         {
             string nombreEquipo = cmboxEquipo.Text.Substring(0, cmboxEquipo.Text.IndexOf("/"));
             string categoriaEquipo = cmboxEquipo.Text.Substring((cmboxEquipo.Text.IndexOf("/") + 1), (cmboxEquipo.Text.Length - (cmboxEquipo.Text.IndexOf("/") + 1)));
@@ -78,7 +78,7 @@ namespace BackOfficeAdministracion
                     break;
             }
         }
-        private void refrescarIncidencias()
+        public void refrescarIncidencias()
         {
             {
                 List<string> incidencias = new List<string>();

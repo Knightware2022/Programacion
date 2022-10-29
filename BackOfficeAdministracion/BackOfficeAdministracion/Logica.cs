@@ -1874,13 +1874,14 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "select j.idJugador, f.idEquipo, f.idDeporte from Jugador as j, Forman as f  where j.idJugador = f.idJugador AND f.idEquipo=(select idEquipo from Equipos as e2 where e2.nombre='" +nombreEquipo+"' AND e2.categoria='"+ categoriaEquipo+"')";
+                sql = "select j.idJugador, f.idEquipo, f.idDeporteEquipo from Jugador as j, Forman as f  where j.idJugador = f.idJugador AND f.idEquipo=(select idEquipo from Equipos as e2 where e2.nombre='" +nombreEquipo+"' AND e2.categoria='"+ categoriaEquipo+"')";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); 
                 }
                 catch
                 {
+                    throw;
                     return devolver = 2;
                 }
                 if (rs.RecordCount == 0)//equipo sin jugadores
@@ -1906,6 +1907,7 @@ namespace BackOfficeAdministracion
                         }
                         catch
                         {
+                            throw;
                             return devolver = 2;
                         }
                     }
