@@ -35,6 +35,9 @@ namespace BackOfficeAdministracion
             this.txtNuevaContraConfirma.UseSystemPasswordChar = true;
             this.txtNuevaContraseña.UseSystemPasswordChar = true;
             this.txtContraActual.UseSystemPasswordChar = true;
+            cmboxIdioma.Text = cmboxIdioma.Items[0].ToString();
+            cmboxTema.Text = cmboxTema.Items[0].ToString();
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -111,6 +114,11 @@ namespace BackOfficeAdministracion
         private void btnVer_MouseLeave(object sender, EventArgs e)
         {
             caracteresContrasenia(0);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

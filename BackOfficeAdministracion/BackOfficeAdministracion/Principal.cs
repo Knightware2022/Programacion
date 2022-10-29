@@ -74,5 +74,14 @@ namespace BackOfficeAdministracion
             }
            
         }
+
+        private void btnGestionarTorneos_Click(object sender, EventArgs e)
+        {
+            this.paneVista.Hide();
+            Program.frmGestionarTorneos.Show();
+            Program.frmGestionarTorneos.MdiParent = this;
+            Program.frmGestionarTorneos.Location = this.paneVista.Location;
+
+        }
     }
 }

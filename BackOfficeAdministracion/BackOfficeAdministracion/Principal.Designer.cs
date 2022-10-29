@@ -134,6 +134,7 @@
             this.btnGestionarTorneos.TabIndex = 3;
             this.btnGestionarTorneos.Text = "Gestionar Torneos";
             this.btnGestionarTorneos.UseVisualStyleBackColor = true;
+            this.btnGestionarTorneos.Click += new System.EventHandler(this.btnGestionarTorneos_Click);
             // 
             // paneGestionarEventos
             // 
