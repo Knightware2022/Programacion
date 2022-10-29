@@ -87,7 +87,7 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Ocurrió un error de red");
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show("Ocurrió un error inesperado. Verifique que los datos sean coherentes");
                     break;
             }
         }
@@ -260,9 +260,11 @@ namespace BackOfficeAdministracion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                encuentrosColectivos.idEncuentro = Convert.ToInt32(cmboxIDEvento.Text.Substring(3, (cmboxIDEvento.Text.IndexOf(" ") - 3)));
+
+            int id = 0;
+            if (int.TryParse(cmboxIDEvento.Text.Substring(3, (cmboxIDEvento.Text.IndexOf(" ") - 3)), out id)){
+                encuentrosColectivos.idEncuentro = id;
+
                 List<string> equiposEncuentro = new List<string>();
                 switch (Logica.DatosEncuentrosColectivos(encuentrosColectivos, equiposEncuentro))
                 {
@@ -275,7 +277,7 @@ namespace BackOfficeAdministracion
                         cmboxMinutos.Text = encuentrosColectivos.fechaComienzo.Minute.ToString();
                         cmboxHoraFinCole.Text = encuentrosColectivos.fechaFinaliza.Hour.ToString();
                         cmboxMinutoFinCole.Text = encuentrosColectivos.fechaFinaliza.Minute.ToString();
-                        cmboxDeportes.Text = encuentrosColectivos.deporteEncuentro;
+                        cmboxDeportes.Text = encuentrosColectivos.nombreDeporte;
                         cmboxEquiposenEncuentro.Items.Clear();
                         cmboxEquiposenEncuentro.Text = equiposEncuentro[0];
                         foreach (string nombre in equiposEncuentro)
@@ -344,11 +346,11 @@ namespace BackOfficeAdministracion
                         cmboxMinutos.Text = encuentrosColectivos.fechaComienzo.Minute.ToString();
                         cmboxHoraFinCole.Text = encuentrosColectivos.fechaFinaliza.Hour.ToString();
                         cmboxMinutoFinCole.Text = encuentrosColectivos.fechaFinaliza.Minute.ToString();
-                        cmboxDeportes.Text = encuentrosColectivos.deporteEncuentro;
+                        cmboxDeportes.Text = encuentrosColectivos.nombreDeporte;
                         break;
                 }
-            }
-            catch
+            }         
+            else
             {
                 MessageBox.Show("ID no es valido. El formato debe ser:\nID:<IDencuentro> <NombreEncuentro>");
             }
@@ -359,7 +361,7 @@ namespace BackOfficeAdministracion
             int idEncuentro = Convert.ToInt32(txtIDencuentroCole.Text);
             string nombre = cmboxEquiposenEncuentro.Text.Substring(0, cmboxEquiposenEncuentro.Text.IndexOf("/"));
             string categoria = cmboxEquiposenEncuentro.Text.Substring((cmboxEquiposenEncuentro.Text.IndexOf("/") + 1), (cmboxEquiposenEncuentro.Text.Length - (cmboxEquiposenEncuentro.Text.IndexOf("/") + 1)));
-            switch (Logica.quitarEquipoEncuentroColectivo(nombre, categoria, idEncuentro))
+            switch (Logica.quitarEquipoEncuentroColectivo(nombre, categoria, idEncuentro, encuentrosColectivos.deporteEncuentro))
             {
                 case 0:
                     MessageBox.Show("Equipo desvinculado exitosamente");
@@ -380,7 +382,7 @@ namespace BackOfficeAdministracion
             int idEncuentro = Convert.ToInt32(txtIDencuentroCole.Text);
             string nombre = cmboxEquiposenSistema.Text.Substring(0, cmboxEquiposenSistema.Text.IndexOf("/"));
             string categoria = cmboxEquiposenSistema.Text.Substring((cmboxEquiposenSistema.Text.IndexOf("/") + 1), (cmboxEquiposenSistema.Text.Length - (cmboxEquiposenSistema.Text.IndexOf("/") + 1)));
-            switch (Logica.AgregarEquipoEncuentroColectivo(nombre, categoria, idEncuentro))
+            switch (Logica.AgregarEquipoEncuentroColectivo(nombre, categoria, encuentrosColectivos))
             {
                 case 0:
                     this.refrescarEquiposEnEncuentro();
@@ -390,7 +392,7 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Error de conexion");
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado. Las causas pueden ser: \n      El equipo se encuentra en este evento \n      Ya participa en otro evento a la misma fecha y hora");
+                    MessageBox.Show("Error inesperado. Las causas pueden ser: \n      El equipo se encuentra en este evento \n      Ya participa en otro evento a la misma fecha y hora \n      El equipo no practica el deporte del evento");
                     break;
                 case 3:
                     MessageBox.Show("El equipo no tiene jugadores, no será agregado al evento");
@@ -446,7 +448,7 @@ namespace BackOfficeAdministracion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            switch (Logica.EliminarEncuentro(encuentrosColectivos.idEncuentro))
+            switch (Logica.EliminarEncuentro(encuentrosColectivos.idEncuentro, encuentrosColectivos.deporteEncuentro))
             {
                 case 0:
                     MessageBox.Show("Encuentro eliminado");
@@ -483,6 +485,7 @@ namespace BackOfficeAdministracion
                         cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
                         cmboxParticipantesIndiEncuentro.Items.Clear();
                         cmboxParticipantesIndiEncuentro.Text = nombresParticipante[0];
+                        cmboxDeporteIndi.Text = encuentrosIndividuales.nombreDeporte;
                         foreach (string nombre in nombresParticipante)
                         {
                             cmboxParticipantesIndiEncuentro.Items.Add(nombre);
@@ -555,6 +558,8 @@ namespace BackOfficeAdministracion
                         cmboxMinutoComienzaIndi.Text = encuentrosIndividuales.fechaComienzo.Minute.ToString();
                         cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
                         cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
+                        cmboxDeporteIndi.Text = encuentrosIndividuales.nombreDeporte;
+
                         break;
                 }
             }
@@ -567,7 +572,7 @@ namespace BackOfficeAdministracion
         {
             string nombre = cmboxParticipantesIndi.Text.Substring(0, cmboxParticipantesIndi.Text.IndexOf(" "));
             string apellido = cmboxParticipantesIndi.Text.Substring((cmboxParticipantesIndi.Text.IndexOf(" ") + 1), (cmboxParticipantesIndi.Text.Length - (cmboxParticipantesIndi.Text.IndexOf(" ") + 1)));
-            switch (Logica.AgregarParticipanteEncuentro(encuentrosIndividuales.idEncuentro, nombre, apellido))
+            switch (Logica.AgregarParticipanteEncuentro(encuentrosIndividuales.idEncuentro, encuentrosIndividuales.deporteEncuentro, nombre, apellido))
             {
                 case 0:
                     MessageBox.Show("Participante ingresado");
@@ -586,7 +591,7 @@ namespace BackOfficeAdministracion
         {
             string nombre = cmboxParticipantesIndiEncuentro.Text.Substring(0, cmboxParticipantesIndiEncuentro.Text.IndexOf(" "));
             string apellido = cmboxParticipantesIndiEncuentro.Text.Substring((cmboxParticipantesIndiEncuentro.Text.IndexOf(" ") + 1), (cmboxParticipantesIndiEncuentro.Text.Length - (cmboxParticipantesIndiEncuentro.Text.IndexOf(" ") + 1)));
-            switch (Logica.EliminarParticipanteEncuentro(encuentrosIndividuales.idEncuentro, nombre, apellido))
+            switch (Logica.EliminarParticipanteEncuentro(encuentrosIndividuales.idEncuentro, encuentrosIndividuales.deporteEncuentro,  nombre, apellido))
             {
                 case 0:
                     MessageBox.Show("Participante eliminado");
@@ -642,7 +647,7 @@ namespace BackOfficeAdministracion
             {
                 encuentrosIndividuales.idEncuentro = id;
 
-                switch (Logica.EliminarEncuentro(encuentrosIndividuales.idEncuentro))
+                switch (Logica.EliminarEncuentro(encuentrosIndividuales.idEncuentro, encuentrosIndividuales.deporteEncuentro))
                 {
                     case 0:
                         MessageBox.Show("Encuentro eliminado");

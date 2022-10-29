@@ -11,24 +11,26 @@ namespace BackOfficeAdministracion
         protected int _idEncuentro;
         protected DateTime _fechaComienzo;
         protected DateTime _fechaFinaliza;
-        protected string _deporteEncuentro;
+        protected int _deporteEncuentro;
         protected string _descripcionEncuentro;
-
+        protected string _nombreDeporte;
         public EncuentrosIndividuales()
         {
             _idEncuentro = 0;
             _fechaComienzo = new DateTime();
             _fechaFinaliza = new DateTime();
             _descripcionEncuentro = null;
-            _deporteEncuentro = null;
+            _deporteEncuentro = 0;
+            _nombreDeporte = null;
         }
-        public EncuentrosIndividuales(int id, DateTime fCom, DateTime fFin, string descripcion, string depo)
+        public EncuentrosIndividuales(int id, DateTime fCom, DateTime fFin, string descripcion, string depo, int idDepo)
         {
             _idEncuentro = id;
             _fechaComienzo = fCom;
             _fechaFinaliza = fFin;
             _descripcionEncuentro = descripcion;
-            _deporteEncuentro = depo;
+            _deporteEncuentro = idDepo;
+            _nombreDeporte = depo;
 
         }
         public int idEncuentro
@@ -51,12 +53,16 @@ namespace BackOfficeAdministracion
             get { return _fechaFinaliza; }
             set { _fechaFinaliza = value; }
         }
-        public string deporteEncuentro
+        public int deporteEncuentro
         {
             get { return _deporteEncuentro; }
             set { _deporteEncuentro = value; }
         }
 
-    
-}
+        public string nombreDeporte
+        {
+            get { return _nombreDeporte; }
+            set { _nombreDeporte = value; }
+        }
+    }
 }

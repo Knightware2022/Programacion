@@ -534,7 +534,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
             }
@@ -600,9 +599,6 @@ namespace BackOfficeAdministracion
             object cantFilas;
             string sql;
             bool bandera = true;
-            string contraseña = "";
-            Encriptacion e = new Encriptacion();
-            contraseña = e.encriptar(contraseña);
             ADODB.Recordset rs = new ADODB.Recordset();
             if (_cn.State == 0)//si esta cerrada
             {
@@ -842,7 +838,7 @@ namespace BackOfficeAdministracion
             }
             rs = null;
             return devolver;
-        }
+        } 
         public static byte cargarDatosEquipo(Equipos equipo, Deportes d) {
             byte devolver = 0;
             object cantFilas;
@@ -915,7 +911,8 @@ namespace BackOfficeAdministracion
                         return devolver = 2;
                     }
                     equipo.categoria = Convert.ToString(rs.Fields[0].Value);
-                    sql = "select d.nombre from Deportes as d, Equipos as e, Practican as p where d.idDeporte = p.idDeporte AND p.idEquipo = e.idEquipo AND e.idEquipo =" + equipo.id;
+
+                    sql = "select idDeporte from Equipos where idEquipo=" + equipo.id;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -924,25 +921,18 @@ namespace BackOfficeAdministracion
                     {
                         return devolver = 2;
                     }
-                    if (rs.RecordCount != 0)
+                    equipo.idDeporte = Convert.ToInt32(rs.Fields[0].Value);
+                    sql = "select d.nombre from Deportes as d, Equipos as e where d.idDeporte = " + equipo.idDeporte;
+                    try
                     {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
                         d.nombre = Convert.ToString(rs.Fields[0].Value);
-                    }
-                    else {
-
-                        d.nombre = "NO";
-                        sql = "insert into Practican(idEquipo, idDeporte) values (" + equipo.id + ", (select idDeporte from Deportes where nombre ='Futbol'))";
-                        try
-                        {
-                            rs = _cn.Execute(sql, out cantFilas);
-                        }
-                        catch
-                        {
-                            return devolver = 6;
-                        }
-                    }
-
-
+                    
                 }
             }
             rs = null;
@@ -1060,7 +1050,7 @@ namespace BackOfficeAdministracion
             return devolver;
 
         }
-        public static byte añadirJugadoraEquipo(int idEquipo, int idJugador) {
+        public static byte añadirJugadoraEquipo(int idEquipo, int idJugador, int idDeporte) {
             byte devolver = 0;
             object cantFilas;
             string sql;
@@ -1071,7 +1061,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Forman(idJugador, idEquipo) values ( " + idJugador + ", " + idEquipo + ")";
+                sql = "insert into Forman(idJugador, idEquipo, idDeporte) values ( " + idJugador + ", " + idEquipo +", "+  + idDeporte+")";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1116,7 +1106,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte quitarJugadorEquipo(int idEquipo, int idJugador)
+        public static byte quitarJugadorEquipo(int idEquipo, int idJugador, int idDeporte)
         {
             byte devolver = 0;
             object cantFilas;
@@ -1128,7 +1118,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Forman where idJugador=" + idJugador + " AND idEquipo=" + idEquipo;
+                sql = "delete from Forman where idJugador=" + idJugador + " AND idEquipo=" + idEquipo + "AND IdDeporte=" + idDeporte;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1142,7 +1132,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte crearEquipo(Equipos equipo, Deportes d)
+        public static byte crearEquipo(Equipos equipo)
         {
             byte devolver = 0;
             object cantFilas;
@@ -1154,16 +1144,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Equipos(idEquipo, categoria, logo, nombre, pais) values( " + equipo.id + ", '" + equipo.categoria + "' ,'" + equipo.logo + "' ,'" + equipo.nombre + "' ,'" + equipo.pais + "')";
-                try
-                {
-                    rs = _cn.Execute(sql, out cantFilas);
-                }
-                catch
-                {
-                    return devolver = 2;
-                }
-                sql = "insert into Practican(idEquipo, idDeporte) values (" + equipo.id + ", (select idDeporte from Deportes where nombre ='" + d.nombre + "))";
+                sql = "insert into Equipos(idDeporte, idEquipo, categoria, logo, nombre, pais) values( "+equipo.idDeporte+", " + equipo.id + ", '" + equipo.categoria + "' ,'" + equipo.logo + "' ,'" + equipo.nombre + "' ,'" + equipo.pais + "')";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -1443,58 +1424,15 @@ namespace BackOfficeAdministracion
 
                     return devolver = 2;
                 }
-
-                sql = "select d.nombre from Deportes as d, Equipos as e, Practican as p where d.idDeporte = p.idDeporte AND p.idEquipo = e.idEquipo AND e.idEquipo =" + equipo.id;
+                sql = "update Equipos set idDeporte='" + equipo.idDeporte + "' where idEquipo=" + equipo.id;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
                 }
                 catch
                 {
+
                     return devolver = 2;
-                }
-                if (rs.RecordCount == 0)
-                {
-                    int idDeporte;
-                    sql = "select d.idDeporte from Deportes as d where d.nombre ='" + deporte + "'";
-                    try
-                    {
-                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
-                    }
-                    catch
-                    {
-                        return devolver = 2;
-                    }
-                    if (rs.RecordCount == 0)
-                    {
-                        return 5; //no existe ese deporte
-                    }
-                    else {
-                        idDeporte = Convert.ToInt32(rs.Fields[0].Value);
-                        sql = "insert into Practican(idEquipo, idDeporte) values (" + equipo.id + ", " + idDeporte + ")";
-                        try
-                        {
-                            rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
-                        }
-                        catch
-                        {
-
-                            return devolver = 2;
-                        }
-                    }
-                }
-                else
-                {
-                    sql = "update Practican set idDeporte=(select idDeporte from Deportes where nombre='" + deporte + "') where idEquipo=" + equipo.id;
-                    try
-                    {
-                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
-                    }
-                    catch
-                    {
-
-                        return devolver = 2;
-                    }
                 }
 
 
@@ -1503,7 +1441,7 @@ namespace BackOfficeAdministracion
 
             return devolver;
         }
-        public static byte BorrarEquipo(int idEquipo)
+        public static byte BorrarEquipo(int idEquipo, int idDeporte)
         {
             byte devolver = 0;
             object cantFilas;
@@ -1515,7 +1453,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Equipos where idEquipo=" + idEquipo;
+                sql = "delete from Equipos where idEquipo=" + idEquipo + " AND idDeporte=" + idDeporte;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1596,7 +1534,7 @@ namespace BackOfficeAdministracion
                     deporte.id = Convert.ToInt32(rs.Fields[0].Value);
                     deporte.categoria = Convert.ToString(rs.Fields[1].Value);
                     deporte.nombre = Convert.ToString(rs.Fields[2].Value);
-                    sql = "select e.nombre, e.categoria from Practican as p, Equipos as e, Deportes as d where p.idEquipo=e.idEquipo AND d.idDeporte=p.idDeporte AND d.idDeporte =" + deporte.id;
+                    sql = "select e.nombre, e.categoria from Equipos as e where e.idDeporte =" + deporte.id;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1705,33 +1643,6 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte BorrarEquipoParticipaDeporte(string nombre, string categoria, int idDeporte)
-        {
-            byte devolver = 0;
-            object cantFilas;
-            string sql;
-            ADODB.Recordset rs = new ADODB.Recordset();
-            if (_cn.State == 0)//si esta cerrada
-            {
-                devolver = 1;
-            }
-            else
-            {
-                sql = "delete from Practican where idDeporte =" + idDeporte + " AND idEquipo= (select e.idEquipo from Practican as p, Equipos as e where p.idEquipo=e.idEquipo AND p.idDeporte= " + idDeporte + " AND e.nombre='" + nombre + "' AND e.categoria='" + categoria + "')";
-                try
-                {
-                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
-                }
-                catch
-                {
-                    throw;
-                    return devolver = 2;
-                }
-
-            }
-            rs = null;
-            return devolver;
-        }
         public static byte actualizarDeporte(Deportes deporte)
         {
             byte devolver = 0;
@@ -1824,6 +1735,7 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
+                    throw;
                     return devolver = 2;
                 }
                 if (rs.RecordCount == 0)
@@ -1832,17 +1744,20 @@ namespace BackOfficeAdministracion
                 }
                 else
                 {
-                    encuentro.idEncuentro = Convert.ToInt32(rs.Fields[0].Value);
-                    encuentro.fechaComienzo = Convert.ToDateTime(rs.Fields[1].Value);
-                    encuentro.fechaFinaliza = Convert.ToDateTime(rs.Fields[2].Value);
-                    encuentro.descripcion = Convert.ToString(rs.Fields[3].Value);
-                    sql = "Select d.nombre from Deportes as d, tienenEncuentros as t where d.idDeporte = t.idDeporte AND idEncuentro=" + encuentro.idEncuentro;
+                    encuentro.deporteEncuentro = Convert.ToInt32(rs.Fields[0].Value);
+                    encuentro.idEncuentro = Convert.ToInt32(rs.Fields[1].Value);
+                    encuentro.fechaComienzo = Convert.ToDateTime(rs.Fields[2].Value);
+                    encuentro.fechaFinaliza = Convert.ToDateTime(rs.Fields[3].Value);
+                    encuentro.descripcion = Convert.ToString(rs.Fields[4].Value);
+                    sql = "Select d.nombre from Deportes as d where idDeporte=" + encuentro.deporteEncuentro;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
                     }
                     catch
                     {
+                        throw;
+
                         return devolver = 2;
                     }
                     if (rs.RecordCount == 0)
@@ -1851,7 +1766,7 @@ namespace BackOfficeAdministracion
                     }
                     else
                     {
-                        encuentro.deporteEncuentro = Convert.ToString(rs.Fields[0].Value);
+                        encuentro.nombreDeporte = Convert.ToString(rs.Fields[0].Value);
                     }
                     sql = "select distinct e.nombre, e.categoria from Equipos as e, Compite as c where c.idEncuentro=" + encuentro.idEncuentro + " AND c.idEquipo=e.idEquipo";
                     try
@@ -1860,6 +1775,8 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
+                        throw;
+
                         return devolver = 2;
                     }
                     if (rs.RecordCount == 0)
@@ -1918,7 +1835,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte quitarEquipoEncuentroColectivo(string nombreEquipo, string categoriaEquipo, int idEncuentro)
+        public static byte quitarEquipoEncuentroColectivo(string nombreEquipo, string categoriaEquipo, int idEncuentro, int idDeporte)
         {
             byte devolver = 0;
             object cantFilas;
@@ -1930,7 +1847,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Compite where idEncuentro="+ idEncuentro+" AND idEquipo=(select idEquipo from Equipos as e where e.nombre='"+nombreEquipo +"' AND e.categoria='"+categoriaEquipo+"')";
+                sql = "delete from Compite where idEncuentro="+ idEncuentro+" AND idEquipo=(select idEquipo from Equipos as e where e.nombre='"+nombreEquipo +"' AND e.categoria='"+categoriaEquipo+"') AND idDeporteEncuentro=idDeporteEquipo=" + idDeporte;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1943,9 +1860,9 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte AgregarEquipoEncuentroColectivo(string nombreEquipo, string categoriaEquipo, int idEncuentro)
+        public static byte AgregarEquipoEncuentroColectivo(string nombreEquipo, string categoriaEquipo, EncuentrosColectivos en)
         {
-            int idEquipo = 0;
+            int idEquipo = 0, idDeporteEquipo = 0;
             ArrayList jugadoresEquipo = new ArrayList();
             byte devolver = 0;
             object cantFilas;
@@ -1957,7 +1874,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "select j.idJugador, f.idEquipo from Jugador as j, Forman as f  where j.idJugador = f.idJugador AND f.idEquipo=(select idEquipo from Equipos as e2 where e2.nombre='" +nombreEquipo+"' AND e2.categoria='"+ categoriaEquipo+"')";
+                sql = "select j.idJugador, f.idEquipo, f.idDeporte from Jugador as j, Forman as f  where j.idJugador = f.idJugador AND f.idEquipo=(select idEquipo from Equipos as e2 where e2.nombre='" +nombreEquipo+"' AND e2.categoria='"+ categoriaEquipo+"')";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); 
@@ -1973,6 +1890,8 @@ namespace BackOfficeAdministracion
                 else
                 {
                     idEquipo = Convert.ToInt32(rs.Fields[1].Value);
+                    idDeporteEquipo = Convert.ToInt32(rs.Fields[2].Value);
+
                     while (!rs.EOF)
                     {
                         jugadoresEquipo.Add(Convert.ToString(rs.Fields[0].Value));
@@ -1980,7 +1899,7 @@ namespace BackOfficeAdministracion
                     }
                     for (int i = 0; i < jugadoresEquipo.Count; i++)
                     {
-                        sql = "insert into Compite(idEncuentro, idEquipo, idJugador) values("+ idEncuentro+", " +idEquipo +", "+jugadoresEquipo[i] +")";
+                        sql = "insert into Compite(idDeporteEncuentro, idEncuentro,idEquipo, idJugador, idDeporteEquipo) values(" +en.deporteEncuentro +", "+ en.idEncuentro+", " +idEquipo +", "+jugadoresEquipo[i] +", " + idDeporteEquipo + ")";
                         try
                         {
                             rs = _cn.Execute(sql, out cantFilas);
@@ -2178,7 +2097,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte InsertarenNotifica(int idEncuentro, int idIncidencia, int minuto, string nombreJ, string apellidoJ, string ocurrencia)
+        public static byte InsertarenNotifica(int idEncuentro, int idDeporteEncuentro, int idIncidencia, int minuto, string nombreJ, string apellidoJ, string ocurrencia)
         {
             byte devolver = 0;
             object cantFilas;
@@ -2250,7 +2169,7 @@ namespace BackOfficeAdministracion
 
                         return devolver = 3;
                     }
-                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro) values(" + idIncidencia + ", " + idRandom + ", " + idEncuentro + ")";
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", " + idRandom + ", " + idEncuentro + ", "+ idDeporteEncuentro+")";
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2273,7 +2192,7 @@ namespace BackOfficeAdministracion
 
                         return devolver = 3;
                     }
-                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'), " + idEncuentro + ")";
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'), " + idEncuentro + ", " + idDeporteEncuentro+")";
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2323,7 +2242,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte insertarAlineacion(int idEncuentro, string nombreJ, string apellidoJ, string posicion, int idAlineacion)
+        public static byte insertarAlineacion(int idEncuentro, int idDeporteEncuentro, string nombreJ, string apellidoJ, string posicion, int idAlineacion)
         {
             byte devolver = 0;
             object cantFilas;
@@ -2335,7 +2254,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = $"insert into Alineacion(idAlineacion,Poscion,idJugador) values( {idAlineacion} , '" + posicion + "', " + "(select j.idJugador from Jugador as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
+                sql = "insert into Alineacion(idAlineacion,Poscion,idJugador) values("+ idAlineacion + ", '" + posicion + "', " + "(select j.idJugador from Jugador as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -2356,7 +2275,7 @@ namespace BackOfficeAdministracion
                 }
                 if (rs.RecordCount == 0)
                 {
-                    sql = "insert into Utiliza(idAlineacion,idEncuentro) values(" + idAlineacion + ", " + idEncuentro + ")";
+                    sql = "insert into Utiliza(idAlineacion, idEncuentro, idDeporte)) values(" + idAlineacion + ", " + idEncuentro + ", " +idDeporteEncuentro+")";
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2369,7 +2288,7 @@ namespace BackOfficeAdministracion
                 else
                 {
                     int idAlineacionVieja = Convert.ToInt32(rs.Fields[0].Value);
-                    sql = "delete from Utiliza where idEncuentro=" + idEncuentro + " AND idAlineacion=" + idAlineacionVieja;
+                    sql = "delete from Utiliza where idEncuentro=" + idEncuentro + " AND idAlineacion=" + idAlineacionVieja + " AND idDeporte="+idDeporteEncuentro;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2378,7 +2297,7 @@ namespace BackOfficeAdministracion
                     {
                         return devolver = 2;
                     }
-                    sql = "insert into Utiliza (idEncuentro, idAlineacion) values (" + idEncuentro + ", " + idAlineacion + ")";
+                    sql = "insert into Utiliza (idEncuentro, idAlineacion, idDeporte) values (" + idEncuentro + ", " + idAlineacion + ", " + idDeporteEncuentro+")";
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2435,7 +2354,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Encuentros(idEncuentro, fechaComienzo, fechaFinaliza, descripcionEncuentro) values("+ encuentros.idEncuentro+", '" + fechaComienzo + "', '"+ fechaFin + "', '"+ encuentros.descripcion+"')"; 
+                sql = "insert into Encuentros(idDeporte, idEncuentro, fechaComienzo, fechaFinaliza, descripcionEncuentro) values("+encuentros.deporteEncuentro+", "+ encuentros.idEncuentro+", '" + fechaComienzo + "', '"+ fechaFin + "', '"+ encuentros.descripcion+"')"; 
                 try
                 {
 
@@ -2445,7 +2364,7 @@ namespace BackOfficeAdministracion
                 {
                     return devolver = 2;
                 }
-                sql = "insert into Competencia_Colectiva(idEncuentro) values(" + encuentros.idEncuentro + ")";
+                sql = "insert into Competencia_Colectiva(idEncuentro, idDeporte) values(" + encuentros.idEncuentro + ", "+ encuentros.deporteEncuentro+")";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -2458,7 +2377,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte EliminarEncuentro(int id)
+        public static byte EliminarEncuentro(int idEncuentro, int idDeporte)
         {
             byte devolver = 0;
             object cantFilas;
@@ -2470,7 +2389,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Encuentros where idEncuentro=" + id;
+                sql = "delete from Encuentros where idEncuentro=" + idEncuentro + "AND idDeporte=" + idDeporte;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -2592,11 +2511,12 @@ namespace BackOfficeAdministracion
                 }
                 else
                 {
-                    encuentro.idEncuentro = Convert.ToInt32(rs.Fields[0].Value);
-                    encuentro.fechaComienzo = Convert.ToDateTime(rs.Fields[1].Value);
-                    encuentro.fechaFinaliza = Convert.ToDateTime(rs.Fields[2].Value);
-                    encuentro.descripcion = Convert.ToString(rs.Fields[3].Value);
-                    sql = "Select d.nombre from Deportes as d, tienenEncuentros as t where d.idDeporte = t.idDeporte AND idEncuentro=" + encuentro.idEncuentro;
+                    encuentro.deporteEncuentro = Convert.ToInt32(rs.Fields[0].Value);
+                    encuentro.idEncuentro = Convert.ToInt32(rs.Fields[1].Value);
+                    encuentro.fechaComienzo = Convert.ToDateTime(rs.Fields[2].Value);
+                    encuentro.fechaFinaliza = Convert.ToDateTime(rs.Fields[3].Value);
+                    encuentro.descripcion = Convert.ToString(rs.Fields[4].Value);
+                    sql = "Select d.nombre from Deportes as d where d.idDeporte="+ encuentro.deporteEncuentro;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -2606,16 +2526,9 @@ namespace BackOfficeAdministracion
                         throw;
 
                         return devolver = 2;
-                    }
-                    if (rs.RecordCount == 0)
-                    {
-                        devolver = 4;
-                    }
-                    else
-                    {
-                        encuentro.deporteEncuentro = Convert.ToString(rs.Fields[0].Value);
-                    }
-                    sql = "select distinct p.nombre, p.apellido from Participa as parti, Participantes as p where parti.idEncuentro=" + encuentro.idEncuentro + " AND p.idParticipante=parti.idParticipante";
+                    }         
+                        encuentro.nombreDeporte = Convert.ToString(rs.Fields[0].Value);                   
+                    sql = "select distinct p.nombre, p.apellido from Participa as parti, Participantes as p where parti.idEncuentro=" + encuentro.idEncuentro + " AND p.idParticipante=parti.idParticipante AND parti.idDeporteEncuentro=parti.idDeporteParticipante=" + encuentro.deporteEncuentro;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2682,7 +2595,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte AgregarParticipanteEncuentro(int idEncuentro, string nombre, string apellido)
+        public static byte AgregarParticipanteEncuentro(int idEncuentro, int idDeporteEncuentro, string nombre, string apellido)
         {
             byte devolver = 0;
             object cantFilas;
@@ -2694,7 +2607,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Participa(idEncuentro, idParticipante) values ("+ idEncuentro +",(select idParticipante from Participantes where nombre='"+nombre+ "' AND apellido='"+ apellido +"' ))";
+                sql = "insert into Participa(idDeporteEncuentro,idEncuentro,idParticipante, idDeporteParticipante) values (" + idDeporteEncuentro +", "+ idEncuentro + ",(select idDeporte from Participantes where nombre='" + nombre + "' AND apellido='" + apellido + "' ))";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -2750,8 +2663,8 @@ namespace BackOfficeAdministracion
             }
             rs = null;
             return devolver;
-        }
-        public static byte EliminarParticipanteEncuentro(int idEncuentro, string nombre, string apellido)
+        }      
+        public static byte EliminarParticipanteEncuentro(int idEncuentro, int idDeporteEncuentro, string nombre, string apellido)
         {
             byte devolver = 0;
             object cantFilas;
@@ -2763,7 +2676,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Participa where idEncuentro=" + idEncuentro + " AND idParticipante = (select idParticipante from Participantes where nombre='" + nombre + "' AND apellido='" + apellido + "' )";
+                sql = "delete from Participa where idEncuentro=" + idEncuentro + " AND idParticipante = (select idParticipante from Participantes where nombre='" + nombre + "' AND apellido='" + apellido + "' ) AND idDeporteEncuentro="+ idDeporteEncuentro;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -2834,7 +2747,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Encuentros(idEncuentro, fechaComienzo, fechaFinaliza, descripcionEncuentro) values(" + encuentros.idEncuentro + ", '" + fechaComienzo + "', '" + fechaFin + "', '" + encuentros.descripcion + "')";
+                sql = "insert into Encuentros(idDeporte, idEncuentro, fechaComienzo, fechaFinaliza, descripcionEncuentro) values("+encuentros.deporteEncuentro + ", " + encuentros.idEncuentro + ", '" + fechaComienzo + "', '" + fechaFin + "', '" + encuentros.descripcion + "')";
                 try
                 {
 
@@ -2844,7 +2757,7 @@ namespace BackOfficeAdministracion
                 {
                     return devolver = 2;
                 }
-                sql = "insert into Competencia_Individual(idEncuentro) values(" + encuentros.idEncuentro + ")";
+                sql = "insert into Competencia_Individual(idDeporte, idEncuentro) values("+encuentros.deporteEncuentro +", "+ encuentros.idEncuentro + ")";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);

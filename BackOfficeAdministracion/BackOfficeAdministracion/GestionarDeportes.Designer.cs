@@ -71,7 +71,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnMcancelar = new System.Windows.Forms.Button();
             this.paneModificar = new System.Windows.Forms.Panel();
-            this.btnQuitarEquipoDeporte = new System.Windows.Forms.Button();
             this.cmboxEquiposDeporte = new System.Windows.Forms.ComboBox();
             this.lblEquiposDeporte = new System.Windows.Forms.Label();
             this.txtIDDeporte = new System.Windows.Forms.TextBox();
@@ -685,7 +684,6 @@
             // paneModificar
             // 
             this.paneModificar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneModificar.Controls.Add(this.btnQuitarEquipoDeporte);
             this.paneModificar.Controls.Add(this.cmboxEquiposDeporte);
             this.paneModificar.Controls.Add(this.lblEquiposDeporte);
             this.paneModificar.Controls.Add(this.txtIDDeporte);
@@ -701,16 +699,6 @@
             this.paneModificar.Size = new System.Drawing.Size(543, 348);
             this.paneModificar.TabIndex = 1;
             this.paneModificar.Paint += new System.Windows.Forms.PaintEventHandler(this.paneModificar_Paint);
-            // 
-            // btnQuitarEquipoDeporte
-            // 
-            this.btnQuitarEquipoDeporte.Location = new System.Drawing.Point(456, 163);
-            this.btnQuitarEquipoDeporte.Name = "btnQuitarEquipoDeporte";
-            this.btnQuitarEquipoDeporte.Size = new System.Drawing.Size(31, 28);
-            this.btnQuitarEquipoDeporte.TabIndex = 22;
-            this.btnQuitarEquipoDeporte.Text = "-";
-            this.btnQuitarEquipoDeporte.UseVisualStyleBackColor = true;
-            this.btnQuitarEquipoDeporte.Click += new System.EventHandler(this.btnQuitarEquipoDeporte_Click);
             // 
             // cmboxEquiposDeporte
             // 
@@ -1228,7 +1216,6 @@
         private System.Windows.Forms.Button btnRefrescarDeportes;
         private System.Windows.Forms.TextBox txtIDDeporte;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnQuitarEquipoDeporte;
         private System.Windows.Forms.ComboBox cmboxEquiposDeporte;
         private System.Windows.Forms.Label lblEquiposDeporte;
         private System.Windows.Forms.Button btnCrearDeporte;

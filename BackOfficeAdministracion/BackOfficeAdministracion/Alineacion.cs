@@ -175,7 +175,7 @@ namespace BackOfficeAdministracion
                 }
 
             }
-            switch (Logica.insertarAlineacion(GestionarEventos.encuentrosColectivos.idEncuentro, nombre, apelido, posicion, idRandom)) {
+            switch (Logica.insertarAlineacion(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, nombre, apelido, posicion, idRandom)) {
                 case 0:
                     MessageBox.Show("Jugador asignado exitosamente");
                   

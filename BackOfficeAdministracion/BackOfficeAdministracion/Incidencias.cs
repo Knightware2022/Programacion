@@ -19,7 +19,7 @@ namespace BackOfficeAdministracion
 
         private void Incidencias_Load(object sender, EventArgs e)
         {
-
+            this.refrescarEquiposCargados();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -35,7 +35,6 @@ namespace BackOfficeAdministracion
             {
                 case 0:
                     cmboxEquipo.Items.Clear();
-                    cmboxEquipo.Text = null;
                     cmboxEquipo.Text = nombresEquipos[0];
                     foreach (string nombre in nombresEquipos)
                     {
@@ -62,7 +61,6 @@ namespace BackOfficeAdministracion
             {
                 case 0:
                     cmboxJugador.Items.Clear();
-                    cmboxJugador.Text = null;
                     cmboxJugador.Text = nombresJugadores[0];
                     foreach (string nombre in nombresJugadores)
                     {
@@ -142,7 +140,7 @@ namespace BackOfficeAdministracion
                             break;
                     }
                 }
-                switch (Logica.InsertarenNotifica(GestionarEventos.encuentrosColectivos.idEncuentro, idRandom, minuto, nombre, apelido, ocurrencia))
+                switch (Logica.InsertarenNotifica(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, idRandom, minuto, nombre, apelido, ocurrencia))
                 {
                     case 0:
                         MessageBox.Show("Se registro la incidencia exitosamente");
