@@ -1759,15 +1759,8 @@ namespace BackOfficeAdministracion
                         throw;
 
                         return devolver = 2;
-                    }
-                    if (rs.RecordCount == 0)
-                    {
-                        devolver = 4;
-                    }
-                    else
-                    {
-                        encuentro.nombreDeporte = Convert.ToString(rs.Fields[0].Value);
-                    }
+                    }                    
+                    encuentro.nombreDeporte = Convert.ToString(rs.Fields[0].Value); 
                     sql = "select distinct e.nombre, e.categoria from Equipos as e, Compite as c where c.idEncuentro=" + encuentro.idEncuentro + " AND c.idEquipo=e.idEquipo";
                     try
                     {
@@ -2766,6 +2759,217 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte cargarNombreTorneosColectivos(List<string> listaTorneosColectivos)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select t.idTorneo, t.nombreTorneo from Torneos as t, torneosColectivos as tc where t.idTorneo = tc.idTorneo";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        listaTorneosColectivos.Add("ID:" + Convert.ToString(rs.Fields[0].Value) + " -" + Convert.ToString(rs.Fields[1].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte datosTorneosColectivos(Torneos torneo, List<string> equiposenEncuentro)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "Select t.* from Torneos as t, torneosColectivos as tc where t.idTorneo=" + torneo.idTorneo +" AND t.idTorneo=tc.idTorneo";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); 
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    sql = "Select * from Torneos where idTorneo=" + torneo.idTorneo ;
+
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 2;
+                    }
+                    if (rs.RecordCount == 0)
+                    {
+                        devolver = 3;
+                    }
+                    else {
+                        devolver = 6;
+                    }
+                }
+                else
+                {
+                    torneo.idTorneo = Convert.ToInt32(rs.Fields[0].Value);
+                    torneo.idDeporteTorneo = Convert.ToInt32(rs.Fields[1].Value);
+                    torneo.fechaComienzo = Convert.ToDateTime(rs.Fields[2].Value);
+                    torneo.fechaFinaliza = Convert.ToDateTime(rs.Fields[3].Value);
+                    torneo.nombreTorneo = Convert.ToString(rs.Fields[4].Value);
+                    sql = "Select d.nombre from Deportes as d where idDeporte=" + torneo.idDeporteTorneo;
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 2;
+                    }
+                    
+                        torneo.nombreDeporte = Convert.ToString(rs.Fields[0].Value);
+                    
+                    sql = "select distinct e.nombre, e.categoria from Equipos as e, torneosTienenEncuentrosEquipos as tc where tc.idTorneo=" + torneo.idTorneo + " AND tc.idDeporteTorneo=" + torneo.idDeporteTorneo + " AND tc.idEquipo = e.idEquipo";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 2;
+                    }
+                    if (rs.RecordCount == 0)
+                    {
+                        devolver = 5;
+                    }
+                    else
+                    {
+                        while (!rs.EOF)
+                        {
+                            equiposenEncuentro.Add((Convert.ToString(rs.Fields[0].Value) + "/" + Convert.ToString(rs.Fields[1].Value)));
+                            rs.MoveNext();
+                        }
+                    }
+
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+
+        public static byte ActualizarTorneoColectivo(Torneos torneos, string fechaC, string fechaF)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "update Torneos set fechaComienzo='" + fechaC + "' where idTorneo=" + torneos.idTorneo;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                sql = "update Torneos set fechaFinalizado='" + fechaF + "' where idTorneo=" + torneos.idTorneo;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                sql = "update Torneos set nombreTorneo='" + torneos.nombreTorneo + "' where idTorneo=" + torneos.idTorneo;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte insertarTorneoColectivo(Torneos torneo, string fechaComienzo, string fechaFin)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Torneos(idDeporte, idTorneo, fechaComienzo, fechaFinalizado, nombreTorneo) values( (select idDeporte from Deportes where nombre="+torneo.nombreTorneo + "), " + torneo.idTorneo + ", '" + fechaComienzo + "', '" + fechaFin + "', '" + torneo.nombreTorneo + "')";
+                try
+                {
+
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                sql = "insert into torneosColectivos(idTorneo, idDeporte) values(" + torneo.idTorneo + ", (select idDeporte from Deportes where nombre = "+torneo.nombreTorneo +  "))";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+
                     return devolver = 2;
                 }
             }

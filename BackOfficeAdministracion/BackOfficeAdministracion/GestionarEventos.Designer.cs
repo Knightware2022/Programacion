@@ -127,9 +127,9 @@
             this.tbpgModificar.Controls.Add(this.paneModificar);
             this.tbpgModificar.Controls.Add(this.paneModificarEvento);
             this.tbpgModificar.Location = new System.Drawing.Point(4, 26);
-            this.tbpgModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpgModificar.Margin = new System.Windows.Forms.Padding(2);
             this.tbpgModificar.Name = "tbpgModificar";
-            this.tbpgModificar.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpgModificar.Padding = new System.Windows.Forms.Padding(2);
             this.tbpgModificar.Size = new System.Drawing.Size(572, 589);
             this.tbpgModificar.TabIndex = 1;
             this.tbpgModificar.Text = "A/B/M eventos por equipos";
@@ -144,7 +144,7 @@
             this.paneBotones.Controls.Add(this.btnAceptar);
             this.paneBotones.Controls.Add(this.btnCancelar);
             this.paneBotones.Location = new System.Drawing.Point(18, 464);
-            this.paneBotones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneBotones.Margin = new System.Windows.Forms.Padding(2);
             this.paneBotones.Name = "paneBotones";
             this.paneBotones.Size = new System.Drawing.Size(539, 112);
             this.paneBotones.TabIndex = 5;
@@ -153,7 +153,7 @@
             // 
             this.btnCrearEventoColectivo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCrearEventoColectivo.Location = new System.Drawing.Point(178, 63);
-            this.btnCrearEventoColectivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrearEventoColectivo.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearEventoColectivo.Name = "btnCrearEventoColectivo";
             this.btnCrearEventoColectivo.Size = new System.Drawing.Size(160, 35);
             this.btnCrearEventoColectivo.TabIndex = 21;
@@ -165,7 +165,7 @@
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Location = new System.Drawing.Point(283, 15);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(89, 35);
             this.btnEliminar.TabIndex = 19;
@@ -177,7 +177,7 @@
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCerrar.Location = new System.Drawing.Point(413, 15);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(89, 35);
             this.btnCerrar.TabIndex = 2;
@@ -189,7 +189,7 @@
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.Location = new System.Drawing.Point(28, 15);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(89, 35);
             this.btnAceptar.TabIndex = 17;
@@ -201,7 +201,7 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.Location = new System.Drawing.Point(146, 15);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(89, 35);
             this.btnCancelar.TabIndex = 18;
@@ -241,7 +241,7 @@
             this.paneModificar.Controls.Add(this.dtimeFechaComienza);
             this.paneModificar.Controls.Add(this.lblFechaComienzo);
             this.paneModificar.Location = new System.Drawing.Point(18, 90);
-            this.paneModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneModificar.Margin = new System.Windows.Forms.Padding(2);
             this.paneModificar.Name = "paneModificar";
             this.paneModificar.Size = new System.Drawing.Size(539, 370);
             this.paneModificar.TabIndex = 4;
@@ -353,7 +353,7 @@
             "59",
             "00"});
             this.cmboxMinutoFinCole.Location = new System.Drawing.Point(374, 268);
-            this.cmboxMinutoFinCole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxMinutoFinCole.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxMinutoFinCole.Name = "cmboxMinutoFinCole";
             this.cmboxMinutoFinCole.Size = new System.Drawing.Size(66, 25);
             this.cmboxMinutoFinCole.TabIndex = 51;
@@ -388,7 +388,7 @@
             "23",
             "00"});
             this.cmboxHoraFinCole.Location = new System.Drawing.Point(247, 271);
-            this.cmboxHoraFinCole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxHoraFinCole.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxHoraFinCole.Name = "cmboxHoraFinCole";
             this.cmboxHoraFinCole.Size = new System.Drawing.Size(66, 25);
             this.cmboxHoraFinCole.TabIndex = 50;
@@ -409,7 +409,7 @@
             // 
             this.btnAlineacion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAlineacion.Location = new System.Drawing.Point(282, 334);
-            this.btnAlineacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlineacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlineacion.Name = "btnAlineacion";
             this.btnAlineacion.Size = new System.Drawing.Size(122, 35);
             this.btnAlineacion.TabIndex = 48;
@@ -446,7 +446,7 @@
             // dtimeFechaFinaliza
             // 
             this.dtimeFechaFinaliza.Location = new System.Drawing.Point(249, 241);
-            this.dtimeFechaFinaliza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtimeFechaFinaliza.Margin = new System.Windows.Forms.Padding(2);
             this.dtimeFechaFinaliza.Name = "dtimeFechaFinaliza";
             this.dtimeFechaFinaliza.Size = new System.Drawing.Size(242, 23);
             this.dtimeFechaFinaliza.TabIndex = 44;
@@ -466,7 +466,7 @@
             // 
             this.btnIncidencias.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnIncidencias.Location = new System.Drawing.Point(123, 334);
-            this.btnIncidencias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIncidencias.Margin = new System.Windows.Forms.Padding(2);
             this.btnIncidencias.Name = "btnIncidencias";
             this.btnIncidencias.Size = new System.Drawing.Size(122, 35);
             this.btnIncidencias.TabIndex = 40;
@@ -561,7 +561,7 @@
             "59",
             "00"});
             this.cmboxMinutos.Location = new System.Drawing.Point(374, 203);
-            this.cmboxMinutos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxMinutos.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxMinutos.Name = "cmboxMinutos";
             this.cmboxMinutos.Size = new System.Drawing.Size(66, 25);
             this.cmboxMinutos.TabIndex = 37;
@@ -596,7 +596,7 @@
             "23",
             "00"});
             this.cmboxHoraComienzo.Location = new System.Drawing.Point(247, 203);
-            this.cmboxHoraComienzo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxHoraComienzo.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxHoraComienzo.Name = "cmboxHoraComienzo";
             this.cmboxHoraComienzo.Size = new System.Drawing.Size(66, 25);
             this.cmboxHoraComienzo.TabIndex = 36;
@@ -606,7 +606,7 @@
             // 
             this.cmboxEquiposenEncuentro.FormattingEnabled = true;
             this.cmboxEquiposenEncuentro.Location = new System.Drawing.Point(249, 124);
-            this.cmboxEquiposenEncuentro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxEquiposenEncuentro.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxEquiposenEncuentro.Name = "cmboxEquiposenEncuentro";
             this.cmboxEquiposenEncuentro.Size = new System.Drawing.Size(242, 25);
             this.cmboxEquiposenEncuentro.TabIndex = 35;
@@ -615,16 +615,17 @@
             // 
             this.cmboxEquiposenSistema.FormattingEnabled = true;
             this.cmboxEquiposenSistema.Location = new System.Drawing.Point(249, 82);
-            this.cmboxEquiposenSistema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxEquiposenSistema.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxEquiposenSistema.Name = "cmboxEquiposenSistema";
             this.cmboxEquiposenSistema.Size = new System.Drawing.Size(242, 25);
             this.cmboxEquiposenSistema.TabIndex = 34;
             // 
             // cmboxDeportes
             // 
+            this.cmboxDeportes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxDeportes.FormattingEnabled = true;
             this.cmboxDeportes.Location = new System.Drawing.Point(249, 46);
-            this.cmboxDeportes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxDeportes.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxDeportes.Name = "cmboxDeportes";
             this.cmboxDeportes.Size = new System.Drawing.Size(242, 25);
             this.cmboxDeportes.TabIndex = 33;
@@ -687,7 +688,7 @@
             // dtimeFechaComienza
             // 
             this.dtimeFechaComienza.Location = new System.Drawing.Point(249, 161);
-            this.dtimeFechaComienza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtimeFechaComienza.Margin = new System.Windows.Forms.Padding(2);
             this.dtimeFechaComienza.Name = "dtimeFechaComienza";
             this.dtimeFechaComienza.Size = new System.Drawing.Size(242, 23);
             this.dtimeFechaComienza.TabIndex = 26;
@@ -711,7 +712,7 @@
             this.paneModificarEvento.Controls.Add(this.cmboxIDEvento);
             this.paneModificarEvento.Controls.Add(this.lblIDmodificar);
             this.paneModificarEvento.Location = new System.Drawing.Point(18, 14);
-            this.paneModificarEvento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneModificarEvento.Margin = new System.Windows.Forms.Padding(2);
             this.paneModificarEvento.Name = "paneModificarEvento";
             this.paneModificarEvento.Size = new System.Drawing.Size(539, 72);
             this.paneModificarEvento.TabIndex = 3;
@@ -720,7 +721,7 @@
             // 
             this.btnRefrescarEncuentroColectivo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnRefrescarEncuentroColectivo.Location = new System.Drawing.Point(294, 43);
-            this.btnRefrescarEncuentroColectivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefrescarEncuentroColectivo.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefrescarEncuentroColectivo.Name = "btnRefrescarEncuentroColectivo";
             this.btnRefrescarEncuentroColectivo.Size = new System.Drawing.Size(110, 25);
             this.btnRefrescarEncuentroColectivo.TabIndex = 3;
@@ -732,7 +733,7 @@
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.Location = new System.Drawing.Point(126, 43);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(80, 25);
             this.btnBuscar.TabIndex = 2;
@@ -744,7 +745,7 @@
             // 
             this.cmboxIDEvento.FormattingEnabled = true;
             this.cmboxIDEvento.Location = new System.Drawing.Point(216, 10);
-            this.cmboxIDEvento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxIDEvento.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxIDEvento.Name = "cmboxIDEvento";
             this.cmboxIDEvento.Size = new System.Drawing.Size(252, 25);
             this.cmboxIDEvento.TabIndex = 1;
@@ -766,7 +767,7 @@
             this.tbcGestionarEventos.Controls.Add(this.tbpgABMEventosIndi);
             this.tbcGestionarEventos.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.tbcGestionarEventos.Location = new System.Drawing.Point(0, 3);
-            this.tbcGestionarEventos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbcGestionarEventos.Margin = new System.Windows.Forms.Padding(2);
             this.tbcGestionarEventos.Name = "tbcGestionarEventos";
             this.tbcGestionarEventos.SelectedIndex = 0;
             this.tbcGestionarEventos.Size = new System.Drawing.Size(580, 619);
@@ -778,9 +779,9 @@
             this.tbpgABMEventosIndi.Controls.Add(this.paneDatosIndi);
             this.tbpgABMEventosIndi.Controls.Add(this.paneBuscarEventoIndi);
             this.tbpgABMEventosIndi.Location = new System.Drawing.Point(4, 26);
-            this.tbpgABMEventosIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpgABMEventosIndi.Margin = new System.Windows.Forms.Padding(2);
             this.tbpgABMEventosIndi.Name = "tbpgABMEventosIndi";
-            this.tbpgABMEventosIndi.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpgABMEventosIndi.Padding = new System.Windows.Forms.Padding(2);
             this.tbpgABMEventosIndi.Size = new System.Drawing.Size(572, 589);
             this.tbpgABMEventosIndi.TabIndex = 2;
             this.tbpgABMEventosIndi.Text = "A/B/M eventos individuales";
@@ -795,7 +796,7 @@
             this.paneBotonesIndi.Controls.Add(this.btnAceptarIndi);
             this.paneBotonesIndi.Controls.Add(this.btnCancelarIndi);
             this.paneBotonesIndi.Location = new System.Drawing.Point(18, 483);
-            this.paneBotonesIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneBotonesIndi.Margin = new System.Windows.Forms.Padding(2);
             this.paneBotonesIndi.Name = "paneBotonesIndi";
             this.paneBotonesIndi.Size = new System.Drawing.Size(539, 105);
             this.paneBotonesIndi.TabIndex = 6;
@@ -804,7 +805,7 @@
             // 
             this.btnCrearEventoIndividual.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCrearEventoIndividual.Location = new System.Drawing.Point(178, 65);
-            this.btnCrearEventoIndividual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrearEventoIndividual.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearEventoIndividual.Name = "btnCrearEventoIndividual";
             this.btnCrearEventoIndividual.Size = new System.Drawing.Size(158, 35);
             this.btnCrearEventoIndividual.TabIndex = 21;
@@ -816,7 +817,7 @@
             // 
             this.btnEliminarIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminarIndi.Location = new System.Drawing.Point(285, 17);
-            this.btnEliminarIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarIndi.Name = "btnEliminarIndi";
             this.btnEliminarIndi.Size = new System.Drawing.Size(89, 35);
             this.btnEliminarIndi.TabIndex = 19;
@@ -828,7 +829,7 @@
             // 
             this.btnCerrarIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCerrarIndi.Location = new System.Drawing.Point(416, 17);
-            this.btnCerrarIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarIndi.Name = "btnCerrarIndi";
             this.btnCerrarIndi.Size = new System.Drawing.Size(89, 35);
             this.btnCerrarIndi.TabIndex = 2;
@@ -839,7 +840,7 @@
             // 
             this.btnAceptarIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAceptarIndi.Location = new System.Drawing.Point(31, 17);
-            this.btnAceptarIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptarIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptarIndi.Name = "btnAceptarIndi";
             this.btnAceptarIndi.Size = new System.Drawing.Size(89, 35);
             this.btnAceptarIndi.TabIndex = 17;
@@ -851,7 +852,7 @@
             // 
             this.btnCancelarIndi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCancelarIndi.Location = new System.Drawing.Point(149, 17);
-            this.btnCancelarIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarIndi.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarIndi.Name = "btnCancelarIndi";
             this.btnCancelarIndi.Size = new System.Drawing.Size(89, 35);
             this.btnCancelarIndi.TabIndex = 18;
@@ -889,7 +890,7 @@
             this.paneDatosIndi.Controls.Add(this.dtimeComienzoIndi);
             this.paneDatosIndi.Controls.Add(this.lblFechaComienzoIndi);
             this.paneDatosIndi.Location = new System.Drawing.Point(18, 96);
-            this.paneDatosIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneDatosIndi.Margin = new System.Windows.Forms.Padding(2);
             this.paneDatosIndi.Name = "paneDatosIndi";
             this.paneDatosIndi.Size = new System.Drawing.Size(539, 383);
             this.paneDatosIndi.TabIndex = 5;
@@ -1001,7 +1002,7 @@
             "59",
             "00"});
             this.cmboxMinutoFinIndi.Location = new System.Drawing.Point(371, 273);
-            this.cmboxMinutoFinIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxMinutoFinIndi.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxMinutoFinIndi.Name = "cmboxMinutoFinIndi";
             this.cmboxMinutoFinIndi.Size = new System.Drawing.Size(66, 25);
             this.cmboxMinutoFinIndi.TabIndex = 48;
@@ -1035,7 +1036,7 @@
             "23",
             "00"});
             this.cmboxHoraFinIndi.Location = new System.Drawing.Point(245, 273);
-            this.cmboxHoraFinIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxHoraFinIndi.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxHoraFinIndi.Name = "cmboxHoraFinIndi";
             this.cmboxHoraFinIndi.Size = new System.Drawing.Size(66, 25);
             this.cmboxHoraFinIndi.TabIndex = 47;
@@ -1079,7 +1080,7 @@
             // dtimeFechaFinalizaIndi
             // 
             this.dtimeFechaFinalizaIndi.Location = new System.Drawing.Point(246, 238);
-            this.dtimeFechaFinalizaIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtimeFechaFinalizaIndi.Margin = new System.Windows.Forms.Padding(2);
             this.dtimeFechaFinalizaIndi.Name = "dtimeFechaFinalizaIndi";
             this.dtimeFechaFinalizaIndi.Size = new System.Drawing.Size(242, 23);
             this.dtimeFechaFinalizaIndi.TabIndex = 42;
@@ -1099,7 +1100,7 @@
             // 
             this.btnIncidenciasIndividuales.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnIncidenciasIndividuales.Location = new System.Drawing.Point(186, 344);
-            this.btnIncidenciasIndividuales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIncidenciasIndividuales.Margin = new System.Windows.Forms.Padding(2);
             this.btnIncidenciasIndividuales.Name = "btnIncidenciasIndividuales";
             this.btnIncidenciasIndividuales.Size = new System.Drawing.Size(125, 27);
             this.btnIncidenciasIndividuales.TabIndex = 40;
@@ -1194,7 +1195,7 @@
             "59",
             "00"});
             this.cmboxMinutoComienzaIndi.Location = new System.Drawing.Point(372, 197);
-            this.cmboxMinutoComienzaIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxMinutoComienzaIndi.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxMinutoComienzaIndi.Name = "cmboxMinutoComienzaIndi";
             this.cmboxMinutoComienzaIndi.Size = new System.Drawing.Size(66, 25);
             this.cmboxMinutoComienzaIndi.TabIndex = 37;
@@ -1228,7 +1229,7 @@
             "23",
             "00"});
             this.cmboxHoraComienzoIndi.Location = new System.Drawing.Point(246, 197);
-            this.cmboxHoraComienzoIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxHoraComienzoIndi.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxHoraComienzoIndi.Name = "cmboxHoraComienzoIndi";
             this.cmboxHoraComienzoIndi.Size = new System.Drawing.Size(66, 25);
             this.cmboxHoraComienzoIndi.TabIndex = 36;
@@ -1237,7 +1238,7 @@
             // 
             this.cmboxParticipantesIndiEncuentro.FormattingEnabled = true;
             this.cmboxParticipantesIndiEncuentro.Location = new System.Drawing.Point(246, 113);
-            this.cmboxParticipantesIndiEncuentro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxParticipantesIndiEncuentro.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxParticipantesIndiEncuentro.Name = "cmboxParticipantesIndiEncuentro";
             this.cmboxParticipantesIndiEncuentro.Size = new System.Drawing.Size(242, 25);
             this.cmboxParticipantesIndiEncuentro.TabIndex = 35;
@@ -1246,16 +1247,17 @@
             // 
             this.cmboxParticipantesIndi.FormattingEnabled = true;
             this.cmboxParticipantesIndi.Location = new System.Drawing.Point(246, 71);
-            this.cmboxParticipantesIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxParticipantesIndi.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxParticipantesIndi.Name = "cmboxParticipantesIndi";
             this.cmboxParticipantesIndi.Size = new System.Drawing.Size(242, 25);
             this.cmboxParticipantesIndi.TabIndex = 34;
             // 
             // cmboxDeporteIndi
             // 
+            this.cmboxDeporteIndi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxDeporteIndi.FormattingEnabled = true;
             this.cmboxDeporteIndi.Location = new System.Drawing.Point(246, 35);
-            this.cmboxDeporteIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxDeporteIndi.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxDeporteIndi.Name = "cmboxDeporteIndi";
             this.cmboxDeporteIndi.Size = new System.Drawing.Size(242, 25);
             this.cmboxDeporteIndi.TabIndex = 33;
@@ -1318,7 +1320,7 @@
             // dtimeComienzoIndi
             // 
             this.dtimeComienzoIndi.Location = new System.Drawing.Point(246, 158);
-            this.dtimeComienzoIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtimeComienzoIndi.Margin = new System.Windows.Forms.Padding(2);
             this.dtimeComienzoIndi.Name = "dtimeComienzoIndi";
             this.dtimeComienzoIndi.Size = new System.Drawing.Size(242, 23);
             this.dtimeComienzoIndi.TabIndex = 26;
@@ -1342,7 +1344,7 @@
             this.paneBuscarEventoIndi.Controls.Add(this.cmboxEncuentroIndividua);
             this.paneBuscarEventoIndi.Controls.Add(this.lblEventoIndiID);
             this.paneBuscarEventoIndi.Location = new System.Drawing.Point(17, 14);
-            this.paneBuscarEventoIndi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneBuscarEventoIndi.Margin = new System.Windows.Forms.Padding(2);
             this.paneBuscarEventoIndi.Name = "paneBuscarEventoIndi";
             this.paneBuscarEventoIndi.Size = new System.Drawing.Size(539, 78);
             this.paneBuscarEventoIndi.TabIndex = 4;
@@ -1351,7 +1353,7 @@
             // 
             this.btnRefrescarEncuentrosIndividuales.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnRefrescarEncuentrosIndividuales.Location = new System.Drawing.Point(287, 45);
-            this.btnRefrescarEncuentrosIndividuales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefrescarEncuentrosIndividuales.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefrescarEncuentrosIndividuales.Name = "btnRefrescarEncuentrosIndividuales";
             this.btnRefrescarEncuentrosIndividuales.Size = new System.Drawing.Size(109, 29);
             this.btnRefrescarEncuentrosIndividuales.TabIndex = 3;
@@ -1363,7 +1365,7 @@
             // 
             this.btnBuscarIndividual.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnBuscarIndividual.Location = new System.Drawing.Point(117, 45);
-            this.btnBuscarIndividual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarIndividual.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarIndividual.Name = "btnBuscarIndividual";
             this.btnBuscarIndividual.Size = new System.Drawing.Size(94, 29);
             this.btnBuscarIndividual.TabIndex = 2;
@@ -1375,7 +1377,7 @@
             // 
             this.cmboxEncuentroIndividua.FormattingEnabled = true;
             this.cmboxEncuentroIndividua.Location = new System.Drawing.Point(216, 10);
-            this.cmboxEncuentroIndividua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxEncuentroIndividua.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxEncuentroIndividua.Name = "cmboxEncuentroIndividua";
             this.cmboxEncuentroIndividua.Size = new System.Drawing.Size(252, 25);
             this.cmboxEncuentroIndividua.TabIndex = 1;
@@ -1399,7 +1401,7 @@
             this.Controls.Add(this.tbcGestionarEventos);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionarEventos";
             this.Text = "GestionarEventos";
             this.Load += new System.EventHandler(this.GestionarEventos_Load);

@@ -118,6 +118,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Torneos.cs" />
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Alineacion.resx">
       <DependentUpon>Alineacion.cs</DependentUpon>

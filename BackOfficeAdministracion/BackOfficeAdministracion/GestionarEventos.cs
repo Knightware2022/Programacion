@@ -69,7 +69,7 @@ namespace BackOfficeAdministracion
             encuentrosColectivos.idEncuentro = Convert.ToInt32(cmboxIDEvento.Text.Substring(3, (cmboxIDEvento.Text.IndexOf(" ") - 3)));
             encuentrosColectivos.descripcion = txtDescripcionCole.Text;
             string fechaComienzo, fechaFin, fechaC, fechaF;
-
+            encuentrosColectivos.nombreDeporte = cmboxDeportes.Text;
             fechaComienzo = dtimeFechaComienza.Text + " " + cmboxHoraComienzo.Text + ":" + cmboxMinutos.Text + ":00";
             encuentrosColectivos.fechaComienzo = Convert.ToDateTime(fechaComienzo);
             fechaFin = dtimeFechaFinaliza.Text + " " + cmboxHoraFinCole.Text + ":" + cmboxMinutoFinCole.Text + ":00";
@@ -277,7 +277,10 @@ namespace BackOfficeAdministracion
                         cmboxMinutos.Text = encuentrosColectivos.fechaComienzo.Minute.ToString();
                         cmboxHoraFinCole.Text = encuentrosColectivos.fechaFinaliza.Hour.ToString();
                         cmboxMinutoFinCole.Text = encuentrosColectivos.fechaFinaliza.Minute.ToString();
+                        cmboxDeportes.Items.Clear();
+                        cmboxDeportes.Items.Add(encuentrosColectivos.nombreDeporte);
                         cmboxDeportes.Text = encuentrosColectivos.nombreDeporte;
+
                         cmboxEquiposenEncuentro.Items.Clear();
                         cmboxEquiposenEncuentro.Text = equiposEncuentro[0];
                         foreach (string nombre in equiposEncuentro)
@@ -295,25 +298,24 @@ namespace BackOfficeAdministracion
                         DialogResult crearUsuario = MessageBox.Show("El Evento no existe, desea crearlo? ", "Creación evento", MessageBoxButtons.YesNo);
                         if (crearUsuario == DialogResult.Yes)
                         {
-                            bool bandera = true; int idRandom = 0; Random r = new Random();
-                            while (bandera == true)
-                            {
-                                idRandom = r.Next();
-                                switch (Logica.BuscarIDEvento(idRandom))
-                                {
-                                    case 0:
-                                        break;
-                                    case 1:
-                                    case 2:
-                                        MessageBox.Show("Ocurrió un error, intente mas tarde");
-                                        break;
-                                    case 3:
-                                        bandera = false;
-                                        break;
-                                }
+                            
+                            List<string> nombresDepo = new List<string>();
+                            switch (Logica.nombresDeportes(nombresDepo)){
+                                case 0:
+                                    foreach (string nombre in nombresDepo) {
+                                        cmboxDeportes.Items.Add(nombre);
+                                    }
+                                    cmboxDeportes.Text = nombresDepo[0];
+                                    break;
+
+                                case 1: case 2:
+                                    MessageBox.Show("No se encuentran deportes en el sistema");
+                                    break;
+
                             }
-                            txtIDencuentroCole.Text = idRandom.ToString();
-                            cmboxEquiposenEncuentro.Items.Clear();
+                            txtDescripcionCole.Text = cmboxIDEvento.Text.Substring(cmboxIDEvento.Text.IndexOf("-") + 1);
+                            txtIDencuentroCole.Text = cmboxIDEvento.Text.Substring(3, (cmboxIDEvento.Text.IndexOf(" ") - 3));
+                            cmboxIDEvento.Text = null;
 
                         }
                         else
@@ -346,7 +348,10 @@ namespace BackOfficeAdministracion
                         cmboxMinutos.Text = encuentrosColectivos.fechaComienzo.Minute.ToString();
                         cmboxHoraFinCole.Text = encuentrosColectivos.fechaFinaliza.Hour.ToString();
                         cmboxMinutoFinCole.Text = encuentrosColectivos.fechaFinaliza.Minute.ToString();
+                        cmboxDeportes.Items.Clear();
+                        cmboxDeportes.Items.Add(encuentrosColectivos.nombreDeporte);
                         cmboxDeportes.Text = encuentrosColectivos.nombreDeporte;
+
                         break;
                 }
             }         
@@ -424,7 +429,7 @@ namespace BackOfficeAdministracion
             encuentrosColectivos.fechaFinaliza = Convert.ToDateTime(fechaFin);
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day + " " + encuentrosColectivos.fechaComienzo.TimeOfDay;
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day + " " + encuentrosColectivos.fechaFinaliza.TimeOfDay;
-
+            encuentrosColectivos.nombreDeporte = cmboxDeportes.Text;
             switch (Logica.insertarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
             {
                 case 0:
@@ -485,7 +490,11 @@ namespace BackOfficeAdministracion
                         cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
                         cmboxParticipantesIndiEncuentro.Items.Clear();
                         cmboxParticipantesIndiEncuentro.Text = nombresParticipante[0];
+
+                        cmboxDeporteIndi.Items.Clear();
+                        cmboxDeporteIndi.Items.Add(encuentrosIndividuales.nombreDeporte);
                         cmboxDeporteIndi.Text = encuentrosIndividuales.nombreDeporte;
+
                         foreach (string nombre in nombresParticipante)
                         {
                             cmboxParticipantesIndiEncuentro.Items.Add(nombre);
@@ -502,25 +511,27 @@ namespace BackOfficeAdministracion
                         DialogResult crearEvento = MessageBox.Show("El Evento no existe, desea crearlo? ", "Creación evento", MessageBoxButtons.YesNo);
                         if (crearEvento == DialogResult.Yes)
                         {
-                            bool bandera = true; int idRandom = 0; Random r = new Random();
-                            while (bandera == true)
+                            
+                            List<string> nombresDepo = new List<string>();
+                            switch (Logica.nombresDeportes(nombresDepo))
                             {
-                                idRandom = r.Next();
-                                switch (Logica.BuscarIDEvento(idRandom))
-                                {
-                                    case 0:
-                                        break;
-                                    case 1:
-                                    case 2:
-                                        MessageBox.Show("Ocurrió un error, intente mas tarde");
-                                        break;
-                                    case 3:
-                                        bandera = false;
-                                        break;
-                                }
+                                case 0:
+                                    foreach (string nombre in nombresDepo)
+                                    {
+                                        cmboxDeportes.Items.Add(nombre);
+                                    }
+                                    cmboxDeportes.Text = nombresDepo[0];
+                                    break;
+
+                                case 1:
+                                case 2:
+                                    MessageBox.Show("No se encuentran deportes en el sistema");
+                                    break;
+
                             }
-                            txtIDindi.Text = idRandom.ToString();
-                            cmboxParticipantesIndiEncuentro.Items.Clear();
+                            txtDescripcionIndi.Text = cmboxEncuentroIndividua.Text.Substring(cmboxEncuentroIndividua.Text.IndexOf("-") + 1);
+                            txtIDindi.Text = cmboxEncuentroIndividua.Text.Substring(3, (cmboxEncuentroIndividua.Text.IndexOf(" ") - 3));
+                            cmboxIDEvento.Text = null;
 
                         }
                         else
@@ -558,6 +569,8 @@ namespace BackOfficeAdministracion
                         cmboxMinutoComienzaIndi.Text = encuentrosIndividuales.fechaComienzo.Minute.ToString();
                         cmboxHoraFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Hour.ToString();
                         cmboxMinutoFinIndi.Text = encuentrosIndividuales.fechaFinaliza.Minute.ToString();
+                        cmboxDeporteIndi.Items.Clear();
+                        cmboxDeporteIndi.Items.Add(encuentrosIndividuales.nombreDeporte);
                         cmboxDeporteIndi.Text = encuentrosIndividuales.nombreDeporte;
 
                         break;
@@ -671,7 +684,7 @@ namespace BackOfficeAdministracion
             encuentrosIndividuales.idEncuentro = Convert.ToInt32(txtIDindi.Text);
             encuentrosIndividuales.descripcion = txtDescripcionIndi.Text;
             string fechaComienzo, fechaFin, fechaC, fechaF;
-
+            encuentrosIndividuales.nombreDeporte = cmboxDeporteIndi.Text;
             fechaComienzo = dtimeComienzoIndi.Text + " " + cmboxHoraComienzoIndi.Text + ":" + cmboxMinutoComienzaIndi.Text + ":00";
             encuentrosIndividuales.fechaComienzo = Convert.ToDateTime(fechaComienzo);
             fechaFin = dtimeFechaFinalizaIndi.Text + " " + cmboxHoraFinIndi.Text + ":" + cmboxMinutoFinIndi.Text + ":00";
