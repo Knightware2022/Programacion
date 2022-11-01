@@ -2092,7 +2092,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte InsertarenNotifica(int idEncuentro, int idDeporteEncuentro, int idIncidencia, int minuto, string nombreJ, string apellidoJ, string ocurrencia)
+        public static byte InsertarenPuntosNotifica(int idEncuentro, int idDeporteEncuentro, int idIncidencia, int minuto, string nombreJ, string apellidoJ, string ocurrencia)
         {
             byte devolver = 0;
             object cantFilas;
@@ -2104,7 +2104,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Incidencias(idIncidencia, minuto, idJugador) values("+ idIncidencia +", "+ minuto +", (select j.idJugador from Jugador as j where j.nombre='"+ nombreJ+"' AND j.apellido='"+apellidoJ +"'))";
+                sql = "insert into Incidencias(idIncidencia) values("+ idIncidencia +")";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -2113,6 +2113,17 @@ namespace BackOfficeAdministracion
                 {
                     return devolver = 2;
                 }
+                sql = "insert into Puntos(idIncidencia, minuto, idJugador) values(" + idIncidencia + ", " + minuto + ", (select j.idJugador from Jugador as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+
                 sql = "select o.idOcurrencia from Ocurrencias as o where o.nombre = '" + ocurrencia + "'";
                 try
                 {
@@ -2137,6 +2148,7 @@ namespace BackOfficeAdministracion
                         }
                         catch
                         {
+
                             return devolver = 2;
                         }
                         if (rs.RecordCount == 0) {
@@ -2523,7 +2535,7 @@ namespace BackOfficeAdministracion
                         return devolver = 2;
                     }         
                         encuentro.nombreDeporte = Convert.ToString(rs.Fields[0].Value);                   
-                    sql = "select distinct p.nombre, p.apellido from Participa as parti, Participantes as p where parti.idEncuentro=" + encuentro.idEncuentro + " AND p.idParticipante=parti.idParticipante AND parti.idDeporteEncuentro=parti.idDeporteParticipante=" + encuentro.deporteEncuentro;
+                    sql = "select distinct p.nombre, p.apellido from Participa as parti, Participantes as p where parti.idEncuentro=" + encuentro.idEncuentro + " AND p.idParticipante=parti.idParticipante AND parti.idDeporteEncuentro=p.idDeporte AND parti.idDeporteEncuentro=" + encuentro.deporteEncuentro;
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2602,7 +2614,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Participa(idDeporteEncuentro,idEncuentro,idParticipante, idDeporteParticipante) values (" + idDeporteEncuentro +", "+ idEncuentro + ",(select idDeporte from Participantes where nombre='" + nombre + "' AND apellido='" + apellido + "' ))";
+                sql = "insert into Participa(idDeporteEncuentro,idEncuentro,idParticipante, idDeporteParticipante) values (" + idDeporteEncuentro +", "+ idEncuentro + ",(select idParticipante from Participantes where nombre='" + nombre + "' AND apellido='" + apellido + "' ), (select idDeporte from Participantes where nombre='" + nombre + "' AND apellido='" + apellido + "' ))";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -2894,7 +2906,6 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-
         public static byte ActualizarTorneoColectivo(Torneos torneos, string fechaC, string fechaF)
         {
             byte devolver = 0;
@@ -2971,6 +2982,667 @@ namespace BackOfficeAdministracion
                     throw;
 
                     return devolver = 2;
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte insertarParticularNotifica(int idEncuentro, int idDeporteEncuentro, int idIncidencia, int setsGanados, int puntosObtenidos, string nombreJ, string apellidoJ, string ocurrencia)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Incidencias(idIncidencia) values(" + idIncidencia + ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                sql = "insert into Particular(idIncidencia, setsGanados,puntosObtenidos,idParticipante) values(" + idIncidencia + ", " + setsGanados + ", "+ puntosObtenidos+ ", (select j.idJugador from Jugador as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+
+                    return devolver = 2;
+                }
+
+                sql = "select o.idOcurrencia from Ocurrencias as o where o.nombre = '" + ocurrencia + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+
+
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    bool bandera = true;
+                    Random r = new Random();
+                    int idRandom = 0;
+                    while (bandera == true)
+                    {
+                        idRandom = r.Next();
+                        sql = "select idOcurrencia from Ocurrencias where idOcurrencia=" + idRandom;
+                        try
+                        {
+                            rs = _cn.Execute(sql, out cantFilas);
+                        }
+                        catch
+                        {
+                            throw;
+
+                            return devolver = 2;
+                        }
+                        if (rs.RecordCount == 0)
+                        {
+                            bandera = false;
+                        }
+                    }
+                    sql = "insert into Ocurrencias(idOcurrencia, nombre) values(" + idRandom + ", '" + ocurrencia + "')";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", " + idRandom + ")";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", " + idRandom + ", " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 4;
+                    }
+
+                }
+                else
+                {
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'))";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'), " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 4;
+                    }
+                }
+
+
+
+
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte insertarRankingNotifica(int idEncuentro, int idDeporteEncuentro, int idIncidencia, int puntos, string tiempo, string nombreJ, string apellidoJ, string ocurrencia)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Incidencias(idIncidencia) values(" + idIncidencia + ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                sql = "insert into Rankings(idIncidencia, tiempo_Transcurrido,puntos,idParticipante) values(" + idIncidencia + ", '" + tiempo + "', " + puntos + ", (select j.idJugador from Jugador as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+
+                    return devolver = 2;
+                }
+
+                sql = "select o.idOcurrencia from Ocurrencias as o where o.nombre = '" + ocurrencia + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+
+
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    bool bandera = true;
+                    Random r = new Random();
+                    int idRandom = 0;
+                    while (bandera == true)
+                    {
+                        idRandom = r.Next();
+                        sql = "select idOcurrencia from Ocurrencias where idOcurrencia=" + idRandom;
+                        try
+                        {
+                            rs = _cn.Execute(sql, out cantFilas);
+                        }
+                        catch
+                        {
+                            throw;
+
+                            return devolver = 2;
+                        }
+                        if (rs.RecordCount == 0)
+                        {
+                            bandera = false;
+                        }
+                    }
+                    sql = "insert into Ocurrencias(idOcurrencia, nombre) values(" + idRandom + ", '" + ocurrencia + "')";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", " + idRandom + ")";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", " + idRandom + ", " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 4;
+                    }
+
+                }
+                else
+                {
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'))";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'), " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 4;
+                    }
+                }
+
+
+
+
+
+            }
+            rs = null;
+            return devolver;
+        }
+
+        public static byte InsertarenPuntosNotificaIndi(int idEncuentro, int idDeporteEncuentro, int idIncidencia, int minuto, string nombreJ, string apellidoJ, string ocurrencia)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Incidencias(idIncidencia) values(" + idIncidencia + ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                sql = "insert into Puntos(idIncidencia, minuto, idJugador) values(" + idIncidencia + ", " + minuto + ", (select j.idParticipante from Participantes as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+
+                sql = "select o.idOcurrencia from Ocurrencias as o where o.nombre = '" + ocurrencia + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    bool bandera = true;
+                    Random r = new Random();
+                    int idRandom = 0;
+                    while (bandera == true)
+                    {
+                        idRandom = r.Next();
+                        sql = "select idOcurrencia from Ocurrencias where idOcurrencia=" + idRandom;
+                        try
+                        {
+                            rs = _cn.Execute(sql, out cantFilas);
+                        }
+                        catch
+                        {
+                            return devolver = 2;
+                        }
+                        if (rs.RecordCount == 0)
+                        {
+                            bandera = false;
+                        }
+                    }
+                    sql = "insert into Ocurrencias(idOcurrencia, nombre) values(" + idRandom + ", '" + ocurrencia + "')";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 3;
+                    }
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", " + idRandom + ")";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", " + idRandom + ", " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 4;
+                    }
+
+                }
+                else
+                {
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'))";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'), " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 4;
+                    }
+                }
+
+
+
+
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte insertarParticularNotificaIndi(int idEncuentro, int idDeporteEncuentro, int idIncidencia, int setsGanados, int puntosObtenidos, string nombreJ, string apellidoJ, string ocurrencia)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Incidencias(idIncidencia) values(" + idIncidencia + ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                sql = "insert into Particular(idIncidencia, setsGanados,puntosObtenidos,idParticipante) values(" + idIncidencia + ", " + setsGanados + ", " + puntosObtenidos + ", (select j.idParticipante from Participantes as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+
+                    return devolver = 2;
+                }
+
+                sql = "select o.idOcurrencia from Ocurrencias as o where o.nombre = '" + ocurrencia + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+
+
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    bool bandera = true;
+                    Random r = new Random();
+                    int idRandom = 0;
+                    while (bandera == true)
+                    {
+                        idRandom = r.Next();
+                        sql = "select idOcurrencia from Ocurrencias where idOcurrencia=" + idRandom;
+                        try
+                        {
+                            rs = _cn.Execute(sql, out cantFilas);
+                        }
+                        catch
+                        {
+                            throw;
+
+                            return devolver = 2;
+                        }
+                        if (rs.RecordCount == 0)
+                        {
+                            bandera = false;
+                        }
+                    }
+                    sql = "insert into Ocurrencias(idOcurrencia, nombre) values(" + idRandom + ", '" + ocurrencia + "')";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", " + idRandom + ")";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", " + idRandom + ", " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 4;
+                    }
+
+                }
+                else
+                {
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'))";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'), " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        throw;
+
+                        return devolver = 4;
+                    }
+                }
+
+
+
+
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte insertarRankingNotificaIndi(int idEncuentro, int idDeporteEncuentro, int idIncidencia, int puntos, string tiempo, string nombreJ, string apellidoJ, string ocurrencia)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into Incidencias(idIncidencia) values(" + idIncidencia + ")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                sql = "insert into Rankings(idIncidencia, tiempo_Transcurrido,puntos,idParticipante) values(" + idIncidencia + ", '" + tiempo + "', " + puntos + ", (select j.idParticipante from Participantes as j where j.nombre='" + nombreJ + "' AND j.apellido='" + apellidoJ + "'))";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+
+                sql = "select o.idOcurrencia from Ocurrencias as o where o.nombre = '" + ocurrencia + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    bool bandera = true;
+                    Random r = new Random();
+                    int idRandom = 0;
+                    while (bandera == true)
+                    {
+                        idRandom = r.Next();
+                        sql = "select idOcurrencia from Ocurrencias where idOcurrencia=" + idRandom;
+                        try
+                        {
+                            rs = _cn.Execute(sql, out cantFilas);
+                        }
+                        catch
+                        {
+                            return devolver = 2;
+                        }
+                        if (rs.RecordCount == 0)
+                        {
+                            bandera = false;
+                        }
+                    }
+                    sql = "insert into Ocurrencias(idOcurrencia, nombre) values(" + idRandom + ", '" + ocurrencia + "')";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 3;
+                    }
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", " + idRandom + ")";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", " + idRandom + ", " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 4;
+                    }
+
+                }
+                else
+                {
+                    sql = "insert into Hacen(idIncidencia, idOcurrencia) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'))";
+                    try
+                    {
+
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    { 
+
+                        return devolver = 3;
+                    }
+                    sql = "insert into Notifica(idIncidencia, idOcurrencia, idEncuentro, idDeporte) values(" + idIncidencia + ", (select o.idOcurrencia from Ocurrencias as o where o.nombre='" + ocurrencia + "'), " + idEncuentro + ", " + idDeporteEncuentro + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+
+                        return devolver = 4;
+                    }
                 }
             }
             rs = null;
