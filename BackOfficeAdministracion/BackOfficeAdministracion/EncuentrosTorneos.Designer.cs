@@ -45,6 +45,7 @@
             this.lblHoraFinaliza = new System.Windows.Forms.Label();
             this.lblFechaComienzo = new System.Windows.Forms.Label();
             this.lblNombreEncuentro = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.paneFiltro.SuspendLayout();
             this.paneEncuentros.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +75,9 @@
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(449, 13);
+            this.btnFiltrar.Location = new System.Drawing.Point(449, 8);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(80, 23);
             this.btnFiltrar.TabIndex = 9;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -112,6 +113,7 @@
             // paneEncuentros
             // 
             this.paneEncuentros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneEncuentros.Controls.Add(this.btnVolver);
             this.paneEncuentros.Controls.Add(this.btnQuitar);
             this.paneEncuentros.Controls.Add(this.btnAgregar);
             this.paneEncuentros.Controls.Add(this.cmboxEquiposDeEncuentros);
@@ -126,6 +128,7 @@
             this.paneEncuentros.Name = "paneEncuentros";
             this.paneEncuentros.Size = new System.Drawing.Size(548, 234);
             this.paneEncuentros.TabIndex = 1;
+            this.paneEncuentros.Paint += new System.Windows.Forms.PaintEventHandler(this.paneEncuentros_Paint);
             // 
             // btnQuitar
             // 
@@ -144,6 +147,7 @@
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar al torneo";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // cmboxEquiposDeEncuentros
             // 
@@ -213,6 +217,16 @@
             this.lblNombreEncuentro.TabIndex = 0;
             this.lblNombreEncuentro.Text = "Nombre encuentro: ";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(449, 190);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(80, 23);
+            this.btnVolver.TabIndex = 11;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // EncuentrosTorneos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,6 +234,7 @@
             this.ClientSize = new System.Drawing.Size(572, 350);
             this.Controls.Add(this.paneEncuentros);
             this.Controls.Add(this.paneFiltro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EncuentrosTorneos";
             this.Text = "EncuentrosTorneos";
             this.Load += new System.EventHandler(this.EncuentrosTorneos_Load);
@@ -250,5 +265,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnVerCargados;
         private System.Windows.Forms.Button btnQuitar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -2670,6 +2670,80 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte datosEncuentrosenTorneo(int idTorneo, List<string> encuentros)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select e.idEncuentro, e.descripcionEncuentro from Encuentros as e where e.idEncuentro in (select idEncuentro from torneosTienenEncuentros as t where idTorneo="+ idTorneo+")";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                while (!rs.EOF)
+                {
+                    encuentros.Add(Convert.ToString("ID:" + rs.Fields[0].Value) + " -" + Convert.ToString(rs.Fields[1].Value));
+                    rs.MoveNext();
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte insertarEventoenTorneo(int idTorneo, int idDeporteTorneo, int idEncuentro)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select distinct idEquipo from compite where idEncuentro = "+ idEncuentro;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                while (!rs.EOF)
+                {
+                    sql = "insert into torneosTienenEncuentros (idTorneo, idDeporteTorneo,idEncuentro, idDeporteEncuentro, idEquipo) values (" + idTorneo + ", " + idDeporteTorneo + ", " + idEncuentro + ", (select idEncuentro from Encuentros where idEncuentro=" + idEncuentro + "), " + rs.Fields[0].Value + ")";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        throw;
+                        return devolver = 2;
+                    }
+                    rs.MoveNext();
+                }                
+
+            }
+            rs = null;
+            return devolver;
+        }
+
 
 
 
