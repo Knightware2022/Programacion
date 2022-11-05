@@ -2714,6 +2714,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
+                List<string> idEquipos = new List<string>();
                 sql = "select distinct idEquipo from compite where idEncuentro = "+ idEncuentro;
                 try
                 {
@@ -2726,7 +2727,11 @@ namespace BackOfficeAdministracion
                 }
                 while (!rs.EOF)
                 {
-                    sql = "insert into torneosTienenEncuentros (idTorneo, idDeporteTorneo,idEncuentro, idDeporteEncuentro, idEquipo) values (" + idTorneo + ", " + idDeporteTorneo + ", " + idEncuentro + ", (select idEncuentro from Encuentros where idEncuentro=" + idEncuentro + "), " + rs.Fields[0].Value + ")";
+                    idEquipos.Add(Convert.ToString(rs.Fields[0].Value));
+                    rs.MoveNext();
+                }
+                for (int i = 0; i < idEquipos.Count; i++){
+                    sql = "insert into torneosTienenEncuentros (idTorneo, idDeporteTorneo,idEncuentro, idDeporteEncuentro, idEquipo) values (" + idTorneo + ", " + idDeporteTorneo + ", " + idEncuentro + ", (select distinct idDeporte from Encuentros where idEncuentro=" + idEncuentro + "), " + idEquipos[i] + ")";
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2736,8 +2741,52 @@ namespace BackOfficeAdministracion
                         throw;
                         return devolver = 2;
                     }
-                    rs.MoveNext();
                 }                
+
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte EliminarEventoenTorneo(int idTorneo, int idDeporteTorneo, int idEncuentro)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                List<string> idEquipos = new List<string>();
+                sql = "select distinct idEquipo from compite where idEncuentro = " + idEncuentro;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                while (!rs.EOF)
+                {
+                    idEquipos.Add(Convert.ToString(rs.Fields[0].Value));
+                    rs.MoveNext();
+                }
+                for (int i = 0; i < idEquipos.Count; i++) {               
+                     sql = "delete from torneosTienenEncuentros where idTorneo=" + idTorneo + " AND idDeporteTorneo= " + idDeporteTorneo + " AND idEncuentro= " + idEncuentro + " AND idDeporteEncuentro= (select distinct idDeporte from Encuentros where idEncuentro=" + idEncuentro + ") AND idEquipo=" + idEquipos[i] ;
+                        try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        throw;
+                        return devolver = 2;
+                    }
+                }
 
             }
             rs = null;

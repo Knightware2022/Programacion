@@ -72,6 +72,7 @@ namespace BackOfficeAdministracion
                             btnAgregar.Enabled = true;
                             txtFechaComienzo.Text = encuentros.fechaComienzo.ToString();
                             txtHoraFinaliza.Text = encuentros.fechaFinaliza.ToString();
+                            cmboxEquiposDeEncuentros.Text = null;
                             cmboxEquiposDeEncuentros.Items.Clear();
                             foreach (string nombreEquipo in equiposEncuentro)
                             {
@@ -87,6 +88,7 @@ namespace BackOfficeAdministracion
                             break;
                         case 5:
                             btnAgregar.Enabled = false;
+                            cmboxEquiposDeEncuentros.Text = null;
                             MessageBox.Show("El encuentro no tiene equipos");
                             break;
                     }
@@ -208,13 +210,46 @@ namespace BackOfficeAdministracion
                         MessageBox.Show("Evento añadido exitosamente");
                         txtFechaComienzo.Text = null;
                         txtHoraFinaliza.Text = null;
+                        cmboxEquiposDeEncuentros.Text = null;
                         cmboxEquiposDeEncuentros.Items.Clear();
+                        this.filtrar();
                         break;
                     case 1:
                         MessageBox.Show("Error de conexion");
                         break;
                     case 2:
                         MessageBox.Show("Error inesperado. Tal vez el encuentro ya participa de este torneo");
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error obteniendo id");
+            }
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            if (int.TryParse(cmboxEncuentros.Text.Substring(3, (cmboxEncuentros.Text.IndexOf(" ") - 3)), out id))
+            {
+                switch (Logica.EliminarEventoenTorneo(GestionarTorneos.torneosColectivos.idDeporteTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
+                {
+                    case 0:
+                        MessageBox.Show("Evento desvinculado exitosamente");
+                        txtFechaComienzo.Text = null;
+                        txtHoraFinaliza.Text = null;
+                        cmboxEquiposDeEncuentros.Text = null;
+                        cmboxEquiposDeEncuentros.Items.Clear();
+                        this.eventosEnTorneo();
+                        refrescarDatosEvento();
+
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexion");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error inesperado.");
                         break;
                 }
             }

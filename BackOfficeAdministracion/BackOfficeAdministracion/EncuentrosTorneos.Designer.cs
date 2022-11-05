@@ -35,6 +35,7 @@
             this.cmboxDeportes = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.paneEncuentros = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.cmboxEquiposDeEncuentros = new System.Windows.Forms.ComboBox();
@@ -45,7 +46,6 @@
             this.lblHoraFinaliza = new System.Windows.Forms.Label();
             this.lblFechaComienzo = new System.Windows.Forms.Label();
             this.lblNombreEncuentro = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.paneFiltro.SuspendLayout();
             this.paneEncuentros.SuspendLayout();
             this.SuspendLayout();
@@ -130,6 +130,16 @@
             this.paneEncuentros.TabIndex = 1;
             this.paneEncuentros.Paint += new System.Windows.Forms.PaintEventHandler(this.paneEncuentros_Paint);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(449, 190);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(80, 23);
+            this.btnVolver.TabIndex = 11;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // btnQuitar
             // 
             this.btnQuitar.Location = new System.Drawing.Point(322, 190);
@@ -138,6 +148,7 @@
             this.btnQuitar.TabIndex = 10;
             this.btnQuitar.Text = "Quitar del torneo";
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAgregar
             // 
@@ -216,16 +227,6 @@
             this.lblNombreEncuentro.Size = new System.Drawing.Size(101, 13);
             this.lblNombreEncuentro.TabIndex = 0;
             this.lblNombreEncuentro.Text = "Nombre encuentro: ";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Location = new System.Drawing.Point(449, 190);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(80, 23);
-            this.btnVolver.TabIndex = 11;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // EncuentrosTorneos
             // 
