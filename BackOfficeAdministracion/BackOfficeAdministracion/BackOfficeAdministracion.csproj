@@ -62,7 +62,12 @@
     <Compile Include="Deportes.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="EncuentrosColectivos.cs" />
-    <Compile Include="EncuentrosIndividuales.cs" />
+    <Compile Include="EncuentrosTorneos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EncuentrosTorneos.Designer.cs">
+      <DependentUpon>EncuentrosTorneos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Equipos.cs" />
     <Compile Include="GestionarDeportes.cs">
       <SubType>Form</SubType>
@@ -95,12 +100,6 @@
     <Compile Include="Incidencias.Designer.cs">
       <DependentUpon>Incidencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="IncidenciasIndividuales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IncidenciasIndividuales.Designer.cs">
-      <DependentUpon>IncidenciasIndividuales.cs</DependentUpon>
-    </Compile>
     <Compile Include="Jugador.cs" />
     <Compile Include="Logica.cs" />
     <Compile Include="Login.cs">
@@ -126,6 +125,9 @@
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EncuentrosTorneos.resx">
+      <DependentUpon>EncuentrosTorneos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionarDeportes.resx">
       <DependentUpon>GestionarDeportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,9 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Incidencias.resx">
       <DependentUpon>Incidencias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IncidenciasIndividuales.resx">
-      <DependentUpon>IncidenciasIndividuales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

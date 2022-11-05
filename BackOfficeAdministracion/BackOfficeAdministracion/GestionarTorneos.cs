@@ -114,6 +114,7 @@ namespace BackOfficeAdministracion
                         {
                             cmboxEquiposenEncuentro.Items.Add(nombre);
                         }
+                        cmboxEquiposenEncuentro.Text = equiposEncuentro[0];
 
                         break;
                     case 1:
@@ -226,6 +227,48 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Ocurrió un error inesperado. Verifique que los datos sean coherentes");
                     break;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.frmPrincipal.paneVista.Show();
+        }
+
+        private void cmboxHoraComienzo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int idTorneo;
+            if (int.TryParse(txtIDencuentroCole.Text, out idTorneo))
+            {
+                torneosColectivos.idTorneo = idTorneo;
+                switch (Logica.BorrarTorneo(torneosColectivos.idTorneo, torneosColectivos.idDeporteTorneo)) {
+                    case 0:
+                        MessageBox.Show("Torneo eliminado");
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexion");
+                        break;
+                    case 2:
+                        MessageBox.Show("Error inesperado, verifique los datos");
+                        break;
+                }
+            }
+            else {
+                MessageBox.Show("Error obteniendo ID");
+            }
+        }
+
+        private void btnEncuentros_Click(object sender, EventArgs e)
+        {
+            Program.frmEncuentrosTorneos.StartPosition = FormStartPosition.CenterScreen;
+            Program.frmEncuentrosTorneos.TopMost = true;
+            Program.frmEncuentrosTorneos.Visible = true;
+            Program.frmPrincipal.Enabled = false;
         }
     }
 }
