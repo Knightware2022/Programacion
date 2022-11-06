@@ -84,7 +84,7 @@ namespace BackOfficeAdministracion
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-        /*    Encriptacion encriptacion = new Encriptacion();
+            Encriptacion encriptacion = new Encriptacion();
             user.nombre = txtUsuario.Text;
             user.contrasenia = encriptacion.encriptar(txtContrasenia.Text);
              switch(Logica.averiguandoRol(user)){
@@ -99,7 +99,11 @@ namespace BackOfficeAdministracion
                                  txtCorreo.Text = null;
                                  txtUsuario.Text = null;
                                  Program.frmPrincipal.Show();
-                                 break;
+                                Program.frmPrincipal.btnGestionarDeportes.Enabled = true;
+                                Program.frmPrincipal.btnGestionarEventos.Enabled = true;
+                                Program.frmPrincipal.btnGestionarTorneos.Enabled = true;
+                                Program.frmPrincipal.btnGestionarUsuarios.Enabled = true;
+                                break;
                              case 1:
                                  MessageBox.Show("Conexión no establecida");
                                  break;
@@ -115,10 +119,41 @@ namespace BackOfficeAdministracion
                          }
                      }
                      else {
+                        if (user.rol == 3) {
+                            switch (Logica.BuscandoUsuario(user))
+                            {
+                                case 0:
+                                    this.Hide();
+                                    txtContrasenia.Text = null;
+                                    txtCorreo.Text = null;
+                                    txtUsuario.Text = null;
+                                    Program.frmPrincipal.Show();
+                                    Program.frmPrincipal.btnGestionarDeportes.Enabled = false;
+                                    Program.frmPrincipal.btnGestionarEventos.Enabled = true;
+                                    Program.frmPrincipal.btnGestionarTorneos.Enabled = true;
+                                    Program.frmPrincipal.btnGestionarUsuarios.Enabled = false;
+
+                                    break;
+                                case 1:
+                                    MessageBox.Show("Conexión no establecida");
+                                    break;
+                                case 2:
+                                    MessageBox.Show("Ocurrió un error inesperado");
+                                    break;
+                                case 3:
+                                case 4:
+                                    MessageBox.Show("Usuario o contraseña invalidos");
+                                    txtContrasenia.Text = null;
+
+                                    break;
+                            }
+
+                        }
+                        else { 
                          MessageBox.Show("Usuario o contraseña inválidos");//en realidad existe, pero por un tema de "seguridad" no se muestra que es usuario y contra del cliente 
                          txtContrasenia.Text = null;
-
-                     }
+                        }
+                    }
                      break;
                  case 1:
                      MessageBox.Show("Conexión no establecida");
@@ -130,9 +165,8 @@ namespace BackOfficeAdministracion
                      MessageBox.Show("Usuario o contraseña invalidos");//en realidad es que el usuario no existe
                      txtContrasenia.Text = null;
                      break;
-             }*/
-            Program.frmPrincipal.Show();
-            Program.frmLogin.Hide();
+             }
+            
         }
 
         private void btnVerContrasenia_MouseEnter(object sender, EventArgs e)

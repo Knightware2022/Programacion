@@ -33,7 +33,6 @@
             this.paneConfiguracion = new System.Windows.Forms.Panel();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.paneVerResultados = new System.Windows.Forms.Panel();
-            this.btnVerResultados = new System.Windows.Forms.Button();
             this.paneVerEventos = new System.Windows.Forms.Panel();
             this.btnGestionarTorneos = new System.Windows.Forms.Button();
             this.paneGestionarEventos = new System.Windows.Forms.Panel();
@@ -46,7 +45,6 @@
             this.picboxHome = new System.Windows.Forms.PictureBox();
             this.paneHerramientas.SuspendLayout();
             this.paneConfiguracion.SuspendLayout();
-            this.paneVerResultados.SuspendLayout();
             this.paneVerEventos.SuspendLayout();
             this.paneGestionarEventos.SuspendLayout();
             this.paneGestionarUsuarios.SuspendLayout();
@@ -96,23 +94,11 @@
             // paneVerResultados
             // 
             this.paneVerResultados.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.paneVerResultados.Controls.Add(this.btnVerResultados);
             this.paneVerResultados.Location = new System.Drawing.Point(8, 421);
             this.paneVerResultados.Margin = new System.Windows.Forms.Padding(2);
             this.paneVerResultados.Name = "paneVerResultados";
             this.paneVerResultados.Size = new System.Drawing.Size(222, 92);
             this.paneVerResultados.TabIndex = 4;
-            // 
-            // btnVerResultados
-            // 
-            this.btnVerResultados.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnVerResultados.Location = new System.Drawing.Point(41, 10);
-            this.btnVerResultados.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVerResultados.Name = "btnVerResultados";
-            this.btnVerResultados.Size = new System.Drawing.Size(150, 72);
-            this.btnVerResultados.TabIndex = 4;
-            this.btnVerResultados.Text = "Ver resultados";
-            this.btnVerResultados.UseVisualStyleBackColor = true;
             // 
             // paneVerEventos
             // 
@@ -241,7 +227,6 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.paneHerramientas.ResumeLayout(false);
             this.paneConfiguracion.ResumeLayout(false);
-            this.paneVerResultados.ResumeLayout(false);
             this.paneVerEventos.ResumeLayout(false);
             this.paneGestionarEventos.ResumeLayout(false);
             this.paneGestionarUsuarios.ResumeLayout(false);
@@ -261,13 +246,12 @@
         private System.Windows.Forms.Panel paneGestionarEventos;
         private System.Windows.Forms.Panel paneGestionarUsuarios;
         private System.Windows.Forms.Panel paneGestionarDeportes;
-        private System.Windows.Forms.Button btnGestionarDeportes;
-        private System.Windows.Forms.Button btnGestionarUsuarios;
         private System.Windows.Forms.Button btnConfiguracion;
-        private System.Windows.Forms.Button btnVerResultados;
-        private System.Windows.Forms.Button btnGestionarTorneos;
-        private System.Windows.Forms.Button btnGestionarEventos;
         public System.Windows.Forms.Panel paneVista;
         private System.Windows.Forms.PictureBox picboxHome;
+        public System.Windows.Forms.Button btnGestionarDeportes;
+        public System.Windows.Forms.Button btnGestionarUsuarios;
+        public System.Windows.Forms.Button btnGestionarTorneos;
+        public System.Windows.Forms.Button btnGestionarEventos;
     }
 }

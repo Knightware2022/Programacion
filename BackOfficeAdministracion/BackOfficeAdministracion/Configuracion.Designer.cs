@@ -40,7 +40,6 @@
             this.lblContra = new System.Windows.Forms.Label();
             this.paneBotones = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAplicar = new System.Windows.Forms.Button();
             this.paneApariencia = new System.Windows.Forms.Panel();
             this.cmboxTema = new System.Windows.Forms.ComboBox();
@@ -50,6 +49,7 @@
             this.cmboxIdioma = new System.Windows.Forms.ComboBox();
             this.lblIdiomaE = new System.Windows.Forms.Label();
             this.lblIdioma = new System.Windows.Forms.Label();
+            this.btnCambiarContraseña = new System.Windows.Forms.Button();
             this.paneConfiguracion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.paneBotones.SuspendLayout();
@@ -73,6 +73,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnCambiarContraseña);
             this.panel1.Controls.Add(this.btnVer);
             this.panel1.Controls.Add(this.txtNuevaContraConfirma);
             this.panel1.Controls.Add(this.txtNuevaContraseña);
@@ -84,7 +85,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 207);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 169);
+            this.panel1.Size = new System.Drawing.Size(562, 195);
             this.panel1.TabIndex = 6;
             // 
             // btnVer
@@ -175,7 +176,6 @@
             // 
             this.paneBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneBotones.Controls.Add(this.btnCerrar);
-            this.paneBotones.Controls.Add(this.btnCancelar);
             this.paneBotones.Controls.Add(this.btnAplicar);
             this.paneBotones.Location = new System.Drawing.Point(7, 503);
             this.paneBotones.Margin = new System.Windows.Forms.Padding(2);
@@ -194,18 +194,6 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.Location = new System.Drawing.Point(219, 28);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(141, 27);
-            this.btnCancelar.TabIndex = 6;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAplicar
             // 
@@ -239,10 +227,10 @@
             "Predeterminado",
             "Oscuro",
             "Claro"});
-            this.cmboxTema.Location = new System.Drawing.Point(248, 40);
+            this.cmboxTema.Location = new System.Drawing.Point(214, 39);
             this.cmboxTema.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxTema.Name = "cmboxTema";
-            this.cmboxTema.Size = new System.Drawing.Size(217, 25);
+            this.cmboxTema.Size = new System.Drawing.Size(251, 25);
             this.cmboxTema.TabIndex = 2;
             // 
             // lblTema
@@ -286,10 +274,10 @@
             this.cmboxIdioma.Items.AddRange(new object[] {
             "Español",
             "Ingles"});
-            this.cmboxIdioma.Location = new System.Drawing.Point(248, 35);
+            this.cmboxIdioma.Location = new System.Drawing.Point(214, 35);
             this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxIdioma.Name = "cmboxIdioma";
-            this.cmboxIdioma.Size = new System.Drawing.Size(217, 25);
+            this.cmboxIdioma.Size = new System.Drawing.Size(251, 25);
             this.cmboxIdioma.TabIndex = 2;
             // 
             // lblIdiomaE
@@ -313,6 +301,18 @@
             this.lblIdioma.Size = new System.Drawing.Size(43, 17);
             this.lblIdioma.TabIndex = 0;
             this.lblIdioma.Text = "Idioma";
+            // 
+            // btnCambiarContraseña
+            // 
+            this.btnCambiarContraseña.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCambiarContraseña.Location = new System.Drawing.Point(280, 164);
+            this.btnCambiarContraseña.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCambiarContraseña.Name = "btnCambiarContraseña";
+            this.btnCambiarContraseña.Size = new System.Drawing.Size(185, 27);
+            this.btnCambiarContraseña.TabIndex = 8;
+            this.btnCambiarContraseña.Text = "Cambiar contraseña";
+            this.btnCambiarContraseña.UseVisualStyleBackColor = true;
+            this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
             // 
             // Configuracion
             // 
@@ -350,7 +350,6 @@
         private System.Windows.Forms.Label lblTema;
         private System.Windows.Forms.Panel paneBotones;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAplicar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtNuevaContraConfirma;
@@ -361,5 +360,6 @@
         private System.Windows.Forms.Label lblNuevaContra;
         private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnCambiarContraseña;
     }
 }

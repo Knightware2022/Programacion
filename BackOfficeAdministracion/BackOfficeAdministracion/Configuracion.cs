@@ -54,12 +54,38 @@ namespace BackOfficeAdministracion
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnVer_MouseEnter(object sender, EventArgs e)
+        {
+            caracteresContrasenia(1);
+        }
+
+        private void btnVer_MouseLeave(object sender, EventArgs e)
+        {
+            caracteresContrasenia(0);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paneConfiguracion_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCambiarContraseña_Click(object sender, EventArgs e)
+        {
             Encriptacion en = new Encriptacion();
             if ((txtContraActual.Text.Equals("")) || (txtNuevaContraseña.Text.Equals("") || txtNuevaContraseña.Text.Count() < 5))
             {
-                MessageBox.Show("La contraseña nueva debe tener mas de 5 caracteres");   
+                MessageBox.Show("La contraseña nueva debe tener mas de 5 caracteres");
             }
-            else {
+            else
+            {
                 string contraseñaActual = txtContraActual.Text;
                 string contraseñaNueva = txtNuevaContraseña.Text;
                 string contraseñaConfirma = txtNuevaContraConfirma.Text;
@@ -89,7 +115,8 @@ namespace BackOfficeAdministracion
                                     break;
                             }
                         }
-                        else {
+                        else
+                        {
                             MessageBox.Show("La contraseña nueva debe ser diferente a la actual");
                         }
                     }
@@ -104,26 +131,6 @@ namespace BackOfficeAdministracion
                     MessageBox.Show("Las contraseñas no coinciden");
                 }
             }
-        }
-
-        private void btnVer_MouseEnter(object sender, EventArgs e)
-        {
-            caracteresContrasenia(1);
-        }
-
-        private void btnVer_MouseLeave(object sender, EventArgs e)
-        {
-            caracteresContrasenia(0);
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void paneConfiguracion_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
