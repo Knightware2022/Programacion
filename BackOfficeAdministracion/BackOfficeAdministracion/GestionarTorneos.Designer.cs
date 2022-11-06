@@ -31,12 +31,12 @@
             this.tbcGestionTorneosColectivos = new System.Windows.Forms.TabControl();
             this.tbpgTorneosColectivos = new System.Windows.Forms.TabPage();
             this.paneBotones = new System.Windows.Forms.Panel();
-            this.CrearTorneoColectivo = new System.Windows.Forms.Button();
+            this.btnCrearTorneo = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAceptarCambios = new System.Windows.Forms.Button();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
-            this.paneModificar = new System.Windows.Forms.Panel();
+            this.paneDatos = new System.Windows.Forms.Panel();
             this.btnEncuentros = new System.Windows.Forms.Button();
             this.lblMinutoFinCole = new System.Windows.Forms.Label();
             this.lblHoraFinalizaColec = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.lblDeporte = new System.Windows.Forms.Label();
             this.dtimeFechaComienza = new System.Windows.Forms.DateTimePicker();
             this.lblFechaComienzo = new System.Windows.Forms.Label();
-            this.paneModificarEvento = new System.Windows.Forms.Panel();
+            this.paneID = new System.Windows.Forms.Panel();
             this.btnRefrescarTorneoColectivo = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cmboxIDTorneo = new System.Windows.Forms.ComboBox();
@@ -90,8 +90,8 @@
             this.tbcGestionTorneosColectivos.SuspendLayout();
             this.tbpgTorneosColectivos.SuspendLayout();
             this.paneBotones.SuspendLayout();
-            this.paneModificar.SuspendLayout();
-            this.paneModificarEvento.SuspendLayout();
+            this.paneDatos.SuspendLayout();
+            this.paneID.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcGestionTorneosColectivos
@@ -109,8 +109,8 @@
             // 
             this.tbpgTorneosColectivos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbpgTorneosColectivos.Controls.Add(this.paneBotones);
-            this.tbpgTorneosColectivos.Controls.Add(this.paneModificar);
-            this.tbpgTorneosColectivos.Controls.Add(this.paneModificarEvento);
+            this.tbpgTorneosColectivos.Controls.Add(this.paneDatos);
+            this.tbpgTorneosColectivos.Controls.Add(this.paneID);
             this.tbpgTorneosColectivos.Location = new System.Drawing.Point(4, 26);
             this.tbpgTorneosColectivos.Margin = new System.Windows.Forms.Padding(2);
             this.tbpgTorneosColectivos.Name = "tbpgTorneosColectivos";
@@ -123,7 +123,7 @@
             // paneBotones
             // 
             this.paneBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneBotones.Controls.Add(this.CrearTorneoColectivo);
+            this.paneBotones.Controls.Add(this.btnCrearTorneo);
             this.paneBotones.Controls.Add(this.btnDelete);
             this.paneBotones.Controls.Add(this.btnClose);
             this.paneBotones.Controls.Add(this.btnAceptarCambios);
@@ -134,20 +134,22 @@
             this.paneBotones.Size = new System.Drawing.Size(539, 129);
             this.paneBotones.TabIndex = 8;
             // 
-            // CrearTorneoColectivo
+            // btnCrearTorneo
             // 
-            this.CrearTorneoColectivo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.CrearTorneoColectivo.Location = new System.Drawing.Point(179, 68);
-            this.CrearTorneoColectivo.Margin = new System.Windows.Forms.Padding(2);
-            this.CrearTorneoColectivo.Name = "CrearTorneoColectivo";
-            this.CrearTorneoColectivo.Size = new System.Drawing.Size(160, 35);
-            this.CrearTorneoColectivo.TabIndex = 21;
-            this.CrearTorneoColectivo.Text = "Crear torneo";
-            this.CrearTorneoColectivo.UseVisualStyleBackColor = true;
-            this.CrearTorneoColectivo.Click += new System.EventHandler(this.btnCrearEventoColectivo_Click);
+            this.btnCrearTorneo.Enabled = false;
+            this.btnCrearTorneo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCrearTorneo.Location = new System.Drawing.Point(179, 68);
+            this.btnCrearTorneo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrearTorneo.Name = "btnCrearTorneo";
+            this.btnCrearTorneo.Size = new System.Drawing.Size(160, 35);
+            this.btnCrearTorneo.TabIndex = 21;
+            this.btnCrearTorneo.Text = "Crear torneo";
+            this.btnCrearTorneo.UseVisualStyleBackColor = true;
+            this.btnCrearTorneo.Click += new System.EventHandler(this.btnCrearEventoColectivo_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.Enabled = false;
             this.btnDelete.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Location = new System.Drawing.Point(288, 12);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
@@ -172,6 +174,7 @@
             // 
             // btnAceptarCambios
             // 
+            this.btnAceptarCambios.Enabled = false;
             this.btnAceptarCambios.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAceptarCambios.Location = new System.Drawing.Point(31, 12);
             this.btnAceptarCambios.Margin = new System.Windows.Forms.Padding(2);
@@ -192,38 +195,39 @@
             this.btnLimpiarCampos.TabIndex = 18;
             this.btnLimpiarCampos.Text = "Cancelar";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
-            // paneModificar
+            // paneDatos
             // 
-            this.paneModificar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneModificar.Controls.Add(this.btnEncuentros);
-            this.paneModificar.Controls.Add(this.lblMinutoFinCole);
-            this.paneModificar.Controls.Add(this.lblHoraFinalizaColec);
-            this.paneModificar.Controls.Add(this.cmboxMinutoFinCole);
-            this.paneModificar.Controls.Add(this.cmboxHoraFinCole);
-            this.paneModificar.Controls.Add(this.lblFinalizaColectivo);
-            this.paneModificar.Controls.Add(this.txtIDencuentroCole);
-            this.paneModificar.Controls.Add(this.txtDescripcionCole);
-            this.paneModificar.Controls.Add(this.lblIDEncuentroCole);
-            this.paneModificar.Controls.Add(this.dtimeFechaFinaliza);
-            this.paneModificar.Controls.Add(this.lblFechaFinalizaCole);
-            this.paneModificar.Controls.Add(this.lblMinutosComienza);
-            this.paneModificar.Controls.Add(this.lblHoraComienza);
-            this.paneModificar.Controls.Add(this.cmboxMinutos);
-            this.paneModificar.Controls.Add(this.cmboxHoraComienzo);
-            this.paneModificar.Controls.Add(this.cmboxEquiposenEncuentro);
-            this.paneModificar.Controls.Add(this.cmboxDeportes);
-            this.paneModificar.Controls.Add(this.lblHoraComienzo);
-            this.paneModificar.Controls.Add(this.lblDescripcionColect);
-            this.paneModificar.Controls.Add(this.lblEquiposenEncuentro);
-            this.paneModificar.Controls.Add(this.lblDeporte);
-            this.paneModificar.Controls.Add(this.dtimeFechaComienza);
-            this.paneModificar.Controls.Add(this.lblFechaComienzo);
-            this.paneModificar.Location = new System.Drawing.Point(17, 89);
-            this.paneModificar.Margin = new System.Windows.Forms.Padding(2);
-            this.paneModificar.Name = "paneModificar";
-            this.paneModificar.Size = new System.Drawing.Size(539, 360);
-            this.paneModificar.TabIndex = 7;
+            this.paneDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneDatos.Controls.Add(this.btnEncuentros);
+            this.paneDatos.Controls.Add(this.lblMinutoFinCole);
+            this.paneDatos.Controls.Add(this.lblHoraFinalizaColec);
+            this.paneDatos.Controls.Add(this.cmboxMinutoFinCole);
+            this.paneDatos.Controls.Add(this.cmboxHoraFinCole);
+            this.paneDatos.Controls.Add(this.lblFinalizaColectivo);
+            this.paneDatos.Controls.Add(this.txtIDencuentroCole);
+            this.paneDatos.Controls.Add(this.txtDescripcionCole);
+            this.paneDatos.Controls.Add(this.lblIDEncuentroCole);
+            this.paneDatos.Controls.Add(this.dtimeFechaFinaliza);
+            this.paneDatos.Controls.Add(this.lblFechaFinalizaCole);
+            this.paneDatos.Controls.Add(this.lblMinutosComienza);
+            this.paneDatos.Controls.Add(this.lblHoraComienza);
+            this.paneDatos.Controls.Add(this.cmboxMinutos);
+            this.paneDatos.Controls.Add(this.cmboxHoraComienzo);
+            this.paneDatos.Controls.Add(this.cmboxEquiposenEncuentro);
+            this.paneDatos.Controls.Add(this.cmboxDeportes);
+            this.paneDatos.Controls.Add(this.lblHoraComienzo);
+            this.paneDatos.Controls.Add(this.lblDescripcionColect);
+            this.paneDatos.Controls.Add(this.lblEquiposenEncuentro);
+            this.paneDatos.Controls.Add(this.lblDeporte);
+            this.paneDatos.Controls.Add(this.dtimeFechaComienza);
+            this.paneDatos.Controls.Add(this.lblFechaComienzo);
+            this.paneDatos.Location = new System.Drawing.Point(17, 89);
+            this.paneDatos.Margin = new System.Windows.Forms.Padding(2);
+            this.paneDatos.Name = "paneDatos";
+            this.paneDatos.Size = new System.Drawing.Size(539, 360);
+            this.paneDatos.TabIndex = 7;
             // 
             // btnEncuentros
             // 
@@ -552,6 +556,7 @@
             // 
             // cmboxEquiposenEncuentro
             // 
+            this.cmboxEquiposenEncuentro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxEquiposenEncuentro.FormattingEnabled = true;
             this.cmboxEquiposenEncuentro.Location = new System.Drawing.Point(249, 84);
             this.cmboxEquiposenEncuentro.Margin = new System.Windows.Forms.Padding(2);
@@ -633,18 +638,18 @@
             this.lblFechaComienzo.TabIndex = 25;
             this.lblFechaComienzo.Text = "Fecha de Comienzo";
             // 
-            // paneModificarEvento
+            // paneID
             // 
-            this.paneModificarEvento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneModificarEvento.Controls.Add(this.btnRefrescarTorneoColectivo);
-            this.paneModificarEvento.Controls.Add(this.btnBuscar);
-            this.paneModificarEvento.Controls.Add(this.cmboxIDTorneo);
-            this.paneModificarEvento.Controls.Add(this.lblIDmodificar);
-            this.paneModificarEvento.Location = new System.Drawing.Point(17, 13);
-            this.paneModificarEvento.Margin = new System.Windows.Forms.Padding(2);
-            this.paneModificarEvento.Name = "paneModificarEvento";
-            this.paneModificarEvento.Size = new System.Drawing.Size(539, 72);
-            this.paneModificarEvento.TabIndex = 6;
+            this.paneID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneID.Controls.Add(this.btnRefrescarTorneoColectivo);
+            this.paneID.Controls.Add(this.btnBuscar);
+            this.paneID.Controls.Add(this.cmboxIDTorneo);
+            this.paneID.Controls.Add(this.lblIDmodificar);
+            this.paneID.Location = new System.Drawing.Point(17, 13);
+            this.paneID.Margin = new System.Windows.Forms.Padding(2);
+            this.paneID.Name = "paneID";
+            this.paneID.Size = new System.Drawing.Size(539, 72);
+            this.paneID.TabIndex = 6;
             // 
             // btnRefrescarTorneoColectivo
             // 
@@ -916,10 +921,10 @@
             this.tbcGestionTorneosColectivos.ResumeLayout(false);
             this.tbpgTorneosColectivos.ResumeLayout(false);
             this.paneBotones.ResumeLayout(false);
-            this.paneModificar.ResumeLayout(false);
-            this.paneModificar.PerformLayout();
-            this.paneModificarEvento.ResumeLayout(false);
-            this.paneModificarEvento.PerformLayout();
+            this.paneDatos.ResumeLayout(false);
+            this.paneDatos.PerformLayout();
+            this.paneID.ResumeLayout(false);
+            this.paneID.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -951,12 +956,12 @@
         private System.Windows.Forms.Button btnCrearUsuario;
         private System.Windows.Forms.Button btnEnviarCorreo;
         private System.Windows.Forms.Panel paneBotones;
-        private System.Windows.Forms.Button CrearTorneoColectivo;
+        private System.Windows.Forms.Button btnCrearTorneo;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnAceptarCambios;
         private System.Windows.Forms.Button btnLimpiarCampos;
-        private System.Windows.Forms.Panel paneModificar;
+        private System.Windows.Forms.Panel paneDatos;
         private System.Windows.Forms.Label lblMinutoFinCole;
         private System.Windows.Forms.Label lblHoraFinalizaColec;
         private System.Windows.Forms.ComboBox cmboxMinutoFinCole;
@@ -979,7 +984,7 @@
         private System.Windows.Forms.Label lblDeporte;
         private System.Windows.Forms.DateTimePicker dtimeFechaComienza;
         private System.Windows.Forms.Label lblFechaComienzo;
-        private System.Windows.Forms.Panel paneModificarEvento;
+        private System.Windows.Forms.Panel paneID;
         private System.Windows.Forms.Button btnRefrescarTorneoColectivo;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cmboxIDTorneo;

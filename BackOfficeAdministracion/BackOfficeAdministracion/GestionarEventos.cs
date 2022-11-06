@@ -69,7 +69,19 @@ namespace BackOfficeAdministracion
             switch (Logica.ActualizarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
             {
                 case 0:
+                    this.refrescarEventosColectivos();
                     MessageBox.Show("Evento actualizado exitosamente");
+                    paneModificarEvento.Enabled = true;
+                    paneDatosEvento.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnAceptar.Enabled = false;
+                    btnCrearEventoColectivo.Enabled = false;
+                    txtDescripcionCole.Text = null;
+                    txtIDencuentroCole.Text = null;
+                    cmboxMinutoFinCole.Text = "00";
+                    cmboxHoraComienzo.Text = "00";
+                    cmboxMinutos.Text = "00";
+                    cmboxHoraFinCole.Text = "00";
 
                     break;
                 case 1:
@@ -177,6 +189,13 @@ namespace BackOfficeAdministracion
                 switch (Logica.DatosEncuentrosColectivos(encuentrosColectivos, equiposEncuentro))
                 {
                     case 0:
+                        paneDatosEvento.Enabled = true;
+                        paneModificarEvento.Enabled = false;
+                        btnAceptar.Enabled = true;
+                        btnCrearEventoColectivo.Enabled = false;
+                        btnEliminar.Enabled = true;
+                        btnAlineacion.Enabled = true;
+                        btnIncidencias.Enabled = true;
                         txtDescripcionCole.Text = encuentrosColectivos.descripcion;
                         txtIDencuentroCole.Text = encuentrosColectivos.idEncuentro.ToString();
                         dtimeFechaComienza.Text = encuentrosColectivos.fechaComienzo.ToString();
@@ -188,13 +207,14 @@ namespace BackOfficeAdministracion
                         cmboxDeportes.Items.Clear();
                         cmboxDeportes.Items.Add(encuentrosColectivos.nombreDeporte);
                         cmboxDeportes.Text = encuentrosColectivos.nombreDeporte;
-
+                        paneEquipos.Enabled = true;
                         cmboxEquiposenEncuentro.Items.Clear();
-                        cmboxEquiposenEncuentro.Text = equiposEncuentro[0];
                         foreach (string nombre in equiposEncuentro)
                         {
                             cmboxEquiposenEncuentro.Items.Add(nombre);
                         }
+                        cmboxEquiposenEncuentro.Text = equiposEncuentro[0];
+
                         break;
                     case 1:
                         MessageBox.Show("Error de conexion");
@@ -224,7 +244,15 @@ namespace BackOfficeAdministracion
                             txtDescripcionCole.Text = cmboxIDEvento.Text.Substring(cmboxIDEvento.Text.IndexOf("-") + 1);
                             txtIDencuentroCole.Text = cmboxIDEvento.Text.Substring(3, (cmboxIDEvento.Text.IndexOf(" ") - 3));
                             cmboxIDEvento.Text = null;
+                            paneModificarEvento.Enabled = false;
+                            paneDatosEvento.Enabled = true;
 
+                            btnAlineacion.Enabled = false;
+                            btnIncidencias.Enabled = false;
+                            btnAceptar.Enabled = false;
+                            btnEliminar.Enabled = false;
+                            btnCrearEventoColectivo.Enabled = true;
+                            paneEquipos.Enabled = false;
                         }
                         else
                         {
@@ -242,6 +270,13 @@ namespace BackOfficeAdministracion
                         cmboxMinutos.Text = encuentrosColectivos.fechaComienzo.Minute.ToString();
                         cmboxHoraFinCole.Text = encuentrosColectivos.fechaFinaliza.Hour.ToString();
                         cmboxMinutoFinCole.Text = encuentrosColectivos.fechaFinaliza.Minute.ToString();
+                        paneDatosEvento.Enabled = true;
+                        paneModificarEvento.Enabled = false;
+                        btnAceptar.Enabled = true;
+                        btnCrearEventoColectivo.Enabled = false;
+                        btnEliminar.Enabled = true;
+                        btnAlineacion.Enabled = true;
+                        btnIncidencias.Enabled = true;
                         this.refrescarEquiposEnEncuentro();
                         break;
                     case 5:
@@ -259,7 +294,13 @@ namespace BackOfficeAdministracion
                         cmboxDeportes.Items.Clear();
                         cmboxDeportes.Items.Add(encuentrosColectivos.nombreDeporte);
                         cmboxDeportes.Text = encuentrosColectivos.nombreDeporte;
-
+                        paneDatosEvento.Enabled = true;
+                        paneModificarEvento.Enabled = false;
+                        btnAceptar.Enabled = true;
+                        btnCrearEventoColectivo.Enabled = false;
+                        btnEliminar.Enabled = true;
+                        btnAlineacion.Enabled = true;
+                        btnIncidencias.Enabled = true;
                         break;
                 }
             }         
@@ -315,14 +356,18 @@ namespace BackOfficeAdministracion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            paneModificarEvento.Enabled = true;
+            paneDatosEvento.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnCrearEventoColectivo.Enabled = false;
+            btnAceptar.Enabled = false;
+            btnCrearEventoColectivo.Enabled = false;
             txtDescripcionCole.Text = null;
             txtIDencuentroCole.Text = null;
-            cmboxEquiposenEncuentro.Text = null;
-            cmboxHoraComienzo.Text = null;
-            cmboxHoraFinCole.Text = null;
-            cmboxMinutoFinCole.Text = null;
-            cmboxMinutos.Text = null;
-            cmboxDeportes.Text = null;
+            cmboxMinutoFinCole.Text = "00";
+            cmboxHoraComienzo.Text = "00";
+            cmboxMinutos.Text = "00";
+            cmboxHoraFinCole.Text = "00";
         }
 
         private void btnCrearEventoColectivo_Click(object sender, EventArgs e)
@@ -338,15 +383,23 @@ namespace BackOfficeAdministracion
             fechaC = encuentrosColectivos.fechaComienzo.Year + "-" + encuentrosColectivos.fechaComienzo.Month + "-" + encuentrosColectivos.fechaComienzo.Day + " " + encuentrosColectivos.fechaComienzo.TimeOfDay;
             fechaF = encuentrosColectivos.fechaFinaliza.Year + "-" + encuentrosColectivos.fechaFinaliza.Month + "-" + encuentrosColectivos.fechaFinaliza.Day + " " + encuentrosColectivos.fechaFinaliza.TimeOfDay;
             encuentrosColectivos.nombreDeporte = cmboxDeportes.Text;
-            switch (Logica.insertarEventoColectivo(encuentrosColectivos, fechaC, fechaF))
+            switch (Logica.insertarEventoColectivo(encuentrosColectivos, fechaC, fechaF, encuentrosColectivos.nombreDeporte))
             {
                 case 0:
                     MessageBox.Show("Evento creado exitosamente");
-                    cmboxMinutoFinCole.Text = "0";
-                    cmboxHoraFinCole.Text = "0";
-                    cmboxMinutos.Text = "0";
-                    cmboxHoraComienzo.Text = "0";
+                    paneModificarEvento.Enabled = true;
+                    paneDatosEvento.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnCrearEventoColectivo.Enabled = false;
+                    btnAceptar.Enabled = false;
+                    btnCrearEventoColectivo.Enabled = false;
                     txtDescripcionCole.Text = null;
+                    txtIDencuentroCole.Text = null;
+                    cmboxMinutoFinCole.Text = "00";
+                    cmboxHoraComienzo.Text = "00";
+                    cmboxMinutos.Text = "00";
+                    cmboxHoraFinCole.Text = "00";
+                    this.refrescarEventosColectivos();
                     break;
                 case 1:
                     MessageBox.Show("Error de conexion");
@@ -366,12 +419,23 @@ namespace BackOfficeAdministracion
                 case 0:
                     MessageBox.Show("Encuentro eliminado");
                     this.refrescarEventosColectivos();
+                    paneModificarEvento.Enabled = true;
+                    paneDatosEvento.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnAceptar.Enabled = false;
+                    btnCrearEventoColectivo.Enabled = false;
+                    txtDescripcionCole.Text = null;
+                    txtIDencuentroCole.Text = null;
+                    cmboxMinutoFinCole.Text = "00";
+                    cmboxHoraComienzo.Text = "00";
+                    cmboxMinutos.Text = "00";
+                    cmboxHoraFinCole.Text = "00";
                     break;
                 case 1:
                     MessageBox.Show("Error de conexion");
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show("Error inesperado. Probablemente esta vinculado a un torneo");
                     break;
             }
         }  

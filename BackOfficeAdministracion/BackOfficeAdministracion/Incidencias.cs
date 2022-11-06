@@ -125,7 +125,7 @@ namespace BackOfficeAdministracion
             if (rbPuntos.Checked)
             {
                 int minuto;
-                if (Int32.TryParse(txtMinuto.Text, out minuto))
+                if (Int32.TryParse(txtMinuto.Text, out minuto) && minuto>=0 )
                 {
                     bool bandera = true;
                     Random r = new Random();
@@ -171,7 +171,7 @@ namespace BackOfficeAdministracion
                 else
                 {
 
-                    MessageBox.Show("Minuto no valido, debe ser un entero");
+                    MessageBox.Show("Minuto no valido, debe ser un entero positivo");
                 }
             }
             else {

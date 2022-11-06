@@ -64,10 +64,11 @@
             this.paneConfiguracion.Controls.Add(this.paneApariencia);
             this.paneConfiguracion.Controls.Add(this.paneIdioma);
             this.paneConfiguracion.Location = new System.Drawing.Point(0, 2);
-            this.paneConfiguracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneConfiguracion.Margin = new System.Windows.Forms.Padding(2);
             this.paneConfiguracion.Name = "paneConfiguracion";
             this.paneConfiguracion.Size = new System.Drawing.Size(580, 619);
             this.paneConfiguracion.TabIndex = 0;
+            this.paneConfiguracion.Paint += new System.Windows.Forms.PaintEventHandler(this.paneConfiguracion_Paint);
             // 
             // panel1
             // 
@@ -81,7 +82,7 @@
             this.panel1.Controls.Add(this.lblNuevaContra);
             this.panel1.Controls.Add(this.lblContra);
             this.panel1.Location = new System.Drawing.Point(12, 207);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(562, 169);
             this.panel1.TabIndex = 6;
@@ -91,7 +92,7 @@
             this.btnVer.BackgroundImage = global::BackOfficeAdministracion.Properties.Resources.ojo;
             this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVer.Location = new System.Drawing.Point(488, 93);
-            this.btnVer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVer.Margin = new System.Windows.Forms.Padding(2);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(26, 28);
             this.btnVer.TabIndex = 7;
@@ -103,7 +104,7 @@
             // 
             this.txtNuevaContraConfirma.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtNuevaContraConfirma.Location = new System.Drawing.Point(214, 117);
-            this.txtNuevaContraConfirma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNuevaContraConfirma.Margin = new System.Windows.Forms.Padding(2);
             this.txtNuevaContraConfirma.Name = "txtNuevaContraConfirma";
             this.txtNuevaContraConfirma.Size = new System.Drawing.Size(251, 23);
             this.txtNuevaContraConfirma.TabIndex = 6;
@@ -112,7 +113,7 @@
             // 
             this.txtNuevaContraseña.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtNuevaContraseña.Location = new System.Drawing.Point(214, 79);
-            this.txtNuevaContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNuevaContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtNuevaContraseña.Name = "txtNuevaContraseña";
             this.txtNuevaContraseña.Size = new System.Drawing.Size(251, 23);
             this.txtNuevaContraseña.TabIndex = 5;
@@ -121,7 +122,7 @@
             // 
             this.txtContraActual.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtContraActual.Location = new System.Drawing.Point(214, 41);
-            this.txtContraActual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraActual.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraActual.Name = "txtContraActual";
             this.txtContraActual.Size = new System.Drawing.Size(251, 23);
             this.txtContraActual.TabIndex = 4;
@@ -177,7 +178,7 @@
             this.paneBotones.Controls.Add(this.btnCancelar);
             this.paneBotones.Controls.Add(this.btnAplicar);
             this.paneBotones.Location = new System.Drawing.Point(7, 503);
-            this.paneBotones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneBotones.Margin = new System.Windows.Forms.Padding(2);
             this.paneBotones.Name = "paneBotones";
             this.paneBotones.Size = new System.Drawing.Size(567, 84);
             this.paneBotones.TabIndex = 5;
@@ -186,7 +187,7 @@
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCerrar.Location = new System.Drawing.Point(364, 28);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(141, 27);
             this.btnCerrar.TabIndex = 7;
@@ -198,7 +199,7 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.Location = new System.Drawing.Point(219, 28);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(141, 27);
             this.btnCancelar.TabIndex = 6;
@@ -210,7 +211,7 @@
             // 
             this.btnAplicar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAplicar.Location = new System.Drawing.Point(74, 28);
-            this.btnAplicar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAplicar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(141, 27);
             this.btnAplicar.TabIndex = 5;
@@ -225,7 +226,7 @@
             this.paneApariencia.Controls.Add(this.lblTema);
             this.paneApariencia.Controls.Add(this.lblApariencia);
             this.paneApariencia.Location = new System.Drawing.Point(12, 108);
-            this.paneApariencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneApariencia.Margin = new System.Windows.Forms.Padding(2);
             this.paneApariencia.Name = "paneApariencia";
             this.paneApariencia.Size = new System.Drawing.Size(562, 81);
             this.paneApariencia.TabIndex = 1;
@@ -239,7 +240,7 @@
             "Oscuro",
             "Claro"});
             this.cmboxTema.Location = new System.Drawing.Point(248, 40);
-            this.cmboxTema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxTema.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxTema.Name = "cmboxTema";
             this.cmboxTema.Size = new System.Drawing.Size(217, 25);
             this.cmboxTema.TabIndex = 2;
@@ -273,7 +274,7 @@
             this.paneIdioma.Controls.Add(this.lblIdiomaE);
             this.paneIdioma.Controls.Add(this.lblIdioma);
             this.paneIdioma.Location = new System.Drawing.Point(12, 17);
-            this.paneIdioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.paneIdioma.Name = "paneIdioma";
             this.paneIdioma.Size = new System.Drawing.Size(562, 74);
             this.paneIdioma.TabIndex = 0;
@@ -286,7 +287,7 @@
             "Español",
             "Ingles"});
             this.cmboxIdioma.Location = new System.Drawing.Point(248, 35);
-            this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxIdioma.Name = "cmboxIdioma";
             this.cmboxIdioma.Size = new System.Drawing.Size(217, 25);
             this.cmboxIdioma.TabIndex = 2;
@@ -320,7 +321,7 @@
             this.ClientSize = new System.Drawing.Size(584, 625);
             this.Controls.Add(this.paneConfiguracion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Configuracion";
             this.Text = "Configuración";
             this.Load += new System.EventHandler(this.Configuracion_Load);

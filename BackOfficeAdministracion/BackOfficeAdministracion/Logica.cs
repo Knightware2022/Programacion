@@ -243,7 +243,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 if (rs.RecordCount == 0) {//no hay un usuario guest con ese nombre
@@ -251,17 +250,6 @@ namespace BackOfficeAdministracion
                 }
                 else {
                     id = Convert.ToInt32(rs.Fields[0].Value);
-                    /*sql = "delete from Guest where idUsuario=" + id;
-                    try
-                    {
-                        rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
-                    }
-                    catch
-                    {
-                        throw;
-
-                        return devolver = 2;
-                    }*/
                     sql = "delete from Usuarios where idUsuario=" + id;
                     try
                     {
@@ -269,8 +257,6 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
-                        throw;
-
                         return devolver = 2;
                     }
                 }
@@ -278,7 +264,7 @@ namespace BackOfficeAdministracion
             }
             rs = null;
             return devolver;
-        }//faltaParaEliminarGuest
+        }
         public static string obtenerPublicidad(int id)
         {
             string url = "";
@@ -539,7 +525,7 @@ namespace BackOfficeAdministracion
             }
             rs = null;
             return devolver;
-        }//faltaParaEliminarGuest
+        }
         public static byte crearUsuario(Usuario u)
         {
             byte devolver = 0;
@@ -803,6 +789,65 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
+        public static byte listarTodosUsuariosGUEST(List<string> lista)
+        {
+            object cantFilas;
+            byte devolver = 0;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "Select nombreAutogen from Guest";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return 2;
+                }
+                while (!rs.EOF)
+                {
+                    lista.Add(Convert.ToString(rs.Fields[0].Value));
+                    rs.MoveNext();
+                }
+            }
+            rs = null;
+
+            return devolver;
+        }
+        public static byte asignarPublicidad(string nombreGuest, string url)
+        {
+            object cantFilas;
+            byte devolver = 0;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "Insert into Tiene_Usuario(idPublicidad, idUsuario) values ((select idPublicidad from Publicidad where url='" + url + "'), (select idUsuario from Guest where nombreAutogen='" + nombreGuest +"') )";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return 2;
+                }
+                
+            }
+            rs = null;
+
+            return devolver;
+        }
+                             //Deportes y equipos
         public static byte cargarNombreEquipos(List<string> listaEquipos) {
             byte devolver = 0;
             object cantFilas;
@@ -1061,7 +1106,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Forman(idJugador, idEquipo, idDeporte) values ( " + idJugador + ", " + idEquipo +", "+  + idDeporte+")";
+                sql = "insert into Forman(idJugador, idEquipo, idDeporteEquipo) values ( " + idJugador + ", " + idEquipo +", "+  + idDeporte+")";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1118,7 +1163,16 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Forman where idJugador=" + idJugador + " AND idEquipo=" + idEquipo + "AND IdDeporte=" + idDeporte;
+                sql = "delete from Compite where idJugador=" + idJugador;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                sql = "delete from Forman where idJugador=" + idJugador + " AND idEquipo=" + idEquipo + " AND idDeporteEquipo=" + idDeporte;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -1132,7 +1186,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte crearEquipo(Equipos equipo)
+        public static byte crearEquipo(Equipos equipo, string nombreDeporte)
         {
             byte devolver = 0;
             object cantFilas;
@@ -1144,7 +1198,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Equipos(idDeporte, idEquipo, categoria, logo, nombre, pais) values( "+equipo.idDeporte+", " + equipo.id + ", '" + equipo.categoria + "' ,'" + equipo.logo + "' ,'" + equipo.nombre + "' ,'" + equipo.pais + "')";
+                sql = "insert into Equipos(idDeporte, idEquipo, categoria, logo, nombre, pais) values( (select idDeporte from Deportes where nombre='" +nombreDeporte+"'), " + equipo.id + ", '" + equipo.categoria + "' ,'" + equipo.logo + "' ,'" + equipo.nombre + "' ,'" + equipo.pais + "')";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -1358,6 +1412,16 @@ namespace BackOfficeAdministracion
             }
             else
             {
+                
+                sql = "delete from Compite where idJugador=" + idjugador;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
                 sql = "delete from Jugador where idJugador=" + idjugador;
                 try
                 {
@@ -1367,7 +1431,6 @@ namespace BackOfficeAdministracion
                 {
                     return devolver = 2;
                 }
-
             }
             rs = null;
             return devolver;
@@ -1735,7 +1798,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 if (rs.RecordCount == 0)
@@ -1756,8 +1818,6 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
-                        throw;
-
                         return devolver = 2;
                     }                    
                     encuentro.nombreDeporte = Convert.ToString(rs.Fields[0].Value); 
@@ -1768,8 +1828,6 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
-                        throw;
-
                         return devolver = 2;
                     }
                     if (rs.RecordCount == 0)
@@ -1874,7 +1932,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 if (rs.RecordCount == 0)//equipo sin jugadores
@@ -1900,7 +1957,6 @@ namespace BackOfficeAdministracion
                         }
                         catch
                         {
-                            throw;
                             return devolver = 2;
                         }
                     }
@@ -2273,7 +2329,7 @@ namespace BackOfficeAdministracion
                 }
                 if (rs.RecordCount == 0)
                 {
-                    sql = "insert into Utiliza(idAlineacion, idEncuentro, idDeporte)) values(" + idAlineacion + ", " + idEncuentro + ", " +idDeporteEncuentro+")";
+                    sql = "insert into Utiliza(idAlineacion, idEncuentro, idDeporte) values(" + idAlineacion + ", " + idEncuentro + ", " +idDeporteEncuentro+")";
                     try
                     {
                         rs = _cn.Execute(sql, out cantFilas);
@@ -2340,7 +2396,7 @@ namespace BackOfficeAdministracion
             rs = null;
             return devolver;
         }
-        public static byte insertarEventoColectivo(EncuentrosColectivos encuentros, string fechaComienzo, string fechaFin)
+        public static byte insertarEventoColectivo(EncuentrosColectivos encuentros, string fechaComienzo, string fechaFin, string deporte)
         {
             byte devolver = 0;
             object cantFilas;
@@ -2352,7 +2408,7 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "insert into Encuentros(idDeporte, idEncuentro, fechaComienzo, fechaFinaliza, descripcionEncuentro) values("+encuentros.deporteEncuentro+", "+ encuentros.idEncuentro+", '" + fechaComienzo + "', '"+ fechaFin + "', '"+ encuentros.descripcion+"')"; 
+                sql = "insert into Encuentros(idDeporte, idEncuentro, fechaComienzo, fechaFinaliza, descripcionEncuentro) values((select idDeporte from Deportes where nombre='"+ deporte +"'), "+ encuentros.idEncuentro+", '" + fechaComienzo + "', '"+ fechaFin + "', '"+ encuentros.descripcion+"')"; 
                 try
                 {
 
@@ -2378,7 +2434,8 @@ namespace BackOfficeAdministracion
             }
             else
             {
-                sql = "delete from Encuentros where idEncuentro=" + idEncuentro + "AND idDeporte=" + idDeporte;
+
+                sql = "delete from Encuentros where idEncuentro=" + idEncuentro + " AND idDeporte=" + idDeporte;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -2436,6 +2493,8 @@ namespace BackOfficeAdministracion
             return devolver;
         }
  //                  Metodos Torneo
+
+
         public static byte cargarNombreTorneosColectivos(List<string> listaTorneosColectivos)
         {
             byte devolver = 0;
@@ -2492,10 +2551,12 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
-               
+                if (rs.RecordCount == 0) {
+                    devolver = 3;
+                }
+                else { 
                     torneo.idTorneo = Convert.ToInt32(rs.Fields[0].Value);
                     torneo.idDeporteTorneo = Convert.ToInt32(rs.Fields[1].Value);
                     torneo.fechaComienzo = Convert.ToDateTime(rs.Fields[2].Value);
@@ -2508,8 +2569,7 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
-                        throw;
-
+                       
                         return devolver = 2;
                     }
                     
@@ -2524,7 +2584,6 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
-                        throw;
 
                         return devolver = 2;
                     }
@@ -2539,7 +2598,8 @@ namespace BackOfficeAdministracion
                             equiposenEncuentro.Add((Convert.ToString(rs.Fields[0].Value) + "/" + Convert.ToString(rs.Fields[1].Value)));
                             rs.MoveNext();
                         }
-                    }               
+                    }
+                }
             }
             rs = null;
             return devolver;
@@ -2657,7 +2717,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 while (!rs.EOF)
@@ -2689,7 +2748,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 while (!rs.EOF)
@@ -2722,7 +2780,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 while (!rs.EOF)
@@ -2738,7 +2795,6 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
-                        throw;
                         return devolver = 2;
                     }
                 }                
@@ -2767,7 +2823,6 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
-                    throw;
                     return devolver = 2;
                 }
                 while (!rs.EOF)
@@ -2783,7 +2838,6 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
-                        throw;
                         return devolver = 2;
                     }
                 }

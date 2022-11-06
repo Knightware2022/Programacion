@@ -66,6 +66,12 @@
             this.txtURLpublicidad = new System.Windows.Forms.TextBox();
             this.btnAgregarPublicidad = new System.Windows.Forms.Button();
             this.lblUrl = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAsignar = new System.Windows.Forms.Button();
+            this.cmboxURLasignar = new System.Windows.Forms.ComboBox();
+            this.lblAsignarURL = new System.Windows.Forms.Label();
+            this.lblAsignarUsuario = new System.Windows.Forms.Label();
+            this.cmboxGuestaAsignar = new System.Windows.Forms.ComboBox();
             this.tbcGestionUsuarios.SuspendLayout();
             this.tbpgMostrarUsuarios.SuspendLayout();
             this.paneBotones.SuspendLayout();
@@ -74,6 +80,7 @@
             this.tbpgGestionarPublicidad.SuspendLayout();
             this.paneEliminarPublicidad.SuspendLayout();
             this.paneAniadirPublicidad.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcGestionUsuarios
@@ -82,9 +89,10 @@
             this.tbcGestionUsuarios.Controls.Add(this.tbpgGestionarPublicidad);
             this.tbcGestionUsuarios.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.tbcGestionUsuarios.Location = new System.Drawing.Point(0, -1);
+            this.tbcGestionUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbcGestionUsuarios.Name = "tbcGestionUsuarios";
             this.tbcGestionUsuarios.SelectedIndex = 0;
-            this.tbcGestionUsuarios.Size = new System.Drawing.Size(777, 764);
+            this.tbcGestionUsuarios.Size = new System.Drawing.Size(583, 621);
             this.tbcGestionUsuarios.TabIndex = 0;
             // 
             // tbpgMostrarUsuarios
@@ -93,10 +101,11 @@
             this.tbpgMostrarUsuarios.Controls.Add(this.paneBotones);
             this.tbpgMostrarUsuarios.Controls.Add(this.paneDatos);
             this.tbpgMostrarUsuarios.Controls.Add(this.paneBuscar);
-            this.tbpgMostrarUsuarios.Location = new System.Drawing.Point(4, 31);
+            this.tbpgMostrarUsuarios.Location = new System.Drawing.Point(4, 26);
+            this.tbpgMostrarUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpgMostrarUsuarios.Name = "tbpgMostrarUsuarios";
-            this.tbpgMostrarUsuarios.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgMostrarUsuarios.Size = new System.Drawing.Size(769, 729);
+            this.tbpgMostrarUsuarios.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpgMostrarUsuarios.Size = new System.Drawing.Size(575, 591);
             this.tbpgMostrarUsuarios.TabIndex = 0;
             this.tbpgMostrarUsuarios.Text = "Mostrar usuarios";
             this.tbpgMostrarUsuarios.UseVisualStyleBackColor = true;
@@ -110,17 +119,20 @@
             this.paneBotones.Controls.Add(this.btnCerrar);
             this.paneBotones.Controls.Add(this.btnAceptar);
             this.paneBotones.Controls.Add(this.btnCancelar);
-            this.paneBotones.Location = new System.Drawing.Point(18, 577);
+            this.paneBotones.Location = new System.Drawing.Point(14, 469);
+            this.paneBotones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.paneBotones.Name = "paneBotones";
-            this.paneBotones.Size = new System.Drawing.Size(723, 130);
+            this.paneBotones.Size = new System.Drawing.Size(543, 106);
             this.paneBotones.TabIndex = 14;
             // 
             // btnEnviarCorreo
             // 
+            this.btnEnviarCorreo.Enabled = false;
             this.btnEnviarCorreo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEnviarCorreo.Location = new System.Drawing.Point(339, 81);
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(254, 66);
+            this.btnEnviarCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEnviarCorreo.Name = "btnEnviarCorreo";
-            this.btnEnviarCorreo.Size = new System.Drawing.Size(173, 44);
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(130, 36);
             this.btnEnviarCorreo.TabIndex = 20;
             this.btnEnviarCorreo.Text = "Enviar Correo";
             this.btnEnviarCorreo.UseVisualStyleBackColor = true;
@@ -128,10 +140,12 @@
             // 
             // btnCrearUsuario
             // 
+            this.btnCrearUsuario.Enabled = false;
             this.btnCrearUsuario.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCrearUsuario.Location = new System.Drawing.Point(164, 81);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(123, 66);
+            this.btnCrearUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(122, 44);
+            this.btnCrearUsuario.Size = new System.Drawing.Size(92, 36);
             this.btnCrearUsuario.TabIndex = 19;
             this.btnCrearUsuario.Text = "Crear";
             this.btnCrearUsuario.UseVisualStyleBackColor = true;
@@ -139,10 +153,12 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Location = new System.Drawing.Point(377, 19);
+            this.btnEliminar.Location = new System.Drawing.Point(283, 15);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(119, 43);
+            this.btnEliminar.Size = new System.Drawing.Size(89, 35);
             this.btnEliminar.TabIndex = 19;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -151,9 +167,10 @@
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCerrar.Location = new System.Drawing.Point(551, 19);
+            this.btnCerrar.Location = new System.Drawing.Point(413, 15);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(119, 43);
+            this.btnCerrar.Size = new System.Drawing.Size(89, 35);
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.Text = "cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -161,10 +178,12 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Enabled = false;
             this.btnAceptar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAceptar.Location = new System.Drawing.Point(37, 19);
+            this.btnAceptar.Location = new System.Drawing.Point(28, 15);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(119, 43);
+            this.btnAceptar.Size = new System.Drawing.Size(89, 35);
             this.btnAceptar.TabIndex = 17;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -173,9 +192,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.Location = new System.Drawing.Point(188, 19);
+            this.btnCancelar.Location = new System.Drawing.Point(141, 15);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(126, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(94, 35);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -197,99 +217,111 @@
             this.paneDatos.Controls.Add(this.lblDeportesFavoritos);
             this.paneDatos.Controls.Add(this.cmboxDeportesFavoritos);
             this.paneDatos.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.paneDatos.Location = new System.Drawing.Point(19, 129);
+            this.paneDatos.Location = new System.Drawing.Point(14, 105);
+            this.paneDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.paneDatos.Name = "paneDatos";
-            this.paneDatos.Size = new System.Drawing.Size(705, 442);
+            this.paneDatos.Size = new System.Drawing.Size(529, 360);
             this.paneDatos.TabIndex = 13;
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(338, 34);
+            this.txtID.Location = new System.Drawing.Point(254, 28);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(268, 27);
+            this.txtID.Size = new System.Drawing.Size(202, 23);
             this.txtID.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 39);
+            this.label1.Location = new System.Drawing.Point(40, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 22);
+            this.label1.Size = new System.Drawing.Size(26, 17);
             this.label1.TabIndex = 13;
             this.label1.Text = "ID: ";
             // 
             // txtRol
             // 
-            this.txtRol.Location = new System.Drawing.Point(338, 347);
+            this.txtRol.Location = new System.Drawing.Point(254, 282);
+            this.txtRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRol.Name = "txtRol";
-            this.txtRol.Size = new System.Drawing.Size(268, 27);
+            this.txtRol.Size = new System.Drawing.Size(202, 23);
             this.txtRol.TabIndex = 12;
             // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
-            this.lblRol.Location = new System.Drawing.Point(54, 347);
+            this.lblRol.Location = new System.Drawing.Point(40, 282);
+            this.lblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(33, 22);
+            this.lblRol.Size = new System.Drawing.Size(26, 17);
             this.lblRol.TabIndex = 11;
             this.lblRol.Text = "Rol";
             // 
             // txtUsuario
             // 
             this.txtUsuario.Enabled = false;
-            this.txtUsuario.Location = new System.Drawing.Point(338, 84);
+            this.txtUsuario.Location = new System.Drawing.Point(254, 68);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(268, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(202, 23);
             this.txtUsuario.TabIndex = 10;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(54, 84);
+            this.lblNombre.Location = new System.Drawing.Point(40, 68);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(151, 22);
+            this.lblNombre.Size = new System.Drawing.Size(115, 17);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre de usuario: ";
             // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(54, 136);
+            this.lblCorreo.Location = new System.Drawing.Point(40, 110);
+            this.lblCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(145, 22);
+            this.lblCorreo.Size = new System.Drawing.Size(111, 17);
             this.lblCorreo.TabIndex = 3;
             this.lblCorreo.Text = "Correo electrónico:";
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(338, 133);
+            this.txtCorreo.Location = new System.Drawing.Point(254, 108);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(268, 27);
+            this.txtCorreo.Size = new System.Drawing.Size(202, 23);
             this.txtCorreo.TabIndex = 9;
             // 
             // lblAntiguedad
             // 
             this.lblAntiguedad.AutoSize = true;
-            this.lblAntiguedad.Location = new System.Drawing.Point(54, 205);
+            this.lblAntiguedad.Location = new System.Drawing.Point(40, 167);
+            this.lblAntiguedad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAntiguedad.Name = "lblAntiguedad";
-            this.lblAntiguedad.Size = new System.Drawing.Size(131, 22);
+            this.lblAntiguedad.Size = new System.Drawing.Size(100, 17);
             this.lblAntiguedad.TabIndex = 4;
             this.lblAntiguedad.Text = "Tiempo suscripto";
             // 
             // txtTiempoSuscripto
             // 
-            this.txtTiempoSuscripto.Location = new System.Drawing.Point(338, 202);
+            this.txtTiempoSuscripto.Location = new System.Drawing.Point(254, 164);
+            this.txtTiempoSuscripto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTiempoSuscripto.Name = "txtTiempoSuscripto";
-            this.txtTiempoSuscripto.Size = new System.Drawing.Size(268, 27);
+            this.txtTiempoSuscripto.Size = new System.Drawing.Size(202, 23);
             this.txtTiempoSuscripto.TabIndex = 8;
             // 
             // lblDeportesFavoritos
             // 
             this.lblDeportesFavoritos.AutoSize = true;
-            this.lblDeportesFavoritos.Location = new System.Drawing.Point(54, 285);
+            this.lblDeportesFavoritos.Location = new System.Drawing.Point(40, 232);
+            this.lblDeportesFavoritos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDeportesFavoritos.Name = "lblDeportesFavoritos";
-            this.lblDeportesFavoritos.Size = new System.Drawing.Size(139, 22);
+            this.lblDeportesFavoritos.Size = new System.Drawing.Size(106, 17);
             this.lblDeportesFavoritos.TabIndex = 5;
             this.lblDeportesFavoritos.Text = "Deportes favoritos";
             // 
@@ -297,9 +329,10 @@
             // 
             this.cmboxDeportesFavoritos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxDeportesFavoritos.FormattingEnabled = true;
-            this.cmboxDeportesFavoritos.Location = new System.Drawing.Point(338, 282);
+            this.cmboxDeportesFavoritos.Location = new System.Drawing.Point(254, 229);
+            this.cmboxDeportesFavoritos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmboxDeportesFavoritos.Name = "cmboxDeportesFavoritos";
-            this.cmboxDeportesFavoritos.Size = new System.Drawing.Size(268, 30);
+            this.cmboxDeportesFavoritos.Size = new System.Drawing.Size(202, 25);
             this.cmboxDeportesFavoritos.TabIndex = 7;
             // 
             // paneBuscar
@@ -309,17 +342,19 @@
             this.paneBuscar.Controls.Add(this.lblIDusuario);
             this.paneBuscar.Controls.Add(this.cmboxIDusuarios);
             this.paneBuscar.Controls.Add(this.btnMostrar);
-            this.paneBuscar.Location = new System.Drawing.Point(19, 23);
+            this.paneBuscar.Location = new System.Drawing.Point(14, 19);
+            this.paneBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.paneBuscar.Name = "paneBuscar";
-            this.paneBuscar.Size = new System.Drawing.Size(705, 100);
+            this.paneBuscar.Size = new System.Drawing.Size(529, 82);
             this.paneBuscar.TabIndex = 12;
             // 
             // btnRefrescar
             // 
             this.btnRefrescar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnRefrescar.Location = new System.Drawing.Point(417, 63);
+            this.btnRefrescar.Location = new System.Drawing.Point(313, 51);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(137, 32);
+            this.btnRefrescar.Size = new System.Drawing.Size(103, 26);
             this.btnRefrescar.TabIndex = 7;
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
@@ -329,26 +364,29 @@
             // 
             this.lblIDusuario.AutoSize = true;
             this.lblIDusuario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblIDusuario.Location = new System.Drawing.Point(14, 26);
+            this.lblIDusuario.Location = new System.Drawing.Point(10, 21);
+            this.lblIDusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIDusuario.Name = "lblIDusuario";
-            this.lblIDusuario.Size = new System.Drawing.Size(151, 22);
+            this.lblIDusuario.Size = new System.Drawing.Size(115, 17);
             this.lblIDusuario.TabIndex = 0;
             this.lblIDusuario.Text = "Nombre de usuario: ";
             // 
             // cmboxIDusuarios
             // 
             this.cmboxIDusuarios.FormattingEnabled = true;
-            this.cmboxIDusuarios.Location = new System.Drawing.Point(272, 23);
+            this.cmboxIDusuarios.Location = new System.Drawing.Point(204, 19);
+            this.cmboxIDusuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmboxIDusuarios.Name = "cmboxIDusuarios";
-            this.cmboxIDusuarios.Size = new System.Drawing.Size(331, 30);
+            this.cmboxIDusuarios.Size = new System.Drawing.Size(249, 25);
             this.cmboxIDusuarios.TabIndex = 1;
             // 
             // btnMostrar
             // 
             this.btnMostrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnMostrar.Location = new System.Drawing.Point(163, 63);
+            this.btnMostrar.Location = new System.Drawing.Point(122, 51);
+            this.btnMostrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(107, 32);
+            this.btnMostrar.Size = new System.Drawing.Size(80, 26);
             this.btnMostrar.TabIndex = 6;
             this.btnMostrar.Text = "Buscar";
             this.btnMostrar.UseVisualStyleBackColor = true;
@@ -356,13 +394,15 @@
             // 
             // tbpgGestionarPublicidad
             // 
+            this.tbpgGestionarPublicidad.Controls.Add(this.panel1);
             this.tbpgGestionarPublicidad.Controls.Add(this.btnCerrar2);
             this.tbpgGestionarPublicidad.Controls.Add(this.paneEliminarPublicidad);
             this.tbpgGestionarPublicidad.Controls.Add(this.paneAniadirPublicidad);
-            this.tbpgGestionarPublicidad.Location = new System.Drawing.Point(4, 31);
+            this.tbpgGestionarPublicidad.Location = new System.Drawing.Point(4, 26);
+            this.tbpgGestionarPublicidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpgGestionarPublicidad.Name = "tbpgGestionarPublicidad";
-            this.tbpgGestionarPublicidad.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpgGestionarPublicidad.Size = new System.Drawing.Size(769, 729);
+            this.tbpgGestionarPublicidad.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpgGestionarPublicidad.Size = new System.Drawing.Size(575, 591);
             this.tbpgGestionarPublicidad.TabIndex = 2;
             this.tbpgGestionarPublicidad.Text = "Administrar publicidad";
             this.tbpgGestionarPublicidad.UseVisualStyleBackColor = true;
@@ -370,9 +410,10 @@
             // btnCerrar2
             // 
             this.btnCerrar2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCerrar2.Location = new System.Drawing.Point(300, 622);
+            this.btnCerrar2.Location = new System.Drawing.Point(432, 527);
+            this.btnCerrar2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar2.Name = "btnCerrar2";
-            this.btnCerrar2.Size = new System.Drawing.Size(119, 43);
+            this.btnCerrar2.Size = new System.Drawing.Size(89, 35);
             this.btnCerrar2.TabIndex = 3;
             this.btnCerrar2.Text = "cerrar";
             this.btnCerrar2.UseVisualStyleBackColor = true;
@@ -385,17 +426,19 @@
             this.paneEliminarPublicidad.Controls.Add(this.btnEliminarPublicidad);
             this.paneEliminarPublicidad.Controls.Add(this.cmboxUrl);
             this.paneEliminarPublicidad.Controls.Add(this.lblUrlEliminar);
-            this.paneEliminarPublicidad.Location = new System.Drawing.Point(8, 332);
+            this.paneEliminarPublicidad.Location = new System.Drawing.Point(7, 179);
+            this.paneEliminarPublicidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.paneEliminarPublicidad.Name = "paneEliminarPublicidad";
-            this.paneEliminarPublicidad.Size = new System.Drawing.Size(727, 201);
+            this.paneEliminarPublicidad.Size = new System.Drawing.Size(560, 123);
             this.paneEliminarPublicidad.TabIndex = 1;
             // 
             // btnRefrescarPublicidad
             // 
             this.btnRefrescarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnRefrescarPublicidad.Location = new System.Drawing.Point(415, 142);
+            this.btnRefrescarPublicidad.Location = new System.Drawing.Point(295, 78);
+            this.btnRefrescarPublicidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRefrescarPublicidad.Name = "btnRefrescarPublicidad";
-            this.btnRefrescarPublicidad.Size = new System.Drawing.Size(194, 40);
+            this.btnRefrescarPublicidad.Size = new System.Drawing.Size(146, 32);
             this.btnRefrescarPublicidad.TabIndex = 3;
             this.btnRefrescarPublicidad.Text = "Refrescar lista";
             this.btnRefrescarPublicidad.UseVisualStyleBackColor = true;
@@ -404,9 +447,10 @@
             // btnEliminarPublicidad
             // 
             this.btnEliminarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarPublicidad.Location = new System.Drawing.Point(120, 142);
+            this.btnEliminarPublicidad.Location = new System.Drawing.Point(82, 78);
+            this.btnEliminarPublicidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarPublicidad.Name = "btnEliminarPublicidad";
-            this.btnEliminarPublicidad.Size = new System.Drawing.Size(194, 40);
+            this.btnEliminarPublicidad.Size = new System.Drawing.Size(146, 32);
             this.btnEliminarPublicidad.TabIndex = 2;
             this.btnEliminarPublicidad.Text = "Eliminar Publicidad";
             this.btnEliminarPublicidad.UseVisualStyleBackColor = true;
@@ -414,20 +458,23 @@
             // 
             // cmboxUrl
             // 
+            this.cmboxUrl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxUrl.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxUrl.FormattingEnabled = true;
-            this.cmboxUrl.Location = new System.Drawing.Point(263, 58);
+            this.cmboxUrl.Location = new System.Drawing.Point(170, 27);
+            this.cmboxUrl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmboxUrl.Name = "cmboxUrl";
-            this.cmboxUrl.Size = new System.Drawing.Size(323, 30);
+            this.cmboxUrl.Size = new System.Drawing.Size(343, 25);
             this.cmboxUrl.TabIndex = 1;
             // 
             // lblUrlEliminar
             // 
             this.lblUrlEliminar.AutoSize = true;
             this.lblUrlEliminar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblUrlEliminar.Location = new System.Drawing.Point(38, 61);
+            this.lblUrlEliminar.Location = new System.Drawing.Point(17, 30);
+            this.lblUrlEliminar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUrlEliminar.Name = "lblUrlEliminar";
-            this.lblUrlEliminar.Size = new System.Drawing.Size(137, 22);
+            this.lblUrlEliminar.Size = new System.Drawing.Size(106, 17);
             this.lblUrlEliminar.TabIndex = 0;
             this.lblUrlEliminar.Text = "URL de publicidad";
             // 
@@ -437,25 +484,28 @@
             this.paneAniadirPublicidad.Controls.Add(this.txtURLpublicidad);
             this.paneAniadirPublicidad.Controls.Add(this.btnAgregarPublicidad);
             this.paneAniadirPublicidad.Controls.Add(this.lblUrl);
-            this.paneAniadirPublicidad.Location = new System.Drawing.Point(8, 130);
+            this.paneAniadirPublicidad.Location = new System.Drawing.Point(7, 33);
+            this.paneAniadirPublicidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.paneAniadirPublicidad.Name = "paneAniadirPublicidad";
-            this.paneAniadirPublicidad.Size = new System.Drawing.Size(714, 161);
+            this.paneAniadirPublicidad.Size = new System.Drawing.Size(560, 131);
             this.paneAniadirPublicidad.TabIndex = 0;
             // 
             // txtURLpublicidad
             // 
             this.txtURLpublicidad.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtURLpublicidad.Location = new System.Drawing.Point(227, 40);
+            this.txtURLpublicidad.Location = new System.Drawing.Point(170, 32);
+            this.txtURLpublicidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtURLpublicidad.Name = "txtURLpublicidad";
-            this.txtURLpublicidad.Size = new System.Drawing.Size(456, 27);
+            this.txtURLpublicidad.Size = new System.Drawing.Size(343, 23);
             this.txtURLpublicidad.TabIndex = 2;
             // 
             // btnAgregarPublicidad
             // 
             this.btnAgregarPublicidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAgregarPublicidad.Location = new System.Drawing.Point(226, 94);
+            this.btnAgregarPublicidad.Location = new System.Drawing.Point(170, 76);
+            this.btnAgregarPublicidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregarPublicidad.Name = "btnAgregarPublicidad";
-            this.btnAgregarPublicidad.Size = new System.Drawing.Size(226, 47);
+            this.btnAgregarPublicidad.Size = new System.Drawing.Size(170, 38);
             this.btnAgregarPublicidad.TabIndex = 1;
             this.btnAgregarPublicidad.Text = "Agregar Publicidad";
             this.btnAgregarPublicidad.UseVisualStyleBackColor = true;
@@ -465,19 +515,91 @@
             // 
             this.lblUrl.AutoSize = true;
             this.lblUrl.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblUrl.Location = new System.Drawing.Point(23, 43);
+            this.lblUrl.Location = new System.Drawing.Point(17, 35);
+            this.lblUrl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(125, 22);
+            this.lblUrl.Size = new System.Drawing.Size(97, 17);
             this.lblUrl.TabIndex = 0;
             this.lblUrl.Text = "URL publicidad: ";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cmboxGuestaAsignar);
+            this.panel1.Controls.Add(this.lblAsignarUsuario);
+            this.panel1.Controls.Add(this.btnAsignar);
+            this.panel1.Controls.Add(this.cmboxURLasignar);
+            this.panel1.Controls.Add(this.lblAsignarURL);
+            this.panel1.Location = new System.Drawing.Point(11, 321);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(560, 180);
+            this.panel1.TabIndex = 4;
+            // 
+            // btnAsignar
+            // 
+            this.btnAsignar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnAsignar.Location = new System.Drawing.Point(190, 131);
+            this.btnAsignar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAsignar.Name = "btnAsignar";
+            this.btnAsignar.Size = new System.Drawing.Size(146, 32);
+            this.btnAsignar.TabIndex = 3;
+            this.btnAsignar.Text = "Asignar";
+            this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmboxURLasignar
+            // 
+            this.cmboxURLasignar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxURLasignar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmboxURLasignar.FormattingEnabled = true;
+            this.cmboxURLasignar.Location = new System.Drawing.Point(170, 27);
+            this.cmboxURLasignar.Margin = new System.Windows.Forms.Padding(2);
+            this.cmboxURLasignar.Name = "cmboxURLasignar";
+            this.cmboxURLasignar.Size = new System.Drawing.Size(343, 25);
+            this.cmboxURLasignar.TabIndex = 1;
+            // 
+            // lblAsignarURL
+            // 
+            this.lblAsignarURL.AutoSize = true;
+            this.lblAsignarURL.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblAsignarURL.Location = new System.Drawing.Point(17, 30);
+            this.lblAsignarURL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAsignarURL.Name = "lblAsignarURL";
+            this.lblAsignarURL.Size = new System.Drawing.Size(106, 17);
+            this.lblAsignarURL.TabIndex = 0;
+            this.lblAsignarURL.Text = "URL de publicidad";
+            // 
+            // lblAsignarUsuario
+            // 
+            this.lblAsignarUsuario.AutoSize = true;
+            this.lblAsignarUsuario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblAsignarUsuario.Location = new System.Drawing.Point(17, 91);
+            this.lblAsignarUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAsignarUsuario.Name = "lblAsignarUsuario";
+            this.lblAsignarUsuario.Size = new System.Drawing.Size(98, 17);
+            this.lblAsignarUsuario.TabIndex = 4;
+            this.lblAsignarUsuario.Text = "Id usuario guest:";
+            // 
+            // cmboxGuestaAsignar
+            // 
+            this.cmboxGuestaAsignar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxGuestaAsignar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmboxGuestaAsignar.FormattingEnabled = true;
+            this.cmboxGuestaAsignar.Location = new System.Drawing.Point(170, 88);
+            this.cmboxGuestaAsignar.Margin = new System.Windows.Forms.Padding(2);
+            this.cmboxGuestaAsignar.Name = "cmboxGuestaAsignar";
+            this.cmboxGuestaAsignar.Size = new System.Drawing.Size(343, 25);
+            this.cmboxGuestaAsignar.TabIndex = 5;
+            // 
             // GestionarUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 769);
+            this.ClientSize = new System.Drawing.Size(582, 625);
             this.Controls.Add(this.tbcGestionUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GestionarUsuarios";
             this.Text = "GestionarUsuarios";
             this.Load += new System.EventHandler(this.GestionarUsuarios_Load);
@@ -493,6 +615,8 @@
             this.paneEliminarPublicidad.PerformLayout();
             this.paneAniadirPublicidad.ResumeLayout(false);
             this.paneAniadirPublicidad.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -537,5 +661,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRefrescarPublicidad;
         private System.Windows.Forms.Button btnEnviarCorreo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblAsignarUsuario;
+        private System.Windows.Forms.Button btnAsignar;
+        private System.Windows.Forms.ComboBox cmboxURLasignar;
+        private System.Windows.Forms.Label lblAsignarURL;
+        private System.Windows.Forms.ComboBox cmboxGuestaAsignar;
     }
 }

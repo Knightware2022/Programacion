@@ -60,14 +60,15 @@
             this.paneFiltro.Controls.Add(this.lblFiltro);
             this.paneFiltro.Location = new System.Drawing.Point(12, 12);
             this.paneFiltro.Name = "paneFiltro";
-            this.paneFiltro.Size = new System.Drawing.Size(548, 86);
+            this.paneFiltro.Size = new System.Drawing.Size(614, 131);
             this.paneFiltro.TabIndex = 0;
             // 
             // btnVerCargados
             // 
-            this.btnVerCargados.Location = new System.Drawing.Point(22, 40);
+            this.btnVerCargados.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnVerCargados.Location = new System.Drawing.Point(18, 76);
             this.btnVerCargados.Name = "btnVerCargados";
-            this.btnVerCargados.Size = new System.Drawing.Size(139, 35);
+            this.btnVerCargados.Size = new System.Drawing.Size(218, 35);
             this.btnVerCargados.TabIndex = 10;
             this.btnVerCargados.Text = "Encuentros en el torneo";
             this.btnVerCargados.UseVisualStyleBackColor = true;
@@ -75,9 +76,10 @@
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(449, 8);
+            this.btnFiltrar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnFiltrar.Location = new System.Drawing.Point(261, 76);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(80, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(94, 35);
             this.btnFiltrar.TabIndex = 9;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -85,9 +87,10 @@
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(449, 46);
+            this.btnRefrescar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnRefrescar.Location = new System.Drawing.Point(493, 10);
             this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(80, 23);
+            this.btnRefrescar.Size = new System.Drawing.Size(94, 35);
             this.btnRefrescar.TabIndex = 8;
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
@@ -95,18 +98,20 @@
             // 
             // cmboxDeportes
             // 
+            this.cmboxDeportes.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxDeportes.FormattingEnabled = true;
             this.cmboxDeportes.Location = new System.Drawing.Point(208, 15);
             this.cmboxDeportes.Name = "cmboxDeportes";
-            this.cmboxDeportes.Size = new System.Drawing.Size(212, 21);
+            this.cmboxDeportes.Size = new System.Drawing.Size(212, 25);
             this.cmboxDeportes.TabIndex = 1;
             // 
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblFiltro.Location = new System.Drawing.Point(25, 18);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(136, 13);
+            this.lblFiltro.Size = new System.Drawing.Size(156, 17);
             this.lblFiltro.TabIndex = 0;
             this.lblFiltro.Text = "Filtrar eventos por deporte: ";
             // 
@@ -124,17 +129,18 @@
             this.paneEncuentros.Controls.Add(this.lblHoraFinaliza);
             this.paneEncuentros.Controls.Add(this.lblFechaComienzo);
             this.paneEncuentros.Controls.Add(this.lblNombreEncuentro);
-            this.paneEncuentros.Location = new System.Drawing.Point(12, 104);
+            this.paneEncuentros.Location = new System.Drawing.Point(16, 159);
             this.paneEncuentros.Name = "paneEncuentros";
-            this.paneEncuentros.Size = new System.Drawing.Size(548, 234);
+            this.paneEncuentros.Size = new System.Drawing.Size(614, 252);
             this.paneEncuentros.TabIndex = 1;
             this.paneEncuentros.Paint += new System.Windows.Forms.PaintEventHandler(this.paneEncuentros_Paint);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(449, 190);
+            this.btnVolver.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnVolver.Location = new System.Drawing.Point(415, 190);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(80, 23);
+            this.btnVolver.Size = new System.Drawing.Size(106, 39);
             this.btnVolver.TabIndex = 11;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -142,9 +148,11 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(322, 190);
+            this.btnQuitar.Enabled = false;
+            this.btnQuitar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnQuitar.Location = new System.Drawing.Point(225, 190);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(117, 23);
+            this.btnQuitar.Size = new System.Drawing.Size(172, 39);
             this.btnQuitar.TabIndex = 10;
             this.btnQuitar.Text = "Quitar del torneo";
             this.btnQuitar.UseVisualStyleBackColor = true;
@@ -152,9 +160,11 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(186, 190);
+            this.btnAgregar.Enabled = false;
+            this.btnAgregar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnAgregar.Location = new System.Drawing.Point(59, 188);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(117, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(160, 41);
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar al torneo";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -162,69 +172,77 @@
             // 
             // cmboxEquiposDeEncuentros
             // 
+            this.cmboxEquiposDeEncuentros.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxEquiposDeEncuentros.FormattingEnabled = true;
             this.cmboxEquiposDeEncuentros.Location = new System.Drawing.Point(208, 149);
             this.cmboxEquiposDeEncuentros.Name = "cmboxEquiposDeEncuentros";
-            this.cmboxEquiposDeEncuentros.Size = new System.Drawing.Size(212, 21);
+            this.cmboxEquiposDeEncuentros.Size = new System.Drawing.Size(301, 25);
             this.cmboxEquiposDeEncuentros.TabIndex = 8;
             this.cmboxEquiposDeEncuentros.SelectedIndexChanged += new System.EventHandler(this.cmboxEquiposDeEncuentros_SelectedIndexChanged);
             // 
             // cmboxEncuentros
             // 
+            this.cmboxEncuentros.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxEncuentros.FormattingEnabled = true;
             this.cmboxEncuentros.Location = new System.Drawing.Point(208, 27);
             this.cmboxEncuentros.Name = "cmboxEncuentros";
-            this.cmboxEncuentros.Size = new System.Drawing.Size(212, 21);
+            this.cmboxEncuentros.Size = new System.Drawing.Size(301, 25);
             this.cmboxEncuentros.TabIndex = 7;
             this.cmboxEncuentros.SelectedIndexChanged += new System.EventHandler(this.cmboxEncuentros_SelectedIndexChanged);
             // 
             // txtHoraFinaliza
             // 
+            this.txtHoraFinaliza.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtHoraFinaliza.Location = new System.Drawing.Point(208, 104);
             this.txtHoraFinaliza.Name = "txtHoraFinaliza";
-            this.txtHoraFinaliza.Size = new System.Drawing.Size(212, 20);
+            this.txtHoraFinaliza.Size = new System.Drawing.Size(301, 23);
             this.txtHoraFinaliza.TabIndex = 6;
             // 
             // txtFechaComienzo
             // 
+            this.txtFechaComienzo.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtFechaComienzo.Location = new System.Drawing.Point(208, 64);
             this.txtFechaComienzo.Name = "txtFechaComienzo";
-            this.txtFechaComienzo.Size = new System.Drawing.Size(212, 20);
+            this.txtFechaComienzo.Size = new System.Drawing.Size(301, 23);
             this.txtFechaComienzo.TabIndex = 5;
             // 
             // lblEquiposEnEncuentro
             // 
             this.lblEquiposEnEncuentro.AutoSize = true;
+            this.lblEquiposEnEncuentro.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblEquiposEnEncuentro.Location = new System.Drawing.Point(25, 152);
             this.lblEquiposEnEncuentro.Name = "lblEquiposEnEncuentro";
-            this.lblEquiposEnEncuentro.Size = new System.Drawing.Size(121, 13);
+            this.lblEquiposEnEncuentro.Size = new System.Drawing.Size(138, 17);
             this.lblEquiposEnEncuentro.TabIndex = 3;
             this.lblEquiposEnEncuentro.Text = "Equipos que participan: ";
             // 
             // lblHoraFinaliza
             // 
             this.lblHoraFinaliza.AutoSize = true;
+            this.lblHoraFinaliza.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblHoraFinaliza.Location = new System.Drawing.Point(25, 107);
             this.lblHoraFinaliza.Name = "lblHoraFinaliza";
-            this.lblHoraFinaliza.Size = new System.Drawing.Size(98, 13);
+            this.lblHoraFinaliza.Size = new System.Drawing.Size(111, 17);
             this.lblHoraFinaliza.TabIndex = 2;
             this.lblHoraFinaliza.Text = "Fecha finalizacion: ";
             // 
             // lblFechaComienzo
             // 
             this.lblFechaComienzo.AutoSize = true;
+            this.lblFechaComienzo.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblFechaComienzo.Location = new System.Drawing.Point(25, 71);
             this.lblFechaComienzo.Name = "lblFechaComienzo";
-            this.lblFechaComienzo.Size = new System.Drawing.Size(88, 13);
+            this.lblFechaComienzo.Size = new System.Drawing.Size(98, 17);
             this.lblFechaComienzo.TabIndex = 1;
             this.lblFechaComienzo.Text = "Fecha comienzo:";
             // 
             // lblNombreEncuentro
             // 
             this.lblNombreEncuentro.AutoSize = true;
+            this.lblNombreEncuentro.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.lblNombreEncuentro.Location = new System.Drawing.Point(25, 27);
             this.lblNombreEncuentro.Name = "lblNombreEncuentro";
-            this.lblNombreEncuentro.Size = new System.Drawing.Size(101, 13);
+            this.lblNombreEncuentro.Size = new System.Drawing.Size(113, 17);
             this.lblNombreEncuentro.TabIndex = 0;
             this.lblNombreEncuentro.Text = "Nombre encuentro: ";
             // 
@@ -232,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 350);
+            this.ClientSize = new System.Drawing.Size(638, 446);
             this.Controls.Add(this.paneEncuentros);
             this.Controls.Add(this.paneFiltro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

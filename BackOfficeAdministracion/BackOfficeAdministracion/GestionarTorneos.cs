@@ -44,11 +44,19 @@ namespace BackOfficeAdministracion
             {
                 case 0:
                     MessageBox.Show("Torneo creado exitosamente");
-                    cmboxMinutoFinCole.Text = "0";
-                    cmboxHoraFinCole.Text = "0";
-                    cmboxMinutos.Text = "0";
-                    cmboxHoraComienzo.Text = "0";
+                    btnAceptarCambios.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnCrearTorneo.Enabled = false;
+                    btnEncuentros.Enabled = false;
+                    paneDatos.Enabled = false;
+                    paneID.Enabled = true;
                     txtDescripcionCole.Text = null;
+                    txtIDencuentroCole.Text = null;
+                    cmboxHoraComienzo.Text = "00";
+                    cmboxHoraFinCole.Text = "00";
+                    cmboxMinutoFinCole.Text = "00";
+                    cmboxMinutos.Text = "00";
+                    this.refrescarTorneosColectivos();
                     break;
                 case 1:
                     MessageBox.Show("Error de conexion");
@@ -87,7 +95,7 @@ namespace BackOfficeAdministracion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            
             int id = 0;
             if (int.TryParse(cmboxIDTorneo.Text.Substring(3, (cmboxIDTorneo.Text.IndexOf(" ") - 3)), out id))
             {
@@ -97,6 +105,11 @@ namespace BackOfficeAdministracion
                 switch (Logica.datosTorneosColectivos(torneosColectivos, equiposEncuentro))
                 {
                     case 0:
+                        paneID.Enabled = false;
+                        paneDatos.Enabled = true;
+                        btnEncuentros.Enabled = true;
+                        btnAceptarCambios.Enabled = true;
+                        btnDelete.Enabled = true;
                         txtDescripcionCole.Text = torneosColectivos.nombreTorneo;
                         txtIDencuentroCole.Text = torneosColectivos.idTorneo.ToString();
                         dtimeFechaComienza.Text = torneosColectivos.fechaComienzo.ToString();
@@ -150,7 +163,11 @@ namespace BackOfficeAdministracion
                             txtIDencuentroCole.Text = cmboxIDTorneo.Text.Substring(3, (cmboxIDTorneo.Text.IndexOf(" ") - 3));
                             cmboxIDTorneo.Text = null;
                             cmboxEquiposenEncuentro.Items.Clear();
-
+                            btnAceptarCambios.Enabled = false;
+                            btnDelete.Enabled = false;
+                            btnCrearTorneo.Enabled = true;
+                            btnEncuentros.Enabled = false;
+                            paneDatos.Enabled = true;
                         }
                         else
                         {
@@ -168,6 +185,11 @@ namespace BackOfficeAdministracion
                         cmboxMinutos.Text = torneosColectivos.fechaComienzo.Minute.ToString();
                         cmboxHoraFinCole.Text = torneosColectivos.fechaFinaliza.Hour.ToString();
                         cmboxMinutoFinCole.Text = torneosColectivos.fechaFinaliza.Minute.ToString();
+                        paneID.Enabled = false;
+                        paneDatos.Enabled = true;
+                        btnEncuentros.Enabled = false;
+                        btnAceptarCambios.Enabled = true;
+                        btnDelete.Enabled = true;
                         break;
                     case 5:
                         MessageBox.Show("El Torneo no tiene equipos");
@@ -184,6 +206,11 @@ namespace BackOfficeAdministracion
                         cmboxDeportes.Items.Add(torneosColectivos.nombreDeporte);
                         cmboxDeportes.Text = torneosColectivos.nombreDeporte;
                         cmboxEquiposenEncuentro.Items.Clear();
+                        paneID.Enabled = false;
+                        paneDatos.Enabled = true;
+                        btnEncuentros.Enabled = true;
+                        btnAceptarCambios.Enabled = true;
+                        btnDelete.Enabled = true;
                         break;
                     case 6:
                         MessageBox.Show("El id pertenece a un torneo individual");
@@ -218,7 +245,19 @@ namespace BackOfficeAdministracion
             {
                 case 0:
                     MessageBox.Show("Evento actualizado exitosamente");
-
+                    btnAceptarCambios.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnCrearTorneo.Enabled = false;
+                    btnEncuentros.Enabled = false;
+                    paneDatos.Enabled = false;
+                    paneID.Enabled = true;
+                    txtDescripcionCole.Text = null;
+                    txtIDencuentroCole.Text = null;
+                    cmboxHoraComienzo.Text = "00";
+                    cmboxHoraFinCole.Text = "00";
+                    cmboxMinutoFinCole.Text = "00";
+                    cmboxMinutos.Text = "00";
+                    refrescarTorneosColectivos();
                     break;
                 case 1:
                     MessageBox.Show("Ocurrió un error de red");
@@ -249,12 +288,25 @@ namespace BackOfficeAdministracion
                 switch (Logica.BorrarTorneo(torneosColectivos.idTorneo, torneosColectivos.idDeporteTorneo)) {
                     case 0:
                         MessageBox.Show("Torneo eliminado");
+                        btnAceptarCambios.Enabled = false;
+                        btnDelete.Enabled = false;
+                        btnCrearTorneo.Enabled = false;
+                        btnEncuentros.Enabled = false;
+                        paneDatos.Enabled = false;
+                        paneID.Enabled = true;
+                        txtDescripcionCole.Text = null;
+                        txtIDencuentroCole.Text = null;
+                        cmboxHoraComienzo.Text = "00";
+                        cmboxHoraFinCole.Text = "00";
+                        cmboxMinutoFinCole.Text = "00";
+                        cmboxMinutos.Text = "00";
+                        refrescarTorneosColectivos();
                         break;
                     case 1:
                         MessageBox.Show("Error de conexion");
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado, verifique los datos");
+                        MessageBox.Show("Error inesperado, el torneo tiene encuentros");
                         break;
                 }
             }
@@ -269,6 +321,23 @@ namespace BackOfficeAdministracion
             Program.frmEncuentrosTorneos.TopMost = true;
             Program.frmEncuentrosTorneos.Visible = true;
             Program.frmPrincipal.Enabled = false;
+        }
+
+        private void btnLimpiarCampos_Click(object sender, EventArgs e)
+        {
+            btnAceptarCambios.Enabled = false;
+            btnDelete.Enabled = false;
+            btnCrearTorneo.Enabled = false;
+            btnEncuentros.Enabled = false;
+            paneDatos.Enabled = false;
+            paneID.Enabled = true;
+            txtDescripcionCole.Text = null;
+            txtIDencuentroCole.Text = null;
+            cmboxHoraComienzo.Text = "00";
+            cmboxHoraFinCole.Text = "00";
+            cmboxMinutoFinCole.Text = "00";
+            cmboxMinutos.Text = "00";
+            refrescarTorneosColectivos();
         }
     }
 }

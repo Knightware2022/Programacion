@@ -118,6 +118,8 @@ namespace BackOfficeAdministracion
                             cmboxEncuentros.Items.Add(nombre);
                         }
                         cmboxEncuentros.Text = encuentros[0];
+                        btnQuitar.Enabled = true;
+                        btnAgregar.Enabled = false;
                         break;
                     case 1:
                         MessageBox.Show("Error de conexion");
@@ -150,6 +152,7 @@ namespace BackOfficeAdministracion
                         cmboxDeportes.Items.Add(nombre);
                     }
                     cmboxDeportes.Text = lista[0];
+                    btnQuitar.Enabled = false;
 
                     break;
                 case 1:
@@ -168,6 +171,7 @@ namespace BackOfficeAdministracion
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             this.filtrar();
+            btnQuitar.Enabled = false;
         }
 
         private void cmboxEncuentros_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,6 +183,7 @@ namespace BackOfficeAdministracion
         {
             eventosEnTorneo();
             refrescarDatosEvento();
+            btnAgregar.Enabled = false;
         }
 
         private void cmboxEquiposDeEncuentros_SelectedIndexChanged(object sender, EventArgs e)
@@ -201,35 +206,42 @@ namespace BackOfficeAdministracion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            int id = 0;
-            if (int.TryParse(cmboxEncuentros.Text.Substring(3, (cmboxEncuentros.Text.IndexOf(" ") - 3)), out id))
+            try
             {
-                switch (Logica.insertarEventoenTorneo(GestionarTorneos.torneosColectivos.idDeporteTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
+                int id = 0;
+                if (int.TryParse(cmboxEncuentros.Text.Substring(3, (cmboxEncuentros.Text.IndexOf(" ") - 3)), out id))
                 {
-                    case 0:
-                        MessageBox.Show("Evento añadido exitosamente");
-                        txtFechaComienzo.Text = null;
-                        txtHoraFinaliza.Text = null;
-                        cmboxEquiposDeEncuentros.Text = null;
-                        cmboxEquiposDeEncuentros.Items.Clear();
-                        this.filtrar();
-                        break;
-                    case 1:
-                        MessageBox.Show("Error de conexion");
-                        break;
-                    case 2:
-                        MessageBox.Show("Error inesperado. Tal vez el encuentro ya participa de este torneo");
-                        break;
+                    switch (Logica.insertarEventoenTorneo(GestionarTorneos.torneosColectivos.idDeporteTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
+                    {
+                        case 0:
+                            MessageBox.Show("Evento añadido exitosamente");
+                            txtFechaComienzo.Text = null;
+                            txtHoraFinaliza.Text = null;
+                            cmboxEquiposDeEncuentros.Text = null;
+                            cmboxEquiposDeEncuentros.Items.Clear();
+                            this.filtrar();
+                            break;
+                        case 1:
+                            MessageBox.Show("Error de conexion");
+                            break;
+                        case 2:
+                            MessageBox.Show("Error inesperado. Tal vez el encuentro ya participa de este torneo");
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error obteniendo id");
                 }
             }
-            else
-            {
+            catch {
                 MessageBox.Show("Error obteniendo id");
             }
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            try { 
             int id = 0;
             if (int.TryParse(cmboxEncuentros.Text.Substring(3, (cmboxEncuentros.Text.IndexOf(" ") - 3)), out id))
             {
@@ -254,6 +266,10 @@ namespace BackOfficeAdministracion
                 }
             }
             else
+            {
+                MessageBox.Show("Error obteniendo id");
+            }
+            }catch
             {
                 MessageBox.Show("Error obteniendo id");
             }

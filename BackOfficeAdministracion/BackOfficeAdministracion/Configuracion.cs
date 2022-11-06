@@ -55,9 +55,9 @@ namespace BackOfficeAdministracion
         private void btnAplicar_Click(object sender, EventArgs e)
         {
             Encriptacion en = new Encriptacion();
-            if ((txtContraActual.Text.Equals("")) || (txtNuevaContraseña.Text.Equals("")))
+            if ((txtContraActual.Text.Equals("")) || (txtNuevaContraseña.Text.Equals("") || txtNuevaContraseña.Text.Count() < 5))
             {
-                
+                MessageBox.Show("La contraseña nueva debe tener mas de 5 caracteres");   
             }
             else {
                 string contraseñaActual = txtContraActual.Text;
@@ -117,6 +117,11 @@ namespace BackOfficeAdministracion
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paneConfiguracion_Paint(object sender, PaintEventArgs e)
         {
 
         }

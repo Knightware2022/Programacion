@@ -35,7 +35,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.paneModificar = new System.Windows.Forms.Panel();
+            this.paneDatosEvento = new System.Windows.Forms.Panel();
             this.btnQuitarEncuentroCole = new System.Windows.Forms.Button();
             this.btnAgregarAlEncuentroCole = new System.Windows.Forms.Button();
             this.lblMinutoFinCole = new System.Windows.Forms.Label();
@@ -70,17 +70,19 @@
             this.cmboxIDEvento = new System.Windows.Forms.ComboBox();
             this.lblIDmodificar = new System.Windows.Forms.Label();
             this.tbcGestionarEventos = new System.Windows.Forms.TabControl();
+            this.paneEquipos = new System.Windows.Forms.Panel();
             this.tbpgModificar.SuspendLayout();
             this.paneBotones.SuspendLayout();
-            this.paneModificar.SuspendLayout();
+            this.paneDatosEvento.SuspendLayout();
             this.paneModificarEvento.SuspendLayout();
             this.tbcGestionarEventos.SuspendLayout();
+            this.paneEquipos.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbpgModificar
             // 
             this.tbpgModificar.Controls.Add(this.paneBotones);
-            this.tbpgModificar.Controls.Add(this.paneModificar);
+            this.tbpgModificar.Controls.Add(this.paneDatosEvento);
             this.tbpgModificar.Controls.Add(this.paneModificarEvento);
             this.tbpgModificar.Location = new System.Drawing.Point(4, 26);
             this.tbpgModificar.Margin = new System.Windows.Forms.Padding(2);
@@ -107,6 +109,7 @@
             // 
             // btnCrearEventoColectivo
             // 
+            this.btnCrearEventoColectivo.Enabled = false;
             this.btnCrearEventoColectivo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCrearEventoColectivo.Location = new System.Drawing.Point(178, 63);
             this.btnCrearEventoColectivo.Margin = new System.Windows.Forms.Padding(2);
@@ -119,6 +122,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Location = new System.Drawing.Point(283, 15);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
@@ -143,8 +147,9 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Enabled = false;
             this.btnAceptar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAceptar.Location = new System.Drawing.Point(28, 15);
+            this.btnAceptar.Location = new System.Drawing.Point(26, 15);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(89, 35);
@@ -165,46 +170,42 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // paneModificar
+            // paneDatosEvento
             // 
-            this.paneModificar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneModificar.Controls.Add(this.btnQuitarEncuentroCole);
-            this.paneModificar.Controls.Add(this.btnAgregarAlEncuentroCole);
-            this.paneModificar.Controls.Add(this.lblMinutoFinCole);
-            this.paneModificar.Controls.Add(this.lblHoraFinalizaColec);
-            this.paneModificar.Controls.Add(this.cmboxMinutoFinCole);
-            this.paneModificar.Controls.Add(this.cmboxHoraFinCole);
-            this.paneModificar.Controls.Add(this.lblFinalizaColectivo);
-            this.paneModificar.Controls.Add(this.btnAlineacion);
-            this.paneModificar.Controls.Add(this.txtIDencuentroCole);
-            this.paneModificar.Controls.Add(this.txtDescripcionCole);
-            this.paneModificar.Controls.Add(this.lblIDEncuentroCole);
-            this.paneModificar.Controls.Add(this.dtimeFechaFinaliza);
-            this.paneModificar.Controls.Add(this.lblFechaFinalizaCole);
-            this.paneModificar.Controls.Add(this.btnIncidencias);
-            this.paneModificar.Controls.Add(this.lblMinutosComienza);
-            this.paneModificar.Controls.Add(this.lblHoraComienza);
-            this.paneModificar.Controls.Add(this.cmboxMinutos);
-            this.paneModificar.Controls.Add(this.cmboxHoraComienzo);
-            this.paneModificar.Controls.Add(this.cmboxEquiposenEncuentro);
-            this.paneModificar.Controls.Add(this.cmboxEquiposenSistema);
-            this.paneModificar.Controls.Add(this.cmboxDeportes);
-            this.paneModificar.Controls.Add(this.lblHoraComienzo);
-            this.paneModificar.Controls.Add(this.lblDescripcionColect);
-            this.paneModificar.Controls.Add(this.lblEquiposenEncuentro);
-            this.paneModificar.Controls.Add(this.lblEquiposenSistema);
-            this.paneModificar.Controls.Add(this.lblDeporte);
-            this.paneModificar.Controls.Add(this.dtimeFechaComienza);
-            this.paneModificar.Controls.Add(this.lblFechaComienzo);
-            this.paneModificar.Location = new System.Drawing.Point(18, 90);
-            this.paneModificar.Margin = new System.Windows.Forms.Padding(2);
-            this.paneModificar.Name = "paneModificar";
-            this.paneModificar.Size = new System.Drawing.Size(539, 370);
-            this.paneModificar.TabIndex = 4;
+            this.paneDatosEvento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneDatosEvento.Controls.Add(this.paneEquipos);
+            this.paneDatosEvento.Controls.Add(this.lblMinutoFinCole);
+            this.paneDatosEvento.Controls.Add(this.lblHoraFinalizaColec);
+            this.paneDatosEvento.Controls.Add(this.cmboxMinutoFinCole);
+            this.paneDatosEvento.Controls.Add(this.cmboxHoraFinCole);
+            this.paneDatosEvento.Controls.Add(this.lblFinalizaColectivo);
+            this.paneDatosEvento.Controls.Add(this.btnAlineacion);
+            this.paneDatosEvento.Controls.Add(this.txtIDencuentroCole);
+            this.paneDatosEvento.Controls.Add(this.txtDescripcionCole);
+            this.paneDatosEvento.Controls.Add(this.lblIDEncuentroCole);
+            this.paneDatosEvento.Controls.Add(this.dtimeFechaFinaliza);
+            this.paneDatosEvento.Controls.Add(this.lblFechaFinalizaCole);
+            this.paneDatosEvento.Controls.Add(this.btnIncidencias);
+            this.paneDatosEvento.Controls.Add(this.lblMinutosComienza);
+            this.paneDatosEvento.Controls.Add(this.lblHoraComienza);
+            this.paneDatosEvento.Controls.Add(this.cmboxMinutos);
+            this.paneDatosEvento.Controls.Add(this.cmboxHoraComienzo);
+            this.paneDatosEvento.Controls.Add(this.cmboxDeportes);
+            this.paneDatosEvento.Controls.Add(this.lblHoraComienzo);
+            this.paneDatosEvento.Controls.Add(this.lblDescripcionColect);
+            this.paneDatosEvento.Controls.Add(this.lblDeporte);
+            this.paneDatosEvento.Controls.Add(this.dtimeFechaComienza);
+            this.paneDatosEvento.Controls.Add(this.lblFechaComienzo);
+            this.paneDatosEvento.Enabled = false;
+            this.paneDatosEvento.Location = new System.Drawing.Point(18, 90);
+            this.paneDatosEvento.Margin = new System.Windows.Forms.Padding(2);
+            this.paneDatosEvento.Name = "paneDatosEvento";
+            this.paneDatosEvento.Size = new System.Drawing.Size(539, 370);
+            this.paneDatosEvento.TabIndex = 4;
             // 
             // btnQuitarEncuentroCole
             // 
-            this.btnQuitarEncuentroCole.Location = new System.Drawing.Point(496, 126);
+            this.btnQuitarEncuentroCole.Location = new System.Drawing.Point(476, 52);
             this.btnQuitarEncuentroCole.Name = "btnQuitarEncuentroCole";
             this.btnQuitarEncuentroCole.Size = new System.Drawing.Size(38, 23);
             this.btnQuitarEncuentroCole.TabIndex = 55;
@@ -214,7 +215,7 @@
             // 
             // btnAgregarAlEncuentroCole
             // 
-            this.btnAgregarAlEncuentroCole.Location = new System.Drawing.Point(496, 85);
+            this.btnAgregarAlEncuentroCole.Location = new System.Drawing.Point(476, 11);
             this.btnAgregarAlEncuentroCole.Name = "btnAgregarAlEncuentroCole";
             this.btnAgregarAlEncuentroCole.Size = new System.Drawing.Size(38, 23);
             this.btnAgregarAlEncuentroCole.TabIndex = 54;
@@ -363,6 +364,7 @@
             // 
             // btnAlineacion
             // 
+            this.btnAlineacion.Enabled = false;
             this.btnAlineacion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAlineacion.Location = new System.Drawing.Point(282, 334);
             this.btnAlineacion.Margin = new System.Windows.Forms.Padding(2);
@@ -420,6 +422,7 @@
             // 
             // btnIncidencias
             // 
+            this.btnIncidencias.Enabled = false;
             this.btnIncidencias.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnIncidencias.Location = new System.Drawing.Point(123, 334);
             this.btnIncidencias.Margin = new System.Windows.Forms.Padding(2);
@@ -561,7 +564,7 @@
             // cmboxEquiposenEncuentro
             // 
             this.cmboxEquiposenEncuentro.FormattingEnabled = true;
-            this.cmboxEquiposenEncuentro.Location = new System.Drawing.Point(249, 124);
+            this.cmboxEquiposenEncuentro.Location = new System.Drawing.Point(229, 50);
             this.cmboxEquiposenEncuentro.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxEquiposenEncuentro.Name = "cmboxEquiposenEncuentro";
             this.cmboxEquiposenEncuentro.Size = new System.Drawing.Size(242, 25);
@@ -570,7 +573,7 @@
             // cmboxEquiposenSistema
             // 
             this.cmboxEquiposenSistema.FormattingEnabled = true;
-            this.cmboxEquiposenSistema.Location = new System.Drawing.Point(249, 82);
+            this.cmboxEquiposenSistema.Location = new System.Drawing.Point(229, 8);
             this.cmboxEquiposenSistema.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxEquiposenSistema.Name = "cmboxEquiposenSistema";
             this.cmboxEquiposenSistema.Size = new System.Drawing.Size(242, 25);
@@ -612,7 +615,7 @@
             // 
             this.lblEquiposenEncuentro.AutoSize = true;
             this.lblEquiposenEncuentro.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblEquiposenEncuentro.Location = new System.Drawing.Point(32, 126);
+            this.lblEquiposenEncuentro.Location = new System.Drawing.Point(12, 52);
             this.lblEquiposenEncuentro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquiposenEncuentro.Name = "lblEquiposenEncuentro";
             this.lblEquiposenEncuentro.Size = new System.Drawing.Size(144, 17);
@@ -623,7 +626,7 @@
             // 
             this.lblEquiposenSistema.AutoSize = true;
             this.lblEquiposenSistema.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblEquiposenSistema.Location = new System.Drawing.Point(32, 85);
+            this.lblEquiposenSistema.Location = new System.Drawing.Point(12, 11);
             this.lblEquiposenSistema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquiposenSistema.Name = "lblEquiposenSistema";
             this.lblEquiposenSistema.Size = new System.Drawing.Size(130, 17);
@@ -728,6 +731,19 @@
             this.tbcGestionarEventos.Size = new System.Drawing.Size(580, 619);
             this.tbcGestionarEventos.TabIndex = 0;
             // 
+            // paneEquipos
+            // 
+            this.paneEquipos.Controls.Add(this.lblEquiposenSistema);
+            this.paneEquipos.Controls.Add(this.btnQuitarEncuentroCole);
+            this.paneEquipos.Controls.Add(this.lblEquiposenEncuentro);
+            this.paneEquipos.Controls.Add(this.btnAgregarAlEncuentroCole);
+            this.paneEquipos.Controls.Add(this.cmboxEquiposenSistema);
+            this.paneEquipos.Controls.Add(this.cmboxEquiposenEncuentro);
+            this.paneEquipos.Location = new System.Drawing.Point(10, 75);
+            this.paneEquipos.Name = "paneEquipos";
+            this.paneEquipos.Size = new System.Drawing.Size(528, 81);
+            this.paneEquipos.TabIndex = 56;
+            // 
             // GestionarEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -742,11 +758,13 @@
             this.Load += new System.EventHandler(this.GestionarEventos_Load);
             this.tbpgModificar.ResumeLayout(false);
             this.paneBotones.ResumeLayout(false);
-            this.paneModificar.ResumeLayout(false);
-            this.paneModificar.PerformLayout();
+            this.paneDatosEvento.ResumeLayout(false);
+            this.paneDatosEvento.PerformLayout();
             this.paneModificarEvento.ResumeLayout(false);
             this.paneModificarEvento.PerformLayout();
             this.tbcGestionarEventos.ResumeLayout(false);
+            this.paneEquipos.ResumeLayout(false);
+            this.paneEquipos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -759,7 +777,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Panel paneModificar;
+        private System.Windows.Forms.Panel paneDatosEvento;
         private System.Windows.Forms.Label lblMinutosComienza;
         private System.Windows.Forms.Label lblHoraComienza;
         private System.Windows.Forms.ComboBox cmboxMinutos;
@@ -795,5 +813,6 @@
         private System.Windows.Forms.Label lblFinalizaColectivo;
         private System.Windows.Forms.Button btnQuitarEncuentroCole;
         private System.Windows.Forms.Button btnAgregarAlEncuentroCole;
+        private System.Windows.Forms.Panel paneEquipos;
     }
 }

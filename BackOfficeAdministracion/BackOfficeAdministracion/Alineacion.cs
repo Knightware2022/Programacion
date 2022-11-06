@@ -101,6 +101,10 @@ namespace BackOfficeAdministracion
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            cmboxJugador.Items.Clear();
+            cmboxJugador.Text = null;
+            lstviewAlineacion.Items.Clear();
+
             this.Visible = false;
             Program.frmPrincipal.Enabled = true;
 

@@ -89,25 +89,28 @@
             // Nombre
             // 
             this.Nombre.Text = "Nombre";
+            this.Nombre.Width = 80;
             // 
             // Apellido
             // 
             this.Apellido.Text = "Apellido";
+            this.Apellido.Width = 80;
             // 
             // Posicion
             // 
             this.Posicion.Text = "Posicion";
+            this.Posicion.Width = 80;
             // 
             // Equipo
             // 
             this.Equipo.Text = "Equipo";
-            this.Equipo.Width = 168;
+            this.Equipo.Width = 50;
             // 
             // btnRefrescar
             // 
             this.btnRefrescar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnRefrescar.Location = new System.Drawing.Point(19, 214);
-            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(129, 28);
             this.btnRefrescar.TabIndex = 25;
@@ -119,7 +122,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(19, 262);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 28);
             this.button1.TabIndex = 23;
@@ -132,7 +135,7 @@
             this.cmboxAlineacion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxAlineacion.FormattingEnabled = true;
             this.cmboxAlineacion.Location = new System.Drawing.Point(169, 87);
-            this.cmboxAlineacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxAlineacion.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxAlineacion.Name = "cmboxAlineacion";
             this.cmboxAlineacion.Size = new System.Drawing.Size(195, 25);
             this.cmboxAlineacion.TabIndex = 22;
@@ -141,7 +144,7 @@
             // 
             this.btnVolver.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnVolver.Location = new System.Drawing.Point(19, 306);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(129, 28);
             this.btnVolver.TabIndex = 21;
@@ -153,7 +156,7 @@
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.Location = new System.Drawing.Point(19, 167);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(129, 28);
             this.btnAceptar.TabIndex = 20;
@@ -166,7 +169,7 @@
             this.cmboxJugador.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxJugador.FormattingEnabled = true;
             this.cmboxJugador.Location = new System.Drawing.Point(170, 48);
-            this.cmboxJugador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxJugador.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxJugador.Name = "cmboxJugador";
             this.cmboxJugador.Size = new System.Drawing.Size(195, 25);
             this.cmboxJugador.TabIndex = 17;
@@ -176,7 +179,7 @@
             this.cmboxEquipo.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
             this.cmboxEquipo.FormattingEnabled = true;
             this.cmboxEquipo.Location = new System.Drawing.Point(169, 10);
-            this.cmboxEquipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboxEquipo.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxEquipo.Name = "cmboxEquipo";
             this.cmboxEquipo.Size = new System.Drawing.Size(195, 25);
             this.cmboxEquipo.TabIndex = 16;
