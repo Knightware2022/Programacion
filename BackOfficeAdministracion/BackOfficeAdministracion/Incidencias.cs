@@ -119,14 +119,16 @@ namespace BackOfficeAdministracion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            int puntos = 0;
             string nombre = cmboxJugador.Text.Substring(0, cmboxJugador.Text.IndexOf(" "));
             string apelido = cmboxJugador.Text.Substring((cmboxJugador.Text.IndexOf(" ") + 1), (cmboxJugador.Text.Length - (cmboxJugador.Text.IndexOf(" ") + 1)));
             string ocurrencia = cmboxIncidencia.Text;
             if (rbPuntos.Checked)
             {
                 int minuto;
-                if (Int32.TryParse(txtMinuto.Text, out minuto) && minuto>=0 )
+                if (Int32.TryParse(txtMinuto.Text, out minuto) && minuto>=0 && Int32.TryParse(txtPuntos.Text, out puntos))
                 {
+                    
                     bool bandera = true;
                     Random r = new Random();
                     int idRandom = 0;
@@ -146,7 +148,7 @@ namespace BackOfficeAdministracion
                                 break;
                         }
                     }
-                    switch (Logica.InsertarIncidenciasNotifica(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, idRandom, minuto, nombre, apelido, ocurrencia))
+                    switch (Logica.InsertarIncidenciasNotifica(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, idRandom, minuto, nombre, apelido, ocurrencia, puntos))
                     {
                         case 0:
                             MessageBox.Show("Se registro la incidencia exitosamente");
@@ -196,7 +198,7 @@ namespace BackOfficeAdministracion
                                 break;
                         }
                     }
-                    switch (Logica.InsertarIncidenciasNotifica(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, idRandom, 0, nombre, apelido, ocurrencia))
+                    switch (Logica.InsertarIncidenciasNotifica(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, idRandom, 0, nombre, apelido, ocurrencia, puntos))
                     {
                         case 0:
                             MessageBox.Show("Se registro la incidencia exitosamente");
@@ -219,46 +221,51 @@ namespace BackOfficeAdministracion
                 }
                 else
                 {
-                                bool bandera = true;
-                                Random r = new Random();
-                                int idRandom = 0;
-                                while (bandera == true)
-                                {
-                                    idRandom = r.Next();
-                                    switch (Logica.BuscarIDIncidencias(idRandom))
-                                    {
-                                        case 0:
-                                            break;
-                                        case 1:
-                                        case 2:
-                                            MessageBox.Show("Ocurrió un error, intente mas tarde");
-                                            break;
-                                        case 3:
-                                            bandera = false;
-                                            break;
-                                    }
-                                }
+                    if (int.TryParse(txtPuntos.Text, out puntos))
+                    {
+                        bool bandera = true;
+                        Random r = new Random();
+                        int idRandom = 0;
+                        while (bandera == true)
+                        {
+                            idRandom = r.Next();
+                            switch (Logica.BuscarIDIncidencias(idRandom))
+                            {
+                                case 0:
+                                    break;
+                                case 1:
+                                case 2:
+                                    MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                    break;
+                                case 3:
+                                    bandera = false;
+                                    break;
+                            }
+                        }
 
-                    switch (Logica.InsertarIncidenciasNotifica(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, idRandom, 0, nombre, apelido, ocurrencia))
-                                {
-                                    case 0:
-                                        MessageBox.Show("Se registro la incidencia exitosamente");
-                                        txtMinuto.Text = null;
-                                        break;
-                                    case 1:
-                                        MessageBox.Show("Error de red");
-                                        break;
-                                    case 2:
-                                        MessageBox.Show("Error inesperado");
-                                        break;
-                                    case 3:
-                                        MessageBox.Show("Error insertando Hacen");
-                                        break;
-                                    case 4:
-                                        MessageBox.Show("Error insertando en Notifica");
-                                        break;
-                                }
-
+                        switch (Logica.InsertarIncidenciasNotifica(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, idRandom, 0, nombre, apelido, ocurrencia, puntos))
+                        {
+                            case 0:
+                                MessageBox.Show("Se registro la incidencia exitosamente");
+                                txtMinuto.Text = null;
+                                break;
+                            case 1:
+                                MessageBox.Show("Error de red");
+                                break;
+                            case 2:
+                                MessageBox.Show("Error inesperado");
+                                break;
+                            case 3:
+                                MessageBox.Show("Error insertando Hacen");
+                                break;
+                            case 4:
+                                MessageBox.Show("Error insertando en Notifica");
+                                break;
+                        }
+                    }
+                    else {
+                        MessageBox.Show("Puntos debe ser un entero");
+                    }
                 }
             }
 
@@ -267,7 +274,13 @@ namespace BackOfficeAdministracion
 
         private void cmboxIncidencia_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (cmboxIncidencia.Text == "sumar puntos" || cmboxIncidencia.Text == "Puntaje en el ranking")
+            {
+                panePuntuacion.Enabled = true;
+            }
+            else {
+                panePuntuacion.Enabled = false;
+            }
         }
 
         private void cmboxEquipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -282,16 +295,19 @@ namespace BackOfficeAdministracion
             if (rbPuntos.Checked)
             {
                 txtMinuto.Enabled = true ;
+                panePuntuacion.Enabled = false;
                 cmboxJugador.Enabled = true;
             }
             else {
                 if (rbSets.Checked)
                 {
+                    panePuntuacion.Enabled = false;
                     txtMinuto.Enabled = false;
                     cmboxJugador.Enabled = false;
                 }
                 else {
                     txtMinuto.Enabled = false;
+                    panePuntuacion.Enabled = true;
                     cmboxJugador.Enabled = false;
                 }
             }
@@ -301,15 +317,20 @@ namespace BackOfficeAdministracion
         private void rbPuntos_CheckedChanged(object sender, EventArgs e)
         {
             this.mostrar_OcultarPanesCmobx();
+            txtPuntos.Text = "0";
         }
 
         private void rbSets_CheckedChanged(object sender, EventArgs e)
         {
+            txtPuntos.Text = "0";
+
             this.mostrar_OcultarPanesCmobx();
         }
 
         private void rbRanking_CheckedChanged(object sender, EventArgs e)
         {
+            txtPuntos.Text = "0";
+
             this.mostrar_OcultarPanesCmobx();
         }
 

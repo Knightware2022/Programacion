@@ -702,7 +702,7 @@ namespace App_de_Usuario
 
                     return devolver = 2;
                 }
-                sql = "insert into Guest(idUsuario, nombreAutogen, mac) values( " + idUsuario+ ", '" + nombreAutogen + "', '" + mac + "')";
+                sql = "insert into Guest(idUsuario, nombreAutogen, mac) values( " + idUsuario + ", '" + nombreAutogen + "', '" + mac + "')";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
@@ -715,7 +715,8 @@ namespace App_de_Usuario
             }
             return devolver;
         }
-        public static byte buscandoMAC(string mac) {
+        public static byte buscandoMAC(string mac)
+        {
             byte devolver = 0;
             object cantFilas;
             string sql;
@@ -726,7 +727,7 @@ namespace App_de_Usuario
             }
             else
             {
-                sql = "select mac from Guest where mac='"+ mac + "'";
+                sql = "select mac from Guest where mac='" + mac + "'";
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron

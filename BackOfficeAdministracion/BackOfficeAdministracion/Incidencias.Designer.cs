@@ -45,15 +45,20 @@
             this.lblIncidencia = new System.Windows.Forms.Label();
             this.lblJugador = new System.Windows.Forms.Label();
             this.lblEquipo = new System.Windows.Forms.Label();
+            this.panePuntuacion = new System.Windows.Forms.Panel();
+            this.lblPuntos = new System.Windows.Forms.Label();
+            this.txtPuntos = new System.Windows.Forms.TextBox();
             this.paneIncidencias.SuspendLayout();
             this.gboxModoPuntuacion.SuspendLayout();
             this.panePuntos.SuspendLayout();
+            this.panePuntuacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneIncidencias
             // 
             this.paneIncidencias.BackColor = System.Drawing.Color.LightGray;
             this.paneIncidencias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneIncidencias.Controls.Add(this.panePuntuacion);
             this.paneIncidencias.Controls.Add(this.gboxModoPuntuacion);
             this.paneIncidencias.Controls.Add(this.panePuntos);
             this.paneIncidencias.Controls.Add(this.btnRefrescar);
@@ -68,7 +73,7 @@
             this.paneIncidencias.Location = new System.Drawing.Point(1, 0);
             this.paneIncidencias.Margin = new System.Windows.Forms.Padding(2);
             this.paneIncidencias.Name = "paneIncidencias";
-            this.paneIncidencias.Size = new System.Drawing.Size(552, 282);
+            this.paneIncidencias.Size = new System.Drawing.Size(552, 369);
             this.paneIncidencias.TabIndex = 0;
             // 
             // gboxModoPuntuacion
@@ -153,7 +158,7 @@
             // btnRefrescar
             // 
             this.btnRefrescar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnRefrescar.Location = new System.Drawing.Point(334, 228);
+            this.btnRefrescar.Location = new System.Drawing.Point(329, 309);
             this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(97, 28);
@@ -165,7 +170,7 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnVolver.Location = new System.Drawing.Point(236, 228);
+            this.btnVolver.Location = new System.Drawing.Point(231, 309);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(83, 28);
@@ -177,7 +182,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAceptar.Location = new System.Drawing.Point(137, 227);
+            this.btnAceptar.Location = new System.Drawing.Point(132, 308);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(83, 29);
@@ -253,12 +258,43 @@
             this.lblEquipo.TabIndex = 0;
             this.lblEquipo.Text = "Equipo: ";
             // 
+            // panePuntuacion
+            // 
+            this.panePuntuacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panePuntuacion.Controls.Add(this.lblPuntos);
+            this.panePuntuacion.Controls.Add(this.txtPuntos);
+            this.panePuntuacion.Location = new System.Drawing.Point(30, 225);
+            this.panePuntuacion.Name = "panePuntuacion";
+            this.panePuntuacion.Size = new System.Drawing.Size(337, 58);
+            this.panePuntuacion.TabIndex = 17;
+            // 
+            // lblPuntos
+            // 
+            this.lblPuntos.AutoSize = true;
+            this.lblPuntos.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblPuntos.Location = new System.Drawing.Point(21, 21);
+            this.lblPuntos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPuntos.Name = "lblPuntos";
+            this.lblPuntos.Size = new System.Drawing.Size(46, 17);
+            this.lblPuntos.TabIndex = 4;
+            this.lblPuntos.Text = "Puntos";
+            // 
+            // txtPuntos
+            // 
+            this.txtPuntos.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtPuntos.Location = new System.Drawing.Point(121, 18);
+            this.txtPuntos.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPuntos.Name = "txtPuntos";
+            this.txtPuntos.Size = new System.Drawing.Size(194, 23);
+            this.txtPuntos.TabIndex = 8;
+            this.txtPuntos.Text = "0";
+            // 
             // Incidencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(553, 279);
+            this.ClientSize = new System.Drawing.Size(553, 380);
             this.Controls.Add(this.paneIncidencias);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -271,6 +307,8 @@
             this.gboxModoPuntuacion.PerformLayout();
             this.panePuntos.ResumeLayout(false);
             this.panePuntos.PerformLayout();
+            this.panePuntuacion.ResumeLayout(false);
+            this.panePuntuacion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -294,5 +332,8 @@
         private System.Windows.Forms.RadioButton rbSets;
         private System.Windows.Forms.RadioButton rbPuntos;
         private System.Windows.Forms.RadioButton rbRanking;
+        private System.Windows.Forms.Panel panePuntuacion;
+        private System.Windows.Forms.Label lblPuntos;
+        private System.Windows.Forms.TextBox txtPuntos;
     }
 }
