@@ -97,6 +97,127 @@ namespace App_de_Usuario
 
             return respuesta;
         }
+        public static byte EventosProgramados(List<string> Eventos, string deporte)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.cargarNombreEncuentrosConNombre(Eventos, deporte))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte datosEventosProgramados(EncuentrosColectivos Eventos, List<string> deportes)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.DatosEncuentrosColectivos(Eventos, deportes))
+            {
+                case 0:
+                    break;
+                case 1:
+                    return 1;
+                case 2:
+                    return 2;
+                case 3:
+                    return 3;
+                case 5:
+                    return 5;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte JugadoresDeEventos(string nombre, string categoria,int idEncuentro ,List<string> jugadores)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.mostrarJugadoresDeEquipo(nombre, categoria, idEncuentro, jugadores))
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte SuscribirseAEvento(int idEncuentro, int idDeporte, string usuario)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.mostrarJugadoresDeEquipo(usuario, idEncuentro, idDeporte))
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+            }
+
+
+            return respuesta;
+        }
+        public static byte EventosProgramadosconEquipo(List<string> Eventos, string nombre, string categoria)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.cargarNombreEncuentrosConEquipo(Eventos, nombre, categoria))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte obtenerEquiposEnSistema(List<string> equipos)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.cargarNombreEquipos(equipos))
+
+            {
+
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte EventosProgramadosconTodosLosFiltros(List<string> Eventos, string nombre, string categoria, string deporte) { 
+            byte respuesta = 0;
+
+            switch (Logica.cargarNombreEncuentrosConTodosLosFiltros(Eventos, nombre, categoria, deporte))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
 
     }
 }

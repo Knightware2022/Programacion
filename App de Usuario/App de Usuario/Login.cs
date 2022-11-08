@@ -41,6 +41,8 @@ namespace App_de_Usuario
                     txtCorreo.Text = null;
                     txtContrasenia.Text = null;
                     txtConfirmarContrasenia.Text = null;
+                    List<string> algo = new List<string>();
+                    ApiResultados.obtenerDeportesFavoritos(algo);
                     /* avatar = Convert.ToInt32(global::App_de_Usuario.Properties.Resources.GuardarAvatar);
                      if (avatar == 0) {//avatar por defecto
                          Program.frmPrincipal.btnAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;

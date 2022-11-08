@@ -62,28 +62,25 @@
             this.paneBotones.Controls.Add(this.btnTorneos);
             this.paneBotones.Controls.Add(this.btnResultados);
             this.paneBotones.Location = new System.Drawing.Point(1, 0);
-            this.paneBotones.Margin = new System.Windows.Forms.Padding(4);
             this.paneBotones.Name = "paneBotones";
-            this.paneBotones.Size = new System.Drawing.Size(966, 164);
+            this.paneBotones.Size = new System.Drawing.Size(725, 134);
             this.paneBotones.TabIndex = 0;
             // 
             // paneLogo
             // 
             this.paneLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneLogo.Controls.Add(this.pboxLogo);
-            this.paneLogo.Location = new System.Drawing.Point(4, 4);
-            this.paneLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.paneLogo.Location = new System.Drawing.Point(3, 3);
             this.paneLogo.Name = "paneLogo";
-            this.paneLogo.Size = new System.Drawing.Size(165, 155);
+            this.paneLogo.Size = new System.Drawing.Size(124, 126);
             this.paneLogo.TabIndex = 6;
             // 
             // pboxLogo
             // 
             this.pboxLogo.Image = global::App_de_Usuario.Properties.Resources.Knightware_Letra;
             this.pboxLogo.Location = new System.Drawing.Point(-1, -1);
-            this.pboxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pboxLogo.Name = "pboxLogo";
-            this.pboxLogo.Size = new System.Drawing.Size(165, 155);
+            this.pboxLogo.Size = new System.Drawing.Size(124, 126);
             this.pboxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxLogo.TabIndex = 1;
             this.pboxLogo.TabStop = false;
@@ -92,19 +89,19 @@
             // 
             this.paneAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneAvatar.Controls.Add(this.btnAvatar);
-            this.paneAvatar.Location = new System.Drawing.Point(795, 4);
-            this.paneAvatar.Margin = new System.Windows.Forms.Padding(4);
+            this.paneAvatar.Location = new System.Drawing.Point(596, 3);
             this.paneAvatar.Name = "paneAvatar";
-            this.paneAvatar.Size = new System.Drawing.Size(165, 155);
+            this.paneAvatar.Size = new System.Drawing.Size(124, 126);
             this.paneAvatar.TabIndex = 5;
             // 
             // btnAvatar
             // 
             this.btnAvatar.BackgroundImage = global::App_de_Usuario.Properties.Resources.avatar;
             this.btnAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAvatar.Location = new System.Drawing.Point(-1, 3);
+            this.btnAvatar.Location = new System.Drawing.Point(-1, 2);
+            this.btnAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAvatar.Name = "btnAvatar";
-            this.btnAvatar.Size = new System.Drawing.Size(161, 147);
+            this.btnAvatar.Size = new System.Drawing.Size(121, 119);
             this.btnAvatar.TabIndex = 0;
             this.btnAvatar.UseVisualStyleBackColor = true;
             this.btnAvatar.Click += new System.EventHandler(this.btnAvatar_Click);
@@ -112,10 +109,9 @@
             // btnFavoritos
             // 
             this.btnFavoritos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFavoritos.Location = new System.Drawing.Point(571, 33);
-            this.btnFavoritos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFavoritos.Location = new System.Drawing.Point(437, 27);
             this.btnFavoritos.Name = "btnFavoritos";
-            this.btnFavoritos.Size = new System.Drawing.Size(160, 44);
+            this.btnFavoritos.Size = new System.Drawing.Size(120, 36);
             this.btnFavoritos.TabIndex = 4;
             this.btnFavoritos.Text = "Equipos Favoritos";
             this.btnFavoritos.UseVisualStyleBackColor = true;
@@ -124,10 +120,9 @@
             // btnDeportes
             // 
             this.btnDeportes.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDeportes.Location = new System.Drawing.Point(486, 85);
-            this.btnDeportes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeportes.Location = new System.Drawing.Point(364, 69);
             this.btnDeportes.Name = "btnDeportes";
-            this.btnDeportes.Size = new System.Drawing.Size(130, 44);
+            this.btnDeportes.Size = new System.Drawing.Size(98, 36);
             this.btnDeportes.TabIndex = 3;
             this.btnDeportes.Text = "Deportes";
             this.btnDeportes.UseVisualStyleBackColor = true;
@@ -135,22 +130,20 @@
             // btnEncuentros
             // 
             this.btnEncuentros.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEncuentros.Location = new System.Drawing.Point(393, 31);
-            this.btnEncuentros.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEncuentros.Location = new System.Drawing.Point(255, 27);
             this.btnEncuentros.Name = "btnEncuentros";
-            this.btnEncuentros.Size = new System.Drawing.Size(128, 44);
+            this.btnEncuentros.Size = new System.Drawing.Size(167, 36);
             this.btnEncuentros.TabIndex = 2;
-            this.btnEncuentros.Text = "Encuentros";
+            this.btnEncuentros.Text = "Suscribirse a encuentros";
             this.btnEncuentros.UseVisualStyleBackColor = true;
             this.btnEncuentros.Click += new System.EventHandler(this.btnEncuentros_Click);
             // 
             // btnTorneos
             // 
             this.btnTorneos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnTorneos.Location = new System.Drawing.Point(290, 85);
-            this.btnTorneos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTorneos.Location = new System.Drawing.Point(218, 69);
             this.btnTorneos.Name = "btnTorneos";
-            this.btnTorneos.Size = new System.Drawing.Size(128, 44);
+            this.btnTorneos.Size = new System.Drawing.Size(96, 36);
             this.btnTorneos.TabIndex = 1;
             this.btnTorneos.Text = "Torneos";
             this.btnTorneos.UseVisualStyleBackColor = true;
@@ -158,10 +151,9 @@
             // btnResultados
             // 
             this.btnResultados.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResultados.Location = new System.Drawing.Point(177, 31);
-            this.btnResultados.Margin = new System.Windows.Forms.Padding(4);
+            this.btnResultados.Location = new System.Drawing.Point(133, 25);
             this.btnResultados.Name = "btnResultados";
-            this.btnResultados.Size = new System.Drawing.Size(138, 44);
+            this.btnResultados.Size = new System.Drawing.Size(104, 36);
             this.btnResultados.TabIndex = 0;
             this.btnResultados.Text = "Ver Resultados";
             this.btnResultados.UseVisualStyleBackColor = true;
@@ -171,18 +163,18 @@
             // 
             this.paneBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneBanner.Controls.Add(this.pboxPublicidad);
-            this.paneBanner.Location = new System.Drawing.Point(1, 672);
-            this.paneBanner.Margin = new System.Windows.Forms.Padding(4);
+            this.paneBanner.Location = new System.Drawing.Point(1, 546);
             this.paneBanner.Name = "paneBanner";
-            this.paneBanner.Size = new System.Drawing.Size(966, 140);
+            this.paneBanner.Size = new System.Drawing.Size(725, 114);
             this.paneBanner.TabIndex = 1;
             // 
             // pboxPublicidad
             // 
             this.pboxPublicidad.Image = global::App_de_Usuario.Properties.Resources.banner_publicidad_01;
-            this.pboxPublicidad.Location = new System.Drawing.Point(3, 3);
+            this.pboxPublicidad.Location = new System.Drawing.Point(2, 2);
+            this.pboxPublicidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pboxPublicidad.Name = "pboxPublicidad";
-            this.pboxPublicidad.Size = new System.Drawing.Size(957, 132);
+            this.pboxPublicidad.Size = new System.Drawing.Size(718, 107);
             this.pboxPublicidad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxPublicidad.TabIndex = 0;
             this.pboxPublicidad.TabStop = false;
@@ -192,23 +184,22 @@
             // 
             this.paneVentanas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.paneVentanas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paneVentanas.Location = new System.Drawing.Point(1, 172);
-            this.paneVentanas.Margin = new System.Windows.Forms.Padding(4);
+            this.paneVentanas.Location = new System.Drawing.Point(1, 140);
             this.paneVentanas.Name = "paneVentanas";
-            this.paneVentanas.Size = new System.Drawing.Size(966, 492);
+            this.paneVentanas.Size = new System.Drawing.Size(725, 400);
             this.paneVentanas.TabIndex = 2;
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 814);
+            this.ClientSize = new System.Drawing.Size(726, 605);
             this.Controls.Add(this.paneVentanas);
             this.Controls.Add(this.paneBanner);
             this.Controls.Add(this.paneBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Principal";
             this.Text = "SIGDE";

@@ -61,11 +61,6 @@ namespace App_de_Usuario
                     #endregion
                     #region de frmEventosProgramados
                     Program.frmEventosProgramados.lblDeporte.Text = "Sport: ";
-                    Program.frmEventosProgramados.btnAvisarme1.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
-                    Program.frmEventosProgramados.btnAvisarme2.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme2.Text);
-                    Program.frmEventosProgramados.btnAvisarme3.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme3.Text);
-                    Program.frmEventosProgramados.btnAvisarme4.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme4.Text);
-                    Program.frmEventosProgramados.btnCancelar.Text = "Return";
                     Program.frmEventosProgramados.btnFiltrar.Text = "Filter";
                     #endregion
                     break;
@@ -120,11 +115,6 @@ namespace App_de_Usuario
                     #endregion
                     #region de frmEventosProgramados
                     Program.frmEventosProgramados.lblDeporte.Text = "Deportes: ";
-                    Program.frmEventosProgramados.btnAvisarme1.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme1.Text);
-                    Program.frmEventosProgramados.btnAvisarme2.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme2.Text);
-                    Program.frmEventosProgramados.btnAvisarme3.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme3.Text);
-                    Program.frmEventosProgramados.btnAvisarme4.Text = cambiarIdiomaBotonAvisame(Program.frmEventosProgramados.btnAvisarme4.Text);
-                    Program.frmEventosProgramados.btnCancelar.Text = "Volver";
                     Program.frmEventosProgramados.btnFiltrar.Text = "Filtrar";
                     #endregion
                     break;
