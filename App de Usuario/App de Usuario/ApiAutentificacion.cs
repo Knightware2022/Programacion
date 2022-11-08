@@ -53,6 +53,7 @@ namespace App_de_Usuario
             Encriptacion encriptacion = new Encriptacion();
             _usuario.nombre = nombre;
             _usuario.contrasenia = encriptacion.encriptar(contraseña);
+
             devolver = Logica.BuscandoUsuario(_usuario);
             return devolver;
         }
@@ -205,6 +206,23 @@ namespace App_de_Usuario
                 }
             }
             return direccionesMAC;
+        }
+
+        public byte datosUsuario(string nombre, Usuario u) {
+            byte devolver = 0;
+            u.nombre = nombre;
+            switch (Logica.BuscandoDatosUsuario(u)) {
+                case 0:
+                    break;
+                case 1:
+                    devolver = 1;
+                    break;
+                case 2:
+                    devolver = 2;
+                    break;
+            }
+            return devolver;
+
         }
     }
 }

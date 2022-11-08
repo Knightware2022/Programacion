@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="ApiAutentificacion.cs" />
     <Compile Include="ApiPublicidad.cs" />
+    <Compile Include="ApiResultados.cs" />
     <Compile Include="Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,7 +66,10 @@
     <Compile Include="Deportes Favoritos.Designer.cs">
       <DependentUpon>Deportes Favoritos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Deportes.cs" />
     <Compile Include="Encriptacion.cs" />
+    <Compile Include="EncuentrosColectivos.cs" />
+    <Compile Include="Equipos.cs" />
     <Compile Include="EventosProgramados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +106,7 @@
     <Compile Include="Resultados.Designer.cs">
       <DependentUpon>Resultados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Torneos.cs" />
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>

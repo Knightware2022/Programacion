@@ -17,6 +17,7 @@ namespace App_de_Usuario
             InitializeComponent();
         }
         public static string nombreUsuario;
+        public static int idUsuario;
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             ApiAutentificacion apiA = new ApiAutentificacion();

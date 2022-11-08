@@ -743,6 +743,101 @@ namespace App_de_Usuario
             }
             return devolver;
         }
+
+
+
+        ///             metodos que no estan (se supone) en la app del backoffice
+
+        public static byte EliminarDeporteFavorito(string deporteFav, int idUsuario)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            { 
+                sql = "delete from DeportesFavoritos where idUsuario=" +idUsuario + " AND deporteFavorito=(select idDeporte from Deportes where nombre='" + deporteFav+"')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                
+            }
+            return devolver;
+        }
+        public static byte AgregarDeporteFavorito(string deporteFav, int idUsuario)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into DeportesFavoritos(idUsuario, DeporteFavorito) values(" + idUsuario + ", (select idDeporte from Deportes where nombre='" + deporteFav + "'))";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                { 
+                    return devolver = 2;
+                }
+
+            }
+            return devolver;
+        }
+        public static byte nombresDeportes(List<string> lista)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select nombre from Deportes" +
+                    " group by nombre asc";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;//no hay jugadores cargados
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        lista.Add(Convert.ToString(rs.Fields[0].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+
+
     }
-    
+
 }
