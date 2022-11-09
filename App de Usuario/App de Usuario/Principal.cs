@@ -716,16 +716,15 @@ namespace App_de_Usuario
                     case 0:
                         for (int i = 0; i < nombreEvento.Count; i++)
                         {
-                            MessageBox.Show("s");
-                            new ToastContentBuilder()
-                                .AddArgument("action", "viewConversation")
-                                .AddArgument("conversationId", 9813)
-                                .AddText("Andrew sent you a picture")
-                                .AddText("Check this out, The Enchantments in Washington!")
-                                .Show();
+                            
                             if (fechaEvento[i].Year == DateTime.Now.Year && fechaEvento[i].Month == DateTime.Now.Month && fechaEvento[i].Day == DateTime.Now.Day && fechaEvento[i].Hour == DateTime.Now.Hour && fechaEvento[i].Minute == DateTime.Now.Minute)
                             {
-                                notificaciones.BalloonTipTitle = "Acaba de comenzar el evento: " + nombreEvento[i];
+                                new ToastContentBuilder()
+                                                                .AddArgument("action", "viewConversation")
+                                                                .AddArgument("conversationId", 9813)
+                                                                .AddText("Un evento comenzó")
+                                                                .AddText("El evento " + nombreEvento[i] + " acaba de comenzar")
+                                                                .Show();
                             }
                             else
                             {//si todo es igual menos los minutos
@@ -733,11 +732,21 @@ namespace App_de_Usuario
                                 if (fechaEvento[i].Year == DateTime.Now.Year && fechaEvento[i].Month == DateTime.Now.Month && fechaEvento[i].Day == DateTime.Now.Day && fechaEvento[i].Hour == DateTime.Now.Hour) {
                                     if (fechaEvento[i].Minute == (DateTime.Now.Minute + 10))
                                     {
-                                        notificaciones.BalloonTipTitle = "El evento: " + nombreEvento[i] + " está por comenzar";
+                                        new ToastContentBuilder()
+                                                                        .AddArgument("action", "viewConversation")
+                                                                        .AddArgument("conversationId", 9813)
+                                                                        .AddText("Un evento está por comenzar")
+                                                                        .AddText("El evento " + nombreEvento[i] + " comenzará en 10 minutos")
+                                                                        .Show();
                                     }
                                     else {
                                         if (fechaEvento[i].Minute == (DateTime.Now.Minute - 10)){
-                                            notificaciones.BalloonTipTitle = "El evento: " + nombreEvento[i] + " ";
+                                            new ToastContentBuilder()
+                                                                            .AddArgument("action", "viewConversation")
+                                                                            .AddArgument("conversationId", 9813)
+                                                                            .AddText("Un evento comenzó")
+                                                                            .AddText("El evento " + nombreEvento[i] + " comenzó hace 10 minutos")
+                                                                            .Show();
                                         }
                                     }
                                 }
