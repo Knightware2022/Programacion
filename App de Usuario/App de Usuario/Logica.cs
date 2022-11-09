@@ -1313,9 +1313,203 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
-
-
-
+        public static byte mostrarIncidenciasporEquipoyLogo(List<string> jNombre, List<string> jApellido, List<string> jOcurrencia, List<string> jEquipo, int idEncuentro, string nombreEquipo, string categoriaEquipo, EncuentrosColectivos c, List<string> puntos, List<string> minuto)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select j.nombre, j.apellido, o.nombre, i.minuto, i.puntos, equi.nombre, equi.logo from Jugador as j, Ocurrencias as o, Incidencias as i, Notifica as n, Equipos as equi, Forman as f where n.idIncidencia=i.idIncidencia  AND n.idOcurrencia = o.idOcurrencia  AND i.idJugador = j.idJugador AND n.idEncuentro="+ idEncuentro+" AND equi.idEquipo= f.idEquipo AND i.idJugador = f.idJugador AND equi.nombre = '" +nombreEquipo +"' AND equi.categoria='"+ categoriaEquipo+"' order by j.nombre asc";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)//equipo sin Alineacion
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        jNombre.Add(Convert.ToString(rs.Fields[0].Value));
+                        jApellido.Add(Convert.ToString(rs.Fields[1].Value));
+                        jOcurrencia.Add(Convert.ToString(rs.Fields[2].Value));
+                        minuto.Add(Convert.ToString(rs.Fields[3].Value));
+                        puntos.Add(Convert.ToString(rs.Fields[4].Value));
+                        jEquipo.Add(Convert.ToString(rs.Fields[5].Value));
+                        c.nombreDeporte = Convert.ToString(rs.Fields[6].Value);//aca se almacena la url del equipo
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte mostrarResultadoPuntos(List<string> jNombre, List<string> puntuacion, List<string> Logos, int idEncuentro) { 
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select e.nombre, e.categoria, p.puntos, e.logo from Equipos as e, Genera as g, Puntos as p where g.idResultado=p.idResultado AND g.idEncuentro="+ idEncuentro+" AND p.idEquipo=e.idEquipo";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        jNombre.Add(Convert.ToString(rs.Fields[0].Value) + Convert.ToString(rs.Fields[1].Value));
+                        puntuacion.Add(Convert.ToString(rs.Fields[2].Value));
+                        Logos.Add(Convert.ToString(rs.Fields[3].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte mostrarResultadoRankings(List<string> jNombre, List<string> puntuacion, List<string> Logos, int idEncuentro)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "	select e.nombre, e.categoria, r.puntuacion from Equipos as e, Genera as g, Rankings as r where g.idResultado=r.idResultado AND g.idEncuentro="+ idEncuentro + " AND r.idEquipo=e.idEquipo order by r.puntuacion desc";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        jNombre.Add(Convert.ToString(rs.Fields[0].Value) + Convert.ToString(rs.Fields[1].Value));
+                        puntuacion.Add(Convert.ToString(rs.Fields[2].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte mostrarResultadoSets(List<string> jNombre, List<string> puntuacion, List<string> Logos, int idEncuentro)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select e.nombre, e.categoria, p.setsGanados from Equipos as e, Genera as g, Particular as p where g.idResultado=p.idResultado AND g.idEncuentro="+idEncuentro +" AND p.idEquipo=e.idEquipo";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        jNombre.Add(Convert.ToString(rs.Fields[0].Value) + Convert.ToString(rs.Fields[1].Value));
+                        puntuacion.Add(Convert.ToString(rs.Fields[2].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte SistemaNotificaciones(List<string> evento, List<DateTime> fechaComienzo, string usuario)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select e.descripcionEncuentro, e.fechaComienzo from Encuentros as e, Visualiza as v where v.idEncuentro=e.idEncuentro AND v.idUsuario=(select idUsuario from vip where nombre='"+ usuario+"')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    throw;
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    MessageBox.Show("HOLA?");
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        evento.Add(Convert.ToString(rs.Fields[0].Value));
+                        fechaComienzo.Add(Convert.ToDateTime(rs.Fields[1].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
 
     }
 }

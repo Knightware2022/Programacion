@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,6 +30,7 @@ namespace App_de_Usuario
             frmPrincipal = new Principal();
             frmResultados = new Resultados();
             frmRegistrarse = new Registrarse();
+            Thread notifica2;
             apiA = new ApiAutentificacion();
             frmIncidencias = new Incidencias();
             frmAlineacion = new Alineacion();

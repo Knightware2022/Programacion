@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.paneBotones = new System.Windows.Forms.Panel();
             this.paneLogo = new System.Windows.Forms.Panel();
@@ -42,6 +43,8 @@
             this.paneBanner = new System.Windows.Forms.Panel();
             this.pboxPublicidad = new System.Windows.Forms.PictureBox();
             this.paneVentanas = new System.Windows.Forms.Panel();
+            this.tiempoSistema = new System.Windows.Forms.Timer(this.components);
+            this.notificaciones = new System.Windows.Forms.NotifyIcon(this.components);
             this.paneBotones.SuspendLayout();
             this.paneLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).BeginInit();
@@ -189,6 +192,14 @@
             this.paneVentanas.Size = new System.Drawing.Size(725, 400);
             this.paneVentanas.TabIndex = 2;
             // 
+            // tiempoSistema
+            // 
+            this.tiempoSistema.Tick += new System.EventHandler(this.tiempoSistema_Tick);
+            // 
+            // notificaciones
+            // 
+            this.notificaciones.Visible = true;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,5 +241,7 @@
         public System.Windows.Forms.Button btnFavoritos;
         public System.Windows.Forms.PictureBox pboxPublicidad;
         public System.Windows.Forms.Panel paneBanner;
+        private System.Windows.Forms.Timer tiempoSistema;
+        private System.Windows.Forms.NotifyIcon notificaciones;
     }
 }

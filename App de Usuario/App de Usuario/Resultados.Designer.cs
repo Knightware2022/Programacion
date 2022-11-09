@@ -54,10 +54,19 @@
             this.lblfechaComienzo = new System.Windows.Forms.Label();
             this.lblEvento1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.gboxResultados = new System.Windows.Forms.GroupBox();
+            this.rbPuntos = new System.Windows.Forms.RadioButton();
+            this.rbSets = new System.Windows.Forms.RadioButton();
+            this.rbRanking = new System.Windows.Forms.RadioButton();
+            this.lstResultado = new System.Windows.Forms.ListView();
+            this.Equipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Puntaje = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.setsGanados = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.paneBuscar.SuspendLayout();
             this.paneBuscarEvento.SuspendLayout();
             this.grboxFiltros.SuspendLayout();
             this.paneResultados.SuspendLayout();
+            this.gboxResultados.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneBuscar
@@ -211,6 +220,8 @@
             // 
             this.paneResultados.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.paneResultados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneResultados.Controls.Add(this.lstResultado);
+            this.paneResultados.Controls.Add(this.gboxResultados);
             this.paneResultados.Controls.Add(this.btnIncidencias);
             this.paneResultados.Controls.Add(this.btnAlineacion);
             this.paneResultados.Controls.Add(this.cmboxEquiposParticipan);
@@ -233,18 +244,19 @@
             // btnIncidencias
             // 
             this.btnIncidencias.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnIncidencias.Location = new System.Drawing.Point(233, 244);
+            this.btnIncidencias.Location = new System.Drawing.Point(35, 238);
             this.btnIncidencias.Margin = new System.Windows.Forms.Padding(2);
             this.btnIncidencias.Name = "btnIncidencias";
             this.btnIncidencias.Size = new System.Drawing.Size(117, 33);
             this.btnIncidencias.TabIndex = 44;
             this.btnIncidencias.Text = "Incidencias";
             this.btnIncidencias.UseVisualStyleBackColor = true;
+            this.btnIncidencias.Click += new System.EventHandler(this.btnIncidencias_Click);
             // 
             // btnAlineacion
             // 
             this.btnAlineacion.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnAlineacion.Location = new System.Drawing.Point(59, 244);
+            this.btnAlineacion.Location = new System.Drawing.Point(34, 201);
             this.btnAlineacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlineacion.Name = "btnAlineacion";
             this.btnAlineacion.Size = new System.Drawing.Size(117, 33);
@@ -259,7 +271,7 @@
             this.cmboxEquiposParticipan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxEquiposParticipan.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxEquiposParticipan.FormattingEnabled = true;
-            this.cmboxEquiposParticipan.Location = new System.Drawing.Point(232, 181);
+            this.cmboxEquiposParticipan.Location = new System.Drawing.Point(229, 165);
             this.cmboxEquiposParticipan.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxEquiposParticipan.Name = "cmboxEquiposParticipan";
             this.cmboxEquiposParticipan.Size = new System.Drawing.Size(380, 24);
@@ -269,7 +281,7 @@
             // 
             this.lblEquiposParticipando.AutoSize = true;
             this.lblEquiposParticipando.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblEquiposParticipando.Location = new System.Drawing.Point(34, 185);
+            this.lblEquiposParticipando.Location = new System.Drawing.Point(31, 169);
             this.lblEquiposParticipando.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquiposParticipando.Name = "lblEquiposParticipando";
             this.lblEquiposParticipando.Size = new System.Drawing.Size(142, 15);
@@ -280,7 +292,7 @@
             // 
             this.txtDeporteEvento.Enabled = false;
             this.txtDeporteEvento.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtDeporteEvento.Location = new System.Drawing.Point(233, 54);
+            this.txtDeporteEvento.Location = new System.Drawing.Point(230, 38);
             this.txtDeporteEvento.Name = "txtDeporteEvento";
             this.txtDeporteEvento.Size = new System.Drawing.Size(380, 24);
             this.txtDeporteEvento.TabIndex = 40;
@@ -289,7 +301,7 @@
             // 
             this.lblDeporteEvento.AutoSize = true;
             this.lblDeporteEvento.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDeporteEvento.Location = new System.Drawing.Point(36, 58);
+            this.lblDeporteEvento.Location = new System.Drawing.Point(33, 42);
             this.lblDeporteEvento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDeporteEvento.Name = "lblDeporteEvento";
             this.lblDeporteEvento.Size = new System.Drawing.Size(119, 15);
@@ -300,7 +312,7 @@
             // 
             this.txtFechaFin.Enabled = false;
             this.txtFechaFin.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtFechaFin.Location = new System.Drawing.Point(233, 137);
+            this.txtFechaFin.Location = new System.Drawing.Point(230, 121);
             this.txtFechaFin.Name = "txtFechaFin";
             this.txtFechaFin.Size = new System.Drawing.Size(380, 24);
             this.txtFechaFin.TabIndex = 38;
@@ -309,7 +321,7 @@
             // 
             this.txtFechaComienzo.Enabled = false;
             this.txtFechaComienzo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtFechaComienzo.Location = new System.Drawing.Point(233, 91);
+            this.txtFechaComienzo.Location = new System.Drawing.Point(230, 75);
             this.txtFechaComienzo.Name = "txtFechaComienzo";
             this.txtFechaComienzo.Size = new System.Drawing.Size(380, 24);
             this.txtFechaComienzo.TabIndex = 37;
@@ -320,7 +332,7 @@
             this.cmboxNombreEvento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxNombreEvento.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.cmboxNombreEvento.FormattingEnabled = true;
-            this.cmboxNombreEvento.Location = new System.Drawing.Point(233, 21);
+            this.cmboxNombreEvento.Location = new System.Drawing.Point(230, 5);
             this.cmboxNombreEvento.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxNombreEvento.Name = "cmboxNombreEvento";
             this.cmboxNombreEvento.Size = new System.Drawing.Size(380, 24);
@@ -331,7 +343,7 @@
             // 
             this.lblFechaFin.AutoSize = true;
             this.lblFechaFin.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblFechaFin.Location = new System.Drawing.Point(34, 141);
+            this.lblFechaFin.Location = new System.Drawing.Point(31, 125);
             this.lblFechaFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaFin.Name = "lblFechaFin";
             this.lblFechaFin.Size = new System.Drawing.Size(111, 15);
@@ -342,7 +354,7 @@
             // 
             this.lblfechaComienzo.AutoSize = true;
             this.lblfechaComienzo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblfechaComienzo.Location = new System.Drawing.Point(35, 95);
+            this.lblfechaComienzo.Location = new System.Drawing.Point(32, 79);
             this.lblfechaComienzo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechaComienzo.Name = "lblfechaComienzo";
             this.lblfechaComienzo.Size = new System.Drawing.Size(105, 15);
@@ -353,7 +365,7 @@
             // 
             this.lblEvento1.AutoSize = true;
             this.lblEvento1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblEvento1.Location = new System.Drawing.Point(35, 25);
+            this.lblEvento1.Location = new System.Drawing.Point(32, 9);
             this.lblEvento1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEvento1.Name = "lblEvento1";
             this.lblEvento1.Size = new System.Drawing.Size(119, 15);
@@ -363,7 +375,7 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnVolver.Location = new System.Drawing.Point(409, 244);
+            this.btnVolver.Location = new System.Drawing.Point(35, 276);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(117, 33);
@@ -371,6 +383,85 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // gboxResultados
+            // 
+            this.gboxResultados.Controls.Add(this.rbRanking);
+            this.gboxResultados.Controls.Add(this.rbSets);
+            this.gboxResultados.Controls.Add(this.rbPuntos);
+            this.gboxResultados.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.gboxResultados.Location = new System.Drawing.Point(177, 201);
+            this.gboxResultados.Name = "gboxResultados";
+            this.gboxResultados.Size = new System.Drawing.Size(154, 100);
+            this.gboxResultados.TabIndex = 45;
+            this.gboxResultados.TabStop = false;
+            this.gboxResultados.Text = "Otro tipo de resultado:";
+            // 
+            // rbPuntos
+            // 
+            this.rbPuntos.AutoSize = true;
+            this.rbPuntos.Location = new System.Drawing.Point(6, 20);
+            this.rbPuntos.Name = "rbPuntos";
+            this.rbPuntos.Size = new System.Drawing.Size(65, 19);
+            this.rbPuntos.TabIndex = 0;
+            this.rbPuntos.TabStop = true;
+            this.rbPuntos.Text = "Puntos";
+            this.rbPuntos.UseVisualStyleBackColor = true;
+            this.rbPuntos.CheckedChanged += new System.EventHandler(this.rbPuntos_CheckedChanged);
+            // 
+            // rbSets
+            // 
+            this.rbSets.AutoSize = true;
+            this.rbSets.Location = new System.Drawing.Point(6, 44);
+            this.rbSets.Name = "rbSets";
+            this.rbSets.Size = new System.Drawing.Size(51, 19);
+            this.rbSets.TabIndex = 1;
+            this.rbSets.TabStop = true;
+            this.rbSets.Text = "Sets";
+            this.rbSets.UseVisualStyleBackColor = true;
+            this.rbSets.CheckedChanged += new System.EventHandler(this.rbSets_CheckedChanged);
+            // 
+            // rbRanking
+            // 
+            this.rbRanking.AutoSize = true;
+            this.rbRanking.Location = new System.Drawing.Point(6, 69);
+            this.rbRanking.Name = "rbRanking";
+            this.rbRanking.Size = new System.Drawing.Size(71, 19);
+            this.rbRanking.TabIndex = 2;
+            this.rbRanking.TabStop = true;
+            this.rbRanking.Text = "Ranking";
+            this.rbRanking.UseVisualStyleBackColor = true;
+            this.rbRanking.CheckedChanged += new System.EventHandler(this.rbRanking_CheckedChanged);
+            // 
+            // lstResultado
+            // 
+            this.lstResultado.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Equipo,
+            this.Puntaje,
+            this.setsGanados});
+            this.lstResultado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lstResultado.HideSelection = false;
+            this.lstResultado.Location = new System.Drawing.Point(337, 201);
+            this.lstResultado.Name = "lstResultado";
+            this.lstResultado.Size = new System.Drawing.Size(344, 100);
+            this.lstResultado.TabIndex = 46;
+            this.lstResultado.UseCompatibleStateImageBehavior = false;
+            this.lstResultado.View = System.Windows.Forms.View.Details;
+            // 
+            // Equipo
+            // 
+            this.Equipo.Text = "Equipo";
+            this.Equipo.Width = 83;
+            // 
+            // Puntaje
+            // 
+            this.Puntaje.Text = "Puntaje/Anotaciones";
+            this.Puntaje.Width = 150;
+            // 
+            // setsGanados
+            // 
+            this.setsGanados.Text = "Sets ganados";
+            this.setsGanados.Width = 100;
             // 
             // Resultados
             // 
@@ -393,6 +484,8 @@
             this.grboxFiltros.PerformLayout();
             this.paneResultados.ResumeLayout(false);
             this.paneResultados.PerformLayout();
+            this.gboxResultados.ResumeLayout(false);
+            this.gboxResultados.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -425,5 +518,13 @@
         private System.Windows.Forms.Label lblEquiposParticipando;
         private System.Windows.Forms.Button btnIncidencias;
         private System.Windows.Forms.Button btnAlineacion;
+        private System.Windows.Forms.ListView lstResultado;
+        private System.Windows.Forms.ColumnHeader Equipo;
+        private System.Windows.Forms.ColumnHeader Puntaje;
+        private System.Windows.Forms.ColumnHeader setsGanados;
+        private System.Windows.Forms.GroupBox gboxResultados;
+        private System.Windows.Forms.RadioButton rbRanking;
+        private System.Windows.Forms.RadioButton rbSets;
+        private System.Windows.Forms.RadioButton rbPuntos;
     }
 }

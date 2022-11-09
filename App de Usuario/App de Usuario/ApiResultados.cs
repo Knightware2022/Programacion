@@ -218,7 +218,6 @@ namespace App_de_Usuario
 
             return respuesta;
         }
-
         public static byte EventosJugadosxJugar(List<string> Eventos, string deporte)
         {
             byte respuesta = 0;
@@ -304,6 +303,88 @@ namespace App_de_Usuario
 
             return respuesta;
         }
+        public static byte ConsultarIncidencias(List<string> jNombre, List<string> jApellido, List<string> jOcurrencia, List<string> jEquipo, int idEncuentro, string nombreEquipo, string categoriaEquipo, EncuentrosColectivos c, List<string> puntos, List<string> minuto)
+        {
+            byte respuesta = 0;
 
+            switch (Logica.mostrarIncidenciasporEquipoyLogo(jNombre, jApellido, jOcurrencia, jEquipo, idEncuentro, nombreEquipo, categoriaEquipo, c, puntos, minuto))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte ConsultarResultadoPuntos(List<string> jNombre, List<string> puntuacion, List<string> logos, int idEncuentro)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.mostrarResultadoPuntos(jNombre, puntuacion,logos, idEncuentro))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte ConsultarResultadosSets(List<string> jNombre, List<string> puntuacion, List<string> logos, int idEncuentro)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.mostrarResultadoSets(jNombre, puntuacion, logos, idEncuentro))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte ConsultarResultadosRankings(List<string> jNombre, List<string> puntuacion, List<string> logos, int idEncuentro)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.mostrarResultadoRankings(jNombre, puntuacion, logos, idEncuentro))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+
+        public static byte NotificacionEvento(string usuario, List<string> eventos, List<DateTime> fechaComienzo) {
+            byte devolver = 0;
+            switch (Logica.SistemaNotificaciones(eventos, fechaComienzo, usuario)) {
+                case 0:
+                    return 0;
+                case 1:
+                    return 1;
+                case 2:
+                    return 2;
+                case 3:
+                    return 3;
+            }
+            return devolver;
+        }
     }
 }

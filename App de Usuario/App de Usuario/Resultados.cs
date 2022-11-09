@@ -135,7 +135,70 @@ namespace App_de_Usuario
                     break;
             }
         }
-
+        private void verResultado() {
+            int id;
+            if (int.TryParse(cmboxNombreEvento.Text.Substring(0, cmboxNombreEvento.Text.IndexOf(" ")), out id)) {
+                List<string> nombreEquipo = new List<string>();
+                List<string> puntos_Sets = new List<string>();
+                List<string> logo = new List<string>();
+                lstResultado.Items.Clear();
+                if (rbPuntos.Checked)
+                {
+                    switch (ApiResultados.ConsultarResultadoPuntos(nombreEquipo, puntos_Sets, logo, id)) {
+                        case 0:
+                            for (int i = 0; i < nombreEquipo.Count; i++)
+                            {
+                                ListViewItem item = new ListViewItem(nombreEquipo[i]);
+                                item.SubItems.Add(puntos_Sets[i]);
+                                lstResultado.Items.Add(item);
+                            }                           
+                            break;
+                        default:
+                            MessageBox.Show("Error inesperado");
+                            break;
+                    }
+                }
+                else {
+                    if (rbSets.Checked)
+                    {
+                        switch (ApiResultados.ConsultarResultadosSets(nombreEquipo, puntos_Sets, logo, id))
+                        {
+                            case 0:
+                                for (int i = 0; i < nombreEquipo.Count; i++)
+                                {
+                                    ListViewItem item = new ListViewItem(nombreEquipo[i]);
+                                    item.SubItems.Add("");
+                                    item.SubItems.Add(puntos_Sets[i]);
+                                    lstResultado.Items.Add(item);
+                                }
+                                break;
+                            default:
+                                MessageBox.Show("Error inesperado");
+                                break;
+                        }
+                    }
+                    else if(rbRanking.Checked){
+                        switch (ApiResultados.ConsultarResultadosRankings(nombreEquipo, puntos_Sets, logo, id))
+                        {
+                            case 0:
+                                for (int i = 0; i < nombreEquipo.Count; i++)
+                                {
+                                    ListViewItem item = new ListViewItem(nombreEquipo[i]);
+                                    item.SubItems.Add(puntos_Sets[i]);
+                                    lstResultado.Items.Add(item);
+                                }
+                                break;
+                            default:
+                                MessageBox.Show("Error inesperado");
+                                break;
+                        }
+                    }
+                }
+            }
+            else{
+                MessageBox.Show("Error inesperado");
+            }
+        }
 
         private void Resultados_Load(object sender, EventArgs e)
         {
@@ -144,6 +207,7 @@ namespace App_de_Usuario
             this.refrescarDeportes();
             rbDeporte.Checked = true;
             this.ocultarMostrarFiltros();
+           // rbPuntos.Checked = true;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -178,6 +242,7 @@ namespace App_de_Usuario
         private void cmboxNombreEvento_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.DatosDeportes();
+            this.verResultado();
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -258,6 +323,31 @@ namespace App_de_Usuario
             Program.frmAlineacion.refrescarEquiposCargados();
         }
 
+        private void btnIncidencias_Click(object sender, EventArgs e)
+        {
+            Program.frmIncidencias.StartPosition = FormStartPosition.CenterScreen;
+            Program.frmPrincipal.Enabled = false;
+            Program.frmIncidencias.Visible = true;
+            Program.frmIncidencias.TopMost = true;
+            Program.frmIncidencias.refrescarEquiposCargados();
+            Program.frmIncidencias.mostrarIncidencias();
+        }
 
+        private void rbPuntos_CheckedChanged(object sender, EventArgs e)
+        {
+            this.verResultado();
+        }
+
+        private void rbSets_CheckedChanged(object sender, EventArgs e)
+        {
+            this.verResultado();
+
+        }
+
+        private void rbRanking_CheckedChanged(object sender, EventArgs e)
+        {
+            this.verResultado();
+        }
     }
+    
 }
