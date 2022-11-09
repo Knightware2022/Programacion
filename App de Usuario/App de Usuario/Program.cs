@@ -16,6 +16,8 @@ namespace App_de_Usuario
         public static Resultados frmResultados;
         public static ApiAutentificacion apiA;
         public static Registrarse frmRegistrarse;
+        public static Alineacion frmAlineacion;
+        public static Incidencias frmIncidencias;
         [STAThread]
         static void Main()
         {
@@ -28,6 +30,8 @@ namespace App_de_Usuario
             frmResultados = new Resultados();
             frmRegistrarse = new Registrarse();
             apiA = new ApiAutentificacion();
+            frmIncidencias = new Incidencias();
+            frmAlineacion = new Alineacion();
             Application.Run(frmLogin = new Login());
         }
     }

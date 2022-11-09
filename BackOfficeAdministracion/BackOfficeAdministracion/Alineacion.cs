@@ -29,11 +29,11 @@ namespace BackOfficeAdministracion
                 case 0:
                     cmboxEquipo.Items.Clear();
                     cmboxEquipo.Text = null;
-                    cmboxEquipo.Text = nombresEquipos[0];
                     foreach (string nombre in nombresEquipos)
                     {
                         cmboxEquipo.Items.Add(nombre);
                     }
+                    cmboxEquipo.Text = nombresEquipos[0];
                     break;
                 case 1:
                     MessageBox.Show("Error de conexion");
@@ -81,11 +81,12 @@ namespace BackOfficeAdministracion
                 case 0:
                     cmboxAlineacion.Items.Clear();
                     cmboxAlineacion.Text = null;
-                    cmboxAlineacion.Text = nombrealineaciones[0];
                     foreach (string nombre in nombrealineaciones)
                     {
                         cmboxAlineacion.Items.Add(nombre);
                     }
+                    cmboxAlineacion.Text = nombrealineaciones[0];
+
                     break;
                 case 1:
                     MessageBox.Show("Error de conexion");
@@ -104,9 +105,8 @@ namespace BackOfficeAdministracion
             cmboxJugador.Items.Clear();
             cmboxJugador.Text = null;
             lstviewAlineacion.Items.Clear();
-
-            this.Visible = false;
             Program.frmPrincipal.Enabled = true;
+            this.Visible = false;
 
         }
 

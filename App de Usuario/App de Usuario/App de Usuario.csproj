@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alineacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alineacion.Designer.cs">
+      <DependentUpon>Alineacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApiAutentificacion.cs" />
     <Compile Include="ApiPublicidad.cs" />
     <Compile Include="ApiResultados.cs" />
@@ -77,6 +83,12 @@
       <DependentUpon>EventosProgramados.cs</DependentUpon>
     </Compile>
     <Compile Include="Idiomas.cs" />
+    <Compile Include="Incidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incidencias.Designer.cs">
+      <DependentUpon>Incidencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logica.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -108,6 +120,9 @@
     </Compile>
     <Compile Include="Torneos.cs" />
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="Alineacion.resx">
+      <DependentUpon>Alineacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventosProgramados.resx">
       <DependentUpon>EventosProgramados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incidencias.resx">
+      <DependentUpon>Incidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

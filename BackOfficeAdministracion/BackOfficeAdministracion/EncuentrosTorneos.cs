@@ -198,9 +198,8 @@ namespace BackOfficeAdministracion
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.TopMost = false;
             Program.frmPrincipal.Enabled = true;
+            this.Visible = false;
 
         }
 

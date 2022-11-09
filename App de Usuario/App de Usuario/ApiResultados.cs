@@ -219,5 +219,91 @@ namespace App_de_Usuario
             return respuesta;
         }
 
+        public static byte EventosJugadosxJugar(List<string> Eventos, string deporte)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.cargarNombreEncuentrosJugados(Eventos, deporte))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte EventosJugadosxJugarconEquipo(List<string> Eventos, string nombre, string categoria)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.cargarNombreEncuentrosJugadosconEquipo(Eventos, nombre, categoria))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte EventosJugadosxJugarConTodosLosFiltros(List<string> Eventos, string nombre, string categoria, string deporte)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.cargarNombreEncuentrosJugadosConTodosLosFiltros(Eventos, nombre, categoria, deporte))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte ConsultarEquiposAlineacion(int idEncuentro, List<string> Eventos)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.EquiposEncuentrosColectivos(idEncuentro, Eventos))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte ConsultarAlineacion(List<string> jNombre, List<string> jApellido, List<string> jPosicion, List<string> jEquipo, int idEncuentro, string nombreEquipo, string categoriaEquipo, EncuentrosColectivos c)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.mostrarAlineaciondeEquipoYsuLogo(jNombre, jApellido, jPosicion, jEquipo, idEncuentro, nombreEquipo, categoriaEquipo, c))
+
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+
     }
 }

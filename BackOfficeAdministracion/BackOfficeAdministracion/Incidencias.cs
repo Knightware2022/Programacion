@@ -26,8 +26,8 @@ namespace BackOfficeAdministracion
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
             Program.frmPrincipal.Enabled = true;
+            this.Visible = false;
             
         }
         public void refrescarEquiposCargados()

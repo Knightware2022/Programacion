@@ -47,10 +47,10 @@ namespace BackOfficeAdministracion
         private void btnAlineacion_Click(object sender, EventArgs e)
         {
             Program.frmAlineacion.StartPosition = FormStartPosition.CenterScreen;
+            Program.frmPrincipal.Enabled = false;
             Program.frmAlineacion.Visible = true;
             Program.frmAlineacion.TopMost = true;
             Program.frmAlineacion.refrescarEquiposCargados();
-            Program.frmPrincipal.Enabled = false;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

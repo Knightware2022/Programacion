@@ -746,6 +746,44 @@ namespace App_de_Usuario
             return devolver;
         }
 
+        public static byte EquiposEncuentrosColectivos(int idEncuentro, List<string> nombresEquipos)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select distinct e.nombre, e.categoria from Equipos as e, Compite as c where c.idEncuentro=" + idEncuentro + " AND c.idEquipo=e.idEquipo";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        nombresEquipos.Add((Convert.ToString(rs.Fields[0].Value) + "/" + Convert.ToString(rs.Fields[1].Value)));
+                        rs.MoveNext();
+                    }
+                }
+
+            }
+            rs = null;
+            return devolver;
+        }
 
 
         ///             metodos que no estan (se supone) en la app del backoffice
@@ -876,6 +914,7 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
+
         public static byte DatosEncuentrosColectivos(EncuentrosColectivos encuentro, List<string> nombresEquipos)
         {
             byte devolver = 0;
@@ -1122,6 +1161,161 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
+        public static byte cargarNombreEncuentrosJugados(List<string> listaEventosColectivos, string deporte)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select e.descripcionEncuentro, e.fechaComienzo, e.idEncuentro from Encuentros as e where e.idDeporte=(select idDeporte from Deportes where nombre='" + deporte + "') AND e.fechaComienzo<=curdate()";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    return devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        listaEventosColectivos.Add(Convert.ToString(rs.Fields[2].Value) + " " + Convert.ToString(rs.Fields[0].Value) + " -" + Convert.ToString(rs.Fields[1].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte cargarNombreEncuentrosJugadosconEquipo(List<string> listaEventosColectivos, string nombre, string categoria)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select distinct e.idEncuentro, e.descripcionEncuentro, e.fechaComienzo from encuentros as e, compite as c where e.idEncuentro=c.idEncuentro and c.idEquipo=(select idEquipo from Equipos where nombre='" + nombre + "' AND categoria='" + categoria + "') AND e.fechaComienzo<=curdate()";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        listaEventosColectivos.Add(Convert.ToString(rs.Fields[0].Value) + " " + Convert.ToString(rs.Fields[1].Value) + " -" + Convert.ToString(rs.Fields[2].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte cargarNombreEncuentrosJugadosConTodosLosFiltros(List<string> listaEventosColectivos, string nombre, string categoria, string deporte)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select distinct e.idEncuentro, e.descripcionEncuentro, e.fechaComienzo from encuentros as e, compite as c where e.idEncuentro=c.idEncuentro and c.idEquipo=(select idEquipo from Equipos where nombre='" + nombre + "' AND categoria='" + categoria + "') AND e.fechaComienzo<=curdate() AND c.idDeporteEncuentro=(select idDeporte from Deportes where nombre='" + deporte + "')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        listaEventosColectivos.Add(Convert.ToString(rs.Fields[0].Value) + " " + Convert.ToString(rs.Fields[1].Value) + " -" + Convert.ToString(rs.Fields[2].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+        public static byte mostrarAlineaciondeEquipoYsuLogo(List<string> jNombre, List<string> jApellido, List<string> jPosicion, List<string> jEquipo, int idEncuentro, string nombreEquipo, string categoriaEquipo, EncuentrosColectivos c)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select j.nombre, j.apellido, a.Poscion, equi.Nombre, equi.logo from Jugador as j, Alineacion as a, Encuentros as e, Utiliza as u, Equipos as equi, Forman as f where a.idAlineacion = u.idAlineacion AND u.idEncuentro = e.idEncuentro AND e.idEncuentro =" + idEncuentro + " AND j.idJugador = a.idJugador AND equi.idEquipo = f.idEquipo AND f.idJugador = j.idJugador AND equi.idEquipo =(select idEquipo from Equipos as e2 where e2.nombre='" + nombreEquipo + "' AND e2.categoria='" + categoriaEquipo + "')";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)//equipo sin Alineacion
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        jNombre.Add(Convert.ToString(rs.Fields[0].Value));
+                        jApellido.Add(Convert.ToString(rs.Fields[1].Value));
+                        jPosicion.Add(Convert.ToString(rs.Fields[2].Value));
+                        jEquipo.Add(Convert.ToString(rs.Fields[3].Value));
+                        c.nombreDeporte = Convert.ToString(rs.Fields[4].Value);//aca se almacena la url del equipo
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+
+
+
 
     }
 }
