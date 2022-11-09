@@ -82,7 +82,7 @@ namespace App_de_Usuario
             }
             return devolver;
         }
-        public static string obtenerPublicidad(int id)
+        public static string obtenerPublicidad(string mac)
         {
             string url = "";
             object cantFilas;
@@ -94,7 +94,7 @@ namespace App_de_Usuario
             }
             else
             {
-                sql = "select url from publicidad where idPublicidad=" + id;
+                sql = "select p.url from publicidad as p, Tiene_Usuario as t where p.idPublicidad=t.idPublicidad AND t.idUsuario=(select idUsuario from Guest where mac='" + mac +"')";
                 try
                 {
 
@@ -1510,6 +1510,111 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
+        public static byte buscandoCorreoUsuario(Usuario u)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select correo from Vip where nombre='" + u.nombre + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); 
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3; 
+                }
+                else {
+                    u.correo = Convert.ToString(rs.Fields[0].Value);
+                }
+            }
+            return devolver;
+        }
 
+        public static byte cargarNombresTorneosUsu(List<string> nombresTorneos)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select t.idTorneo, t.nombreTorneo, t.fechaComienzo from torneos as t where t.fechaComienzo>=curdate()";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        nombresTorneos.Add(Convert.ToString(rs.Fields[0].Value) + " " + Convert.ToString(rs.Fields[1].Value) + " -" + Convert.ToString(rs.Fields[2].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+
+        public static byte nombresEncuentrosDeTorneo(List<string> nombreEventos, int idTorneo) {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select e.idEncuentro, e.descripcionEncuentro, e.fechaComienzo from Torneos as t, torneosTienenEncuentros as tt, Encuentros as e where t.idTorneo = tt.idTorneo AND tt.idEncuentro=e.idEncuentro AND t.idTorneo=" + idTorneo;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    while (!rs.EOF)
+                    {
+                        nombreEventos.Add(Convert.ToString(rs.Fields[0].Value) + " " + Convert.ToString(rs.Fields[1].Value) + " -" + Convert.ToString(rs.Fields[2].Value));
+                        rs.MoveNext();
+                    }
+                }
+            }
+            rs = null;
+            return devolver;
+        }
     }
 }

@@ -118,6 +118,12 @@
       <DependentUpon>Resultados.cs</DependentUpon>
     </Compile>
     <Compile Include="Torneos.cs" />
+    <Compile Include="TorneosProgramados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TorneosProgramados.Designer.cs">
+      <DependentUpon>TorneosProgramados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Alineacion.resx">
       <DependentUpon>Alineacion.cs</DependentUpon>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resultados.resx">
       <DependentUpon>Resultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TorneosProgramados.resx">
+      <DependentUpon>TorneosProgramados.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -38,5 +38,37 @@ namespace App_de_Usuario
                 MessageBox.Show("Ocurrió un error enviando el correo");
             }
         }
+
+        public static void NoticacionEvento(string dirCorreo, string body)
+        {
+            try
+            {
+                using (MailMessage mailMessage = new MailMessage())
+                {
+                    mailMessage.To.Add(dirCorreo);
+                    mailMessage.Subject = "Notificacion de evento";
+                    mailMessage.Body = body;
+                    mailMessage.IsBodyHtml = false;
+
+                    mailMessage.From = new MailAddress("noreply@gmail.com", "Evento");
+                    using (SmtpClient cliente = new SmtpClient())
+                    {
+                        cliente.UseDefaultCredentials = false;
+                        cliente.Credentials = new NetworkCredential("sisrd2022@gmail.com", "osomthlkbgfzwhsn");
+                        cliente.Port = 25;
+                        cliente.EnableSsl = true;
+
+                        cliente.Host = "smtp.gmail.com";
+                        cliente.Send(mailMessage);
+                    }
+
+                }
+
+
+            }
+            catch
+            {
+            }
+        }
     }
 }

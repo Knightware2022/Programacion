@@ -19,6 +19,7 @@ namespace App_de_Usuario
         public static Registrarse frmRegistrarse;
         public static Alineacion frmAlineacion;
         public static Incidencias frmIncidencias;
+        public static TorneosProgramados frmTorneosProgramados;
         [STAThread]
         static void Main()
         {
@@ -31,6 +32,7 @@ namespace App_de_Usuario
             frmResultados = new Resultados();
             frmRegistrarse = new Registrarse();
             Thread notifica2;
+            frmTorneosProgramados = new TorneosProgramados();
             apiA = new ApiAutentificacion();
             frmIncidencias = new Incidencias();
             frmAlineacion = new Alineacion();

@@ -23,8 +23,8 @@ namespace App_de_Usuario
             set { _publicidad = value; }
         }
         #endregion
-        public void obtenerPublicidad(int id) {
-            _publicidad.url = Logica.obtenerPublicidad(id);
+        public void obtenerPublicidad(string mac) {
+            _publicidad.url = Logica.obtenerPublicidad(mac);
             if (_publicidad.url == null) {
                 _publicidad.url = "Error34X_Publicidad";
             }

@@ -17,6 +17,7 @@ namespace App_de_Usuario
             InitializeComponent();
         }
         public static string nombreUsuario;
+        public static string mac = "";
         public static int idUsuario;
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -140,12 +141,14 @@ namespace App_de_Usuario
             this.caracteresContrasenia(1);
         }
 
+
         private void btnGuest_Click(object sender, EventArgs e)
         {
+            List<string> macs = new List<string>();
             this.Hide();
-            switch (Program.apiA.entrarComoGuest()) {
+            switch (Program.apiA.entrarComoGuest(macs)) {
                 case 0:
-                    MessageBox.Show("Bienvenido nuevamente");
+                    mac = macs[0];
                     break;
                 case 3:
                     MessageBox.Show("Gracias por usar nuestra App");

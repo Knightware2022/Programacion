@@ -371,7 +371,6 @@ namespace App_de_Usuario
 
             return respuesta;
         }
-
         public static byte NotificacionEvento(string usuario, List<string> eventos, List<DateTime> fechaComienzo) {
             byte devolver = 0;
             switch (Logica.SistemaNotificaciones(eventos, fechaComienzo, usuario)) {
@@ -386,5 +385,61 @@ namespace App_de_Usuario
             }
             return devolver;
         }
+        public static byte BuscarCorreo(Usuario u)
+        {
+            byte devolver = 0;
+            switch (Logica.buscandoCorreoUsuario(u))
+            {
+                case 0:
+                    return 0;
+                case 1:
+                    return 1;
+                case 2:
+                    return 2;
+                case 3:
+                    return 3;
+            }
+            return devolver;
+        }
+
+        public static byte TorneosProgramados(List<string> Eventos)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.cargarNombresTorneosUsu(Eventos))
+
+            {
+                case 0:
+                    break;
+                case 3:
+                    return respuesta = 3;
+                default:
+                    return 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte EventosDeTorneo(List<string> Eventos, int idTorneo)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.nombresEncuentrosDeTorneo(Eventos, idTorneo))
+
+            {
+                case 0:
+                    break;
+                case 3:
+                    return respuesta = 3;
+                default:
+                    return 2;
+                    break;
+            }
+
+
+            return respuesta;
+        }
+
     }
 }

@@ -142,7 +142,7 @@ namespace App_de_Usuario
             }
             return correo;
         }
-        public byte entrarComoGuest() {    
+        public byte entrarComoGuest(List<string> macs) {    
             byte devolver = 0;
             int idUsuario;
             ArrayList dirmac = obtenerDirMAC();      
@@ -153,6 +153,7 @@ namespace App_de_Usuario
             mac = dirmac[0].ToString();
             switch (Logica.buscandoMAC(mac)) {
                 case 0: //ya se ingreso alguna vez con esta mac
+                    macs.Add(mac);
                     return 0;
                     break;
                 case 1:
@@ -180,6 +181,7 @@ namespace App_de_Usuario
                     idUsuario = random;
                     nombreAutogen = "Guest-" + idUsuario;
                     mac = dirmac[0].ToString();
+                    macs.Add(mac);
                     devolver = Logica.crearUsuarioGuest(idUsuario, nombreAutogen, mac);
                     break;
 

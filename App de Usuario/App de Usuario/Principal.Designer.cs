@@ -150,6 +150,7 @@
             this.btnTorneos.TabIndex = 1;
             this.btnTorneos.Text = "Torneos";
             this.btnTorneos.UseVisualStyleBackColor = true;
+            this.btnTorneos.Click += new System.EventHandler(this.btnTorneos_Click);
             // 
             // btnResultados
             // 
