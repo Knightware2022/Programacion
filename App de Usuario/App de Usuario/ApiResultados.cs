@@ -458,7 +458,6 @@ namespace App_de_Usuario
             }
             return respuesta;
         }
-
         public static byte SuscribirseATorneos(List<string> idEncuentro, string idDeporte, string usuario)
         {
             byte respuesta = 0;
@@ -474,6 +473,55 @@ namespace App_de_Usuario
 
             return respuesta;
         }
+        public static byte obtenerEquiposFavoritos(string nombre, List<string> EquiposFavo)
+        {
+            byte respuesta = 0;
 
+                    switch (Logica.averiguarEquiposFavoritos(nombre, EquiposFavo))
+                    {
+                        case 0:
+                            break;
+                        default:
+                            return respuesta = 2;
+                            break;
+                    }
+            
+            return respuesta;
+        }
+
+        public static byte EliminarEquiposFavoritos(string nombreEqui, string categoria, string nombreUsuario)
+        {
+            byte respuesta = 0;
+            switch (Logica.EliminarEquiposFavoritos(nombreEqui, categoria, nombreUsuario))
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+
+            return respuesta;
+        }
+        public static byte AgregarEquiposFavorito(string nombreEqui, string categoria, string nombreUsuario)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.AgregarEquiposFavorito(nombreEqui, categoria, nombreUsuario))
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
+                    break;
+            }
+
+
+
+            return respuesta;
+        }
+        
     }
 }

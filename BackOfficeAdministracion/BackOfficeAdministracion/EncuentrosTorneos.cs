@@ -205,8 +205,8 @@ namespace BackOfficeAdministracion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+           // {
                 int id = 0;
                 if (int.TryParse(cmboxEncuentros.Text.Substring(3, (cmboxEncuentros.Text.IndexOf(" ") - 3)), out id))
                 {
@@ -232,10 +232,10 @@ namespace BackOfficeAdministracion
                 {
                     MessageBox.Show("Error obteniendo id");
                 }
-            }
-            catch {
-                MessageBox.Show("Error obteniendo id");
-            }
+           // }
+          //  catch {
+          ////      MessageBox.Show("Error obteniendo id");
+           // }
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -244,7 +244,7 @@ namespace BackOfficeAdministracion
             int id = 0;
             if (int.TryParse(cmboxEncuentros.Text.Substring(3, (cmboxEncuentros.Text.IndexOf(" ") - 3)), out id))
             {
-                switch (Logica.EliminarEventoenTorneo(GestionarTorneos.torneosColectivos.idDeporteTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
+                switch (Logica.EliminarEventoenTorneo(GestionarTorneos.torneosColectivos.idTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
                 {
                     case 0:
                         MessageBox.Show("Evento desvinculado exitosamente");

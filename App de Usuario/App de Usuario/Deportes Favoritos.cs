@@ -33,7 +33,7 @@ namespace App_de_Usuario
             this.Hide();
             Program.frmPrincipal.paneVentanas.Visible = true;
         }
-        
+
         private void RefrescarDeportesEnSistema()
         {
 
@@ -61,13 +61,16 @@ namespace App_de_Usuario
                     break;
             }
         }
-        private void refrescarFavoritos() {
+        private void refrescarFavoritos()
+        {
 
             List<string> listaDeportesFavo = new List<string>();
-            switch (ApiResultados.obtenerDeportesFavoritos(listaDeportesFavo)) {
+            switch (ApiResultados.obtenerDeportesFavoritos(listaDeportesFavo))
+            {
                 case 0:
                     cmboxDeportesFavoritos.Items.Clear();
-                    foreach (string nombre in listaDeportesFavo) {
+                    foreach (string nombre in listaDeportesFavo)
+                    {
                         cmboxDeportesFavoritos.Items.Add(nombre);
                     }
                     try
@@ -75,15 +78,72 @@ namespace App_de_Usuario
                         cmboxDeportesFavoritos.Text = listaDeportesFavo[0];
 
                     }
-                    catch {
+                    catch
+                    {
                         MessageBox.Show("Usted no posee deportes favoritos");
                     }
-                        break;
+                    break;
                 default:
                     MessageBox.Show("Error de conexion");
                     break;
             }
         }
+        private void refrescarEquiposFavoritos()
+        {
+
+            List<string> listaEquiposFav = new List<string>();
+            switch (ApiResultados.obtenerEquiposFavoritos(Login.nombreUsuario, listaEquiposFav))
+            {
+                case 0:
+                    cmboxEquiFAv.Items.Clear();
+                    foreach (string nombre in listaEquiposFav)
+                    {
+                        cmboxEquiFAv.Items.Add(nombre);
+                    }
+                    try
+                    {
+                        cmboxEquiFAv.Text = listaEquiposFav[0];
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Usted no posee equipos favoritos");
+                    }
+                    break;
+                default:
+                    MessageBox.Show("Error de conexion");
+                    break;
+            }
+        }
+        private void RefrescarEquiposSistemaa()
+        {
+
+            List<string> listaEquipos = new List<string>();
+            switch (ApiResultados.obtenerEquiposEnSistema(listaEquipos))
+            {
+                case 0:
+                    cmboxEquiSistem.Items.Clear();
+                    foreach (string nombre in listaEquipos)
+                    {
+                        cmboxEquiSistem.Items.Add(nombre);
+                    }
+                    try
+                    {
+                        cmboxEquiSistem.Text = listaEquipos[0];
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No existen equipos en el sistema");
+                    }
+                    break;
+                default:
+                    MessageBox.Show("Error de conexion");
+                    break;
+            }
+        }
+
+
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
 
@@ -111,7 +171,7 @@ namespace App_de_Usuario
 
         private void btnAgregarDeporteFavorito_Click(object sender, EventArgs e)
         {
-            
+
             switch (ApiResultados.AgregarDeportesFavoritos(cmboxDeportes.Text))
             {
                 case 0:
@@ -128,6 +188,43 @@ namespace App_de_Usuario
         private void btnRefrescarDeportesEnSistema_Click(object sender, EventArgs e)
         {
             this.RefrescarDeportesEnSistema();
+        }
+
+        private void btnRefrescarEqui_Click(object sender, EventArgs e)
+        {
+            this.refrescarEquiposFavoritos();
+            this.RefrescarEquiposSistemaa();
+
+        }
+
+        private void btnEquiposFav_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnEquiposNoFAv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombre = cmboxEquiFAv.Text.Substring(0, cmboxEquiFAv.Text.IndexOf("/"));
+                string categoria = cmboxEquiFAv.Text.Substring((cmboxEquiFAv.Text.IndexOf("/") + 1), (cmboxEquiFAv.Text.Length - (cmboxEquiFAv.Text.IndexOf("/") + 1)));
+                switch (ApiResultados.EliminarEquiposFavoritos(nombre, categoria, Login.nombreUsuario))
+                {
+                    case 0:
+                        MessageBox.Show("Ya no sigue al equipo");
+                        this.refrescarEquiposFavoritos();
+                        break;
+                    default:
+                        MessageBox.Show("Error inesperado");
+                        break;
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Error obteniendo");
+
+            }
         }
     }
 }

@@ -876,7 +876,6 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
-
         public static byte cargarNombreEncuentrosConNombre(List<string> listaEventosColectivos, string deporte)
         {
             byte devolver = 0;
@@ -914,7 +913,6 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
-
         public static byte DatosEncuentrosColectivos(EncuentrosColectivos encuentro, List<string> nombresEquipos)
         {
             byte devolver = 0;
@@ -1541,7 +1539,6 @@ namespace App_de_Usuario
             }
             return devolver;
         }
-
         public static byte cargarNombresTorneosUsu(List<string> nombresTorneos)
         {
             byte devolver = 0;
@@ -1579,7 +1576,6 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
-
         public static byte nombresEncuentrosDeTorneo(List<string> nombreEventos, int idTorneo) {
             byte devolver = 0;
             object cantFilas;
@@ -1616,8 +1612,6 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
-
-
         public static byte DatosTorneosColectivosUSU(Torneos torneos, List<string> nombresEquipos)
         {
             byte devolver = 0;
@@ -1691,5 +1685,88 @@ namespace App_de_Usuario
             rs = null;
             return devolver;
         }
+
+        public static byte averiguarEquiposFavoritos(string usuario, List<string> lista)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select e.nombre, e.categoria from Equipos as e, EquiposFavoritos as d where d.idUsuario=(select idUsuario from Vip where nombre='" + usuario + "' AND d.idEquipoFavorito= e.idEquipo AND d.idDeporte = e.idDeporte)";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                while (!rs.EOF)
+                {
+                    lista.Add(Convert.ToString(rs.Fields[0].Value)+"/"+ Convert.ToString(rs.Fields[1].Value));
+                    rs.MoveNext();
+                }
+            }
+            rs = null;
+            return devolver;
+        }
+
+        public static byte AgregarEquiposFavorito(string nombreEquipo, string categoria, string nombreUsuario)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "insert into EquiposFavoritos(idUsuario, idEquipoFavorito, idDeporte) values((select idUsuario from Vip where nombre='" + nombreUsuario +"'), (select idEquipo from Equipos where nombre='" + nombreEquipo + "' AND categoria='"+ categoria+ "' ), (select idDeporte from Equipos where nombre='" + nombreEquipo + "' AND categoria='" + categoria + "' ) )";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+
+            }
+            return devolver;
+        }
+        public static byte EliminarEquiposFavoritos(string nombreEquipo, string categoria, string nombreUsuario)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "delete from EquiposFavoritos where idUsuario=(select idUsuario from Vip where nombre='" + nombreUsuario + "') AND idEquipoFavorito=(select idEquipo from Equipos where nombre='" + nombreEquipo + "' AND categoria='" + categoria + "' ) AND idDeporte= (select idDeporte from Equipos where nombre='" + nombreEquipo + "' AND categoria='" + categoria + "' )";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas);
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+
+            }
+            return devolver;
+        }
+
     }
 }

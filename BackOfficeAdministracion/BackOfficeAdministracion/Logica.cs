@@ -2849,6 +2849,7 @@ namespace BackOfficeAdministracion
                 }
                 catch
                 {
+                    throw;
                     return devolver = 2;
                 }
                 while (!rs.EOF)
@@ -2864,6 +2865,8 @@ namespace BackOfficeAdministracion
                     }
                     catch
                     {
+                        throw;
+
                         return devolver = 2;
                     }
                 }                

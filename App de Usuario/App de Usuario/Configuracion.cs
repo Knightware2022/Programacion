@@ -35,6 +35,7 @@ namespace App_de_Usuario
 
         private void btnCambiarAvatar_Click(object sender, EventArgs e)
         {
+
             string avatar = cmboxAvatares.SelectedItem.ToString();
             if (avatar.Equals("Femenino")) {
                 pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarFemenino;

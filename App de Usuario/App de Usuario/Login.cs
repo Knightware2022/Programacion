@@ -60,6 +60,11 @@ namespace App_de_Usuario
 
                          }
                      }*/
+                    Program.frmPrincipal.btnAvatar.Enabled = true;
+                    Program.frmPrincipal.btnTorneos.Enabled = true;
+                    Program.frmPrincipal.btnEncuentros.Enabled = true;
+                    Program.frmPrincipal.btnFavoritos.Enabled = true;
+
                     nombreUsuario = nombre;
                     break;
                 case 1://conexion cerrada
@@ -154,6 +159,11 @@ namespace App_de_Usuario
                     MessageBox.Show("Gracias por usar nuestra App");
                     break;
             }
+            Program.frmPrincipal.btnAvatar.Enabled = false;
+            Program.frmPrincipal.btnTorneos.Enabled = false;
+            Program.frmPrincipal.btnEncuentros.Enabled = false;
+            Program.frmPrincipal.btnFavoritos.Enabled = false;
+
             Program.frmPrincipal.Show();
         }
 
