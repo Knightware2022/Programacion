@@ -9,6 +9,49 @@ namespace App_de_Usuario
 {
     static class Idiomas
     {
+        public static string errorConexion;
+        public static string errorInesperado;
+        public static string errorCompruebeDatos;
+        public static string CorreoEnuso;
+        public static string cambiarContraseña;
+        public static string UsuarioOContraseñaInvalidos;
+        public static string recibiraNotificacionSuscricpion;
+        public static string eventoComenzo;
+        public static string eventoComienza;
+        public static string evento10MInComenzo;
+        public static string nuevaContraseña;
+        public static string BienvenidaGuest;
+        public static string usuarioExiste;
+        public static string RegistroExitoso;
+        public static string CorreoNOVALIDO;
+        public static string contraseñasNoCoinciden;
+        public static string CorreoNotFound;
+        public static string EquiposSinAlineacion;
+        public static string EquipoSinIncidencia;
+        public static string EquipoSinJugadores;
+        public static string EventosSinEquipos;
+        public static string ErrorObteniendoID;
+        public static string ErrorEquiposNOHAYSISTEMA;
+        public static string ErrorDeportesNOHAYSISTEMA;
+        public static string NOseenontroconfiltros;
+        public static string promesaNotificacion;
+        public static string noTorneosProgramados;
+        public static string noEventosenTorneo;
+        public static string promesaNotificacionTorneo;
+        public static string noPoseeDeportesFav;
+        public static string noPoseeEquiposFav;
+        public static string yanoSigueaDeporteEquipo;
+        public static string siguesaDeporte;
+        public static string noEventos;
+        public static string nuevaContra;
+        public static string tituloMessageBoxContra;
+        public static string confirmarContraCambio;
+        public static string confirmarContraseña;
+        public static string contraCambiada;
+        public static string cancelacionCambioContra;
+        public static string correoCambiado;
+        public static string errorInesperadoPruebeOtroResultado;
+
         public static void cambiarIdioma(string idioma) {
             switch (idioma) {
                 case "Ingles":
@@ -240,6 +283,20 @@ namespace App_de_Usuario
 
                     #endregion
 
+                    #region de frmREgistrarse
+                    Program.frmRegistrarse.lblNombreUsuario.Text = "User: ";
+                    Program.frmRegistrarse.lblConfirmarContrasenia.Text = "Confirm password: ";
+                    Program.frmRegistrarse.lblCorreo.Text = "e-mail: ";
+                    Program.frmRegistrarse.lblRegistroUsuario.Text = "password: ";
+                    Program.frmRegistrarse.btnRegistro.Text = "Sign-up";
+                    Program.frmRegistrarse.btnCancelar.Text = "Cancel";
+                    Program.frmRegistrarse.AtxtPromo.Items.Clear();
+                    Program.frmRegistrarse.AtxtPromo.Items.Add("Become a premium user to be able to remove all ads, ");
+                    Program.frmRegistrarse.AtxtPromo.Items.Add("follow teams, event notifications, customize your avatar and many other ");
+                    Program.frmRegistrarse.AtxtPromo.Items.Add("very cool features not found elsewhere ");
+                    Program.frmRegistrarse.AtxtPromo.Items.Add("Sign up now for as low as $15 ");
+
+                    #endregion
 
                     break;
                 case "Español": case "Spanish":
@@ -459,40 +516,71 @@ namespace App_de_Usuario
                     Program.frmAlineacion.lstviewAlineacion.Columns.Add(chAE3);
 
                     #endregion
+
+                    #region de frmREgistrarse
+                    Program.frmRegistrarse.lblNombreUsuario.Text = "Usuario: ";
+                    Program.frmRegistrarse.lblConfirmarContrasenia.Text = "Confirmar contraseña: ";
+                    Program.frmRegistrarse.lblCorreo.Text = "Correo: ";
+                    Program.frmRegistrarse.lblRegistroUsuario.Text = "Contraseña: ";
+                    Program.frmRegistrarse.btnRegistro.Text = "Registrarse";
+                    Program.frmRegistrarse.btnCancelar.Text = "Cancelar";
+                    Program.frmRegistrarse.AtxtPromo.Items.Clear();
+                    Program.frmRegistrarse.AtxtPromo.Items.Add("Conviértase en usuario premium para poder eliminar todas las publicidades, ");
+                    Program.frmRegistrarse.AtxtPromo.Items.Add("seguir equipos, avisos de eventos, personalizar su ávatar y muchas otras fun- ");
+                    Program.frmRegistrarse.AtxtPromo.Items.Add("ciones muy interesantes que no encontrará en otro lugar ");
+                    Program.frmRegistrarse.AtxtPromo.Items.Add("Regístrese ahora a tan solo 15 USD ");
+
+
+
+                    #endregion
+
+                    #region de mensajes
+                    errorConexion = "Error de conexión";
+                     errorInesperado = "Error inesperado";
+                     errorCompruebeDatos = "Error, verifique que los datos sean correctos";
+                     CorreoEnuso = "Este correo ya está en uso";
+                     cambiarContraseña = "Su contraseña ha sido cambiada";
+                     UsuarioOContraseñaInvalidos = "Usuario y/o contraseña inválidos";
+                     recibiraNotificacionSuscricpion = "Se ha suscripto al/los eventos existosamente";
+                     eventoComenzo = "El siguiente evento acaba de comenzar: ";
+                     eventoComienza = "El siguiente evento comenzará en 10 minutos: ";
+                     evento10MInComenzo = "El siguiente evento comnezó hace 10 minutos: ";
+                    nuevaContraseña = "Una nueva contraseña fue enviada a su correo";
+                    BienvenidaGuest = "Gracias por usar nuestra app";
+                    RegistroExitoso = "Se ha registrado exitosamente, inicie sesión";
+                    usuarioExiste = "El usuario ya existe";
+                    CorreoNOVALIDO = "Correo no valido";
+                    contraseñasNoCoinciden = "Las contraseñas no coinciden";
+                    CorreoNotFound = "Correo no encontrado";
+                     EquiposSinAlineacion = "El equipo no tiene alineacion";
+                     EquipoSinIncidencia = "El equipo no tiene incidencias";
+                     EquipoSinJugadores = "El equipo no tiene jugadores";
+                     EventosSinEquipos = "El evento no tiene equipos";
+                     ErrorObteniendoID = "Error obteniendo ID";
+                    ErrorEquiposNOHAYSISTEMA = "Error, tal vez no hayan equipos en el sistema";
+                    ErrorDeportesNOHAYSISTEMA = "Error, tal vez no hayan deportes en el sistema";
+                    NOseenontroconfiltros = "No se encontró ningun evento con esas caracteristicas";
+                    promesaNotificacion = "Recibirá notificación cuando comience el encuentro";
+                    noEventosenTorneo = "El torneo no posee encuentros";
+                    noTorneosProgramados = "No existen torneos programados";
+                    promesaNotificacionTorneo = "Recibirá notificaciones de los eventos del encuentro";
+                    noPoseeDeportesFav = "No posee deportes favoritos";
+                    noPoseeEquiposFav = "No posee equipos favoritos";
+                    yanoSigueaDeporteEquipo = "Ya no sigue a este deporte/equipo";
+                    siguesaDeporte = "Ahora sigues al deporte" ;
+                    noEventos = "No existen eventos jugados o en juego con esas características";
+
+                    nuevaContra = "Ingrese su nueva contraseña";
+                    tituloMessageBoxContra = "Cambio de contraseña";
+                    confirmarContraCambio = "Está seguro que desea cambiar su contraseña?";
+                    confirmarContraseña = "Ingrese nuevamente la nueva contraseña";
+                    contraCambiada = "Contraseña cambiada";
+                    cancelacionCambioContra = "Cambio de contraseña cancelado";
+                    correoCambiado = "Correo actualizado";
+                    errorInesperadoPruebeOtroResultado = "Pruebe otro sistema de resultado. Puede ser que el evento no tenga resultados";
                     break;
+                    #endregion
             }
         }
-            public static string cambiarIdiomaBotonAvisame(string textoActual)
-            {
-                string texto = null;
-                if (Program.frmConfiguracion.cmboxIdiomas.SelectedItem.ToString().Equals("Español"))
-                {
-                    if (textoActual.Equals("Notify"))
-                    {
-                        texto = "Avísame";
-                    }
-                    else
-                    { if (textoActual.Equals("Not notify")) {
-                        texto = "No me avises";
-
-                    }
-                }
-                }
-                else
-                {
-                    if (textoActual.Equals("Avísame"))
-                    {
-                        texto = "Notify";
-                    }
-                    else
-                    {
-                    if(textoActual.Equals("No me avises"))
-                    {
-                        texto = "Not notify";
-                    }
-                }
-                }
-                return texto;
-            }
     }
 }

@@ -53,11 +53,11 @@ namespace App_de_Usuario
                     }
                     catch
                     {
-                        MessageBox.Show("No existen deportes en el sistema");
+                        MessageBox.Show(Idiomas.ErrorEquiposNOHAYSISTEMA);
                     }
                     break;
                 default:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
             }
         }
@@ -80,11 +80,11 @@ namespace App_de_Usuario
                     }
                     catch
                     {
-                        MessageBox.Show("Usted no posee deportes favoritos");
+                        MessageBox.Show(Idiomas.noPoseeDeportesFav);
                     }
                     break;
                 default:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
             }
         }
@@ -107,11 +107,11 @@ namespace App_de_Usuario
                     }
                     catch
                     {
-                        MessageBox.Show("Usted no posee equipos favoritos");
+                        MessageBox.Show(Idiomas.noPoseeEquiposFav);
                     }
                     break;
                 default:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
             }
         }
@@ -134,11 +134,11 @@ namespace App_de_Usuario
                     }
                     catch
                     {
-                        MessageBox.Show("No existen equipos en el sistema");
+                        MessageBox.Show(Idiomas.ErrorEquiposNOHAYSISTEMA);
                     }
                     break;
                 default:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
             }
         }
@@ -160,11 +160,11 @@ namespace App_de_Usuario
             switch (ApiResultados.EliminarDeportesFavoritos(cmboxDeportesFavoritos.Text))
             {
                 case 0:
-                    MessageBox.Show("Ya no sigues este deporte");
+                    MessageBox.Show(Idiomas.yanoSigueaDeporteEquipo);
                     this.refrescarFavoritos();
                     break;
                 default:
-                    MessageBox.Show("Error inesperado. Compruebe su conexion o que seleccionó un deporte");
+                    MessageBox.Show(Idiomas.errorCompruebeDatos);
                     break;
             }
         }
@@ -175,12 +175,12 @@ namespace App_de_Usuario
             switch (ApiResultados.AgregarDeportesFavoritos(cmboxDeportes.Text))
             {
                 case 0:
-                    MessageBox.Show("Ya sigues este deporte");
+                    MessageBox.Show(Idiomas.siguesaDeporte);
                     this.refrescarFavoritos();
                     break;
                 default:
                     MessageBox.Show(ApiResultados.usuario.id.ToString());
-                    MessageBox.Show("Error inesperado. Compruebe su conexion o que seleccionó un deporte");
+                    MessageBox.Show(Idiomas.errorCompruebeDatos);
                     break;
             }
         }
@@ -210,11 +210,11 @@ namespace App_de_Usuario
                 switch (ApiResultados.EliminarEquiposFavoritos(nombre, categoria, Login.nombreUsuario))
                 {
                     case 0:
-                        MessageBox.Show("Ya no sigue al equipo");
+                        MessageBox.Show(Idiomas.yanoSigueaDeporteEquipo);
                         this.refrescarEquiposFavoritos();
                         break;
                     default:
-                        MessageBox.Show("Error inesperado");
+                        MessageBox.Show(Idiomas.errorCompruebeDatos);
                         break;
                 }
 
@@ -222,7 +222,7 @@ namespace App_de_Usuario
             }
             catch
             {
-                MessageBox.Show("Error obteniendo");
+                MessageBox.Show(Idiomas.ErrorObteniendoID);
 
             }
         }

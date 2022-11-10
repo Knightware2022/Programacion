@@ -57,7 +57,7 @@ namespace App_de_Usuario
                     switch (Program.apiA.Registrarse(nombre, contrasenia, correo))
                     {
                         case 0://logró registrarse
-                            MessageBox.Show("Se ha registrado exitosamente. Inicie Sesión");
+                            MessageBox.Show(Idiomas.RegistroExitoso);
                             this.Hide();
                             Program.frmPrincipal.paneVentanas.Show();
                             Program.frmLogin = new Login();
@@ -65,23 +65,23 @@ namespace App_de_Usuario
                             Program.frmPrincipal.Hide();
                             break;
                         case 1:
-                            MessageBox.Show("Error de conexión");
+                            MessageBox.Show(Idiomas.errorConexion);
                             break;
                         case 2:
                         case 3:
-                            MessageBox.Show("Ocurrió un error inesperado");
+                            MessageBox.Show(Idiomas.errorInesperado);
                             break;
                         case 4:
-                            MessageBox.Show("Este usuario ya existe");
+                            MessageBox.Show(Idiomas.usuarioExiste);
                             break;
                     }
                 }
                 else {
-                    MessageBox.Show("Dirección de correo no válida");
+                    MessageBox.Show(Idiomas.CorreoNOVALIDO);
                 }
             }
             else {
-                MessageBox.Show("Las contraseñas no coinciden");
+                MessageBox.Show(Idiomas.contraseñasNoCoinciden);
             }
 
         }

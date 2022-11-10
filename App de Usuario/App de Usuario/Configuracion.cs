@@ -122,27 +122,27 @@ namespace App_de_Usuario
             ApiAutentificacion api = new ApiAutentificacion();
             DialogResult cambioPasword;
             string nombreUsuario = txtNombreUsuario.Text;
-            string contraNueva = Microsoft.VisualBasic.Interaction.InputBox("Ingrese su nueva contraseña", "Cambio de contraseña") ;
-            string confirmar = Microsoft.VisualBasic.Interaction.InputBox("Ingrese nuevamente la nueva contraseña", "Cambio de contraseña");
-            cambioPasword = MessageBox.Show("Está seguro que desea cambiar su contraseña?", "Cambio de contraseña", MessageBoxButtons.YesNo);
+            string contraNueva = Microsoft.VisualBasic.Interaction.InputBox(Idiomas.nuevaContra, Idiomas.tituloMessageBoxContra) ;
+            string confirmar = Microsoft.VisualBasic.Interaction.InputBox(Idiomas.confirmarContraseña, Idiomas.tituloMessageBoxContra);
+            cambioPasword = MessageBox.Show(Idiomas.confirmarContraCambio, Idiomas.tituloMessageBoxContra, MessageBoxButtons.YesNo);
             if (cambioPasword == DialogResult.Yes) {
                 switch (api.cambiarContrasenia(nombreUsuario, contraNueva, confirmar)) {
                     case 0:
-                        MessageBox.Show("Contraseña cambiada");
+                        MessageBox.Show(Idiomas.contraCambiada);
                         break;
                     case 1:
-                        MessageBox.Show("Ocurrió un error de conexión");
+                        MessageBox.Show(Idiomas.errorConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Ocurrió un error inesperado");
+                        MessageBox.Show(Idiomas.errorInesperado);
                         break;
                     case 3:
-                        MessageBox.Show("Las contraseñas no coinciden");
+                        MessageBox.Show(Idiomas.contraseñasNoCoinciden);
                         break;
                 }
             }
             else {
-                MessageBox.Show("Cambio de contraseña cancelado");
+                MessageBox.Show(Idiomas.cancelacionCambioContra);
             }
         }
 
@@ -164,24 +164,24 @@ namespace App_de_Usuario
                 switch (ApiAutentificacion.cambiarCorreo(correoNuevo, Login.nombreUsuario))
                 {
                     case 0:
-                        MessageBox.Show("Correo actualizado");
+                        MessageBox.Show(Idiomas.correoCambiado);
                         txtCorreo.Text = correoNuevo;
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errorConexion);
                         break;
                     case 2:
                     case 4:
-                        MessageBox.Show("Error inesperado");
+                        MessageBox.Show(Idiomas.errorInesperado);
                         break;
                     case 3:
-                        MessageBox.Show("Correo no disponible");
+                        MessageBox.Show(Idiomas.CorreoEnuso);
                         txtCorreo.Text = correo;
                         break;
                 }
             }
             else {
-                MessageBox.Show("Correo no valido");
+                MessageBox.Show(Idiomas.CorreoNOVALIDO);
                     txtCorreo.Text = correo;
             }
             

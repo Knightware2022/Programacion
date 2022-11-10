@@ -58,14 +58,14 @@ namespace App_de_Usuario
                     }
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 3:
                     lstviewIncidencias.Items.Clear();
-                    MessageBox.Show("EL equipo no tiene alineacion");
+                    MessageBox.Show(Idiomas.EquipoSinIncidencia);
                     break;
             }
         }
@@ -84,13 +84,13 @@ namespace App_de_Usuario
                     cmboxEquipo.Text = nombresEquipos[0];
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 3:
-                    MessageBox.Show("El encuentro no tiene equipos cargados");
+                    MessageBox.Show(Idiomas.EventosSinEquipos);
                     break;
             }
         }

@@ -62,7 +62,7 @@ namespace App_de_Usuario
                     cmboxDeporte.Text = deportes[0];
                     break;
                 default:
-                    MessageBox.Show("Error inesperado, tal vez no hay deportes cargados");
+                    MessageBox.Show(Idiomas.ErrorDeportesNOHAYSISTEMA);
                     break;
             }
         }
@@ -92,7 +92,7 @@ namespace App_de_Usuario
                         }
                         catch
                         {
-                            MessageBox.Show("No se han cargado equipos al evento");
+                            MessageBox.Show(Idiomas.EventosSinEquipos);
                         }
                         cmboxEquiposParticipan.Text = Equipos[0];
 
@@ -101,19 +101,19 @@ namespace App_de_Usuario
                         txtDeporteEvento.Text = encuentros.nombreDeporte;
                         txtFechaComienzo.Text = encuentros.fechaComienzo.ToString();
                         txtFechaFin.Text = encuentros.fechaFinaliza.ToString();
-                        MessageBox.Show("No se han cargado equipos al evento");
+                        MessageBox.Show(Idiomas.EventosSinEquipos);
 
                         cmboxEquiposParticipan.Items.Clear();
                         cmboxEquiposParticipan.Text = null;
                         break;
                     default:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errorConexion);
                         break;
                 }
             }
             else
             {
-                MessageBox.Show("Error inesperado");
+                MessageBox.Show(Idiomas.errorInesperado);
             }
 
         }
@@ -131,7 +131,7 @@ namespace App_de_Usuario
                     cmboxEquipos.Text = deportes[0];
                     break;
                 default:
-                    MessageBox.Show("Error inesperado, tal vez no hay equipos cargados");
+                    MessageBox.Show(Idiomas.EventosSinEquipos);
                     break;
             }
         }
@@ -154,7 +154,7 @@ namespace App_de_Usuario
                             }                           
                             break;
                         default:
-                            MessageBox.Show("Error inesperado");
+                            MessageBox.Show(Idiomas.errorInesperadoPruebeOtroResultado);
                             break;
                     }
                 }
@@ -173,7 +173,7 @@ namespace App_de_Usuario
                                 }
                                 break;
                             default:
-                                MessageBox.Show("Error inesperado");
+                                MessageBox.Show(Idiomas.errorInesperadoPruebeOtroResultado);
                                 break;
                         }
                     }
@@ -189,14 +189,14 @@ namespace App_de_Usuario
                                 }
                                 break;
                             default:
-                                MessageBox.Show("Error inesperado");
+                                MessageBox.Show(Idiomas.errorInesperadoPruebeOtroResultado);
                                 break;
                         }
                     }
                 }
             }
             else{
-                MessageBox.Show("Error inesperado");
+                MessageBox.Show(Idiomas.errorInesperado);
             }
         }
 
@@ -263,7 +263,7 @@ namespace App_de_Usuario
                         cmboxNombreEvento.Text = listaDEventos[0];
                         break;
                     default:
-                        MessageBox.Show("No existen eventos jugados o por jugar con estas características");
+                        MessageBox.Show(Idiomas.noEventos);
                         break;
                 }
             }
@@ -284,7 +284,7 @@ namespace App_de_Usuario
                             cmboxNombreEvento.Text = listaDEventos[0];
                             break;
                         default:
-                            MessageBox.Show("No existen eventos jugados o por jugar con estas características");
+                            MessageBox.Show(Idiomas.noEventos);
                             break;
                     }
                 }
@@ -304,7 +304,7 @@ namespace App_de_Usuario
                             cmboxNombreEvento.Text = listaDEventos[0];
                             break;
                         default:
-                            MessageBox.Show("No existen eventos jugados o por jugar con estas características");
+                            MessageBox.Show(Idiomas.noEventos);
                             break;
                     }
 

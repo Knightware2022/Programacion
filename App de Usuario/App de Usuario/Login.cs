@@ -68,17 +68,18 @@ namespace App_de_Usuario
                     nombreUsuario = nombre;
                     break;
                 case 1://conexion cerrada
-                    MessageBox.Show("Ocurrió un problema de conexión");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrio un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 3: case 4:
-                    MessageBox.Show("Usuario o contraseña incorrectos"); 
+                    MessageBox.Show(Idiomas.UsuarioOContraseñaInvalidos); 
                     break;
             }
 
         }
+
         private void caracteresContrasenia(byte opcion) {//1, es mostrar
             if (opcion == 1)
             {
@@ -111,10 +112,12 @@ namespace App_de_Usuario
                 case 1:
                     break;
                 case 2:
-                    MessageBox.Show("No se pudo conectar a la base de datos");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
             }
         }
+        
+
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
@@ -156,7 +159,7 @@ namespace App_de_Usuario
                     mac = macs[0];
                     break;
                 case 3:
-                    MessageBox.Show("Gracias por usar nuestra App");
+                    MessageBox.Show(Idiomas.BienvenidaGuest);
                     break;
             }
             Program.frmPrincipal.btnAvatar.Enabled = false;
@@ -194,7 +197,7 @@ namespace App_de_Usuario
                     switch (Program.apiA.Registrarse(nombre, contrasenia, correo))
                     {
                         case 0://logró registrarse
-                            MessageBox.Show("Se ha registrado exitosamente. Inicie Sesión");
+                            MessageBox.Show(Idiomas.RegistroExitoso);
                             this.paneIngreso.Visible = true;
                             this.paneRegistrarse.Visible = false;
                             txtUsuario.Text = null;
@@ -206,25 +209,25 @@ namespace App_de_Usuario
                             txtConfirmarContrasenia.Text = null;
                             break;
                         case 1:
-                            MessageBox.Show("Error de conexión");
+                            MessageBox.Show(Idiomas.errorConexion);
                             break;
                         case 2:
                         case 3:
-                            MessageBox.Show("Ocurrió un error inesperado");
+                            MessageBox.Show(Idiomas.errorInesperado);
                             break;
                         case 4:
-                            MessageBox.Show("Este usuario ya existe");
+                            MessageBox.Show(Idiomas.usuarioExiste);
                             break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Dirección de correo no válida");
+                    MessageBox.Show(Idiomas.CorreoNOVALIDO);
                 }
             }
             else
             {
-                MessageBox.Show("Las contraseñas no coinciden");
+                MessageBox.Show(Idiomas.contraseñasNoCoinciden);
             }
 
         
@@ -271,7 +274,7 @@ namespace App_de_Usuario
             string correo = txtOlvide.Text;
             switch (Program.apiA.olvideContrasenia(correo)){
                 case 0:
-                    MessageBox.Show("Una nueva contraseña fue enviada a su correo.");
+                    MessageBox.Show(Idiomas.nuevaContraseña);
                     paneOlvide.Visible = false;
                     txtUsuario.Text = null;
                     txtRegistrarUsuario.Text = null;
@@ -283,15 +286,15 @@ namespace App_de_Usuario
                     paneIngreso.Visible = true;
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexión");
+                    MessageBox.Show(Idiomas.errorConexion);
 
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
 
                     break;
                 case 3:
-                    MessageBox.Show("Error, correo no encontrado");
+                    MessageBox.Show(Idiomas.CorreoNotFound);
 
                     break;
 

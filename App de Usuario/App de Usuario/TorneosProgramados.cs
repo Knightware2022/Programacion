@@ -32,10 +32,10 @@ namespace App_de_Usuario
                     cmboxTorneos.Text = torneos[0];
                     break;
                 case 3:
-                    MessageBox.Show("No existen deportes programados");
+                    MessageBox.Show(Idiomas.noTorneosProgramados);
                     break;
                 default:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }
@@ -61,7 +61,7 @@ namespace App_de_Usuario
                         cmboxJugadoresEquipos.Items.Clear();
                         cmboxJugadoresEquipos.Items.Clear();
                         cmboxNombreEvento.Items.Clear();
-                        MessageBox.Show("No existen eventos programados para este torneo");
+                        MessageBox.Show(Idiomas.noEventosenTorneo);
                         break;
                     default:
                         txtDeporteEvento.Text = null;
@@ -69,13 +69,13 @@ namespace App_de_Usuario
                         cmboxJugadoresEquipos.Items.Clear();
                         cmboxJugadoresEquipos.Items.Clear();
                         cmboxNombreEvento.Items.Clear();
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errorConexion);
                         break;
                 }
             }
             else
             {
-                MessageBox.Show("Error obteniendo id");
+                MessageBox.Show(Idiomas.ErrorObteniendoID);
             }
         }
         private void DatosTorneo()
@@ -105,7 +105,7 @@ namespace App_de_Usuario
                             }
                             catch
                             {
-                                MessageBox.Show("No se han cargado equipos al evento");
+                                MessageBox.Show(Idiomas.EventosSinEquipos);
                             }
                             cmboxEquiposParticipan.Text = Equipos[0];
 
@@ -114,23 +114,23 @@ namespace App_de_Usuario
                             txtDeporteEvento.Text = torneo.nombreDeporte;
                             txtFechaComienzo.Text = torneo.fechaComienzo.ToString();
                             txtFechaFin.Text = torneo.fechaFinaliza.ToString();
-                            MessageBox.Show("No se han cargado equipos al evento");
+                            MessageBox.Show(Idiomas.EventosSinEquipos);
 
                             cmboxEquiposParticipan.Items.Clear();
                             cmboxEquiposParticipan.Text = null;
                             break;
                         default:
-                            MessageBox.Show("Error de conexion");
+                            MessageBox.Show(Idiomas.errorConexion);
                             break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                 }
             }
             catch {
-                MessageBox.Show("Error obteniendo id");
+                MessageBox.Show(Idiomas.ErrorObteniendoID);
             }
         }
         private void refrescarJugadores()
@@ -154,18 +154,18 @@ namespace App_de_Usuario
                             cmboxJugadoresEquipos.Text = jugadores[0];
                             break;
                         default:
-                            MessageBox.Show("Error inesperado, tal vez no hay jugadores cargados");
+                            MessageBox.Show(Idiomas.EquipoSinJugadores);
                             break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                 }
             }
             catch
             {
-                MessageBox.Show("El evento no tiene equipos");
+                MessageBox.Show(Idiomas.EventosSinEquipos);
             }
         }
 
@@ -224,13 +224,13 @@ namespace App_de_Usuario
             switch (ApiResultados.SuscribirseATorneos(idEventos, txtDeporteEvento.Text, Login.nombreUsuario)) {
                 case 0:
 
-                    MessageBox.Show("Se ha suscripto al torneo");
+                    MessageBox.Show(Idiomas.promesaNotificacionTorneo);
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errorConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Se ha suscripto a los eventos del torneo que restaban");
+                    MessageBox.Show(Idiomas.promesaNotificacionTorneo);
                     break;
             }
         }

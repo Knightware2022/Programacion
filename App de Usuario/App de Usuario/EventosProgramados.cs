@@ -43,7 +43,7 @@ namespace App_de_Usuario
                     cmboxEquipos.Text = deportes[0];
                     break;
                 default:
-                    MessageBox.Show("Error inesperado, tal vez no hay equipos cargados");
+                    MessageBox.Show(Idiomas.ErrorEquiposNOHAYSISTEMA);
                     break;
             }
         }
@@ -91,7 +91,7 @@ namespace App_de_Usuario
                     cmboxDeporte.Text = deportes[0];
                     break;
                 default:
-                    MessageBox.Show("Error inesperado, tal vez no hay deportes cargados");
+                    MessageBox.Show(Idiomas.ErrorDeportesNOHAYSISTEMA);
                     break;
             }
         }
@@ -121,7 +121,7 @@ namespace App_de_Usuario
                         }
                         catch
                         {
-                            MessageBox.Show("No se han cargado equipos al evento");
+                            MessageBox.Show(Idiomas.EventosSinEquipos);
                         }
                         cmboxEquiposParticipan.Text = Equipos[0];
 
@@ -130,18 +130,18 @@ namespace App_de_Usuario
                         txtDeporteEvento.Text = encuentros.nombreDeporte;
                         txtFechaComienzo.Text = encuentros.fechaComienzo.ToString();
                         txtFechaFin.Text = encuentros.fechaFinaliza.ToString();
-                        MessageBox.Show("No se han cargado equipos al evento");
+                        MessageBox.Show(Idiomas.EventosSinEquipos);
 
                         cmboxEquiposParticipan.Items.Clear();
                         cmboxEquiposParticipan.Text = null;
                         break;
                     default:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errorConexion);
                         break;
                 }
             }
             else {
-                MessageBox.Show("Error inesperado");
+                MessageBox.Show(Idiomas.errorInesperado);
             }
             
         }
@@ -166,17 +166,17 @@ namespace App_de_Usuario
                             cmboxJugadoresEquipos.Text = jugadores[0];
                             break;
                         default:
-                            MessageBox.Show("Error inesperado, tal vez no hay jugadores cargados");
+                            MessageBox.Show(Idiomas.EquipoSinJugadores);
                             break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show(Idiomas.errorConexion);
                 }
             }
             catch {
-                MessageBox.Show("El evento no tiene equipos");
+                MessageBox.Show(Idiomas.EventosSinEquipos);
             }
         }
 
@@ -222,7 +222,7 @@ namespace App_de_Usuario
                         cmboxNombreEvento.Text = listaDEventos[0];
                         break;
                     default:
-                        MessageBox.Show("No existen eventos programados con estas características");
+                        MessageBox.Show(Idiomas.NOseenontroconfiltros);
                         break;
                 }
             }
@@ -242,7 +242,7 @@ namespace App_de_Usuario
                             cmboxNombreEvento.Text = listaDEventos[0];
                             break;
                         default:
-                            MessageBox.Show("No existen eventos programados con estas características");
+                            MessageBox.Show(Idiomas.NOseenontroconfiltros);
                             break;
                     }
                 }
@@ -261,7 +261,7 @@ namespace App_de_Usuario
                             cmboxNombreEvento.Text = listaDEventos[0];
                             break;
                         default:
-                            MessageBox.Show("No existen eventos programados con estas características");
+                            MessageBox.Show(Idiomas.NOseenontroconfiltros);
                             break;
                     }
 
@@ -299,11 +299,11 @@ namespace App_de_Usuario
         {
             switch (ApiResultados.SuscribirseAEvento(encuentros.idEncuentro, encuentros.deporteEncuentro, Login.nombreUsuario)) {
                 case 0:
-                    MessageBox.Show("Recibirá notificación cuando comience el encuentro");
+                    MessageBox.Show(Idiomas.promesaNotificacion);
                     break;
-                case 2:
+              /*  case 2:
                     MessageBox.Show("Error inesperado. Ya se ha suscripto o usted no es VIP");
-                    break;
+                    break;*/
             }
         }
     }
