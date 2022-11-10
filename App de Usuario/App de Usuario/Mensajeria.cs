@@ -35,7 +35,7 @@ namespace App_de_Usuario
 
             }
             catch {
-                MessageBox.Show("Ocurrió un error enviando el correo");
+                MessageBox.Show(Idiomas.errorConexion);
             }
         }
 

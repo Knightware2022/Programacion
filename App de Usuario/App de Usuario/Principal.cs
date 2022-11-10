@@ -65,70 +65,67 @@ namespace App_de_Usuario
             {
                 List<string> nombreEvento = new List<string>();
                 List<DateTime> fechaEvento = new List<DateTime>();
-                Thread.Sleep(50000);//cada 50 segundos
                 switch (ApiResultados.NotificacionEvento(Login.nombreUsuario, nombreEvento, fechaEvento))
                 {
                     case 0:
                         for (int i = 0; i < nombreEvento.Count; i++)
                         {
-                            
                             if (fechaEvento[i].Year == DateTime.Now.Year && fechaEvento[i].Month == DateTime.Now.Month && fechaEvento[i].Day == DateTime.Now.Day && fechaEvento[i].Hour == DateTime.Now.Hour && fechaEvento[i].Minute == DateTime.Now.Minute)
                             {
-                                string envio = "El evento " + nombreEvento[i] + " acaba de comenzar";
+                                string envio = Idiomas.eventoComenzo + " " + nombreEvento[i];
                                 Mensajeria.NoticacionEvento(u.correo, envio);
                                 new ToastContentBuilder()
                                                                 .AddArgument("action", "viewConversation")
                                                                 .AddArgument("conversationId", 9813)
-                                                                .AddText("Un evento comenzó")
-                                                                .AddText("El evento " + nombreEvento[i] + " acaba de comenzar")
+                                                                .AddText(Idiomas.tituloComienzoEvento)
+                                                                .AddText(Idiomas.eventoComenzo + " " + nombreEvento[i])
                                                                 .Show();
                             }
                             else
                             {//si todo es igual menos los minutos
 
-                                if (fechaEvento[i].Year == DateTime.Now.Year && fechaEvento[i].Month == DateTime.Now.Month && fechaEvento[i].Day == DateTime.Now.Day && fechaEvento[i].Hour == DateTime.Now.Hour) {
+                                if (fechaEvento[i].Year == DateTime.Now.Year && fechaEvento[i].Month == DateTime.Now.Month && fechaEvento[i].Day == DateTime.Now.Day && fechaEvento[i].Hour == DateTime.Now.Hour)
+                                {
                                     if (fechaEvento[i].Minute == (DateTime.Now.Minute + 10))
                                     {
-                                        string envio = "El evento " + nombreEvento[i] + " comenzará en 10 minutos";
+                                        string envio = Idiomas.eventoComienza + " " + nombreEvento[i];
 
                                         Mensajeria.NoticacionEvento(u.correo, envio);
 
                                         new ToastContentBuilder()
                                                                         .AddArgument("action", "viewConversation")
                                                                         .AddArgument("conversationId", 9813)
-                                                                        .AddText("Un evento está por comenzar")
-                                                                        .AddText("El evento " + nombreEvento[i] + " comenzará en 10 minutos")
+                                                                        .AddText(Idiomas.tituloComienzoEvento)
+                                                                        .AddText(Idiomas.eventoComienza + " " + nombreEvento[i])
                                                                         .Show();
                                     }
-                                    else {
-                                        if (fechaEvento[i].Minute == (DateTime.Now.Minute - 10)){
-                                            string envio = "El evento " + nombreEvento[i] + " comenzó hace 10 minutos";
+                                    else
+                                    {
+                                        if (fechaEvento[i].Minute == (DateTime.Now.Minute - 10))
+                                        {
+                                            string envio = Idiomas.evento10MInComenzo + " " + nombreEvento[i];
 
                                             Mensajeria.NoticacionEvento(u.correo, envio);
 
                                             new ToastContentBuilder()
                                                                             .AddArgument("action", "viewConversation")
                                                                             .AddArgument("conversationId", 9813)
-                                                                            .AddText("Un evento comenzó")
-                                                                            .AddText("El evento " + nombreEvento[i] + " comenzó hace 10 minutos")
+                                                                            .AddText(Idiomas.tituloComienzoEvento)
+                                                                            .AddText(Idiomas.evento10MInComenzo + " " + nombreEvento[i])
                                                                             .Show();
                                         }
                                     }
                                 }
-                            }
+                                
 
+                            }
                         }
+
                         break;
-                    case 1:
-                        MessageBox.Show("Error de conexion");
-                        break;
-                    case 2:
-                        MessageBox.Show("Error de unexpected");
-                        break;
-                    case 3:
-                        MessageBox.Show("No hay eventos?");
-                        break;
+
                 }
+                Thread.Sleep(50000);//cada 50 segundos
+
             }
 
         }

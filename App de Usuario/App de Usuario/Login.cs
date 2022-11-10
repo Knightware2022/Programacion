@@ -113,6 +113,7 @@ namespace App_de_Usuario
                     break;
                 case 2:
                     MessageBox.Show(Idiomas.errorConexion);
+                    Application.Exit();
                     break;
             }
         }

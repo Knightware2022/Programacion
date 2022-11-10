@@ -51,7 +51,7 @@ namespace App_de_Usuario
         public static string cancelacionCambioContra;
         public static string correoCambiado;
         public static string errorInesperadoPruebeOtroResultado;
-
+        public static string tituloComienzoEvento;
         public static void cambiarIdioma(string idioma) {
             switch (idioma) {
                 case "Ingles":
@@ -578,6 +578,7 @@ namespace App_de_Usuario
                     cancelacionCambioContra = "Cambio de contraseña cancelado";
                     correoCambiado = "Correo actualizado";
                     errorInesperadoPruebeOtroResultado = "Pruebe otro sistema de resultado. Puede ser que el evento no tenga resultados";
+                    tituloComienzoEvento = "Notificación de evento";
                     break;
                     #endregion
             }
