@@ -196,17 +196,17 @@
         #endregion
 
         private System.Windows.Forms.Panel paneAlineacion;
-        private System.Windows.Forms.ListView lstviewIncidencias;
         private System.Windows.Forms.ColumnHeader Nombre;
         private System.Windows.Forms.ColumnHeader Apellido;
         private System.Windows.Forms.ColumnHeader Ocurrencia;
         private System.Windows.Forms.ColumnHeader Minuto;
-        private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.Button btnIncidencias;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.ComboBox cmboxEquipo;
-        private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.ColumnHeader Puntos;
-        private System.Windows.Forms.PictureBox pcboxLogo;
+        public System.Windows.Forms.ListView lstviewIncidencias;
+        public System.Windows.Forms.Button btnRefrescar;
+        public System.Windows.Forms.Button btnIncidencias;
+        public System.Windows.Forms.Button btnVolver;
+        public System.Windows.Forms.ComboBox cmboxEquipo;
+        public System.Windows.Forms.Label lblEquipo;
+        public System.Windows.Forms.PictureBox pcboxLogo;
     }
 }

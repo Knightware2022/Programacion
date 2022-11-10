@@ -315,24 +315,24 @@
         #endregion
 
         private System.Windows.Forms.Panel paneEvento;
-        private System.Windows.Forms.TextBox txtDeporteEvento;
-        private System.Windows.Forms.Label lblDeporteEvento;
         public System.Windows.Forms.Button btnVolver;
         public System.Windows.Forms.Button btnSuscribirse;
-        private System.Windows.Forms.ComboBox cmboxJugadoresEquipos;
-        private System.Windows.Forms.Label lblJugadores;
-        private System.Windows.Forms.ComboBox cmboxEquiposParticipan;
-        private System.Windows.Forms.Label lblEquiposParticipando;
-        private System.Windows.Forms.TextBox txtFechaFin;
-        private System.Windows.Forms.TextBox txtFechaComienzo;
-        private System.Windows.Forms.ComboBox cmboxNombreEvento;
-        private System.Windows.Forms.Label lblFechaFin;
-        private System.Windows.Forms.Label lblfechaComienzo;
-        private System.Windows.Forms.Label lblEvento1;
         private System.Windows.Forms.Panel paneBuscarEvento;
         public System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.ComboBox cmboxTorneos;
         public System.Windows.Forms.Label lblTorneo;
         public System.Windows.Forms.Button btnRefrescar;
+        public System.Windows.Forms.TextBox txtDeporteEvento;
+        public System.Windows.Forms.Label lblDeporteEvento;
+        public System.Windows.Forms.ComboBox cmboxJugadoresEquipos;
+        public System.Windows.Forms.Label lblJugadores;
+        public System.Windows.Forms.ComboBox cmboxEquiposParticipan;
+        public System.Windows.Forms.Label lblEquiposParticipando;
+        public System.Windows.Forms.TextBox txtFechaFin;
+        public System.Windows.Forms.TextBox txtFechaComienzo;
+        public System.Windows.Forms.ComboBox cmboxNombreEvento;
+        public System.Windows.Forms.Label lblFechaFin;
+        public System.Windows.Forms.Label lblfechaComienzo;
+        public System.Windows.Forms.Label lblEvento1;
+        public System.Windows.Forms.ComboBox cmboxTorneos;
     }
 }

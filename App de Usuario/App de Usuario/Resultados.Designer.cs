@@ -41,6 +41,14 @@
             this.cmboxDeporte = new System.Windows.Forms.ComboBox();
             this.lblDeporte = new System.Windows.Forms.Label();
             this.paneResultados = new System.Windows.Forms.Panel();
+            this.lstResultado = new System.Windows.Forms.ListView();
+            this.Equipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Puntaje = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.setsGanados = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gboxResultados = new System.Windows.Forms.GroupBox();
+            this.rbRanking = new System.Windows.Forms.RadioButton();
+            this.rbSets = new System.Windows.Forms.RadioButton();
+            this.rbPuntos = new System.Windows.Forms.RadioButton();
             this.btnIncidencias = new System.Windows.Forms.Button();
             this.btnAlineacion = new System.Windows.Forms.Button();
             this.cmboxEquiposParticipan = new System.Windows.Forms.ComboBox();
@@ -54,14 +62,6 @@
             this.lblfechaComienzo = new System.Windows.Forms.Label();
             this.lblEvento1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.gboxResultados = new System.Windows.Forms.GroupBox();
-            this.rbPuntos = new System.Windows.Forms.RadioButton();
-            this.rbSets = new System.Windows.Forms.RadioButton();
-            this.rbRanking = new System.Windows.Forms.RadioButton();
-            this.lstResultado = new System.Windows.Forms.ListView();
-            this.Equipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Puntaje = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.setsGanados = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.paneBuscar.SuspendLayout();
             this.paneBuscarEvento.SuspendLayout();
             this.grboxFiltros.SuspendLayout();
@@ -241,6 +241,85 @@
             this.paneResultados.Size = new System.Drawing.Size(686, 313);
             this.paneResultados.TabIndex = 1;
             // 
+            // lstResultado
+            // 
+            this.lstResultado.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Equipo,
+            this.Puntaje,
+            this.setsGanados});
+            this.lstResultado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lstResultado.HideSelection = false;
+            this.lstResultado.Location = new System.Drawing.Point(337, 201);
+            this.lstResultado.Name = "lstResultado";
+            this.lstResultado.Size = new System.Drawing.Size(344, 100);
+            this.lstResultado.TabIndex = 46;
+            this.lstResultado.UseCompatibleStateImageBehavior = false;
+            this.lstResultado.View = System.Windows.Forms.View.Details;
+            // 
+            // Equipo
+            // 
+            this.Equipo.Text = "Equipo";
+            this.Equipo.Width = 83;
+            // 
+            // Puntaje
+            // 
+            this.Puntaje.Text = "Puntaje/Anotaciones";
+            this.Puntaje.Width = 150;
+            // 
+            // setsGanados
+            // 
+            this.setsGanados.Text = "Sets ganados";
+            this.setsGanados.Width = 100;
+            // 
+            // gboxResultados
+            // 
+            this.gboxResultados.Controls.Add(this.rbRanking);
+            this.gboxResultados.Controls.Add(this.rbSets);
+            this.gboxResultados.Controls.Add(this.rbPuntos);
+            this.gboxResultados.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.gboxResultados.Location = new System.Drawing.Point(177, 201);
+            this.gboxResultados.Name = "gboxResultados";
+            this.gboxResultados.Size = new System.Drawing.Size(154, 100);
+            this.gboxResultados.TabIndex = 45;
+            this.gboxResultados.TabStop = false;
+            this.gboxResultados.Text = "Otro tipo de resultado:";
+            // 
+            // rbRanking
+            // 
+            this.rbRanking.AutoSize = true;
+            this.rbRanking.Location = new System.Drawing.Point(6, 69);
+            this.rbRanking.Name = "rbRanking";
+            this.rbRanking.Size = new System.Drawing.Size(71, 19);
+            this.rbRanking.TabIndex = 2;
+            this.rbRanking.TabStop = true;
+            this.rbRanking.Text = "Ranking";
+            this.rbRanking.UseVisualStyleBackColor = true;
+            this.rbRanking.CheckedChanged += new System.EventHandler(this.rbRanking_CheckedChanged);
+            // 
+            // rbSets
+            // 
+            this.rbSets.AutoSize = true;
+            this.rbSets.Location = new System.Drawing.Point(6, 44);
+            this.rbSets.Name = "rbSets";
+            this.rbSets.Size = new System.Drawing.Size(51, 19);
+            this.rbSets.TabIndex = 1;
+            this.rbSets.TabStop = true;
+            this.rbSets.Text = "Sets";
+            this.rbSets.UseVisualStyleBackColor = true;
+            this.rbSets.CheckedChanged += new System.EventHandler(this.rbSets_CheckedChanged);
+            // 
+            // rbPuntos
+            // 
+            this.rbPuntos.AutoSize = true;
+            this.rbPuntos.Location = new System.Drawing.Point(6, 20);
+            this.rbPuntos.Name = "rbPuntos";
+            this.rbPuntos.Size = new System.Drawing.Size(65, 19);
+            this.rbPuntos.TabIndex = 0;
+            this.rbPuntos.TabStop = true;
+            this.rbPuntos.Text = "Puntos";
+            this.rbPuntos.UseVisualStyleBackColor = true;
+            this.rbPuntos.CheckedChanged += new System.EventHandler(this.rbPuntos_CheckedChanged);
+            // 
             // btnIncidencias
             // 
             this.btnIncidencias.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
@@ -384,85 +463,6 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // gboxResultados
-            // 
-            this.gboxResultados.Controls.Add(this.rbRanking);
-            this.gboxResultados.Controls.Add(this.rbSets);
-            this.gboxResultados.Controls.Add(this.rbPuntos);
-            this.gboxResultados.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.gboxResultados.Location = new System.Drawing.Point(177, 201);
-            this.gboxResultados.Name = "gboxResultados";
-            this.gboxResultados.Size = new System.Drawing.Size(154, 100);
-            this.gboxResultados.TabIndex = 45;
-            this.gboxResultados.TabStop = false;
-            this.gboxResultados.Text = "Otro tipo de resultado:";
-            // 
-            // rbPuntos
-            // 
-            this.rbPuntos.AutoSize = true;
-            this.rbPuntos.Location = new System.Drawing.Point(6, 20);
-            this.rbPuntos.Name = "rbPuntos";
-            this.rbPuntos.Size = new System.Drawing.Size(65, 19);
-            this.rbPuntos.TabIndex = 0;
-            this.rbPuntos.TabStop = true;
-            this.rbPuntos.Text = "Puntos";
-            this.rbPuntos.UseVisualStyleBackColor = true;
-            this.rbPuntos.CheckedChanged += new System.EventHandler(this.rbPuntos_CheckedChanged);
-            // 
-            // rbSets
-            // 
-            this.rbSets.AutoSize = true;
-            this.rbSets.Location = new System.Drawing.Point(6, 44);
-            this.rbSets.Name = "rbSets";
-            this.rbSets.Size = new System.Drawing.Size(51, 19);
-            this.rbSets.TabIndex = 1;
-            this.rbSets.TabStop = true;
-            this.rbSets.Text = "Sets";
-            this.rbSets.UseVisualStyleBackColor = true;
-            this.rbSets.CheckedChanged += new System.EventHandler(this.rbSets_CheckedChanged);
-            // 
-            // rbRanking
-            // 
-            this.rbRanking.AutoSize = true;
-            this.rbRanking.Location = new System.Drawing.Point(6, 69);
-            this.rbRanking.Name = "rbRanking";
-            this.rbRanking.Size = new System.Drawing.Size(71, 19);
-            this.rbRanking.TabIndex = 2;
-            this.rbRanking.TabStop = true;
-            this.rbRanking.Text = "Ranking";
-            this.rbRanking.UseVisualStyleBackColor = true;
-            this.rbRanking.CheckedChanged += new System.EventHandler(this.rbRanking_CheckedChanged);
-            // 
-            // lstResultado
-            // 
-            this.lstResultado.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Equipo,
-            this.Puntaje,
-            this.setsGanados});
-            this.lstResultado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lstResultado.HideSelection = false;
-            this.lstResultado.Location = new System.Drawing.Point(337, 201);
-            this.lstResultado.Name = "lstResultado";
-            this.lstResultado.Size = new System.Drawing.Size(344, 100);
-            this.lstResultado.TabIndex = 46;
-            this.lstResultado.UseCompatibleStateImageBehavior = false;
-            this.lstResultado.View = System.Windows.Forms.View.Details;
-            // 
-            // Equipo
-            // 
-            this.Equipo.Text = "Equipo";
-            this.Equipo.Width = 83;
-            // 
-            // Puntaje
-            // 
-            this.Puntaje.Text = "Puntaje/Anotaciones";
-            this.Puntaje.Width = 150;
-            // 
-            // setsGanados
-            // 
-            this.setsGanados.Text = "Sets ganados";
-            this.setsGanados.Width = 100;
-            // 
             // Resultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,38 +493,38 @@
         #endregion
 
         private System.Windows.Forms.Panel paneBuscar;
-        private System.Windows.Forms.Panel paneResultados;
-        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel paneBuscarEvento;
         public System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.ComboBox cmboxEquipos;
         public System.Windows.Forms.Label lblEquipo;
-        private System.Windows.Forms.GroupBox grboxFiltros;
         public System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.RadioButton rbTodoslosFiltros;
-        private System.Windows.Forms.RadioButton rbEquipo;
-        private System.Windows.Forms.RadioButton rbDeporte;
-        private System.Windows.Forms.ComboBox cmboxDeporte;
         public System.Windows.Forms.Label lblDeporte;
-        private System.Windows.Forms.TextBox txtDeporteEvento;
-        private System.Windows.Forms.Label lblDeporteEvento;
-        private System.Windows.Forms.TextBox txtFechaFin;
-        private System.Windows.Forms.TextBox txtFechaComienzo;
-        private System.Windows.Forms.ComboBox cmboxNombreEvento;
-        private System.Windows.Forms.Label lblFechaFin;
-        private System.Windows.Forms.Label lblfechaComienzo;
-        private System.Windows.Forms.Label lblEvento1;
-        private System.Windows.Forms.ComboBox cmboxEquiposParticipan;
-        private System.Windows.Forms.Label lblEquiposParticipando;
-        private System.Windows.Forms.Button btnIncidencias;
-        private System.Windows.Forms.Button btnAlineacion;
-        private System.Windows.Forms.ListView lstResultado;
         private System.Windows.Forms.ColumnHeader Equipo;
         private System.Windows.Forms.ColumnHeader Puntaje;
         private System.Windows.Forms.ColumnHeader setsGanados;
-        private System.Windows.Forms.GroupBox gboxResultados;
-        private System.Windows.Forms.RadioButton rbRanking;
-        private System.Windows.Forms.RadioButton rbSets;
-        private System.Windows.Forms.RadioButton rbPuntos;
+        public System.Windows.Forms.Panel paneResultados;
+        public System.Windows.Forms.Button btnVolver;
+        public System.Windows.Forms.ComboBox cmboxEquipos;
+        public System.Windows.Forms.GroupBox grboxFiltros;
+        public System.Windows.Forms.ComboBox cmboxDeporte;
+        public System.Windows.Forms.TextBox txtDeporteEvento;
+        public System.Windows.Forms.Label lblDeporteEvento;
+        public System.Windows.Forms.TextBox txtFechaFin;
+        public System.Windows.Forms.TextBox txtFechaComienzo;
+        public System.Windows.Forms.ComboBox cmboxNombreEvento;
+        public System.Windows.Forms.Label lblFechaFin;
+        public System.Windows.Forms.Label lblfechaComienzo;
+        public System.Windows.Forms.Label lblEvento1;
+        public System.Windows.Forms.ComboBox cmboxEquiposParticipan;
+        public System.Windows.Forms.Label lblEquiposParticipando;
+        public System.Windows.Forms.Button btnIncidencias;
+        public System.Windows.Forms.Button btnAlineacion;
+        public System.Windows.Forms.ListView lstResultado;
+        public System.Windows.Forms.GroupBox gboxResultados;
+        public System.Windows.Forms.RadioButton rbRanking;
+        public System.Windows.Forms.RadioButton rbSets;
+        public System.Windows.Forms.RadioButton rbPuntos;
+        public System.Windows.Forms.RadioButton rbTodoslosFiltros;
+        public System.Windows.Forms.RadioButton rbEquipo;
+        public System.Windows.Forms.RadioButton rbDeporte;
     }
 }

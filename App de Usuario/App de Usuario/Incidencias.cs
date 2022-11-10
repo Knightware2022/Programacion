@@ -37,8 +37,8 @@ namespace App_de_Usuario
                     {
                         ListViewItem item = new ListViewItem(Nombrej[i]);
                         item.SubItems.Add(Apellidoj[i]);
-                        item.SubItems.Add(minuto[i]);
                         item.SubItems.Add(Ocurrencia[i]);
+                        item.SubItems.Add(minuto[i]);
                         item.SubItems.Add(puntos[i]);
                         lstviewIncidencias.Items.Add(item);
                     }

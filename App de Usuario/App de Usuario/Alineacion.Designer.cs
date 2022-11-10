@@ -36,7 +36,7 @@
             this.Posicion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Equipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRefrescar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVerAlineacion = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.cmboxEquipoAlineacion = new System.Windows.Forms.ComboBox();
             this.lblEquipo = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.paneAlineacion.Controls.Add(this.pcboxLogo);
             this.paneAlineacion.Controls.Add(this.lstviewAlineacion);
             this.paneAlineacion.Controls.Add(this.btnRefrescar);
-            this.paneAlineacion.Controls.Add(this.button1);
+            this.paneAlineacion.Controls.Add(this.btnVerAlineacion);
             this.paneAlineacion.Controls.Add(this.btnVolver);
             this.paneAlineacion.Controls.Add(this.cmboxEquipoAlineacion);
             this.paneAlineacion.Controls.Add(this.lblEquipo);
@@ -121,17 +121,17 @@
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
-            // button1
+            // btnVerAlineacion
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(388, 11);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 28);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Ver alineación";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnVerAlineacion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnVerAlineacion.Location = new System.Drawing.Point(388, 11);
+            this.btnVerAlineacion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVerAlineacion.Name = "btnVerAlineacion";
+            this.btnVerAlineacion.Size = new System.Drawing.Size(129, 28);
+            this.btnVerAlineacion.TabIndex = 23;
+            this.btnVerAlineacion.Text = "Ver alineación";
+            this.btnVerAlineacion.UseVisualStyleBackColor = true;
+            this.btnVerAlineacion.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnVolver
             // 
@@ -187,16 +187,16 @@
         #endregion
 
         private System.Windows.Forms.Panel paneAlineacion;
-        private System.Windows.Forms.ListView lstviewAlineacion;
         private System.Windows.Forms.ColumnHeader Nombre;
         private System.Windows.Forms.ColumnHeader Apellido;
         private System.Windows.Forms.ColumnHeader Posicion;
         private System.Windows.Forms.ColumnHeader Equipo;
-        private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.ComboBox cmboxEquipoAlineacion;
-        private System.Windows.Forms.Label lblEquipo;
-        private System.Windows.Forms.PictureBox pcboxLogo;
+        public System.Windows.Forms.ListView lstviewAlineacion;
+        public System.Windows.Forms.Button btnRefrescar;
+        public System.Windows.Forms.Button btnVerAlineacion;
+        public System.Windows.Forms.Button btnVolver;
+        public System.Windows.Forms.ComboBox cmboxEquipoAlineacion;
+        public System.Windows.Forms.Label lblEquipo;
+        public System.Windows.Forms.PictureBox pcboxLogo;
     }
 }
