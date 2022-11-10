@@ -150,7 +150,7 @@
             this.cmboxCambiarIdiomaII.FormattingEnabled = true;
             this.cmboxCambiarIdiomaII.Items.AddRange(new object[] {
             "Español",
-            "Ingles"});
+            "English"});
             this.cmboxCambiarIdiomaII.Location = new System.Drawing.Point(254, 2);
             this.cmboxCambiarIdiomaII.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxCambiarIdiomaII.Name = "cmboxCambiarIdiomaII";
@@ -259,7 +259,7 @@
             this.cmboxIdioma.FormattingEnabled = true;
             this.cmboxIdioma.Items.AddRange(new object[] {
             "Español",
-            "Ingles"});
+            "English"});
             this.cmboxIdioma.Location = new System.Drawing.Point(272, 7);
             this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxIdioma.Name = "cmboxIdioma";
@@ -396,7 +396,7 @@
             this.paneOlvide.Controls.Add(this.btnEnviar);
             this.paneOlvide.Controls.Add(this.txtOlvide);
             this.paneOlvide.Controls.Add(this.lblOlvide);
-            this.paneOlvide.Location = new System.Drawing.Point(3, 282);
+            this.paneOlvide.Location = new System.Drawing.Point(3, 113);
             this.paneOlvide.Margin = new System.Windows.Forms.Padding(2);
             this.paneOlvide.Name = "paneOlvide";
             this.paneOlvide.Size = new System.Drawing.Size(544, 126);
@@ -500,12 +500,12 @@
         public System.Windows.Forms.Label lblCambiarIdiomaII;
         public System.Windows.Forms.ComboBox cmboxIdioma;
         public System.Windows.Forms.ComboBox cmboxCambiarIdiomaII;
-        private System.Windows.Forms.CheckBox chkboxOlvide;
         private System.Windows.Forms.Panel paneOlvide;
         public System.Windows.Forms.Button btnCancelarContraseña;
         public System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.TextBox txtOlvide;
         public System.Windows.Forms.Label lblOlvide;
+        public System.Windows.Forms.CheckBox chkboxOlvide;
     }
 }
 

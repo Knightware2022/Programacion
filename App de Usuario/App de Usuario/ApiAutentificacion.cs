@@ -15,9 +15,9 @@ namespace App_de_Usuario
         public ApiAutentificacion() {
             _usuario = new Usuario();
         }
-        public Usuario usuario{
-            get{ return _usuario; }
-            set { _usuario = value;}       
+        public Usuario usuario {
+            get { return _usuario; }
+            set { _usuario = value; }
         }
 
         public byte Registrarse(string n, string contra, string correo) {
@@ -37,7 +37,7 @@ namespace App_de_Usuario
                     case 1:
                     case 2:
                         return 2;
-                        break;             
+                        break;
                     case 3:
                         bandera = false;
                         break;
@@ -96,7 +96,7 @@ namespace App_de_Usuario
                     break;
                 case 2:
                     devolver = 2;
-                   
+
                     break;
                 case 3:
                     devolver = 3;
@@ -142,10 +142,10 @@ namespace App_de_Usuario
             }
             return correo;
         }
-        public byte entrarComoGuest(List<string> macs) {    
+        public byte entrarComoGuest(List<string> macs) {
             byte devolver = 0;
             int idUsuario;
-            ArrayList dirmac = obtenerDirMAC();      
+            ArrayList dirmac = obtenerDirMAC();
             string mac;
             string nombreAutogen;
             bool bandera = true;
@@ -199,10 +199,10 @@ namespace App_de_Usuario
                     string mac = string.Empty;
                     for (int i = 0; i < bytes.Length; i++) {
                         mac = mac + bytes[i].ToString("x2");
-                        if (i != bytes.Length - 1 ) {
+                        if (i != bytes.Length - 1) {
                             mac = mac + "-";
                         }
-                       
+
                     }
                     direccionesMAC.Add(mac);
                 }
@@ -226,5 +226,31 @@ namespace App_de_Usuario
             return devolver;
 
         }
+
+        public static byte cambiarCorreo (string correoNuevo, string nombreUsuario)
+        {
+            byte devolver = 0;
+            switch (Logica.cambiarCorreo(correoNuevo, nombreUsuario))
+            {
+                case 0:
+                    devolver = 0;
+                    break;
+                case 1:
+                    devolver = 1;
+                    break;
+                case 2:
+                    devolver = 2;
+                    break;
+                case 3:
+                    devolver = 3;
+                    break;
+                case 4:
+                    devolver = 4;
+                    break;
+            }
+            return devolver;
+        }
+
+
     }
 }

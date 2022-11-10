@@ -27,42 +27,47 @@ namespace App_de_Usuario
             txtContrasenia.Text = "XXXXXXXXXXXXXX";
             txtNombreUsuario.Text = Login.nombreUsuario;
             txtCorreo.Text = api.correo(Login.nombreUsuario);
+            correo = txtCorreo.Text;
         }
          private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Visible = false; 
         }
 
         private void btnCambiarAvatar_Click(object sender, EventArgs e)
         {
 
-            string avatar = cmboxAvatares.SelectedItem.ToString();
-            if (avatar.Equals("Femenino")) {
+            string avatar = cmboxAvatares.Text;
+            if (avatar.Equals("Femenino") || avatar.Equals("Woman"))
+            {
                 pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarFemenino;
-                if (Properties.Resources.GuardarAvatar.Contains("1"))
+                if (Properties.Resources.GuardarAvatar.Contains('1'))
                 {
-                    Properties.Resources.GuardarAvatar.Replace("1", "2");
+                    Properties.Resources.nombreAvatar.Replace('1', '2');
+                    Properties.Resources.GuardarAvatar.Replace('1', '2');
                 }
                 else
                 {
                     if (Properties.Resources.GuardarAvatar.Contains("0"))
                     {
-                        Properties.Resources.GuardarAvatar.Replace("0", "2");
+                        Properties.Resources.GuardarAvatar.Replace('0', '2');
+                        Properties.Resources.nombreAvatar.Remove(0);
+                        Properties.Resources.nombreAvatar.Insert(0, "1");
                     }
                 }
             }
             else
             {
-                if (avatar.Equals("Masculino"))
+                if (avatar.Equals("Masculino") || avatar.Equals("Man"))
                 {
                     pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatarMasculino;
-                    if (Properties.Resources.GuardarAvatar.Contains("2"))
+                    if (Properties.Resources.GuardarAvatar.Contains('2'))
                     {
-                        Properties.Resources.GuardarAvatar.Replace("2", "1");
+                        Properties.Resources.GuardarAvatar.Replace('2', '1');
                     }
                     else {
-                        if (Properties.Resources.GuardarAvatar.Contains("0")) {
-                            Properties.Resources.GuardarAvatar.Replace("0", "1");
+                        if (Properties.Resources.GuardarAvatar.Contains('0')) {
+                            Properties.Resources.GuardarAvatar.Replace('0', '1');
                         }
                     }
 
@@ -70,19 +75,20 @@ namespace App_de_Usuario
                 else
                 {
                     pboxAvatar.Image = global::App_de_Usuario.Properties.Resources.avatar;
-                    if (Properties.Resources.GuardarAvatar.Contains("2"))
+                    if (Properties.Resources.GuardarAvatar.Contains('2'))
                     {
-                        Properties.Resources.GuardarAvatar.Replace("2", "0");
+                        Properties.Resources.GuardarAvatar.Replace('2', '0');
                     }
                     else
                     {
-                        if (Properties.Resources.GuardarAvatar.Contains("1"))
+                        if (Properties.Resources.GuardarAvatar.Contains('1'))
                         {
-                            Properties.Resources.GuardarAvatar.Replace("1", "0");
+                            Properties.Resources.GuardarAvatar.Replace('1', '0');
                         }
                     }
                 }
             }
+
         }
 
         private void btnAplicarCambios_Click(object sender, EventArgs e)
@@ -110,7 +116,7 @@ namespace App_de_Usuario
             Idiomas.cambiarIdioma(idioma);
 
         }
-
+        private string correo;
         private void btnCambiarContrasenia_Click(object sender, EventArgs e)
         {
             ApiAutentificacion api = new ApiAutentificacion();
@@ -143,6 +149,42 @@ namespace App_de_Usuario
         private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCambiarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCambiarCorreo_Click(object sender, EventArgs e)
+        {
+            string correoNuevo = txtCorreo.Text;
+            if (correoNuevo.Contains("@") && correoNuevo.Contains(".com") && correoNuevo.Count() >= 7)
+            {
+                switch (ApiAutentificacion.cambiarCorreo(correoNuevo, Login.nombreUsuario))
+                {
+                    case 0:
+                        MessageBox.Show("Correo actualizado");
+                        txtCorreo.Text = correoNuevo;
+                        break;
+                    case 1:
+                        MessageBox.Show("Error de conexion");
+                        break;
+                    case 2:
+                    case 4:
+                        MessageBox.Show("Error inesperado");
+                        break;
+                    case 3:
+                        MessageBox.Show("Correo no disponible");
+                        txtCorreo.Text = correo;
+                        break;
+                }
+            }
+            else {
+                MessageBox.Show("Correo no valido");
+                    txtCorreo.Text = correo;
+            }
+            
         }
     }
 }

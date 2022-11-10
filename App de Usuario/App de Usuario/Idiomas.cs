@@ -11,12 +11,13 @@ namespace App_de_Usuario
         public static void cambiarIdioma(string idioma) {
             switch (idioma) {
                 case "Ingles":
+                case "English":
                     #region "idioma de frmPrincipal"
-                    Program.frmPrincipal.btnDeportes.Text = "Sports";
                     Program.frmPrincipal.btnEncuentros.Text = "Matchs";
                     Program.frmPrincipal.btnFavoritos.Text = "Favorite team";
                     Program.frmPrincipal.btnResultados.Text = "Results";
                     Program.frmPrincipal.btnTorneos.Text = "Tournament";
+
                     #endregion
                     #region "de frmLogin"
                     Program.frmLogin.btnCancelar.Text = "Cancel";
@@ -32,10 +33,17 @@ namespace App_de_Usuario
                     Program.frmLogin.lblContrasenia.Text = "Password: ";
                     Program.frmLogin.lblCambiarIdioma.Text = "Language";
                     Program.frmLogin.lblCambiarIdiomaII.Text = "Language";
-                    Program.frmLogin.cmboxCambiarIdiomaII.Text = "Ingles";//"actualizo" todos los cmbox de idiomas con el mismo
-                    Program.frmLogin.cmboxIdioma.Text = "Ingles";   
-                    Program.frmConfiguracion.cmboxIdiomas.Text = "Ingles";
+                    Program.frmLogin.chkboxOlvide.Text = "Forgot password?";
+                    Program.frmLogin.lblOlvide.Text = "Enter your email";
+                    Program.frmLogin.btnCancelarContraseña.Text = "Cancel";
+                    Program.frmLogin.btnEnviar.Text = "Send";
+
+                    Program.frmLogin.cmboxCambiarIdiomaII.Text = "English";
+                    Program.frmConfiguracion.cmboxIdiomas.Text = "English";
+                    Program.frmLogin.cmboxIdioma.Text = "English";
+                    
                     #endregion
+
                     #region "de frmConfiguracion"
                     Program.frmConfiguracion.lblPerfil.Text = "Profile";
                     Program.frmConfiguracion.lblNombreUsuario.Text = "Username: ";
@@ -47,26 +55,50 @@ namespace App_de_Usuario
                     Program.frmConfiguracion.lblTema.Text = "Theme";
                     Program.frmConfiguracion.lblSeleccioneIdioma.Text = "Choose language";
                     Program.frmConfiguracion.btnCancelar.Text = "Return";
-                    Program.frmConfiguracion.btnCambiarUsuario.Text = "Change";
                     Program.frmConfiguracion.btnCambiarCorreo.Text = "Change";
                     Program.frmConfiguracion.btnCambiarContrasenia.Text = "Change";
-                    Program.frmConfiguracion.btnCambiarAvatar.Text = "Change avatar";
+                    Program.frmConfiguracion.btnCambiarAvatar.Text = "pre-view";
                     Program.frmConfiguracion.btnAplicarCambios.Text = "Apply changes";
+
+                    Program.frmConfiguracion.cmboxAvatares.Items.Clear();
+                    Program.frmConfiguracion.cmboxAvatares.Items.Add("Standar");
+                    Program.frmConfiguracion.cmboxAvatares.Items.Add("Woman");
+                    Program.frmConfiguracion.cmboxAvatares.Items.Add("Man");
+                    Program.frmConfiguracion.cmboxAvatares.Text = "Standar";
+                    Program.frmConfiguracion.cmboxTema.Items.Clear();
+                    Program.frmConfiguracion.cmboxTema.Items.Add("Default");
+                    Program.frmConfiguracion.cmboxTema.Items.Add("Dark");
+                    Program.frmConfiguracion.cmboxTema.Items.Add("Light");
+                    Program.frmConfiguracion.cmboxTema.Text = "Default";
+
+
+
                     #endregion
+
                     #region de frmDeportesFavoritos
-                    Program.frmDeportesFavoritos.lblDeportesFavoritos.Text = "Favorite sports: ";
-                    Program.frmDeportesFavoritos.btnEliminarFavoritos.Text = "Delete";
+                    Program.frmDeportesFavoritos.lblDeportesDisponibles.Text = "Sports available";
+                    Program.frmDeportesFavoritos.lblDeportesFavoritos.Text = "Favorite sports";
+                    Program.frmDeportesFavoritos.lblEquipos.Text = "Teams available";
+                    Program.frmDeportesFavoritos.lblEquiposFav.Text = "Favorite teams";
                     Program.frmDeportesFavoritos.btnRefrescar.Text = "Refresh";
-                    Program.frmDeportesFavoritos.btnVolver.Text = "Return";
+                    Program.frmDeportesFavoritos.btnRefrescarEqui.Text = "Refresh";
+                    Program.frmDeportesFavoritos.btnAgregarDeporteFavorito.Text = "Make favorite";
+                    Program.frmDeportesFavoritos.btnEliminarFavoritos.Text = "Delete favorite";
+                    Program.frmDeportesFavoritos.btnEquiposNoFAv.Text = "Delete favorite";
+                    Program.frmDeportesFavoritos.btnVolver.Text = "Close";
+                    
+
+
                     #endregion
+
                     #region de frmEventosProgramados
                     Program.frmEventosProgramados.lblDeporte.Text = "Sport: ";
                     Program.frmEventosProgramados.btnFiltrar.Text = "Filter";
+
                     #endregion
                     break;
-                case "Español" :
+                case "Español": case "Spanish":
                     #region "de frmPrincipal"
-                    Program.frmPrincipal.btnDeportes.Text = "Deportes";
                     Program.frmPrincipal.btnEncuentros.Text = "Encuentros";
                     Program.frmPrincipal.btnFavoritos.Text = "Equipos favoritos";
                     Program.frmPrincipal.btnResultados.Text = "Resultados";
@@ -86,10 +118,17 @@ namespace App_de_Usuario
                     Program.frmLogin.lblContrasenia.Text = "Contraseña: ";
                     Program.frmLogin.lblCambiarIdioma.Text = "Lenguaje";
                     Program.frmLogin.lblCambiarIdiomaII.Text = "Lenguaje";
-                    Program.frmLogin.cmboxCambiarIdiomaII.Text = "Español";//"actualizo" todos los cmbox de idiomas con el mismo
-                    Program.frmLogin.cmboxIdioma.Text = "Español";
+                    Program.frmLogin.chkboxOlvide.Text = "Olvidó su contraseña?";
+                    Program.frmLogin.lblOlvide.Text = "Ingrese su correo electrónico";
+                    Program.frmLogin.btnCancelarContraseña.Text = "Cancelar";
+                    Program.frmLogin.btnEnviar.Text = "Enviar";
+
+                    Program.frmLogin.cmboxCambiarIdiomaII.Text = "Español";
                     Program.frmConfiguracion.cmboxIdiomas.Text = "Español";
+                    Program.frmLogin.cmboxIdioma.Text = "Español";
+                    
                     #endregion
+
                     #region "de frmConfiguracion"
                     Program.frmConfiguracion.lblPerfil.Text = "Perfil";
                     Program.frmConfiguracion.lblNombreUsuario.Text = "Nombre de usuario: ";
@@ -101,18 +140,39 @@ namespace App_de_Usuario
                     Program.frmConfiguracion.lblTema.Text = "Tema";
                     Program.frmConfiguracion.lblSeleccioneIdioma.Text = "Seleccionar idioma";
                     Program.frmConfiguracion.btnCancelar.Text = "Cerrar";
-                    Program.frmConfiguracion.btnCambiarUsuario.Text = "Cambiar";
                     Program.frmConfiguracion.btnCambiarCorreo.Text = "Cambiar";
                     Program.frmConfiguracion.btnCambiarContrasenia.Text = "Cambiar";
-                    Program.frmConfiguracion.btnCambiarAvatar.Text = "Cambiar avatar";
+                    Program.frmConfiguracion.btnCambiarAvatar.Text = "Vista previa";
                     Program.frmConfiguracion.btnAplicarCambios.Text = "Aplicar cambios";
+
+                    Program.frmConfiguracion.cmboxAvatares.Items.Clear();
+                    Program.frmConfiguracion.cmboxAvatares.Items.Add("Estándar");
+                    Program.frmConfiguracion.cmboxAvatares.Items.Add("Femenino");
+                    Program.frmConfiguracion.cmboxAvatares.Items.Add("Masculino");
+                    Program.frmConfiguracion.cmboxAvatares.Text = "Estándar";
+                    Program.frmConfiguracion.cmboxTema.Items.Clear();
+                    Program.frmConfiguracion.cmboxTema.Items.Add("Por defecto");
+                    Program.frmConfiguracion.cmboxTema.Items.Add("Oscuro");
+                    Program.frmConfiguracion.cmboxTema.Items.Add("Claro");
+                    Program.frmConfiguracion.cmboxTema.Text = "Por defecto";
+
                     #endregion
+
                     #region de frmDeportesFavoritos
-                    Program.frmDeportesFavoritos.lblDeportesFavoritos.Text = "Deportes favoritos: ";
-                    Program.frmDeportesFavoritos.btnEliminarFavoritos.Text = "Eliminar de favoritos";
+
+                    Program.frmDeportesFavoritos.lblDeportesDisponibles.Text = "Deportes disponibles";
+                    Program.frmDeportesFavoritos.lblDeportesFavoritos.Text = "Deportes favoritos";
+                    Program.frmDeportesFavoritos.lblEquipos.Text = "Equipos disponibles";
+                    Program.frmDeportesFavoritos.lblEquiposFav.Text = "Equipos favoritos";
                     Program.frmDeportesFavoritos.btnRefrescar.Text = "Refrescar";
-                    Program.frmDeportesFavoritos.btnVolver.Text = "Cerrar";
+                    Program.frmDeportesFavoritos.btnRefrescarEqui.Text = "Refrescar";
+                    Program.frmDeportesFavoritos.btnAgregarDeporteFavorito.Text = "Agregar favorito";
+                    Program.frmDeportesFavoritos.btnEliminarFavoritos.Text = "Eliminar favorito";
+                    Program.frmDeportesFavoritos.btnEquiposNoFAv.Text = "Eliminar favorito";
+                    Program.frmDeportesFavoritos.btnVolver.Text = "Volver";
+
                     #endregion
+
                     #region de frmEventosProgramados
                     Program.frmEventosProgramados.lblDeporte.Text = "Deportes: ";
                     Program.frmEventosProgramados.btnFiltrar.Text = "Filtrar";
@@ -120,7 +180,6 @@ namespace App_de_Usuario
                     break;
             }
         }
-        //comentario prueba margtin
             public static string cambiarIdiomaBotonAvisame(string textoActual)
             {
                 string texto = null;

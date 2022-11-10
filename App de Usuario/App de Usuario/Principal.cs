@@ -152,7 +152,7 @@ namespace App_de_Usuario
         {
             Program.frmResultados.MdiParent = this;
             paneVentanas.Visible = false;
-            Program.frmResultados.Show();
+            Program.frmResultados.Visible = true;
             Program.frmResultados.Bounds = paneVentanas.Bounds;
 
         }
@@ -161,7 +161,7 @@ namespace App_de_Usuario
         {
             Program.frmEventosProgramados.MdiParent = this;
             paneVentanas.Visible = false;
-            Program.frmEventosProgramados.Show();
+            Program.frmEventosProgramados.Visible = true;
             Program.frmEventosProgramados.Bounds = paneVentanas.Bounds;
         }
 
@@ -169,7 +169,7 @@ namespace App_de_Usuario
         {
             Program.frmDeportesFavoritos.MdiParent = this;
             paneVentanas.Visible = false;
-            Program.frmDeportesFavoritos.Show();
+            Program.frmDeportesFavoritos.Visible = true;
             Program.frmDeportesFavoritos.Bounds = paneVentanas.Bounds;
 
         }
@@ -178,7 +178,7 @@ namespace App_de_Usuario
         {
             Program.frmConfiguracion.MdiParent = this;
             paneVentanas.Visible = false;
-            Program.frmConfiguracion.Show();
+            Program.frmConfiguracion.Visible = true;
             Program.frmConfiguracion.Bounds = paneVentanas.Bounds;
            
         }
@@ -186,7 +186,7 @@ namespace App_de_Usuario
         private void pboxPublicidad_Click(object sender, EventArgs e)
         {
             Program.frmRegistrarse.MdiParent = this;
-            Program.frmRegistrarse.Show();
+            Program.frmRegistrarse.Visible = true;
             paneVentanas.Visible = false;
             Program.frmRegistrarse.Bounds = paneVentanas.Bounds;
 
@@ -199,7 +199,7 @@ namespace App_de_Usuario
         private void btnTorneos_Click(object sender, EventArgs e)
         {
             Program.frmTorneosProgramados.MdiParent = this;
-            Program.frmTorneosProgramados.Show();
+            Program.frmTorneosProgramados.Visible = true;
             paneVentanas.Visible = false;
             Program.frmTorneosProgramados.Bounds = paneVentanas.Bounds;
         }

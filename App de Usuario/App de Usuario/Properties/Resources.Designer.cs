@@ -130,6 +130,15 @@ namespace App_de_Usuario.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        public static string nombreAvatar {
+            get {
+                return ResourceManager.GetString("nombreAvatar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap ojo {

@@ -31,7 +31,6 @@ namespace App_de_Usuario
             frmPrincipal = new Principal();
             frmResultados = new Resultados();
             frmRegistrarse = new Registrarse();
-            Thread notifica2;
             frmTorneosProgramados = new TorneosProgramados();
             apiA = new ApiAutentificacion();
             frmIncidencias = new Incidencias();

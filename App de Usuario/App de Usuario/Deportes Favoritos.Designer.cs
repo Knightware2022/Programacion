@@ -38,12 +38,12 @@
             this.cmboxDeportes = new System.Windows.Forms.ComboBox();
             this.lblDeportesDisponibles = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmboxEquiFAv = new System.Windows.Forms.ComboBox();
+            this.lblEquiposFav = new System.Windows.Forms.Label();
             this.btnEquiposNoFAv = new System.Windows.Forms.Button();
             this.btnRefrescarEqui = new System.Windows.Forms.Button();
             this.cmboxEquiSistem = new System.Windows.Forms.ComboBox();
             this.lblEquipos = new System.Windows.Forms.Label();
-            this.cmboxEquiFAv = new System.Windows.Forms.ComboBox();
-            this.lblEquiposFav = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -176,6 +176,29 @@
             this.panel2.Size = new System.Drawing.Size(721, 223);
             this.panel2.TabIndex = 5;
             // 
+            // cmboxEquiFAv
+            // 
+            this.cmboxEquiFAv.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmboxEquiFAv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxEquiFAv.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
+            this.cmboxEquiFAv.FormattingEnabled = true;
+            this.cmboxEquiFAv.Location = new System.Drawing.Point(202, 80);
+            this.cmboxEquiFAv.Margin = new System.Windows.Forms.Padding(2);
+            this.cmboxEquiFAv.Name = "cmboxEquiFAv";
+            this.cmboxEquiFAv.Size = new System.Drawing.Size(485, 24);
+            this.cmboxEquiFAv.TabIndex = 6;
+            // 
+            // lblEquiposFav
+            // 
+            this.lblEquiposFav.AutoSize = true;
+            this.lblEquiposFav.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lblEquiposFav.Location = new System.Drawing.Point(25, 84);
+            this.lblEquiposFav.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEquiposFav.Name = "lblEquiposFav";
+            this.lblEquiposFav.Size = new System.Drawing.Size(105, 15);
+            this.lblEquiposFav.TabIndex = 5;
+            this.lblEquiposFav.Text = "Equipos favoritos";
+            // 
             // btnEquiposNoFAv
             // 
             this.btnEquiposNoFAv.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
@@ -223,29 +246,6 @@
             this.lblEquipos.TabIndex = 0;
             this.lblEquipos.Text = "Equipos en el sistema: ";
             // 
-            // cmboxEquiFAv
-            // 
-            this.cmboxEquiFAv.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.cmboxEquiFAv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmboxEquiFAv.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
-            this.cmboxEquiFAv.FormattingEnabled = true;
-            this.cmboxEquiFAv.Location = new System.Drawing.Point(202, 80);
-            this.cmboxEquiFAv.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboxEquiFAv.Name = "cmboxEquiFAv";
-            this.cmboxEquiFAv.Size = new System.Drawing.Size(485, 24);
-            this.cmboxEquiFAv.TabIndex = 6;
-            // 
-            // lblEquiposFav
-            // 
-            this.lblEquiposFav.AutoSize = true;
-            this.lblEquiposFav.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblEquiposFav.Location = new System.Drawing.Point(25, 84);
-            this.lblEquiposFav.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEquiposFav.Name = "lblEquiposFav";
-            this.lblEquiposFav.Size = new System.Drawing.Size(105, 15);
-            this.lblEquiposFav.TabIndex = 5;
-            this.lblEquiposFav.Text = "Equipos favoritos";
-            // 
             // Deportes_Favoritos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,21 +271,21 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox cmboxDeportesFavoritos;
         public System.Windows.Forms.Label lblDeportesFavoritos;
         public System.Windows.Forms.Button btnEliminarFavoritos;
         public System.Windows.Forms.Button btnRefrescar;
         public System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button btnAgregarDeporteFavorito;
-        private System.Windows.Forms.ComboBox cmboxDeportes;
         public System.Windows.Forms.Label lblDeportesDisponibles;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Button btnEquiposNoFAv;
         public System.Windows.Forms.Button btnRefrescarEqui;
-        private System.Windows.Forms.ComboBox cmboxEquiSistem;
         public System.Windows.Forms.Label lblEquipos;
-        private System.Windows.Forms.ComboBox cmboxEquiFAv;
         public System.Windows.Forms.Label lblEquiposFav;
+        public System.Windows.Forms.ComboBox cmboxDeportesFavoritos;
+        public System.Windows.Forms.ComboBox cmboxDeportes;
+        public System.Windows.Forms.ComboBox cmboxEquiSistem;
+        public System.Windows.Forms.ComboBox cmboxEquiFAv;
     }
 }

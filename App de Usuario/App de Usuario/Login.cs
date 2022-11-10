@@ -30,10 +30,10 @@ namespace App_de_Usuario
                     this.Hide();
                     Program.frmPrincipal.pboxPublicidad.Hide();
                     Program.frmPrincipal.paneBanner.Hide();
-                    int yBase = Program.frmPrincipal.paneVentanas.Size.Height;
-                    yBase += Program.frmPrincipal.pboxPublicidad.Size.Height;
-                    int xBase = Program.frmPrincipal.pboxPublicidad.Size.Width;
-                    Program.frmPrincipal.paneVentanas.Size = new System.Drawing.Size(xBase, yBase);
+                    //int yBase = Program.frmPrincipal.paneVentanas.Size.Height;
+                   // yBase += Program.frmPrincipal.pboxPublicidad.Size.Height;
+                    //int xBase = Program.frmPrincipal.pboxPublicidad.Size.Width;
+                   // Program.frmPrincipal.paneVentanas.Size = new System.Drawing.Size(xBase, yBase);
                     Program.frmPrincipal.Show();
                     txtUsuario.Text = null;
                     txtRegistrarUsuario.Text = null;

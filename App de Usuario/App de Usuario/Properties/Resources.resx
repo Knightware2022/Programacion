@@ -143,4 +143,7 @@
     <value>0</value>
     <comment>se guardará el avatar elegido por el usuario</comment>
   </data>
+  <data name="nombreAvatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nombreAvatar.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

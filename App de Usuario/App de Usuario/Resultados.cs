@@ -212,7 +212,7 @@ namespace App_de_Usuario
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Visible = false;
             Program.frmPrincipal.paneVentanas.Visible = true;
         }
 

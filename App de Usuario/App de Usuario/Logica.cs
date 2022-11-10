@@ -1768,5 +1768,48 @@ namespace App_de_Usuario
             return devolver;
         }
 
+
+        public static byte cambiarCorreo(string correoNuevo, string usuario)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select correo from Vip where correo='" + correoNuevo + "'";
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); 
+                }
+                catch
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)//si no existe ese correo....
+                {
+                    sql = "update Vip set correo='" +  correoNuevo + "' where nombre='" + usuario + "'";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        return devolver = 4;
+                    }
+                }
+                else
+                {
+                    devolver = 3;
+                }               
+            }
+            return devolver;
+        }
+
     }
 }

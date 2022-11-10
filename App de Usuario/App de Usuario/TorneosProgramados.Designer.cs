@@ -296,7 +296,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 492);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(708, 492);
             this.Controls.Add(this.paneEvento);
             this.Controls.Add(this.paneBuscarEvento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

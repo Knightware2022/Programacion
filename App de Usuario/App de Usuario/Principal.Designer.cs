@@ -36,7 +36,6 @@
             this.paneAvatar = new System.Windows.Forms.Panel();
             this.btnAvatar = new System.Windows.Forms.Button();
             this.btnFavoritos = new System.Windows.Forms.Button();
-            this.btnDeportes = new System.Windows.Forms.Button();
             this.btnEncuentros = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
             this.btnResultados = new System.Windows.Forms.Button();
@@ -60,7 +59,6 @@
             this.paneBotones.Controls.Add(this.paneLogo);
             this.paneBotones.Controls.Add(this.paneAvatar);
             this.paneBotones.Controls.Add(this.btnFavoritos);
-            this.paneBotones.Controls.Add(this.btnDeportes);
             this.paneBotones.Controls.Add(this.btnEncuentros);
             this.paneBotones.Controls.Add(this.btnTorneos);
             this.paneBotones.Controls.Add(this.btnResultados);
@@ -112,7 +110,7 @@
             // btnFavoritos
             // 
             this.btnFavoritos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFavoritos.Location = new System.Drawing.Point(437, 27);
+            this.btnFavoritos.Location = new System.Drawing.Point(331, 25);
             this.btnFavoritos.Name = "btnFavoritos";
             this.btnFavoritos.Size = new System.Drawing.Size(120, 36);
             this.btnFavoritos.TabIndex = 4;
@@ -120,20 +118,10 @@
             this.btnFavoritos.UseVisualStyleBackColor = true;
             this.btnFavoritos.Click += new System.EventHandler(this.btnFavoritos_Click);
             // 
-            // btnDeportes
-            // 
-            this.btnDeportes.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDeportes.Location = new System.Drawing.Point(352, 78);
-            this.btnDeportes.Name = "btnDeportes";
-            this.btnDeportes.Size = new System.Drawing.Size(137, 36);
-            this.btnDeportes.TabIndex = 3;
-            this.btnDeportes.Text = "Equipos Favoritos";
-            this.btnDeportes.UseVisualStyleBackColor = true;
-            // 
             // btnEncuentros
             // 
             this.btnEncuentros.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEncuentros.Location = new System.Drawing.Point(255, 27);
+            this.btnEncuentros.Location = new System.Drawing.Point(388, 79);
             this.btnEncuentros.Name = "btnEncuentros";
             this.btnEncuentros.Size = new System.Drawing.Size(167, 36);
             this.btnEncuentros.TabIndex = 2;
@@ -144,7 +132,7 @@
             // btnTorneos
             // 
             this.btnTorneos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnTorneos.Location = new System.Drawing.Point(211, 78);
+            this.btnTorneos.Location = new System.Drawing.Point(240, 79);
             this.btnTorneos.Name = "btnTorneos";
             this.btnTorneos.Size = new System.Drawing.Size(96, 36);
             this.btnTorneos.TabIndex = 1;
@@ -155,7 +143,7 @@
             // btnResultados
             // 
             this.btnResultados.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResultados.Location = new System.Drawing.Point(133, 25);
+            this.btnResultados.Location = new System.Drawing.Point(150, 25);
             this.btnResultados.Name = "btnResultados";
             this.btnResultados.Size = new System.Drawing.Size(104, 36);
             this.btnResultados.TabIndex = 0;
@@ -238,7 +226,6 @@
         public System.Windows.Forms.Button btnResultados;
         public System.Windows.Forms.Button btnEncuentros;
         public System.Windows.Forms.Button btnTorneos;
-        public System.Windows.Forms.Button btnDeportes;
         public System.Windows.Forms.Button btnFavoritos;
         public System.Windows.Forms.PictureBox pboxPublicidad;
         public System.Windows.Forms.Panel paneBanner;
