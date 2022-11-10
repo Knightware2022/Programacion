@@ -29,7 +29,7 @@ namespace BackOfficeAdministracion
                     {
                         cliente.UseDefaultCredentials = false;
                         cliente.Credentials = new NetworkCredential("sisrd2022@gmail.com", "osomthlkbgfzwhsn");
-                        cliente.Port = 587;
+                        cliente.Port = 25;
                         cliente.EnableSsl = true;
 
                         cliente.Host = "smtp.gmail.com";

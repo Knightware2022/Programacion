@@ -17,6 +17,32 @@ namespace BackOfficeAdministracion
             InitializeComponent();
         }
 
+        public void tema(Color fondo, Color letra, Color casilla, Color boton)
+        {
+            this.BackColor = fondo;
+            paneAlineacion.BackColor = fondo;
+            btnAceptar.BackColor = boton;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.FlatAppearance.BorderColor = boton;
+            btnAceptar.ForeColor = letra;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnRefrescar.ForeColor = letra;
+            btnVolver.BackColor = boton;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.FlatAppearance.BorderColor = boton;
+            btnVolver.ForeColor = letra;
+            btnVerAli.BackColor = boton;
+            btnVerAli.FlatStyle = FlatStyle.Flat;
+            btnVerAli.FlatAppearance.BorderColor = boton;
+            btnVerAli.ForeColor = letra;
+            lblEquipo.ForeColor = letra;
+            lblIncidencia.ForeColor = letra;
+            lblJugador.ForeColor = letra;
+            lstviewAlineacion.BackColor = boton;
+            lstviewAlineacion.ForeColor = letra;
+        }
         private void Alineacion_Load(object sender, EventArgs e)
         {
             lstviewAlineacion.View = View.Details;

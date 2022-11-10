@@ -17,6 +17,37 @@ namespace BackOfficeAdministracion
             InitializeComponent();
         }
 
+
+        public void tema(Color fondo, Color letra, Color casilla, Color boton)
+        {
+
+
+            this.BackColor = fondo;
+            lblEquipo.ForeColor = letra;
+            lblJugador.ForeColor = letra;
+            lblIncidencia.ForeColor = letra;
+            lblMinuto.ForeColor = letra;
+            txtMinuto.BackColor = casilla;
+            txtMinuto.ForeColor = letra;
+            lblPuntos.ForeColor = letra;
+            txtPuntos.BackColor = casilla;
+            txtPuntos.ForeColor = letra;
+            btnAceptar.BackColor = boton;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.FlatAppearance.BorderColor = boton;
+            btnAceptar.ForeColor = letra;
+            btnVolver.BackColor = boton;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.FlatAppearance.BorderColor = boton;
+            btnVolver.ForeColor = letra;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnRefrescar.ForeColor = letra;
+            gboxModoPuntuacion.ForeColor = letra;
+
+        }
+
         private void Incidencias_Load(object sender, EventArgs e)
         {
             this.rbPuntos.Checked = true;

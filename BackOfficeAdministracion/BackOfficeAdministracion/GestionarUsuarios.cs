@@ -21,6 +21,91 @@ namespace BackOfficeAdministracion
             Program.frmPrincipal.paneVista.Show();
         }
 
+        public void tema(Color fondo, Color letra, Color casilla, Color boton)
+        {
+
+            this.BackColor = fondo;
+
+            //Mostrar usuarios
+            tbpgMostrarUsuarios.BackColor = fondo;
+            paneBuscar.BackColor = fondo;
+            paneDatos.BackColor = fondo;
+            paneBotones.BackColor = fondo;
+
+            lblIdUsu.ForeColor = letra;
+            lblIdUsu.ForeColor = letra;
+            lblNombre.ForeColor = letra;
+            lblCorreo.ForeColor = letra;
+            lblAntiguedad.ForeColor = letra;
+            lblDeportesFavoritos.ForeColor = letra;
+            lblRol.ForeColor = letra;
+
+            btnMostrar.BackColor = boton;
+            btnMostrar.FlatStyle = FlatStyle.Flat;
+            btnMostrar.FlatAppearance.BorderColor = boton;
+            btnMostrar.ForeColor = letra;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnRefrescar.ForeColor = letra;
+            btnAceptar.BackColor = boton;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.FlatAppearance.BorderColor = boton;
+            btnAceptar.ForeColor = letra;
+            btnCancelar.BackColor = boton;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatAppearance.BorderColor = boton;
+            btnCancelar.ForeColor = letra;
+            btnEliminar.BackColor = boton;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.FlatAppearance.BorderColor = boton;
+            btnEliminar.ForeColor = letra;
+            btnCerrar.BackColor = boton;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.FlatAppearance.BorderColor = boton;
+            btnCerrar.ForeColor = letra;
+            btnCrearUsuario.BackColor = boton;
+            btnCrearUsuario.FlatStyle = FlatStyle.Flat;
+            btnCrearUsuario.FlatAppearance.BorderColor = boton;
+            btnCrearUsuario.ForeColor = letra;
+            btnEnviarCorreo.BackColor = boton;
+            btnEnviarCorreo.FlatStyle = FlatStyle.Flat;
+            btnEnviarCorreo.FlatAppearance.BorderColor = boton;
+            btnEnviarCorreo.ForeColor = letra;
+
+            //Administrar publicidad
+
+            tbpgGestionarPublicidad.BackColor = fondo;
+            paneAniadirPublicidad.BackColor = fondo;
+            paneEliminarPublicidad.BackColor = fondo;
+            paneVerPublicidad.BackColor = fondo;
+
+            lblUrl.ForeColor = letra;
+            lblUrlEliminar.ForeColor = letra;
+            lblAsignarURL.ForeColor = letra;
+            lblAsignarUsuario.ForeColor = letra;
+
+            btnAgregarPublicidad.BackColor = boton;
+            btnAgregarPublicidad.FlatStyle = FlatStyle.Flat;
+            btnAgregarPublicidad.FlatAppearance.BorderColor = boton;
+            btnAgregarPublicidad.ForeColor = letra;
+            btnEliminarPublicidad.BackColor = boton;
+            btnEliminarPublicidad.FlatStyle = FlatStyle.Flat;
+            btnEliminarPublicidad.FlatAppearance.BorderColor = boton;
+            btnEliminarPublicidad.ForeColor = letra;
+            btnRefrescarPublicidad.BackColor = boton;
+            btnRefrescarPublicidad.FlatStyle = FlatStyle.Flat;
+            btnRefrescarPublicidad.FlatAppearance.BorderColor = boton;
+            btnRefrescarPublicidad.ForeColor = letra;
+            btnAsignar.BackColor = boton;
+            btnAsignar.FlatStyle = FlatStyle.Flat;
+            btnAsignar.FlatAppearance.BorderColor = boton;
+            btnAsignar.ForeColor = letra;
+            btnCerrar2.BackColor = boton;
+            btnCerrar2.FlatStyle = FlatStyle.Flat;
+            btnCerrar2.FlatAppearance.BorderColor = boton;
+            btnCerrar2.ForeColor = letra;
+        }
         private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             cerrar();

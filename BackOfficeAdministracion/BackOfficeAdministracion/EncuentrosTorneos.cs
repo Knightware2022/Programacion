@@ -17,6 +17,49 @@ namespace BackOfficeAdministracion
             InitializeComponent();
         }
         EncuentrosColectivos encuentros = new EncuentrosColectivos();
+        //Primer Panel
+	public void tema(Color fondo, Color letra, Color casilla, Color boton)
+        {
+
+            this.BackColor = fondo;
+            paneFiltro.BackColor = fondo;
+            lblFiltro.ForeColor = letra;
+            cmboxDeportes.BackColor = casilla;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnRefrescar.ForeColor = letra;
+            btnVerCargados.BackColor = boton;
+            btnVerCargados.FlatStyle = FlatStyle.Flat;
+            btnVerCargados.ForeColor = letra;
+            btnFiltrar.BackColor = boton;
+            btnFiltrar.FlatStyle = FlatStyle.Flat;
+            btnFiltrar.FlatAppearance.BorderColor = boton;
+            btnFiltrar.ForeColor = letra;
+
+            //Segundo Panel
+            paneEncuentros.BackColor = fondo;
+            lblNombreEncuentro.ForeColor = letra;
+            cmboxEncuentros.BackColor = casilla;
+            cmboxEncuentros.ForeColor = letra;
+            lblFechaComienzo.ForeColor = letra;
+            lblHoraFinaliza.ForeColor = letra;
+            lblEquiposEnEncuentro.ForeColor = letra;
+            btnAgregar.BackColor = boton;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.FlatAppearance.BorderColor = boton;
+            btnAgregar.ForeColor = letra;
+            btnQuitar.BackColor = boton;
+            btnQuitar.FlatStyle = FlatStyle.Flat;
+            btnQuitar.FlatAppearance.BorderColor = boton;
+            btnQuitar.ForeColor = letra;
+            btnVolver.BackColor = boton;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.FlatAppearance.BorderColor = boton;
+            btnVolver.ForeColor = letra;
+        }
+
+
         private void EncuentrosTorneos_Load(object sender, EventArgs e)
         {
 

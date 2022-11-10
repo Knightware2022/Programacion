@@ -35,7 +35,7 @@
             this.Posicion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Equipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRefrescar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVerAli = new System.Windows.Forms.Button();
             this.cmboxAlineacion = new System.Windows.Forms.ComboBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.paneAlineacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneAlineacion.Controls.Add(this.lstviewAlineacion);
             this.paneAlineacion.Controls.Add(this.btnRefrescar);
-            this.paneAlineacion.Controls.Add(this.button1);
+            this.paneAlineacion.Controls.Add(this.btnVerAli);
             this.paneAlineacion.Controls.Add(this.cmboxAlineacion);
             this.paneAlineacion.Controls.Add(this.btnVolver);
             this.paneAlineacion.Controls.Add(this.btnAceptar);
@@ -118,17 +118,17 @@
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
-            // button1
+            // btnVerAli
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(19, 262);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 28);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Ver alineación";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnVerAli.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnVerAli.Location = new System.Drawing.Point(19, 262);
+            this.btnVerAli.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVerAli.Name = "btnVerAli";
+            this.btnVerAli.Size = new System.Drawing.Size(129, 28);
+            this.btnVerAli.TabIndex = 23;
+            this.btnVerAli.Text = "Ver alineación";
+            this.btnVerAli.UseVisualStyleBackColor = true;
+            this.btnVerAli.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmboxAlineacion
             // 
@@ -245,7 +245,7 @@
         private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.ComboBox cmboxAlineacion;
         private System.Windows.Forms.ComboBox cmboxJugador;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVerAli;
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.ListView lstviewAlineacion;
         private System.Windows.Forms.ColumnHeader Nombre;

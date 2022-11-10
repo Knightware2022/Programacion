@@ -12,9 +12,40 @@ namespace BackOfficeAdministracion
 {
     public partial class Configuracion : Form
     {
+        private Color fondo;
+        private Color letra;
+        private Color boton;
+        private Color casilla;
+
         public Configuracion()
         {
             InitializeComponent();
+        }
+       
+
+        public void tema(Color fondo, Color letra, Color casilla, Color boton)
+        {
+            paneConfiguracion.BackColor = fondo;
+            lblIdioma.ForeColor = letra;
+            lblIdiomaE.ForeColor = letra;
+            lblApariencia.ForeColor = letra;
+            lblTema.ForeColor = letra;
+            lblContra.ForeColor = letra;
+            lblContraActual.ForeColor = letra;
+            lblNuevaContra.ForeColor = letra;
+            lblRepContra.ForeColor = letra;
+            btnCambiarContraseña.BackColor = boton;
+            btnCambiarContraseña.FlatStyle = FlatStyle.Flat;
+            btnCambiarContraseña.FlatAppearance.BorderColor = boton;
+            btnCambiarContraseña.ForeColor = letra;
+            btnAplicar.BackColor = boton;
+            btnAplicar.FlatStyle = FlatStyle.Flat;
+            btnAplicar.FlatAppearance.BorderColor = boton;
+            btnAplicar.ForeColor = letra;
+            btnCerrar.BackColor = boton;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.FlatAppearance.BorderColor = boton;
+            btnCerrar.ForeColor = letra;
         }
         private void caracteresContrasenia(byte opcion)
         {//1, es mostrar
@@ -54,7 +85,32 @@ namespace BackOfficeAdministracion
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
-            
+            int flag = 0;
+            if (cmboxTema.SelectedItem.ToString() == "Oscuro")
+            {
+                fondo = Color.FromArgb(40, 40, 40);
+                letra = Color.FromArgb(200, 200, 200);
+                boton = Color.FromArgb(60, 60, 60);
+                casilla = Color.FromArgb(70, 70, 70);
+                flag = 2;
+            }
+            else
+            {
+                fondo = SystemColors.Control;
+                letra = SystemColors.ControlText;
+                boton = SystemColors.ButtonFace;
+                casilla = SystemColors.Control;
+                flag = 1;
+            }
+            Program.frmAlineacion.tema(fondo, letra, casilla, boton);
+            Program.frmEncuentrosTorneos.tema(fondo, letra, casilla, boton);
+            Program.frmGestionarDeportes.tema(fondo, letra, casilla, boton);
+            Program.frmGestionarEventos.tema(fondo, letra, casilla, boton);
+            Program.frmGestionarTorneos.tema(fondo, letra, casilla, boton);
+            Program.frmGestionarUsuarios.tema(fondo, letra, casilla, boton);
+            Program.frmIncidencias.tema(fondo, letra, casilla, boton);
+            Program.frmPrincipal.tema(flag);
+            tema(fondo, letra, casilla, boton);
         }
 
         private void btnVer_MouseEnter(object sender, EventArgs e)

@@ -30,12 +30,13 @@
         {
             this.paneConfiguracion = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCambiarContraseña = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.txtNuevaContraConfirma = new System.Windows.Forms.TextBox();
             this.txtNuevaContraseña = new System.Windows.Forms.TextBox();
             this.txtContraActual = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblContraActual = new System.Windows.Forms.Label();
+            this.lblRepContra = new System.Windows.Forms.Label();
             this.lblNuevaContra = new System.Windows.Forms.Label();
             this.lblContra = new System.Windows.Forms.Label();
             this.paneBotones = new System.Windows.Forms.Panel();
@@ -49,7 +50,6 @@
             this.cmboxIdioma = new System.Windows.Forms.ComboBox();
             this.lblIdiomaE = new System.Windows.Forms.Label();
             this.lblIdioma = new System.Windows.Forms.Label();
-            this.btnCambiarContraseña = new System.Windows.Forms.Button();
             this.paneConfiguracion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.paneBotones.SuspendLayout();
@@ -78,8 +78,8 @@
             this.panel1.Controls.Add(this.txtNuevaContraConfirma);
             this.panel1.Controls.Add(this.txtNuevaContraseña);
             this.panel1.Controls.Add(this.txtContraActual);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblContraActual);
+            this.panel1.Controls.Add(this.lblRepContra);
             this.panel1.Controls.Add(this.lblNuevaContra);
             this.panel1.Controls.Add(this.lblContra);
             this.panel1.Location = new System.Drawing.Point(12, 207);
@@ -87,6 +87,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(562, 195);
             this.panel1.TabIndex = 6;
+            // 
+            // btnCambiarContraseña
+            // 
+            this.btnCambiarContraseña.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCambiarContraseña.Location = new System.Drawing.Point(280, 164);
+            this.btnCambiarContraseña.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCambiarContraseña.Name = "btnCambiarContraseña";
+            this.btnCambiarContraseña.Size = new System.Drawing.Size(185, 27);
+            this.btnCambiarContraseña.TabIndex = 8;
+            this.btnCambiarContraseña.Text = "Cambiar contraseña";
+            this.btnCambiarContraseña.UseVisualStyleBackColor = true;
+            this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
             // 
             // btnVer
             // 
@@ -128,27 +140,27 @@
             this.txtContraActual.Size = new System.Drawing.Size(251, 23);
             this.txtContraActual.TabIndex = 4;
             // 
-            // label2
+            // lblContraActual
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(34, 41);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Contraseña Actual: ";
+            this.lblContraActual.AutoSize = true;
+            this.lblContraActual.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblContraActual.Location = new System.Drawing.Point(34, 41);
+            this.lblContraActual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblContraActual.Name = "lblContraActual";
+            this.lblContraActual.Size = new System.Drawing.Size(115, 17);
+            this.lblContraActual.TabIndex = 3;
+            this.lblContraActual.Text = "Contraseña Actual: ";
             // 
-            // label1
+            // lblRepContra
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(34, 117);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Repita contraseña: ";
+            this.lblRepContra.AutoSize = true;
+            this.lblRepContra.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblRepContra.Location = new System.Drawing.Point(34, 117);
+            this.lblRepContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRepContra.Name = "lblRepContra";
+            this.lblRepContra.Size = new System.Drawing.Size(111, 17);
+            this.lblRepContra.TabIndex = 2;
+            this.lblRepContra.Text = "Repita contraseña: ";
             // 
             // lblNuevaContra
             // 
@@ -302,18 +314,6 @@
             this.lblIdioma.TabIndex = 0;
             this.lblIdioma.Text = "Idioma";
             // 
-            // btnCambiarContraseña
-            // 
-            this.btnCambiarContraseña.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCambiarContraseña.Location = new System.Drawing.Point(280, 164);
-            this.btnCambiarContraseña.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCambiarContraseña.Name = "btnCambiarContraseña";
-            this.btnCambiarContraseña.Size = new System.Drawing.Size(185, 27);
-            this.btnCambiarContraseña.TabIndex = 8;
-            this.btnCambiarContraseña.Text = "Cambiar contraseña";
-            this.btnCambiarContraseña.UseVisualStyleBackColor = true;
-            this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
-            // 
             // Configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,8 +355,8 @@
         private System.Windows.Forms.TextBox txtNuevaContraConfirma;
         private System.Windows.Forms.TextBox txtNuevaContraseña;
         private System.Windows.Forms.TextBox txtContraActual;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblContraActual;
+        private System.Windows.Forms.Label lblRepContra;
         private System.Windows.Forms.Label lblNuevaContra;
         private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.Button btnVer;

@@ -24,7 +24,145 @@ namespace BackOfficeAdministracion
         Equipos equipos = new Equipos();
         Deportes deportes = new Deportes();
         Jugador jugador = new Jugador();
+        public void tema(Color fondo, Color letra, Color casilla, Color boton)
+        {
 
+            //DEPORTES
+            this.BackColor = fondo;
+            tbpgModificar.BackColor = fondo;
+            paneBuscar.BackColor = fondo;
+            lblIdeporte.ForeColor = letra;
+            btnBuscar.BackColor = boton;
+            btnBuscar.ForeColor = letra;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.FlatAppearance.BorderColor = boton;
+            btnRefrescarDeportes.BackColor = boton;
+            btnRefrescarDeportes.FlatAppearance.BorderColor = boton;
+            btnRefrescarDeportes.FlatStyle = FlatStyle.Flat;
+            btnRefrescarDeportes.ForeColor = letra;
+
+            paneModificar.BackColor = fondo;
+            lblIDdeporte.ForeColor = letra;
+            lblMnombre.ForeColor = letra;
+            lblMcategoria.ForeColor = letra;
+            lblEquiposDeporte.ForeColor = letra;
+
+
+            btnModificar.BackColor = boton;
+            btnModificar.FlatAppearance.BorderColor = boton;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.ForeColor = letra;
+            btnMcancelar.BackColor = boton;
+            btnMcancelar.FlatAppearance.BorderColor = boton;
+            btnMcancelar.FlatStyle = FlatStyle.Flat;
+            btnMcancelar.ForeColor = letra;
+            btnEliminar.BackColor = boton;
+            btnEliminar.FlatAppearance.BorderColor = boton;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = letra;
+            btnCerrarI.BackColor = boton;
+            btnCerrarI.FlatAppearance.BorderColor = boton;
+            btnCerrarI.FlatStyle = FlatStyle.Flat;
+            btnCerrarI.ForeColor = letra;
+            btnCrearDeporte.BackColor = boton;
+            btnCrearDeporte.FlatAppearance.BorderColor = boton;
+            btnCrearDeporte.FlatStyle = FlatStyle.Flat;
+            btnCrearDeporte.ForeColor = letra;
+            //EQUIPOS
+            tbpgModificarEquipo.BackColor = fondo;
+            lblIDequipo.ForeColor = letra;
+            btnBuscarEquipo.BackColor = boton;
+            btnBuscarEquipo.FlatAppearance.BorderColor = boton;
+            btnBuscarEquipo.FlatStyle = FlatStyle.Flat;
+            btnBuscarEquipo.ForeColor = letra;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.ForeColor = letra;
+
+            lblID.ForeColor = letra;
+            lblNombreEquipo.ForeColor = letra;
+            lblDeporteEquipo.ForeColor = letra;
+            lblCategoriaEquipo.ForeColor = letra;
+            lblCantidadJugadoresEquipo.ForeColor = letra;
+            lblLogo.ForeColor = letra;
+            lblPais.ForeColor = letra;
+
+            lblNombreJugador.ForeColor = letra;
+            lblListaJugadores.ForeColor = letra;
+            btnAgregarJugador.BackColor = boton;
+            btnAgregarJugador.FlatStyle = FlatStyle.Flat;
+            btnAgregarJugador.FlatAppearance.BorderColor = boton;
+            btnAgregarJugador.ForeColor = letra;
+            btnEliminarJugador.BackColor = boton;
+            btnEliminarJugador.FlatStyle = FlatStyle.Flat;
+            btnEliminarJugador.FlatAppearance.BorderColor = boton;
+            btnEliminarJugador.ForeColor = letra;
+            btnRefrescarJugadores.BackColor = boton;
+            btnRefrescarJugadores.FlatStyle = FlatStyle.Flat;
+            btnRefrescarJugadores.FlatAppearance.BorderColor = boton;
+            btnRefrescarJugadores.ForeColor = letra;
+
+            btnAplicar.BackColor = boton;
+            btnAplicar.FlatStyle = FlatStyle.Flat;
+            btnAplicar.FlatAppearance.BorderColor = boton;
+            btnAplicar.ForeColor = letra;
+            btnCancelar.BackColor = boton;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatAppearance.BorderColor = boton;
+            btnCancelar.ForeColor = letra;
+            btnCrearEquipos.BackColor = boton;
+            btnCrearEquipos.FlatStyle = FlatStyle.Flat;
+            btnCrearEquipos.FlatAppearance.BorderColor = boton;
+            btnCrearEquipos.ForeColor = letra;
+            btnCerrar.BackColor = boton;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.FlatAppearance.BorderColor = boton;
+            btnCerrar.ForeColor = letra;
+            btnEliminarEquipo.BackColor = boton;
+            btnEliminarEquipo.FlatStyle = FlatStyle.Flat;
+            btnEliminarEquipo.FlatAppearance.BorderColor = boton;
+            btnEliminarEquipo.ForeColor = letra;
+            //JUGADORES
+            tbpgABMjugadores.BackColor = fondo;
+            lblIDJugador.ForeColor = letra;
+            btnBuscarID.BackColor = boton;
+            btnBuscarID.FlatStyle = FlatStyle.Flat;
+            btnBuscarID.FlatAppearance.BorderColor = boton;
+            btnBuscarID.ForeColor = letra;
+            btnRefrescarLista.BackColor = boton;
+            btnRefrescarLista.FlatStyle = FlatStyle.Flat;
+            btnRefrescarLista.FlatAppearance.BorderColor = boton;
+            btnRefrescarLista.ForeColor = letra;
+
+            lblIDjugadores.ForeColor = letra;
+            lblNombreJugadores.ForeColor = letra;
+            lblApellidoJugadores.ForeColor = letra;
+            lblSexo.ForeColor = letra;
+            lblEdadJugadores.ForeColor = letra;
+            lblPaisNacimientoJugadores.ForeColor = letra;
+
+            btnAplicarCambios.BackColor = boton;
+            btnAplicarCambios.FlatStyle = FlatStyle.Flat;
+            btnAplicarCambios.FlatAppearance.BorderColor = boton;
+            btnAplicarCambios.ForeColor = letra;
+            btnCancelarJugador.BackColor = boton;
+            btnCancelarJugador.FlatStyle = FlatStyle.Flat;
+            btnCancelarJugador.FlatAppearance.BorderColor = boton;
+            btnCancelarJugador.ForeColor = letra;
+            btnCrearJugador.BackColor = boton;
+            btnCrearJugador.FlatStyle = FlatStyle.Flat;
+            btnCrearJugador.FlatAppearance.BorderColor = boton;
+            btnCrearJugador.ForeColor = letra;
+            btnCerrarIII.BackColor = boton;
+            btnCerrarIII.FlatStyle = FlatStyle.Flat;
+            btnCerrarIII.FlatAppearance.BorderColor = boton;
+            btnCerrarIII.ForeColor = letra;
+            btnBorrarJugador.BackColor = boton;
+            btnBorrarJugador.FlatStyle = FlatStyle.Flat;
+            btnBorrarJugador.FlatAppearance.BorderColor = boton;
+            btnBorrarJugador.ForeColor = letra;
+        }
         private void GestionarDeportes_Load(object sender, EventArgs e)
         {
             List<string> lista = new List<string>();

@@ -18,8 +18,76 @@ namespace BackOfficeAdministracion
         }
         public static EncuentrosColectivos encuentrosColectivos = new EncuentrosColectivos();
 
+        public void tema(Color fondo, Color letra, Color casilla, Color boton)
+        {
+            this.BackColor = fondo;
+            tbpgModificar.BackColor = fondo;
+            paneBotones.BackColor = fondo;
+            paneDatosEvento.BackColor = fondo;
+            paneEquipos.BackColor = fondo;
+            paneModificarEvento.BackColor = fondo;
 
-        private void GestionarEventos_Load(object sender, EventArgs e)
+            tbcGestionarEventos.BackColor = fondo;
+            lblIDmodificar.ForeColor = letra;
+            btnBuscar.BackColor = boton;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.FlatAppearance.BorderColor = boton;
+            btnBuscar.ForeColor = letra;
+            btnRefrescarEncuentroColectivo.BackColor = boton;
+            btnRefrescarEncuentroColectivo.FlatStyle = FlatStyle.Flat;
+            btnRefrescarEncuentroColectivo.FlatAppearance.BorderColor = boton;
+            btnRefrescarEncuentroColectivo.ForeColor = letra;
+            lblIDEncuentroCole.ForeColor = letra;
+            lblDeporte.ForeColor = letra;
+            lblEquiposenSistema.ForeColor = letra;
+            lblEquiposenEncuentro.ForeColor = letra;
+            btnAgregarAlEncuentroCole.BackColor = boton;
+            btnAgregarAlEncuentroCole.FlatStyle = FlatStyle.Flat;
+            btnAgregarAlEncuentroCole.FlatAppearance.BorderColor = boton;
+            btnAgregarAlEncuentroCole.ForeColor = letra;
+            btnQuitarEncuentroCole.BackColor = boton;
+            btnQuitarEncuentroCole.FlatStyle = FlatStyle.Flat;
+            btnQuitarEncuentroCole.FlatAppearance.BorderColor = boton;
+            btnQuitarEncuentroCole.ForeColor = letra;
+            lblFechaComienzo.ForeColor = letra;
+            lblHoraComienzo.ForeColor = letra;
+            lblHoraComienza.ForeColor = letra;
+            lblMinutosComienza.ForeColor = letra;
+            lblFechaFinalizaCole.ForeColor = letra;
+            lblHoraFinalizaColec.ForeColor = letra;
+            lblFinalizaColectivo.ForeColor = letra;
+            lblMinutoFinCole.ForeColor = letra;
+            lblDescripcionColect.ForeColor = letra;
+            btnIncidencias.BackColor = boton;
+            btnIncidencias.FlatStyle = FlatStyle.Flat;
+            btnIncidencias.FlatAppearance.BorderColor = boton;
+            btnIncidencias.ForeColor = letra;
+            btnAlineacion.BackColor = boton;
+            btnAlineacion.FlatStyle = FlatStyle.Flat;
+            btnAlineacion.FlatAppearance.BorderColor = boton;
+            btnAlineacion.ForeColor = letra;
+            btnAceptar.BackColor = boton;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.FlatAppearance.BorderColor = boton;
+            btnAceptar.ForeColor = letra;
+            btnCancelar.BackColor = boton;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatAppearance.BorderColor = boton;
+            btnCancelar.ForeColor = letra;
+            btnEliminar.BackColor = boton;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.FlatAppearance.BorderColor = boton;
+            btnEliminar.ForeColor = letra;
+            btnCerrar.BackColor = boton;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.FlatAppearance.BorderColor = boton;
+            btnCerrar.ForeColor = letra;
+            btnCrearEventoColectivo.BackColor = boton;
+            btnCrearEventoColectivo.FlatStyle = FlatStyle.Flat;
+            btnCrearEventoColectivo.FlatAppearance.BorderColor = boton;
+            btnCrearEventoColectivo.ForeColor = letra;
+        }
+            private void GestionarEventos_Load(object sender, EventArgs e)
         {
             this.refrescarEquiposEnSistema();
         }

@@ -21,6 +21,61 @@ namespace BackOfficeAdministracion
         {
 
         }
+        public void tema(Color fondo, Color letra, Color casilla, Color boton)
+        {
+            tbpgTorneosColectivos.BackColor = fondo;
+            lblIDmodificar.ForeColor = letra;
+            btnBuscar.BackColor = boton;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.FlatAppearance.BorderColor = boton;
+            btnBuscar.ForeColor = letra;
+            btnRefrescarTorneoColectivo.BackColor = boton;
+            btnRefrescarTorneoColectivo.FlatStyle = FlatStyle.Flat;
+            btnRefrescarTorneoColectivo.FlatAppearance.BorderColor = boton;
+            btnRefrescarTorneoColectivo.ForeColor = letra;
+
+            lblIDEncuentroCole.ForeColor = letra;
+            lblDeporte.ForeColor = letra;
+            lblEquiposenEncuentro.ForeColor = letra;
+            lblFechaComienzo.ForeColor = letra;
+            lblHoraComienzo.ForeColor = letra;
+            lblHoraComienza.ForeColor = letra;
+            lblMinutosComienza.ForeColor = letra;
+            lblFechaFinalizaCole.ForeColor = letra;
+            lblFinalizaColectivo.ForeColor = letra;
+            lblHoraFinalizaColec.ForeColor = letra;
+            lblMinutoFinCole.ForeColor = letra;
+            lblDescripcionColect.ForeColor = letra;
+
+            btnEncuentros.BackColor = boton;
+            btnEncuentros.FlatStyle = FlatStyle.Flat;
+            btnEncuentros.FlatAppearance.BorderColor = boton;
+            btnEncuentros.ForeColor = letra;
+            btnAceptarCambios.BackColor = boton;
+            btnAceptarCambios.FlatStyle = FlatStyle.Flat;
+            btnAceptarCambios.FlatAppearance.BorderColor = boton;
+            btnAceptarCambios.ForeColor = letra;
+            btnLimpiarCampos.BackColor = boton;
+            btnLimpiarCampos.FlatStyle = FlatStyle.Flat;
+            btnLimpiarCampos.FlatAppearance.BorderColor = boton;
+            btnLimpiarCampos.ForeColor = letra;
+            btnEliminar.BackColor = boton;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.FlatAppearance.BorderColor = boton;
+            btnEliminar.ForeColor = letra;
+            btnDelete.BackColor = boton;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.FlatAppearance.BorderColor = boton;
+            btnDelete.ForeColor = letra;
+            btnClose.BackColor = boton;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.FlatAppearance.BorderColor = boton;
+            btnClose.ForeColor = letra;
+            btnCrearTorneo.BackColor = boton;
+            btnCrearTorneo.FlatStyle = FlatStyle.Flat;
+            btnCrearTorneo.FlatAppearance.BorderColor = boton;
+            btnCrearTorneo.ForeColor = letra;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
