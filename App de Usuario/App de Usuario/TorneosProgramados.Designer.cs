@@ -118,6 +118,7 @@
             this.btnSuscribirse.TabIndex = 11;
             this.btnSuscribirse.Text = "Suscribirse al Torneo";
             this.btnSuscribirse.UseVisualStyleBackColor = true;
+            this.btnSuscribirse.Click += new System.EventHandler(this.btnSuscribirse_Click);
             // 
             // cmboxJugadoresEquipos
             // 
@@ -135,7 +136,7 @@
             // 
             this.lblJugadores.AutoSize = true;
             this.lblJugadores.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblJugadores.Location = new System.Drawing.Point(40, 255);
+            this.lblJugadores.Location = new System.Drawing.Point(32, 255);
             this.lblJugadores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJugadores.Name = "lblJugadores";
             this.lblJugadores.Size = new System.Drawing.Size(135, 15);
@@ -153,17 +154,18 @@
             this.cmboxEquiposParticipan.Name = "cmboxEquiposParticipan";
             this.cmboxEquiposParticipan.Size = new System.Drawing.Size(380, 24);
             this.cmboxEquiposParticipan.TabIndex = 27;
+            this.cmboxEquiposParticipan.SelectedIndexChanged += new System.EventHandler(this.cmboxEquiposParticipan_SelectedIndexChanged);
             // 
             // lblEquiposParticipando
             // 
             this.lblEquiposParticipando.AutoSize = true;
             this.lblEquiposParticipando.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblEquiposParticipando.Location = new System.Drawing.Point(33, 205);
+            this.lblEquiposParticipando.Location = new System.Drawing.Point(33, 210);
             this.lblEquiposParticipando.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquiposParticipando.Name = "lblEquiposParticipando";
-            this.lblEquiposParticipando.Size = new System.Drawing.Size(142, 15);
+            this.lblEquiposParticipando.Size = new System.Drawing.Size(202, 15);
             this.lblEquiposParticipando.TabIndex = 26;
-            this.lblEquiposParticipando.Text = "Equipos que participan: ";
+            this.lblEquiposParticipando.Text = "Equipos que participan del torneo: ";
             // 
             // txtFechaFin
             // 
@@ -194,6 +196,7 @@
             this.cmboxNombreEvento.Name = "cmboxNombreEvento";
             this.cmboxNombreEvento.Size = new System.Drawing.Size(380, 24);
             this.cmboxNombreEvento.TabIndex = 23;
+            this.cmboxNombreEvento.SelectedIndexChanged += new System.EventHandler(this.cmboxNombreEvento_SelectedIndexChanged);
             // 
             // lblFechaFin
             // 

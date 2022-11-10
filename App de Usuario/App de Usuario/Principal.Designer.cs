@@ -116,7 +116,7 @@
             this.btnFavoritos.Name = "btnFavoritos";
             this.btnFavoritos.Size = new System.Drawing.Size(120, 36);
             this.btnFavoritos.TabIndex = 4;
-            this.btnFavoritos.Text = "Equipos Favoritos";
+            this.btnFavoritos.Text = "Deportes favoritos";
             this.btnFavoritos.UseVisualStyleBackColor = true;
             this.btnFavoritos.Click += new System.EventHandler(this.btnFavoritos_Click);
             // 
@@ -125,9 +125,9 @@
             this.btnDeportes.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnDeportes.Location = new System.Drawing.Point(352, 78);
             this.btnDeportes.Name = "btnDeportes";
-            this.btnDeportes.Size = new System.Drawing.Size(98, 36);
+            this.btnDeportes.Size = new System.Drawing.Size(137, 36);
             this.btnDeportes.TabIndex = 3;
-            this.btnDeportes.Text = "Deportes";
+            this.btnDeportes.Text = "Equipos Favoritos";
             this.btnDeportes.UseVisualStyleBackColor = true;
             // 
             // btnEncuentros

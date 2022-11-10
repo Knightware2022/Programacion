@@ -210,7 +210,7 @@ namespace BackOfficeAdministracion
                 int id = 0;
                 if (int.TryParse(cmboxEncuentros.Text.Substring(3, (cmboxEncuentros.Text.IndexOf(" ") - 3)), out id))
                 {
-                    switch (Logica.insertarEventoenTorneo(GestionarTorneos.torneosColectivos.idDeporteTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
+                    switch (Logica.insertarEventoenTorneo(GestionarTorneos.torneosColectivos.idTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
                     {
                         case 0:
                             MessageBox.Show("Evento añadido exitosamente");

@@ -192,6 +192,7 @@ namespace BackOfficeAdministracion
                         btnDelete.Enabled = true;
                         break;
                     case 5:
+                        torneosColectivos.idTorneo = id;
                         MessageBox.Show("El Torneo no tiene equipos");
                         cmboxEquiposenEncuentro.Items.Clear();
                         cmboxEquiposenEncuentro.Text = null;

@@ -401,7 +401,6 @@ namespace App_de_Usuario
             }
             return devolver;
         }
-
         public static byte TorneosProgramados(List<string> Eventos)
         {
             byte respuesta = 0;
@@ -435,6 +434,41 @@ namespace App_de_Usuario
                 default:
                     return 2;
                     break;
+            }
+
+
+            return respuesta;
+        }
+        public static byte datosTorneosProgramados(Torneos torneo, List<string> equipos)
+        {
+            byte respuesta = 0;
+            switch (Logica.DatosTorneosColectivosUSU(torneo, equipos))
+            {
+                case 0:
+                    break;
+                case 1:
+                    return 1;
+                case 2:
+                    return 2;
+                case 3:
+                    return 3;
+                case 5:
+                    return 5;
+                    break;
+            }
+            return respuesta;
+        }
+
+        public static byte SuscribirseATorneos(List<string> idEncuentro, string idDeporte, string usuario)
+        {
+            byte respuesta = 0;
+
+            switch (Logica.mostrarJugadoresDeEquipo(usuario, idEncuentro, idDeporte))
+            {
+                case 0:
+                    break;
+                default:
+                    return respuesta = 2;
             }
 
 

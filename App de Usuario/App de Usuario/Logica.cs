@@ -1591,7 +1591,7 @@ namespace App_de_Usuario
             }
             else
             {
-                sql = "select e.idEncuentro, e.descripcionEncuentro, e.fechaComienzo from Torneos as t, torneosTienenEncuentros as tt, Encuentros as e where t.idTorneo = tt.idTorneo AND tt.idEncuentro=e.idEncuentro AND t.idTorneo=" + idTorneo;
+                sql = "select distinct e.idEncuentro, e.descripcionEncuentro, e.fechaComienzo from Torneos as t, torneosTienenEncuentros as tt, Encuentros as e where t.idTorneo = tt.idTorneo AND tt.idEncuentro=e.idEncuentro AND t.idTorneo=" + idTorneo;
                 try
                 {
                     rs = _cn.Execute(sql, out cantFilas);
@@ -1612,6 +1612,81 @@ namespace App_de_Usuario
                         rs.MoveNext();
                     }
                 }
+            }
+            rs = null;
+            return devolver;
+        }
+
+
+        public static byte DatosTorneosColectivosUSU(Torneos torneos, List<string> nombresEquipos)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                sql = "select distinct t.fechaComienzo, t.fechaFinalizado, d.nombre, equi.nombre, equi.categoria from Torneos as t, equipos as equi, deportes as d, torneosTienenEncuentros as tt where t.idTorneo = tt.idTorneo AND tt.idEquipo = equi.idEquipo AND tt.idDeporteTorneo = d.idDeporte AND t.idTorneo =" + torneos.idTorneo;
+                try
+                {
+                    rs = _cn.Execute(sql, out cantFilas); //out cantFilas, devuelve cantidad de filas afectadas, y cuales fueron
+                }
+                catch
+
+                {
+                    return devolver = 2;
+                }
+                if (rs.RecordCount == 0)
+                {
+                    devolver = 3;
+                }
+                else
+                {
+                    torneos.fechaComienzo = Convert.ToDateTime(rs.Fields[0].Value);
+                    torneos.fechaFinaliza = Convert.ToDateTime(rs.Fields[1].Value);
+                    torneos.nombreDeporte = Convert.ToString(rs.Fields[2].Value);
+                        while (!rs.EOF)
+                        {
+                            nombresEquipos.Add((Convert.ToString(rs.Fields[3].Value) + "/" + Convert.ToString(rs.Fields[4].Value)));
+                            rs.MoveNext();
+                        }
+                    }
+
+                }
+            
+            rs = null;
+            return devolver;
+        }
+
+        public static byte mostrarJugadoresDeEquipo(string usuario, List<string> idEncuentro, string idDeporte)
+        {
+            byte devolver = 0;
+            object cantFilas;
+            string sql;
+            ADODB.Recordset rs = new ADODB.Recordset();
+            if (_cn.State == 0)//si esta cerrada
+            {
+                devolver = 1;
+            }
+            else
+            {
+                for (int i = 0; i < idEncuentro.Count(); i++) {
+                    sql = "insert into Visualiza (idUsuario, idEncuentro, idDeporte) values ( (select idUsuario from Vip where nombre='" + usuario + "'), " + idEncuentro[i] + ", (select idDeporte from Deportes where nombre='"+ idDeporte+"'))";
+                    try
+                    {
+                        rs = _cn.Execute(sql, out cantFilas);
+                    }
+                    catch
+                    {
+                        devolver = 2;
+                    }
+                }
+                
+
             }
             rs = null;
             return devolver;
