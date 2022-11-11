@@ -285,6 +285,37 @@ namespace BackOfficeAdministracion
 
                     #endregion
 
+                    errorInesperado = "Unexpected error";
+                    errorInesperadoCoherente = "Unexpected error, please verify the data is coherent";
+                    errordeConexion = "Conecctin error";
+                    usuarioOcontraIncorrectos = "The user or password is incorrect";
+                    contrasNoCoinciden = "The passwords dont match";
+                    usuarioActualizado = "Updated User";
+                    UsuarioNotieneDeportes = "The user has no favourite sports";
+                    usuarioCreado = "The user was created, the password is 0123456789";
+                    usuarioNoexisteCrear = "The user does not exist, Do you want to create it?";
+                    deporteCreado = "The sport was created";
+                    correoNotFound = "Email not found";
+                    nuevaContraEnviada = "A new password was sent to your email";
+                    usuarioERAGUEST = "The user is Guest, Do you wish to delete it? ";
+                    usuarioEliminado = "The user was deleted";
+                    titulosBorrarUsuario = "Delete user";
+                    titulosCrearUsuario = "Create user";
+                    crearUsuario = "The user does not exist, Do you want to create it?";
+                    datosNovalidos = "Error, invalid data";
+                    correoEnUSo = "Email not available";
+                    publicidadAnanida = "Advertising added";
+                    publicidadEliminada = "Advertising removed";
+                    torneoCreado = "Tournament created";
+                    crearTorneo = "The tournament does not exist, do you wish to create it?";
+                    tituloCrearTorneo = "Create tournament";
+                    torneoBorrado = "Tournament removed";
+                    torneoNotieneEncuentros = "The tournament has no matches";
+                    equipoNotieneJugadores = "The team has no players";
+                    EventosNOTIENEequipos = "The event has no teams involved";
+                    noEventoSistema = "There are no events in the system";
+                    noExistenTorneos = "There are no tournaments in the system";
+
                     break;
 
                 case "Spanish": case "Español":
