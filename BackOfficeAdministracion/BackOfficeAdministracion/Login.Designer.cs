@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.chkboxOlvide = new System.Windows.Forms.CheckBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -37,7 +38,7 @@
             this.paneIngresar = new System.Windows.Forms.Panel();
             this.btnVerContrasenia = new System.Windows.Forms.Button();
             this.cmboxIdioma = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIdioma = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtContrasenia = new System.Windows.Forms.TextBox();
@@ -52,9 +53,10 @@
             // 
             this.chkboxOlvide.AutoSize = true;
             this.chkboxOlvide.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkboxOlvide.Location = new System.Drawing.Point(29, 299);
+            this.chkboxOlvide.Location = new System.Drawing.Point(22, 243);
+            this.chkboxOlvide.Margin = new System.Windows.Forms.Padding(2);
             this.chkboxOlvide.Name = "chkboxOlvide";
-            this.chkboxOlvide.Size = new System.Drawing.Size(189, 26);
+            this.chkboxOlvide.Size = new System.Drawing.Size(147, 21);
             this.chkboxOlvide.TabIndex = 6;
             this.chkboxOlvide.Text = "Olvidó su contraseña?";
             this.chkboxOlvide.UseVisualStyleBackColor = true;
@@ -65,18 +67,20 @@
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(21, 39);
+            this.lblCorreo.Location = new System.Drawing.Point(16, 32);
+            this.lblCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(215, 22);
+            this.lblCorreo.Size = new System.Drawing.Size(162, 17);
             this.lblCorreo.TabIndex = 7;
             this.lblCorreo.Text = "Ingrese su correo electrónico";
             // 
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtCorreo.Location = new System.Drawing.Point(266, 39);
+            this.txtCorreo.Location = new System.Drawing.Point(200, 32);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(300, 27);
+            this.txtCorreo.Size = new System.Drawing.Size(226, 23);
             this.txtCorreo.TabIndex = 8;
             // 
             // paneOlvide
@@ -86,17 +90,19 @@
             this.paneOlvide.Controls.Add(this.btnEnviar);
             this.paneOlvide.Controls.Add(this.lblCorreo);
             this.paneOlvide.Controls.Add(this.txtCorreo);
-            this.paneOlvide.Location = new System.Drawing.Point(29, 116);
+            this.paneOlvide.Location = new System.Drawing.Point(22, 94);
+            this.paneOlvide.Margin = new System.Windows.Forms.Padding(2);
             this.paneOlvide.Name = "paneOlvide";
-            this.paneOlvide.Size = new System.Drawing.Size(594, 155);
+            this.paneOlvide.Size = new System.Drawing.Size(446, 126);
             this.paneOlvide.TabIndex = 9;
             // 
             // btnCancelarII
             // 
             this.btnCancelarII.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarII.Location = new System.Drawing.Point(354, 90);
+            this.btnCancelarII.Location = new System.Drawing.Point(266, 73);
+            this.btnCancelarII.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarII.Name = "btnCancelarII";
-            this.btnCancelarII.Size = new System.Drawing.Size(110, 40);
+            this.btnCancelarII.Size = new System.Drawing.Size(82, 32);
             this.btnCancelarII.TabIndex = 12;
             this.btnCancelarII.Text = "Cancelar";
             this.btnCancelarII.UseVisualStyleBackColor = true;
@@ -105,9 +111,10 @@
             // btnEnviar
             // 
             this.btnEnviar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.Location = new System.Drawing.Point(109, 90);
+            this.btnEnviar.Location = new System.Drawing.Point(82, 73);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(110, 40);
+            this.btnEnviar.Size = new System.Drawing.Size(82, 32);
             this.btnEnviar.TabIndex = 11;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
@@ -118,16 +125,17 @@
             this.paneIngresar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneIngresar.Controls.Add(this.btnVerContrasenia);
             this.paneIngresar.Controls.Add(this.cmboxIdioma);
-            this.paneIngresar.Controls.Add(this.label1);
+            this.paneIngresar.Controls.Add(this.lblIdioma);
             this.paneIngresar.Controls.Add(this.btnCancelar);
             this.paneIngresar.Controls.Add(this.btnAceptar);
             this.paneIngresar.Controls.Add(this.txtContrasenia);
             this.paneIngresar.Controls.Add(this.txtUsuario);
             this.paneIngresar.Controls.Add(this.lblContrasenia);
             this.paneIngresar.Controls.Add(this.lblUsuario);
-            this.paneIngresar.Location = new System.Drawing.Point(29, 52);
+            this.paneIngresar.Location = new System.Drawing.Point(22, 42);
+            this.paneIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.paneIngresar.Name = "paneIngresar";
-            this.paneIngresar.Size = new System.Drawing.Size(605, 241);
+            this.paneIngresar.Size = new System.Drawing.Size(454, 196);
             this.paneIngresar.TabIndex = 10;
             // 
             // btnVerContrasenia
@@ -135,9 +143,10 @@
             this.btnVerContrasenia.BackgroundImage = global::BackOfficeAdministracion.Properties.Resources.ojo;
             this.btnVerContrasenia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVerContrasenia.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerContrasenia.Location = new System.Drawing.Point(536, 103);
+            this.btnVerContrasenia.Location = new System.Drawing.Point(402, 84);
+            this.btnVerContrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerContrasenia.Name = "btnVerContrasenia";
-            this.btnVerContrasenia.Size = new System.Drawing.Size(30, 26);
+            this.btnVerContrasenia.Size = new System.Drawing.Size(22, 21);
             this.btnVerContrasenia.TabIndex = 14;
             this.btnVerContrasenia.UseVisualStyleBackColor = true;
             this.btnVerContrasenia.MouseEnter += new System.EventHandler(this.btnVerContrasenia_MouseEnter);
@@ -150,28 +159,32 @@
             this.cmboxIdioma.FormattingEnabled = true;
             this.cmboxIdioma.Items.AddRange(new object[] {
             "Español",
-            "Ingles"});
-            this.cmboxIdioma.Location = new System.Drawing.Point(196, 26);
+            "English"});
+            this.cmboxIdioma.Location = new System.Drawing.Point(147, 21);
+            this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxIdioma.Name = "cmboxIdioma";
-            this.cmboxIdioma.Size = new System.Drawing.Size(321, 30);
+            this.cmboxIdioma.Size = new System.Drawing.Size(242, 25);
             this.cmboxIdioma.TabIndex = 13;
+            this.cmboxIdioma.SelectedIndexChanged += new System.EventHandler(this.cmboxIdioma_SelectedIndexChanged);
             // 
-            // label1
+            // lblIdioma
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 22);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Idioma: ";
+            this.lblIdioma.AutoSize = true;
+            this.lblIdioma.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdioma.Location = new System.Drawing.Point(16, 20);
+            this.lblIdioma.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblIdioma.Name = "lblIdioma";
+            this.lblIdioma.Size = new System.Drawing.Size(50, 17);
+            this.lblIdioma.TabIndex = 12;
+            this.lblIdioma.Text = "Idioma: ";
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(326, 180);
+            this.btnCancelar.Location = new System.Drawing.Point(244, 146);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(110, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(82, 32);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -180,9 +193,10 @@
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(109, 180);
+            this.btnAceptar.Location = new System.Drawing.Point(82, 146);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(110, 40);
+            this.btnAceptar.Size = new System.Drawing.Size(82, 32);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Entrar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -191,26 +205,29 @@
             // txtContrasenia
             // 
             this.txtContrasenia.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtContrasenia.Location = new System.Drawing.Point(196, 131);
+            this.txtContrasenia.Location = new System.Drawing.Point(147, 106);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(321, 27);
+            this.txtContrasenia.Size = new System.Drawing.Size(242, 23);
             this.txtContrasenia.TabIndex = 9;
             // 
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtUsuario.Location = new System.Drawing.Point(196, 74);
+            this.txtUsuario.Location = new System.Drawing.Point(147, 60);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(321, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(242, 23);
             this.txtUsuario.TabIndex = 8;
             // 
             // lblContrasenia
             // 
             this.lblContrasenia.AutoSize = true;
             this.lblContrasenia.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrasenia.Location = new System.Drawing.Point(21, 130);
+            this.lblContrasenia.Location = new System.Drawing.Point(16, 106);
+            this.lblContrasenia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContrasenia.Name = "lblContrasenia";
-            this.lblContrasenia.Size = new System.Drawing.Size(90, 22);
+            this.lblContrasenia.Size = new System.Drawing.Size(70, 17);
             this.lblContrasenia.TabIndex = 7;
             this.lblContrasenia.Text = "Contraseña";
             // 
@@ -218,22 +235,24 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(21, 73);
+            this.lblUsuario.Location = new System.Drawing.Point(16, 59);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(73, 22);
+            this.lblUsuario.Size = new System.Drawing.Size(56, 17);
             this.lblUsuario.TabIndex = 6;
             this.lblUsuario.Text = "Usuario: ";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 377);
+            this.ClientSize = new System.Drawing.Size(484, 306);
             this.Controls.Add(this.paneIngresar);
             this.Controls.Add(this.paneOlvide);
             this.Controls.Add(this.chkboxOlvide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -250,22 +269,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox chkboxOlvide;
-        private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Panel paneOlvide;
-        private System.Windows.Forms.Panel paneIngresar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txtContrasenia;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label lblContrasenia;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Button btnCancelarII;
-        private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.ComboBox cmboxIdioma;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnVerContrasenia;
+        public System.Windows.Forms.Label lblCorreo;
+        public System.Windows.Forms.TextBox txtCorreo;
+        public System.Windows.Forms.Panel paneOlvide;
+        public System.Windows.Forms.TextBox txtContrasenia;
+        public System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.Label lblUsuario;
+        public System.Windows.Forms.Button btnCancelarII;
+        public System.Windows.Forms.Button btnEnviar;
+        public System.Windows.Forms.ComboBox cmboxIdioma;
+        public System.Windows.Forms.Label lblIdioma;
+        public System.Windows.Forms.Button btnVerContrasenia;
+        public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.Label lblContrasenia;
+        public System.Windows.Forms.CheckBox chkboxOlvide;
+        public System.Windows.Forms.Panel paneIngresar;
     }
 }
 

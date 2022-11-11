@@ -315,25 +315,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel paneIncidencias;
-        private System.Windows.Forms.Label lblJugador;
-        private System.Windows.Forms.Label lblEquipo;
-        private System.Windows.Forms.Label lblMinuto;
-        private System.Windows.Forms.Label lblIncidencia;
-        private System.Windows.Forms.TextBox txtMinuto;
-        private System.Windows.Forms.ComboBox cmboxIncidencia;
-        private System.Windows.Forms.ComboBox cmboxJugador;
-        private System.Windows.Forms.ComboBox cmboxEquipo;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.Panel panePuntos;
-        private System.Windows.Forms.GroupBox gboxModoPuntuacion;
-        private System.Windows.Forms.RadioButton rbSets;
-        private System.Windows.Forms.RadioButton rbPuntos;
-        private System.Windows.Forms.RadioButton rbRanking;
-        private System.Windows.Forms.Panel panePuntuacion;
-        private System.Windows.Forms.Label lblPuntos;
-        private System.Windows.Forms.TextBox txtPuntos;
+        public System.Windows.Forms.Panel paneIncidencias;
+        public System.Windows.Forms.Label lblJugador;
+        public System.Windows.Forms.Label lblEquipo;
+        public System.Windows.Forms.Label lblMinuto;
+        public System.Windows.Forms.Label lblIncidencia;
+        public System.Windows.Forms.TextBox txtMinuto;
+        public System.Windows.Forms.ComboBox cmboxIncidencia;
+        public System.Windows.Forms.ComboBox cmboxJugador;
+        public System.Windows.Forms.ComboBox cmboxEquipo;
+        public System.Windows.Forms.Button btnVolver;
+        public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.Button btnRefrescar;
+        public System.Windows.Forms.Panel panePuntos;
+        public System.Windows.Forms.GroupBox gboxModoPuntuacion;
+        public System.Windows.Forms.RadioButton rbSets;
+        public System.Windows.Forms.RadioButton rbPuntos;
+        public System.Windows.Forms.RadioButton rbRanking;
+        public System.Windows.Forms.Panel panePuntuacion;
+        public System.Windows.Forms.Label lblPuntos;
+        public System.Windows.Forms.TextBox txtPuntos;
     }
 }

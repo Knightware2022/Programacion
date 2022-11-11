@@ -211,7 +211,36 @@ namespace App_de_Usuario
         {
             this.refrescarJugadores();
         }
+        public void temaTorProg(Color formulario, Color boton, Color letra, Color panel1, Color panel2)
+        {
+            this.BackColor = formulario;
+            paneBuscarEvento.BackColor = panel1;
+            lblTorneo.ForeColor = letra;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.ForeColor = letra;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnFiltrar.FlatStyle = FlatStyle.Flat;
+            btnFiltrar.BackColor = boton;
+            btnFiltrar.ForeColor = letra;
+            btnFiltrar.FlatAppearance.BorderColor = boton;
 
+            paneEvento.BackColor = panel2;
+            lblEvento1.ForeColor = letra;
+            lblDeporteEvento.ForeColor = letra;
+            lblfechaComienzo.ForeColor = letra;
+            lblFechaFin.ForeColor = letra;
+            lblEquiposParticipando.ForeColor = letra;
+            lblJugadores.ForeColor = letra;
+            btnSuscribirse.FlatStyle = FlatStyle.Flat;
+            btnSuscribirse.BackColor = boton;
+            btnSuscribirse.ForeColor = letra;
+            btnSuscribirse.FlatAppearance.BorderColor = boton;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.BackColor = boton;
+            btnVolver.ForeColor = letra;
+            btnVolver.FlatAppearance.BorderColor = boton;
+        }
         private void btnSuscribirse_Click(object sender, EventArgs e)
         {
             List<string> idEventos = new List<string>();

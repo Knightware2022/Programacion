@@ -85,6 +85,7 @@ namespace BackOfficeAdministracion
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
+            Idiomas.CambioIdioma(cmboxIdioma.Text);
             int flag = 0;
             if (cmboxTema.SelectedItem.ToString() == "Oscuro")
             {

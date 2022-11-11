@@ -209,6 +209,51 @@ namespace App_de_Usuario
             this.ocultarMostrarFiltros();
            // rbPuntos.Checked = true;
         }
+        public void temaResul(Color formulario, Color boton, Color letra, Color panel1, Color panel2)
+        {
+            this.BackColor = formulario;
+            paneBuscar.BackColor = panel1;
+            paneBuscarEvento.BackColor = panel1;
+            lblDeporte.ForeColor = letra;
+            lblEquipo.ForeColor = letra;
+            grboxFiltros.ForeColor = letra;
+            rbDeporte.ForeColor = letra;
+            rbEquipo.ForeColor = letra;
+            rbTodoslosFiltros.ForeColor = letra;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.ForeColor = letra;
+            btnFiltrar.FlatStyle = FlatStyle.Flat;
+            btnFiltrar.FlatAppearance.BorderColor = boton;
+            btnFiltrar.BackColor = boton;
+            btnFiltrar.ForeColor = letra;
+
+
+            paneResultados.BackColor = panel2;
+            lblEvento1.ForeColor = letra;
+            lblDeporteEvento.ForeColor = letra;
+            lblfechaComienzo.ForeColor = letra;
+            lblFechaFin.ForeColor = letra;
+            lblEquiposParticipando.ForeColor = letra;
+            btnAlineacion.FlatStyle = FlatStyle.Flat;
+            btnAlineacion.FlatAppearance.BorderColor = boton;
+            btnAlineacion.BackColor = boton;
+            btnAlineacion.ForeColor = letra;
+            btnIncidencias.FlatStyle = FlatStyle.Flat;
+            btnIncidencias.FlatAppearance.BorderColor = boton;
+            btnIncidencias.BackColor = boton;
+            btnIncidencias.ForeColor = letra;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.FlatAppearance.BorderColor = boton;
+            btnVolver.BackColor = boton;
+            btnVolver.ForeColor = letra;
+            gboxResultados.ForeColor = letra;
+            rbPuntos.ForeColor = letra;
+            rbSets.ForeColor = letra;
+            rbRanking.ForeColor = letra;
+        }
+
 
         private void btnVolver_Click(object sender, EventArgs e)
         {

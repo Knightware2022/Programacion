@@ -41,7 +41,29 @@ namespace App_de_Usuario
             this.txtConfirmarContrasenia.UseSystemPasswordChar = true;
             this.txtRegistrarContrasenia.UseSystemPasswordChar = true;
         }
+        public void temaRegis(Color formulario, Color panel1, Color panel2, Color boton, Color letra)
+        {
+            this.BackColor = formulario;
 
+            AtxtPromo.BackColor = panel1;
+            AtxtPromo.ForeColor = letra;
+
+            paneRegistrarse.BackColor = panel2;
+
+            lblConfirmarContrasenia.ForeColor = letra;
+            lblCorreo.ForeColor = letra;
+            lblNombreUsuario.ForeColor = letra;
+            lblRegistroUsuario.ForeColor = letra;
+
+            btnCancelar.BackColor = boton;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatAppearance.BorderColor = boton;
+            btnCancelar.ForeColor = letra;
+            btnRegistro.BackColor = boton;
+            btnRegistro.FlatStyle = FlatStyle.Flat;
+            btnRegistro.FlatAppearance.BorderColor = boton;
+            btnRegistro.ForeColor = letra;
+        }
         private void btnRegistro_Click(object sender, EventArgs e)
         {
             Encriptacion encriptacion = new Encriptacion();

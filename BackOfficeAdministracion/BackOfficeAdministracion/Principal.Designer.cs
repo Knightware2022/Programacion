@@ -246,12 +246,12 @@
         private System.Windows.Forms.Panel paneGestionarEventos;
         private System.Windows.Forms.Panel paneGestionarUsuarios;
         private System.Windows.Forms.Panel paneGestionarDeportes;
-        private System.Windows.Forms.Button btnConfiguracion;
         public System.Windows.Forms.Panel paneVista;
         private System.Windows.Forms.PictureBox picboxHome;
         public System.Windows.Forms.Button btnGestionarDeportes;
         public System.Windows.Forms.Button btnGestionarUsuarios;
         public System.Windows.Forms.Button btnGestionarTorneos;
         public System.Windows.Forms.Button btnGestionarEventos;
+        public System.Windows.Forms.Button btnConfiguracion;
     }
 }

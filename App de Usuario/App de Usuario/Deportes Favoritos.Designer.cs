@@ -33,19 +33,19 @@
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.cmboxDeportesFavoritos = new System.Windows.Forms.ComboBox();
             this.lblDeportesFavoritos = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.paneDepoFav = new System.Windows.Forms.Panel();
             this.btnAgregarDeporteFavorito = new System.Windows.Forms.Button();
             this.cmboxDeportes = new System.Windows.Forms.ComboBox();
             this.lblDeportesDisponibles = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.paneEquiFav = new System.Windows.Forms.Panel();
             this.cmboxEquiFAv = new System.Windows.Forms.ComboBox();
             this.lblEquiposFav = new System.Windows.Forms.Label();
             this.btnEquiposNoFAv = new System.Windows.Forms.Button();
             this.btnRefrescarEqui = new System.Windows.Forms.Button();
             this.cmboxEquiSistem = new System.Windows.Forms.ComboBox();
             this.lblEquipos = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.paneDepoFav.SuspendLayout();
+            this.paneEquiFav.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -107,23 +107,23 @@
             this.lblDeportesFavoritos.TabIndex = 0;
             this.lblDeportesFavoritos.Text = "Deportes Favoritos: ";
             // 
-            // panel1
+            // paneDepoFav
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnRefrescar);
-            this.panel1.Controls.Add(this.btnVolver);
-            this.panel1.Controls.Add(this.btnAgregarDeporteFavorito);
-            this.panel1.Controls.Add(this.btnEliminarFavoritos);
-            this.panel1.Controls.Add(this.cmboxDeportes);
-            this.panel1.Controls.Add(this.cmboxDeportesFavoritos);
-            this.panel1.Controls.Add(this.lblDeportesDisponibles);
-            this.panel1.Controls.Add(this.lblDeportesFavoritos);
-            this.panel1.Location = new System.Drawing.Point(1, 11);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(721, 191);
-            this.panel1.TabIndex = 1;
+            this.paneDepoFav.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.paneDepoFav.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneDepoFav.Controls.Add(this.btnRefrescar);
+            this.paneDepoFav.Controls.Add(this.btnVolver);
+            this.paneDepoFav.Controls.Add(this.btnAgregarDeporteFavorito);
+            this.paneDepoFav.Controls.Add(this.btnEliminarFavoritos);
+            this.paneDepoFav.Controls.Add(this.cmboxDeportes);
+            this.paneDepoFav.Controls.Add(this.cmboxDeportesFavoritos);
+            this.paneDepoFav.Controls.Add(this.lblDeportesDisponibles);
+            this.paneDepoFav.Controls.Add(this.lblDeportesFavoritos);
+            this.paneDepoFav.Location = new System.Drawing.Point(1, 11);
+            this.paneDepoFav.Margin = new System.Windows.Forms.Padding(2);
+            this.paneDepoFav.Name = "paneDepoFav";
+            this.paneDepoFav.Size = new System.Drawing.Size(721, 191);
+            this.paneDepoFav.TabIndex = 1;
             // 
             // btnAgregarDeporteFavorito
             // 
@@ -160,21 +160,21 @@
             this.lblDeportesDisponibles.TabIndex = 0;
             this.lblDeportesDisponibles.Text = "Deportes disponibles";
             // 
-            // panel2
+            // paneEquiFav
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.cmboxEquiFAv);
-            this.panel2.Controls.Add(this.lblEquiposFav);
-            this.panel2.Controls.Add(this.btnEquiposNoFAv);
-            this.panel2.Controls.Add(this.btnRefrescarEqui);
-            this.panel2.Controls.Add(this.cmboxEquiSistem);
-            this.panel2.Controls.Add(this.lblEquipos);
-            this.panel2.Location = new System.Drawing.Point(1, 206);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(721, 223);
-            this.panel2.TabIndex = 5;
+            this.paneEquiFav.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.paneEquiFav.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paneEquiFav.Controls.Add(this.cmboxEquiFAv);
+            this.paneEquiFav.Controls.Add(this.lblEquiposFav);
+            this.paneEquiFav.Controls.Add(this.btnEquiposNoFAv);
+            this.paneEquiFav.Controls.Add(this.btnRefrescarEqui);
+            this.paneEquiFav.Controls.Add(this.cmboxEquiSistem);
+            this.paneEquiFav.Controls.Add(this.lblEquipos);
+            this.paneEquiFav.Location = new System.Drawing.Point(1, 206);
+            this.paneEquiFav.Margin = new System.Windows.Forms.Padding(2);
+            this.paneEquiFav.Name = "paneEquiFav";
+            this.paneEquiFav.Size = new System.Drawing.Size(721, 223);
+            this.paneEquiFav.TabIndex = 5;
             // 
             // cmboxEquiFAv
             // 
@@ -253,8 +253,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(724, 440);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.paneEquiFav);
+            this.Controls.Add(this.paneDepoFav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -262,10 +262,10 @@
             this.Name = "Deportes_Favoritos";
             this.Text = "Deportes_Favoritos";
             this.Load += new System.EventHandler(this.Deportes_Favoritos_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.paneDepoFav.ResumeLayout(false);
+            this.paneDepoFav.PerformLayout();
+            this.paneEquiFav.ResumeLayout(false);
+            this.paneEquiFav.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,10 +275,10 @@
         public System.Windows.Forms.Button btnEliminarFavoritos;
         public System.Windows.Forms.Button btnRefrescar;
         public System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel paneDepoFav;
         public System.Windows.Forms.Button btnAgregarDeporteFavorito;
         public System.Windows.Forms.Label lblDeportesDisponibles;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel paneEquiFav;
         public System.Windows.Forms.Button btnEquiposNoFAv;
         public System.Windows.Forms.Button btnRefrescarEqui;
         public System.Windows.Forms.Label lblEquipos;

@@ -143,7 +143,40 @@ namespace App_de_Usuario
             }
         }
 
+        public void temaDepoFav(Color formulario, Color boton, Color letra, Color panel1, Color panel2)
+        {
+            this.BackColor = formulario;
 
+            paneDepoFav.BackColor = panel1;
+            paneEquiFav.BackColor = panel1;
+
+            lblDeportesDisponibles.ForeColor = letra;
+            lblDeportesFavoritos.ForeColor = letra;
+            lblEquipos.ForeColor = letra;
+            lblEquiposFav.ForeColor = letra;
+
+            btnAgregarDeporteFavorito.BackColor = boton;
+            btnAgregarDeporteFavorito.FlatStyle = FlatStyle.Flat;
+            btnAgregarDeporteFavorito.FlatAppearance.BorderColor = boton;
+            btnAgregarDeporteFavorito.ForeColor = letra;
+            btnEliminarFavoritos.BackColor = boton;
+            btnEliminarFavoritos.FlatStyle = FlatStyle.Flat;
+            btnEliminarFavoritos.FlatAppearance.BorderColor = boton;
+            btnEliminarFavoritos.ForeColor = letra;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnRefrescar.ForeColor = letra;
+            btnRefrescarEqui.BackColor = boton;
+            btnRefrescarEqui.FlatStyle = FlatStyle.Flat;
+            btnRefrescarEqui.FlatAppearance.BorderColor = boton;
+            btnRefrescarEqui.ForeColor = letra;
+            btnVolver.BackColor = boton;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.FlatAppearance.BorderColor = boton;
+            btnVolver.ForeColor = letra;
+
+        }
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
 

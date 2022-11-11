@@ -198,6 +198,42 @@ namespace App_de_Usuario
 
         }
 
+        public void temaEvenProg(Color formulario, Color boton, Color letra, Color panel1, Color panel2)
+        {
+            this.BackColor = formulario;
+
+            paneBuscarEvento.BackColor = panel1;
+            paneEvento.BackColor = panel2;
+
+            lblDeporte.ForeColor = letra;
+            lblDeporteEvento.ForeColor = letra;
+            lblEquipo.ForeColor = letra;
+            lblEquiposParticipando.ForeColor = letra;
+            lblEvento1.ForeColor = letra;
+            lblfechaComienzo.ForeColor = letra;
+            lblFechaFin.ForeColor = letra;
+            lblJugadores.ForeColor = letra;
+
+            grboxFiltros.BackColor = panel1;
+            grboxFiltros.ForeColor = letra;
+
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnFiltrar.BackColor = boton;
+            btnFiltrar.FlatStyle = FlatStyle.Flat;
+            btnFiltrar.FlatAppearance.BorderColor = boton;
+            btnFiltrar.ForeColor = letra;
+            btnSuscribirse.BackColor = boton;
+            btnSuscribirse.FlatStyle = FlatStyle.Flat;
+            btnSuscribirse.FlatAppearance.BorderColor = boton;
+            btnSuscribirse.ForeColor = letra;
+            btnVolver.BackColor = boton;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.FlatAppearance.BorderColor = boton;
+            btnVolver.ForeColor = letra;
+        }
+
         private void rbTodoslosFiltros_CheckedChanged(object sender, EventArgs e)
         {
             this.ocultarMostrarFiltros();

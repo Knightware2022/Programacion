@@ -12,6 +12,12 @@ namespace App_de_Usuario
 {
     public partial class Configuracion : Form
     {
+        public static Color formulario;
+        public static Color boton;
+        public static Color letra;
+        public static Color casilla;
+        public static Color panel1;
+        public static Color panel2;
         public Configuracion()
         {
             InitializeComponent();
@@ -90,9 +96,76 @@ namespace App_de_Usuario
             }
 
         }
+        public void temaActualizar()
+        {
+            if (cmboxTema.SelectedItem.ToString() == "Oscuro" || cmboxTema.SelectedItem.ToString() == "Dark")
+            {
+                formulario = Color.FromArgb(30, 30, 30);
+                panel1 = Color.FromArgb(50, 50, 50);
+                panel2 = Color.FromArgb(70, 70, 70);
+                boton = Color.FromArgb(60, 60, 60);
+                letra = Color.FromArgb(200, 200, 200);
+            }
+            else
+            {
+                formulario = SystemColors.ActiveCaption;
+                panel1 = SystemColors.GradientActiveCaption;
+                panel2 = SystemColors.GradientInactiveCaption;
+                boton = System.Drawing.Color.LightGray;
+                letra = SystemColors.ControlText;
+            }
 
+            tema(formulario, boton, letra, panel1, panel2);
+            Program.frmResultados.temaResul(formulario, boton, letra, panel1, panel2);
+            Program.frmPrincipal.temaPrincipal(formulario, boton, letra, panel1, panel2);
+            Program.frmLogin.temaLogin(formulario, boton, letra, panel1, panel2);
+            Program.frmDeportesFavoritos.temaDepoFav(formulario, boton, letra, panel1, panel2);
+            Program.frmEventosProgramados.temaEvenProg(formulario, boton, letra, panel1, panel2);
+            Program.frmAlineacion.temaAli(formulario, boton, letra, panel1, panel2);
+            Program.frmTorneosProgramados.temaTorProg(formulario, boton, letra, panel1, panel2);
+            Program.frmIncidencias.temaInci(formulario, boton, letra, panel1, panel2);
+            Program.frmRegistrarse.temaRegis(formulario, boton, letra, panel1, panel2);
+        }
+        public void tema(Color formulario, Color boton, Color letra, Color panel1, Color panel2)
+        {
+            this.BackColor = formulario;
+            panePerfil.BackColor = panel2;
+            lblPerfil.ForeColor = letra;
+            lblNombreUsuario.ForeColor = letra;
+            lblContrasenia.ForeColor = letra;
+            btnCambiarContrasenia.FlatStyle = FlatStyle.Flat;
+            btnCambiarContrasenia.BackColor = boton;
+            btnCambiarContrasenia.ForeColor = letra;
+            btnCambiarContrasenia.FlatAppearance.BorderColor = boton;
+            lblCorreoElectronico.ForeColor = letra;
+            btnCambiarCorreo.FlatStyle = FlatStyle.Flat;
+            btnCambiarCorreo.BackColor = boton;
+            btnCambiarCorreo.ForeColor = letra;
+            btnCambiarCorreo.FlatAppearance.BorderColor = boton;
+            lblAvatar.ForeColor = letra;
+            btnCambiarAvatar.FlatStyle = FlatStyle.Flat;
+            btnCambiarAvatar.BackColor = boton;
+            btnCambiarAvatar.ForeColor = letra;
+            btnCambiarAvatar.FlatAppearance.BorderColor = boton;
+            paneApariencia.BackColor = panel2;
+            lblApariencia.ForeColor = letra;
+            lblTema.ForeColor = letra;
+            paneIdioma.BackColor = panel2;
+            lblIdioma.ForeColor = letra;
+            lblSeleccioneIdioma.ForeColor = letra;
+            btnAplicarCambios.FlatStyle = FlatStyle.Flat;
+            btnAplicarCambios.BackColor = boton;
+            btnAplicarCambios.ForeColor = letra;
+            btnAplicarCambios.FlatAppearance.BorderColor = boton;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.BackColor = boton;
+            btnCancelar.ForeColor = letra;
+            btnCancelar.FlatAppearance.BorderColor = boton;
+
+        }
         private void btnAplicarCambios_Click(object sender, EventArgs e)
         {
+            temaActualizar(); //Debe ser la primera linea del void
             Program.frmPrincipal.btnAvatar.BackgroundImage = pboxAvatar.Image;
            /* int avatar = Convert.ToInt32(global::App_de_Usuario.Properties.Resources.GuardarAvatar);
             if (avatar == 0)

@@ -298,7 +298,52 @@ namespace App_de_Usuario
 
                     #endregion
 
+                    errorConexion = "Conexion error";
+                    errorInesperado = "Unexpected error";
+                    errorCompruebeDatos = "Error, verify  the inserted data is correct";
+                    CorreoEnuso = "This email is unavailable";
+                    cambiarContraseña = "Your password has been changed";
+                    UsuarioOContraseñaInvalidos = "Invalid username or password";
+                    recibiraNotificacionSuscricpion = "You had been succesfully suscribed to the events";
+                    eventoComenzo = "The next event has started: ";
+                    eventoComienza = "The next event will begins in 10 minutes: ";
+                    evento10MInComenzo = "The next event began 10 minutes ago: ";
+                    nuevaContraseña = "A new password has been sent to your email";
+                    BienvenidaGuest = "Thanks you for using our app";
+                    RegistroExitoso = "you had register succesfully, proceed to log in";
+                    usuarioExiste = "The username is unavailable";
+                    CorreoNOVALIDO = "invalid email";
+                    contraseñasNoCoinciden = "the passwords do not match";
+                    CorreoNotFound = "email not found";
+                    EquiposSinAlineacion = "The team has no alignment";
+                    EquipoSinIncidencia = "The team has no incidents";
+                    EquipoSinJugadores = "The team has no players";
+                    EventosSinEquipos = "The event has no teams";
+                    ErrorObteniendoID = "Error getting ID";
+                    ErrorEquiposNOHAYSISTEMA = "Error, maybe there is no teams in the system";
+                    ErrorDeportesNOHAYSISTEMA = "Error, maybe there is no sports in the system";
+                    NOseenontroconfiltros = "No event with these characteristics was found";
+                    promesaNotificacion = "you will be notified when the event start";
+                    noEventosenTorneo = "The tournament has no events";
+                    noTorneosProgramados = "There are no scheduled tournaments";
+                    promesaNotificacionTorneo = "You will be notified of the events of the match";
+                    noPoseeDeportesFav = "Does not have favorite sports";
+                    noPoseeEquiposFav = "Does not have favorites teams";
+                    yanoSigueaDeporteEquipo = "You have unfollowed that team or sport";
+                    siguesaDeporte = "You now follow the sport";
+                    noEventos = "There are no events played or in play with these characteristics";
+
+                    nuevaContra = "Enter your new password";
+                    tituloMessageBoxContra = "change of password";
+                    confirmarContraCambio = "Do you really want to change your password?";
+                    confirmarContraseña = "Enter again the new password";
+                    contraCambiada = "Password changed";
+                    cancelacionCambioContra = "change of password canceled";
+                    correoCambiado = "email updated";
+                    errorInesperadoPruebeOtroResultado = "Try another result system. Maybe the event has no results";
+                    tituloComienzoEvento = "Event notification";
                     break;
+
                 case "Español": case "Spanish":
                     #region "de frmPrincipal"
                     Program.frmPrincipal.btnEncuentros.Text = "Encuentros";

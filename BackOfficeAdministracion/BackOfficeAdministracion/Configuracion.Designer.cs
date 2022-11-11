@@ -285,7 +285,7 @@
             this.cmboxIdioma.FormattingEnabled = true;
             this.cmboxIdioma.Items.AddRange(new object[] {
             "Español",
-            "Ingles"});
+            "English"});
             this.cmboxIdioma.Location = new System.Drawing.Point(214, 35);
             this.cmboxIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmboxIdioma.Name = "cmboxIdioma";
@@ -339,27 +339,27 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel paneConfiguracion;
-        private System.Windows.Forms.Panel paneIdioma;
-        private System.Windows.Forms.Label lblIdiomaE;
-        private System.Windows.Forms.Label lblIdioma;
-        private System.Windows.Forms.ComboBox cmboxIdioma;
-        private System.Windows.Forms.Panel paneApariencia;
-        private System.Windows.Forms.Label lblApariencia;
-        private System.Windows.Forms.ComboBox cmboxTema;
-        private System.Windows.Forms.Label lblTema;
-        private System.Windows.Forms.Panel paneBotones;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnAplicar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtNuevaContraConfirma;
-        private System.Windows.Forms.TextBox txtNuevaContraseña;
-        private System.Windows.Forms.TextBox txtContraActual;
-        private System.Windows.Forms.Label lblContraActual;
-        private System.Windows.Forms.Label lblRepContra;
-        private System.Windows.Forms.Label lblNuevaContra;
-        private System.Windows.Forms.Label lblContra;
-        private System.Windows.Forms.Button btnVer;
-        private System.Windows.Forms.Button btnCambiarContraseña;
+        public System.Windows.Forms.Panel paneConfiguracion;
+        public System.Windows.Forms.Panel paneIdioma;
+        public System.Windows.Forms.Label lblIdiomaE;
+        public System.Windows.Forms.Label lblIdioma;
+        public System.Windows.Forms.Panel paneApariencia;
+        public System.Windows.Forms.Label lblApariencia;
+        public System.Windows.Forms.ComboBox cmboxTema;
+        public System.Windows.Forms.Label lblTema;
+        public System.Windows.Forms.Panel paneBotones;
+        public System.Windows.Forms.Button btnCerrar;
+        public System.Windows.Forms.Button btnAplicar;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TextBox txtNuevaContraConfirma;
+        public System.Windows.Forms.TextBox txtNuevaContraseña;
+        public System.Windows.Forms.TextBox txtContraActual;
+        public System.Windows.Forms.Label lblContraActual;
+        public System.Windows.Forms.Label lblRepContra;
+        public System.Windows.Forms.Label lblNuevaContra;
+        public System.Windows.Forms.Label lblContra;
+        public System.Windows.Forms.Button btnVer;
+        public System.Windows.Forms.Button btnCambiarContraseña;
+        public System.Windows.Forms.ComboBox cmboxIdioma;
     }
 }

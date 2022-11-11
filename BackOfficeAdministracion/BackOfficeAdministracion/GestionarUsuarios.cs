@@ -141,33 +141,33 @@ namespace BackOfficeAdministracion
                     btnEnviarCorreo.Enabled = true;
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     paneBuscar.Enabled = true;
 
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     paneBuscar.Enabled = true;
                     break;
                 case 3:
                     switch (Logica.BuscandoUsuarioGuest(u.nombre)) {
                         case 0:// el usuario es guest 
-                            DialogResult eliminarGuest = MessageBox.Show("El usuario es GUEST, desea eliminarlo? ", "Eliminacion usuario GUEST", MessageBoxButtons.YesNo);
+                            DialogResult eliminarGuest = MessageBox.Show(Idiomas.usuarioERAGUEST, Idiomas.titulosBorrarUsuario, MessageBoxButtons.YesNo);
                             if (eliminarGuest == DialogResult.Yes)
                             {
                                 switch (Logica.eliminarUsuarioGuest(u.nombre)) {
                                     case 0:
-                                        MessageBox.Show("Usuario GUEST eliminado con éxito");
+                                        MessageBox.Show(Idiomas.usuarioEliminado);
                                         this.refrescarUsuarios();
                                         break;
                                     case 1:
-                                        MessageBox.Show("Ocurrió un error de conexión");
+                                        MessageBox.Show(Idiomas.errordeConexion);
                                         break;
                                     case 2:
-                                        MessageBox.Show("Ocurrió un error inesperado");
+                                        MessageBox.Show(Idiomas.errorInesperado);
                                         break;
                                     case 3:
-                                        MessageBox.Show("El usuario ya no existe");
+                                        MessageBox.Show(Idiomas.usuarioEliminado);
                                         break;
                                 }                  
                             }
@@ -179,13 +179,13 @@ namespace BackOfficeAdministracion
 
                             break;
                         case 1:
-                            MessageBox.Show("Ocurrió un error de conexión");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                         case 2:
-                            MessageBox.Show("Ocurrió un error inesperado");
+                            MessageBox.Show(Idiomas.errorInesperado);
                             break;
                         case 3:
-                            DialogResult crearUsuario = MessageBox.Show("El usuario no existe, desea crearlo? ", "Creación usuario", MessageBoxButtons.YesNo);
+                            DialogResult crearUsuario = MessageBox.Show(Idiomas.crearUsuario, Idiomas.titulosCrearUsuario , MessageBoxButtons.YesNo);
                             if (crearUsuario == DialogResult.Yes)
                             {
                                 paneDatos.Enabled = true;
@@ -199,7 +199,7 @@ namespace BackOfficeAdministracion
                                             break;
                                         case 1:
                                         case 2:
-                                            MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                            MessageBox.Show(Idiomas.errorInesperado);
                                             break;
                                         case 3:
                                             bandera = false;
@@ -239,10 +239,10 @@ namespace BackOfficeAdministracion
                     }
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }
@@ -259,10 +259,10 @@ namespace BackOfficeAdministracion
                     cmboxDeportesFavoritos.Text = lista[0];
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado cargando deportes");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }
@@ -281,10 +281,10 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }
@@ -303,10 +303,10 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }
@@ -325,10 +325,10 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }
@@ -353,7 +353,7 @@ namespace BackOfficeAdministracion
                 case 0:
                     paneDatos.Enabled = false;
                     paneBuscar.Enabled = true;
-                    MessageBox.Show("Usuario actualizado exitosamente");
+                    MessageBox.Show(Idiomas.usuarioActualizado);
                     txtCorreo.Text = null;
                     txtRol.Text = null;
                         txtID.Text = null;
@@ -366,16 +366,16 @@ namespace BackOfficeAdministracion
                         btnEnviarCorreo.Enabled = false;
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
             }
             catch
             {
-                MessageBox.Show("Datos no válidos");
+                MessageBox.Show(Idiomas.datosNovalidos);
            }
         }
 
@@ -422,18 +422,18 @@ namespace BackOfficeAdministracion
                         btnEliminar.Enabled = false;
                         btnAceptar.Enabled = false;
                         btnCrearUsuario.Enabled = false;
-                        MessageBox.Show("usuario eliminado con éxito");
+                        MessageBox.Show(Idiomas.usuarioEliminado);
                         break;
                     case 1:
-                        MessageBox.Show("Ocurrió un problema de conexión");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error eliminando usuario");
+                        MessageBox.Show(Idiomas.errorInesperado);
                         break;
                 }
             }
             catch {
-                MessageBox.Show("ocurrió un error, intente nuevamente");
+                MessageBox.Show(Idiomas.errorInesperado);
             }
            
         }
@@ -451,7 +451,7 @@ namespace BackOfficeAdministracion
                 u.rol = Convert.ToInt32(txtRol.Text);
                 switch (Logica.crearUsuario(u)) {
                     case 0:
-                        MessageBox.Show("Usuario creado con éxito");
+                        MessageBox.Show(Idiomas.usuarioCreado);
                         refrescarUsuarios();
                         paneDatos.Enabled = false;
                         txtUsuario.Enabled = false;
@@ -468,18 +468,18 @@ namespace BackOfficeAdministracion
                         cmboxDeportesFavoritos.Items.Clear();
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexión");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Ocurrió un error");
+                        MessageBox.Show(Idiomas.errorInesperado);
                         break;
                     case 3:
-                        MessageBox.Show("Correo ya registrado");
+                        MessageBox.Show(Idiomas.correoEnUSo);
                         break;
                 }
             }
             catch {
-                MessageBox.Show("Meses suscriptos y rol deben ser numéricos");
+                MessageBox.Show(Idiomas.datosNovalidos);
             }
             
         }
@@ -543,13 +543,13 @@ namespace BackOfficeAdministracion
                 case 0:
                     refrescarPublicidad();
                     paneBuscar.Enabled = true;
-                    MessageBox.Show("publicidad eliminada con éxito");
+                    MessageBox.Show(Idiomas.publicidadAnanida);
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un problema de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error eliminando publicidad.  Probablemente algun usuario ve esta publicidad");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }
@@ -593,14 +593,14 @@ namespace BackOfficeAdministracion
             string url = cmboxURLasignar.Text;
             switch (Logica.asignarPublicidad(nombreAutogen, url)) {
                 case 0:
-                    MessageBox.Show("Publicidad vinculada al usuario exitosamente");
+                    MessageBox.Show(Idiomas.publicidadAnanida);
 
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado. Probablemente el usuario ya visualiza una publicidad");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }

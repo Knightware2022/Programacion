@@ -236,21 +236,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel paneAlineacion;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.ComboBox cmboxEquipo;
-        private System.Windows.Forms.Label lblIncidencia;
-        private System.Windows.Forms.Label lblJugador;
-        private System.Windows.Forms.Label lblEquipo;
-        private System.Windows.Forms.ComboBox cmboxAlineacion;
-        private System.Windows.Forms.ComboBox cmboxJugador;
-        private System.Windows.Forms.Button btnVerAli;
-        private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.ListView lstviewAlineacion;
-        private System.Windows.Forms.ColumnHeader Nombre;
-        private System.Windows.Forms.ColumnHeader Apellido;
-        private System.Windows.Forms.ColumnHeader Posicion;
-        private System.Windows.Forms.ColumnHeader Equipo;
+        public System.Windows.Forms.Panel paneAlineacion;
+        public System.Windows.Forms.Button btnVolver;
+        public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.ComboBox cmboxEquipo;
+        public System.Windows.Forms.Label lblIncidencia;
+        public System.Windows.Forms.Label lblJugador;
+        public System.Windows.Forms.Label lblEquipo;
+        public System.Windows.Forms.ComboBox cmboxAlineacion;
+        public System.Windows.Forms.ComboBox cmboxJugador;
+        public System.Windows.Forms.Button btnVerAli;
+        public System.Windows.Forms.Button btnRefrescar;
+        public System.Windows.Forms.ListView lstviewAlineacion;
+        public System.Windows.Forms.ColumnHeader Nombre;
+        public System.Windows.Forms.ColumnHeader Apellido;
+        public System.Windows.Forms.ColumnHeader Posicion;
+        public System.Windows.Forms.ColumnHeader Equipo;
     }
 }

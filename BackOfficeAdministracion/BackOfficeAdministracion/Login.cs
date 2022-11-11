@@ -24,9 +24,11 @@ namespace BackOfficeAdministracion
                 case 1:
                     break;
                 case 2:
-                    MessageBox.Show("No se pudo conectar a la base de datos");
+                    MessageBox.Show(Idiomas.errordeConexion);
+                    Application.Exit();
                     break;
             }
+            Idiomas.CambioIdioma(cmboxIdioma.Text);
             this.paneOlvide.Visible = false;
             caracteresContrasenia(0);
             this.cmboxIdioma.Text = "Español";
@@ -105,14 +107,14 @@ namespace BackOfficeAdministracion
                                 Program.frmPrincipal.btnGestionarUsuarios.Enabled = true;
                                 break;
                              case 1:
-                                 MessageBox.Show("Conexión no establecida");
+                                 MessageBox.Show(Idiomas.errordeConexion);
                                  break;
                              case 2:
-                                 MessageBox.Show("Ocurrió un error inesperado");
+                                 MessageBox.Show(Idiomas.errorInesperado);
                                  break;
                              case 3:
                              case 4:
-                                 MessageBox.Show("Usuario o contraseña invalidos");
+                                 MessageBox.Show(Idiomas.usuarioOcontraIncorrectos);
                                  txtContrasenia.Text = null;
 
                                  break;
@@ -135,14 +137,14 @@ namespace BackOfficeAdministracion
 
                                     break;
                                 case 1:
-                                    MessageBox.Show("Conexión no establecida");
+                                    MessageBox.Show(Idiomas.errordeConexion);
                                     break;
                                 case 2:
-                                    MessageBox.Show("Ocurrió un error inesperado");
+                                    MessageBox.Show(Idiomas.errorInesperado);
                                     break;
                                 case 3:
                                 case 4:
-                                    MessageBox.Show("Usuario o contraseña invalidos");
+                                    MessageBox.Show(Idiomas.usuarioOcontraIncorrectos);
                                     txtContrasenia.Text = null;
 
                                     break;
@@ -150,19 +152,19 @@ namespace BackOfficeAdministracion
 
                         }
                         else { 
-                         MessageBox.Show("Usuario o contraseña inválidos");//en realidad existe, pero por un tema de "seguridad" no se muestra que es usuario y contra del cliente 
+                         MessageBox.Show(Idiomas.usuarioOcontraIncorrectos);//en realidad existe, pero por un tema de "seguridad" no se muestra que es usuario y contra del cliente 
                          txtContrasenia.Text = null;
                         }
                     }
                      break;
                  case 1:
-                     MessageBox.Show("Conexión no establecida");
+                     MessageBox.Show(Idiomas.errordeConexion);
                      break;
                  case 2:
-                     MessageBox.Show("Ocurrió un error inesperado");
+                     MessageBox.Show(Idiomas.errorInesperado);
                      break;
                  case 3:
-                     MessageBox.Show("Usuario o contraseña invalidos");//en realidad es que el usuario no existe
+                     MessageBox.Show(Idiomas.usuarioOcontraIncorrectos);//en realidad es que el usuario no existe
                      txtContrasenia.Text = null;
                      break;
              }
@@ -203,24 +205,24 @@ namespace BackOfficeAdministracion
                     switch (Logica.modificarContraseña(u.nombre, u.contrasenia)) {
                         case 0:
                             Mensajeria.sendCorreo(u.correo, contra);
-                            MessageBox.Show("Una nueva contraseña fue enviada a su correo.");
+                            MessageBox.Show(Idiomas.nuevaContraEnviada);
                             break;
                         case 1:
-                            MessageBox.Show("Error de conexión");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                         case 2:
-                            MessageBox.Show("Ocurrió un error inesperado");
+                            MessageBox.Show(Idiomas.errorInesperado);
                             break;
                      }
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexión");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 3:
-                    MessageBox.Show("Error, correo no encontrado");
+                    MessageBox.Show(Idiomas.correoNotFound);
                     break;
 
             }
@@ -248,6 +250,11 @@ namespace BackOfficeAdministracion
         private void chkboxOlvide_CheckedChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmboxIdioma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Idiomas.CambioIdioma(cmboxIdioma.Text);
         }
     }
 }

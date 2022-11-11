@@ -270,6 +270,57 @@ namespace App_de_Usuario
             txtConfirmarContrasenia.Text = null;
         }
 
+
+        public void temaLogin(Color formulario, Color boton, Color letra, Color panel1, Color panel2)
+        {
+            this.BackColor = formulario;
+            paneIngreso.BackColor = panel1;
+            lblCambiarIdiomaII.ForeColor = letra;
+            lblUsuario.ForeColor = letra;
+            lblContrasenia.ForeColor = letra;
+            btnIngresar.FlatStyle = FlatStyle.Flat;
+            btnIngresar.FlatAppearance.BorderColor = boton;
+            btnIngresar.BackColor = boton;
+            btnIngresar.ForeColor = letra;
+            btnRegistrarse.FlatStyle = FlatStyle.Flat;
+            btnRegistrarse.FlatAppearance.BorderColor = boton;
+            btnRegistrarse.BackColor = boton;
+            btnRegistrarse.ForeColor = letra;
+            btnGuest.FlatStyle = FlatStyle.Flat;
+            btnGuest.FlatAppearance.BorderColor = boton;
+            btnGuest.BackColor = boton;
+            btnGuest.ForeColor = letra;
+            chkboxOlvide.ForeColor = letra;
+
+            paneOlvide.BackColor = panel1;
+            lblOlvide.ForeColor = letra;
+            btnEnviar.FlatStyle = FlatStyle.Flat;
+            btnEnviar.FlatAppearance.BorderColor = boton;
+            btnEnviar.BackColor = boton;
+            btnEnviar.ForeColor = letra;
+            btnCancelarContraseña.FlatStyle = FlatStyle.Flat;
+            btnCancelarContraseña.FlatAppearance.BorderColor = boton;
+            btnCancelarContraseña.BackColor = boton;
+            btnCancelarContraseña.ForeColor = letra;
+
+            paneRegistrarse.BackColor = panel1;
+            lblCambiarIdioma.ForeColor = letra;
+            lblNombreUsuario.ForeColor = letra;
+            lblContrasenia.ForeColor = letra;
+            lblConfirmarContrasenia.ForeColor = letra;
+            lblCorreo.ForeColor = letra;
+            btnRegistro.FlatStyle = FlatStyle.Flat;
+            btnRegistro.FlatAppearance.BorderColor = boton;
+            btnRegistro.BackColor = boton;
+            btnRegistro.ForeColor = letra;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatAppearance.BorderColor = boton;
+            btnCancelar.BackColor = boton;
+            btnCancelar.ForeColor = letra;
+        }
+
+
+
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             string correo = txtOlvide.Text;

@@ -138,9 +138,9 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnVolver.Location = new System.Drawing.Point(415, 190);
+            this.btnVolver.Location = new System.Drawing.Point(443, 190);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(106, 39);
+            this.btnVolver.Size = new System.Drawing.Size(150, 39);
             this.btnVolver.TabIndex = 11;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -150,9 +150,9 @@
             // 
             this.btnQuitar.Enabled = false;
             this.btnQuitar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnQuitar.Location = new System.Drawing.Point(225, 190);
+            this.btnQuitar.Location = new System.Drawing.Point(257, 190);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(172, 39);
+            this.btnQuitar.Size = new System.Drawing.Size(169, 39);
             this.btnQuitar.TabIndex = 10;
             this.btnQuitar.Text = "Quitar del torneo";
             this.btnQuitar.UseVisualStyleBackColor = true;
@@ -162,9 +162,9 @@
             // 
             this.btnAgregar.Enabled = false;
             this.btnAgregar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnAgregar.Location = new System.Drawing.Point(59, 188);
+            this.btnAgregar.Location = new System.Drawing.Point(28, 188);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(160, 41);
+            this.btnAgregar.Size = new System.Drawing.Size(194, 41);
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar al torneo";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -267,23 +267,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel paneFiltro;
-        private System.Windows.Forms.ComboBox cmboxDeportes;
-        private System.Windows.Forms.Label lblFiltro;
-        private System.Windows.Forms.Panel paneEncuentros;
-        private System.Windows.Forms.Label lblHoraFinaliza;
-        private System.Windows.Forms.Label lblFechaComienzo;
-        private System.Windows.Forms.Label lblNombreEncuentro;
-        private System.Windows.Forms.TextBox txtHoraFinaliza;
-        private System.Windows.Forms.TextBox txtFechaComienzo;
-        private System.Windows.Forms.Label lblEquiposEnEncuentro;
-        private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.ComboBox cmboxEquiposDeEncuentros;
-        private System.Windows.Forms.ComboBox cmboxEncuentros;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnVerCargados;
-        private System.Windows.Forms.Button btnQuitar;
-        private System.Windows.Forms.Button btnVolver;
+        public System.Windows.Forms.Panel paneFiltro;
+        public System.Windows.Forms.ComboBox cmboxDeportes;
+        public System.Windows.Forms.Label lblFiltro;
+        public System.Windows.Forms.Panel paneEncuentros;
+        public System.Windows.Forms.Label lblHoraFinaliza;
+        public System.Windows.Forms.Label lblFechaComienzo;
+        public System.Windows.Forms.Label lblNombreEncuentro;
+        public System.Windows.Forms.TextBox txtHoraFinaliza;
+        public System.Windows.Forms.TextBox txtFechaComienzo;
+        public System.Windows.Forms.Label lblEquiposEnEncuentro;
+        public System.Windows.Forms.Button btnFiltrar;
+        public System.Windows.Forms.Button btnRefrescar;
+        public System.Windows.Forms.ComboBox cmboxEquiposDeEncuentros;
+        public System.Windows.Forms.ComboBox cmboxEncuentros;
+        public System.Windows.Forms.Button btnAgregar;
+        public System.Windows.Forms.Button btnVerCargados;
+        public System.Windows.Forms.Button btnQuitar;
+        public System.Windows.Forms.Button btnVolver;
     }
 }

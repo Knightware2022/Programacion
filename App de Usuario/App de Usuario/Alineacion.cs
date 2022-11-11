@@ -111,7 +111,33 @@ namespace App_de_Usuario
         {
             this.mostrarAlineacion();
         }
+        public void temaAli(Color formulario, Color boton, Color letra, Color panel1, Color panel2)
+        {
+            this.BackColor = formulario;
 
+            paneAlineacion.BackColor = formulario;
+
+            lstviewAlineacion.BackColor = panel2;
+            lstviewAlineacion.ForeColor = letra;
+
+
+            lblEquipo.ForeColor = letra;
+
+            btnVerAlineacion.BackColor = boton;
+            btnVerAlineacion.FlatStyle = FlatStyle.Flat;
+            btnVerAlineacion.FlatAppearance.BorderColor = boton;
+            btnVerAlineacion.ForeColor = letra;
+            btnRefrescar.BackColor = boton;
+            btnRefrescar.FlatStyle = FlatStyle.Flat;
+            btnRefrescar.FlatAppearance.BorderColor = boton;
+            btnRefrescar.ForeColor = letra;
+            btnVolver.BackColor = boton;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.FlatAppearance.BorderColor = boton;
+            btnVolver.ForeColor = letra;
+
+
+        }
         private void lstviewAlineacion_SelectedIndexChanged(object sender, EventArgs e)
         {
 

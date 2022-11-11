@@ -145,6 +145,32 @@ namespace App_de_Usuario
           
         }
 
+        public void temaPrincipal(Color formulario, Color boton, Color letra, Color panel1, Color panel2)
+        {
+            this.BackColor = formulario;
+            paneBotones.BackColor = panel1;
+            paneAvatar.BackColor = panel1;
+            btnResultados.FlatStyle = FlatStyle.Flat;
+            btnResultados.FlatAppearance.BorderColor = boton;
+            btnResultados.BackColor = boton;
+            btnResultados.ForeColor = letra;
+            btnTorneos.FlatStyle = FlatStyle.Flat;
+            btnTorneos.FlatAppearance.BorderColor = boton;
+            btnTorneos.BackColor = boton;
+            btnTorneos.ForeColor = letra;
+            btnFavoritos.FlatStyle = FlatStyle.Flat;
+            btnFavoritos.FlatAppearance.BorderColor = boton;
+            btnFavoritos.BackColor = boton;
+            btnFavoritos.ForeColor = letra;
+            btnEncuentros.FlatStyle = FlatStyle.Flat;
+            btnEncuentros.FlatAppearance.BorderColor = boton;
+            btnEncuentros.BackColor = boton;
+            btnEncuentros.ForeColor = letra;
+            paneVentanas.BackColor = panel2;
+            paneBanner.BackColor = panel1;
+        }
+
+
         private void btnResultados_Click(object sender, EventArgs e)
         {
             Program.frmResultados.MdiParent = this;

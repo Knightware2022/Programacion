@@ -98,7 +98,7 @@ namespace BackOfficeAdministracion
             switch (Logica.insertarTorneoColectivo(torneosColectivos, fechaC, fechaF))
             {
                 case 0:
-                    MessageBox.Show("Torneo creado exitosamente");
+                    MessageBox.Show(Idiomas.torneoCreado);
                     btnAceptarCambios.Enabled = false;
                     btnDelete.Enabled = false;
                     btnCrearTorneo.Enabled = false;
@@ -114,10 +114,10 @@ namespace BackOfficeAdministracion
                     this.refrescarTorneosColectivos();
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado. Verifique que los datos sean coherentes");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
             }
         }
@@ -133,13 +133,13 @@ namespace BackOfficeAdministracion
                     cmboxIDTorneo.Text = listaTorneosColectivos[0];
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break; 
                 case 2:
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show(Idiomas.errordeConexion);
                         break;
                 case 3:
-                    MessageBox.Show("No existen torneos colectivos en el sistema");
+                    MessageBox.Show(Idiomas.noExistenTorneos);
                     break;
             }
         }
@@ -186,13 +186,13 @@ namespace BackOfficeAdministracion
 
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 3:
-                        DialogResult crearTorneo = MessageBox.Show("El Torneo no existe, desea crearlo? ", "Creación torneo", MessageBoxButtons.YesNo);
+                        DialogResult crearTorneo = MessageBox.Show(Idiomas.crearTorneo, Idiomas.tituloCrearTorneo, MessageBoxButtons.YesNo);
                         if (crearTorneo == DialogResult.Yes)
                         {
                             
@@ -269,13 +269,12 @@ namespace BackOfficeAdministracion
                         btnDelete.Enabled = true;
                         break;
                     case 6:
-                        MessageBox.Show("El id pertenece a un torneo individual");
                         break;
                 }
             }
             else
             {
-                MessageBox.Show("ID no es valido. El formato debe ser:\nID:<IDtorneo> <NombreTorneo>");
+                MessageBox.Show("Format should be :\nID:<IDtorneo> <NombreTorneo>");
             }
         }
 
