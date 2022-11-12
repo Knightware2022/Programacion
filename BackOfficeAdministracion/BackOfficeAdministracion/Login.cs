@@ -167,8 +167,9 @@ namespace BackOfficeAdministracion
                      MessageBox.Show(Idiomas.usuarioOcontraIncorrectos);//en realidad es que el usuario no existe
                      txtContrasenia.Text = null;
                      break;
+                     
              }
-            
+
         }
 
         private void btnVerContrasenia_MouseEnter(object sender, EventArgs e)

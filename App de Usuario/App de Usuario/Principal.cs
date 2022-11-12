@@ -1,5 +1,4 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -74,12 +73,7 @@ namespace App_de_Usuario
                             {
                                 string envio = Idiomas.eventoComenzo + " " + nombreEvento[i];
                                 Mensajeria.NoticacionEvento(u.correo, envio);
-                                new ToastContentBuilder()
-                                                                .AddArgument("action", "viewConversation")
-                                                                .AddArgument("conversationId", 9813)
-                                                                .AddText(Idiomas.tituloComienzoEvento)
-                                                                .AddText(Idiomas.eventoComenzo + " " + nombreEvento[i])
-                                                                .Show();
+                                MessageBox.Show(envio);
                             }
                             else
                             {//si todo es igual menos los minutos
@@ -91,13 +85,9 @@ namespace App_de_Usuario
                                         string envio = Idiomas.eventoComienza + " " + nombreEvento[i];
 
                                         Mensajeria.NoticacionEvento(u.correo, envio);
+                                        MessageBox.Show(envio);
 
-                                        new ToastContentBuilder()
-                                                                        .AddArgument("action", "viewConversation")
-                                                                        .AddArgument("conversationId", 9813)
-                                                                        .AddText(Idiomas.tituloComienzoEvento)
-                                                                        .AddText(Idiomas.eventoComienza + " " + nombreEvento[i])
-                                                                        .Show();
+                                     
                                     }
                                     else
                                     {
@@ -106,13 +96,8 @@ namespace App_de_Usuario
                                             string envio = Idiomas.evento10MInComenzo + " " + nombreEvento[i];
 
                                             Mensajeria.NoticacionEvento(u.correo, envio);
+                                            MessageBox.Show(envio);
 
-                                            new ToastContentBuilder()
-                                                                            .AddArgument("action", "viewConversation")
-                                                                            .AddArgument("conversationId", 9813)
-                                                                            .AddText(Idiomas.tituloComienzoEvento)
-                                                                            .AddText(Idiomas.evento10MInComenzo + " " + nombreEvento[i])
-                                                                            .Show();
                                         }
                                     }
                                 }

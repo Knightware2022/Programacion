@@ -62,13 +62,13 @@ namespace BackOfficeAdministracion
                     cmboxEquipo.Text = nombresEquipos[0];
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
                 case 3:
-                    MessageBox.Show("El encuentro no tiene equipos cargados");
+                    MessageBox.Show(Idiomas.EventosNOTIENEequipos);
                     break;
             }
         }
@@ -89,13 +89,13 @@ namespace BackOfficeAdministracion
                     }
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
                 case 3:
-                    MessageBox.Show("No se encontraron jugadores");
+                    MessageBox.Show(Idiomas.equipoNotieneJugadores);
                     break;
             }
         }
@@ -115,13 +115,13 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
                 case 3:
-                    MessageBox.Show("No se encontraron alineaciones");
+                    MessageBox.Show(Idiomas.encuentronotieneAlineacion);
                     break;
             }
         }
@@ -164,14 +164,14 @@ namespace BackOfficeAdministracion
                     }
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
                 case 3:
                     lstviewAlineacion.Items.Clear();
-                    MessageBox.Show("EL equipo no tiene alineacion");
+                    MessageBox.Show(Idiomas.encuentronotieneAlineacion);
                     break;
             }
         }
@@ -194,10 +194,10 @@ namespace BackOfficeAdministracion
                 switch (Logica.BuscarIDalineacion(idRandom))
                 {
                     case 1:
-                        MessageBox.Show("Error de red");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado");
+                        MessageBox.Show(Idiomas.errorInesperadoCoherente);
                         break;
                     case 3:
                         bandera = false;
@@ -206,18 +206,16 @@ namespace BackOfficeAdministracion
 
             }
             switch (Logica.insertarAlineacion(GestionarEventos.encuentrosColectivos.idEncuentro, GestionarEventos.encuentrosColectivos.deporteEncuentro, nombre, apelido, posicion, idRandom)) {
-                case 0:
-                    MessageBox.Show("Jugador asignado exitosamente");
-                  
+                case 0:                  
                     break;
                 case 1:
-                    MessageBox.Show("Error de red");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error insertando en Alineacion");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
                 case 3:
-                    MessageBox.Show("Error insertando en Utiiza");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
             }
         }

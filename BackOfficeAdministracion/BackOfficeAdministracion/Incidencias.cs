@@ -76,13 +76,13 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 3:
-                    MessageBox.Show("El encuentro no tiene equipos cargados");
+                    MessageBox.Show(Idiomas.EventosNOTIENEequipos);
                     break;
             }
         }
@@ -103,13 +103,13 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
                 case 3:
-                    MessageBox.Show("No se encontraron jugadores");
+                    MessageBox.Show(Idiomas.noJugadoresCargados);
                     break;
             }
         }
@@ -129,13 +129,13 @@ namespace BackOfficeAdministracion
                         cmboxIncidencia.Text = incidencias[0];
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                        MessageBox.Show(Idiomas.errorInesperadoCoherente);
                         break;
                     case 3:
-                        MessageBox.Show("No se encontraron Ocurrencias en el sistema");
+                        MessageBox.Show(Idiomas.encuENTROnotieneOcurrencias);
                         break;
                 }
             }
@@ -172,7 +172,7 @@ namespace BackOfficeAdministracion
                                 break;
                             case 1:
                             case 2:
-                                MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                MessageBox.Show(Idiomas.errorInesperadoCoherente);
                                 break;
                             case 3:
                                 bandera = false;
@@ -188,23 +188,23 @@ namespace BackOfficeAdministracion
                             this.refrescarIncidencias();
                             break;
                         case 1:
-                            MessageBox.Show("Error de red");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                         case 2:
-                            MessageBox.Show("Error inesperado");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                         case 3:
-                            MessageBox.Show("Error insertando Hacen");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                         case 4:
-                            MessageBox.Show("Error insertando en Notifica");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                     }
                 }
                 else
                 {
 
-                    MessageBox.Show("Minuto no valido, debe ser un entero positivo");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                 }
             }
             else {
@@ -222,7 +222,7 @@ namespace BackOfficeAdministracion
                                 break;
                             case 1:
                             case 2:
-                                MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                MessageBox.Show(Idiomas.errorInesperado);
                                 break;
                             case 3:
                                 bandera = false;
@@ -236,16 +236,16 @@ namespace BackOfficeAdministracion
                             txtMinuto.Text = null;
                             break;
                         case 1:
-                            MessageBox.Show("Error de red");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                         case 2:
-                            MessageBox.Show("Error inesperado");
+                            MessageBox.Show(Idiomas.errorInesperadoCoherente);
                             break;
                         case 3:
-                            MessageBox.Show("Error insertando Hacen");
+                            MessageBox.Show(Idiomas.errorInesperadoCoherente);
                             break;
                         case 4:
-                            MessageBox.Show("Error insertando en Notifica");
+                            MessageBox.Show(Idiomas.errorInesperadoCoherente);
                             break;
 
                     }
@@ -266,7 +266,7 @@ namespace BackOfficeAdministracion
                                     break;
                                 case 1:
                                 case 2:
-                                    MessageBox.Show("Ocurrió un error, intente mas tarde");
+                                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                                     break;
                                 case 3:
                                     bandera = false;
@@ -281,21 +281,21 @@ namespace BackOfficeAdministracion
                                 txtMinuto.Text = null;
                                 break;
                             case 1:
-                                MessageBox.Show("Error de red");
+                                MessageBox.Show(Idiomas.errordeConexion);
                                 break;
                             case 2:
-                                MessageBox.Show("Error inesperado");
+                                MessageBox.Show(Idiomas.errorInesperadoCoherente);
                                 break;
                             case 3:
-                                MessageBox.Show("Error insertando Hacen");
+                                MessageBox.Show(Idiomas.errorInesperadoCoherente);
                                 break;
                             case 4:
-                                MessageBox.Show("Error insertando en Notifica");
+                                MessageBox.Show(Idiomas.errorInesperadoCoherente);
                                 break;
                         }
                     }
                     else {
-                        MessageBox.Show("Puntos debe ser un entero");
+                        MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     }
                 }
             }

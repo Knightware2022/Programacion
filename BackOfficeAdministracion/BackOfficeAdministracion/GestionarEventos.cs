@@ -138,7 +138,7 @@ namespace BackOfficeAdministracion
             {
                 case 0:
                     this.refrescarEventosColectivos();
-                    MessageBox.Show("Evento actualizado exitosamente");
+                    MessageBox.Show(Idiomas.eventoActualizado);
                     paneModificarEvento.Enabled = true;
                     paneDatosEvento.Enabled = false;
                     btnEliminar.Enabled = false;
@@ -153,10 +153,10 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de red");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado. Verifique que los datos sean coherentes");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
             }
         }
@@ -176,14 +176,14 @@ namespace BackOfficeAdministracion
                     }
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de red");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 3:
 
-                    MessageBox.Show("No existen deportes    -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          cargados");
+                    MessageBox.Show(Idiomas.noEventoSistema);
                     break;
             }
         }
@@ -209,13 +209,13 @@ namespace BackOfficeAdministracion
                     }
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de red");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 3:
-                    MessageBox.Show("No existen equipos en el sistema");
+                    MessageBox.Show(Idiomas.noequiposSistema);
                     break;
             }
         }
@@ -235,13 +235,13 @@ namespace BackOfficeAdministracion
                     }
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de red");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 3:
-                    MessageBox.Show("No existen equipos en el encuentro");
+                    MessageBox.Show(Idiomas.EventosNOTIENEequipos);
                     break;
             }
         }
@@ -285,13 +285,13 @@ namespace BackOfficeAdministracion
 
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado");
+                        MessageBox.Show(Idiomas.errorInesperado);
                         break;
                     case 3:
-                        DialogResult crearUsuario = MessageBox.Show("El Evento no existe, desea crearlo? ", "Creación evento", MessageBoxButtons.YesNo);
+                        DialogResult crearUsuario = MessageBox.Show(Idiomas.crearEvento, Idiomas.crearEventotitulo, MessageBoxButtons.YesNo);
                         if (crearUsuario == DialogResult.Yes)
                         {
                             
@@ -305,7 +305,7 @@ namespace BackOfficeAdministracion
                                     break;
 
                                 case 1: case 2:
-                                    MessageBox.Show("No se encuentran deportes en el sistema");
+                                    MessageBox.Show(Idiomas.noDeportesSistema);
                                     break;
 
                             }
@@ -348,7 +348,7 @@ namespace BackOfficeAdministracion
                         this.refrescarEquiposEnEncuentro();
                         break;
                     case 5:
-                        MessageBox.Show("El encuentro no tiene equipos");
+                        MessageBox.Show(Idiomas.EventosNOTIENEequipos);
                         cmboxEquiposenEncuentro.Items.Clear();
                         cmboxEquiposenEncuentro.Text = null;
                         txtDescripcionCole.Text = encuentrosColectivos.descripcion;
@@ -386,14 +386,14 @@ namespace BackOfficeAdministracion
             switch (Logica.quitarEquipoEncuentroColectivo(nombre, categoria, idEncuentro, encuentrosColectivos.deporteEncuentro))
             {
                 case 0:
-                    MessageBox.Show("Equipo desvinculado exitosamente");
+                    MessageBox.Show(Idiomas.equipoDesvinculadoEvento);
                     this.refrescarEquiposEnEncuentro();
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
 
@@ -408,16 +408,16 @@ namespace BackOfficeAdministracion
             {
                 case 0:
                     this.refrescarEquiposEnEncuentro();
-                    MessageBox.Show("Equipo agregado exitosamente");
+                    MessageBox.Show(Idiomas.equipoAgregado);
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado. Las causas pueden ser: \n      El equipo se encuentra en este evento \n      Ya participa en otro evento a la misma fecha y hora \n      El equipo no practica el deporte del evento");
+                    MessageBox.Show(Idiomas.errorInesperado+": \n" + Idiomas.causasEquipo1 + " \n" + Idiomas.causasEquipo2 + " \n" + Idiomas.causasEquipo3);
                     break;
                 case 3:
-                    MessageBox.Show("El equipo no tiene jugadores, no será agregado al evento");
+                    MessageBox.Show(Idiomas.equipoNotieneJugadores);
                     break;
             }
         }
@@ -454,7 +454,7 @@ namespace BackOfficeAdministracion
             switch (Logica.insertarEventoColectivo(encuentrosColectivos, fechaC, fechaF, encuentrosColectivos.nombreDeporte))
             {
                 case 0:
-                    MessageBox.Show("Evento creado exitosamente");
+                    MessageBox.Show(Idiomas.eventoActualizado);
                     paneModificarEvento.Enabled = true;
                     paneDatosEvento.Enabled = false;
                     btnEliminar.Enabled = false;
@@ -470,10 +470,10 @@ namespace BackOfficeAdministracion
                     this.refrescarEventosColectivos();
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
 
@@ -500,10 +500,10 @@ namespace BackOfficeAdministracion
                     cmboxHoraFinCole.Text = "00";
                     break;
                 case 1:
-                    MessageBox.Show("Error de conexion");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Error inesperado. Probablemente esta vinculado a un torneo");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
             }
         }  

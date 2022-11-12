@@ -210,7 +210,7 @@ namespace BackOfficeAdministracion
 
                                 case 1:
                                 case 2:
-                                    MessageBox.Show("No se encuentran deportes en el sistema");
+                                    MessageBox.Show(Idiomas.noDeportesSistema);
                                     break;
 
                             }
@@ -248,7 +248,7 @@ namespace BackOfficeAdministracion
                         break;
                     case 5:
                         torneosColectivos.idTorneo = id;
-                        MessageBox.Show("El Torneo no tiene equipos");
+                        MessageBox.Show(Idiomas.torneoNotieneEncuentros);
                         cmboxEquiposenEncuentro.Items.Clear();
                         cmboxEquiposenEncuentro.Text = null;
                         txtDescripcionCole.Text = torneosColectivos.nombreTorneo;
@@ -299,7 +299,7 @@ namespace BackOfficeAdministracion
             switch (Logica.ActualizarTorneoColectivo(torneosColectivos, fechaC, fechaF))
             {
                 case 0:
-                    MessageBox.Show("Evento actualizado exitosamente");
+                    MessageBox.Show(Idiomas.eventoActualizado);
                     btnAceptarCambios.Enabled = false;
                     btnDelete.Enabled = false;
                     btnCrearTorneo.Enabled = false;
@@ -315,10 +315,10 @@ namespace BackOfficeAdministracion
                     refrescarTorneosColectivos();
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de red");
+                    MessageBox.Show(Idiomas.errordeConexion);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado. Verifique que los datos sean coherentes");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
             }
         }
@@ -342,7 +342,7 @@ namespace BackOfficeAdministracion
                 torneosColectivos.idTorneo = idTorneo;
                 switch (Logica.BorrarTorneo(torneosColectivos.idTorneo, torneosColectivos.idDeporteTorneo)) {
                     case 0:
-                        MessageBox.Show("Torneo eliminado");
+                        MessageBox.Show(Idiomas.torneoBorrado);
                         btnAceptarCambios.Enabled = false;
                         btnDelete.Enabled = false;
                         btnCrearTorneo.Enabled = false;
@@ -358,15 +358,15 @@ namespace BackOfficeAdministracion
                         refrescarTorneosColectivos();
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado, el torneo tiene encuentros");
+                        MessageBox.Show(Idiomas.torneoNotieneEncuentros);
                         break;
                 }
             }
             else {
-                MessageBox.Show("Error obteniendo ID");
+                MessageBox.Show(Idiomas.errorInesperadoCoherente);
             }
         }
 
@@ -393,6 +393,11 @@ namespace BackOfficeAdministracion
             cmboxMinutoFinCole.Text = "00";
             cmboxMinutos.Text = "00";
             refrescarTorneosColectivos();
+        }
+
+        private void paneID_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

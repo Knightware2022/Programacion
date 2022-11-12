@@ -112,7 +112,7 @@
             this.paneIngreso.Controls.Add(this.lblContrasenia);
             this.paneIngreso.Controls.Add(this.txtUsuario);
             this.paneIngreso.Controls.Add(this.lblUsuario);
-            this.paneIngreso.Location = new System.Drawing.Point(14, 20);
+            this.paneIngreso.Location = new System.Drawing.Point(32, 11);
             this.paneIngreso.Margin = new System.Windows.Forms.Padding(2);
             this.paneIngreso.Name = "paneIngreso";
             this.paneIngreso.Size = new System.Drawing.Size(544, 186);
@@ -396,7 +396,7 @@
             this.paneOlvide.Controls.Add(this.btnEnviar);
             this.paneOlvide.Controls.Add(this.txtOlvide);
             this.paneOlvide.Controls.Add(this.lblOlvide);
-            this.paneOlvide.Location = new System.Drawing.Point(3, 113);
+            this.paneOlvide.Location = new System.Drawing.Point(6, 192);
             this.paneOlvide.Margin = new System.Windows.Forms.Padding(2);
             this.paneOlvide.Name = "paneOlvide";
             this.paneOlvide.Size = new System.Drawing.Size(544, 126);

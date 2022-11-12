@@ -40,8 +40,50 @@ namespace BackOfficeAdministracion
         public static string errorInesperadoCoherente;
         public static string noExistenTorneos;
         public static string noEventoSistema;
-
-
+        public static string noDeportesSistema;
+        public static string eventoActualizado;
+        public static string noequiposSistema;
+        public static string crearEvento;
+        public static string crearEventotitulo;
+        public static string equipoDesvinculadoEvento;
+        public static string equipoAgregado;
+        public static string causasEquipo1;
+        public static string causasEquipo2;
+        public static string causasEquipo3;
+        public static string noJugadoresCargados;
+        public static string NopracticaDEporte;
+        public static string crearEquipo;
+        public static string crearEquipoTitulo;
+        public static string deporteNoexiste;
+        public static string crearDeporte;
+        public static string crearDeporteTitulo;
+        public static string deportenOLOPRACTICA;
+        public static string JugadorAnadidoBIEN;
+        public static string JugadorYAparticipaEquipo;
+        public static string JugadorNoexiste;
+        public static string JugadorEliminado;
+        public static string equipoCreado;
+        public static string crearJugador;
+        public static string crerJUGADORTtitulo;
+        public static string jugadorCreado;
+        public static string errorJugador;
+        public static string equipoEliminado;
+        public static string equipoError;
+        public static string errorDeportes;
+        public static string deporteCReadin;
+        public static string malaContraseña;
+        public static string passwordChanged;
+        public static string contraseñasnOcoINDEN;
+        public static string contraseñaActualNOES;
+        public static string contraNuevaError;
+        public static string noEventosAvailbale;
+        public static string noEventosAvailbaleCONDEPORTE;
+        public static string eventoAnadido;
+        public static string torneoNoeventos;
+        public static string encuentroEliminadoTorneo;
+        public static string equipoSinalineacion;
+        public static string encuENTROnotieneOcurrencias;
+        public static string encuentronotieneAlineacion;
         public static void CambioIdioma(string idioma) {
             switch (idioma) {
                 case "Ingles": case "English":
@@ -315,7 +357,48 @@ namespace BackOfficeAdministracion
                     EventosNOTIENEequipos = "The event has no teams involved";
                     noEventoSistema = "There are no events in the system";
                     noExistenTorneos = "There are no tournaments in the system";
+                    encuentronotieneAlineacion = "The team has not alignment";
+                    encuENTROnotieneOcurrencias = "System has not Incidents";
 
+                    noDeportesSistema = "There are no sports in the system";
+                    noequiposSistema = "There are no teams in the system";
+                    eventoActualizado = "An event has been created or updated";
+                    crearEvento = "The event does not exist, Do you wish to create it?";
+                    crearEventotitulo = "Create events";
+                    equipoDesvinculadoEvento = "The team has been unlinked";
+                    equipoAgregado = "Team added";
+                    causasEquipo1 = "The team participates in this event";
+                    causasEquipo2 = "The team participates in a different event";
+                    causasEquipo3 = "The team doesnt practice the sport in the event";
+                    noDeportesSistema = "There are no players";
+                    NopracticaDEporte = "This team doesnt practice a sport, it has been assigned football by default. \nSelect the appropriate sport, and press Accept";
+                    crearEquipo = "The team doesnt exist, Do you wish to create it?";
+                    crearEquipoTitulo = "Create team";
+                    deporteCreado = "The sport doesnt exist, Do you wish to create it??";
+                    crearDeporteTitulo = "Create sport";
+                    deportenOLOPRACTICA = "There is no team practicing this sport";
+                    JugadorAnadidoBIEN = "Player added";
+                    JugadorYAparticipaEquipo = "This player already belongs to a team";
+                    JugadorNoexiste = "Player doesnt exist";
+                    JugadorEliminado = "Player removed";
+                    equipoCreado = "Team added";
+                    crearJugador = "The player doesnt exist, do you wish to create it?";
+                    crerJUGADORTtitulo = "Create player";
+                    jugadorCreado = "Player updated or added";
+                    equipoEliminado = "Team removed";
+                    errorJugador = "You must write the player's first and last name (separated by a space)";
+                    equipoError = "Unexpected error. The teamEl equipo pertenece a algun encuentro o tiene jugadores";
+                    errorDeportes = "Unexpected error. The causes may be: \n    The sport is practiced by a team";
+                    deporteCReadin = "Sport added or updated";
+                    malaContraseña = "The password must contain more than 5 characters";
+                    passwordChanged = "Password changed, please log in againg";
+                    contraNuevaError = "The password must be different from the current one";
+                    contraseñasnOcoINDEN = "The passwords dont match";
+                    contraseñaActualNOES = "This isnt your current password";
+                    noEventosAvailbale = "We couldnt find available events in the system";
+                    eventoAnadido = "Event updated";
+                    noEventosAvailbaleCONDEPORTE = "There are no available events in this sport";
+                    encuentroEliminadoTorneo = "Event unlinked";
                     break;
 
                 case "Spanish": case "Español":
@@ -456,16 +539,16 @@ namespace BackOfficeAdministracion
                     #endregion
 
                     #region de frmIncidenicas
-                    Program.frmIncidencias.lblEquipo.Text = "Team";
-                    Program.frmIncidencias.lblJugador.Text = "Player";
-                    Program.frmIncidencias.lblIncidencia.Text = "Incidence";
-                    Program.frmIncidencias.lblMinuto.Text = "Minute";
-                    Program.frmIncidencias.lblPuntos.Text = "Points";
-                    Program.frmIncidencias.rbPuntos.Text = "Points";
-                    Program.frmIncidencias.gboxModoPuntuacion.Text = "Punctuation system";
-                    Program.frmIncidencias.btnAceptar.Text = "Insert";
-                    Program.frmIncidencias.btnRefrescar.Text = "Refresh";
-                    Program.frmIncidencias.btnVolver.Text = "Return";
+                    Program.frmIncidencias.lblEquipo.Text = "Equipo";
+                    Program.frmIncidencias.lblJugador.Text = "Jugador";
+                    Program.frmIncidencias.lblIncidencia.Text = "Incidencias";
+                    Program.frmIncidencias.lblMinuto.Text = "Minuto";
+                    Program.frmIncidencias.lblPuntos.Text = "Puntos";
+                    Program.frmIncidencias.rbPuntos.Text = "Puntos";
+                    Program.frmIncidencias.gboxModoPuntuacion.Text = "Sistema de puntuacion";
+                    Program.frmIncidencias.btnAceptar.Text = "Ingresar";
+                    Program.frmIncidencias.btnRefrescar.Text = "Refrescar";
+                    Program.frmIncidencias.btnVolver.Text = "Volver";
 
                     #endregion
 
@@ -604,6 +687,54 @@ namespace BackOfficeAdministracion
                     EventosNOTIENEequipos = "El evento no posee equipos";
                     noEventoSistema = "No existen eventos en el sistema";
                     noExistenTorneos = "No existen torneos en el sistema";
+
+
+
+                    noDeportesSistema = "No hay deportes en el sistema";
+                    noequiposSistema = "No hay equipos en el sistema";
+                    eventoActualizado = "Evento ha creado o actualizado";
+                    crearEvento = "El evento no existe, desea crearlo?";
+                    crearEventotitulo = "Crear eventos";
+                    equipoDesvinculadoEvento = "El equipo fue desvinculado";
+                    equipoAgregado = "Equipo agregado";
+                    causasEquipo1 = "El equipo se encuentra en este evento";
+                    causasEquipo2 = "El equipo se encuentra en este evento ";
+                    causasEquipo3 = " El equipo no practica el deporte del evento";
+                    noDeportesSistema = "No hay jugadores";
+                    NopracticaDEporte = "Este equipo no practica deporte, por defecto se le asignó futbol. \nEscoja el que corresponda y presione Aceptar";
+                    crearEquipo = "El equipo no existe, desea crearlo?";
+                    crearEquipoTitulo = "Crear equipo";
+                    deporteCreado = "El deporte no existe, desea crearlo?";
+                    crearDeporteTitulo = "Crear deporte";
+                    deportenOLOPRACTICA = "A este deporte actualmente no se dedica ningún equipo";
+                    JugadorAnadidoBIEN = "Jugador añadido";
+                    JugadorYAparticipaEquipo = "Este jugador ya pertenece a un equipo";
+                    JugadorNoexiste = "Jugador no existe";
+                    JugadorEliminado = "Jugador eliminado";
+                    equipoCreado = "Equipo creado";
+                    crearJugador = "El jugador no existe, desea crearlo?";
+                    crerJUGADORTtitulo = "Crear jugador";
+                    jugadorCreado = "Jugador creado o actualizado";
+                    equipoEliminado = "Equipo eliminado";
+                    errorJugador = "Debe escribir el nombre y apellido del jugador (separados por un espacio)";
+                    equipoError = "Error inesperado. El equipo pertenece a algun encuentro o tiene jugadores";
+                    errorDeportes = "Error inesperado. Las causas pueden ser: \n    Al deporte lo practica algun equipo";
+                    deporteCReadin = "Deporte creado o actualizado";
+                    malaContraseña = "La contraseña debe tener mas de 5 caracteres";
+                    passwordChanged = "Contraseña cambiada, vuelva a iniciar sesión";
+                    contraNuevaError = "La contraseña nueva debe ser diferente a la actual";
+                    contraseñasnOcoINDEN = "Las contraseñas no coinciden";
+                    contraseñaActualNOES = "Esa no es su contraseña actual";
+                    noEventosAvailbale = "No se encontraron encuentros disponibles en el sistema";
+                    eventoAnadido = "Evento actualizado";
+                    noEventosAvailbaleCONDEPORTE = "No hay encuentros disponibles con este deporte";
+                    encuentroEliminadoTorneo = "Evento desvinculado";
+
+                    encuentronotieneAlineacion = "El equipo no tiene alineaciòn";
+                    encuENTROnotieneOcurrencias = "Sistema no tiene ocurrencas";
+
+
+
                     #endregion
 
                     break;

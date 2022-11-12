@@ -650,6 +650,7 @@
             this.paneID.Name = "paneID";
             this.paneID.Size = new System.Drawing.Size(539, 72);
             this.paneID.TabIndex = 6;
+            this.paneID.Paint += new System.Windows.Forms.PaintEventHandler(this.paneID_Paint);
             // 
             // btnRefrescarTorneoColectivo
             // 

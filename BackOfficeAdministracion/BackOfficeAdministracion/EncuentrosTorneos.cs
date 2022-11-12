@@ -82,19 +82,19 @@ namespace BackOfficeAdministracion
                         cmboxEncuentros.Text = encuentros[0];
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 3:
-                        MessageBox.Show("No se encontraron encuentros disponibles en el sistema");
+                        MessageBox.Show(Idiomas.noEventosAvailbale);
                         break;
                 }
             }
             catch
             {
-                MessageBox.Show("No hay encuentros disponibles con este deporte");
+                MessageBox.Show(Idiomas.noEventosAvailbaleCONDEPORTE);
             }
         }
         public void refrescarDatosEvento()
@@ -124,26 +124,26 @@ namespace BackOfficeAdministracion
                             cmboxEquiposDeEncuentros.Text = equiposEncuentro[0];
                             break;
                         case 1:
-                            MessageBox.Show("Error de red");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                         case 2:
-                            MessageBox.Show("Error inesperado");
+                            MessageBox.Show(Idiomas.errorInesperado);
                             break;
                         case 5:
                             btnAgregar.Enabled = false;
                             cmboxEquiposDeEncuentros.Text = null;
-                            MessageBox.Show("El encuentro no tiene equipos");
+                            MessageBox.Show(Idiomas.EventosNOTIENEequipos);
                             break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error obteniendo el ID");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                 }
             }
             catch
             {
-                MessageBox.Show("Error obteniendo ID");
+                MessageBox.Show(Idiomas.errorInesperadoCoherente);
             }
         }
         public void eventosEnTorneo()
@@ -165,19 +165,19 @@ namespace BackOfficeAdministracion
                         btnAgregar.Enabled = false;
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado.\nRefresque la pagina e intente nuevamente");
+                        MessageBox.Show(Idiomas.errorInesperadoCoherente);
                         break;
                     case 3:
-                        MessageBox.Show("No se encontraron encuentros en este torneo");
+                        MessageBox.Show(Idiomas.torneoNotieneEncuentros);
                         break;
                 }
             }
             catch
             {
-                MessageBox.Show("No hay encuentros en este torneo");
+                MessageBox.Show(Idiomas.torneoNotieneEncuentros);
             }
         }
 
@@ -199,13 +199,13 @@ namespace BackOfficeAdministracion
 
                     break;
                 case 1:
-                    MessageBox.Show("Ocurrió un error de red");
+                    MessageBox.Show(Idiomas.errorInesperado);
                     break;
                 case 2:
-                    MessageBox.Show("Ocurrió un error inesperado");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                     break;
                 case 3:
-                    MessageBox.Show("No existen deportes en el sistema");
+                    MessageBox.Show(Idiomas.noDeportesSistema);
                     break;
             }
 
@@ -248,15 +248,15 @@ namespace BackOfficeAdministracion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //try
-           // {
+            
+           try {
                 int id = 0;
                 if (int.TryParse(cmboxEncuentros.Text.Substring(3, (cmboxEncuentros.Text.IndexOf(" ") - 3)), out id))
                 {
                     switch (Logica.insertarEventoenTorneo(GestionarTorneos.torneosColectivos.idTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
                     {
                         case 0:
-                            MessageBox.Show("Evento añadido exitosamente");
+                            MessageBox.Show(Idiomas.eventoAnadido);
                             txtFechaComienzo.Text = null;
                             txtHoraFinaliza.Text = null;
                             cmboxEquiposDeEncuentros.Text = null;
@@ -264,21 +264,21 @@ namespace BackOfficeAdministracion
                             this.filtrar();
                             break;
                         case 1:
-                            MessageBox.Show("Error de conexion");
+                            MessageBox.Show(Idiomas.errordeConexion);
                             break;
                         case 2:
-                            MessageBox.Show("Error inesperado. Tal vez el encuentro ya participa de este torneo");
+                            MessageBox.Show(Idiomas.errorInesperado);
                             break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error obteniendo id");
+                    MessageBox.Show(Idiomas.errorInesperadoCoherente);
                 }
-           // }
-          //  catch {
-          ////      MessageBox.Show("Error obteniendo id");
-           // }
+             }
+              catch {
+                  MessageBox.Show(Idiomas.errorInesperadoCoherente);
+             }
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -290,7 +290,7 @@ namespace BackOfficeAdministracion
                 switch (Logica.EliminarEventoenTorneo(GestionarTorneos.torneosColectivos.idTorneo, GestionarTorneos.torneosColectivos.idDeporteTorneo, id))
                 {
                     case 0:
-                        MessageBox.Show("Evento desvinculado exitosamente");
+                        MessageBox.Show(Idiomas.encuentroEliminadoTorneo);
                         txtFechaComienzo.Text = null;
                         txtHoraFinaliza.Text = null;
                         cmboxEquiposDeEncuentros.Text = null;
@@ -300,20 +300,20 @@ namespace BackOfficeAdministracion
 
                         break;
                     case 1:
-                        MessageBox.Show("Error de conexion");
+                        MessageBox.Show(Idiomas.errordeConexion);
                         break;
                     case 2:
-                        MessageBox.Show("Error inesperado.");
+                        MessageBox.Show(Idiomas.errorInesperadoCoherente);
                         break;
                 }
             }
             else
             {
-                MessageBox.Show("Error obteniendo id");
+                MessageBox.Show(Idiomas.errorInesperadoCoherente);
             }
             }catch
             {
-                MessageBox.Show("Error obteniendo id");
+                MessageBox.Show(Idiomas.errorInesperadoCoherente);
             }
         }
     }

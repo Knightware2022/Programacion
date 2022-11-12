@@ -87,7 +87,7 @@ namespace BackOfficeAdministracion
         {
             Idiomas.CambioIdioma(cmboxIdioma.Text);
             int flag = 0;
-            if (cmboxTema.SelectedItem.ToString() == "Oscuro")
+            if (cmboxTema.SelectedItem.ToString() == "Oscuro" || cmboxTema.SelectedItem.ToString() == "Dark")
             {
                 fondo = Color.FromArgb(40, 40, 40);
                 letra = Color.FromArgb(200, 200, 200);
@@ -139,7 +139,7 @@ namespace BackOfficeAdministracion
             Encriptacion en = new Encriptacion();
             if ((txtContraActual.Text.Equals("")) || (txtNuevaContraseña.Text.Equals("") || txtNuevaContraseña.Text.Count() < 5))
             {
-                MessageBox.Show("La contraseña nueva debe tener mas de 5 caracteres");
+                MessageBox.Show(Idiomas.malaContraseña);
             }
             else
             {
@@ -157,7 +157,7 @@ namespace BackOfficeAdministracion
                             switch (Logica.modificarContraseña(Login.user.nombre, contraseñaNueva))
                             {
                                 case 0:
-                                    MessageBox.Show("Contraseña cambiada, vuelva a iniciar sesión");
+                                    MessageBox.Show(Idiomas.passwordChanged);
                                     txtNuevaContraConfirma.Text = null;
                                     txtContraActual.Text = null;
                                     txtNuevaContraseña.Text = null;
@@ -165,27 +165,27 @@ namespace BackOfficeAdministracion
                                     Program.frmLogin.Show();
                                     break;
                                 case 1:
-                                    MessageBox.Show("Error de conexión");
+                                    MessageBox.Show(Idiomas.errordeConexion);
                                     break;
                                 case 2:
-                                    MessageBox.Show("Error inesperado");
+                                    MessageBox.Show(Idiomas.errorInesperado);
                                     break;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("La contraseña nueva debe ser diferente a la actual");
+                            MessageBox.Show(Idiomas.contraNuevaError);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Esa no es su contraseña actual");
+                        MessageBox.Show(Idiomas.contraseñaActualNOES);
                     }
                 }
 
                 else
                 {
-                    MessageBox.Show("Las contraseñas no coinciden");
+                    MessageBox.Show(Idiomas.contraseñasnOcoINDEN);
                 }
             }
         }

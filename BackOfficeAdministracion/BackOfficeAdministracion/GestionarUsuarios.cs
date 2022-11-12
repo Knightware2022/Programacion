@@ -268,25 +268,31 @@ namespace BackOfficeAdministracion
         }
         private void refrescarPublicidad()
         {
-            List<string> lista = new List<string>();
-            switch (Logica.listarTodaPublicidad(lista))
-            {
-                case 0:
-                    cmboxUrl.Items.Clear();
-                    foreach (string url in lista)
-                    {
-                        cmboxUrl.Items.Add(url);
-                    }
-                    cmboxUrl.Text = lista[0];
+          //  try
+          //  {
+                List<string> lista = new List<string>();
+                switch (Logica.listarTodaPublicidad(lista))
+                {
+                    case 0:
+                        cmboxUrl.Items.Clear();
+                        foreach (string url in lista)
+                        {
+                            cmboxUrl.Items.Add(url);
+                        }
+                        cmboxUrl.Text = lista[0];
 
-                    break;
-                case 1:
-                    MessageBox.Show(Idiomas.errordeConexion);
-                    break;
-                case 2:
-                    MessageBox.Show(Idiomas.errorInesperado);
-                    break;
-            }
+                        break;
+                    case 1:
+                        MessageBox.Show(Idiomas.errordeConexion);
+                        break;
+                    case 2:
+                        MessageBox.Show(Idiomas.errorInesperado);
+                        break;
+                }
+            //}
+            //catch {
+            //    MessageBox.Show("No hay publicidad");
+         //  }
         }
         private void refrescarPublicidad2()
         {
@@ -312,24 +318,30 @@ namespace BackOfficeAdministracion
         }
         private void refrescarUsuariosGUEST()
         {
-            List<string> lista = new List<string>();
-            switch (Logica.listarTodosUsuariosGUEST(lista))
+            try
             {
-                case 0:
-                    cmboxGuestaAsignar.Items.Clear();
-                    foreach (string url in lista)
-                    {
-                        cmboxGuestaAsignar.Items.Add(url);
-                    }
-                    cmboxGuestaAsignar.Text = lista[0];
+                List<string> lista = new List<string>();
+                switch (Logica.listarTodosUsuariosGUEST(lista))
+                {
+                    case 0:
+                        cmboxGuestaAsignar.Items.Clear();
+                        foreach (string url in lista)
+                        {
+                            cmboxGuestaAsignar.Items.Add(url);
+                        }
+                        cmboxGuestaAsignar.Text = lista[0];
 
-                    break;
-                case 1:
-                    MessageBox.Show(Idiomas.errordeConexion);
-                    break;
-                case 2:
-                    MessageBox.Show(Idiomas.errorInesperado);
-                    break;
+                        break;
+                    case 1:
+                        MessageBox.Show(Idiomas.errordeConexion);
+                        break;
+                    case 2:
+                        MessageBox.Show(Idiomas.errorInesperado);
+                        break;
+                }
+            }
+            catch {
+                MessageBox.Show("No se encontraron usuarios Guest");
             }
         }
         private void btnRefrescar_Click(object sender, EventArgs e)
